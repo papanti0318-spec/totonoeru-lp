@@ -198,13 +198,15 @@ nav {
   height: 100svh;
   position: relative;
   overflow: hidden;
-  background: var(--text);
+  background: #1a1a1a;
 }
 .hero-image img {
   width: 100%; height: 100%;
   object-fit: cover;
-  opacity: .55;
-  filter: sepia(.3);
+  object-position: 30% center;
+  opacity: .75;
+  filter: sepia(.15) brightness(.85);
+  transform: scale(1.05);
 }
 .hero-image-caption {
   position: absolute; bottom: 40px; left: 32px; right: 32px;
@@ -634,7 +636,7 @@ footer {
   </div>
 
   <div class="hero-image">
-    <img src="logo.jpg" alt="照井航次郎" onerror="this.style.display='none'">
+    <img src="photo.jpg" alt="照井航次郎" onerror="this.style.display='none'">
     <div class="hero-image-caption">
       ととのえる屋 代表
       <span class="hero-image-name">Kojiro Terui</span>
@@ -648,7 +650,7 @@ footer {
     <div class="who-grid">
       <div class="who-photo anim">
         <img
-          src="logo.jpg"
+          src="photo.jpg"
           alt="照井航次郎 ／ ととのえる屋 代表"
           onerror="this.parentElement.style.background='#2B4A1A'; this.style.display='none';"
         >
