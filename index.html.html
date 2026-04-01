@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ととのえる屋 AI スクール｜あなたの「できた」に並走します</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700&family=Zen+Kaku+Gothic+New:wght@300;400;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1612;
+    --paper: #f5f0e8;
+    --paper-dark: #ede7d9;
+    --moss: #4a6741;
+    --moss-light: #6a8f60;
+    --accent: #c8a96e;
+    --warm-white: #faf7f2;
+    --muted: #7a726a;
+    --border: #d4cdc3;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    background: var(--warm-white);
+    color: var(--ink);
+    overflow-x: hidden;
+  }
+
+  /* ========== NOISE TEXTURE ========== */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.4;
+  }
+
+  /* ========== NAV ========== */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(245, 240, 232, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--ink);
+  }
+
+  .nav-logo span { color: var(--moss); }
+
+  .nav-cta {
+    background: var(--moss);
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    transition: background 0.3s;
+    text-decoration: none;
+  }
+
+  .nav-cta:hover { background: var(--moss-light); }
+
+  /* ========== HERO ========== */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 120px 60px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--paper) 0%, var(--warm-white) 60%, #e8f0e4 100%);
+  }
+
+  .hero-circle {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(74,103,65,0.08) 0%, transparent 70%);
+    top: -100px;
+    right: -100px;
+    animation: breathe 8s ease-in-out infinite;
+  }
+
+  @keyframes breathe {
+    0%, 100% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.1); opacity: 1; }
+  }
+
+  .hero-content {
+    position: relative;
+    max-width: 800px;
+  }
+
+  .hero-label {
+    font-size: 0.8rem;
+    letter-spacing: 0.25em;
+    color: var(--moss);
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.2s;
+  }
+
+  .hero-label::before {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background: var(--moss);
+  }
+
+  .hero-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(2.4rem, 6vw, 5rem);
+    font-weight: 300;
+    line-height: 1.4;
+    letter-spacing: 0.05em;
+    color: var(--ink);
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.4s;
+  }
+
+  .hero-title strong {
+    font-weight: 700;
+    color: var(--moss);
+    display: block;
+  }
+
+  .hero-title em {
+    font-style: normal;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 2px;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    line-height: 2;
+    color: var(--muted);
+    max-width: 520px;
+    margin-bottom: 56px;
+    font-weight: 300;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.6s;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.8s;
+  }
+
+  .btn-primary {
+    background: var(--moss);
+    color: white;
+    padding: 18px 44px;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-primary::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: white;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .btn-primary:hover { background: var(--moss-light); transform: translateY(-2px); }
+
+  .btn-secondary {
+    color: var(--ink);
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 2px;
+    transition: color 0.3s, border-color 0.3s;
+  }
+
+  .btn-secondary:hover { color: var(--moss); border-color: var(--moss); }
+
+  .hero-free-tag {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    padding: 4px 10px;
+    vertical-align: super;
+    margin-left: 4px;
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 40px;
+    left: 60px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 1.2s;
+  }
+
+  .hero-scroll::after {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--muted);
+    animation: scrollLine 2s ease-in-out infinite;
+  }
+
+  @keyframes scrollLine {
+    0%, 100% { width: 40px; opacity: 1; }
+    50% { width: 60px; opacity: 0.5; }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ========== PROBLEM SECTION ========== */
+  .section {
+    padding: 100px 60px;
+  }
+
+  .section-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    color: var(--moss);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-label::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--moss);
+  }
+
+  .section-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 300;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    margin-bottom: 16px;
+  }
+
+  .problem-bg {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 100px 60px;
+  }
+
+  .problem-bg .section-title { color: var(--paper); }
+  .problem-bg .section-label { color: var(--accent); }
+  .problem-bg .section-label::before { background: var(--accent); }
+
+  .pain-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2px;
+    margin-top: 60px;
+    max-width: 900px;
+  }
+
+  .pain-item {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 32px 28px;
+    transition: background 0.3s;
+  }
+
+  .pain-item:hover { background: rgba(255,255,255,0.08); }
+
+  .pain-icon {
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .pain-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: rgba(245,240,232,0.85);
+    font-weight: 300;
+  }
+
+  .pain-text strong {
+    color: var(--accent);
+    font-weight: 700;
+    display: block;
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+  }
+
+  /* ========== SOLUTION ========== */
+  .solution-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .solution-visual {
+    position: relative;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .solution-circle-outer {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: rotate 30s linear infinite;
+  }
+
+  .solution-circle-inner {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    border: 1px dashed var(--moss);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: rotate 20s linear infinite reverse;
+  }
+
+  .solution-core {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: var(--moss);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.1rem;
+    color: white;
+    letter-spacing: 0.1em;
+    text-align: center;
+    line-height: 1.6;
+    animation: rotate 20s linear infinite;
+  }
+
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .solution-core span { animation: rotate 20s linear infinite reverse; display: block; }
+
+  .solution-dot {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  .solution-dot:nth-child(1) { top: 20px; left: 50%; }
+  .solution-dot:nth-child(2) { bottom: 20px; right: 30%; }
+  .solution-dot:nth-child(3) { left: 10px; top: 50%; }
+
+  .solution-text .section-title { margin-bottom: 24px; }
+
+  .solution-lead {
+    font-size: 1.05rem;
+    line-height: 2;
+    color: var(--muted);
+    font-weight: 300;
+    margin-bottom: 40px;
+  }
+
+  .solution-points {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .solution-point {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .point-num {
+    width: 28px;
+    height: 28px;
+    border: 1px solid var(--moss);
+    color: var(--moss);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .point-text {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--ink);
+  }
+
+  .point-text strong { color: var(--moss); }
+
+  /* ========== SERVICES ========== */
+  .services-bg {
+    background: var(--paper-dark);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2px;
+    margin-top: 60px;
+    max-width: 1100px;
+  }
+
+  .service-card {
+    background: var(--warm-white);
+    padding: 44px 36px;
+    border-top: 3px solid transparent;
+    transition: border-color 0.3s, transform 0.3s;
+    cursor: default;
+  }
+
+  .service-card:hover {
+    border-color: var(--moss);
+    transform: translateY(-4px);
+  }
+
+  .service-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 3.5rem;
+    color: var(--paper-dark);
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+
+  .service-name {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--ink);
+  }
+
+  .service-desc {
+    font-size: 0.9rem;
+    line-height: 1.9;
+    color: var(--muted);
+    font-weight: 300;
+  }
+
+  .service-tag {
+    display: inline-block;
+    background: var(--moss);
+    color: white;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 3px 10px;
+    margin-top: 20px;
+  }
+
+  /* ========== PHILOSOPHY / STORY ========== */
+  .philosophy-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    max-width: 1000px;
+    margin: 0 auto;
+    align-items: start;
+  }
+
+  .philosophy-aside {
+    position: sticky;
+    top: 120px;
+  }
+
+  .philosophy-kanji {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 6rem;
+    font-weight: 700;
+    color: var(--paper-dark);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .philosophy-reading {
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+  }
+
+  .philosophy-body {
+    font-size: 1.05rem;
+    line-height: 2.2;
+    color: var(--ink);
+    font-weight: 300;
+  }
+
+  .philosophy-body p { margin-bottom: 28px; }
+
+  .philosophy-body em {
+    font-style: normal;
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 700;
+    color: var(--moss);
+    font-size: 1.15rem;
+    display: block;
+    margin: 32px 0;
+    padding-left: 20px;
+    border-left: 3px solid var(--moss);
+  }
+
+  /* ========== VOICES ========== */
+  .voices-bg {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .voices-bg .section-title { color: var(--paper); }
+  .voices-bg .section-label { color: var(--accent); }
+  .voices-bg .section-label::before { background: var(--accent); }
+
+  .voices-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2px;
+    margin-top: 60px;
+    max-width: 1100px;
+  }
+
+  .voice-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    padding: 40px 32px;
+  }
+
+  .voice-quote {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: var(--paper);
+    margin-bottom: 24px;
+    font-weight: 300;
+  }
+
+  .voice-quote::before {
+    content: '「';
+    color: var(--accent);
+    font-size: 1.5rem;
+    line-height: 0;
+    vertical-align: -0.3em;
+    margin-right: 4px;
+  }
+
+  .voice-quote::after {
+    content: '」';
+    color: var(--accent);
+    font-size: 1.5rem;
+    line-height: 0;
+    vertical-align: -0.3em;
+    margin-left: 4px;
+  }
+
+  .voice-meta {
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    color: rgba(245,240,232,0.5);
+  }
+
+  .voice-meta strong { color: var(--accent); }
+
+  /* ========== PRICING ========== */
+  .pricing-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2px;
+    margin-top: 60px;
+    max-width: 900px;
+  }
+
+  .price-card {
+    background: var(--paper-dark);
+    padding: 44px 36px;
+    border-bottom: 3px solid transparent;
+    transition: border-color 0.3s;
+  }
+
+  .price-card.featured {
+    background: var(--moss);
+    color: white;
+  }
+
+  .price-card:hover { border-color: var(--accent); }
+  .price-card.featured:hover { border-color: white; }
+
+  .price-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 20px;
+    opacity: 0.7;
+  }
+
+  .price-name {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .price-amount {
+    font-family: 'DM Serif Display', serif;
+    font-size: 3rem;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .price-unit { font-size: 0.85rem; opacity: 0.7; margin-bottom: 28px; }
+
+  .price-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .price-features li {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .price-features li::before {
+    content: '—';
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .price-card.featured .price-features li::before { color: rgba(255,255,255,0.6); }
+
+  /* ========== CTA ========== */
+  .cta-section {
+    background: linear-gradient(160deg, var(--paper) 0%, #e8f0e4 100%);
+    text-align: center;
+    padding: 120px 60px;
+  }
+
+  .cta-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    color: var(--moss);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .cta-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 300;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  .cta-sub {
+    font-size: 1rem;
+    color: var(--muted);
+    font-weight: 300;
+    margin-bottom: 56px;
+    line-height: 2;
+  }
+
+  .cta-free-note {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 20px 48px;
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    margin-bottom: 20px;
+    transition: background 0.3s;
+  }
+
+  .cta-free-note:hover { background: var(--moss); }
+
+  .cta-free-note span {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    padding: 3px 8px;
+    font-weight: 700;
+  }
+
+  .cta-note {
+    font-size: 0.8rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+
+  /* ========== FOOTER ========== */
+  footer {
+    background: var(--ink);
+    color: rgba(245,240,232,0.4);
+    padding: 40px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .footer-brand {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1rem;
+    color: var(--paper);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+  }
+
+  .footer-brand span { color: var(--moss-light); }
+
+  .footer-note { font-size: 0.75rem; letter-spacing: 0.08em; }
+
+  /* ========== DIVIDER ========== */
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 0 60px;
+  }
+
+  /* ========== REGION BADGE ========== */
+  .region-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(74,103,65,0.1);
+    border: 1px solid rgba(74,103,65,0.25);
+    color: var(--moss);
+    font-size: 0.78rem;
+    letter-spacing: 0.15em;
+    padding: 6px 16px;
+    margin-bottom: 32px;
+  }
+
+  .region-badge::before { content: '📍'; font-size: 0.9rem; }
+
+  /* ========== RESPONSIVE ========== */
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+
+    .hero { padding: 100px 24px 60px; }
+
+    .section { padding: 70px 24px; }
+
+    .problem-bg, .voices-bg { padding: 70px 24px; }
+
+    .solution-layout, .philosophy-layout {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .solution-visual { display: none; }
+
+    .philosophy-aside { position: static; }
+    .philosophy-kanji { font-size: 4rem; }
+
+    footer { padding: 32px 24px; flex-direction: column; align-items: flex-start; }
+
+    .cta-section { padding: 80px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">ととのえる<span>屋</span></div>
+  <a href="#contact" class="nav-cta">無料で相談する</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-circle"></div>
+  <div class="hero-content">
+    <div class="region-badge">長野県・小諸市発 地域密着型AIスクール</div>
+    <div class="hero-label">AI School by ととのえる屋</div>
+    <h1 class="hero-title">
+      「こんなの<em>できんな</em>」が、<br>
+      <strong>「できた」に変わる。</strong>
+    </h1>
+    <p class="hero-sub">
+      AIは難しくない。<br>
+      ただ、一人では形にならないだけ。<br>
+      あなたの「やりたい」に、わざわざ並走します。
+    </p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">
+        初回30分 無料相談<span class="hero-free-tag">FREE</span>
+      </a>
+      <a href="#services" class="btn-secondary">サービスを見る</a>
+    </div>
+  </div>
+  <div class="hero-scroll">SCROLL</div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem-bg">
+  <div class="section-label">Problem</div>
+  <h2 class="section-title" style="color:var(--paper); max-width:600px;">
+    「やってみたい」が<br>「やれなかった」になっていませんか？
+  </h2>
+  <div class="pain-grid">
+    <div class="pain-item">
+      <span class="pain-icon">🌀</span>
+      <div class="pain-text">
+        <strong>難しそうで始められない</strong>
+        ChatGPTとかAIって言葉は知ってるけど、何から手をつければいいのか分からない。
+      </div>
+    </div>
+    <div class="pain-item">
+      <span class="pain-icon">📦</span>
+      <div class="pain-text">
+        <strong>形にならない</strong>
+        動画で勉強しても、自分の仕事や生活に使えるところまで落とし込めない。
+      </div>
+    </div>
+    <div class="pain-item">
+      <span class="pain-icon">🔋</span>
+      <div class="pain-text">
+        <strong>一人では続かない</strong>
+        「あとでやろう」が積み重なって、結局また元の状態に戻っている。
+      </div>
+    </div>
+    <div class="pain-item">
+      <span class="pain-icon">🏔️</span>
+      <div class="pain-text">
+        <strong>地方だから機会が少ない</strong>
+        東京ならセミナーも多いけど、地元だと学べる場所がそもそもない。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section class="section">
+  <div class="solution-layout">
+    <div class="solution-visual">
+      <div class="solution-circle-outer">
+        <div class="solution-circle-inner">
+          <div class="solution-core">
+            <span>並走</span>
+          </div>
+        </div>
+      </div>
+      <div class="solution-dot"></div>
+      <div class="solution-dot"></div>
+      <div class="solution-dot"></div>
+    </div>
+    <div class="solution-text">
+      <div class="section-label">Solution</div>
+      <h2 class="section-title">答えを渡すより、<br>できるまで隣にいる。</h2>
+      <p class="solution-lead">
+        ととのえる屋は、AIの使い方を教えるスクールではありません。<br>
+        あなたが「できた」と言える瞬間まで、一緒に考え、手を動かし、並走するサービスです。
+      </p>
+      <div class="solution-points">
+        <div class="solution-point">
+          <div class="point-num">01</div>
+          <div class="point-text">
+            <strong>ニーズの先を見る</strong><br>
+            「AIを使いたい」の奥にある本当の課題から整理します。
+          </div>
+        </div>
+        <div class="solution-point">
+          <div class="point-num">02</div>
+          <div class="point-text">
+            <strong>形になるまでやめない</strong><br>
+            途中で詰まっても、「できた」が来るまでサポートを続けます。
+          </div>
+        </div>
+        <div class="solution-point">
+          <div class="point-num">03</div>
+          <div class="point-text">
+            <strong>地域のリソースをつなぐ</strong><br>
+            あなたのスキルが地域の誰かの役に立つ仕組みを一緒に考えます。
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="section services-bg">
+  <div class="section-label">Services</div>
+  <h2 class="section-title">できることの例</h2>
+  <p style="color:var(--muted); font-weight:300; margin-top:12px; max-width:500px; line-height:1.9;">
+    「こんなのできる？」と聞いてください。<br>まず一緒に試します。
+  </p>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-num">01</div>
+      <div class="service-name">AIニュースダッシュボード</div>
+      <div class="service-desc">
+        世界のAI最新情報をリアルタイムで日本語表示。地域の勉強会や社内共有に。あなたの関心に合わせてカスタマイズします。
+      </div>
+      <span class="service-tag">実績あり</span>
+    </div>
+    <div class="service-card">
+      <div class="service-num">02</div>
+      <div class="service-name">業務AI化・導入サポート</div>
+      <div class="service-desc">
+        日報・議事録・問い合わせ対応・スケジュール管理。「どこから手をつければいいか」から一緒に整理します。
+      </div>
+      <span class="service-tag">人気</span>
+    </div>
+    <div class="service-card">
+      <div class="service-num">03</div>
+      <div class="service-name">マイAIツール制作</div>
+      <div class="service-desc">
+        LINE Bot、自動返信、カスタムチャットbotなど。あなた専用の「仕組み」を、使えるまで一緒に作ります。
+      </div>
+      <span class="service-tag">オーダーメイド</span>
+    </div>
+    <div class="service-card">
+      <div class="service-num">04</div>
+      <div class="service-name">プロンプト設計レッスン</div>
+      <div class="service-desc">
+        AIへの「伝え方」を学ぶと、できることが10倍になります。あなたの仕事に合わせた言葉の設計を伝授します。
+      </div>
+      <span class="service-tag">初心者向け</span>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="section">
+  <div class="philosophy-layout">
+    <div class="philosophy-aside">
+      <div class="section-label">Philosophy</div>
+      <div class="philosophy-kanji">整</div>
+      <div class="philosophy-reading">totonoeru</div>
+    </div>
+    <div class="philosophy-body">
+      <p>
+        「わざわざ」という言葉が好きです。<br>
+        効率化の時代に、あえて手間をかけること。<br>
+        それがあなたへの敬意だと思っています。
+      </p>
+      <em>
+        ニーズの先に、本当の課題がある。
+      </em>
+      <p>
+        「AIを使いたい」と言葉にしてくれた人の多くは、<br>
+        本当は「もっと自分の時間が欲しい」とか<br>
+        「誰かに認められたい」とか<br>
+        そういうことを心の奥で思っています。
+      </p>
+      <p>
+        だから私は、表面の要望だけに答えません。<br>
+        その人の状況、仕事、暮らし、夢を聞いて、<br>
+        「本当に役立つもの」を一緒に考えます。
+      </p>
+      <p>
+        そして、できあがったものを見て<br>
+        「ありがとう」と言ってもらえる瞬間のために、<br>
+        わざわざ並走しています。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- VOICES -->
+<section class="voices-bg section">
+  <div class="section-label">Voices</div>
+  <h2 class="section-title">こんな人が変わりました</h2>
+  <div class="voices-grid">
+    <div class="voice-card">
+      <div class="voice-quote">
+        AIって難しいと思ってたけど、自分の仕事に合わせて考えてくれるから、気づいたら使えてた。
+      </div>
+      <div class="voice-meta">
+        <strong>40代・小売業</strong> ／ 在庫管理をAI化
+      </div>
+    </div>
+    <div class="voice-card">
+      <div class="voice-quote">
+        こんなのできんかな、って半信半疑で話したら、次の週には動くものができてて正直驚いた。
+      </div>
+      <div class="voice-meta">
+        <strong>30代・飲食店オーナー</strong> ／ 予約管理Bot制作
+      </div>
+    </div>
+    <div class="voice-card">
+      <div class="voice-quote">
+        一人でやろうとしたら絶対続かなかった。「できた！」の瞬間を一緒に喜んでくれるのが嬉しかった。
+      </div>
+      <div class="voice-meta">
+        <strong>20代・フリーランス</strong> ／ 提案書自動化
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section">
+  <div class="section-label">Pricing</div>
+  <h2 class="section-title">料金</h2>
+  <p style="color:var(--muted); font-weight:300; margin-top:12px; margin-bottom:0; line-height:1.9;">
+    まず話してみてください。初回は無料です。
+  </p>
+  <div class="pricing-layout">
+    <div class="price-card">
+      <div class="price-label">TRIAL</div>
+      <div class="price-name">初回体験</div>
+      <div class="price-amount">¥0</div>
+      <div class="price-unit">30分・オンライン or 対面</div>
+      <ul class="price-features">
+        <li>現状のヒアリング</li>
+        <li>AIで何ができるか整理</li>
+        <li>あなたに合った活用イメージ</li>
+      </ul>
+    </div>
+    <div class="price-card featured">
+      <div class="price-label">STANDARD</div>
+      <div class="price-name">並走レッスン</div>
+      <div class="price-amount">¥5,000〜</div>
+      <div class="price-unit">1回60〜90分</div>
+      <ul class="price-features">
+        <li>目標に合わせた個別設計</li>
+        <li>実際に手を動かしながら進める</li>
+        <li>セッション後もLINEでサポート</li>
+        <li>「できた」まで何度でも相談OK</li>
+      </ul>
+    </div>
+    <div class="price-card">
+      <div class="price-label">CUSTOM</div>
+      <div class="price-name">ツール制作・導入</div>
+      <div class="price-amount">要相談</div>
+      <div class="price-unit">プロジェクト単位</div>
+      <ul class="price-features">
+        <li>LINE Bot・チャットbot制作</li>
+        <li>業務フロー自動化設計</li>
+        <li>地域・企業向けAI研修</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contact" class="cta-section">
+  <div class="cta-label">まず、話してみてください</div>
+  <h2 class="cta-title">
+    「こんなの、できるかな？」<br>
+    その一言から始まります。
+  </h2>
+  <p class="cta-sub">
+    難しく考えなくていいです。<br>
+    やりたいこと、困っていること、なんでも聞かせてください。
+  </p>
+  <a href="https://lin.ee/" class="cta-free-note">
+    <span>FREE</span>
+    LINEで無料相談する（30分）
+  </a>
+  <br>
+  <div class="cta-note">お気軽にどうぞ。押し売りは一切しません。</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-brand">ととのえる<span>屋</span></div>
+    <div class="footer-note" style="margin-top:8px;">長野県小諸市 ／ AI業務改善コーチング</div>
+  </div>
+  <div class="footer-note">© 2026 ととのえる屋. All rights reserved.</div>
+</footer>
+
+<script>
+  // Intersection Observer for scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.pain-item, .service-card, .voice-card, .price-card, .solution-point').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+
+  // Stagger animation for grids
+  document.querySelectorAll('.pain-grid, .services-grid, .voices-grid, .pricing-layout').forEach(grid => {
+    Array.from(grid.children).forEach((child, i) => {
+      child.style.transitionDelay = `${i * 0.1}s`;
+    });
+  });
+</script>
+
+</body>
+</html>
