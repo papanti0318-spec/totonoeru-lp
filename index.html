@@ -468,7 +468,7 @@
 
   .services-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2px;
     margin-top: 60px;
     max-width: 1100px;
@@ -840,7 +840,7 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo"><img src="logo.jpg" alt="ととのえる屋" style="height:80px; width:auto;"></div>
+  <div class="nav-logo"><img src="logo.png" alt="ととのえる屋" style="height:32px; width:auto;"></div>
   <a href="#contact" class="nav-cta">無料で相談する</a>
 </nav>
 
@@ -996,23 +996,6 @@
         AIへの「伝え方」を学ぶと、できることが10倍になります。あなたの仕事に合わせた言葉の設計を伝授します。
       </div>
       <span class="service-tag">初心者向け</span>
-      </div>
-      <div class="service-card">
-      <div class="service-num">05</div>
-      <div class="service-name">請求書・経理業務の自動化</div>
-      <div class="service-desc">
-        freee APIと連携し、毎月の請求書作成・送付をLINEのやりとりだけで完結。スマホ1台で経理業務が回る仕組みを一緒に作ります。
-      </div>
-      <span class="service-tag">実績あり</span>
-    </div>
-    <div class="service-card">
-      <div class="service-num">06</div>
-      <div class="service-name">現場管理Webアプリ制作</div>
-      <div class="service-desc">
-        スタッフのシフト管理・タスク共有・報告をスマホで完結できるWebアプリを制作。清掃・施設管理など現場業務に特化した設計が得意です。
-      </div>
-      <span class="service-tag">オーダーメイド</span>
-    </div>
     </div>
   </div>
 </section>
@@ -1022,28 +1005,31 @@
   <div class="philosophy-layout">
     <div class="philosophy-aside">
       <div class="section-label">Philosophy</div>
-      <div class="philosophy-kanji">整</div>
-      <div class="philosophy-reading">totonoeru</div>
+      <div class="philosophy-kanji" style="font-size:3rem; color:var(--moss); line-height:1.4;">ととのえる屋</div>
+      <div class="philosophy-reading" style="margin-top:12px; line-height:2;">
+        身の回りを最適化し、<br>ゆとりある環境へ。
+      </div>
     </div>
     <div class="philosophy-body">
       <p>
-        「わざわざ」という言葉が好きです。<br>
-        効率化の時代に、あえて手間をかけること。<br>
-        それがあなたへの敬意だと思っています。
+        サウナで「ととのう」という言葉があります。<br>
+        熱さと冷たさを繰り返した先に訪れる、<br>
+        あの澄んだ感覚。
       </p>
       <em>
-        ニーズの先に、本当の課題がある。
+        私の「ととのえる」は、身の回りを最適化し、<br>ゆとりある環境をつくることです。
       </em>
       <p>
-        「AIを使いたい」と言葉にしてくれた人の多くは、<br>
-        本当は「もっと自分の時間が欲しい」とか<br>
-        「誰かに認められたい」とか<br>
-        そういうことを心の奥で思っています。
+        仕事の仕組み、道具の使い方、時間の流れ。<br>
+        そういうものをひとつひとつ見直して、<br>
+        「なんか楽になった」という状態に持っていく。<br>
+        それがととのえる屋のやりたいことです。
       </p>
       <p>
-        だから私は、表面の要望だけに答えません。<br>
-        その人の状況、仕事、暮らし、夢を聞いて、<br>
-        「本当に役立つもの」を一緒に考えます。
+        だから「わざわざ」なのです。<br>
+        効率化の時代に、あえてあなたの話を聞きに行く。<br>
+        あなたの状況、仕事、暮らしを理解してから、<br>
+        はじめて「本当に役立つもの」が見えてくる。
       </p>
       <p>
         そして、できあがったものを見て<br>
@@ -1142,13 +1128,13 @@
     難しく考えなくていいです。<br>
     やりたいこと、困っていること、なんでも聞かせてください。
   </p>
-  <a href="mailto:totonoeru.ya@gmail.com" class="cta-free-note">
+  <a href="/cdn-cgi/l/email-protection#89fde6fde6e7e6ecfbfca7f0e8c9eee4e8e0e5a7eae6e4" class="cta-free-note">
     <span>FREE</span>
     メールで無料相談する（30分）
   </a>
   <br>
   <div class="cta-note" style="margin-top:16px; font-size:0.95rem; color:var(--moss); letter-spacing:0.05em;">
-    📩 totonoeru.ya@gmail.com
+    📩 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="74001b001b1a1b1106015a0d15341319151d185a171b19">[email&#160;protected]</a>
   </div>
   <div class="cta-note" style="margin-top:8px;">お気軽にどうぞ。押し売りは一切しません。</div>
 </section>
@@ -1162,7 +1148,7 @@
   <div class="footer-note">© 2026 ととのえる屋. All rights reserved.</div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Intersection Observer for scroll animations
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -1180,13 +1166,4 @@
     observer.observe(el);
   });
 
-  // Stagger animation for grids
-  document.querySelectorAll('.pain-grid, .services-grid, .voices-grid, .pricing-layout').forEach(grid => {
-    Array.from(grid.children).forEach((child, i) => {
-      child.style.transitionDelay = `${i * 0.1}s`;
-    });
-  });
-</script>
-
-</body>
-</html>
+  // Sta
