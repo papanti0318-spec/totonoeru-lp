@@ -3,864 +3,615 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ととのえる屋 AI スクール｜あなたの「できた」に並走します</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700&family=Zen+Kaku+Gothic+New:wght@300;400;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<title>ととのえる屋｜わざわざ並走するAIコーチング</title>
+<meta name="description" content="「こんなのできんな」が「できた」に変わる。長野県・小諸市発。AIで業務を整えるまで、わざわざ並走します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
-  :root {
-    --ink: #1a1612;
-    --paper: #f5f0e8;
-    --paper-dark: #ede7d9;
-    --moss: #4a6741;
-    --moss-light: #6a8f60;
-    --accent: #c8a96e;
-    --warm-white: #faf7f2;
-    --muted: #7a726a;
-    --border: #d4cdc3;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'Zen Kaku Gothic New', sans-serif;
-    background: var(--warm-white);
-    color: var(--ink);
-    overflow-x: hidden;
-  }
-
-  /* ========== NOISE TEXTURE ========== */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 1000;
-    opacity: 0.4;
-  }
-
-  /* ========== NAV ========== */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    padding: 20px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(245, 240, 232, 0.85);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-  }
-
-  .nav-logo {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 1.1rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    color: var(--ink);
-  }
-
-  .nav-logo span { color: var(--moss); }
-
-  .nav-cta {
-    background: var(--moss);
-    color: white;
-    border: none;
-    padding: 10px 24px;
-    font-family: 'Zen Kaku Gothic New', sans-serif;
-    font-size: 0.85rem;
-    letter-spacing: 0.08em;
-    cursor: pointer;
-    transition: background 0.3s;
-    text-decoration: none;
-  }
-
-  .nav-cta:hover { background: var(--moss-light); }
-
-  /* ========== HERO ========== */
-  .hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 120px 60px 80px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, var(--paper) 0%, var(--warm-white) 60%, #e8f0e4 100%);
-  }
-
-  .hero-circle {
-    position: absolute;
-    width: 600px;
-    height: 600px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(74,103,65,0.08) 0%, transparent 70%);
-    top: -100px;
-    right: -100px;
-    animation: breathe 8s ease-in-out infinite;
-  }
-
-  @keyframes breathe {
-    0%, 100% { transform: scale(1); opacity: 0.7; }
-    50% { transform: scale(1.1); opacity: 1; }
-  }
-
-  .hero-content {
-    position: relative;
-    max-width: 800px;
-  }
-
-  .hero-label {
-    font-size: 0.8rem;
-    letter-spacing: 0.25em;
-    color: var(--moss);
-    text-transform: uppercase;
-    margin-bottom: 32px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards 0.2s;
-  }
-
-  .hero-label::before {
-    content: '';
-    width: 32px;
-    height: 1px;
-    background: var(--moss);
-  }
-
-  .hero-title {
-    font-family: 'Noto Serif JP', serif;
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    font-weight: 300;
-    line-height: 1.4;
-    letter-spacing: 0.05em;
-    color: var(--ink);
-    margin-bottom: 40px;
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards 0.4s;
-  }
-
-  .hero-title strong {
-    font-weight: 700;
-    color: var(--moss);
-    display: block;
-  }
-
-  .hero-title em {
-    font-style: normal;
-    border-bottom: 2px solid var(--accent);
-    padding-bottom: 2px;
-  }
-
-  .hero-sub {
-    font-size: 1.05rem;
-    line-height: 2;
-    color: var(--muted);
-    max-width: 520px;
-    margin-bottom: 56px;
-    font-weight: 300;
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards 0.6s;
-  }
-
-  .hero-actions {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    flex-wrap: wrap;
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards 0.8s;
-  }
-
-  .btn-primary {
-    background: var(--moss);
-    color: white;
-    padding: 18px 44px;
-    font-family: 'Zen Kaku Gothic New', sans-serif;
-    font-size: 0.95rem;
-    letter-spacing: 0.1em;
-    text-decoration: none;
-    transition: all 0.3s;
-    display: inline-block;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .btn-primary::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: white;
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-
-  .btn-primary:hover { background: var(--moss-light); transform: translateY(-2px); }
-
-  .btn-secondary {
-    color: var(--ink);
-    font-size: 0.9rem;
-    letter-spacing: 0.08em;
-    text-decoration: none;
-    border-bottom: 1px solid var(--ink);
-    padding-bottom: 2px;
-    transition: color 0.3s, border-color 0.3s;
-  }
-
-  .btn-secondary:hover { color: var(--moss); border-color: var(--moss); }
-
-  .hero-free-tag {
-    display: inline-block;
-    background: var(--accent);
-    color: white;
-    font-size: 0.72rem;
-    letter-spacing: 0.15em;
-    padding: 4px 10px;
-    vertical-align: super;
-    margin-left: 4px;
-  }
-
-  .hero-scroll {
-    position: absolute;
-    bottom: 40px;
-    left: 60px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 0.75rem;
-    letter-spacing: 0.2em;
-    color: var(--muted);
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards 1.2s;
-  }
-
-  .hero-scroll::after {
-    content: '';
-    width: 40px;
-    height: 1px;
-    background: var(--muted);
-    animation: scrollLine 2s ease-in-out infinite;
-  }
-
-  @keyframes scrollLine {
-    0%, 100% { width: 40px; opacity: 1; }
-    50% { width: 60px; opacity: 0.5; }
-  }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  /* ========== PROBLEM SECTION ========== */
-  .section {
-    padding: 100px 60px;
-  }
-
-  .section-label {
-    font-size: 0.75rem;
-    letter-spacing: 0.3em;
-    color: var(--moss);
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .section-label::before {
-    content: '';
-    width: 24px;
-    height: 1px;
-    background: var(--moss);
-  }
-
-  .section-title {
-    font-family: 'Noto Serif JP', serif;
-    font-size: clamp(1.8rem, 4vw, 3rem);
-    font-weight: 300;
-    line-height: 1.5;
-    letter-spacing: 0.04em;
-    margin-bottom: 16px;
-  }
-
-  .problem-bg {
-    background: var(--ink);
-    color: var(--paper);
-    padding: 100px 60px;
-  }
-
-  .problem-bg .section-title { color: var(--paper); }
-  .problem-bg .section-label { color: var(--accent); }
-  .problem-bg .section-label::before { background: var(--accent); }
-
-  .pain-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 2px;
-    margin-top: 60px;
-    max-width: 900px;
-  }
-
-  .pain-item {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-    padding: 32px 28px;
-    transition: background 0.3s;
-  }
-
-  .pain-item:hover { background: rgba(255,255,255,0.08); }
-
-  .pain-icon {
-    font-size: 1.8rem;
-    margin-bottom: 16px;
-    display: block;
-  }
-
-  .pain-text {
-    font-size: 1.05rem;
-    line-height: 1.8;
-    color: rgba(245,240,232,0.85);
-    font-weight: 300;
-  }
-
-  .pain-text strong {
-    color: var(--accent);
-    font-weight: 700;
-    display: block;
-    font-size: 1.15rem;
-    margin-bottom: 8px;
-  }
-
-  /* ========== SOLUTION ========== */
-  .solution-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  .solution-visual {
-    position: relative;
-    aspect-ratio: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .solution-circle-outer {
-    width: 320px;
-    height: 320px;
-    border-radius: 50%;
-    border: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    animation: rotate 30s linear infinite;
-  }
-
-  .solution-circle-inner {
-    width: 240px;
-    height: 240px;
-    border-radius: 50%;
-    border: 1px dashed var(--moss);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    animation: rotate 20s linear infinite reverse;
-  }
-
-  .solution-core {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    background: var(--moss);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Noto Serif JP', serif;
-    font-size: 1.1rem;
-    color: white;
-    letter-spacing: 0.1em;
-    text-align: center;
-    line-height: 1.6;
-    animation: rotate 20s linear infinite;
-  }
-
-  @keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
-
-  .solution-core span { animation: rotate 20s linear infinite reverse; display: block; }
-
-  .solution-dot {
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--accent);
-  }
-
-  .solution-dot:nth-child(1) { top: 20px; left: 50%; }
-  .solution-dot:nth-child(2) { bottom: 20px; right: 30%; }
-  .solution-dot:nth-child(3) { left: 10px; top: 50%; }
-
-  .solution-text .section-title { margin-bottom: 24px; }
-
-  .solution-lead {
-    font-size: 1.05rem;
-    line-height: 2;
-    color: var(--muted);
-    font-weight: 300;
-    margin-bottom: 40px;
-  }
-
-  .solution-points {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .solution-point {
-    display: flex;
-    gap: 16px;
-    align-items: flex-start;
-  }
-
-  .point-num {
-    width: 28px;
-    height: 28px;
-    border: 1px solid var(--moss);
-    color: var(--moss);
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
-
-  .point-text {
-    font-size: 0.95rem;
-    line-height: 1.8;
-    color: var(--ink);
-  }
-
-  .point-text strong { color: var(--moss); }
-
-  /* ========== SERVICES ========== */
-  .services-bg {
-    background: var(--paper-dark);
-  }
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2px;
-    margin-top: 60px;
-    max-width: 1100px;
-  }
-
-  .service-card {
-    background: var(--warm-white);
-    padding: 44px 36px;
-    border-top: 3px solid transparent;
-    transition: border-color 0.3s, transform 0.3s;
-    cursor: default;
-  }
-
-  .service-card:hover {
-    border-color: var(--moss);
-    transform: translateY(-4px);
-  }
-
-  .service-num {
-    font-family: 'DM Serif Display', serif;
-    font-size: 3.5rem;
-    color: var(--paper-dark);
-    line-height: 1;
-    margin-bottom: 20px;
-  }
-
-  .service-name {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-bottom: 12px;
-    color: var(--ink);
-  }
-
-  .service-desc {
-    font-size: 0.9rem;
-    line-height: 1.9;
-    color: var(--muted);
-    font-weight: 300;
-  }
-
-  .service-tag {
-    display: inline-block;
-    background: var(--moss);
-    color: white;
-    font-size: 0.7rem;
-    letter-spacing: 0.12em;
-    padding: 3px 10px;
-    margin-top: 20px;
-  }
-
-  /* ========== PHILOSOPHY / STORY ========== */
-  .philosophy-layout {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 80px;
-    max-width: 1000px;
-    margin: 0 auto;
-    align-items: start;
-  }
-
-  .philosophy-aside {
-    position: sticky;
-    top: 120px;
-  }
-
-  .philosophy-kanji {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 6rem;
-    font-weight: 700;
-    color: var(--paper-dark);
-    line-height: 1;
-    margin-bottom: 8px;
-  }
-
-  .philosophy-reading {
-    font-size: 0.8rem;
-    letter-spacing: 0.2em;
-    color: var(--muted);
-  }
-
-  .philosophy-body {
-    font-size: 1.05rem;
-    line-height: 2.2;
-    color: var(--ink);
-    font-weight: 300;
-  }
-
-  .philosophy-body p { margin-bottom: 28px; }
-
-  .philosophy-body em {
-    font-style: normal;
-    font-family: 'Noto Serif JP', serif;
-    font-weight: 700;
-    color: var(--moss);
-    font-size: 1.15rem;
-    display: block;
-    margin: 32px 0;
-    padding-left: 20px;
-    border-left: 3px solid var(--moss);
-  }
-
-  /* ========== VOICES ========== */
-  .voices-bg {
-    background: var(--ink);
-    color: var(--paper);
-  }
-
-  .voices-bg .section-title { color: var(--paper); }
-  .voices-bg .section-label { color: var(--accent); }
-  .voices-bg .section-label::before { background: var(--accent); }
-
-  .voices-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2px;
-    margin-top: 60px;
-    max-width: 1100px;
-  }
-
-  .voice-card {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.07);
-    padding: 40px 32px;
-  }
-
-  .voice-quote {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 1.15rem;
-    line-height: 1.9;
-    color: var(--paper);
-    margin-bottom: 24px;
-    font-weight: 300;
-  }
-
-  .voice-quote::before {
-    content: '「';
-    color: var(--accent);
-    font-size: 1.5rem;
-    line-height: 0;
-    vertical-align: -0.3em;
-    margin-right: 4px;
-  }
-
-  .voice-quote::after {
-    content: '」';
-    color: var(--accent);
-    font-size: 1.5rem;
-    line-height: 0;
-    vertical-align: -0.3em;
-    margin-left: 4px;
-  }
-
-  .voice-meta {
-    font-size: 0.8rem;
-    letter-spacing: 0.12em;
-    color: rgba(245,240,232,0.5);
-  }
-
-  .voice-meta strong { color: var(--accent); }
-
-  /* ========== PRICING ========== */
-  .pricing-layout {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2px;
-    margin-top: 60px;
-    max-width: 900px;
-  }
-
-  .price-card {
-    background: var(--paper-dark);
-    padding: 44px 36px;
-    border-bottom: 3px solid transparent;
-    transition: border-color 0.3s;
-  }
-
-  .price-card.featured {
-    background: var(--moss);
-    color: white;
-  }
-
-  .price-card:hover { border-color: var(--accent); }
-  .price-card.featured:hover { border-color: white; }
-
-  .price-label {
-    font-size: 0.75rem;
-    letter-spacing: 0.2em;
-    margin-bottom: 20px;
-    opacity: 0.7;
-  }
-
-  .price-name {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    margin-bottom: 8px;
-  }
-
-  .price-amount {
-    font-family: 'DM Serif Display', serif;
-    font-size: 3rem;
-    line-height: 1;
-    margin-bottom: 4px;
-  }
-
-  .price-unit { font-size: 0.85rem; opacity: 0.7; margin-bottom: 28px; }
-
-  .price-features {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .price-features li {
-    font-size: 0.9rem;
-    line-height: 1.6;
-    display: flex;
-    gap: 10px;
-    align-items: flex-start;
-  }
-
-  .price-features li::before {
-    content: '—';
-    color: var(--accent);
-    flex-shrink: 0;
-  }
-
-  .price-card.featured .price-features li::before { color: rgba(255,255,255,0.6); }
-
-  /* ========== CTA ========== */
-  .cta-section {
-    background: linear-gradient(160deg, var(--paper) 0%, #e8f0e4 100%);
-    text-align: center;
-    padding: 120px 60px;
-  }
-
-  .cta-label {
-    font-size: 0.75rem;
-    letter-spacing: 0.3em;
-    color: var(--moss);
-    text-transform: uppercase;
-    margin-bottom: 20px;
-  }
-
-  .cta-title {
-    font-family: 'Noto Serif JP', serif;
-    font-size: clamp(2rem, 4vw, 3.5rem);
-    font-weight: 300;
-    line-height: 1.5;
-    margin-bottom: 20px;
-  }
-
-  .cta-sub {
-    font-size: 1rem;
-    color: var(--muted);
-    font-weight: 300;
-    margin-bottom: 56px;
-    line-height: 2;
-  }
-
-  .cta-free-note {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    background: var(--ink);
-    color: var(--paper);
-    padding: 20px 48px;
-    font-size: 1.1rem;
-    letter-spacing: 0.08em;
-    text-decoration: none;
-    margin-bottom: 20px;
-    transition: background 0.3s;
-  }
-
-  .cta-free-note:hover { background: var(--moss); }
-
-  .cta-free-note span {
-    display: inline-block;
-    background: var(--accent);
-    color: white;
-    font-size: 0.7rem;
-    letter-spacing: 0.15em;
-    padding: 3px 8px;
-    font-weight: 700;
-  }
-
-  .cta-note {
-    font-size: 0.8rem;
-    color: var(--muted);
-    letter-spacing: 0.05em;
-  }
-
-  /* ========== FOOTER ========== */
-  footer {
-    background: var(--ink);
-    color: rgba(245,240,232,0.4);
-    padding: 40px 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-
-  .footer-brand {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 1rem;
-    color: var(--paper);
-    font-weight: 700;
-    letter-spacing: 0.12em;
-  }
-
-  .footer-brand span { color: var(--moss-light); }
-
-  .footer-note { font-size: 0.75rem; letter-spacing: 0.08em; }
-
-  /* ========== DIVIDER ========== */
-  .divider {
-    height: 1px;
-    background: var(--border);
-    margin: 0 60px;
-  }
-
-  /* ========== REGION BADGE ========== */
-  .region-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(74,103,65,0.1);
-    border: 1px solid rgba(74,103,65,0.25);
-    color: var(--moss);
-    font-size: 0.78rem;
-    letter-spacing: 0.15em;
-    padding: 6px 16px;
-    margin-bottom: 32px;
-  }
-
-  .region-badge::before { content: '📍'; font-size: 0.9rem; }
-
-  /* ========== RESPONSIVE ========== */
-  @media (max-width: 768px) {
-    nav { padding: 16px 24px; }
-
-    .hero { padding: 100px 24px 60px; }
-
-    .section { padding: 70px 24px; }
-
-    .problem-bg, .voices-bg { padding: 70px 24px; }
-
-    .solution-layout, .philosophy-layout {
-      grid-template-columns: 1fr;
-      gap: 40px;
-    }
-
-    .solution-visual { display: none; }
-
-    .philosophy-aside { position: static; }
-    .philosophy-kanji { font-size: 4rem; }
-
-    footer { padding: 32px 24px; flex-direction: column; align-items: flex-start; }
-
-    .cta-section { padding: 80px 24px; }
-  }
+:root {
+  --bg:        #F8F5EF;
+  --bg-warm:   #F0EBE1;
+  --text:      #1C1A17;
+  --text-mid:  #5A5349;
+  --text-soft: #8C8278;
+  --green:     #2B4A1A;
+  --green-mid: #3D6626;
+  --green-lt:  #EBF0E6;
+  --amber:     #B8823A;
+  --amber-lt:  #F5EDD9;
+  --line:      #00B900;
+  --border:    rgba(44,37,28,0.12);
+  --radius:    4px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 300;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── UTILITIES ─── */
+.serif { font-family: 'Noto Serif JP', serif; }
+.cormorant { font-family: 'Cormorant Garamond', serif; }
+.container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+.container--wide { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+.tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .12em;
+  padding: 4px 12px;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  color: var(--text-mid);
+  text-transform: uppercase;
+}
+.tag--green { background: var(--green-lt); border-color: var(--green-mid); color: var(--green-mid); }
+.tag--amber { background: var(--amber-lt); border-color: var(--amber); color: var(--amber); }
+
+section { padding: 100px 0; }
+@media(max-width:640px){ section { padding: 72px 0; } }
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(24px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity:0; }
+  to   { opacity:1; }
+}
+@keyframes lineGrow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+.anim { opacity: 1; } /* JSが有効なら上書きされる */
+.anim.will-animate { opacity: 0; }
+.anim.visible { animation: fadeUp .7s cubic-bezier(.22,1,.36,1) forwards; }
+.anim-delay-1 { animation-delay: .1s !important; }
+.anim-delay-2 { animation-delay: .2s !important; }
+.anim-delay-3 { animation-delay: .3s !important; }
+.anim-delay-4 { animation-delay: .4s !important; }
+
+/* ─── NAVIGATION ─── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 18px 32px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(248,245,239,.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 15px; font-weight: 600;
+  color: var(--green);
+  text-decoration: none;
+  letter-spacing: .04em;
+}
+.nav-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--green);
+  color: #fff;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .08em;
+  padding: 10px 20px;
+  border-radius: var(--radius);
+  transition: background .2s;
+}
+.nav-cta:hover { background: var(--green-mid); }
+
+/* ─── HERO ─── */
+#hero {
+  min-height: 100svh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 0;
+  padding-top: 72px;
+  gap: 0;
+  overflow: hidden;
+}
+.hero-text {
+  padding: 80px 56px 80px 48px;
+  animation: fadeUp .9s cubic-bezier(.22,1,.36,1) forwards;
+}
+.hero-eyebrow {
+  font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--text-soft); margin-bottom: 32px;
+}
+.hero-eyebrow span {
+  display: inline-block;
+  width: 24px; height: 1px;
+  background: var(--text-soft);
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.hero-headline {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: -.01em;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+.hero-headline em {
+  font-style: normal;
+  color: var(--amber);
+  position: relative;
+  display: inline-block;
+}
+.hero-headline em::after {
+  content: '';
+  position: absolute; left:0; bottom:-2px; right:0; height:2px;
+  background: var(--amber);
+  transform-origin: left;
+  animation: lineGrow .6s .9s cubic-bezier(.22,1,.36,1) forwards;
+  transform: scaleX(0);
+}
+.hero-sub {
+  font-size: 15px; color: var(--text-mid);
+  line-height: 2; margin-bottom: 48px;
+}
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 28px;
+  border-radius: var(--radius);
+  font-size: 14px; font-weight: 500;
+  text-decoration: none;
+  transition: all .2s;
+  letter-spacing: .02em;
+}
+.btn--primary {
+  background: var(--green);
+  color: #fff;
+}
+.btn--primary:hover { background: var(--green-mid); transform: translateY(-1px); }
+.btn--line {
+  background: var(--line);
+  color: #fff;
+}
+.btn--line:hover { opacity: .85; transform: translateY(-1px); }
+.btn--ghost {
+  border: 1px solid var(--border);
+  color: var(--text-mid);
+  background: transparent;
+}
+.btn--ghost:hover { border-color: var(--green); color: var(--green); }
+
+.hero-image {
+  height: 100svh;
+  position: relative;
+  overflow: hidden;
+  background: var(--text);
+}
+.hero-image img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: .55;
+  filter: sepia(.3);
+}
+.hero-image-caption {
+  position: absolute; bottom: 40px; left: 32px; right: 32px;
+  color: rgba(255,255,255,.7);
+  font-size: 12px; letter-spacing: .1em;
+}
+.hero-image-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px; font-style: italic;
+  color: #fff; display: block; margin-top: 4px;
+}
+
+@media(max-width:800px){
+  #hero {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+  .hero-image {
+    height: 52vw; min-height: 240px;
+    order: -1;
+  }
+  .hero-text { padding: 48px 24px; }
+}
+
+/* ─── SECTION HEADER ─── */
+.sec-header { margin-bottom: 64px; }
+.sec-header .tag { margin-bottom: 20px; }
+.sec-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: -.01em;
+}
+.sec-sub {
+  margin-top: 16px;
+  font-size: 15px; color: var(--text-mid); line-height: 2;
+}
+
+/* ─── WHO ─── */
+#who { background: var(--bg-warm); }
+.who-grid {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.who-photo {
+  position: relative;
+}
+.who-photo img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 2px;
+  filter: sepia(.15);
+}
+.who-photo-label {
+  position: absolute; bottom: -16px; right: -16px;
+  background: var(--amber);
+  color: #fff;
+  font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
+  padding: 8px 16px;
+}
+.who-body {}
+.who-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem; font-style: italic;
+  color: var(--green);
+  margin-bottom: 4px;
+}
+.who-name-ja {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 13px; color: var(--text-soft);
+  margin-bottom: 32px;
+}
+.who-bio {
+  font-size: 15px; color: var(--text-mid);
+  line-height: 2.1;
+  margin-bottom: 32px;
+}
+.who-bio strong { color: var(--text); font-weight: 500; }
+.who-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
+.who-tag {
+  font-size: 12px;
+  padding: 5px 14px;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  color: var(--text-mid);
+}
+.who-quote {
+  border-left: 3px solid var(--amber);
+  padding: 16px 20px;
+  background: var(--amber-lt);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+.who-quote p {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 14px; line-height: 2;
+  color: var(--text);
+}
+
+@media(max-width:720px){
+  .who-grid { grid-template-columns: 1fr; gap: 40px; }
+  .who-photo { max-width: 260px; }
+}
+
+/* ─── PROBLEM ─── */
+#problem {}
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.problem-card {
+  background: var(--bg);
+  padding: 36px 32px;
+}
+.problem-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem; font-style: italic;
+  color: var(--bg-warm);
+  line-height: 1;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+.problem-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 15px; font-weight: 600;
+  margin-bottom: 10px;
+}
+.problem-body { font-size: 13px; color: var(--text-mid); line-height: 1.9; }
+
+@media(max-width:600px){
+  .problem-grid { grid-template-columns: 1fr; }
+}
+
+/* ─── PROOF ─── */
+#proof { background: var(--text); color: #fff; }
+#proof .sec-header .sec-title { color: #fff; }
+#proof .sec-header .sec-sub { color: rgba(255,255,255,.55); }
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.proof-card {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 2px;
+  overflow: hidden;
+  transition: background .2s, transform .2s;
+}
+.proof-card:hover { background: rgba(255,255,255,.09); transform: translateY(-3px); }
+.proof-mockup {
+  width: 100%;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.proof-mockup svg { display: block; width: 100%; height: auto; }
+.proof-foot { padding: 22px 22px 26px; }
+.proof-badge {
+  display: inline-block;
+  font-size: 10px; letter-spacing: .1em; text-transform: uppercase;
+  padding: 3px 10px;
+  background: var(--amber);
+  color: #fff;
+  border-radius: 2px;
+  margin-bottom: 12px;
+}
+.proof-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 15px; font-weight: 600;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.proof-body { font-size: 12px; color: rgba(255,255,255,.5); line-height: 1.9; }
+
+@media(max-width:720px){
+  .proof-grid { grid-template-columns: 1fr; gap: 16px; }
+}
+
+/* ─── HOW ─── */
+#how { background: var(--bg-warm); }
+.how-steps { display: flex; flex-direction: column; gap: 0; }
+.how-step {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 0;
+  padding: 36px 0;
+  border-bottom: 1px solid var(--border);
+  align-items: start;
+}
+.how-step:last-child { border-bottom: none; }
+.how-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.5rem;
+  font-style: italic;
+  color: var(--green-lt);
+  line-height: 1;
+  font-weight: 600;
+  padding-top: 4px;
+}
+.how-num-inner { color: var(--green); }
+.how-content {}
+.how-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 17px; font-weight: 600;
+  margin-bottom: 8px;
+}
+.how-body { font-size: 14px; color: var(--text-mid); line-height: 2; }
+
+/* ─── SERVICES ─── */
+#services {}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.svc-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 36px 28px;
+  background: var(--bg);
+  transition: box-shadow .2s, transform .2s;
+}
+.svc-card:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,.06);
+  transform: translateY(-2px);
+}
+.svc-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem; font-style: italic;
+  color: var(--text-soft);
+  margin-bottom: 20px;
+}
+.svc-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 16px; font-weight: 600;
+  margin-bottom: 12px;
+}
+.svc-body { font-size: 13px; color: var(--text-mid); line-height: 2; margin-bottom: 20px; }
+.svc-tag { }
+
+@media(max-width:720px){
+  .services-grid { grid-template-columns: 1fr; }
+}
+
+/* ─── PHILOSOPHY ─── */
+#philosophy {
+  background: var(--green);
+  color: #fff;
+  padding: 120px 0;
+}
+.philosophy-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+.philosophy-lead {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-style: italic;
+  line-height: 1.4;
+  margin-bottom: 40px;
+  color: rgba(255,255,255,.95);
+}
+.philosophy-body {
+  font-size: 15px;
+  line-height: 2.2;
+  color: rgba(255,255,255,.65);
+  margin-bottom: 48px;
+}
+.philosophy-body strong {
+  color: rgba(255,255,255,.9);
+  font-weight: 500;
+}
+.philosophy-sig {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.4rem;
+  color: var(--amber);
+}
+
+/* ─── PRICING ─── */
+#pricing { background: var(--bg-warm); }
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+.price-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 40px 32px;
+}
+.price-card--featured {
+  background: var(--green);
+  border-color: var(--green);
+  color: #fff;
+}
+.price-card--featured .price-label,
+.price-card--featured .price-note,
+.price-card--featured .price-list li { color: rgba(255,255,255,.65); }
+.price-card--featured .price-title,
+.price-card--featured .price-amount { color: #fff; }
+.price-card--featured .price-list li::before { color: rgba(255,255,255,.4); }
+
+.price-label {
+  font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--text-soft); margin-bottom: 20px;
+}
+.price-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 18px; font-weight: 600;
+  margin-bottom: 8px;
+}
+.price-amount {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem; font-weight: 600;
+  line-height: 1; margin-bottom: 4px;
+}
+.price-amount sup { font-size: 1.2rem; }
+.price-amount span { font-size: 1rem; font-family: 'Noto Sans JP', sans-serif; font-weight: 300; }
+.price-note { font-size: 12px; color: var(--text-soft); margin-bottom: 28px; }
+.price-divider { height: 1px; background: var(--border); margin-bottom: 24px; }
+.price-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.price-list li { font-size: 13px; color: var(--text-mid); display: flex; align-items: flex-start; gap: 10px; }
+.price-list li::before { content: '–'; color: var(--text-soft); flex-shrink: 0; margin-top: 1px; }
+
+@media(max-width:720px){
+  .pricing-grid { grid-template-columns: 1fr; }
+}
+
+/* ─── CTA ─── */
+#cta { padding: 120px 0; }
+.cta-inner {
+  max-width: 640px; margin: 0 auto; text-align: center;
+}
+.cta-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 600; line-height: 1.6;
+  margin-bottom: 20px;
+}
+.cta-body {
+  font-size: 15px; color: var(--text-mid);
+  line-height: 2; margin-bottom: 48px;
+}
+.cta-actions {
+  display: flex; flex-wrap: wrap;
+  gap: 16px; justify-content: center;
+  margin-bottom: 32px;
+}
+.cta-meta {
+  font-size: 12px; color: var(--text-soft);
+  line-height: 2;
+}
+
+/* ─── FOOTER ─── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 40px 0;
+}
+.footer-inner {
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+}
+.footer-logo {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 14px; font-weight: 600; color: var(--green);
+}
+.footer-copy { font-size: 12px; color: var(--text-soft); }
+
+/* ─── SCROLL INDICATOR ─── */
+.scroll-line {
+  width: 1px; height: 60px;
+  background: linear-gradient(to bottom, var(--text-soft), transparent);
+  margin: 0 auto;
+  animation: fadeIn 1s 1.2s both;
+}
 </style>
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "w4r8top499");
-</script>
 </head>
+
 <body>
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo"><img src="logo.png" alt="ととのえる屋" style="height:32px; width:auto;"></div>
-  <a href="#contact" class="nav-cta">無料で相談する</a>
+  <a href="#" class="nav-logo">ととのえる屋</a>
+  <a href="#cta" class="nav-cta">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    無料相談する
+  </a>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-circle"></div>
-  <div class="hero-content">
-    <div class="region-badge">長野県・小諸市発 地域密着型AIスクール</div>
-    <div class="hero-label">AI School by ととのえる屋</div>
-    <h1 class="hero-title">
-      「こんなの<em>できんな</em>」が、<br>
-      <strong>「できた」に変わる。</strong>
+<section id="hero">
+  <div class="hero-text">
+    <p class="hero-eyebrow"><span></span>AI Coaching · Nagano, Japan</p>
+    <h1 class="hero-headline serif">
+      「こんなの<em>できんな</em>」が、<br>「できた」に変わる。
     </h1>
     <p class="hero-sub">
       AIは難しくない。<br>
@@ -868,96 +619,327 @@
       あなたの「やりたい」に、わざわざ並走します。
     </p>
     <div class="hero-actions">
-      <a href="#contact" class="btn-primary">
-        初回30分 無料相談<span class="hero-free-tag">FREE</span>
+      <a href="#cta" class="btn btn--line">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        LINEで無料相談
       </a>
-      <a href="#services" class="btn-secondary">サービスを見る</a>
+      <a href="mailto:totonoeru.ya@gmail.com" class="btn btn--primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        メールで相談する
+      </a>
+    </div>
+    <div style="margin-top:48px;">
+      <div class="scroll-line"></div>
     </div>
   </div>
-  <div class="hero-scroll">SCROLL</div>
+
+  <div class="hero-image">
+    <img src="logo.jpg" alt="照井航次郎" onerror="this.style.display='none'">
+    <div class="hero-image-caption">
+      ととのえる屋 代表
+      <span class="hero-image-name">Kojiro Terui</span>
+    </div>
+  </div>
+</section>
+
+<!-- WHO AM I -->
+<section id="who">
+  <div class="container">
+    <div class="who-grid">
+      <div class="who-photo anim">
+        <img
+          src="logo.jpg"
+          alt="照井航次郎 ／ ととのえる屋 代表"
+          onerror="this.parentElement.style.background='#2B4A1A'; this.style.display='none';"
+        >
+        <div class="who-photo-label">Kojiro Terui</div>
+      </div>
+
+      <div class="who-body">
+        <div class="anim anim-delay-1">
+          <div class="who-name">Kojiro.</div>
+          <div class="who-name-ja">照井 航次郎 ／ ととのえる屋 代表</div>
+        </div>
+
+        <p class="who-bio anim anim-delay-2">
+          長野県・小諸市在住。<strong>清掃業の執行役員として20施設・30名のマネジメント</strong>を経て独立。<br><br>
+          現場で「仕組みがないと人は疲弊する」を体感し、GAS・LINE Bot・Webアプリの自動化を独学で実装。<strong>「道具を作れると、人に優しくなれる」</strong>と気づいてから、AIコーチングを始めました。<br><br>
+          ギター歴18年・ボイストレーニング歴20年。音楽も、清掃も、AIも、<strong>「形にする」が好き</strong>なんだと思います。
+        </p>
+
+        <div class="who-tags anim anim-delay-3">
+          <span class="who-tag">元・清掃業執行役員</span>
+          <span class="who-tag">GAS / LINE Bot</span>
+          <span class="who-tag">Webアプリ開発</span>
+          <span class="who-tag">ギター18年</span>
+          <span class="who-tag">長野県・小諸市</span>
+        </div>
+
+        <div class="who-quote anim anim-delay-4">
+          <p>「ありがとう」と言ってもらえる瞬間のために、<br>わざわざ並走しています。</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- PROBLEM -->
-<section class="problem-bg">
-  <div class="section-label">Problem</div>
-  <h2 class="section-title" style="color:var(--paper); max-width:600px;">
-    「やってみたい」が<br>「やれなかった」になっていませんか？
-  </h2>
-  <div class="pain-grid">
-    <div class="pain-item">
-      <span class="pain-icon">🌀</span>
-      <div class="pain-text">
-        <strong>難しそうで始められない</strong>
-        ChatGPTとかAIって言葉は知ってるけど、何から手をつければいいのか分からない。
-      </div>
+<section id="problem">
+  <div class="container">
+    <div class="sec-header anim">
+      <div class="tag">Problem</div>
+      <h2 class="sec-title">「やってみたい」が<br>「やれなかった」に<br>なっていませんか？</h2>
     </div>
-    <div class="pain-item">
-      <span class="pain-icon">📦</span>
-      <div class="pain-text">
-        <strong>形にならない</strong>
-        動画で勉強しても、自分の仕事や生活に使えるところまで落とし込めない。
+
+    <div class="problem-grid">
+      <div class="problem-card anim">
+        <div class="problem-num">01</div>
+        <div class="problem-title">難しそうで始められない</div>
+        <p class="problem-body">AIって言葉は知ってるけど、何から手をつければいいのか分からない。動画を見ても、自分の仕事に落とし込めない。</p>
       </div>
-    </div>
-    <div class="pain-item">
-      <span class="pain-icon">🔋</span>
-      <div class="pain-text">
-        <strong>一人では続かない</strong>
-        「あとでやろう」が積み重なって、結局また元の状態に戻っている。
+      <div class="problem-card anim anim-delay-1">
+        <div class="problem-num">02</div>
+        <div class="problem-title">形にならない</div>
+        <p class="problem-body">途中まで試してみたけど、動くものができない。詰まったまま「あとでやろう」が積み重なっている。</p>
       </div>
-    </div>
-    <div class="pain-item">
-      <span class="pain-icon">🏔️</span>
-      <div class="pain-text">
-        <strong>地方だから機会が少ない</strong>
-        東京ならセミナーも多いけど、地元だと学べる場所がそもそもない。
+      <div class="problem-card anim anim-delay-2">
+        <div class="problem-num">03</div>
+        <div class="problem-title">一人では続かない</div>
+        <p class="problem-body">やる気はある。でも壁にぶつかったときに相談できる人がいない。結局また元の状態に戻っている。</p>
+      </div>
+      <div class="problem-card anim anim-delay-3">
+        <div class="problem-num">04</div>
+        <div class="problem-title">地方だから機会が少ない</div>
+        <p class="problem-body">東京ならセミナーも多いけど、地元では学べる場所がない。オンラインで探しても、自分の仕事に合う内容がない。</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SOLUTION -->
-<section class="section">
-  <div class="solution-layout">
-    <div class="solution-visual">
-      <div class="solution-circle-outer">
-        <div class="solution-circle-inner">
-          <div class="solution-core">
-            <span>並走</span>
-          </div>
+<!-- PHILOSOPHY -->
+<section id="philosophy">
+  <div class="container">
+    <div class="philosophy-inner anim">
+      <p class="philosophy-lead">
+        答えを渡すより、<br>できるまで隣にいる。
+      </p>
+      <p class="philosophy-body">
+        サウナで「ととのう」という言葉があります。<br>
+        熱さと冷たさを繰り返した先に訪れる、あの澄んだ感覚。<br><br>
+        私の「ととのえる」は、<strong>身の回りを最適化し、ゆとりある環境をつくること</strong>です。<br><br>
+        効率化の時代に、あえてあなたの話を聞きに行く。<br>
+        あなたの状況、仕事、暮らしを理解してから、はじめて「本当に役立つもの」が見えてくる。<br><br>
+        だから「わざわざ」なのです。
+      </p>
+      <div class="philosophy-sig">— ととのえる屋</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section id="proof">
+  <div class="container">
+    <div class="sec-header anim">
+      <div class="tag" style="border-color:rgba(255,255,255,.2); color:rgba(255,255,255,.5);">実績</div>
+      <h2 class="sec-title" style="color:#fff;">実際に作ったものです。</h2>
+      <p class="sec-sub">証言より先に、作ったものを見てください。</p>
+    </div>
+
+    <div class="proof-grid">
+
+      <!-- 現場管理Webアプリ -->
+      <div class="proof-card anim">
+        <div class="proof-mockup">
+          <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="320" height="200" fill="#dceaf5"/>
+            <!-- header bar -->
+            <rect width="320" height="28" fill="#4a90c4"/>
+            <circle cx="16" cy="14" r="8" fill="rgba(255,255,255,.3)"/>
+            <rect x="30" y="10" width="60" height="8" rx="2" fill="rgba(255,255,255,.8)"/>
+            <rect x="270" y="8" width="40" height="12" rx="2" fill="rgba(255,255,255,.15)"/>
+            <!-- ticker -->
+            <rect x="80" y="32" width="160" height="16" rx="3" fill="#2e6da4"/>
+            <rect x="92" y="37" width="120" height="6" rx="2" fill="rgba(255,255,255,.5)"/>
+            <!-- date -->
+            <rect x="80" y="54" width="100" height="8" rx="2" fill="rgba(44,80,120,.3)"/>
+            <!-- cards -->
+            <rect x="56" y="68" width="208" height="26" rx="4" fill="white"/>
+            <rect x="64" y="74" width="16" height="14" rx="2" fill="#dceaf5"/>
+            <rect x="86" y="76" width="60" height="6" rx="2" fill="#333"/>
+            <rect x="150" y="75" width="28" height="8" rx="3" fill="#4a90c4"/>
+            <rect x="86" y="85" width="30" height="4" rx="2" fill="#aaa"/>
+            <rect x="120" y="83" width="70" height="6" rx="2" fill="#4a90c4" opacity=".5"/>
+
+            <rect x="56" y="100" width="208" height="26" rx="4" fill="white"/>
+            <rect x="64" y="106" width="16" height="14" rx="2" fill="#dceaf5"/>
+            <rect x="86" y="108" width="54" height="6" rx="2" fill="#333"/>
+            <rect x="144" y="107" width="28" height="8" rx="3" fill="#4a90c4"/>
+            <rect x="86" y="117" width="30" height="4" rx="2" fill="#aaa"/>
+            <rect x="120" y="115" width="70" height="6" rx="2" fill="#4a90c4" opacity=".5"/>
+
+            <rect x="56" y="132" width="208" height="26" rx="4" fill="white"/>
+            <rect x="64" y="138" width="16" height="14" rx="2" fill="#dceaf5"/>
+            <rect x="86" y="140" width="66" height="6" rx="2" fill="#333"/>
+            <rect x="156" y="139" width="28" height="8" rx="3" fill="#4a90c4"/>
+            <rect x="86" y="149" width="30" height="4" rx="2" fill="#aaa"/>
+            <rect x="120" y="147" width="70" height="6" rx="2" fill="#4a90c4" opacity=".5"/>
+
+            <!-- 出勤者 -->
+            <rect x="56" y="164" width="208" height="28" rx="4" fill="white"/>
+            <text x="64" y="176" font-size="7" fill="#555" font-family="sans-serif">本日の出勤者</text>
+            <rect x="64" y="179" width="180" height="5" rx="2" fill="#ccc"/>
+
+            <!-- bottom nav -->
+            <rect x="0" y="188" width="320" height="12" fill="white" opacity=".9"/>
+            <rect x="28" y="190" width="16" height="8" rx="1" fill="#4a90c4" opacity=".4"/>
+            <rect x="88" y="190" width="16" height="8" rx="1" fill="#4a90c4" opacity=".4"/>
+            <rect x="148" y="190" width="16" height="8" rx="1" fill="#4a90c4" opacity=".4"/>
+            <rect x="208" y="190" width="16" height="8" rx="1" fill="#e74" opacity=".4"/>
+            <rect x="268" y="190" width="16" height="8" rx="1" fill="#fa3" opacity=".4"/>
+          </svg>
+        </div>
+        <div class="proof-foot">
+          <div class="proof-badge">実装済み</div>
+          <div class="proof-title">現場管理Webアプリ</div>
+          <p class="proof-body">20施設・30名の清掃スタッフを管理するGASベースのWebアプリ。シフト管理・タスク共有・FAQ・テロップ機能を実装。スマホだけで現場が回る。</p>
         </div>
       </div>
-      <div class="solution-dot"></div>
-      <div class="solution-dot"></div>
-      <div class="solution-dot"></div>
+
+      <!-- LINE Bot × freee -->
+      <div class="proof-card anim anim-delay-1">
+        <div class="proof-mockup">
+          <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="320" height="200" fill="#1a1a2e"/>
+            <!-- phone frame -->
+            <rect x="90" y="8" width="140" height="184" rx="12" fill="#111"/>
+            <rect x="94" y="14" width="132" height="172" rx="9" fill="#efefe9"/>
+            <!-- LINE header -->
+            <rect x="94" y="14" width="132" height="24" rx="9" fill="#00b900"/>
+            <rect x="94" y="28" width="132" height="10" fill="#00b900"/>
+            <text x="160" y="30" font-size="8" fill="white" text-anchor="middle" font-family="sans-serif" font-weight="bold">ととのえる屋</text>
+            <!-- chat bubbles -->
+            <!-- user -->
+            <rect x="160" y="46" width="58" height="16" rx="6" fill="#00b900"/>
+            <text x="189" y="57" font-size="6" fill="white" text-anchor="middle" font-family="sans-serif">予約したい</text>
+            <!-- bot -->
+            <rect x="98" y="68" width="72" height="20" rx="6" fill="white"/>
+            <text x="134" y="77" font-size="5.5" fill="#333" text-anchor="middle" font-family="sans-serif">施設名・日付を</text>
+            <text x="134" y="84" font-size="5.5" fill="#333" text-anchor="middle" font-family="sans-serif">入力してください</text>
+            <!-- user -->
+            <rect x="156" y="94" width="62" height="16" rx="6" fill="#00b900"/>
+            <text x="187" y="105" font-size="6" fill="white" text-anchor="middle" font-family="sans-serif">軽井沢 4/5</text>
+            <!-- bot -->
+            <rect x="98" y="116" width="80" height="28" rx="6" fill="white"/>
+            <text x="138" y="126" font-size="5.5" fill="#333" text-anchor="middle" font-family="sans-serif">✅ 予約確定しました</text>
+            <text x="138" y="134" font-size="5" fill="#888" text-anchor="middle" font-family="sans-serif">freeeに請求書を作成中…</text>
+            <text x="138" y="141" font-size="5" fill="#00b900" text-anchor="middle" font-family="sans-serif">📄 請求書作成完了</text>
+            <!-- input bar -->
+            <rect x="96" y="152" width="128" height="14" rx="4" fill="white"/>
+            <rect x="100" y="155" width="80" height="8" rx="2" fill="#eee"/>
+            <rect x="210" y="153" width="12" height="10" rx="5" fill="#00b900"/>
+            <!-- bottom dots -->
+            <circle cx="154" cy="180" r="3" fill="#333"/>
+            <circle cx="162" cy="180" r="3" fill="#ccc"/>
+            <circle cx="170" cy="180" r="3" fill="#ccc"/>
+          </svg>
+        </div>
+        <div class="proof-foot">
+          <div class="proof-badge">実装済み</div>
+          <div class="proof-title">LINE Bot × freee 自動連携</div>
+          <p class="proof-body">LINEのやりとりだけで予約登録・キャンセル・毎朝通知・freeeへの請求書作成まで完結。スマホ1台で経理業務が回る。</p>
+        </div>
+      </div>
+
+      <!-- AIダッシュボード -->
+      <div class="proof-card anim anim-delay-2">
+        <div class="proof-mockup">
+          <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="320" height="200" fill="#0f1923"/>
+            <!-- header -->
+            <rect width="320" height="26" fill="#162230"/>
+            <rect x="12" y="9" width="80" height="8" rx="2" fill="#00d4aa" opacity=".8"/>
+            <rect x="200" y="8" width="50" height="10" rx="3" fill="#1e3a4a"/>
+            <rect x="256" y="8" width="50" height="10" rx="3" fill="#00d4aa" opacity=".25"/>
+            <!-- search bar -->
+            <rect x="12" y="32" width="296" height="12" rx="3" fill="#1a2e3e"/>
+            <rect x="18" y="36" width="120" height="4" rx="2" fill="rgba(255,255,255,.15)"/>
+            <!-- news cards -->
+            <rect x="12" y="50" width="140" height="60" rx="3" fill="#162230"/>
+            <rect x="18" y="56" width="60" height="5" rx="2" fill="#00d4aa" opacity=".6"/>
+            <rect x="18" y="64" width="120" height="5" rx="2" fill="rgba(255,255,255,.7)"/>
+            <rect x="18" y="72" width="110" height="5" rx="2" fill="rgba(255,255,255,.7)"/>
+            <rect x="18" y="80" width="100" height="4" rx="2" fill="rgba(255,255,255,.3)"/>
+            <rect x="18" y="88" width="80" height="4" rx="2" fill="rgba(255,255,255,.3)"/>
+            <rect x="18" y="96" width="50" height="4" rx="2" fill="#00d4aa" opacity=".4"/>
+
+            <rect x="162" y="50" width="146" height="60" rx="3" fill="#162230"/>
+            <rect x="168" y="56" width="60" height="5" rx="2" fill="#f0a" opacity=".5"/>
+            <rect x="168" y="64" width="130" height="5" rx="2" fill="rgba(255,255,255,.7)"/>
+            <rect x="168" y="72" width="120" height="5" rx="2" fill="rgba(255,255,255,.7)"/>
+            <rect x="168" y="80" width="100" height="4" rx="2" fill="rgba(255,255,255,.3)"/>
+            <rect x="168" y="88" width="80" height="4" rx="2" fill="rgba(255,255,255,.3)"/>
+            <rect x="168" y="96" width="50" height="4" rx="2" fill="#f0a" opacity=".3"/>
+
+            <rect x="12" y="116" width="140" height="60" rx="3" fill="#162230"/>
+            <rect x="18" y="122" width="60" height="5" rx="2" fill="#fa0" opacity=".6"/>
+            <rect x="18" y="130" width="120" height="5" rx="2" fill="rgba(255,255,255,.7)"/>
+            <rect x="18" y="138" width="100" height="5" rx="2" fill="rgba(255,255,255,.7)"/>
+            <rect x="18" y="146" width="90" height="4" rx="2" fill="rgba(255,255,255,.3)"/>
+            <rect x="18" y="154" width="50" height="4" rx="2" fill="#fa0" opacity=".4"/>
+
+            <rect x="162" y="116" width="146" height="60" rx="3" fill="#162230"/>
+            <rect x="168" y="122" width="60" height="5" rx="2" fill="#4af" opacity=".6"/>
+            <rect x="168" y="130" width="130" height="5" rx="2" fill="rgba(255,255,255,.7)"/>
+            <rect x="168" y="138" width="110" height="5" rx="2" fill="rgba(255,255,255,.7)"/>
+            <rect x="168" y="146" width="90" height="4" rx="2" fill="rgba(255,255,255,.3)"/>
+            <rect x="168" y="154" width="50" height="4" rx="2" fill="#4af" opacity=".4"/>
+
+            <!-- bottom bar -->
+            <rect x="0" y="182" width="320" height="18" fill="#162230"/>
+            <rect x="12" y="186" width="40" height="8" rx="2" fill="#00d4aa" opacity=".3"/>
+            <rect x="60" y="186" width="40" height="8" rx="2" fill="rgba(255,255,255,.1)"/>
+            <rect x="108" y="186" width="40" height="8" rx="2" fill="rgba(255,255,255,.1)"/>
+          </svg>
+        </div>
+        <div class="proof-foot">
+          <div class="proof-badge">公開中</div>
+          <div class="proof-title">AI ニュースダッシュボード</div>
+          <p class="proof-body">世界のAI最新情報をリアルタイムで日本語翻訳して表示するReactダッシュボード。キーワード検索・ブックマーク機能付き。Vercelで公開中。</p>
+        </div>
+      </div>
+
     </div>
-    <div class="solution-text">
-      <div class="section-label">Solution</div>
-      <h2 class="section-title">答えを渡すより、<br>できるまで隣にいる。</h2>
-      <p class="solution-lead">
-        ととのえる屋は、AIの使い方を教えるスクールではありません。<br>
-        あなたが「できた」と言える瞬間まで、一緒に考え、手を動かし、並走するサービスです。
-      </p>
-      <div class="solution-points">
-        <div class="solution-point">
-          <div class="point-num">01</div>
-          <div class="point-text">
-            <strong>ニーズの先を見る</strong><br>
-            「AIを使いたい」の奥にある本当の課題から整理します。
-          </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="container" style="max-width:680px;">
+    <div class="sec-header anim">
+      <div class="tag">How it works</div>
+      <h2 class="sec-title">並走の流れ</h2>
+    </div>
+
+    <div class="how-steps">
+      <div class="how-step anim">
+        <div class="how-num"><span class="how-num-inner">01</span></div>
+        <div class="how-content">
+          <div class="how-title">まず話す（30分・無料）</div>
+          <p class="how-body">やりたいこと・困っていること・なんとなくの「こんなのできる？」から始めてOKです。AIで何ができるか、一緒に整理します。</p>
         </div>
-        <div class="solution-point">
-          <div class="point-num">02</div>
-          <div class="point-text">
-            <strong>形になるまでやめない</strong><br>
-            途中で詰まっても、「できた」が来るまでサポートを続けます。
-          </div>
+      </div>
+      <div class="how-step anim anim-delay-1">
+        <div class="how-num"><span class="how-num-inner">02</span></div>
+        <div class="how-content">
+          <div class="how-title">一緒に手を動かす</div>
+          <p class="how-body">あなたの仕事・状況に合わせて、実際に動くものを一緒に作ります。セッション後もLINEで相談OK。詰まったら一緒に考えます。</p>
         </div>
-        <div class="solution-point">
-          <div class="point-num">03</div>
-          <div class="point-text">
-            <strong>地域のリソースをつなぐ</strong><br>
-            あなたのスキルが地域の誰かの役に立つ仕組みを一緒に考えます。
-          </div>
+      </div>
+      <div class="how-step anim anim-delay-2">
+        <div class="how-num"><span class="how-num-inner">03</span></div>
+        <div class="how-content">
+          <div class="how-title">「できた」まで並走する</div>
+          <p class="how-body">「一応動く」ではなく「これ使える！」と言えるまで。一人で回せるようになるまで、わざわざ並走し続けます。</p>
         </div>
       </div>
     </div>
@@ -965,230 +947,161 @@
 </section>
 
 <!-- SERVICES -->
-<section id="services" class="section services-bg">
-  <div class="section-label">Services</div>
-  <h2 class="section-title">できることの例</h2>
-  <p style="color:var(--muted); font-weight:300; margin-top:12px; max-width:500px; line-height:1.9;">
-    「こんなのできる？」と聞いてください。<br>まず一緒に試します。
-  </p>
-  <div class="services-grid">
-    <div class="service-card">
-      <div class="service-num">01</div>
-      <div class="service-name">AIニュースダッシュボード</div>
-      <div class="service-desc">
-        世界のAI最新情報をリアルタイムで日本語表示。地域の勉強会や社内共有に。あなたの関心に合わせてカスタマイズします。
-      </div>
-      <span class="service-tag">実績あり</span>
+<section id="services">
+  <div class="container">
+    <div class="sec-header anim">
+      <div class="tag">Services</div>
+      <h2 class="sec-title">できることの例</h2>
+      <p class="sec-sub">「こんなのできる？」と聞いてください。まず一緒に試します。</p>
     </div>
-    <div class="service-card">
-      <div class="service-num">02</div>
-      <div class="service-name">業務AI化・導入サポート</div>
-      <div class="service-desc">
-        日報・議事録・問い合わせ対応・スケジュール管理。「どこから手をつければいいか」から一緒に整理します。
-      </div>
-      <span class="service-tag">人気</span>
-    </div>
-    <div class="service-card">
-      <div class="service-num">03</div>
-      <div class="service-name">マイAIツール制作</div>
-      <div class="service-desc">
-        LINE Bot、自動返信、カスタムチャットbotなど。あなた専用の「仕組み」を、使えるまで一緒に作ります。
-      </div>
-      <span class="service-tag">オーダーメイド</span>
-    </div>
-    <div class="service-card">
-      <div class="service-num">04</div>
-      <div class="service-name">プロンプト設計レッスン</div>
-      <div class="service-desc">
-        AIへの「伝え方」を学ぶと、できることが10倍になります。あなたの仕事に合わせた言葉の設計を伝授します。
-      </div>
-<span class="service-tag">初心者向け</span>
-    </div>
-    <div class="service-card">
-      <div class="service-num">05</div>
-      <div class="service-name">請求書・経理業務の自動化</div>
-      <div class="service-desc">
-        freee APIと連携し、毎月の請求書作成・送付をLINEのやりとりだけで完結。スマホ1台で経理業務が回る仕組みを一緒に作ります。
-      </div>
-      <span class="service-tag">実績あり</span>
-    </div>
-    <div class="service-card">
-      <div class="service-num">06</div>
-      <div class="service-name">現場管理Webアプリ制作</div>
-      <div class="service-desc">
-        スタッフのシフト管理・タスク共有・報告をスマホで完結できるWebアプリを制作。清掃・施設管理など現場業務に特化した設計が得意です。
-      </div>
-      <span class="service-tag">オーダーメイド</span>
-    </div>
-  </div>
-</section>
-  </div>
-</section>
 
-<!-- PHILOSOPHY -->
-<section class="section">
-  <div class="philosophy-layout">
-    <div class="philosophy-aside">
-      <div class="section-label">Philosophy</div>
-      <div class="philosophy-kanji" style="font-size:3rem; color:var(--moss); line-height:1.4;">ととのえる屋</div>
-      <div class="philosophy-reading" style="margin-top:12px; line-height:2;">
-        身の回りを最適化し、<br>ゆとりある環境へ。
+    <div class="services-grid">
+      <div class="svc-card anim">
+        <div class="svc-num">01</div>
+        <div class="svc-title">業務AI化・並走レッスン</div>
+        <p class="svc-body">日報・議事録・問い合わせ対応・スケジュール管理。「どこから手をつければいいか」から一緒に整理し、動くまでサポートします。</p>
+        <div class="tag tag--green">個人・小規模事業者向け</div>
       </div>
-    </div>
-    <div class="philosophy-body">
-      <p>
-        サウナで「ととのう」という言葉があります。<br>
-        熱さと冷たさを繰り返した先に訪れる、<br>
-        あの澄んだ感覚。
-      </p>
-      <em>
-        私の「ととのえる」は、身の回りを最適化し、<br>ゆとりある環境をつくることです。
-      </em>
-      <p>
-        仕事の仕組み、道具の使い方、時間の流れ。<br>
-        そういうものをひとつひとつ見直して、<br>
-        「なんか楽になった」という状態に持っていく。<br>
-        それがととのえる屋のやりたいことです。
-      </p>
-      <p>
-        だから「わざわざ」なのです。<br>
-        効率化の時代に、あえてあなたの話を聞きに行く。<br>
-        あなたの状況、仕事、暮らしを理解してから、<br>
-        はじめて「本当に役立つもの」が見えてくる。
-      </p>
-      <p>
-        そして、できあがったものを見て<br>
-        「ありがとう」と言ってもらえる瞬間のために、<br>
-        わざわざ並走しています。
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- VOICES -->
-<section class="voices-bg section">
-  <div class="section-label">Voices</div>
-  <h2 class="section-title">こんな人が変わりました</h2>
-  <div class="voices-grid">
-    <div class="voice-card">
-      <div class="voice-quote">
-        AIって難しいと思ってたけど、自分の仕事に合わせて考えてくれるから、気づいたら使えてた。
+      <div class="svc-card anim anim-delay-1">
+        <div class="svc-title">マイAIツール制作</div>
+        <div class="svc-num">02</div>
+        <p class="svc-body">LINE Bot・自動返信・カスタムチャットbot・業務管理Webアプリ。あなた専用の「仕組み」を、使えるまで一緒に作ります。</p>
+        <div class="tag tag--amber">オーダーメイド</div>
       </div>
-      <div class="voice-meta">
-        <strong>40代・小売業</strong> ／ 在庫管理をAI化
-      </div>
-    </div>
-    <div class="voice-card">
-      <div class="voice-quote">
-        こんなのできんかな、って半信半疑で話したら、次の週には動くものができてて正直驚いた。
-      </div>
-      <div class="voice-meta">
-        <strong>30代・飲食店オーナー</strong> ／ 予約管理Bot制作
-      </div>
-    </div>
-    <div class="voice-card">
-      <div class="voice-quote">
-        一人でやろうとしたら絶対続かなかった。「できた！」の瞬間を一緒に喜んでくれるのが嬉しかった。
-      </div>
-      <div class="voice-meta">
-        <strong>20代・フリーランス</strong> ／ 提案書自動化
+      <div class="svc-card anim anim-delay-2">
+        <div class="svc-num">03</div>
+        <div class="svc-title">プロンプト設計レッスン</div>
+        <p class="svc-body">AIへの「伝え方」を学ぶと、できることが10倍になります。あなたの仕事に合わせた言葉の設計を、実践しながら身につけます。</p>
+        <div class="tag">初心者向け</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- PRICING -->
-<section class="section">
-  <div class="section-label">Pricing</div>
-  <h2 class="section-title">料金</h2>
-  <p style="color:var(--muted); font-weight:300; margin-top:12px; margin-bottom:0; line-height:1.9;">
-    まず話してみてください。初回は無料です。
-  </p>
-  <div class="pricing-layout">
-    <div class="price-card">
-      <div class="price-label">TRIAL</div>
-      <div class="price-name">初回体験</div>
-      <div class="price-amount">¥0</div>
-      <div class="price-unit">30分・オンライン or 対面</div>
-      <ul class="price-features">
-        <li>現状のヒアリング</li>
-        <li>AIで何ができるか整理</li>
-        <li>あなたに合った活用イメージ</li>
-      </ul>
+<section id="pricing">
+  <div class="container">
+    <div class="sec-header anim">
+      <div class="tag">Pricing</div>
+      <h2 class="sec-title">料金</h2>
+      <p class="sec-sub">まず話してみてください。初回は無料です。</p>
     </div>
-    <div class="price-card featured">
-      <div class="price-label">STANDARD</div>
-      <div class="price-name">並走レッスン</div>
-      <div class="price-amount">¥5,000〜</div>
-      <div class="price-unit">1回60〜90分</div>
-      <ul class="price-features">
-        <li>目標に合わせた個別設計</li>
-        <li>実際に手を動かしながら進める</li>
-        <li>セッション後もLINEでサポート</li>
-        <li>「できた」まで何度でも相談OK</li>
-      </ul>
-    </div>
-    <div class="price-card">
-      <div class="price-label">CUSTOM</div>
-      <div class="price-name">ツール制作・導入</div>
-      <div class="price-amount">要相談</div>
-      <div class="price-unit">プロジェクト単位</div>
-      <ul class="price-features">
-        <li>LINE Bot・チャットbot制作</li>
-        <li>業務フロー自動化設計</li>
-        <li>地域・企業向けAI研修</li>
-      </ul>
+
+    <div class="pricing-grid">
+      <div class="price-card anim">
+        <div class="price-label">Trial</div>
+        <div class="price-title">初回体験</div>
+        <div class="price-amount">¥<sup style="font-size:1.5rem">0</sup></div>
+        <div class="price-note">30分 · オンライン or 対面</div>
+        <div class="price-divider"></div>
+        <ul class="price-list">
+          <li>現状のヒアリング</li>
+          <li>AIで何ができるか整理</li>
+          <li>あなたに合った活用イメージ</li>
+        </ul>
+      </div>
+
+      <div class="price-card price-card--featured anim anim-delay-1">
+        <div class="price-label">Standard</div>
+        <div class="price-title">並走レッスン</div>
+        <div class="price-amount">¥<span>5,000</span><span style="font-size:.9rem">〜</span></div>
+        <div class="price-note">1回 60〜90分</div>
+        <div class="price-divider" style="background:rgba(255,255,255,.15)"></div>
+        <ul class="price-list">
+          <li>目標に合わせた個別設計</li>
+          <li>実際に手を動かしながら進める</li>
+          <li>セッション後もLINEでサポート</li>
+          <li>「できた」まで何度でも相談OK</li>
+        </ul>
+      </div>
+
+      <div class="price-card anim anim-delay-2">
+        <div class="price-label">Custom</div>
+        <div class="price-title">ツール制作・導入</div>
+        <div class="price-amount" style="font-size:2rem">要相談</div>
+        <div class="price-note">プロジェクト単位</div>
+        <div class="price-divider"></div>
+        <ul class="price-list">
+          <li>LINE Bot・Webアプリ制作</li>
+          <li>業務フロー自動化設計</li>
+          <li>地域・企業向けAI研修</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section id="contact" class="cta-section">
-  <div class="cta-label">まず、話してみてください</div>
-  <h2 class="cta-title">
-    「こんなの、できるかな？」<br>
-    その一言から始まります。
-  </h2>
-  <p class="cta-sub">
-    難しく考えなくていいです。<br>
-    やりたいこと、困っていること、なんでも聞かせてください。
-  </p>
-  <a href="/cdn-cgi/l/email-protection#89fde6fde6e7e6ecfbfca7f0e8c9eee4e8e0e5a7eae6e4" class="cta-free-note">
-    <span>FREE</span>
-    メールで無料相談する（30分）
-  </a>
-  <br>
-  <div class="cta-note" style="margin-top:16px; font-size:0.95rem; color:var(--moss); letter-spacing:0.05em;">
-    📩 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="74001b001b1a1b1106015a0d15341319151d185a171b19">[email&#160;protected]</a>
+<section id="cta">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="anim">
+        <div class="tag" style="margin-bottom:32px;">Contact</div>
+        <h2 class="cta-title">
+          「こんなの、できるかな？」<br>
+          その一言から始まります。
+        </h2>
+        <p class="cta-body">
+          難しく考えなくていいです。<br>
+          やりたいこと、困っていること、なんでも聞かせてください。<br>
+          押し売りは一切しません。
+        </p>
+      </div>
+
+      <div class="cta-actions anim anim-delay-1">
+        <a href="https://line.me/R/ti/p/@903xtesg" class="btn btn--line" style="font-size:15px; padding:16px 36px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+          LINEで無料相談（30分）
+        </a>
+        <a href="mailto:totonoeru.ya@gmail.com" class="btn btn--ghost" style="font-size:15px; padding:16px 28px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          メールで相談する
+        </a>
+      </div>
+
+      <p class="cta-meta anim anim-delay-2">
+        📩 totonoeru.ya@gmail.com<br>
+        長野県・小諸市 ／ オンライン対応可
+      </p>
+    </div>
   </div>
-  <div class="cta-note" style="margin-top:8px;">お気軽にどうぞ。押し売りは一切しません。</div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div>
-    <div class="footer-brand">ととのえる<span>屋</span></div>
-    <div class="footer-note" style="margin-top:8px;">長野県小諸市 ／ AI業務改善コーチング</div>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo">ととのえる屋</div>
+      <div class="footer-copy">© 2026 ととのえる屋. All rights reserved.</div>
+    </div>
   </div>
-  <div class="footer-note">© 2026 ととのえる屋. All rights reserved.</div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  // Intersection Observer for scroll animations
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-      }
-    });
-  }, { threshold: 0.1 });
+<script>
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "w4r8top499");
+</script>
+<script>
+// アニメーション制御：JS有効時のみopacity:0から始める
+document.querySelectorAll('.anim').forEach(el => {
+  el.classList.add('will-animate');
+});
 
-  document.querySelectorAll('.pain-item, .service-card, .voice-card, .price-card, .solution-point').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(el);
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.remove('will-animate');
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
   });
+}, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
 
-  // Sta
+document.querySelectorAll('.anim').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
