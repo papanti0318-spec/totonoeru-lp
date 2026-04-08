@@ -1315,6 +1315,90 @@ footer {
   </div>
 </section>
 
+<!-- STORY: なぜ私がこれをやるのか -->
+<section id="story" style="background: var(--bg);">
+  <div class="container" style="max-width: 720px;">
+    <div class="sec-header anim">
+      <div class="tag tag--amber">STORY</div>
+      <h2 class="sec-title">なぜ私がこれをやるのか</h2>
+      <p class="sec-sub">予定していた道は、清掃業で独立することだった。</p>
+    </div>
+
+    <div class="story-body anim">
+      <p class="story-p">清掃で独立するつもりだった。</p>
+
+      <p class="story-p">2025年の春、ChatGPTを使い始めた。お客さんへの返信メールをリライトする程度だった。でも「<strong>なんで？</strong>」が止まらない性格だった。</p>
+
+      <p class="story-p">なんでこのシフト管理、毎回手作業なんだ。なんで自動化できないんだ。そのまま動いたら、GASで自動化できてしまった。</p>
+
+      <p class="story-p story-highlight">そのとき気づいた。<br><strong>自分は「なんで？」から動くまで執着できる人間だ。</strong></p>
+
+      <p class="story-p">清掃業で独立するつもりだった。AIとは全く関係ない話のはずだった。でも気づいたら、全然違う場所に立っていた。</p>
+
+      <p class="story-p story-end"><strong>2026年3月末退職。</strong><br>ととのえる屋、AIコーチとして始まっています。</p>
+    </div>
+  </div>
+</section>
+
+<style>
+#story .story-body {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 56px 48px;
+  box-shadow: 0 4px 24px rgba(44,37,28,0.06);
+  position: relative;
+}
+#story .story-body::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--amber);
+  border-radius: var(--radius) 0 0 var(--radius);
+}
+#story .story-p {
+  font-size: 16px;
+  line-height: 2.1;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+#story .story-p:last-child {
+  margin-bottom: 0;
+}
+#story .story-highlight {
+  background: var(--green-lt);
+  border-left: 3px solid var(--green-mid);
+  padding: 20px 24px;
+  margin: 32px 0;
+  font-size: 17px;
+}
+#story .story-highlight strong {
+  color: var(--green);
+  font-weight: 700;
+}
+#story .story-end {
+  text-align: center;
+  padding-top: 16px;
+  border-top: 1px dashed var(--border);
+  margin-top: 32px;
+  color: var(--text-mid);
+}
+#story .story-end strong {
+  color: var(--amber);
+  font-size: 15px;
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 6px;
+}
+@media (max-width: 640px) {
+  #story .story-body { padding: 40px 28px; }
+  #story .story-p { font-size: 15px; line-height: 2; }
+  #story .story-highlight { padding: 16px 18px; font-size: 16px; }
+}
+</style>
+
 <!-- PRICING -->
 <section id="pricing">
   <div class="container">
