@@ -613,12 +613,13 @@ footer {
   <div class="hero-text">
     <p class="hero-eyebrow"><span></span>AI Coaching · Nagano, Japan</p>
     <h1 class="hero-headline serif">
-      「こんなの<em>できんな</em>」が、<br>「できた」に変わる。
+      <em>なんで？</em>が止まらない人間が、<br>あなたのビジネスに向き合います。
     </h1>
     <p class="hero-sub">
-      AIは難しくない。<br>
-      ただ、一人では形にならないだけ。<br>
-      あなたの「やりたい」に、わざわざ並走します。
+      動かない理由がわかるまで、何日でも。<br>
+      本物のAI活用を、一緒に整えます。<br><br>
+      売り込みません。<br>
+      頼まれたときに、最高のパフォーマンスを出します。
     </p>
     <div class="hero-actions">
       <a href="https://line.me/R/ti/p/@903xtesg" class="btn btn--line">
@@ -1005,6 +1006,150 @@ footer {
       </div>
     </div>
   </div>
+</section>
+
+<section id="experience" style="background: var(--bg);">
+  <div class="container">
+    <div class="sec-header anim">
+      <div class="tag tag--green">疑似体験</div>
+      <h2 class="sec-title">受けたらどうなるか、先に見せます</h2>
+      <p class="sec-sub">整える前と後。数字と情景で。</p>
+    </div>
+
+    <div class="exp-grid anim">
+      <article class="exp-card">
+        <div class="exp-tag">飲食店／軽井沢</div>
+        <h3 class="exp-title">wash deli karuizawa</h3>
+        <div class="exp-block exp-before">
+          <div class="exp-label">before</div>
+          <p>予約電話・LINE返信で 1日<strong class="exp-num">約60分</strong>取られていた。細切れで集中力が途切れる。</p>
+        </div>
+        <div class="exp-arrow">↓</div>
+        <div class="exp-block exp-after">
+          <div class="exp-label">after</div>
+          <p>AI自動応答が一次受けに。手を止めるのは"本当に判断が必要な問い合わせ"だけ。<strong class="exp-num">約60分 → ほぼ0分</strong>。</p>
+        </div>
+        <div class="exp-point">「時間が戻った」より、<strong>思考が途切れない</strong>ことが最大の成果。</div>
+      </article>
+
+      <article class="exp-card">
+        <div class="exp-tag">清掃業／20施設30名</div>
+        <h3 class="exp-title">現場管理の業務マニュアル化</h3>
+        <div class="exp-block exp-before">
+          <div class="exp-label">before</div>
+          <p>シフト・タスク・FAQ がバラバラ。新人教育に毎回<strong class="exp-num">3時間</strong>の対面説明。</p>
+        </div>
+        <div class="exp-arrow">↓</div>
+        <div class="exp-block exp-after">
+          <div class="exp-label">after</div>
+          <p>GASベースのWebアプリにAIで要点を集約。<strong class="exp-num">スマホ1台</strong>で現場が回るように。</p>
+        </div>
+        <div class="exp-point">整えるとは、<strong>本質を掘り当てて構造化すること</strong>。</div>
+      </article>
+
+      <article class="exp-card exp-card--placeholder">
+        <div class="exp-tag">あなたの業種</div>
+        <h3 class="exp-title">あなたの事例がここに入ります</h3>
+        <div class="exp-block exp-before">
+          <div class="exp-label">before</div>
+          <p>いまの「なんとなく面倒」な作業。</p>
+        </div>
+        <div class="exp-arrow">↓</div>
+        <div class="exp-block exp-after">
+          <div class="exp-label">after</div>
+          <p>AIで整えたあとの景色。</p>
+        </div>
+        <div class="exp-point">気になったら、<strong>LINEで一言</strong>どうぞ。</div>
+      </article>
+    </div>
+  </div>
+
+  <style>
+    #experience { padding: 80px 0; }
+    #experience .exp-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+    #experience .exp-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: 0 4px 18px rgba(44,37,28,0.05);
+      display: flex;
+      flex-direction: column;
+    }
+    #experience .exp-card--placeholder {
+      background: var(--bg-warm);
+      border: 1.5px dashed var(--border);
+      box-shadow: none;
+      opacity: 0.92;
+    }
+    #experience .exp-tag {
+      display: inline-block;
+      align-self: flex-start;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--green);
+      background: var(--green-lt, #e8f1ea);
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+    #experience .exp-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--green);
+      margin: 0 0 18px;
+      line-height: 1.5;
+    }
+    #experience .exp-block {
+      padding: 14px 16px;
+      border-radius: 10px;
+      background: var(--bg-warm);
+    }
+    #experience .exp-card--placeholder .exp-block {
+      background: rgba(255,255,255,0.6);
+    }
+    #experience .exp-block p {
+      margin: 6px 0 0;
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--text);
+    }
+    #experience .exp-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+    }
+    #experience .exp-after .exp-label { color: var(--green); }
+    #experience .exp-num { color: var(--amber); font-weight: 800; }
+    #experience .exp-arrow {
+      text-align: center;
+      font-size: 22px;
+      color: var(--amber);
+      margin: 8px 0;
+      line-height: 1;
+    }
+    #experience .exp-point {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      line-height: 1.75;
+      color: var(--text-mid);
+    }
+    #experience .exp-point strong { color: var(--text); }
+    @media (max-width: 640px) {
+      #experience .exp-grid { grid-template-columns: 1fr; max-width: 480px; }
+      #experience { padding: 60px 0; }
+    }
+  </style>
 </section>
 
 <style>
