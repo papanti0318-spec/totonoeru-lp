@@ -907,12 +907,112 @@ footer {
           <div class="proof-badge">公開中</div>
           <div class="proof-title">AI ニュースダッシュボード</div>
           <p class="proof-body">世界のAI最新情報をリアルタイムで日本語翻訳して表示するReactダッシュボード。キーワード検索・ブックマーク機能付き。Vercelで公開中。</p>
+          <a href="https://ai-radar-j698powgc-papanti0318-specs-projects.vercel.app/" target="_blank" rel="noopener" style="display:inline-block; margin-top:12px; padding:8px 16px; background:var(--amber); color:#fff; text-decoration:none; border-radius:var(--radius); font-size:13px; font-weight:600;">実物を見る →</a>
         </div>
       </div>
 
     </div>
   </div>
 </section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" style="background: var(--bg-warm);">
+  <div class="container">
+    <div class="sec-header anim">
+      <div class="tag tag--green">お客様の声</div>
+      <h2 class="sec-title">導入した方の、生の声。</h2>
+      <p class="sec-sub">軽井沢で実際に使っている事業者さんから、一言もらいました。</p>
+    </div>
+
+    <div class="testimonial-grid anim">
+      <div class="testimonial-card">
+        <div class="testimonial-head">
+          <div class="testimonial-avatar">
+            <img src="testimonial-wash-deli-face.png" alt="wash deli karuizawa 経営者">
+          </div>
+          <div class="testimonial-meta">
+            <div class="testimonial-name">wash deli karuizawa 経営者</div>
+            <div class="testimonial-logo">
+              <img src="testimonial-wash-deli-logo.png" alt="wash deli karuizawa">
+            </div>
+          </div>
+        </div>
+        <blockquote class="testimonial-body">
+          「予約管理や返信対応に時間を取られていたのですが、AIを使った仕組みを作ってもらってからその時間がほぼゼロに。IT系は苦手意識があったのですが、わかりやすく体系立てて説明してくれたので無理なく取り組めました。軽井沢で同じように事業をされている方に、ぜひ紹介したいと思っています。」
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.testimonial-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  box-shadow: 0 4px 24px rgba(44,37,28,0.06);
+}
+.testimonial-head {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+.testimonial-avatar {
+  flex-shrink: 0;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--green-lt);
+}
+.testimonial-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.testimonial-meta {
+  flex: 1;
+  min-width: 0;
+}
+.testimonial-name {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.testimonial-logo img {
+  max-height: 36px;
+  max-width: 160px;
+  object-fit: contain;
+  opacity: 0.85;
+}
+.testimonial-body {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--text-mid);
+  font-style: normal;
+  quotes: none;
+}
+@media(max-width:640px){
+  .testimonial-card { padding: 24px; }
+  .testimonial-head { gap: 14px; }
+  .testimonial-avatar { width: 60px; height: 60px; }
+  .testimonial-name { font-size: 15px; }
+  .testimonial-body { font-size: 14px; line-height: 1.85; }
+}
+</style>
 
 <!-- HOW IT WORKS -->
 <section id="how">
