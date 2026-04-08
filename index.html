@@ -636,7 +636,14 @@ footer {
   </div>
 
   <div class="hero-image">
-    <img src="photo.jpg" alt="照井航次郎" onerror="this.style.display='none'">
+    <img
+      src="photo.jpg"
+      alt="照井航次郎"
+      width="512"
+      height="288"
+      fetchpriority="high"
+      decoding="async"
+      onerror="this.style.display='none'">
     <div class="hero-image-caption">
       ととのえる屋 代表
       <span class="hero-image-name">Kojiro Terui</span>
@@ -652,6 +659,10 @@ footer {
         <img
           src="photo.jpg"
           alt="照井航次郎 ／ ととのえる屋 代表"
+          width="512"
+          height="288"
+          loading="lazy"
+          decoding="async"
           onerror="this.parentElement.style.background='#2B4A1A'; this.style.display='none';"
         >
         <div class="who-photo-label">Kojiro Terui</div>
