@@ -29,26 +29,95 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "ととのえる屋",
-  "founder": {
-    "@type": "Person",
-    "name": "照井航次郎"
-  },
-  "description": "長野県小諸市から。HP・LP制作、清掃、ギター教室。思想を持って作る人。",
-  "areaServed": [
-    { "@type": "City", "name": "小諸市" },
-    { "@type": "City", "name": "御代田町" },
-    { "@type": "City", "name": "軽井沢町" }
-  ],
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "小諸市",
-    "addressRegion": "長野県",
-    "addressCountry": "JP"
-  },
-  "email": "totonoeru.ya@gmail.com",
-  "url": "https://totonoeruya.jp/"
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://totonoeruya.jp/#organization",
+      "name": "ととのえる屋",
+      "url": "https://totonoeruya.jp/",
+      "logo": "https://totonoeruya.jp/assets/logo-totonoeru.png",
+      "image": "https://totonoeruya.jp/og.jpg",
+      "description": "長野県小諸市から。HP・LP制作、清掃、ギター教室。集約してととのえる。",
+      "founder": { "@id": "https://totonoeruya.jp/#terui" },
+      "knowsAbout": ["ホームページ制作", "ランディングページ制作", "ブランド集約", "AI業務改善", "清掃", "ギター指導"],
+      "areaServed": [
+        { "@type": "City", "name": "小諸市" },
+        { "@type": "City", "name": "御代田町" },
+        { "@type": "City", "name": "軽井沢町" }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "小諸市",
+        "addressRegion": "長野県",
+        "addressCountry": "JP"
+      },
+      "email": "totonoeru.ya@gmail.com",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "email": "totonoeru.ya@gmail.com",
+        "availableLanguage": ["ja"]
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "ととのえる屋のサービス",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "HP・LP制作",
+              "url": "https://totonoeruya.jp/web/",
+              "description": "ブランドの核を言語化し、LP・冊子・サイネージとして実装。"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "清掃",
+              "url": "https://totonoeruya.jp/cleaning/",
+              "description": "軽井沢T-SITE等の現場で、清掃業務にAIを集約。"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "ギター教室",
+              "url": "https://totonoeruya.jp/guitar/",
+              "description": "個人向けギター指導。"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://totonoeruya.jp/#terui",
+      "name": "照井航次郎",
+      "givenName": "航次郎",
+      "familyName": "照井",
+      "jobTitle": "代表",
+      "birthDate": "1993",
+      "worksFor": { "@id": "https://totonoeruya.jp/#organization" },
+      "knowsAbout": ["ホームページ制作", "ランディングページ制作", "ブランド集約", "AI業務改善"],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "小諸市",
+        "addressRegion": "長野県",
+        "addressCountry": "JP"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://totonoeruya.jp/#website",
+      "url": "https://totonoeruya.jp/",
+      "name": "ととのえる屋",
+      "publisher": { "@id": "https://totonoeruya.jp/#organization" },
+      "inLanguage": "ja"
+    }
+  ]
 }
 </script>
 <!-- Vercel Web Analytics -->

@@ -27,20 +27,35 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "EducationalOrganization",
-  "name": "ギター教室｜ととのえる屋",
-  "provider": {
-    "@type": "Person",
-    "name": "照井航次郎"
-  },
-  "description": "聴く耳と弾く指の距離を、ととのえる。長野県小諸市でギターレッスン。",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "小諸市",
-    "addressRegion": "長野県",
-    "addressCountry": "JP"
-  },
-  "url": "https://totonoeruya.jp/guitar/"
+  "@graph": [
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://totonoeruya.jp/guitar/#school",
+      "name": "ギター教室｜ととのえる屋",
+      "parentOrganization": { "@id": "https://totonoeruya.jp/#organization" },
+      "provider": { "@id": "https://totonoeruya.jp/#terui" },
+      "description": "聴く耳と弾く指の距離を、ととのえる。長野県小諸市でギターレッスン。",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "小諸市",
+        "addressRegion": "長野県",
+        "addressCountry": "JP"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "小諸市" },
+        { "@type": "City", "name": "御代田町" },
+        { "@type": "City", "name": "軽井沢町" }
+      ],
+      "url": "https://totonoeruya.jp/guitar/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://totonoeruya.jp/" },
+        { "@type": "ListItem", "position": 2, "name": "ギター教室", "item": "https://totonoeruya.jp/guitar/" }
+      ]
+    }
+  ]
 }
 </script>
 <!-- Vercel Web Analytics -->

@@ -26,17 +26,32 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "清掃",
-  "provider": {
-    "@type": "ProfessionalService",
-    "name": "ととのえる屋"
-  },
-  "description": "軽井沢T-SITEなど、長野県内の現場で清掃業務。現場のAI化にも取り組んでいます。",
-  "areaServed": [
-    { "@type": "City", "name": "軽井沢町" },
-    { "@type": "City", "name": "御代田町" },
-    { "@type": "City", "name": "小諸市" }
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://totonoeruya.jp/cleaning/#service",
+      "name": "清掃",
+      "serviceType": "施設清掃",
+      "provider": {
+        "@type": "ProfessionalService",
+        "@id": "https://totonoeruya.jp/#organization",
+        "name": "ととのえる屋",
+        "url": "https://totonoeruya.jp/"
+      },
+      "description": "軽井沢T-SITEなど、長野県内の現場で清掃業務。現場のAI化にも取り組んでいます。",
+      "areaServed": [
+        { "@type": "City", "name": "軽井沢町" },
+        { "@type": "City", "name": "御代田町" },
+        { "@type": "City", "name": "小諸市" }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://totonoeruya.jp/" },
+        { "@type": "ListItem", "position": 2, "name": "清掃", "item": "https://totonoeruya.jp/cleaning/" }
+      ]
+    }
   ]
 }
 </script>
