@@ -1,0 +1,20 @@
+.vercel
+*.code-workspace
+.claude/
+.DS_Store
+Thumbs.db
+*.pyc
+__pycache__/
+
+# Internal planning docs (work-in-progress, not for public)
+PHASE-A-CHANGE-REPORT.md
+REBUILD-*.md
+REORGANIZE-*.md
+CURRENT-STATE.md
+design-research-*.md
+copy-design-*.md
+copy-final-*.md
+
+# Legacy / archive (not for production deploy)
+legacy/
+shared/

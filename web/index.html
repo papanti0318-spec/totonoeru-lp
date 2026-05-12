@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HP・LP制作｜長野県小諸市のAI実装屋｜ととのえる屋</title>
+<meta name="description" content="長野県小諸市のHP・LP制作。AIで言葉を集約し、ブランドの核だけを残す。冊子・サイネージ・動画・現場AI集約まで、ひとりで貫通。haluta houseほか実績公開中。御代田・軽井沢エリア対応。">
+<meta name="keywords" content="HP制作 小諸, LP制作 小諸, HP制作 軽井沢, LP制作 長野, AI 小諸, DX 小諸, 御代田 HP制作, ととのえる屋">
+<link rel="canonical" href="https://totonoeruya.jp/web/">
+
+<meta property="og:title" content="HP・LP制作｜長野県小諸市のAI実装屋｜ととのえる屋">
+<meta property="og:description" content="AIで言葉を集約し、ブランドの核だけを残す。冊子・サイネージ・動画まで、ひとりで貫通。haluta houseほか実績公開中。">
+<meta property="og:url" content="https://totonoeruya.jp/web/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://totonoeruya.jp/og.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/opener.css">
+<link rel="stylesheet" href="../assets/transition.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "HP・LP制作",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": "ととのえる屋"
+  },
+  "description": "ブランドの核を言語化し、LP・冊子・サイネージとして実装。haluta house・ロビンソン（washdeli）など、取引先の実績公開中。",
+  "areaServed": [
+    { "@type": "City", "name": "小諸市" },
+    { "@type": "City", "name": "御代田町" },
+    { "@type": "City", "name": "軽井沢町" }
+  ]
+}
+</script>
+</head>
+<body class="has-site-nav">
+
+<!-- PAGE TRANSITION OVERLAY -->
+<div class="transition" id="transition" aria-hidden="true">
+  <div class="transition-stage">
+    <span class="transition-line transition-line--green"></span>
+    <span class="transition-line transition-line--amber"></span>
+    <span class="transition-line transition-line--soft"></span>
+    <img class="transition-logo" src="../assets/logo-totonoeru.png" alt="" width="150" height="190">
+  </div>
+</div>
+<script src="../assets/transition.js"></script>
+
+<!-- OPENER -->
+<div class="opener" id="opener" aria-hidden="true">
+  <button class="opener-skip" id="opener-skip" aria-label="オープニングをスキップ">Skip</button>
+  <div class="opener-stage">
+    <span class="opener-line opener-line--green"></span>
+    <span class="opener-line opener-line--amber"></span>
+    <span class="opener-line opener-line--soft"></span>
+    <img class="opener-logo" src="../assets/logo-totonoeru.png" alt="ととのえる屋" width="220" height="280">
+    <p class="opener-tagline">TOTONOERUYA &nbsp;·&nbsp; KOMORO, NAGANO</p>
+  </div>
+</div>
+<script src="../assets/opener.js"></script>
+
+<!-- 新ナビゲーション（左サイド固定・ハンバーガー＋ロゴ・極ミニマル） -->
+<nav class="site-nav">
+  <button type="button" class="site-nav-trigger" aria-label="メニューを開く" aria-expanded="false" aria-controls="site-drawer">
+    <span class="site-nav-bars" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </span>
+  </button>
+</nav>
+
+<!-- 左サイドドロワー（HISHIDA風 + haluta感） -->
+<aside class="site-drawer" id="site-drawer" aria-hidden="true" aria-label="メニュー">
+  <div class="site-drawer-backdrop" data-drawer-close></div>
+  <div class="site-drawer-inner" role="dialog" aria-modal="true">
+    <div class="site-drawer-content">
+      <span class="site-drawer-eyebrow">Menu</span>
+      <ul class="site-drawer-menu">
+        <li>
+          <a href="/" data-drawer-close>
+            <span class="lang-en">Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="/web/" data-drawer-close>
+            <span class="lang-en">Web</span>
+          </a>
+        </li>
+        <li>
+          <a href="/cleaning/" data-drawer-close>
+            <span class="lang-en">Cleaning</span>
+          </a>
+        </li>
+        <li>
+          <a href="/guitar/" data-drawer-close>
+            <span class="lang-en">Guitar</span>
+          </a>
+        </li>
+        <li>
+          <a href="/articles/" data-drawer-close>
+            <span class="lang-en">Journal</span>
+          </a>
+        </li>
+        <li>
+          <a href="#contact" data-drawer-close>
+            <span class="lang-en">Contact</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="site-drawer-actions">
+        <a class="site-drawer-action" href="https://line.me/R/ti/p/@903xtesg" target="_blank" rel="noopener" aria-label="LINE">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        </a>
+        <a class="site-drawer-action" href="mailto:totonoeru.ya@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="1"/>
+            <path d="M3 7l9 6 9-6"/>
+          </svg>
+        </a>
+      </div>
+
+      <p class="site-drawer-foot">
+        ととのえる屋<br>
+        長野県小諸市
+      </p>
+    </div>
+  </div>
+</aside>
+
+<main>
+<!-- HERO -->
+<header id="hero">
+  <div class="hero-eyebrow">
+    <span></span>WEB PRODUCTION
+  </div>
+  <h1 class="hero-headline">
+    ばらばらの言葉を、ひとつのブランドに。
+  </h1>
+  <p class="hero-sub">
+    LP・冊子・サイネージ・動画。ぜんぶ、同じ手で作る。
+  </p>
+  <div class="hero-scroll">Scroll</div>
+</header>
+
+<!-- HERO FEATURE IMAGE -->
+<div class="hero-feature" style="aspect-ratio: 21/9; overflow: hidden; max-width: 1280px; margin: 0 auto 100px;">
+  <img src="../assets/business-web.jpg" alt="長野県小諸市のHP・LP制作（自然光のスタジオ）" loading="lazy" decoding="async" width="1600" height="685" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+</div>
+
+<!-- 集約（思想：Web関係をひとりに集約する） -->
+<section id="convergence">
+  <div class="conv-container">
+    <h2 class="conv-title">
+      別の人がやれば、別の言葉になる。<br>
+      ひとりがやれば、思想が貫通する。
+    </h2>
+
+    <div class="conv-three" aria-hidden="true">
+      <div class="conv-item">
+        <span class="conv-label">HP</span>
+      </div>
+      <div class="conv-item">
+        <span class="conv-label">LP</span>
+      </div>
+      <div class="conv-item">
+        <span class="conv-label">SNS</span>
+      </div>
+    </div>
+
+    <svg class="conv-svg" viewBox="0 0 560 180" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <line class="conv-svg-line conv-svg-line--green" x1="48"  y1="0" x2="280" y2="180" />
+      <line class="conv-svg-line conv-svg-line--soft"  x1="280" y1="0" x2="280" y2="180" />
+      <line class="conv-svg-line conv-svg-line--amber" x1="512" y1="0" x2="280" y2="180" />
+    </svg>
+
+    <div class="conv-result">
+      <img class="conv-logo" src="../assets/logo-totonoeru.png" alt="ととのえる屋" width="160" height="200">
+      <p class="conv-tagline">集約してととのえる。</p>
+    </div>
+  </div>
+</section>
+
+<script>
+  // 集約セクション 進入トリガ
+  (function() {
+    const convergence = document.getElementById('convergence');
+    if (!convergence) return;
+    const convObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          convObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.25, rootMargin: '0px 0px -10% 0px' });
+    convObserver.observe(convergence);
+  })();
+</script>
+
+<!-- 思想：AI時代の、なぜ集約か -->
+<section class="thought" style="background: var(--bg); padding: 120px 24px; overflow: hidden;">
+  <div class="container" style="max-width: 760px;">
+    <p class="anim" style="font-size: 11px; letter-spacing: var(--ls-eyebrow); text-transform: uppercase; color: var(--text-soft); text-align: center; margin-bottom: 36px;">
+      <span style="display: inline-block; width: 24px; height: 1px; background: var(--text-soft); vertical-align: middle; margin-right: 10px;"></span>いま、なぜ集約か
+    </p>
+    <blockquote class="anim anim-delay-1" style="font-family: 'Noto Serif JP', serif; font-size: clamp(1.4rem, 2.6vw, 2.1rem); font-weight: 300; line-height: 2.1; letter-spacing: var(--ls-mid); text-align: center; color: var(--text); margin: 0; padding: 0; border: 0; text-wrap: balance;">
+      AIは、言葉を無限に出せる。<br>
+      その言葉をたたんで、<br>
+      核だけ残す。
+    </blockquote>
+    <p class="anim anim-delay-2" style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 14px; color: var(--text-soft); text-align: center; margin-top: 48px; letter-spacing: var(--ls-wide);">
+      — ととのえる屋の仕事
+    </p>
+  </div>
+</section>
+
+<!-- Proof（取引先の実績：制作 + 業務改善） -->
+<section>
+  <div class="container--wide">
+    <div class="sec-header anim">
+      <h2 class="sec-title">取引先の実績</h2>
+      <p class="sec-sub">制作と、現場の仕組みづくり。</p>
+    </div>
+
+    <!-- Case 01 — haluta house（制作） -->
+    <div class="anim anim-delay-1" style="margin-bottom: 80px;">
+      <div style="font-size: 11px; letter-spacing: var(--ls-eyebrow); text-transform: uppercase; color: var(--text-soft); margin-bottom: 12px; text-align: center;">
+        <span style="display: inline-block; width: 24px; height: 1px; background: var(--text-soft); vertical-align: middle; margin-right: 10px;"></span>Case 01 — 制作
+      </div>
+      <h3 style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 2rem; font-weight: 400; text-align: center; margin-bottom: 8px;">haluta house</h3>
+      <p style="text-align: center; font-size: 14px; color: var(--text-mid); margin-bottom: 32px;">
+        ブランドの核を言葉にして、4媒体で展開。
+      </p>
+      <!-- 大判ヒーロー（LP） -->
+      <div style="aspect-ratio: 16/9; border-radius: var(--radius); overflow: hidden; margin-bottom: 24px;">
+        <img src="../assets/haluta-lp.jpg" alt="haluta house のLP制作（御代田町・ととのえる屋制作実績）" loading="lazy" decoding="async" width="1600" height="900" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+      </div>
+      <!-- 3小グリッド -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin-bottom: 24px;">
+        <div style="aspect-ratio: 16/10; border-radius: var(--radius); overflow: hidden;">
+          <img src="../assets/haluta-booklet.png" alt="haluta house 冊子（10ページ・1000部・graphic.jp入稿）" loading="lazy" decoding="async" width="800" height="500" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        </div>
+        <div style="aspect-ratio: 16/10; border-radius: var(--radius); overflow: hidden;">
+          <img src="../assets/haluta-signage.jpg" alt="haluta house サイネージ（10章67秒・60fps mp4）" loading="lazy" decoding="async" width="800" height="500" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        </div>
+        <div style="aspect-ratio: 16/10; border-radius: var(--radius); overflow: hidden;">
+          <img src="../assets/haluta-reels.jpg" alt="haluta Instagram Reels 縦動画（1080×1920）" loading="lazy" decoding="async" width="800" height="500" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        </div>
+      </div>
+      <div style="text-align: center;">
+        <a href="https://haluta.jp" target="_blank" rel="noopener" class="btn btn--green">haluta.jp を見る</a>
+      </div>
+    </div>
+
+    <!-- Case 02 — ロビンソン（washdeli）（業務改善） -->
+    <div class="anim anim-delay-2" style="margin-bottom: 32px;">
+      <div style="font-size: 11px; letter-spacing: var(--ls-eyebrow); text-transform: uppercase; color: var(--text-soft); margin-bottom: 12px; text-align: center;">
+        <span style="display: inline-block; width: 24px; height: 1px; background: var(--text-soft); vertical-align: middle; margin-right: 10px;"></span>Case 02 — 業務改善
+      </div>
+      <h3 style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 2rem; font-weight: 400; text-align: center; margin-bottom: 8px;">ロビンソン（washdeli）</h3>
+      <p style="text-align: center; font-size: 14px; color: var(--text-mid); margin-bottom: 32px;">
+        予約・返信オペレーションを、AIに集約。
+      </p>
+      <div class="testimonial-card testimonial-card--sm" style="max-width: 640px; margin: 0 auto;">
+        <div class="testimonial-card-photo">
+          <img src="../assets/testimonial-wash-deli-face.png" alt="ロビンソン（washdeli）">
+        </div>
+        <div class="testimonial-card-content">
+          <p class="testimonial-card-role">ロビンソン（washdeli）</p>
+          <p class="testimonial-card-quote">予約・返信対応 1日およそ60分が、ほぼ0分に。</p>
+          <p class="testimonial-card-detail">「IT系は苦手意識があったが、わかりやすく体系立てて説明してくれて、無理なく取り組めました。」</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 仕組み -->
+<section style="background: var(--bg-warm);">
+  <div class="container">
+    <div class="sec-header anim">
+      <h2 class="sec-title">仕組み</h2>
+      <p class="sec-sub">他社が触れない場所で、仕事をする。</p>
+    </div>
+
+    <div class="anim anim-delay-1" style="max-width: 720px; margin: 0 auto;">
+      <ul class="numbered-list">
+        <li data-num="01">
+          <strong>地方</strong>
+          <span class="desc">小諸から、東京と同じ仕事を作る。</span>
+        </li>
+        <li data-num="02">
+          <strong>思想</strong>
+          <span class="desc">本質が残る仕事だけをする。</span>
+        </li>
+        <li data-num="03">
+          <strong>AI×現場</strong>
+          <span class="desc">デスクと現場、両方を知っている。</span>
+        </li>
+        <li data-num="04">
+          <strong>面倒担当</strong>
+          <span class="desc">全領域を、ひとりで併走する。</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="anim anim-delay-2" style="max-width: 640px; margin: 48px auto 0; text-align: center; font-size: 15px; line-height: 2; color: var(--text-mid);">
+      <p>
+        この4つが重なるところが、私たちの場所。<strong style="color: var(--text);">「思想 × 全領域併走」</strong>と呼んでいる。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 照井 -->
+<section>
+  <div class="container">
+    <div class="profile-block">
+      <div class="profile-block-header anim">
+        <h2 class="profile-block-name">代表　照井航次郎</h2>
+      </div>
+
+      <div class="profile-block-photo-wrapper anim anim-delay-1">
+        <div class="profile-block-photo">
+          <img src="../assets/photo-terui.jpg" alt="照井航次郎">
+        </div>
+      </div>
+
+      <div class="profile-block-content anim anim-delay-2">
+        <p>
+          東京都出身。工業高校を出て、18歳で就職。
+        </p>
+        <p>
+          ジブラルタ生命、居酒屋経営を経て、27歳で軽井沢へ移住（2020年・6年前）。ロビンソン株式会社で執行役員を務めたあと、独立してととのえる屋を開業。
+        </p>
+        <p>
+          現場とAIをつなぐ「集約の人」として、最新の情報を地元へ。<br>
+          地域に貢献したい——その思いで、ここから始めています。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <div class="container">
+    <div class="sec-header anim">
+      <h2 class="sec-title">相談する</h2>
+      <p class="sec-sub">問い合わせ → 見積 → 着手。<br>まずは気軽に。</p>
+    </div>
+
+    <div class="contact-inner">
+      <div class="contact-barrier-lowering anim anim-delay-1">
+        何がなんだかわからなくても、とりあえず話したいだけでもOKです。
+      </div>
+
+      <div class="contact-methods anim anim-delay-2">
+        <div class="contact-method">
+          <div class="contact-label">Email</div>
+          <div class="contact-value">
+            <a href="mailto:totonoeru.ya@gmail.com">totonoeru.ya@gmail.com</a>
+          </div>
+          <div class="contact-note">
+            件名はなんでも構いません。<br>
+            「LP相談」「清掃」など書いていただけると、すぐ気づけます。
+          </div>
+        </div>
+
+        <div class="contact-method">
+          <div class="contact-label">LINE</div>
+          <div class="contact-value">
+            <a href="https://line.me/R/ti/p/@903xtesg" target="_blank" rel="noopener">@903xtesg</a>
+          </div>
+          <div class="contact-note">
+            「相談したい」と一言送ってください。
+          </div>
+        </div>
+      </div>
+
+      <div class="anim anim-delay-3">
+        <a href="https://line.me/R/ti/p/@903xtesg" class="btn btn--line" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+          LINEで相談する
+        </a>
+      </div>
+
+      <div class="contact-footer anim anim-delay-4">
+        長野県・小諸市 / 全国オンライン対応<br>
+        「こんなの、できるかな？」から、いっしょに考えます。
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-nap">
+      <p class="footer-nap-name">ととのえる屋</p>
+      <p class="footer-nap-address">長野県小諸市</p>
+      <p class="footer-nap-contact">
+        <a href="mailto:totonoeru.ya@gmail.com">totonoeru.ya@gmail.com</a>　／　<a href="https://line.me/R/ti/p/@903xtesg" target="_blank" rel="noopener">LINE: @903xtesg</a>
+      </p>
+      <p class="footer-nap-area">対応エリア：小諸市・御代田町・軽井沢町・上田市ほか長野県内（オンライン全国対応）</p>
+    </div>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <img src="../assets/logo-totonoeru.png" alt="ととのえる屋" class="footer-logo-img" width="44" height="56">
+      </div>
+      <div class="footer-copy">© 2026 ととのえる屋. All rights reserved. 長野県小諸市</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.anim').forEach(el => {
+  el.classList.add('will-animate');
+});
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.remove('will-animate');
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+
+document.querySelectorAll('.anim').forEach(el => observer.observe(el));
+
+// モバイルナビゲーション（旧nav・残置）
+const navToggle = document.querySelector('.nav-toggle');
+const navMenu = document.querySelector('.nav-menu');
+if (navToggle && navMenu) {
+  navToggle.addEventListener('click', () => {
+    const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+    navToggle.setAttribute('aria-expanded', String(!isOpen));
+    navMenu.setAttribute('aria-hidden', String(isOpen));
+  });
+}
+
+// site-drawer（左ドロワー：ハンバーガー＋ロゴで開閉）
+(function() {
+  const trigger = document.querySelector('.site-nav-trigger');
+  const drawer = document.getElementById('site-drawer');
+  if (!trigger || !drawer) return;
+
+  function openDrawer() {
+    drawer.classList.add('is-open');
+    drawer.setAttribute('aria-hidden', 'false');
+    trigger.setAttribute('aria-expanded', 'true');
+  }
+  function closeDrawer() {
+    drawer.classList.remove('is-open');
+    drawer.setAttribute('aria-hidden', 'true');
+    trigger.setAttribute('aria-expanded', 'false');
+  }
+  function toggleDrawer() {
+    if (drawer.classList.contains('is-open')) closeDrawer();
+    else openDrawer();
+  }
+
+  trigger.addEventListener('click', toggleDrawer);
+  drawer.querySelectorAll('[data-drawer-close]').forEach(el => {
+    el.addEventListener('click', () => {
+      // リンクの場合はそのまま遷移してから閉じる（ハッシュ含む）
+      setTimeout(closeDrawer, 80);
+    });
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawer.classList.contains('is-open')) closeDrawer();
+  });
+})();
+</script>
+
+</body>
+</html>

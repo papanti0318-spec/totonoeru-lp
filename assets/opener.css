@@ -1,0 +1,173 @@
+/* ===================================================================
+   ととのえる屋 — オープニングアニメーション
+   3本の線が集まる → 「ととのえる」収束 → 「集約してととのえる」
+   セッション1回のみ再生・skip可・prefers-reduced-motion対応
+   =================================================================== */
+
+.opener {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  animation: opener-out 0.7s 2.7s cubic-bezier(.22, 1, .36, 1) forwards;
+}
+
+.opener.is-done {
+  display: none;
+}
+
+body.opener-playing {
+  overflow: hidden;
+}
+
+/* ─── ステージ ─── */
+.opener-stage {
+  position: relative;
+  width: min(360px, 80vw);
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ─── 3本の線 ─── */
+.opener-line {
+  position: absolute;
+  width: 1px;
+  height: 84px;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+  opacity: 0;
+}
+
+.opener-line--green {
+  background: var(--green);
+  animation: opener-line-1 1.4s cubic-bezier(.22, 1, .36, 1) forwards;
+}
+
+.opener-line--amber {
+  background: var(--amber);
+  animation: opener-line-2 1.4s cubic-bezier(.22, 1, .36, 1) forwards;
+}
+
+.opener-line--soft {
+  background: var(--text-soft);
+  animation: opener-line-3 1.4s cubic-bezier(.22, 1, .36, 1) forwards;
+}
+
+@keyframes opener-line-1 {
+  0%   { opacity: 0; transform: translate(-180px, -50%) scaleY(.3); }
+  25%  { opacity: 1; transform: translate(-180px, -50%) scaleY(1); }
+  75%  { opacity: .55; transform: translate(-50%, -50%) scaleY(1); }
+  100% { opacity: 0; transform: translate(-50%, -50%) scaleY(0); }
+}
+
+@keyframes opener-line-2 {
+  0%   { opacity: 0; transform: translate(180px, -50%) scaleY(.3); }
+  25%  { opacity: 1; transform: translate(180px, -50%) scaleY(1); }
+  75%  { opacity: .55; transform: translate(-50%, -50%) scaleY(1); }
+  100% { opacity: 0; transform: translate(-50%, -50%) scaleY(0); }
+}
+
+@keyframes opener-line-3 {
+  0%   { opacity: 0; transform: translate(-50%, -150%) scaleY(.3); }
+  25%  { opacity: 1; transform: translate(-50%, -150%) scaleY(1); }
+  75%  { opacity: .55; transform: translate(-50%, -50%) scaleY(1); }
+  100% { opacity: 0; transform: translate(-50%, -50%) scaleY(0); }
+}
+
+/* ─── ロゴ画像（屋根・整・ととのえる） ─── */
+.opener-logo {
+  width: clamp(160px, 26vw, 220px);
+  height: auto;
+  display: block;
+  opacity: 0;
+  filter: blur(14px);
+  transform: scale(.92);
+  margin: 0;
+  animation: opener-logo-in 1.5s 1.0s cubic-bezier(.22, 1, .36, 1) forwards;
+}
+
+@keyframes opener-logo-in {
+  0%   { opacity: 0; filter: blur(14px); transform: scale(.92); }
+  100% { opacity: 1; filter: blur(0); transform: scale(1); }
+}
+
+/* ─── タグライン「集約して、ととのえる。」 ─── */
+.opener-tagline {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(.85rem, 1.4vw, 1rem);
+  color: var(--text-soft);
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  margin: 0;
+  white-space: nowrap;
+  opacity: 0;
+  animation: opener-tag-in 0.9s 2.1s cubic-bezier(.22, 1, .36, 1) forwards;
+}
+
+.opener-tagline--ja {
+  font-family: 'Noto Serif JP', serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(.8rem, 1.2vw, .95rem);
+  letter-spacing: .18em;
+  text-transform: none;
+  color: var(--text-mid);
+}
+
+@keyframes opener-tag-in {
+  0%   { opacity: 0; transform: translate(-50%, 8px); }
+  100% { opacity: 1; transform: translate(-50%, 0); }
+}
+
+@keyframes opener-out {
+  0%   { opacity: 1; visibility: visible; }
+  100% { opacity: 0; visibility: hidden; }
+}
+
+/* ─── Skip ボタン ─── */
+.opener-skip {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 10000;
+  background: transparent;
+  border: 0;
+  padding: 8px 14px;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  cursor: pointer;
+  opacity: 0;
+  transition: color .2s;
+  animation: opener-skip-in 0.5s 0.6s forwards;
+}
+
+.opener-skip:hover,
+.opener-skip:focus-visible {
+  color: var(--green);
+  outline: none;
+}
+
+@keyframes opener-skip-in {
+  to { opacity: 1; }
+}
+
+/* ─── reduced-motion 対応（即時非表示） ─── */
+@media (prefers-reduced-motion: reduce) {
+  .opener { display: none !important; }
+}

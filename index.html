@@ -3,1568 +3,321 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ととのえる屋｜わからないものを小さくしていく</title>
-<meta name="description" content="AIは言葉を無限に出せる　その言葉をたたんで核だけ残すのが ととのえる屋のしごと　長野県・小諸市から 1日12時間AIと対話する集約の人が 隣にいます">
+<title>ととのえる屋｜長野県小諸市のAI・DX実装屋｜HP・LP制作 / 清掃 / ギター教室</title>
+<meta name="description" content="長野県小諸市のAI・DX実装屋。HP・LP制作、清掃、ギター教室を、ひとりで貫通させて作る。御代田・軽井沢エリア対応。代表：照井航次郎。">
+<meta name="keywords" content="小諸 AI, 小諸 DX, 軽井沢 AI, 御代田 AI, HP制作 小諸, LP制作 長野, 清掃 軽井沢, ギター教室 小諸, ととのえる屋">
+<link rel="canonical" href="https://totonoeruya.jp/">
+
+<!-- OGP -->
+<meta property="og:title" content="ととのえる屋｜長野県小諸市のAI・DX実装屋">
+<meta property="og:description" content="HP・LP制作、清掃、ギター教室。AIで言葉を集約し、核だけ残す。御代田・軽井沢エリア対応。">
+<meta property="og:url" content="https://totonoeruya.jp/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://totonoeruya.jp/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
 
-<style>
-:root {
-  --bg:        #F8F5EF;
-  --bg-warm:   #F0EBE1;
-  --text:      #1C1A17;
-  --text-mid:  #5A5349;
-  --text-soft: #8C8278;
-  --green:     #2B4A1A;
-  --green-mid: #3D6626;
-  --green-lt:  #EBF0E6;
-  --amber:     #B8823A;
-  --amber-lt:  #F5EDD9;
-  --line:      #00B900;
-  --border:    rgba(44,37,28,0.12);
-  --radius:    4px;
-}
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/opener.css">
+<link rel="stylesheet" href="assets/transition.css">
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-html { scroll-behavior: smooth; font-size: 16px; }
-
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: 'Noto Sans JP', sans-serif;
-  font-weight: 300;
-  line-height: 1.8;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* ─── UTILITIES ─── */
-.serif { font-family: 'Noto Serif JP', serif; }
-.cormorant { font-family: 'Cormorant Garamond', serif; }
-.container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
-.container--wide { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
-.tag {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: .12em;
-  padding: 4px 12px;
-  border: 1px solid var(--border);
-  border-radius: 2px;
-  color: var(--text-mid);
-  text-transform: uppercase;
-}
-.tag--green { background: var(--green-lt); border-color: var(--green-mid); color: var(--green-mid); }
-.tag--amber { background: var(--amber-lt); border-color: var(--amber); color: var(--amber); }
-
-section { padding: 100px 0; }
-@media(max-width:640px){ section { padding: 72px 0; } }
-
-/* ─── ANIMATIONS ─── */
-@keyframes fadeUp {
-  from { opacity:0; transform:translateY(24px); }
-  to   { opacity:1; transform:translateY(0); }
-}
-@keyframes fadeIn {
-  from { opacity:0; }
-  to   { opacity:1; }
-}
-@keyframes lineGrow {
-  from { transform: scaleX(0); }
-  to   { transform: scaleX(1); }
-}
-
-.anim { opacity: 1; } /* JSが有効なら上書きされる */
-.anim.will-animate { opacity: 0; }
-.anim.visible { animation: fadeUp .7s cubic-bezier(.22,1,.36,1) forwards; }
-.anim-delay-1 { animation-delay: .1s !important; }
-.anim-delay-2 { animation-delay: .2s !important; }
-.anim-delay-3 { animation-delay: .3s !important; }
-.anim-delay-4 { animation-delay: .4s !important; }
-
-/* ─── NAVIGATION ─── */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  padding: 18px 32px;
-  display: flex; align-items: center; justify-content: space-between;
-  background: rgba(242,237,228,.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-}
-.nav-logo {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 15px; font-weight: 600;
-  color: var(--green);
-  text-decoration: none;
-  letter-spacing: .04em;
-}
-.nav-cta {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: var(--green);
-  color: #fff;
-  text-decoration: none;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: .08em;
-  padding: 10px 20px;
-  border-radius: var(--radius);
-  transition: background .2s;
-}
-.nav-cta:hover { background: var(--green-mid); }
-
-/* ─── HERO ─── */
-#hero {
-  min-height: 100svh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  padding: 0;
-  padding-top: 72px;
-  gap: 0;
-  overflow: hidden;
-}
-.hero-text {
-  padding: 80px 56px 80px 48px;
-  animation: fadeUp .9s cubic-bezier(.22,1,.36,1) forwards;
-}
-.hero-eyebrow {
-  font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
-  color: var(--text-soft); margin-bottom: 32px;
-}
-.hero-eyebrow span {
-  display: inline-block;
-  width: 24px; height: 1px;
-  background: var(--text-soft);
-  vertical-align: middle;
-  margin-right: 10px;
-}
-.hero-headline {
-  font-family: 'Noto Serif JP', serif;
-  font-size: clamp(2.4rem, 6vw, 3.8rem); /* 2割増 */
-  font-weight: 600;
-  line-height: 1.8;
-  letter-spacing: .05em; /* 全角スペースに合わせて */
-  color: var(--text);
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
-.hero-headline em {
-  font-style: normal;
-  color: var(--amber);
-  position: relative;
-  display: inline-block;
-}
-.hero-headline em::after {
-  content: '';
-  position: absolute; left:0; bottom:-2px; right:0; height:2px;
-  background: var(--amber);
-  transform-origin: left;
-  animation: lineGrow .6s .9s cubic-bezier(.22,1,.36,1) forwards;
-  transform: scaleX(0);
-}
-.hero-sub {
-  font-size: 16px;
-  color: #6b6b6b;
-  line-height: 2;
-  letter-spacing: .03em;
-  margin-bottom: 48px;
-}
-.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
-.btn {
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 14px 28px;
-  border-radius: var(--radius);
-  font-size: 14px; font-weight: 500;
-  text-decoration: none;
-  transition: all .2s;
-  letter-spacing: .02em;
-}
-.btn--primary {
-  background: var(--green);
-  color: #fff;
-}
-.btn--primary:hover { background: var(--green-mid); transform: translateY(-1px); }
-.btn--line {
-  background: var(--line);
-  color: #fff;
-}
-.btn--line:hover { opacity: .85; transform: translateY(-1px); }
-.btn--ghost {
-  border: 1px solid var(--border);
-  color: var(--text-mid);
-  background: transparent;
-}
-.btn--ghost:hover { border-color: var(--green); color: var(--green); }
-
-.hero-image {
-  height: 100svh;
-  position: relative;
-  overflow: hidden;
-  background: #1a1a1a;
-}
-.hero-image img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  object-position: 30% center;
-  opacity: .75;
-  filter: sepia(.15) brightness(.85);
-  transform: scale(1.05);
-}
-.hero-image-caption {
-  position: absolute; bottom: 40px; left: 32px; right: 32px;
-  color: rgba(255,255,255,.7);
-  font-size: 12px; letter-spacing: .1em;
-}
-.hero-image-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 24px; font-style: italic;
-  color: #fff; display: block; margin-top: 4px;
-}
-
-@media(max-width:800px){
-  #hero {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
-  }
-  .hero-image {
-    height: 52vw; min-height: 240px;
-    order: -1;
-  }
-  .hero-text { padding: 48px 24px; }
-  .hero-headline {
-    font-size: clamp(1.8rem, 7vw, 2.6rem);
-    line-height: 1.7;
-    margin-top: 24px;
-    margin-bottom: 24px;
-  }
-  .hero-sub {
-    font-size: 15px;
-    line-height: 1.9;
-  }
-}
-@media(max-width:420px){
-  .hero-headline {
-    font-size: 1.7rem;
-    letter-spacing: .03em;
-  }
-}
-
-/* ─── SECTION HEADER ─── */
-.sec-header { margin-bottom: 64px; }
-.sec-header .tag { margin-bottom: 20px; }
-.sec-title {
-  font-family: 'Noto Serif JP', serif;
-  font-size: clamp(1.5rem, 4vw, 2.2rem);
-  font-weight: 600;
-  line-height: 1.6;
-  letter-spacing: -.01em;
-}
-.sec-sub {
-  margin-top: 16px;
-  font-size: 15px; color: var(--text-mid); line-height: 2;
-}
-
-/* ─── WHO ─── */
-#who { background: var(--bg-warm); }
-.who-grid {
-  display: grid;
-  grid-template-columns: 340px 1fr;
-  gap: 64px;
-  align-items: start;
-}
-.who-photo {
-  position: relative;
-}
-.who-photo img {
-  width: 100%;
-  aspect-ratio: 3/4;
-  object-fit: cover;
-  object-position: center top;
-  border-radius: 2px;
-  filter: sepia(.15);
-}
-.who-photo-label {
-  position: absolute; bottom: -16px; right: -16px;
-  background: var(--amber);
-  color: #fff;
-  font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
-  padding: 8px 16px;
-}
-.who-body {}
-.who-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2.4rem; font-style: italic;
-  color: var(--green);
-  margin-bottom: 4px;
-}
-.who-name-ja {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 13px; color: var(--text-soft);
-  margin-bottom: 32px;
-}
-.who-bio {
-  font-size: 15px; color: var(--text-mid);
-  line-height: 2.1;
-  margin-bottom: 32px;
-}
-.who-bio strong { color: var(--text); font-weight: 500; }
-.who-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
-.who-tag {
-  font-size: 12px;
-  padding: 5px 14px;
-  border: 1px solid var(--border);
-  border-radius: 2px;
-  color: var(--text-mid);
-}
-.who-quote {
-  border-left: 3px solid var(--amber);
-  padding: 16px 20px;
-  background: var(--amber-lt);
-  border-radius: 0 var(--radius) var(--radius) 0;
-}
-.who-quote p {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 14px; line-height: 2;
-  color: var(--text);
-}
-
-@media(max-width:720px){
-  .who-grid { grid-template-columns: 1fr; gap: 40px; }
-  .who-photo { max-width: 260px; }
-}
-
-/* ─── PROBLEM ─── */
-#problem {}
-.problem-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2px;
-  background: var(--border);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-}
-.problem-card {
-  background: var(--bg);
-  padding: 36px 32px;
-}
-.problem-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 3rem; font-style: italic;
-  color: var(--bg-warm);
-  line-height: 1;
-  margin-bottom: 16px;
-  font-weight: 600;
-}
-.problem-title {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 15px; font-weight: 600;
-  margin-bottom: 10px;
-}
-.problem-body { font-size: 13px; color: var(--text-mid); line-height: 1.9; }
-
-@media(max-width:600px){
-  .problem-grid { grid-template-columns: 1fr; }
-}
-
-/* ─── PROOF ─── */
-#proof { background: var(--text); color: #fff; }
-#proof .sec-header .sec-title { color: #fff; }
-#proof .sec-header .sec-sub { color: rgba(255,255,255,.55); }
-.proof-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-.proof-card {
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.1);
-  border-radius: 2px;
-  overflow: hidden;
-  transition: background .2s, transform .2s;
-}
-.proof-card:hover { background: rgba(255,255,255,.09); transform: translateY(-3px); }
-.proof-mockup {
-  width: 100%;
-  overflow: hidden;
-  border-bottom: 1px solid rgba(255,255,255,.08);
-}
-.proof-mockup svg { display: block; width: 100%; height: auto; }
-.proof-foot { padding: 22px 22px 26px; }
-.proof-badge {
-  display: inline-block;
-  font-size: 10px; letter-spacing: .1em; text-transform: uppercase;
-  padding: 3px 10px;
-  background: var(--amber);
-  color: #fff;
-  border-radius: 2px;
-  margin-bottom: 12px;
-}
-.proof-title {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 15px; font-weight: 600;
-  color: #fff;
-  margin-bottom: 8px;
-}
-.proof-body { font-size: 12px; color: rgba(255,255,255,.5); line-height: 1.9; }
-
-@media(max-width:720px){
-  .proof-grid { grid-template-columns: 1fr; gap: 16px; }
-}
-
-/* ─── HOW ─── */
-#how { background: var(--bg-warm); }
-.how-steps { display: flex; flex-direction: column; gap: 0; }
-.how-step {
-  display: grid;
-  grid-template-columns: 72px 1fr;
-  gap: 0;
-  padding: 36px 0;
-  border-bottom: 1px solid var(--border);
-  align-items: start;
-}
-.how-step:last-child { border-bottom: none; }
-.how-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 3.5rem;
-  font-style: italic;
-  color: var(--green-lt);
-  line-height: 1;
-  font-weight: 600;
-  padding-top: 4px;
-}
-.how-num-inner { color: var(--green); }
-.how-content {}
-.how-title {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 17px; font-weight: 600;
-  margin-bottom: 8px;
-}
-.how-body { font-size: 14px; color: var(--text-mid); line-height: 2; }
-
-/* ─── SERVICES ─── */
-#services {}
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-.svc-card {
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 36px 28px;
-  background: var(--bg);
-  transition: box-shadow .2s, transform .2s;
-}
-.svc-card:hover {
-  box-shadow: 0 8px 32px rgba(0,0,0,.06);
-  transform: translateY(-2px);
-}
-.svc-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.4rem; font-style: italic;
-  color: var(--text-soft);
-  margin-bottom: 20px;
-}
-.svc-title {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 16px; font-weight: 600;
-  margin-bottom: 12px;
-}
-.svc-body { font-size: 13px; color: var(--text-mid); line-height: 2; margin-bottom: 20px; }
-.svc-tag { }
-
-@media(max-width:720px){
-  .services-grid { grid-template-columns: 1fr; }
-}
-
-/* ─── PHILOSOPHY ─── */
-#philosophy {
-  background: var(--green);
-  color: #fff;
-  padding: 120px 0;
-}
-.philosophy-inner {
-  max-width: 640px;
-  margin: 0 auto;
-  text-align: center;
-}
-.philosophy-lead {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2rem, 5vw, 3.2rem);
-  font-style: italic;
-  line-height: 1.4;
-  margin-bottom: 40px;
-  color: rgba(255,255,255,.95);
-}
-.philosophy-body {
-  font-size: 15px;
-  line-height: 2.2;
-  color: rgba(255,255,255,.65);
-  margin-bottom: 48px;
-}
-.philosophy-body strong {
-  color: rgba(255,255,255,.9);
-  font-weight: 500;
-}
-.philosophy-sig {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 1.4rem;
-  color: var(--amber);
-}
-
-/* ─── PRICING ─── */
-#pricing { background: var(--bg-warm); }
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  align-items: start;
-}
-.price-card {
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 40px 32px;
-}
-.price-card--featured {
-  background: var(--green);
-  border-color: var(--green);
-  color: #fff;
-}
-.price-card--featured .price-label,
-.price-card--featured .price-note,
-.price-card--featured .price-list li { color: rgba(255,255,255,.65); }
-.price-card--featured .price-title,
-.price-card--featured .price-amount { color: #fff; }
-.price-card--featured .price-list li::before { color: rgba(255,255,255,.4); }
-
-.price-label {
-  font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
-  color: var(--text-soft); margin-bottom: 20px;
-}
-.price-title {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 18px; font-weight: 600;
-  margin-bottom: 8px;
-}
-.price-amount {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 3rem; font-weight: 600;
-  line-height: 1; margin-bottom: 4px;
-}
-.price-amount sup { font-size: 1.2rem; }
-.price-amount span { font-size: 1rem; font-family: 'Noto Sans JP', sans-serif; font-weight: 300; }
-.price-note { font-size: 12px; color: var(--text-soft); margin-bottom: 28px; }
-.price-divider { height: 1px; background: var(--border); margin-bottom: 24px; }
-.price-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-.price-list li { font-size: 13px; color: var(--text-mid); display: flex; align-items: flex-start; gap: 10px; }
-.price-list li::before { content: '–'; color: var(--text-soft); flex-shrink: 0; margin-top: 1px; }
-
-@media(max-width:720px){
-  .pricing-grid { grid-template-columns: 1fr; }
-}
-
-/* ─── CTA ─── */
-#cta { padding: 120px 0; }
-.cta-inner {
-  max-width: 640px; margin: 0 auto; text-align: center;
-}
-.cta-title {
-  font-family: 'Noto Serif JP', serif;
-  font-size: clamp(1.6rem, 4vw, 2.4rem);
-  font-weight: 600; line-height: 1.6;
-  margin-bottom: 20px;
-}
-.cta-body {
-  font-size: 15px; color: var(--text-mid);
-  line-height: 2; margin-bottom: 48px;
-}
-.cta-actions {
-  display: flex; flex-wrap: wrap;
-  gap: 16px; justify-content: center;
-  margin-bottom: 32px;
-}
-.cta-meta {
-  font-size: 12px; color: var(--text-soft);
-  line-height: 2;
-}
-
-/* ─── FOOTER ─── */
-footer {
-  border-top: 1px solid var(--border);
-  padding: 40px 0;
-}
-.footer-inner {
-  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
-}
-.footer-logo {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 14px; font-weight: 600; color: var(--green);
-}
-.footer-copy { font-size: 12px; color: var(--text-soft); }
-
-/* ─── SCROLL INDICATOR ─── */
-.scroll-line {
-  width: 1px; height: 60px;
-  background: linear-gradient(to bottom, var(--text-soft), transparent);
-  margin: 0 auto;
-  animation: fadeIn 1s 1.2s both;
-}
-</style>
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "ととのえる屋",
+  "founder": {
+    "@type": "Person",
+    "name": "照井航次郎"
+  },
+  "description": "長野県小諸市から。HP・LP制作、清掃、ギター教室。思想を持って作る人。",
+  "areaServed": [
+    { "@type": "City", "name": "小諸市" },
+    { "@type": "City", "name": "御代田町" },
+    { "@type": "City", "name": "軽井沢町" }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "小諸市",
+    "addressRegion": "長野県",
+    "addressCountry": "JP"
+  },
+  "email": "totonoeru.ya@gmail.com",
+  "url": "https://totonoeruya.jp/"
+}
+</script>
 </head>
-
 <body>
 
-<!-- NAV -->
-<nav>
-  <a href="#" class="nav-logo"><img src="logo_transparent.png" alt="ととのえる屋" style="height:40px; width:auto; display:block;"></a>
-  <a href="#cta" class="nav-cta">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-    無料相談する
-  </a>
+<!-- PAGE TRANSITION OVERLAY -->
+<div class="transition" id="transition" aria-hidden="true">
+  <div class="transition-stage">
+    <span class="transition-line transition-line--green"></span>
+    <span class="transition-line transition-line--amber"></span>
+    <span class="transition-line transition-line--soft"></span>
+    <img class="transition-logo" src="assets/logo-totonoeru.png" alt="" width="150" height="190">
+  </div>
+</div>
+<script src="assets/transition.js"></script>
+
+<!-- OPENER -->
+<div class="opener" id="opener" aria-hidden="true">
+  <button class="opener-skip" id="opener-skip" aria-label="オープニングをスキップ">Skip</button>
+  <div class="opener-stage">
+    <span class="opener-line opener-line--green"></span>
+    <span class="opener-line opener-line--amber"></span>
+    <span class="opener-line opener-line--soft"></span>
+    <img class="opener-logo" src="assets/logo-totonoeru.png" alt="ととのえる屋" width="220" height="280">
+    <p class="opener-tagline">TOTONOERUYA &nbsp;·&nbsp; KOMORO, NAGANO</p>
+  </div>
+</div>
+<script src="assets/opener.js"></script>
+
+<!-- 新ナビゲーション（左サイド固定・ハンバーガー＋ロゴ・極ミニマル） -->
+<nav class="site-nav">
+  <button type="button" class="site-nav-trigger" aria-label="メニューを開く" aria-expanded="false" aria-controls="site-drawer">
+    <span class="site-nav-bars" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </span>
+  </button>
 </nav>
 
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-text">
-    <p class="hero-eyebrow"><span></span>AI Coaching · Nagano, Japan</p>
-    <h1 class="hero-headline serif">
-      わからないものを　小さくしていく
-    </h1>
-    <p class="hero-sub">
-      AIは言葉を無限に出す<br>
-      その言葉を　たたんで　核だけ残す<br>
-      それが　ととのえる屋のしごと
-    </p>
-    <div class="hero-actions">
-      <a href="https://line.me/R/ti/p/@903xtesg" class="btn btn--line">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-        LINEで無料相談（30分）
-      </a>
-    </div>
-    <div style="margin-top:48px;">
-      <div class="scroll-line"></div>
-    </div>
-  </div>
+<!-- 左サイドドロワー（HISHIDA風 + haluta感） -->
+<aside class="site-drawer" id="site-drawer" aria-hidden="true" aria-label="メニュー">
+  <div class="site-drawer-backdrop" data-drawer-close></div>
+  <div class="site-drawer-inner" role="dialog" aria-modal="true">
+    <div class="site-drawer-content">
+      <span class="site-drawer-eyebrow">Menu</span>
+      <ul class="site-drawer-menu">
+        <li>
+          <a href="/" data-drawer-close>
+            <span class="lang-en">Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="/web/" data-drawer-close>
+            <span class="lang-en">Web</span>
+          </a>
+        </li>
+        <li>
+          <a href="/cleaning/" data-drawer-close>
+            <span class="lang-en">Cleaning</span>
+          </a>
+        </li>
+        <li>
+          <a href="/guitar/" data-drawer-close>
+            <span class="lang-en">Guitar</span>
+          </a>
+        </li>
+        <li>
+          <a href="/articles/" data-drawer-close>
+            <span class="lang-en">Journal</span>
+          </a>
+        </li>
+        <li>
+          <a href="#contact" data-drawer-close>
+            <span class="lang-en">Contact</span>
+          </a>
+        </li>
+      </ul>
 
-  <div class="hero-image">
-    <img
-      src="photo.jpg"
-      alt="照井航次郎"
-      width="512"
-      height="288"
-      fetchpriority="high"
-      decoding="async"
-      onerror="this.style.display='none'">
-    <div class="hero-image-caption">
-      ととのえる屋 代表
-      <span class="hero-image-name">Kojiro Terui</span>
-    </div>
-  </div>
-</section>
-
-<!-- WHO AM I -->
-<section id="who">
-  <div class="container">
-    <div class="who-grid">
-      <div class="who-photo anim">
-        <img
-          src="photo.jpg"
-          alt="照井航次郎 ／ ととのえる屋 代表"
-          width="512"
-          height="288"
-          loading="lazy"
-          decoding="async"
-          onerror="this.parentElement.style.background='#2B4A1A'; this.style.display='none';"
-        >
-        <div class="who-photo-label">Kojiro Terui</div>
-      </div>
-
-      <div class="who-body">
-        <div class="anim anim-delay-1">
-          <div class="who-name">Kojiro.</div>
-          <div class="who-name-ja">照井 航次郎 ／ ととのえる屋 代表</div>
-        </div>
-
-        <p class="who-bio anim anim-delay-2">
-          長野県・小諸市にいます<br>
-          <strong>清掃業の執行役員として20施設・30名のマネジメント</strong>を経て独立しました<br><br>
-          清掃の現場で　忘れられない日があります<br><br>
-          自分が直接やさしくできる相手は　目の前の一人だけ<br>
-          でも道具は　何人にも同時に届く<br><br>
-          独学でGASを触って　小さなツールを作って<br>
-          仲間に渡した日<br><br>
-          「これ楽になったよ」と言われて<br>
-          自分の手が届いてないところで誰かが楽になってる<br>
-          それが　うれしかったんです<br><br>
-          あ　<strong>道具を作るって やさしさの回数を増やすことなんだ</strong><br>
-          と思ったんです<br><br>
-          AIコーチングは　その続きです<br><br>
-          いまは<strong>1日12時間 AIと対話してる人</strong>です<br>
-          情報を集めてるんじゃなくて　たぶん「集約する練習」をしてる<br><br>
-          ギター歴18年・ボイストレーニング歴20年<br>
-          音楽も　清掃も　AIも　ぜんぶ「広がったものを小さくまとめる」しごとだった気がしてます<br><br>
-          形にするのが好き<br>
-          もっと言うと　<strong>余計なものをほどいて 核だけ残すのが好き</strong>なんだと思います<br><br>
-          ただひとつ 大事なことがあって<br>
-          <strong>集約できるのは アナログの時間があったからです</strong><br><br>
-          清掃業で20施設 30人の現場を見てきた時間<br>
-          体で覚えた景色があるから<br>
-          AIに任せていいものと 人の手が要るものが分けられる<br><br>
-          アナログの仕事は消えない<br>
-          消えないし 消えてはいけない<br>
-          その上にしか「ととのえる」は立たないと思ってます
-        </p>
-
-        <div class="who-tags anim anim-delay-3">
-          <span class="who-tag">元・清掃業執行役員</span>
-          <span class="who-tag">GAS / LINE Bot</span>
-          <span class="who-tag">Webアプリ開発</span>
-          <span class="who-tag">ギター18年</span>
-          <span class="who-tag">長野県・小諸市</span>
-        </div>
-
-        <div class="who-quote anim anim-delay-4">
-          <p>核に辿り着くまで　隣で　一緒にたたんでいきます</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROBLEM -->
-<section id="problem">
-  <div class="container">
-    <div class="sec-header anim">
-      <div class="tag">Problem</div>
-      <h2 class="sec-title">「やってみたい」が<br>「やれなかった」に<br>なっていませんか？</h2>
-    </div>
-
-    <div class="problem-grid">
-      <div class="problem-card anim">
-        <div class="problem-num">01</div>
-        <div class="problem-title">難しそうで始められない</div>
-        <p class="problem-body">AIって言葉は知ってるけど、何から手をつければいいのか分からない。動画を見ても、自分の仕事に落とし込めない。</p>
-      </div>
-      <div class="problem-card anim anim-delay-1">
-        <div class="problem-num">02</div>
-        <div class="problem-title">形にならない</div>
-        <p class="problem-body">途中まで試してみたけど、動くものができない。詰まったまま「あとでやろう」が積み重なっている。</p>
-      </div>
-      <div class="problem-card anim anim-delay-2">
-        <div class="problem-num">03</div>
-        <div class="problem-title">一人では続かない</div>
-        <p class="problem-body">やる気はある。でも壁にぶつかったときに相談できる人がいない。結局また元の状態に戻っている。</p>
-      </div>
-      <div class="problem-card anim anim-delay-3">
-        <div class="problem-num">04</div>
-        <div class="problem-title">地方だから機会が少ない</div>
-        <p class="problem-body">東京ならセミナーも多いけど、地元では学べる場所がない。オンラインで探しても、自分の仕事に合う内容がない。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PHILOSOPHY -->
-<section id="philosophy">
-  <div class="container">
-    <div class="philosophy-inner anim">
-      <p class="philosophy-lead">
-        増やすよりも　たたんでいく
-      </p>
-      <p class="philosophy-body">
-        サウナで「ととのう」という言葉があります<br>
-        熱さと冷たさのあと 余計なものが全部ほどけて<br>
-        澄んだひとつの感覚だけが残る<br><br>
-        ととのえるって　たぶんあの感覚なんです<br><br>
-        AIが言葉を無限に出せる時代に<br>
-        必要なのは足すことじゃなくて　<strong>小さくしていくこと</strong><br><br>
-        わからないものを整理して　核だけ残す<br><br>
-        わざわざ隣に行って　一緒にたたんでいく<br>
-        それが　ととのえる屋<br><br>
-        でもね　ひとつだけ大事なこと<br><br>
-        <strong>集約できるのは　アナログの時間があったからです</strong><br><br>
-        体を動かして ひとつずつ片づけてきた時間<br>
-        手で触って わかった景色<br>
-        それがないと「何を残すか」なんてわからない<br><br>
-        アナログの仕事は 消えない<br>
-        消えてはいけないもの<br><br>
-        AIに任せていいものと　どうしても人の手が要るものを<br>
-        分けられるのは そこを通ってきた人だけ<br><br>
-        アナログのうえにしか　ととのえるは立たない
-      </p>
-      <div class="philosophy-sig">— ととのえる屋</div>
-    </div>
-  </div>
-</section>
-
-<!-- PROOF -->
-<section id="proof">
-  <div class="container">
-    <div class="sec-header anim">
-      <div class="tag" style="border-color:rgba(255,255,255,.2); color:rgba(255,255,255,.5);">実績</div>
-      <h2 class="sec-title" style="color:#fff;">実際に作ったものです。</h2>
-      <p class="sec-sub">証言より先に、作ったものを見てください。</p>
-    </div>
-
-    <div class="proof-grid">
-
-      <!-- 現場管理Webアプリ -->
-      <div class="proof-card anim">
-        <div class="proof-mockup">
-          <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg">
-            <rect width="320" height="200" fill="#dceaf5"/>
-            <!-- header bar -->
-            <rect width="320" height="28" fill="#4a90c4"/>
-            <circle cx="16" cy="14" r="8" fill="rgba(255,255,255,.3)"/>
-            <rect x="30" y="10" width="60" height="8" rx="2" fill="rgba(255,255,255,.8)"/>
-            <rect x="270" y="8" width="40" height="12" rx="2" fill="rgba(255,255,255,.15)"/>
-            <!-- ticker -->
-            <rect x="80" y="32" width="160" height="16" rx="3" fill="#2e6da4"/>
-            <rect x="92" y="37" width="120" height="6" rx="2" fill="rgba(255,255,255,.5)"/>
-            <!-- date -->
-            <rect x="80" y="54" width="100" height="8" rx="2" fill="rgba(44,80,120,.3)"/>
-            <!-- cards -->
-            <rect x="56" y="68" width="208" height="26" rx="4" fill="white"/>
-            <rect x="64" y="74" width="16" height="14" rx="2" fill="#dceaf5"/>
-            <rect x="86" y="76" width="60" height="6" rx="2" fill="#333"/>
-            <rect x="150" y="75" width="28" height="8" rx="3" fill="#4a90c4"/>
-            <rect x="86" y="85" width="30" height="4" rx="2" fill="#aaa"/>
-            <rect x="120" y="83" width="70" height="6" rx="2" fill="#4a90c4" opacity=".5"/>
-
-            <rect x="56" y="100" width="208" height="26" rx="4" fill="white"/>
-            <rect x="64" y="106" width="16" height="14" rx="2" fill="#dceaf5"/>
-            <rect x="86" y="108" width="54" height="6" rx="2" fill="#333"/>
-            <rect x="144" y="107" width="28" height="8" rx="3" fill="#4a90c4"/>
-            <rect x="86" y="117" width="30" height="4" rx="2" fill="#aaa"/>
-            <rect x="120" y="115" width="70" height="6" rx="2" fill="#4a90c4" opacity=".5"/>
-
-            <rect x="56" y="132" width="208" height="26" rx="4" fill="white"/>
-            <rect x="64" y="138" width="16" height="14" rx="2" fill="#dceaf5"/>
-            <rect x="86" y="140" width="66" height="6" rx="2" fill="#333"/>
-            <rect x="156" y="139" width="28" height="8" rx="3" fill="#4a90c4"/>
-            <rect x="86" y="149" width="30" height="4" rx="2" fill="#aaa"/>
-            <rect x="120" y="147" width="70" height="6" rx="2" fill="#4a90c4" opacity=".5"/>
-
-            <!-- 出勤者 -->
-            <rect x="56" y="164" width="208" height="28" rx="4" fill="white"/>
-            <text x="64" y="176" font-size="7" fill="#555" font-family="sans-serif">本日の出勤者</text>
-            <rect x="64" y="179" width="180" height="5" rx="2" fill="#ccc"/>
-
-            <!-- bottom nav -->
-            <rect x="0" y="188" width="320" height="12" fill="white" opacity=".9"/>
-            <rect x="28" y="190" width="16" height="8" rx="1" fill="#4a90c4" opacity=".4"/>
-            <rect x="88" y="190" width="16" height="8" rx="1" fill="#4a90c4" opacity=".4"/>
-            <rect x="148" y="190" width="16" height="8" rx="1" fill="#4a90c4" opacity=".4"/>
-            <rect x="208" y="190" width="16" height="8" rx="1" fill="#e74" opacity=".4"/>
-            <rect x="268" y="190" width="16" height="8" rx="1" fill="#fa3" opacity=".4"/>
+      <div class="site-drawer-actions">
+        <a class="site-drawer-action" href="https://line.me/R/ti/p/@903xtesg" target="_blank" rel="noopener" aria-label="LINE">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        </a>
+        <a class="site-drawer-action" href="mailto:totonoeru.ya@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="1"/>
+            <path d="M3 7l9 6 9-6"/>
           </svg>
-        </div>
-        <div class="proof-foot">
-          <div class="proof-badge">実装済み</div>
-          <div class="proof-title">現場管理Webアプリ</div>
-          <p class="proof-body">20施設・30名の清掃スタッフを管理するGASベースのWebアプリ。シフト管理・タスク共有・FAQ・テロップ機能を実装。スマホだけで現場が回る。</p>
-        </div>
-      </div>
-
-      <!-- LINE Bot × freee -->
-      <div class="proof-card anim anim-delay-1">
-        <div class="proof-mockup">
-          <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg">
-            <rect width="320" height="200" fill="#1a1a2e"/>
-            <!-- phone frame -->
-            <rect x="90" y="8" width="140" height="184" rx="12" fill="#111"/>
-            <rect x="94" y="14" width="132" height="172" rx="9" fill="#efefe9"/>
-            <!-- LINE header -->
-            <rect x="94" y="14" width="132" height="24" rx="9" fill="#00b900"/>
-            <rect x="94" y="28" width="132" height="10" fill="#00b900"/>
-            <text x="160" y="30" font-size="8" fill="white" text-anchor="middle" font-family="sans-serif" font-weight="bold">ととのえる屋</text>
-            <!-- chat bubbles -->
-            <!-- user -->
-            <rect x="160" y="46" width="58" height="16" rx="6" fill="#00b900"/>
-            <text x="189" y="57" font-size="6" fill="white" text-anchor="middle" font-family="sans-serif">予約したい</text>
-            <!-- bot -->
-            <rect x="98" y="68" width="72" height="20" rx="6" fill="white"/>
-            <text x="134" y="77" font-size="5.5" fill="#333" text-anchor="middle" font-family="sans-serif">施設名・日付を</text>
-            <text x="134" y="84" font-size="5.5" fill="#333" text-anchor="middle" font-family="sans-serif">入力してください</text>
-            <!-- user -->
-            <rect x="156" y="94" width="62" height="16" rx="6" fill="#00b900"/>
-            <text x="187" y="105" font-size="6" fill="white" text-anchor="middle" font-family="sans-serif">軽井沢 4/5</text>
-            <!-- bot -->
-            <rect x="98" y="116" width="80" height="28" rx="6" fill="white"/>
-            <text x="138" y="126" font-size="5.5" fill="#333" text-anchor="middle" font-family="sans-serif">✅ 予約確定しました</text>
-            <text x="138" y="134" font-size="5" fill="#888" text-anchor="middle" font-family="sans-serif">freeeに請求書を作成中…</text>
-            <text x="138" y="141" font-size="5" fill="#00b900" text-anchor="middle" font-family="sans-serif">📄 請求書作成完了</text>
-            <!-- input bar -->
-            <rect x="96" y="152" width="128" height="14" rx="4" fill="white"/>
-            <rect x="100" y="155" width="80" height="8" rx="2" fill="#eee"/>
-            <rect x="210" y="153" width="12" height="10" rx="5" fill="#00b900"/>
-            <!-- bottom dots -->
-            <circle cx="154" cy="180" r="3" fill="#333"/>
-            <circle cx="162" cy="180" r="3" fill="#ccc"/>
-            <circle cx="170" cy="180" r="3" fill="#ccc"/>
-          </svg>
-        </div>
-        <div class="proof-foot">
-          <div class="proof-badge">実装済み</div>
-          <div class="proof-title">LINE Bot × freee 自動連携</div>
-          <p class="proof-body">LINEのやりとりだけで予約登録・キャンセル・毎朝通知・freeeへの請求書作成まで完結。スマホ1台で経理業務が回る。</p>
-        </div>
-      </div>
-
-      <!-- AIダッシュボード -->
-      <div class="proof-card anim anim-delay-2">
-        <div class="proof-mockup">
-          <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg">
-            <rect width="320" height="200" fill="#0f1923"/>
-            <!-- header -->
-            <rect width="320" height="26" fill="#162230"/>
-            <rect x="12" y="9" width="80" height="8" rx="2" fill="#00d4aa" opacity=".8"/>
-            <rect x="200" y="8" width="50" height="10" rx="3" fill="#1e3a4a"/>
-            <rect x="256" y="8" width="50" height="10" rx="3" fill="#00d4aa" opacity=".25"/>
-            <!-- search bar -->
-            <rect x="12" y="32" width="296" height="12" rx="3" fill="#1a2e3e"/>
-            <rect x="18" y="36" width="120" height="4" rx="2" fill="rgba(255,255,255,.15)"/>
-            <!-- news cards -->
-            <rect x="12" y="50" width="140" height="60" rx="3" fill="#162230"/>
-            <rect x="18" y="56" width="60" height="5" rx="2" fill="#00d4aa" opacity=".6"/>
-            <rect x="18" y="64" width="120" height="5" rx="2" fill="rgba(255,255,255,.7)"/>
-            <rect x="18" y="72" width="110" height="5" rx="2" fill="rgba(255,255,255,.7)"/>
-            <rect x="18" y="80" width="100" height="4" rx="2" fill="rgba(255,255,255,.3)"/>
-            <rect x="18" y="88" width="80" height="4" rx="2" fill="rgba(255,255,255,.3)"/>
-            <rect x="18" y="96" width="50" height="4" rx="2" fill="#00d4aa" opacity=".4"/>
-
-            <rect x="162" y="50" width="146" height="60" rx="3" fill="#162230"/>
-            <rect x="168" y="56" width="60" height="5" rx="2" fill="#f0a" opacity=".5"/>
-            <rect x="168" y="64" width="130" height="5" rx="2" fill="rgba(255,255,255,.7)"/>
-            <rect x="168" y="72" width="120" height="5" rx="2" fill="rgba(255,255,255,.7)"/>
-            <rect x="168" y="80" width="100" height="4" rx="2" fill="rgba(255,255,255,.3)"/>
-            <rect x="168" y="88" width="80" height="4" rx="2" fill="rgba(255,255,255,.3)"/>
-            <rect x="168" y="96" width="50" height="4" rx="2" fill="#f0a" opacity=".3"/>
-
-            <rect x="12" y="116" width="140" height="60" rx="3" fill="#162230"/>
-            <rect x="18" y="122" width="60" height="5" rx="2" fill="#fa0" opacity=".6"/>
-            <rect x="18" y="130" width="120" height="5" rx="2" fill="rgba(255,255,255,.7)"/>
-            <rect x="18" y="138" width="100" height="5" rx="2" fill="rgba(255,255,255,.7)"/>
-            <rect x="18" y="146" width="90" height="4" rx="2" fill="rgba(255,255,255,.3)"/>
-            <rect x="18" y="154" width="50" height="4" rx="2" fill="#fa0" opacity=".4"/>
-
-            <rect x="162" y="116" width="146" height="60" rx="3" fill="#162230"/>
-            <rect x="168" y="122" width="60" height="5" rx="2" fill="#4af" opacity=".6"/>
-            <rect x="168" y="130" width="130" height="5" rx="2" fill="rgba(255,255,255,.7)"/>
-            <rect x="168" y="138" width="110" height="5" rx="2" fill="rgba(255,255,255,.7)"/>
-            <rect x="168" y="146" width="90" height="4" rx="2" fill="rgba(255,255,255,.3)"/>
-            <rect x="168" y="154" width="50" height="4" rx="2" fill="#4af" opacity=".4"/>
-
-            <!-- bottom bar -->
-            <rect x="0" y="182" width="320" height="18" fill="#162230"/>
-            <rect x="12" y="186" width="40" height="8" rx="2" fill="#00d4aa" opacity=".3"/>
-            <rect x="60" y="186" width="40" height="8" rx="2" fill="rgba(255,255,255,.1)"/>
-            <rect x="108" y="186" width="40" height="8" rx="2" fill="rgba(255,255,255,.1)"/>
-          </svg>
-        </div>
-        <div class="proof-foot">
-          <div class="proof-badge">公開中</div>
-          <div class="proof-title">AI ニュースダッシュボード</div>
-          <p class="proof-body">世界のAI最新情報をリアルタイムで日本語翻訳して表示するReactダッシュボード。キーワード検索・ブックマーク機能付き。Vercelで公開中。</p>
-          <a href="https://ai-radar-j698powgc-papanti0318-specs-projects.vercel.app/" target="_blank" rel="noopener" style="display:inline-block; margin-top:12px; padding:8px 16px; background:var(--amber); color:#fff; text-decoration:none; border-radius:var(--radius); font-size:13px; font-weight:600;">実物を見る →</a>
-        </div>
-      </div>
-
-      <!-- AI Chatbot LINE -->
-      <div class="proof-card anim anim-delay-3">
-        <div class="proof-mockup">
-          <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg">
-            <rect width="320" height="200" fill="#06C755"/>
-            <!-- phone frame -->
-            <rect x="88" y="10" width="144" height="180" rx="14" fill="#111"/>
-            <rect x="92" y="16" width="136" height="168" rx="10" fill="#f7f7f7"/>
-            <!-- LINE header -->
-            <rect x="92" y="16" width="136" height="22" rx="10" fill="#06C755"/>
-            <rect x="92" y="28" width="136" height="10" fill="#06C755"/>
-            <text x="160" y="30" font-size="8" fill="white" text-anchor="middle" font-family="sans-serif" font-weight="bold">ととのえる屋 AI通信</text>
-            <!-- morning news header -->
-            <rect x="98" y="44" width="124" height="18" rx="4" fill="#fff" stroke="#e0e0e0"/>
-            <text x="104" y="55" font-size="6" fill="#06C755" font-family="sans-serif" font-weight="bold">🔥 今日のAIネタ</text>
-            <!-- news card 1 -->
-            <rect x="98" y="66" width="124" height="26" rx="4" fill="#fff" stroke="#e0e0e0"/>
-            <text x="104" y="75" font-size="5" fill="#333" font-family="sans-serif" font-weight="bold">1. OpenAI新機能発表</text>
-            <rect x="104" y="78" width="110" height="3" rx="1" fill="#888"/>
-            <rect x="104" y="83" width="80" height="3" rx="1" fill="#888"/>
-            <text x="104" y="90" font-size="4" fill="#06C755" font-family="sans-serif">💡 こう使える</text>
-            <!-- news card 2 -->
-            <rect x="98" y="96" width="124" height="26" rx="4" fill="#fff" stroke="#e0e0e0"/>
-            <text x="104" y="105" font-size="5" fill="#333" font-family="sans-serif" font-weight="bold">2. Claude Mythos公開</text>
-            <rect x="104" y="108" width="110" height="3" rx="1" fill="#888"/>
-            <rect x="104" y="113" width="70" height="3" rx="1" fill="#888"/>
-            <text x="104" y="120" font-size="4" fill="#06C755" font-family="sans-serif">💡 こう使える</text>
-            <!-- breaking banner -->
-            <rect x="98" y="126" width="124" height="16" rx="4" fill="#ff4444"/>
-            <text x="160" y="136" font-size="6" fill="#fff" text-anchor="middle" font-family="sans-serif" font-weight="bold">🚨 AI速報</text>
-            <!-- feedback buttons -->
-            <rect x="98" y="146" width="58" height="14" rx="3" fill="#f0f9f0" stroke="#06C755"/>
-            <text x="127" y="155" font-size="6" fill="#06C755" text-anchor="middle" font-family="sans-serif">👍 いいね</text>
-            <rect x="164" y="146" width="58" height="14" rx="3" fill="#fdf0f0" stroke="#e74"/>
-            <text x="193" y="155" font-size="6" fill="#e74" text-anchor="middle" font-family="sans-serif">👎 微妙</text>
-            <!-- input bar -->
-            <rect x="94" y="168" width="132" height="12" rx="3" fill="#fff"/>
-            <rect x="100" y="171" width="90" height="6" rx="2" fill="#eee"/>
-            <circle cx="216" cy="174" r="4" fill="#06C755"/>
-          </svg>
-        </div>
-        <div class="proof-foot">
-          <div class="proof-badge">配信中</div>
-          <div class="proof-title">AI通信 LINE Bot</div>
-          <p class="proof-body">毎朝、海外の最新AIニュースを日本語要約・再現性ポイント付きで配信。速報が出たら即時プッシュ。👍👎で傾向学習、質問にもAIが即答。登録して毎日の情報収集を自動化できます。</p>
-          <a href="https://line.me/R/ti/p/@903xtesg" target="_blank" rel="noopener" style="display:inline-block; margin-top:12px; padding:8px 16px; background:#06C755; color:#fff; text-decoration:none; border-radius:var(--radius); font-size:13px; font-weight:600;">LINEで登録して実物を受け取る →</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section id="testimonials" style="background: var(--bg-warm);">
-  <div class="container">
-    <div class="sec-header anim">
-      <div class="tag tag--green">お客様の声</div>
-      <h2 class="sec-title">導入した方の、生の声。</h2>
-      <p class="sec-sub">実際に使っている事業者さんから、一言もらいました。</p>
-    </div>
-
-    <div class="testimonial-grid anim">
-      <div class="testimonial-card">
-        <div class="testimonial-head">
-          <div class="testimonial-avatar">
-            <img src="testimonial-wash-deli-face.png" alt="クリーニング＆清掃会社 経営者">
-          </div>
-          <div class="testimonial-meta">
-            <div class="testimonial-name">クリーニング＆清掃会社 経営者</div>
-            <div class="testimonial-logo">
-              <img src="testimonial-wash-deli-logo.png" alt="クリーニング＆清掃会社">
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-stats">
-          <div class="testimonial-stat">
-            <div class="testimonial-stat-label">予約・返信対応の時間</div>
-            <div class="testimonial-stat-value">1日 約60分 <span class="arrow">→</span> <strong>ほぼ 0分</strong></div>
-          </div>
-        </div>
-        <blockquote class="testimonial-body">
-          「予約管理や返信対応に1日1時間近く取られていたのですが、AIを使った仕組みを作ってもらってからその時間がほぼゼロに。IT系は苦手意識があったのですが、わかりやすく体系立てて説明してくれたので無理なく取り組めました。同じように事業をされている方に、ぜひ紹介したいと思っています。」
-        </blockquote>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="experience" style="background: var(--bg);">
-  <div class="container">
-    <div class="sec-header anim">
-      <div class="tag tag--green">疑似体験</div>
-      <h2 class="sec-title">受けたらどうなるか、先に見せます</h2>
-      <p class="sec-sub">ととのえる前と後。数字と情景で。</p>
-    </div>
-
-    <div class="exp-grid anim">
-      <article class="exp-card">
-        <div class="exp-tag">クリーニング＆清掃会社</div>
-        <h3 class="exp-title">予約・返信対応の整理</h3>
-        <div class="exp-block exp-before">
-          <div class="exp-label">before</div>
-          <p>予約電話・LINE返信で 1日<strong class="exp-num">約60分</strong>取られていた。細切れで集中力が途切れる。</p>
-        </div>
-        <div class="exp-arrow">↓</div>
-        <div class="exp-block exp-after">
-          <div class="exp-label">after</div>
-          <p>AI自動応答が一次受けに。手を止めるのは"本当に判断が必要な問い合わせ"だけ。<strong class="exp-num">約60分 → ほぼ0分</strong>。</p>
-        </div>
-        <div class="exp-point">「時間が戻った」より、<strong>思考が途切れない</strong>ことが最大の成果。</div>
-      </article>
-
-      <article class="exp-card">
-        <div class="exp-tag">清掃業／20施設30名</div>
-        <h3 class="exp-title">現場管理の業務マニュアル化</h3>
-        <div class="exp-block exp-before">
-          <div class="exp-label">before</div>
-          <p>シフト・タスク・FAQ がバラバラ。新人教育に毎回<strong class="exp-num">3時間</strong>の対面説明。</p>
-        </div>
-        <div class="exp-arrow">↓</div>
-        <div class="exp-block exp-after">
-          <div class="exp-label">after</div>
-          <p>GASベースのWebアプリにAIで要点を集約。<strong class="exp-num">スマホ1台</strong>で現場が回るように。</p>
-        </div>
-        <div class="exp-point">ととのえるとは、<strong>本質を掘り当てて構造化すること</strong>。</div>
-      </article>
-
-      <article class="exp-card exp-card--placeholder">
-        <div class="exp-tag">あなたの業種</div>
-        <h3 class="exp-title">あなたの事例がここに入ります</h3>
-        <div class="exp-block exp-before">
-          <div class="exp-label">before</div>
-          <p>いまの「なんとなく面倒」な作業。</p>
-        </div>
-        <div class="exp-arrow">↓</div>
-        <div class="exp-block exp-after">
-          <div class="exp-label">after</div>
-          <p>AIでととのえたあとの景色。</p>
-        </div>
-        <div class="exp-point">気になったら、<strong>LINEで一言</strong>どうぞ。</div>
-      </article>
-    </div>
-  </div>
-
-  <style>
-    #experience { padding: 80px 0; }
-    #experience .exp-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      max-width: 1080px;
-      margin: 0 auto;
-    }
-    #experience .exp-card {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 28px;
-      box-shadow: 0 4px 18px rgba(44,37,28,0.05);
-      display: flex;
-      flex-direction: column;
-    }
-    #experience .exp-card--placeholder {
-      background: var(--bg-warm);
-      border: 1.5px dashed var(--border);
-      box-shadow: none;
-      opacity: 0.92;
-    }
-    #experience .exp-tag {
-      display: inline-block;
-      align-self: flex-start;
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--green);
-      background: var(--green-lt, #e8f1ea);
-      padding: 4px 12px;
-      border-radius: 999px;
-      margin-bottom: 14px;
-    }
-    #experience .exp-title {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--green);
-      margin: 0 0 18px;
-      line-height: 1.5;
-    }
-    #experience .exp-block {
-      padding: 14px 16px;
-      border-radius: 10px;
-      background: var(--bg-warm);
-    }
-    #experience .exp-card--placeholder .exp-block {
-      background: rgba(255,255,255,0.6);
-    }
-    #experience .exp-block p {
-      margin: 6px 0 0;
-      font-size: 14px;
-      line-height: 1.75;
-      color: var(--text);
-    }
-    #experience .exp-label {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text-mid);
-    }
-    #experience .exp-after .exp-label { color: var(--green); }
-    #experience .exp-num { color: var(--amber); font-weight: 800; }
-    #experience .exp-arrow {
-      text-align: center;
-      font-size: 22px;
-      color: var(--amber);
-      margin: 8px 0;
-      line-height: 1;
-    }
-    #experience .exp-point {
-      margin-top: 18px;
-      padding-top: 16px;
-      border-top: 1px solid var(--border);
-      font-size: 13px;
-      line-height: 1.75;
-      color: var(--text-mid);
-    }
-    #experience .exp-point strong { color: var(--text); }
-    @media (max-width: 640px) {
-      #experience .exp-grid { grid-template-columns: 1fr; max-width: 480px; }
-      #experience { padding: 60px 0; }
-    }
-  </style>
-</section>
-
-<style>
-.testimonial-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
-  max-width: 720px;
-  margin: 0 auto;
-}
-.testimonial-card {
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 32px;
-  box-shadow: 0 4px 24px rgba(44,37,28,0.06);
-}
-.testimonial-head {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--border);
-}
-.testimonial-avatar {
-  flex-shrink: 0;
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 3px solid var(--green-lt);
-}
-.testimonial-avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.testimonial-meta {
-  flex: 1;
-  min-width: 0;
-}
-.testimonial-name {
-  font-weight: 700;
-  font-size: 16px;
-  color: var(--text);
-  margin-bottom: 6px;
-}
-.testimonial-logo img {
-  max-height: 36px;
-  max-width: 160px;
-  object-fit: contain;
-  opacity: 0.85;
-}
-.testimonial-stats {
-  background: var(--green-lt);
-  border-left: 4px solid var(--green-mid);
-  padding: 16px 20px;
-  border-radius: var(--radius);
-  margin-bottom: 20px;
-}
-.testimonial-stat-label {
-  font-size: 12px;
-  color: var(--text-mid);
-  margin-bottom: 6px;
-  letter-spacing: 0.02em;
-}
-.testimonial-stat-value {
-  font-size: 18px;
-  color: var(--text);
-  font-weight: 500;
-}
-.testimonial-stat-value strong {
-  color: var(--green-mid);
-  font-size: 22px;
-  font-weight: 800;
-}
-.testimonial-stat-value .arrow {
-  color: var(--amber);
-  font-weight: 800;
-  margin: 0 6px;
-}
-.testimonial-body {
-  margin: 0;
-  font-size: 15px;
-  line-height: 1.9;
-  color: var(--text-mid);
-  font-style: normal;
-  quotes: none;
-}
-@media(max-width:640px){
-  .testimonial-card { padding: 24px; }
-  .testimonial-head { gap: 14px; }
-  .testimonial-avatar { width: 60px; height: 60px; }
-  .testimonial-name { font-size: 15px; }
-  .testimonial-body { font-size: 14px; line-height: 1.85; }
-}
-</style>
-
-<!-- HOW IT WORKS -->
-<section id="how">
-  <div class="container" style="max-width:680px;">
-    <div class="sec-header anim">
-      <div class="tag">How it works</div>
-      <h2 class="sec-title">並走の流れ</h2>
-    </div>
-
-    <div class="how-steps">
-      <div class="how-step anim">
-        <div class="how-num"><span class="how-num-inner">01</span></div>
-        <div class="how-content">
-          <div class="how-title">まず話す（30分・無料）</div>
-          <p class="how-body">やりたいこと・困っていること・なんとなくの「こんなのできる？」から始めてOKです。AIで何ができるか、一緒に整理します。</p>
-        </div>
-      </div>
-      <div class="how-step anim anim-delay-1">
-        <div class="how-num"><span class="how-num-inner">02</span></div>
-        <div class="how-content">
-          <div class="how-title">一緒に手を動かす</div>
-          <p class="how-body">あなたの仕事・状況に合わせて、実際に動くものを一緒に作ります。セッション後もLINEで相談OK。詰まったら一緒に考えます。</p>
-        </div>
-      </div>
-      <div class="how-step anim anim-delay-2">
-        <div class="how-num"><span class="how-num-inner">03</span></div>
-        <div class="how-content">
-          <div class="how-title">「できた」まで並走する</div>
-          <p class="how-body">「一応動く」ではなく「これ使える」と言えるまで　一人で回せるようになるまで　隣で一緒にととのえ続けます</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section id="services">
-  <div class="container">
-    <div class="sec-header anim">
-      <div class="tag">Services</div>
-      <h2 class="sec-title">できることの例</h2>
-      <p class="sec-sub">「こんなのできる？」と聞いてください。まず一緒に試します。</p>
-    </div>
-
-    <div class="services-grid">
-      <div class="svc-card anim">
-        <div class="svc-num">01</div>
-        <div class="svc-title">業務AI化・並走レッスン</div>
-        <p class="svc-body">日報・議事録・問い合わせ対応・スケジュール管理。「どこから手をつければいいか」から一緒に整理し、動くまでサポートします。</p>
-        <div class="tag tag--green">個人・小規模事業者向け</div>
-      </div>
-      <div class="svc-card anim anim-delay-1">
-  <div class="svc-num">02</div>
-  <div class="svc-title">マイAIツール制作</div>
-        <p class="svc-body">LINE Bot・自動返信・カスタムチャットbot・業務管理Webアプリ。あなた専用の「仕組み」を、使えるまで一緒に作ります。</p>
-        <div class="tag tag--amber">オーダーメイド</div>
-      </div>
-      <div class="svc-card anim anim-delay-2">
-        <div class="svc-num">03</div>
-        <div class="svc-title">プロンプト設計レッスン</div>
-        <p class="svc-body">AIへの「伝え方」を学ぶと、できることが10倍になります。あなたの仕事に合わせた言葉の設計を、実践しながら身につけます。</p>
-        <div class="tag">初心者向け</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- STORY: なぜ私がこれをやるのか -->
-<section id="story" style="background: var(--bg);">
-  <div class="container" style="max-width: 720px;">
-    <div class="sec-header anim">
-      <div class="tag tag--amber">STORY</div>
-      <h2 class="sec-title">なぜ私がこれをやるのか</h2>
-      <p class="sec-sub">予定していた道は、清掃業で独立することだった。</p>
-    </div>
-
-    <div class="story-body anim">
-      <p class="story-p">清掃で独立するつもりだった。</p>
-
-      <p class="story-p">2025年の春、ChatGPTを使い始めた。お客さんへの返信メールをリライトする程度だった。でも「<strong>なんで？</strong>」が止まらない性格だった。</p>
-
-      <p class="story-p">なんでこのシフト管理、毎回手作業なんだ。なんで自動化できないんだ。そのまま動いたら、GASで自動化できてしまった。</p>
-
-      <p class="story-p story-highlight">そのとき気づいた。<br><strong>自分は「なんで？」から動くまで執着できる人間だ。</strong></p>
-
-      <p class="story-p">清掃業で独立するつもりだった。AIとは全く関係ない話のはずだった。でも気づいたら、全然違う場所に立っていた。</p>
-
-      <p class="story-p story-end"><strong>2026年3月末退職。</strong><br>ととのえる屋、AIコーチとして始まっています。</p>
-    </div>
-  </div>
-</section>
-
-<style>
-#story .story-body {
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 56px 48px;
-  box-shadow: 0 4px 24px rgba(44,37,28,0.06);
-  position: relative;
-}
-#story .story-body::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 4px;
-  height: 100%;
-  background: var(--amber);
-  border-radius: var(--radius) 0 0 var(--radius);
-}
-#story .story-p {
-  font-size: 16px;
-  line-height: 2.1;
-  color: var(--text);
-  margin-bottom: 24px;
-}
-#story .story-p:last-child {
-  margin-bottom: 0;
-}
-#story .story-highlight {
-  background: var(--green-lt);
-  border-left: 3px solid var(--green-mid);
-  padding: 20px 24px;
-  margin: 32px 0;
-  font-size: 17px;
-}
-#story .story-highlight strong {
-  color: var(--green);
-  font-weight: 700;
-}
-#story .story-end {
-  text-align: center;
-  padding-top: 16px;
-  border-top: 1px dashed var(--border);
-  margin-top: 32px;
-  color: var(--text-mid);
-}
-#story .story-end strong {
-  color: var(--amber);
-  font-size: 15px;
-  letter-spacing: 0.05em;
-  display: block;
-  margin-bottom: 6px;
-}
-@media (max-width: 640px) {
-  #story .story-body { padding: 40px 28px; }
-  #story .story-p { font-size: 15px; line-height: 2; }
-  #story .story-highlight { padding: 16px 18px; font-size: 16px; }
-}
-</style>
-
-<!-- PRICING -->
-<section id="pricing">
-  <div class="container">
-    <div class="sec-header anim">
-      <div class="tag">Pricing</div>
-      <h2 class="sec-title">料金</h2>
-      <p class="sec-sub">まず話してみてください。初回は無料です。</p>
-    </div>
-
-    <div class="pricing-grid">
-      <div class="price-card anim">
-        <div class="price-label">Trial</div>
-        <div class="price-title">LINE無料相談</div>
-        <div class="price-amount">¥0</div>
-        <div class="price-note">30分 · オンライン or 対面</div>
-        <div class="price-divider"></div>
-        <ul class="price-list">
-          <li>現状のヒアリング</li>
-          <li>AIで何ができるか整理</li>
-          <li>あなたに合った活用イメージ</li>
-        </ul>
-      </div>
-
-      <div class="price-card price-card--featured anim anim-delay-1">
-        <div class="price-label">Standard</div>
-        <div class="price-title">AIロードマップ</div>
-        <div class="price-amount">¥15,000</div>
-        <div class="price-note">初回 3時間 · ヒアリング中心</div>
-        <div class="price-divider" style="background:rgba(255,255,255,.15)"></div>
-        <ul class="price-list">
-          <li>現場の「面倒」を一緒に棚卸し</li>
-          <li>AIで何をどう自動化すべきかの優先順位表を納品</li>
-          <li>そのまま並走する場合の見積もりも同席で</li>
-          <li>セッション後もLINEで質問OK（1ヶ月）</li>
-        </ul>
-      </div>
-
-      <div class="price-card anim anim-delay-2">
-        <div class="price-label">Partner</div>
-        <div class="price-title">月額顧問</div>
-        <div class="price-amount">¥30,000<span style="font-size:1rem">/月</span></div>
-        <div class="price-note">月2回の相談 + 随時LINE</div>
-        <div class="price-divider"></div>
-        <ul class="price-list">
-          <li>毎月2回（各60分）のオンライン相談</li>
-          <li>業務に合わせたAI活用の継続提案</li>
-          <li>プロンプト・スクリプトの作成サポート</li>
-          <li>LINEでいつでも質問OK</li>
-        </ul>
-      </div>
-
-    </div>
-
-    <p style="text-align:center; margin-top:32px; color:var(--text-soft); font-size:13px;">
-      ※ ツール制作・LINE Bot・業務自動化は別途プロジェクト単位で対応します（AIロードマップ後にお見積もり）
-    </p>
-  </div>
-</section>
-
-<!-- CTA -->
-<section id="cta">
-  <div class="container">
-    <div class="cta-inner">
-      <div class="anim">
-        <div class="tag" style="margin-bottom:32px;">Contact</div>
-        <h2 class="cta-title">
-          「こんなの、できるかな？」<br>
-          その一言から始まります。
-        </h2>
-        <p class="cta-body">
-          難しく考えなくていいです。<br>
-          やりたいこと、困っていること、なんでも聞かせてください。<br>
-          押し売りは一切しません。
-        </p>
-      </div>
-
-      <div class="cta-actions anim anim-delay-1">
-        <a href="https://line.me/R/ti/p/@903xtesg" class="btn btn--line" style="font-size:15px; padding:16px 36px;">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-          LINEで無料相談（30分）
         </a>
       </div>
 
-      <p class="cta-meta anim anim-delay-2">
-        長野県・小諸市 ／ オンライン対応可<br>
-        気軽に「相談したい」と一言送ってください
+      <p class="site-drawer-foot">
+        ととのえる屋<br>
+        長野県小諸市
       </p>
     </div>
   </div>
+</aside>
+
+<main>
+<!-- HERO -->
+<header id="hero">
+  <h1 class="hero-headline">
+    <img class="hero-logo" src="assets/logo-totonoeru.png" alt="" aria-hidden="true" width="160" height="200">
+    <span class="visually-hidden">ととのえる屋 — 長野県小諸市のAI・DX実装屋｜HP・LP制作・清掃・ギター教室</span>
+  </h1>
+  <p class="hero-sub">
+    散らばったものを、ひとつに。
+  </p>
+  <div class="hero-scroll">Scroll</div>
+</header>
+
+<!-- 提供（bloom：ロゴから3カテゴリへ展開） -->
+<section id="businesses" style="background: var(--bg-warm); overflow: hidden;">
+  <div class="container">
+    <p class="sec-sub" style="text-align:center;">ととのえる、から、ひらく。</p>
+
+    <div class="bloom-stage" id="bloom-stage">
+      <!-- 中央のロゴ -->
+      <div class="bloom-center">
+        <img src="assets/logo-totonoeru.png" alt="ととのえる" class="bloom-center-logo" width="96" height="121">
+        <span class="bloom-center-caption">totonoeru</span>
+      </div>
+
+      <!-- ロゴから3方向への線 -->
+      <svg class="bloom-rays" viewBox="0 0 680 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <line x1="340" y1="0" x2="120" y2="80" stroke="#B8823A" stroke-width="0.5" stroke-dasharray="2 4" />
+        <line x1="340" y1="0" x2="340" y2="80" stroke="#B8823A" stroke-width="0.5" stroke-dasharray="2 4" />
+        <line x1="340" y1="0" x2="560" y2="80" stroke="#B8823A" stroke-width="0.5" stroke-dasharray="2 4" />
+      </svg>
+
+      <!-- 3カテゴリの円（クリックで展開） -->
+      <div class="bloom-circles">
+        <article class="bloom-circle">
+          <button type="button" class="bloom-circle-disc" aria-expanded="false" aria-controls="bloom-list-1">
+            <span class="bloom-circle-num">01</span>
+            <span class="bloom-circle-name">つくる</span>
+            <span class="bloom-circle-toggle" aria-hidden="true">▽</span>
+          </button>
+          <ul class="bloom-list" id="bloom-list-1">
+            <li>HP制作</li>
+            <li>LP制作</li>
+            <li>冊子作成（入稿まで）</li>
+            <li>サイネージ</li>
+            <li>動画制作</li>
+          </ul>
+        </article>
+
+        <article class="bloom-circle">
+          <button type="button" class="bloom-circle-disc" aria-expanded="false" aria-controls="bloom-list-2">
+            <span class="bloom-circle-num">02</span>
+            <span class="bloom-circle-name">まわす</span>
+            <span class="bloom-circle-toggle" aria-hidden="true">▽</span>
+          </button>
+          <ul class="bloom-list" id="bloom-list-2">
+            <li>HP担当代行</li>
+            <li>SNS運用</li>
+            <li>データ整理</li>
+            <li>ネット設定</li>
+            <li>現場AI集約</li>
+            <li>清掃（軽井沢T-SITE等）</li>
+            <li>民泊清掃</li>
+            <li>別荘管理</li>
+          </ul>
+        </article>
+
+        <article class="bloom-circle">
+          <button type="button" class="bloom-circle-disc" aria-expanded="false" aria-controls="bloom-list-3">
+            <span class="bloom-circle-num">03</span>
+            <span class="bloom-circle-name">おしえる</span>
+            <span class="bloom-circle-toggle" aria-hidden="true">▽</span>
+          </button>
+          <ul class="bloom-list" id="bloom-list-3">
+            <li>DX研修</li>
+            <li>講師（社員研修・勉強会）</li>
+            <li>噛み砕いて相談</li>
+            <li>ギター教室</li>
+          </ul>
+        </article>
+      </div>
+
+      <p class="bloom-tagline">集約してととのえる。</p>
+    </div>
+
+    <div class="anim" style="max-width: 640px; margin: 56px auto 0; text-align: center;">
+      <p style="font-size: 14px; line-height: 2; color: var(--text-mid); margin-bottom: 28px;">
+        単発でも、年契約でも。価格は、相談の中で決めます。
+      </p>
+      <a href="#contact" class="btn btn--green">相談する</a>
+    </div>
+  </div>
 </section>
+
+<!-- Contact -->
+<section id="contact">
+  <div class="container">
+    <div class="sec-header anim">
+      <h2 class="sec-title">相談する</h2>
+    </div>
+
+    <div class="contact-inner">
+      <div class="contact-barrier-lowering anim anim-delay-1">
+        何がなんだかわからなくても、とりあえず話したいだけでもOKです。
+      </div>
+
+      <div class="contact-channels anim anim-delay-2">
+        <!-- 方法1：LINE -->
+        <div class="contact-channel">
+          <div class="contact-channel-label">LINE</div>
+          <p class="contact-channel-desc">「相談したい」と一言。すぐ気づきます。</p>
+          <a href="https://line.me/R/ti/p/@903xtesg" class="btn btn--line btn--block" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+            LINEで相談する
+          </a>
+        </div>
+
+        <div class="contact-divider" aria-hidden="true"><span>または</span></div>
+
+        <!-- 方法2：問い合わせフォーム -->
+        <div class="contact-channel">
+          <div class="contact-channel-label">問い合わせフォーム</div>
+          <p class="contact-channel-desc">じっくり書きたい方はこちらから。</p>
+          <form class="contact-form" method="POST" action="" novalidate>
+            <div class="form-row">
+              <label for="form-name">お名前 <span class="form-optional">（任意）</span></label>
+              <input type="text" id="form-name" name="name" autocomplete="name">
+            </div>
+            <div class="form-row">
+              <label for="form-contact">連絡先（メール または LINE ID）</label>
+              <input type="text" id="form-contact" name="contact" required>
+            </div>
+            <div class="form-row">
+              <label for="form-message">内容</label>
+              <textarea id="form-message" name="message" rows="5" required placeholder="何がなんだかわからない、というだけでも大丈夫です。"></textarea>
+            </div>
+            <button type="submit" class="btn btn--green btn--block">送信する</button>
+            <p class="contact-form-note">※ 送信機能は近日接続予定です。お急ぎの方はLINEからどうぞ。</p>
+          </form>
+        </div>
+      </div>
+
+      <div class="contact-footer anim anim-delay-3">
+        長野県・小諸市 / 全国オンライン対応<br>
+        「こんなの、できるかな？」から、いっしょに考えます。
+      </div>
+    </div>
+  </div>
+</section>
+</main>
 
 <!-- FOOTER -->
 <footer>
   <div class="container">
+    <div class="footer-nap">
+      <p class="footer-nap-name">ととのえる屋</p>
+      <p class="footer-nap-address">長野県小諸市</p>
+      <p class="footer-nap-contact">
+        <a href="mailto:totonoeru.ya@gmail.com">totonoeru.ya@gmail.com</a>　／　<a href="https://line.me/R/ti/p/@903xtesg" target="_blank" rel="noopener">LINE: @903xtesg</a>
+      </p>
+      <p class="footer-nap-area">対応エリア：小諸市・御代田町・軽井沢町・上田市ほか長野県内（オンライン全国対応）</p>
+    </div>
     <div class="footer-inner">
-      <div class="footer-logo"><img src="logo_transparent.png" alt="ととのえる屋" style="height:32px; width:auto;"></div>
-      <div class="footer-copy">© 2026 ととのえる屋. All rights reserved.</div>
+      <div class="footer-logo">
+        <img src="assets/logo-totonoeru.png" alt="ととのえる屋" class="footer-logo-img" width="44" height="56">
+      </div>
+      <div class="footer-copy">© 2026 ととのえる屋. All rights reserved. 長野県小諸市</div>
     </div>
   </div>
 </footer>
 
 <script>
-  (function(c,l,a,r,i,t,y){
-    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-  })(window, document, "clarity", "script", "w4r8top499");
-</script>
-<script>
-// アニメーション制御：JS有効時のみopacity:0から始める
+// アニメーション制御
 document.querySelectorAll('.anim').forEach(el => {
   el.classList.add('will-animate');
 });
@@ -1580,6 +333,82 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
 
 document.querySelectorAll('.anim').forEach(el => observer.observe(el));
+
+// site-drawer（左ドロワー：ハンバーガー＋ロゴで開閉）
+(function() {
+  const trigger = document.querySelector('.site-nav-trigger');
+  const drawer = document.getElementById('site-drawer');
+  if (!trigger || !drawer) return;
+
+  function openDrawer() {
+    drawer.classList.add('is-open');
+    drawer.setAttribute('aria-hidden', 'false');
+    trigger.setAttribute('aria-expanded', 'true');
+  }
+  function closeDrawer() {
+    drawer.classList.remove('is-open');
+    drawer.setAttribute('aria-hidden', 'true');
+    trigger.setAttribute('aria-expanded', 'false');
+  }
+  function toggleDrawer() {
+    if (drawer.classList.contains('is-open')) closeDrawer();
+    else openDrawer();
+  }
+
+  trigger.addEventListener('click', toggleDrawer);
+  drawer.querySelectorAll('[data-drawer-close]').forEach(el => {
+    el.addEventListener('click', () => {
+      setTimeout(closeDrawer, 80);
+    });
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawer.classList.contains('is-open')) closeDrawer();
+  });
+})();
+
+// bloom：ロゴから3カテゴリが順に開くアニメーション
+(function() {
+  const stage = document.getElementById('bloom-stage');
+  if (!stage) return;
+
+  function bloom() {
+    if (!stage.classList.contains('is-bloomed')) {
+      stage.classList.add('is-bloomed');
+    }
+  }
+
+  if ('IntersectionObserver' in window) {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          bloom();
+          obs.unobserve(stage);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
+    obs.observe(stage);
+
+    const rect = stage.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      setTimeout(bloom, 200);
+    }
+  } else {
+    bloom();
+  }
+
+  // 安全網
+  setTimeout(bloom, 5000);
+
+  // 円ディスクのクリックで開閉
+  stage.querySelectorAll('.bloom-circle-disc').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const card = btn.closest('.bloom-circle');
+      if (!card) return;
+      const isOpen = card.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', String(isOpen));
+    });
+  });
+})();
 </script>
 
 </body>
