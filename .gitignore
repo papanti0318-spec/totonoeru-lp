@@ -18,3 +18,5 @@ copy-final-*.md
 # Legacy / archive (not for production deploy)
 legacy/
 shared/
+
+.vercel
