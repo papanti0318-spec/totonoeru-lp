@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="hYRflPVBHV_SbReXwN_7v4tNCf6AT3VusKhSviD5kPU" />
+<title>請求書をAIに任せたら、月に15時間返ってきた話｜ととのえる屋</title>
+<meta name="description" content="ロビンソン株式会社（washdeli）の現場で取り組んだ事務作業の自動化。月にだいたい15時間が、自分の手元に返ってきた話。">
+<link rel="canonical" href="https://totonoeruya.jp/articles/seikyusho-ai-15jikan/">
+
+<meta property="og:title" content="請求書をAIに任せたら、月に15時間返ってきた話｜ととのえる屋">
+<meta property="og:description" content="ロビンソン株式会社（washdeli）の現場で取り組んだ事務作業の自動化。月にだいたい15時間が、自分の手元に返ってきた話。">
+<meta property="og:url" content="https://totonoeruya.jp/articles/seikyusho-ai-15jikan/">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://totonoeruya.jp/og.jpg">
+<meta property="article:published_time" content="2026-04-28T00:00:00+09:00">
+<meta property="article:author" content="照井航次郎">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="stylesheet" href="../../assets/opener.css">
+<link rel="stylesheet" href="../../assets/transition.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "請求書をAIに任せたら、月に15時間返ってきた話",
+  "author": {
+    "@type": "Person",
+    "name": "照井航次郎"
+  },
+  "datePublished": "2026-04-28",
+  "publisher": {
+    "@type": "Organization",
+    "name": "ととのえる屋"
+  },
+  "description": "ロビンソン株式会社（washdeli）の現場で取り組んだ事務作業の自動化。月にだいたい15時間が、自分の手元に返ってきた話。"
+}
+</script>
+</head>
+<body class="has-site-nav">
+
+<!-- PAGE TRANSITION OVERLAY -->
+<div class="transition" id="transition" aria-hidden="true">
+  <div class="transition-stage">
+    <span class="transition-line transition-line--green"></span>
+    <span class="transition-line transition-line--amber"></span>
+    <span class="transition-line transition-line--soft"></span>
+    <img class="transition-logo" src="../../assets/logo-totonoeru.png" alt="" width="150" height="190">
+  </div>
+</div>
+<script src="../../assets/transition.js"></script>
+
+<!-- OPENER -->
+<div class="opener" id="opener" aria-hidden="true">
+  <button class="opener-skip" id="opener-skip" aria-label="オープニングをスキップ">Skip</button>
+  <div class="opener-stage">
+    <span class="opener-line opener-line--green"></span>
+    <span class="opener-line opener-line--amber"></span>
+    <span class="opener-line opener-line--soft"></span>
+    <img class="opener-logo" src="../../assets/logo-totonoeru.png" alt="ととのえる屋" width="220" height="280">
+    <p class="opener-tagline">TOTONOERUYA &nbsp;·&nbsp; KOMORO, NAGANO</p>
+  </div>
+</div>
+<script src="../../assets/opener.js"></script>
+
+<!-- ナビゲーション（左サイド固定） -->
+<nav class="site-nav">
+  <button type="button" class="site-nav-trigger" aria-label="メニューを開く" aria-expanded="false" aria-controls="site-drawer">
+    <span class="site-nav-bars" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </span>
+  </button>
+</nav>
+
+<!-- 左サイドドロワー -->
+<aside class="site-drawer" id="site-drawer" aria-hidden="true" aria-label="メニュー">
+  <div class="site-drawer-backdrop" data-drawer-close></div>
+  <div class="site-drawer-inner" role="dialog" aria-modal="true">
+    <div class="site-drawer-content">
+      <span class="site-drawer-eyebrow">Menu</span>
+      <ul class="site-drawer-menu">
+        <li>
+          <a href="/" data-drawer-close>
+            <span class="lang-en">Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="/web/" data-drawer-close>
+            <span class="lang-en">Web</span>
+          </a>
+        </li>
+        <li>
+          <a href="/cleaning/" data-drawer-close>
+            <span class="lang-en">Cleaning</span>
+          </a>
+        </li>
+        <li>
+          <a href="/guitar/" data-drawer-close>
+            <span class="lang-en">Guitar</span>
+          </a>
+        </li>
+        <li>
+          <a href="/articles/" data-drawer-close>
+            <span class="lang-en">Journal</span>
+          </a>
+        </li>
+        <li>
+          <a href="#contact" data-drawer-close>
+            <span class="lang-en">Contact</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="site-drawer-actions">
+        <a class="site-drawer-action" href="https://line.me/R/ti/p/@903xtesg" target="_blank" rel="noopener" aria-label="LINE">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        </a>
+        <a class="site-drawer-action" href="mailto:totonoeru.ya@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="1"/>
+            <path d="M3 7l9 6 9-6"/>
+          </svg>
+        </a>
+      </div>
+
+      <p class="site-drawer-foot">
+        ととのえる屋<br>
+        長野県小諸市
+      </p>
+    </div>
+  </div>
+</aside>
+
+<main>
+<article class="article-body">
+  <!-- Article Header -->
+  <header class="article-header">
+    <div class="article-meta">
+      <span class="journal-date">2026-04-28</span>
+      <span class="journal-category">業務改善</span>
+    </div>
+    <h1 class="article-title">請求書をAIに任せたら、月に15時間返ってきた話</h1>
+    <p class="article-lead">
+      請求書や日々の事務作業を、ちょっとずつ機械の手に渡してみたら、月にだいたい15時間くらい、自分の時間が返ってきました。その途中の話です。
+    </p>
+  </header>
+
+  <!-- Article Content -->
+  <div class="article-content">
+
+<h2>事務は、地味にしんどい</h2>
+
+<p>
+軽井沢のwashdeli（ロビンソン株式会社）で執行役員をしていたころ、いちばん地味にしんどかったのは、現場の仕事じゃなくて、事務でした。
+</p>
+
+<p>
+請求書を作る。発送する。入金を確認する。台帳に書き込む。月末にまとめる。
+</p>
+
+<p>
+ひとつひとつは数分の作業なんです。でも、これが20件、30件と積み重なると、気づいたら半日が消えていた、みたいな日が普通にありました。
+</p>
+
+<h2>数えてみると、それなりの時間だった</h2>
+
+<p>
+ある日ふと、これって月にどれくらいやってるんだろうって、ざっと数えてみたんです。
+</p>
+
+<p>
+請求書まわりだけで、だいたい月に20時間以上は使っていました。お風呂に入って寝るだけの日が、何日分か潰れている計算です。
+</p>
+
+<p>
+これは整えがいがあるな、と思いました。
+</p>
+
+<h2>全部やめたわけじゃない</h2>
+
+<p>
+それで少しずつ、機械の手に渡せるところを渡していきました。
+</p>
+
+<p>
+宛先の引き当て、金額の計算、定型の文面づくり、ファイル名の整え。このあたりは、わりとあっさり任せられる。
+</p>
+
+<p>
+でも、ぜんぶをAIに丸投げしたわけじゃないんです。最後に金額と宛先を目で確認する作業だけは、自分の手元に残しました。お金にかかわる部分なので。
+</p>
+
+<h2>月に、だいたい15時間</h2>
+
+<p>
+しばらく回してみて、計ってみたら、月に15時間くらいは確実に返ってきていました。
+</p>
+
+<p>
+返ってきた時間で、何をしたかというと、現場のスタッフとちゃんと話すようになったんです。今までは「ごめん、事務が残ってて」と言って後回しにしていた会話を、ちゃんと座って聞けるようになった。
+</p>
+
+<p>
+事務を整えたら、人と話す時間が増えた。これは思っていなかった効果で、ちょっとうれしかったです。
+</p>
+
+<h2>自動化したい、の本当の意味</h2>
+
+<p>
+たぶん多くの人が「事務を自動化したい」と言うとき、本当にほしいのは、楽になることだけじゃないんですよね。
+</p>
+
+<p>
+返ってきた時間で、もう一度、自分にとって大事な人と話したり、現場を歩いたり、ちゃんと考えたりしたい、ってことなんじゃないかな、と思います。
+</p>
+
+<p>
+機械の手はとても便利だけど、そこで生まれた時間をどう使うかは、結局こちら側の話。そこまでセットで考えると、たぶん業務改善ってもう少し豊かなものになる気がしています。
+</p>
+
+  </div>
+
+  <!-- Related Articles -->
+  <div class="related-articles">
+    <h3>他の記事</h3>
+    <div class="related-list">
+      <a href="../hojokin-ai-mae-ni/" class="related-item">
+        <div class="related-item-title">補助金、AIで探す前にやっておきたいこと</div>
+      </a>
+      <a href="../naniwo-totonoetai/" class="related-item">
+        <div class="related-item-title">「AIで何ができる？」より「何を整えたい？」から始める</div>
+      </a>
+      <a href="../ai-tool-yameta-3tsu/" class="related-item">
+        <div class="related-item-title">AIをツールとして扱うために、やめた3つのこと</div>
+      </a>
+    </div>
+  </div>
+</article>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-nap">
+      <p class="footer-nap-name">ととのえる屋</p>
+      <p class="footer-nap-address">長野県小諸市</p>
+      <p class="footer-nap-contact">
+        <a href="mailto:totonoeru.ya@gmail.com">totonoeru.ya@gmail.com</a>　／　<a href="https://line.me/R/ti/p/@903xtesg" target="_blank" rel="noopener">LINE: @903xtesg</a>
+      </p>
+      <p class="footer-nap-area">対応エリア：小諸市・御代田町・軽井沢町・上田市ほか長野県内（オンライン全国対応）</p>
+    </div>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <img src="../../assets/logo-totonoeru.png" alt="ととのえる屋" class="footer-logo-img" width="44" height="56">
+      </div>
+      <div class="footer-copy">© 2026 ととのえる屋. All rights reserved. 長野県小諸市</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ドロワー制御
+const drawer = document.getElementById('site-drawer');
+const trigger = document.querySelector('.site-nav-trigger');
+const backdrop = drawer.querySelector('.site-drawer-backdrop');
+const closeLinks = drawer.querySelectorAll('[data-drawer-close]');
+
+function openDrawer() {
+  drawer.setAttribute('aria-hidden', 'false');
+  trigger.setAttribute('aria-expanded', 'true');
+}
+
+function closeDrawer() {
+  drawer.setAttribute('aria-hidden', 'true');
+  trigger.setAttribute('aria-expanded', 'false');
+}
+
+if (trigger) trigger.addEventListener('click', openDrawer);
+if (backdrop) backdrop.addEventListener('click', closeDrawer);
+closeLinks.forEach(link => link.addEventListener('click', closeDrawer));
+</script>
+
+</body>
+</html>
