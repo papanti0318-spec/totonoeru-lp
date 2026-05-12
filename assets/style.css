@@ -458,55 +458,65 @@ nav:not(.site-nav) {
 }
 .journal-more a:hover { gap: 12px; }
 
-/* ─── CONTACT ─── */
-#contact { background: var(--green); color: #fff; }
-#contact .sec-header .sec-title { color: #fff; }
-#contact .sec-header .sec-sub { color: rgba(255,255,255,.65); }
-#contact .sec-header .tag { border-color: rgba(255,255,255,.2); color: rgba(255,255,255,.5); }
+/* ─── CONTACT（cream 背景・シンプル路線） ─── */
+#contact { background: var(--bg); }
 
 .contact-inner {
-  max-width: 640px;
+  max-width: 960px;
   margin: 0 auto;
   text-align: center;
 }
 .contact-methods {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 24px;
   margin-bottom: 48px;
 }
+@media (min-width: 768px) {
+  .contact-methods {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 32px;
+  }
+  .contact-methods .contact-method {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
 .contact-method {
-  background: rgba(255,255,255,.08);
-  border: 1px solid rgba(255,255,255,.15);
+  background: var(--bg-warm);
+  border: 1px solid var(--border-soft);
   border-radius: var(--radius);
   padding: 28px 32px;
   text-align: left;
   transition: background .2s;
 }
-.contact-method:hover { background: rgba(255,255,255,.12); }
+.contact-method:hover { background: var(--amber-lt); }
 .contact-label {
   font-size: 11px;
   letter-spacing: var(--ls-eyebrow);
   text-transform: uppercase;
-  color: rgba(255,255,255,.5);
+  color: var(--text-soft);
   margin-bottom: 12px;
 }
 .contact-value {
   font-family: 'Noto Serif JP', serif;
   font-size: 22px;
   font-weight: 600;
-  color: #fff;
+  color: var(--text);
   margin-bottom: 16px;
 }
 .contact-value a {
-  color: #fff;
+  color: var(--text);
   text-decoration: none;
   transition: color .2s;
 }
-.contact-value a:hover { color: var(--amber-lt); }
+.contact-value a:hover { color: var(--amber); }
 .contact-note {
   font-size: 13px;
-  color: rgba(255,255,255,.55);
+  color: var(--text-mid);
   line-height: 1.8;
 }
 
@@ -531,27 +541,36 @@ nav:not(.site-nav) {
   color: #fff;
 }
 .btn--green:hover { background: var(--green-mid); }
+.btn--amber {
+  background: var(--amber);
+  color: #fff;
+  padding: 16px 36px;
+  font-size: 15px;
+}
+.btn--amber:hover { opacity: .92; transform: translateY(-1px); }
 
 .contact-footer {
   padding-top: 32px;
-  border-top: 1px solid rgba(255,255,255,.1);
+  border-top: 1px solid var(--border-soft);
   font-size: 13px;
-  color: rgba(255,255,255,.5);
+  color: var(--text-soft);
   line-height: 2;
 }
 
 .contact-barrier-lowering {
-  background: rgba(255,255,255,.08);
-  border: 1px solid rgba(255,255,255,.15);
-  border-radius: var(--radius);
-  padding: 24px 28px;
+  border-left: 2px solid var(--amber);
+  padding: 8px 0 8px 16px;
   margin-bottom: 32px;
   font-size: 14px;
-  color: rgba(255,255,255,.75);
+  color: var(--text-mid);
   line-height: 1.9;
+  text-align: left;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* ─── CONTACT 2択（LINE / フォーム）─── */
+/* ─── CONTACT 2択（旧構造・残置）─── */
 .contact-channels {
   display: flex;
   flex-direction: column;
@@ -559,8 +578,8 @@ nav:not(.site-nav) {
   margin-bottom: 56px;
 }
 .contact-channel {
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(255,255,255,.12);
+  background: var(--bg-warm);
+  border: 1px solid var(--border-soft);
   border-radius: var(--radius);
   padding: 32px 28px;
   text-align: left;
@@ -569,12 +588,12 @@ nav:not(.site-nav) {
   font-size: 11px;
   letter-spacing: var(--ls-eyebrow);
   text-transform: uppercase;
-  color: rgba(255,255,255,.55);
+  color: var(--text-soft);
   margin-bottom: 8px;
 }
 .contact-channel-desc {
   font-size: 14px;
-  color: rgba(255,255,255,.7);
+  color: var(--text-mid);
   line-height: 1.8;
   margin-bottom: 24px;
 }
@@ -583,7 +602,7 @@ nav:not(.site-nav) {
   font-size: 11px;
   letter-spacing: var(--ls-eyebrow);
   text-transform: uppercase;
-  color: rgba(255,255,255,.4);
+  color: var(--text-soft);
   display: flex;
   align-items: center;
   gap: 14px;
@@ -593,7 +612,7 @@ nav:not(.site-nav) {
   content: '';
   flex: 1;
   height: 1px;
-  background: rgba(255,255,255,.15);
+  background: var(--border-soft);
 }
 .contact-divider span { white-space: nowrap; }
 
@@ -610,20 +629,20 @@ nav:not(.site-nav) {
 .form-row label {
   font-size: 12px;
   letter-spacing: var(--ls-mid);
-  color: rgba(255,255,255,.65);
+  color: var(--text-mid);
 }
 .form-optional {
   font-size: 11px;
-  color: rgba(255,255,255,.4);
+  color: var(--text-soft);
   margin-left: 4px;
 }
 .form-row input,
 .form-row textarea {
-  background: rgba(0,0,0,.22);
-  border: 1px solid rgba(255,255,255,.18);
+  background: var(--bg);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 12px 14px;
-  color: #fff;
+  color: var(--text);
   font-family: inherit;
   font-size: 15px;
   font-weight: 300;
@@ -634,7 +653,7 @@ nav:not(.site-nav) {
 .form-row textarea:focus {
   outline: none;
   border-color: var(--amber);
-  background: rgba(0,0,0,.32);
+  background: #fff;
 }
 .form-row textarea {
   resize: vertical;
@@ -642,7 +661,7 @@ nav:not(.site-nav) {
 }
 .form-row input::placeholder,
 .form-row textarea::placeholder {
-  color: rgba(255,255,255,.3);
+  color: var(--text-soft);
 }
 .btn--block {
   display: flex;
@@ -652,7 +671,7 @@ nav:not(.site-nav) {
 .contact-form .btn--block { margin-top: 8px; padding: 16px 28px; }
 .contact-form-note {
   font-size: 12px;
-  color: rgba(255,255,255,.45);
+  color: var(--text-soft);
   margin-top: 8px;
   text-align: center;
   line-height: 1.7;
@@ -1032,14 +1051,32 @@ article.article-body {
   height: 80px;
 }
 .testimonial-card--sm .testimonial-card-photo {
-  width: 64px;
-  height: 64px;
+  width: 72px;
+  height: 72px;
+}
+@media (max-width: 640px) {
+  .testimonial-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+    padding: 32px 20px;
+  }
+  .testimonial-card-content {
+    text-align: center;
+  }
 }
 .testimonial-card-photo img {
   width: 100%;
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
+}
+/* ロゴアイコン（haluta ship icon等）は contain + bg-warm 背景・余白で中央表示 */
+.testimonial-card-photo--icon img {
+  object-fit: contain;
+  background: var(--bg-warm);
+  padding: 10px;
+  border: 1px solid var(--border-soft);
 }
 .testimonial-card-content {
   flex: 1;
@@ -1059,9 +1096,11 @@ article.article-body {
   font-weight: 600;
 }
 .testimonial-card-detail {
+  font-family: 'Noto Sans JP', sans-serif;
   font-size: 14px;
   color: var(--text-mid);
   line-height: 1.8;
+  letter-spacing: var(--ls-mid);
 }
 
 /* ─── profile-block：照井プロフィール ─── */

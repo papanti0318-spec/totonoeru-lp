@@ -20,5 +20,6 @@ generate_articles.py
 # Legacy / archive (not for production deploy)
 legacy/
 shared/
+_meta/
 
 .vercel

@@ -33,8 +33,8 @@
   function playAndGo(href) {
     if (prefersReduced) { window.location.href = href; return; }
 
-    // 遷移先でも opener を再表示させる（オープニング再生）
-    sessionStorage.removeItem('opener_played');
+    // 内部遷移時は遷移先の opener をスキップ（ロゴ二重発火を防ぐ）
+    sessionStorage.setItem('opener_played', '1');
 
     transition.classList.add('is-active');
     // 1フレーム後に is-playing を付けて animation 起動

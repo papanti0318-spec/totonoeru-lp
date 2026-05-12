@@ -156,6 +156,10 @@
   <p class="hero-sub">
     散らばったものを、ひとつに。
   </p>
+  <p class="hero-tagline" style="font-family: 'Noto Sans JP', sans-serif; font-size: 13px; font-weight: 300; line-height: 2.1; color: var(--text-soft); letter-spacing: var(--ls-mid); margin: 20px auto 0; max-width: 460px; text-wrap: balance;">
+    HP・LP・冊子・サイネージ。<br>
+    長野県小諸市から、ぜんぶ、同じ手で。
+  </p>
   <div class="hero-scroll">Scroll</div>
 </header>
 
@@ -240,6 +244,76 @@
   </div>
 </section>
 
+<!-- 最近の記録（News：最新3記事カード） -->
+<section id="recent" style="padding: 100px 24px; background: var(--bg);">
+  <div class="container">
+    <div class="sec-header anim" style="text-align: center; margin-bottom: 56px;">
+      <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 12px; letter-spacing: var(--ls-eyebrow); text-transform: uppercase; color: var(--text-soft); margin-bottom: 16px;">
+        <span style="display: inline-block; width: 24px; height: 1px; background: var(--text-soft); vertical-align: middle; margin-right: 10px;"></span>News
+      </p>
+      <h2 class="sec-title">最近の記録</h2>
+      <p class="sec-sub">現場で考えていること、ことことと。</p>
+    </div>
+
+    <div class="anim anim-delay-1" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; max-width: 1080px; margin: 0 auto;">
+
+      <a href="/articles/totonoeruya-name-riyu/" class="recent-card" style="text-decoration: none; padding: 32px 28px; background: var(--bg-warm); border: 1px solid var(--border-soft); border-radius: var(--radius); transition: all .2s; display: block;">
+        <div style="display: flex; gap: 10px; font-size: 11px; color: var(--text-soft); letter-spacing: var(--ls-eyebrow); text-transform: uppercase; margin-bottom: 16px;">
+          <span>2026-05-12</span>
+          <span aria-hidden="true">·</span>
+          <span>思想</span>
+        </div>
+        <h3 style="font-family: 'Noto Serif JP', serif; font-size: 17px; font-weight: 600; line-height: 1.7; color: var(--text); margin-bottom: 12px; text-wrap: balance;">
+          ととのえる屋という名前にした理由
+        </h3>
+        <p style="font-size: 14px; color: var(--text-mid); line-height: 1.9; text-wrap: balance;">
+          1993年生まれの東京育ちが、小諸でこの屋号にたどり着いた経緯。
+        </p>
+      </a>
+
+      <a href="/articles/naniwo-totonoetai/" class="recent-card" style="text-decoration: none; padding: 32px 28px; background: var(--bg-warm); border: 1px solid var(--border-soft); border-radius: var(--radius); transition: all .2s; display: block;">
+        <div style="display: flex; gap: 10px; font-size: 11px; color: var(--text-soft); letter-spacing: var(--ls-eyebrow); text-transform: uppercase; margin-bottom: 16px;">
+          <span>2026-05-08</span>
+          <span aria-hidden="true">·</span>
+          <span>思想</span>
+        </div>
+        <h3 style="font-family: 'Noto Serif JP', serif; font-size: 17px; font-weight: 600; line-height: 1.7; color: var(--text); margin-bottom: 12px; text-wrap: balance;">
+          「AIで何ができる？」より「何を整えたい？」から始める
+        </h3>
+        <p style="font-size: 14px; color: var(--text-mid); line-height: 1.9; text-wrap: balance;">
+          ご相談で聞かれる質問が、最近すこし変わってきました。問いの立て方を変えるだけで、見える景色が変わる話。
+        </p>
+      </a>
+
+      <a href="/articles/ai-tool-yameta-3tsu/" class="recent-card" style="text-decoration: none; padding: 32px 28px; background: var(--bg-warm); border: 1px solid var(--border-soft); border-radius: var(--radius); transition: all .2s; display: block;">
+        <div style="display: flex; gap: 10px; font-size: 11px; color: var(--text-soft); letter-spacing: var(--ls-eyebrow); text-transform: uppercase; margin-bottom: 16px;">
+          <span>2026-05-04</span>
+          <span aria-hidden="true">·</span>
+          <span>AI</span>
+        </div>
+        <h3 style="font-family: 'Noto Serif JP', serif; font-size: 17px; font-weight: 600; line-height: 1.7; color: var(--text); margin-bottom: 12px; text-wrap: balance;">
+          AIをツールとして扱うために、やめた3つのこと
+        </h3>
+        <p style="font-size: 14px; color: var(--text-mid); line-height: 1.9; text-wrap: balance;">
+          AIを主役にしないために、わたしがやめた3つの習慣。長く健やかに付き合うための、ちいさな線引きの話。
+        </p>
+      </a>
+
+    </div>
+
+    <div class="anim anim-delay-2" style="text-align: center; margin-top: 56px;">
+      <a href="/articles/" class="btn btn--amber">すべての記事を見る</a>
+    </div>
+  </div>
+</section>
+
+<style>
+.recent-card:hover {
+  background: var(--amber-lt) !important;
+  transform: translateY(-2px);
+}
+</style>
+
 <!-- Contact -->
 <section id="contact">
   <div class="container">
@@ -252,38 +326,53 @@
         何がなんだかわからなくても、とりあえず話したいだけでもOKです。
       </div>
 
-      <div class="contact-channels anim anim-delay-2">
-        <!-- 方法1：LINE -->
-        <div class="contact-channel">
-          <div class="contact-channel-label">LINE</div>
-          <p class="contact-channel-desc">「相談したい」と一言。すぐ気づきます。</p>
-          <a href="https://line.me/R/ti/p/@903xtesg" class="btn btn--line btn--block" target="_blank" rel="noopener">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-            LINEで相談する
-          </a>
+      <!-- LINE + フォーム の2カラム（全ページ統一構造） -->
+      <div class="contact-methods anim anim-delay-2">
+        <div class="contact-method">
+          <div class="contact-label">LINE</div>
+          <div class="contact-value">
+            <a href="https://line.me/R/ti/p/@903xtesg" target="_blank" rel="noopener">@903xtesg</a>
+          </div>
+          <div class="contact-note">
+            「相談したい」と一言送ってください。<br>
+            返信が早いのはLINEです。
+          </div>
+          <div style="margin-top: 20px;">
+            <a href="https://line.me/R/ti/p/@903xtesg" class="btn btn--line btn--block" target="_blank" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+              LINEで相談する
+            </a>
+          </div>
         </div>
 
-        <div class="contact-divider" aria-hidden="true"><span>または</span></div>
+        <div class="contact-method">
+          <div class="contact-label">フォーム</div>
+          <div class="contact-value" style="font-size: 14px; color: var(--text-mid); font-family: inherit; font-weight: 400; margin-bottom: 8px;">
+            メールアドレス宛にお返しします。
+          </div>
+          <div class="contact-note">
+            LINEを使っていない方はこちらから。<br>
+            だいたい1〜2営業日で返します。
+          </div>
 
-        <!-- 方法2：問い合わせフォーム -->
-        <div class="contact-channel">
-          <div class="contact-channel-label">問い合わせフォーム</div>
-          <p class="contact-channel-desc">じっくり書きたい方はこちらから。</p>
-          <form class="contact-form" method="POST" action="" novalidate>
+          <form class="contact-form" method="POST" action="https://formspree.io/f/mvzllrqg" style="margin-top: 24px;">
             <div class="form-row">
-              <label for="form-name">お名前 <span class="form-optional">（任意）</span></label>
-              <input type="text" id="form-name" name="name" autocomplete="name">
+              <label for="form-name">お名前<span class="form-optional">（任意）</span></label>
+              <input type="text" id="form-name" name="name" autocomplete="name" placeholder="ご記入なしでも構いません">
             </div>
             <div class="form-row">
-              <label for="form-contact">連絡先（メール または LINE ID）</label>
-              <input type="text" id="form-contact" name="contact" required>
+              <label for="form-email">メールアドレス</label>
+              <input type="email" id="form-email" name="email" autocomplete="email" required placeholder="返信先（必須）">
             </div>
             <div class="form-row">
-              <label for="form-message">内容</label>
-              <textarea id="form-message" name="message" rows="5" required placeholder="何がなんだかわからない、というだけでも大丈夫です。"></textarea>
+              <label for="form-message">ご相談内容</label>
+              <textarea id="form-message" name="message" required placeholder="何がなんだかわからなくても、とりあえず話したいだけでもOKです。 HP相談・清掃・ギター — ひと言だけでも構いません。"></textarea>
             </div>
-            <button type="submit" class="btn btn--green btn--block">送信する</button>
-            <p class="contact-form-note">※ 送信機能は近日接続予定です。お急ぎの方はLINEからどうぞ。</p>
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+            <input type="hidden" name="_subject" value="totonoeruya.jp お問い合わせ（トップ）">
+            <input type="hidden" name="_next" value="https://totonoeruya.jp/thanks/">
+            <button type="submit" class="btn btn--amber btn--block">送信する</button>
+            <p class="contact-form-note">送信後、確認ページに移動します。</p>
           </form>
         </div>
       </div>
