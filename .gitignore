@@ -5,6 +5,7 @@
 Thumbs.db
 *.pyc
 __pycache__/
+node_modules/
 
 # Internal planning docs (work-in-progress, not for public)
 PHASE-A-CHANGE-REPORT.md
