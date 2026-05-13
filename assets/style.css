@@ -390,6 +390,145 @@ nav:not(.site-nav) {
   max-width: 720px;
   margin: 0 auto 48px;
 }
+/* ─── /web/ Case 02 Before/After ─── */
+.case-ba {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 32px;
+  align-items: start;
+  max-width: 1080px;
+  margin: 0 auto 56px;
+}
+@media (max-width: 720px) {
+  .case-ba {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+.case-ba-col {
+  text-align: center;
+}
+.case-ba-img {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--radius);
+  margin-bottom: 20px;
+  background: var(--bg-warm);
+}
+.case-ba-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.case-ba-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--text-soft);
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.case-ba-label--after { color: var(--green-mid); }
+.case-ba-text {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 2;
+  color: var(--text);
+  letter-spacing: var(--ls-mid);
+  text-wrap: balance;
+}
+.case-ba-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.6em;
+  color: var(--amber);
+  letter-spacing: -0.02em;
+  margin: 0 0.1em;
+  vertical-align: -0.04em;
+}
+.case-ba-arrow {
+  align-self: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 36px;
+  color: var(--amber);
+  padding-top: 32px;
+  text-align: center;
+}
+@media (max-width: 720px) {
+  .case-ba-arrow {
+    transform: rotate(90deg);
+    padding: 0;
+  }
+}
+/* Case 02 detail（取り組んだ3つ） */
+.case-ba-detail {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 32px;
+  background: var(--bg-warm);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+}
+.case-ba-detail-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 17px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 32px;
+  letter-spacing: var(--ls-mid);
+  color: var(--text);
+}
+.case-ba-detail-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px;
+}
+.case-ba-detail-list li {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 20px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border-soft);
+  align-items: baseline;
+}
+.case-ba-detail-list li:last-child {
+  border-bottom: 0;
+}
+.case-ba-detail-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--amber);
+  letter-spacing: var(--ls-mid);
+}
+.case-ba-detail-list strong {
+  display: block;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 4px;
+  letter-spacing: var(--ls-mid);
+}
+.case-ba-detail-list span {
+  font-size: 13px;
+  color: var(--text-mid);
+  line-height: 1.9;
+}
+.case-ba-detail-note {
+  text-align: center;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 14px;
+  color: var(--text-mid);
+  line-height: 2;
+  letter-spacing: var(--ls-mid);
+  text-wrap: balance;
+}
+
 .journal-item-thumb {
   display: block;
   width: 100%;

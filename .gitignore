@@ -20,6 +20,7 @@ temp_article_generator.py
 temp_optimize_journal_images.py
 temp_update_og_images.py
 temp_add_journal_thumbs.py
+temp_optimize_works.py
 
 # Legacy / archive (not for production deploy)
 legacy/
