@@ -390,6 +390,25 @@ nav:not(.site-nav) {
   max-width: 720px;
   margin: 0 auto 48px;
 }
+.journal-item-thumb {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--radius);
+  margin-bottom: 20px;
+  background: var(--bg-warm);
+}
+.journal-item-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .4s cubic-bezier(.22,1,.36,1);
+}
+.journal-item:hover .journal-item-thumb img {
+  transform: scale(1.03);
+}
 .journal-item {
   padding-bottom: 32px;
   border-bottom: 1px solid var(--border);

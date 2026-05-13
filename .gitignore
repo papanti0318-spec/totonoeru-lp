@@ -17,6 +17,9 @@ copy-final-*.md
 articles-draft-*.md
 generate_articles.py
 temp_article_generator.py
+temp_optimize_journal_images.py
+temp_update_og_images.py
+temp_add_journal_thumbs.py
 
 # Legacy / archive (not for production deploy)
 legacy/
