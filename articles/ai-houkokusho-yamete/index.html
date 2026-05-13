@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="hYRflPVBHV_SbReXwN_7v4tNCf6AT3VusKhSviD5kPU" />
+<title>AIに「報告書」を書かせるのを、やめた｜ととのえる屋</title>
+<meta name="description" content="一時期、お客さま向けの報告書をぜんぶAIに書かせていました。半年やってみて、やめました。その理由を書いてみます。">
+<link rel="canonical" href="https://totonoeruya.jp/articles/ai-houkokusho-yamete/">
+
+<meta property="og:title" content="AIに「報告書」を書かせるのを、やめた｜ととのえる屋">
+<meta property="og:description" content="一時期、お客さま向けの報告書をぜんぶAIに書かせていました。半年やってみて、やめました。その理由を書いてみます。">
+<meta property="og:url" content="https://totonoeruya.jp/articles/ai-houkokusho-yamete/">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://totonoeruya.jp/og.jpg">
+<meta property="article:published_time" content="2026-06-09T00:00:00+09:00">
+<meta property="article:author" content="照井航次郎">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="stylesheet" href="../../assets/opener.css">
+<link rel="stylesheet" href="../../assets/transition.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://totonoeruya.jp/articles/ai-houkokusho-yamete/#article",
+      "headline": "AIに「報告書」を書かせるのを、やめた",
+      "description": "一時期、お客さま向けの報告書をぜんぶAIに書かせていました。半年やってみて、やめました。その理由を書いてみます。",
+      "url": "https://totonoeruya.jp/articles/ai-houkokusho-yamete/",
+      "mainEntityOfPage": "https://totonoeruya.jp/articles/ai-houkokusho-yamete/",
+      "image": "https://totonoeruya.jp/og.jpg",
+      "datePublished": "2026-06-09",
+      "dateModified": "2026-06-09",
+      "inLanguage": "ja",
+      "articleSection": "AI",
+      "author": { "@id": "https://totonoeruya.jp/#terui" },
+      "publisher": { "@id": "https://totonoeruya.jp/#organization" },
+      "isPartOf": { "@id": "https://totonoeruya.jp/articles/#blog" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://totonoeruya.jp/" },
+        { "@type": "ListItem", "position": 2, "name": "ジャーナル", "item": "https://totonoeruya.jp/articles/" },
+        { "@type": "ListItem", "position": 3, "name": "AIに「報告書」を書かせるのを、やめた", "item": "https://totonoeruya.jp/articles/ai-houkokusho-yamete/" }
+      ]
+    }
+  ]
+}
+</script>
+<!-- Vercel Web Analytics -->
+<script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body class="has-site-nav">
+
+<!-- PAGE TRANSITION OVERLAY -->
+<div class="transition" id="transition" aria-hidden="true">
+  <div class="transition-stage">
+    <span class="transition-line transition-line--green"></span>
+    <span class="transition-line transition-line--amber"></span>
+    <span class="transition-line transition-line--soft"></span>
+    <img class="transition-logo" src="../../assets/logo-totonoeru.png" alt="" width="150" height="190">
+  </div>
+</div>
+<script src="../../assets/transition.js"></script>
+
+<!-- OPENER -->
+<div class="opener" id="opener" aria-hidden="true">
+  <button class="opener-skip" id="opener-skip" aria-label="オープニングをスキップ">Skip</button>
+  <div class="opener-stage">
+    <span class="opener-line opener-line--green"></span>
+    <span class="opener-line opener-line--amber"></span>
+    <span class="opener-line opener-line--soft"></span>
+    <img class="opener-logo" src="../../assets/logo-totonoeru.png" alt="ととのえる屋" width="220" height="280">
+    <p class="opener-tagline">TOTONOERUYA &nbsp;·&nbsp; KOMORO, NAGANO</p>
+  </div>
+</div>
+<script src="../../assets/opener.js"></script>
+
+<!-- ナビゲーション（左サイド固定） -->
+<nav class="site-nav">
+  <button type="button" class="site-nav-trigger" aria-label="メニューを開く" aria-expanded="false" aria-controls="site-drawer">
+    <span class="site-nav-bars" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </span>
+  </button>
+</nav>
+
+<!-- 左サイドドロワー -->
+<aside class="site-drawer" id="site-drawer" aria-hidden="true" aria-label="メニュー">
+  <div class="site-drawer-backdrop" data-drawer-close></div>
+  <div class="site-drawer-inner" role="dialog" aria-modal="true">
+    <div class="site-drawer-content">
+      <span class="site-drawer-eyebrow">Menu</span>
+      <ul class="site-drawer-menu">
+        <li>
+          <a href="/" data-drawer-close>
+            <span class="lang-en">Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="/web/" data-drawer-close>
+            <span class="lang-en">Web</span>
+          </a>
+        </li>
+        <li>
+          <a href="/cleaning/" data-drawer-close>
+            <span class="lang-en">Cleaning</span>
+          </a>
+        </li>
+        <li>
+          <a href="/guitar/" data-drawer-close>
+            <span class="lang-en">Guitar</span>
+          </a>
+        </li>
+        <li>
+          <a href="/articles/" data-drawer-close>
+            <span class="lang-en">Journal</span>
+          </a>
+        </li>
+        <li>
+          <a href="#contact" data-drawer-close>
+            <span class="lang-en">Contact</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="site-drawer-actions">
+        <a class="site-drawer-action" href="https://line.me/R/ti/p/@903xtesg" target="_blank" rel="noopener" aria-label="LINE">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        </a>
+        <a class="site-drawer-action" href="mailto:totonoeru.ya@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="1"/>
+            <path d="M3 7l9 6 9-6"/>
+          </svg>
+        </a>
+      </div>
+
+      <p class="site-drawer-foot">
+        ととのえる屋<br>
+        長野県小諸市
+      </p>
+    </div>
+  </div>
+</aside>
+
+<main>
+<article class="article-body">
+  <!-- Article Header -->
+  <header class="article-header">
+    <div class="article-meta">
+      <span class="journal-date">2026-06-09</span>
+      <span class="journal-category">AI</span>
+    </div>
+    <h1 class="article-title">AIに「報告書」を書かせるのを、やめた</h1>
+    <p class="article-lead">
+      一時期、お客さま向けの報告書をぜんぶAIに書かせていました。半年やってみて、やめました。その理由を書いてみます。
+    </p>
+  </header>
+
+  <!-- Article Content -->
+  <div class="article-content">
+
+<p>
+去年の秋から半年ほど、お客さま向けの月次報告書を、ほぼ全部AIに書かせていました。
+</p>
+
+<p>
+便利は便利だったんです。でも、半年やってみて、ちょっと前にやめました。今日はその理由を、書いてみます。
+</p>
+
+
+<h2>最初は、すごく楽だった</h2>
+
+<p>
+報告書って、地味だけどけっこう時間を取る仕事で、1社あたり毎月1時間くらい。3社分で3時間が消えていました。
+</p>
+
+<p>
+それを、AIに「今月の議事録を要約して、定型のフォーマットに入れて」と渡したら、3社分が30分で終わるようになったんです。
+</p>
+
+<p>
+これはすごい、これからはこれで行こう、と思いました。
+</p>
+
+
+<h2>でも、3ヶ月目あたりから、違和感</h2>
+
+<p>
+3ヶ月くらい続けたあたりで、ちょっとした違和感が出てきました。
+</p>
+
+<p>
+お客さまから返ってくる反応が、心なしか薄くなっていたんです。
+</p>
+
+<p>
+前は「いつもありがとうございます」「来月もよろしくお願いします」とちゃんと返ってきていたのが、報告書をAIに任せ始めてから、たまに既読すらつかない月があった。
+</p>
+
+<p>
+最初は気のせいかな、と思っていたんですけど、何回か続くと、これは何かあるなあ、と思いました。
+</p>
+
+
+<h2>文章は整っていたのに</h2>
+
+<p>
+不思議だったのは、出てくる報告書の文章は、むしろ前より整っていたんです。
+</p>
+
+<p>
+誤字もない。論理の流れもきれい。情報も漏れなく入っている。客観的に見れば、たぶん前のわたしの手書きより、上手だったかもしれません。
+</p>
+
+<p>
+なのに、なんで反応が薄くなったのか。しばらく考えました。
+</p>
+
+
+<h2>「あなたから来た」がなかった</h2>
+
+<p>
+ある日、お客さまの一人と打ち合わせをしていて、その方がぽつっとこう言ったんです。
+</p>
+
+<p>
+「最近の照井さんの報告書、なんかちがう人から来てる感じがする」って。
+</p>
+
+<p>
+これは効きました。
+</p>
+
+<p>
+そうか、お客さまは、報告書の中身だけを読んでいるんじゃなかったんだ、って気づいたんです。「照井さんが、自分のために、自分のことを考えて、書いてくれた」という、その手触りごと読んでいた。
+</p>
+
+<p>
+文章としては整っていても、その手触りが消えると、お客さまにはちゃんと伝わってしまう。
+</p>
+
+
+<h2>やめたあとの、4ヶ月目</h2>
+
+<p>
+それで、4ヶ月目から、報告書を書く作業を、自分の手に戻しました。
+</p>
+
+<p>
+もちろん、ぜんぶ手書きじゃありません。AIに整理させる部分は、いまも使っています。議事録の要約とか、数字の集計とか、そういう部分は機械の手のほうが早いし、正確です。
+</p>
+
+<p>
+でも、最後の「今月のひとこと」と、お客さま宛の書き出しの2〜3行だけは、自分の手で書くようにしました。
+</p>
+
+<p>
+その日の自分の体の感覚で、その月のお客さまのことを思い浮かべて、自分の言葉で書く。たいてい15分くらいです。
+</p>
+
+
+<h2>たった2〜3行で、変わった</h2>
+
+<p>
+たった2〜3行を自分で書くようにしただけで、お客さまの反応がすぐ戻ってきました。
+</p>
+
+<p>
+「今月もありがとうございました」が返ってくる。「ここの一行、すごく嬉しかったです」と言われる。
+</p>
+
+<p>
+ああ、お客さまが本当に求めていたのは、たぶんこの2〜3行だったんだなあ、と思いました。
+</p>
+
+
+<h2>機械の手が、苦手なこと</h2>
+
+<p>
+機械の手にはたくさんのことができます。早い、正確、休まない。
+</p>
+
+<p>
+でも、ひとつだけ、たぶん本質的に苦手なことがあります。それは「相手の顔を思い浮かべて、その人だけのために言葉を選ぶ」という作業です。
+</p>
+
+<p>
+これは、こちらが現場に通って、その人と何度も話して、体で覚えた手触りがないと、出てこないんですよね。
+</p>
+
+
+<h2>やめることで、戻ってきたもの</h2>
+
+<p>
+報告書をAIに任せるのをやめてから、お客さまとの関係は、すこしずつ前みたいに戻っていきました。
+</p>
+
+<p>
+楽になることだけを追いかけると、どこかで大事なものを落とす。便利な道具に慣れすぎると、それに気づくのが遅れる。
+</p>
+
+<p>
+機械の手に渡していい仕事と、自分の指紋を残しておくべき仕事は、たぶんどの現場にもある。その線引きを、自分で決めておくこと。
+</p>
+
+<p>
+これが、AIと長く健やかに付き合うための、たぶんいちばん大事なルールなんじゃないかな、と思っています。
+</p>
+
+
+  </div>
+
+    <!-- 末尾CTA（AI/業務改善/経営カテゴリ） -->
+  <div class="article-cta" style="margin: 80px auto 64px; padding: 40px 32px; background: var(--bg-warm); border: 1px solid var(--border-soft); border-radius: var(--radius); text-align: center; max-width: 640px;">
+    <p style="font-size: 14px; line-height: 2; color: var(--text-mid); margin-bottom: 24px; text-wrap: balance;">
+      この種の整え方を、自分のお店や会社でも試してみたい方へ。<br>
+      「うちの場合はどうかな」と一言、送ってください。<br>
+      仕組みからお話しします。
+    </p>
+    <a href="/#contact" class="btn btn--amber">相談する</a>
+  </div>
+
+  <!-- Related Articles -->
+  <div class="related-articles">
+    <h3>他の記事</h3>
+    <div class="related-list">
+      <a href="../mensetsu-ai-tsukaikata/" class="related-item">
+        <div class="related-item-title">面倒な打ち合わせ準備を、AIに渡した話</div>
+      </a>
+      <a href="../hp-1nin-genkai/" class="related-item">
+        <div class="related-item-title">1人で制作する強みと、ちゃんとある限界</div>
+      </a>
+      <a href="../keiyaku-3sha-riyu/" class="related-item">
+        <div class="related-item-title">年契約は3社まで、と決めた理由</div>
+      </a>
+    </div>
+  </div>
+</article>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-nap">
+      <p class="footer-nap-name">ととのえる屋</p>
+      <p class="footer-nap-address">長野県小諸市</p>
+      <p class="footer-nap-contact">
+        <a href="mailto:totonoeru.ya@gmail.com">totonoeru.ya@gmail.com</a>　／　<a href="https://line.me/R/ti/p/@903xtesg" target="_blank" rel="noopener">LINE: @903xtesg</a>
+      </p>
+      <p class="footer-nap-area">対応エリア：小諸市・御代田町・軽井沢町・上田市ほか長野県内（オンライン全国対応）</p>
+    </div>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <img src="../../assets/logo-totonoeru.png" alt="ととのえる屋" class="footer-logo-img" width="44" height="56">
+      </div>
+      <div class="footer-copy">© 2026 ととのえる屋. All rights reserved. 長野県小諸市</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ドロワー制御
+const drawer = document.getElementById('site-drawer');
+const trigger = document.querySelector('.site-nav-trigger');
+const backdrop = drawer.querySelector('.site-drawer-backdrop');
+const closeLinks = drawer.querySelectorAll('[data-drawer-close]');
+
+function openDrawer() {
+  drawer.setAttribute('aria-hidden', 'false');
+  trigger.setAttribute('aria-expanded', 'true');
+}
+
+function closeDrawer() {
+  drawer.setAttribute('aria-hidden', 'true');
+  trigger.setAttribute('aria-expanded', 'false');
+}
+
+if (trigger) trigger.addEventListener('click', openDrawer);
+if (backdrop) backdrop.addEventListener('click', closeDrawer);
+closeLinks.forEach(link => link.addEventListener('click', closeDrawer));
+</script>
+
+</body>
+</html>

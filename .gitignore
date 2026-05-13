@@ -16,6 +16,7 @@ copy-design-*.md
 copy-final-*.md
 articles-draft-*.md
 generate_articles.py
+temp_article_generator.py
 
 # Legacy / archive (not for production deploy)
 legacy/
