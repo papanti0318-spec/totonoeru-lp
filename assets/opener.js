@@ -24,6 +24,7 @@
   }
 
   document.body.classList.add('opener-playing');
+  opener.classList.add('is-playing');
 
   function endOpener() {
     document.body.classList.remove('opener-playing');

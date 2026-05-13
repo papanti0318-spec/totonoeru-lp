@@ -9,10 +9,14 @@
   inset: 0;
   z-index: 9999;
   background: var(--bg);
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+}
+
+.opener.is-playing {
+  display: flex;
   animation: opener-out 0.7s 2.7s cubic-bezier(.22, 1, .36, 1) forwards;
 }
 
