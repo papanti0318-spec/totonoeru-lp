@@ -49,6 +49,14 @@
     setTimeout(() => { window.location.href = href; }, TOTAL_MS);
   }
 
+  // bfcache から復元時はオーバーレイをリセット
+  // （戻るボタンで transition.is-active が残ったまま戻ってきて画面が止まる現象の対策）
+  window.addEventListener('pageshow', (e) => {
+    if (e.persisted) {
+      transition.classList.remove('is-active', 'is-playing');
+    }
+  });
+
   // すべての内部リンクで発火
   document.addEventListener('click', (e) => {
     // 修飾キー押下時は通常遷移（新タブ等）

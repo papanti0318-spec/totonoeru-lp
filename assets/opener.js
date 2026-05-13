@@ -46,6 +46,15 @@
     });
   }
 
+  // bfcache から復元時は opener を確実に閉じる
+  window.addEventListener('pageshow', (e) => {
+    if (e.persisted) {
+      document.body.classList.remove('opener-playing');
+      opener.classList.remove('is-playing');
+      opener.classList.add('is-done');
+    }
+  });
+
   // ESCキーでもスキップ
   document.addEventListener('keydown', function escSkip(e) {
     if (e.key === 'Escape') {
