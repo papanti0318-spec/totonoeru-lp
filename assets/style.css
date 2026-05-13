@@ -899,7 +899,7 @@ article.article-body {
 .article-lead {
   font-size: 16px;
   color: var(--text-mid);
-  line-height: 2;
+  line-height: 1.85;
 }
 .article-content {
   font-family: 'Noto Serif JP', serif;
@@ -910,13 +910,13 @@ article.article-body {
 .article-content h2 {
   font-size: var(--fs-h2);
   font-weight: 600;
-  margin: 80px 0 24px;
+  margin: 64px 0 24px;
   letter-spacing: var(--ls-base);
 }
 .article-content h3 {
   font-size: var(--fs-h3);
   font-weight: 600;
-  margin: 48px 0 20px;
+  margin: 40px 0 20px;
   letter-spacing: var(--ls-base);
 }
 .article-content p {
@@ -928,7 +928,7 @@ article.article-body {
   margin: 32px 0;
   color: var(--text-mid);
   font-style: italic;
-  line-height: 2.0;
+  line-height: 1.85;
 }
 .article-content img {
   width: 100%;
