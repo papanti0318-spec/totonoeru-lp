@@ -1,0 +1,47 @@
+name: IndexNow Submit
+
+# push後にVercelがデプロイ → 反映を待ってからIndexNow APIへ全URL通知
+# articles/ or sitemap.xml が変更されたときだけ走る
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'articles/**'
+      - 'sitemap.xml'
+      - 'scripts/indexnow-submit.js'
+  workflow_dispatch: {}
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Wait for Vercel deployment to propagate
+        run: |
+          echo "Waiting up to 5 minutes for Vercel deployment to become live..."
+          ATTEMPTS=30
+          for i in $(seq 1 $ATTEMPTS); do
+            STATUS=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 "https://totonoeruya.jp/sitemap.xml" || echo "000")
+            if [ "$STATUS" = "200" ]; then
+              echo "Sitemap reachable (attempt $i). Waiting 30s for CDN to settle..."
+              sleep 30
+              echo "Ready to notify IndexNow."
+              exit 0
+            fi
+            echo "Attempt $i/$ATTEMPTS: status=$STATUS, retrying in 10s..."
+            sleep 10
+          done
+          echo "WARN: Vercel deployment never became available within timeout. Proceeding anyway."
+
+      - name: Submit URLs to IndexNow
+        run: node scripts/indexnow-submit.js
