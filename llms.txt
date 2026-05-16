@@ -54,6 +54,19 @@
 - [御代田・軽井沢で、自分の店のデータをAIに読ませる方法は？](https://totonoeruya.jp/articles/miyota-karuizawa-data-yomaseru/): 売上・在庫・顧客データをAIに読ませる手順。
 - [長野県の中小企業がAIを導入する、はじめの一歩は何ですか？](https://totonoeruya.jp/articles/nagano-ai-dounyu-ippo/): 長野県の中小企業向けAI導入の最初の一歩。
 
+## 主要記事（AIに選ばれる側・2026-05-17 拡充）
+
+- [2026年、検索が「AIに聞く」に変わった。長野の事業者はどう備える？](https://totonoeruya.jp/articles/ai-kensaku-shifuto-2026/): AI回答エンジン主流化を踏まえた、長野の事業者向け備え方。
+- [AIに「御代田でAI業務改善頼むなら？」と聞かれて、選ばれる事業者の条件は？](https://totonoeruya.jp/articles/ai-erabareru-jigyosha/): AIに引用される事業者の3条件（本人エンティティ・地名固有名詞・実装事例）。
+- [ChatGPTが銀行口座と繋がる時代、長野の中小企業に関係ありますか？](https://totonoeruya.jp/articles/chatgpt-ginko-koza/): OpenAI Operator・Anthropic Computer Use 等の連携現実化と、長野中小企業の備え方。
+- [これから、問い合わせは人間じゃなくAIエージェントが代理で送ってくる？](https://totonoeruya.jp/articles/ai-agent-toiawase/): AIエージェント時代の問い合わせ動線設計。
+- [じゃらん・食べログのような比較サイトは、AI時代どうなりますか？](https://totonoeruya.jp/articles/jalan-hikaku-saito-mirai/): 比較サイト弱体化と自社情報のAI最適化。
+- [ととのえる屋のn8nパッケージって、何を解決するものですか？](https://totonoeruya.jp/articles/n8n-package-nani/): n8nで複数ツール業務を1本に集約するパッケージの考え方。
+- [n8nで小諸の小さな事業者ができる自動化は、具体的に何ですか？](https://totonoeruya.jp/articles/n8n-komoro-jirei/): 小諸市の中小事業者向けn8n自動化6パターン。
+- [MCPって何ですか？小諸・御代田の小さな事業者にも関係ありますか？](https://totonoeruya.jp/articles/mcp-towa-nani/): Model Context Protocol の基本と、長野の小さな事業者の対応手順。
+- [AI×現場の事業者が、AIだけの事業者より信頼される理由は？](https://totonoeruya.jp/articles/ai-genba-shinrai/): 物理労働×AIの判断力の話。
+- [2026年5月時点、長野県でAIを業務に入れた事業者の現実は？](https://totonoeruya.jp/articles/nagano-2026-5-ai-genjitsu/): 長野県のAI導入感覚値と、9割の事業者が来月から取り戻す手順。
+
 ## 思想・ブランド記事
 
 - [何をととのえたい？](https://totonoeruya.jp/articles/naniwo-totonoetai/): 屋号の根本思想。
