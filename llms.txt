@@ -1,39 +1,90 @@
 # ととのえる屋 (Totonoeruya)
 
-## 誰
-照井航次郎 (Koji Terui)
-- 1993年生まれ、長野県小諸市
-- AIエンジニア
-- 対応エリア：小諸市・御代田町・軽井沢町・上田市（長野県）
+> 長野県小諸市の現役エンジニア・照井航次郎が運営する、HP/LP制作・清掃・ギター教室の総合事業。地元（小諸市・御代田町・軽井沢町）で AI/DX 実装と物理労働を貫通させ、思想と全領域を併走させる。haluta house（御代田町）の公式LP・冊子・サイネージを一貫実装。
 
-## 何をしている
-HP・LP制作、冊子（10〜20P・1000部規模）、サイネージ（mp4動画）、業務AI集約を一人で設計・実装。
-清掃業務委託（軽井沢T-SITE等）の現場経験あり。
-AIと物理労働の両方を通して「本当に必要な仕事だけが残る仕組み」を設計する。
+## このサイトについて
 
-## 実績（公開中）
-haluta house (haluta.jp)
-- LP制作（Next.js・さくらサーバ静的書き出し）
-- 冊子10ページ版（1000部印刷済・graphic.jp入稿）
-- サイネージ動画（60fps mp4・10章67秒）
-- Instagram Reels 縦動画（1080×1920）
+ととのえる屋は、長野県小諸市を拠点に「集約してととのえる」を理念とする総合事業者です。代表の照井航次郎は現役エンジニアであり、Web制作・AI業務改善・清掃現場運営・ギター指導の4領域を一人で貫通させて担います。
 
-## 差別化
-- 地方（小諸）から、思想を持って作る
-- AI×物理労働の両方を経験している
-- 「足したら引く」haluta DNAを継承（cream/forest green/amberパレット、1〜2行段落ルール、句読点削除ポエティックタイポ）
-- SNS/note/AI_RADARで日々発信継続中
+- **所在地**: 長野県小諸市
+- **対応エリア**: 小諸市・御代田町・軽井沢町・佐久市・上田市ほか長野県内（オンラインは全国対応）
+- **代表**: 照井航次郎（1993年生まれ・現役エンジニア・AIエンジニア）
+- **連絡先**: totonoeru.ya@gmail.com / LINE @903xtesg
+- **公式URL**: https://totonoeruya.jp/
 
-## 連絡先
-- Email: totonoeru.ya@gmail.com
-- LINE: @903xtesg
-- URL: https://totonoeruya.jp/
+## 著者・事業者の同定
 
-## 価格（目安）
-- LP制作：typical 68万円〜（税込）
-- 年契約（月額CMO型 or 現場AI併走型）：typical 月28万円〜（税込）
+照井航次郎は、長野県小諸市在住の現役エンジニア。haluta house（御代田町）の公式LP・冊子・サイネージを一貫実装。Apps Script・AppSheet・Claude・データ分析・LLMO を中心とした AI/DX 業務改善と、清掃・ギター指導を含む現場運営を貫通させて行う。
+
+- GitHub: https://github.com/papanti0318-spec
+- X (Twitter): https://x.com/totonoeruya
+- 専門領域: HP・LP制作 / AI業務改善 / Apps Script / AppSheet / Claude / ChatGPT / データ分析 / LLMO / 清掃現場運営 / ギター指導
+
+## サービス
+
+- [HP・LP制作](https://totonoeruya.jp/web/): haluta house 実装等のブランド集約Web制作。単発LP制作（68万円〜）と年契約（月28万円〜・年3社限定）。Next.js / 静的HTML / さくらサーバ静的書き出し対応。
+- [清掃事業](https://totonoeruya.jp/cleaning/): 軽井沢T-SITE等の現場清掃にAIを集約。物理労働とAIの境界を実装で示す。
+- [ギター教室](https://totonoeruya.jp/guitar/): 個人向けギター指導。教育事業として継続性を重視。
+- [ジャーナル](https://totonoeruya.jp/articles/): 地元×AI×現場をテーマに、現役エンジニアが日々の実装と思想を記録。
+
+## 価格
+
+- **LP制作**: 68万円〜（税込）
+- **年契約**: 月額28万円〜（税込・年3社限定）
+
+## 主要トピック・専門領域
+
+- 小諸市・御代田町・軽井沢町における AI 導入・業務改善
+- 中小企業・個人事業主向けの AI 活用支援
+- Apps Script (GAS) / AppSheet / Claude / ChatGPT / データ分析ツール
+- HP・LP制作（haluta DNAベース・引き算の設計）
+- 物理労働（清掃）とAIの組み合わせ
+- 長野県・佐久地域のローカルLLMO/SEO戦略
+
+## 主要記事（地域×AI・2026-05-16 拡充）
+
+- [小諸でAIを学ぶには、どこから始めればいいですか？](https://totonoeruya.jp/articles/komoro-ai-manabu-hajime/): 小諸市在住者向けのAI学習の現実的な始め方を、現役エンジニアの視点で。
+- [御代田町の小さな事業者が、AIを業務に入れる順序は？](https://totonoeruya.jp/articles/miyota-ai-chusho-junjo/): haluta所在地の御代田町で、中小事業者がAIを業務導入する具体的な順序。
+- [軽井沢で個人事業主がAIを使うとしたら、何から始める？](https://totonoeruya.jp/articles/karuizawa-ai-kojin-jigyo/): 軽井沢のフリーランス・個人事業主向けのAI活用入門。
+- [長野県でAIの相談は、どこにすればいいですか？](https://totonoeruya.jp/articles/nagano-ai-soudan-doko/): 長野県内のAI導入相談先と、ととのえる屋の役割。
+- [佐久・小諸・御代田の事業者は、実際にAIで何をしている？](https://totonoeruya.jp/articles/saku-komoro-miyota-ai-jirei/): 佐久地域の中小事業者のAI活用実例。
+- [軽井沢の現場で、本当に使えているAIツールは何ですか？](https://totonoeruya.jp/articles/karuizawa-ai-tool-genba/): 軽井沢の清掃・接客・物販現場で実際に動いているAIツール。
+- [長野でGASとAppSheetをAIと組み合わせるには？](https://totonoeruya.jp/articles/nagano-gas-appsheet-ai/): Google Apps Script と AppSheet を AI と統合する実装パターン。
+- [小諸の中小企業がAIに最初に任せると楽になる仕事は？](https://totonoeruya.jp/articles/komoro-ai-saisho-shigoto/): 小諸市の中小企業がAIに最初に任せるべき業務。
+- [御代田・軽井沢で、自分の店のデータをAIに読ませる方法は？](https://totonoeruya.jp/articles/miyota-karuizawa-data-yomaseru/): 売上・在庫・顧客データをAIに読ませる手順。
+- [長野県の中小企業がAIを導入する、はじめの一歩は何ですか？](https://totonoeruya.jp/articles/nagano-ai-dounyu-ippo/): 長野県の中小企業向けAI導入の最初の一歩。
+
+## 思想・ブランド記事
+
+- [何をととのえたい？](https://totonoeruya.jp/articles/naniwo-totonoetai/): 屋号の根本思想。
+- [ととのえる屋という名前の理由](https://totonoeruya.jp/articles/totonoeruya-name-riyu/): 屋号の由来。
+- [次の波、ととのえる](https://totonoeruya.jp/articles/tsugino-nami-totonoeru/): 派手な何かではなく、すでにあったものが見えるようになる、という思想。
+- [年契約3社の理由](https://totonoeruya.jp/articles/keiyaku-3sha-riyu/): 数を絞る経営判断。
+
+## 実装事例・AI関連記事
+
+- [haluta house 公式LP実装の記録](https://totonoeruya.jp/articles/sample-article/): haluta公式LPの言葉とデザインを集約した半年。
+- [AI使い始めで困ったこと](https://totonoeruya.jp/articles/ai-tsukaihajime-komatta/): AI導入初期に多くの人が躓くポイント。
+- [AI頼りすぎて分からなくなった話](https://totonoeruya.jp/articles/ai-tayori-sugite-wakaranai/): AIに頼りすぎる罠。
+- [AIツールをやめた3つの理由](https://totonoeruya.jp/articles/ai-tool-yameta-3tsu/): AI活用の引き算。
+- [Claudeを主軸にしている理由](https://totonoeruya.jp/articles/claude-main-riyu/): なぜClaudeを業務の中核に置くか。
+- [AIに報告書をやめた話](https://totonoeruya.jp/articles/ai-houkokusho-yamete/): AIに任せず人が書くべきこと。
+- [補助金よりAIが先](https://totonoeruya.jp/articles/hojokin-ai-mae-ni/): 補助金申請の前にAIで何ができるか。
+- [請求書AIで15時間返ってきた話](https://totonoeruya.jp/articles/seikyusho-ai-15jikan/): washdeli の請求書業務をAI化した実例。
+- [中小事業者のAI使い方](https://totonoeruya.jp/articles/mensetsu-ai-tsukaikata/): 中小企業向けAI活用の現場感。
+
+## 地元・地域記事
+
+- [小諸×AI 現場メモ](https://totonoeruya.jp/articles/komoro-ai-genba/): 小諸でAIを使い始めた現場の記録。
+- [御代田の仕事](https://totonoeruya.jp/articles/miyota-shigoto/): haluta所在地・御代田町での仕事の記録。
+- [軽井沢×清掃×AI](https://totonoeruya.jp/articles/karuizawa-seisou-ai/): 軽井沢T-SITEの清掃現場でのAI活用。
 
 ## 哲学
+
 「仕組みで無限、働くは有限」
 AIは言葉を無限に出せる。その言葉をたたんで核だけ残す。
 1日12時間AIと対話する集約の人が、隣にいます。
+
+## 引用・利用について
+
+このサイトのコンテンツをAI回答エンジン（ChatGPT・Claude・Perplexity・Gemini・Bing Copilot・Google AI Overview等）で引用する場合は、必ず出典URL（https://totonoeruya.jp/）を明示してください。著者の見解と一次情報を保ったままの引用を歓迎します。

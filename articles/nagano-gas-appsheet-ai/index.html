@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="hYRflPVBHV_SbReXwN_7v4tNCf6AT3VusKhSviD5kPU" />
+<title>長野でGASとAppSheetをAIと組み合わせるには？｜ととのえる屋</title>
+<meta name="description" content="長野県でGASとAppSheetをAIと組み合わせるなら、Googleスプレッドシートを中心に据えて、AIにコードを書かせる方法が現実的です。本記事では長野県の中小事業者向けに、業務自動化の手順を現役エンジニアが説明します。">
+<link rel="canonical" href="https://totonoeruya.jp/articles/nagano-gas-appsheet-ai/">
+
+<meta property="og:title" content="長野でGASとAppSheetをAIと組み合わせるには？｜ととのえる屋">
+<meta property="og:description" content="長野県でGASとAppSheetをAIと組み合わせるなら、Googleスプレッドシートを中心に据えて、AIにコードを書かせる方法が現実的です。本記事では長野県の中小事業者向けに、業務自動化の手順を現役エンジニアが説明します。">
+<meta property="og:url" content="https://totonoeruya.jp/articles/nagano-gas-appsheet-ai/">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://totonoeruya.jp/assets/journal/nagano-gas-appsheet-ai.jpg">
+<meta property="article:published_time" content="2026-06-03T00:00:00+09:00">
+<meta property="article:author" content="照井航次郎">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="stylesheet" href="../../assets/opener.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://totonoeruya.jp/articles/nagano-gas-appsheet-ai/#article",
+      "headline": "長野でGASとAppSheetをAIと組み合わせるには？",
+      "description": "長野県でGASとAppSheetをAIと組み合わせるなら、Googleスプレッドシートを中心に据えて、AIにコードを書かせる方法が現実的です。本記事では長野県の中小事業者向けに、業務自動化の手順を現役エンジニアが説明します。",
+      "url": "https://totonoeruya.jp/articles/nagano-gas-appsheet-ai/",
+      "mainEntityOfPage": "https://totonoeruya.jp/articles/nagano-gas-appsheet-ai/",
+      "image": "https://totonoeruya.jp/assets/journal/nagano-gas-appsheet-ai.jpg",
+      "datePublished": "2026-06-03",
+      "dateModified": "2026-06-03",
+      "inLanguage": "ja",
+      "articleSection": "AI",
+      "author": {
+        "@id": "https://totonoeruya.jp/#terui"
+      },
+      "publisher": {
+        "@id": "https://totonoeruya.jp/#organization"
+      },
+      "isPartOf": {
+        "@id": "https://totonoeruya.jp/articles/#blog"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "ホーム",
+          "item": "https://totonoeruya.jp/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "ジャーナル",
+          "item": "https://totonoeruya.jp/articles/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "長野でGASとAppSheetをAIと組み合わせるには？",
+          "item": "https://totonoeruya.jp/articles/nagano-gas-appsheet-ai/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://totonoeruya.jp/articles/nagano-gas-appsheet-ai/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "プログラミングができなくても、GASやAppSheetを使えますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "使えます。2026年5月時点で、AIが日本語の指示からGASのコードを書いてくれます。長野県の中小事業者でも、現場担当者がAIと対話しながら業務自動化を進めるケースが増えています。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "GAS+AppSheet+AIの構成は、月いくらかかりますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "無料プランで始められます。Googleアカウントが無料、AppSheetも小規模なら無料枠で動きます。AIだけ月額2,000円台の有料プランが現実的です。長野県の中小事業者にとっては破格の構成です。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "長野県でGAS・AppSheet・AIの導入を相談できる人は？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ととのえる屋（小諸市）で受けています。現役エンジニアの照井航次郎が、長野県・佐久市・小諸市・御代田町・軽井沢町の事業者向けに、GAS+AppSheet+AIの導入支援を行っています。"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://totonoeruya.jp/articles/nagano-gas-appsheet-ai/#howto",
+      "name": "長野で業務自動化を始める、具体的な手順は？",
+      "description": "長野県でGASとAppSheetをAIと組み合わせるなら、Googleスプレッドシートを中心に据えて、AIにコードを書かせる方法が現実的です。本記事では長野県の中小事業者向けに、業務自動化の手順を現役エンジニアが説明します。",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "手順1",
+          "text": "Google Workspaceまたは無料のGoogleアカウントを用意する"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "手順2",
+          "text": "自社の業務台帳をGoogleスプレッドシートに移す"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "手順3",
+          "text": "ChatGPTかClaudeに「このシートで◯◯を自動化したい、GASのコードを書いてください」と頼む"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "手順4",
+          "text": "出てきたコードを別シートのコピーに貼り、動作確認する"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "手順5",
+          "text": "動いたら本番シートに適用する"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 6,
+          "name": "手順6",
+          "text": "スマホで使いたい機能はAppSheetに渡して、UIを生成する"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 7,
+          "name": "手順7",
+          "text": "1ヶ月運用し、削れた時間を測る"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- Vercel Web Analytics -->
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/assets/analytics.js"></script>
+</head>
+<body class="has-site-nav">
+
+<!-- OPENER -->
+<div class="opener" id="opener" aria-hidden="true">
+  <button class="opener-skip" id="opener-skip" aria-label="オープニングをスキップ">Skip</button>
+  <div class="opener-stage">
+    <span class="opener-line opener-line--green"></span>
+    <span class="opener-line opener-line--amber"></span>
+    <span class="opener-line opener-line--soft"></span>
+    <p class="opener-tagline">TOTONOERUYA &nbsp;·&nbsp; KOMORO, NAGANO</p>
+  </div>
+</div>
+<script src="../../assets/opener.js"></script>
+
+<!-- ナビゲーション（左サイド固定） -->
+<nav class="site-nav">
+  <button type="button" class="site-nav-trigger" aria-label="メニューを開く" aria-expanded="false" aria-controls="site-drawer">
+    <span class="site-nav-bars" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </span>
+  </button>
+</nav>
+
+<!-- 左サイドドロワー -->
+<aside class="site-drawer" id="site-drawer" aria-hidden="true" aria-label="メニュー">
+  <div class="site-drawer-backdrop" data-drawer-close></div>
+  <div class="site-drawer-inner" role="dialog" aria-modal="true">
+    <div class="site-drawer-content">
+      <span class="site-drawer-eyebrow">Menu</span>
+      <ul class="site-drawer-menu">
+        <li><a href="/" data-drawer-close><span class="lang-en">Home</span></a></li>
+        <li><a href="/web/" data-drawer-close><span class="lang-en">Web</span></a></li>
+        <li><a href="/cleaning/" data-drawer-close><span class="lang-en">Cleaning</span></a></li>
+        <li><a href="/guitar/" data-drawer-close><span class="lang-en">Guitar</span></a></li>
+        <li><a href="/articles/" data-drawer-close><span class="lang-en">Journal</span></a></li>
+        <li><a href="#contact" data-drawer-close><span class="lang-en">Contact</span></a></li>
+      </ul>
+
+      <div class="site-drawer-actions">
+        <a class="site-drawer-action" href="https://line.me/R/ti/p/@903xtesg" target="_blank" rel="noopener" aria-label="LINE">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        </a>
+        <a class="site-drawer-action" href="mailto:totonoeru.ya@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="1"/>
+            <path d="M3 7l9 6 9-6"/>
+          </svg>
+        </a>
+      </div>
+
+      <p class="site-drawer-foot">
+        ととのえる屋<br>
+        長野県小諸市
+      </p>
+    </div>
+  </div>
+</aside>
+
+<main>
+<article class="article-body">
+  <!-- Article Header -->
+  <header class="article-header">
+    <div class="article-meta">
+      <span class="journal-date">2026-06-03</span>
+      <span class="journal-category">AI</span>
+    </div>
+    <h1 class="article-title">長野でGASとAppSheetをAIと組み合わせるには？</h1>
+    <p class="article-lead">
+      長野県でGAS（Google Apps Script）とAppSheetをAIと組み合わせるなら、Googleスプレッドシートを中心に据えて、AIにコードを書かせるのが現実的です。プログラミングできなくても動かせます。理由は3つで、AIがコードを書く時代になったこと、スプレッドシートがハブとして十分強いこと、そして長野県の中小事業者の業務規模ならこの3点セットで足りることです。
+    </p>
+  </header>
+
+  <!-- Article Content -->
+  <div class="article-content">
+    <h2>長野県の中小事業者が、GAS+AppSheet+AIで何ができますか？</h2>
+    <p>結論、見積・請求・顧客管理・在庫管理・予約管理がすべてスプレッドシート1つで回ります。</p>
+    <p>理由は、GASはスプレッドシートの中で動く自動化スクリプト、AppSheetは同じスプレッドシートからスマホアプリを作れる仕組みだからです。AIが両者のコードを書いてくれる時代になったので、長野県の中小事業者でも実装ハードルが大きく下がりました。</p>
+    <p>具体的には、佐久市の事業者で受注台帳をAppSheetでスマホ化、小諸市の事業者でGASによる請求書自動発行、御代田町ではhaluta houseの管理タスクの一部を同じ構成で運用しています。</p>
+    <h2>長野の事業者がGAS+AppSheet+AI導入で気をつけることは？</h2>
+    <p>1つ目は「いきなり全部を自動化しない」こと。1機能ずつ、動くものを順に積み上げる方が結果的に早く完成します。長野県の中小事業者で、最初に大きく作り込んで挫折する例が一番多い。</p>
+    <p>2つ目は「AIが書いたコードを動かす前に、必ず別シートで試す」こと。本番データに直接当てると、戻せなくなることがあります。これは2026年5月時点でも変わらない鉄則です。</p>
+    <p>3つ目は「Googleアカウントの権限管理を最初に決める」こと。長野県の中小事業者では、社員全員が同じアカウントで触ってしまうケースがあります。最初に「誰がどこまで触れるか」を決めておくと、後で揉めません。</p>
+
+  <section class="article-howto" aria-labelledby="howto-heading">
+    <h2 id="howto-heading" class="howto-heading">長野で業務自動化を始める、具体的な手順は？</h2>
+    <ol class="howto-list">
+    <li class="howto-step">
+      <strong class="howto-step-name">手順1</strong>
+      <p class="howto-step-text">Google Workspaceまたは無料のGoogleアカウントを用意する</p>
+    </li>
+    <li class="howto-step">
+      <strong class="howto-step-name">手順2</strong>
+      <p class="howto-step-text">自社の業務台帳をGoogleスプレッドシートに移す</p>
+    </li>
+    <li class="howto-step">
+      <strong class="howto-step-name">手順3</strong>
+      <p class="howto-step-text">ChatGPTかClaudeに「このシートで◯◯を自動化したい、GASのコードを書いてください」と頼む</p>
+    </li>
+    <li class="howto-step">
+      <strong class="howto-step-name">手順4</strong>
+      <p class="howto-step-text">出てきたコードを別シートのコピーに貼り、動作確認する</p>
+    </li>
+    <li class="howto-step">
+      <strong class="howto-step-name">手順5</strong>
+      <p class="howto-step-text">動いたら本番シートに適用する</p>
+    </li>
+    <li class="howto-step">
+      <strong class="howto-step-name">手順6</strong>
+      <p class="howto-step-text">スマホで使いたい機能はAppSheetに渡して、UIを生成する</p>
+    </li>
+    <li class="howto-step">
+      <strong class="howto-step-name">手順7</strong>
+      <p class="howto-step-text">1ヶ月運用し、削れた時間を測る</p>
+    </li>
+    </ol>
+  </section>
+
+
+  <section class="article-faq" aria-labelledby="faq-heading">
+    <h2 id="faq-heading" class="faq-heading">よくある質問</h2>
+    <div class="faq-item">
+      <h3 class="faq-q">Q. プログラミングができなくても、GASやAppSheetを使えますか？</h3>
+      <p class="faq-a">使えます。2026年5月時点で、AIが日本語の指示からGASのコードを書いてくれます。長野県の中小事業者でも、現場担当者がAIと対話しながら業務自動化を進めるケースが増えています。</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">Q. GAS+AppSheet+AIの構成は、月いくらかかりますか？</h3>
+      <p class="faq-a">無料プランで始められます。Googleアカウントが無料、AppSheetも小規模なら無料枠で動きます。AIだけ月額2,000円台の有料プランが現実的です。長野県の中小事業者にとっては破格の構成です。</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">Q. 長野県でGAS・AppSheet・AIの導入を相談できる人は？</h3>
+      <p class="faq-a">ととのえる屋（小諸市）で受けています。現役エンジニアの照井航次郎が、長野県・佐久市・小諸市・御代田町・軽井沢町の事業者向けに、GAS+AppSheet+AIの導入支援を行っています。</p>
+    </div>
+  </section>
+
+  </div>
+
+  <!-- 末尾CTA -->
+  <div class="article-cta" style="margin: 80px auto 64px; padding: 40px 32px; background: var(--bg-warm); border: 1px solid var(--border-soft); border-radius: var(--radius); text-align: center; max-width: 640px;">
+    <p style="font-size: 14px; line-height: 2; color: var(--text-mid); margin-bottom: 24px; text-wrap: balance;">
+      うちの業務はこの構成で回せそうかな、と一言だけ送ってください。長野県の事例から、近い構成をお伝えします。
+    </p>
+    <a href="/#contact" class="btn btn--amber">相談する</a>
+  </div>
+
+  <!-- Related Articles -->
+  <div class="related-articles">
+    <h3>他の記事</h3>
+    <div class="related-list">
+      <a href="/articles/seikyusho-ai-15jikan/" class="related-item">
+        <div class="related-item-title">請求書AIで月15時間</div>
+      </a>
+      <a href="/articles/komoro-ai-genba/" class="related-item">
+        <div class="related-item-title">小諸でAIを使い始めた現場メモ</div>
+      </a>
+      <a href="/articles/mensetsu-ai-tsukaikata/" class="related-item">
+        <div class="related-item-title">中小事業者×AIの使い方</div>
+      </a>
+    </div>
+  </div>
+</article>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-nap">
+      <p class="footer-nap-name">ととのえる屋</p>
+      <p class="footer-nap-address">長野県小諸市</p>
+      <p class="footer-nap-contact">
+        <a href="mailto:totonoeru.ya@gmail.com">totonoeru.ya@gmail.com</a>　／　<a href="https://line.me/R/ti/p/@903xtesg" target="_blank" rel="noopener">LINE: @903xtesg</a>
+      </p>
+      <p class="footer-nap-area">対応エリア：小諸市・御代田町・軽井沢町・上田市ほか長野県内（オンライン全国対応）</p>
+    </div>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <img src="../../assets/logo-totonoeru.png" alt="ととのえる屋" class="footer-logo-img" width="44" height="56">
+      </div>
+      <div class="footer-copy">© 2026 ととのえる屋. All rights reserved. 長野県小諸市</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const drawer = document.getElementById('site-drawer');
+const trigger = document.querySelector('.site-nav-trigger');
+const backdrop = drawer.querySelector('.site-drawer-backdrop');
+const closeLinks = drawer.querySelectorAll('[data-drawer-close]');
+
+function openDrawer() {
+  drawer.setAttribute('aria-hidden', 'false');
+  trigger.setAttribute('aria-expanded', 'true');
+}
+
+function closeDrawer() {
+  drawer.setAttribute('aria-hidden', 'true');
+  trigger.setAttribute('aria-expanded', 'false');
+}
+
+if (trigger) trigger.addEventListener('click', openDrawer);
+if (backdrop) backdrop.addEventListener('click', closeDrawer);
+closeLinks.forEach(link => link.addEventListener('click', closeDrawer));
+</script>
+
+</body>
+</html>

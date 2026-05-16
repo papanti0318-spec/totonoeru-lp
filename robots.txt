@@ -1,22 +1,89 @@
 # robots.txt for totonoeruya.jp
+# ととのえる屋 公式HP（長野県小諸市）
 
 User-agent: *
 Allow: /
 
 Sitemap: https://totonoeruya.jp/sitemap.xml
 
-# Allow AI crawlers explicitly
+# AI向けサイトマップ（LLMO）
+# See: https://totonoeruya.jp/llms.txt
+
+# ======================================
+# AIクローラ明示許可（LLMO本気版・2026-05-16）
+# ======================================
+
+# OpenAI / ChatGPT
 User-agent: GPTBot
 Allow: /
 
 User-agent: ChatGPT-User
 Allow: /
 
+User-agent: OAI-SearchBot
+Allow: /
+
+# Anthropic / Claude
 User-agent: Claude-Web
 Allow: /
 
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Google / Gemini
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+# Perplexity
 User-agent: PerplexityBot
 Allow: /
 
+User-agent: Perplexity-User
+Allow: /
+
+# Apple Intelligence
 User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Common Crawl（事前学習データの基盤）
+User-agent: CCBot
+Allow: /
+
+# Cohere
+User-agent: cohere-ai
+Allow: /
+
+# Meta AI
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# You.com
+User-agent: YouBot
+Allow: /
+
+# Diffbot
+User-agent: Diffbot
+Allow: /
+
+# Amazon Alexa / Rufus
+User-agent: Amazonbot
+Allow: /
+
+# Microsoft Bing / Copilot
+User-agent: bingbot
+Allow: /
+
+User-agent: msnbot
 Allow: /

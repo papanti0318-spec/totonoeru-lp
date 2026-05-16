@@ -21,6 +21,12 @@ temp_optimize_journal_images.py
 temp_update_og_images.py
 temp_add_journal_thumbs.py
 temp_optimize_works.py
+generate_2026_05_16.py
+download_images_2026_05_16.py
+
+# Local-only admin tools / scratch
+scripts/admin/
+rich/
 
 # Legacy / archive (not for production deploy)
 legacy/

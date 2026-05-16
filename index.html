@@ -32,22 +32,35 @@
       "@type": "ProfessionalService",
       "@id": "https://totonoeruya.jp/#organization",
       "name": "ととのえる屋",
+      "alternateName": ["Totonoeruya", "ととのえるや"],
       "url": "https://totonoeruya.jp/",
       "logo": "https://totonoeruya.jp/assets/logo-totonoeru.png",
       "image": "https://totonoeruya.jp/og.jpg",
-      "description": "長野県小諸市から。HP・LP制作、清掃、ギター教室。集約してととのえる。",
+      "description": "長野県小諸市から。HP・LP制作、清掃、ギター教室。AI業務改善を中心に、小諸市・御代田町・軽井沢町の地元事業者を支援。haluta house 公式LP・冊子・サイネージ実装。",
       "founder": { "@id": "https://totonoeruya.jp/#terui" },
-      "knowsAbout": ["ホームページ制作", "ランディングページ制作", "ブランド集約", "AI業務改善", "清掃", "ギター指導"],
+      "sameAs": [
+        "https://github.com/papanti0318-spec",
+        "https://x.com/totonoeruya"
+      ],
+      "knowsAbout": ["ホームページ制作", "ランディングページ制作", "ブランド集約", "AI業務改善", "Apps Script", "AppSheet", "Claude", "ChatGPT", "データ分析", "LLMO", "清掃", "ギター指導", "御代田町 AI", "小諸市 AI", "軽井沢町 AI"],
       "areaServed": [
-        { "@type": "City", "name": "小諸市" },
-        { "@type": "City", "name": "御代田町" },
-        { "@type": "City", "name": "軽井沢町" }
+        { "@type": "City", "name": "小諸市", "containedInPlace": { "@type": "State", "name": "長野県" } },
+        { "@type": "City", "name": "御代田町", "containedInPlace": { "@type": "State", "name": "長野県" } },
+        { "@type": "City", "name": "軽井沢町", "containedInPlace": { "@type": "State", "name": "長野県" } },
+        { "@type": "City", "name": "佐久市", "containedInPlace": { "@type": "State", "name": "長野県" } },
+        { "@type": "City", "name": "上田市", "containedInPlace": { "@type": "State", "name": "長野県" } },
+        { "@type": "State", "name": "長野県" }
       ],
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "小諸市",
         "addressRegion": "長野県",
         "addressCountry": "JP"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 36.3287,
+        "longitude": 138.4225
       },
       "email": "totonoeru.ya@gmail.com",
       "contactPoint": {
@@ -94,17 +107,34 @@
       "@type": "Person",
       "@id": "https://totonoeruya.jp/#terui",
       "name": "照井航次郎",
+      "alternateName": "Koji Terui",
       "givenName": "航次郎",
       "familyName": "照井",
-      "jobTitle": "代表",
+      "jobTitle": "代表・現役エンジニア",
+      "description": "長野県小諸市在住の現役エンジニア。HP・LP制作、AI業務改善、清掃現場運営、ギター指導の4領域を一人で貫通させて担う。haluta house（御代田町）公式LP・冊子・サイネージ実装担当。",
       "birthDate": "1993",
+      "nationality": { "@type": "Country", "name": "日本" },
       "worksFor": { "@id": "https://totonoeruya.jp/#organization" },
-      "knowsAbout": ["ホームページ制作", "ランディングページ制作", "ブランド集約", "AI業務改善"],
+      "knowsAbout": ["ホームページ制作", "ランディングページ制作", "ブランド集約", "AI業務改善", "Apps Script", "AppSheet", "Claude", "ChatGPT", "データ分析", "LLMO", "Python", "JavaScript", "静的サイト生成", "Vercel"],
+      "sameAs": [
+        "https://github.com/papanti0318-spec",
+        "https://x.com/totonoeruya"
+      ],
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "小諸市",
         "addressRegion": "長野県",
         "addressCountry": "JP"
+      },
+      "homeLocation": {
+        "@type": "Place",
+        "name": "長野県小諸市",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "小諸市",
+          "addressRegion": "長野県",
+          "addressCountry": "JP"
+        }
       }
     },
     {

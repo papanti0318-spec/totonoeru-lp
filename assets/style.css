@@ -1941,3 +1941,119 @@ body.has-site-nav > nav:not(.site-nav) {
   color: var(--text-soft);
 }
 
+/* ============================================
+ * LLMO 本気版（2026-05-16〜）
+ * FAQ / HowTo セクション
+ * ============================================ */
+
+.article-howto {
+  margin: 64px 0 56px;
+  padding: 32px 28px;
+  background: var(--bg-warm);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+}
+.howto-heading {
+  font-family: var(--font-serif-jp);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text-dark);
+  margin: 0 0 24px;
+  letter-spacing: .02em;
+  line-height: 1.7;
+}
+.howto-list {
+  list-style: none;
+  counter-reset: howto-counter;
+  padding: 0;
+  margin: 0;
+}
+.howto-step {
+  counter-increment: howto-counter;
+  position: relative;
+  padding: 14px 0 14px 44px;
+  border-bottom: 1px dashed var(--border-soft);
+}
+.howto-step:last-child {
+  border-bottom: none;
+}
+.howto-step::before {
+  content: counter(howto-counter);
+  position: absolute;
+  left: 0;
+  top: 14px;
+  width: 28px;
+  height: 28px;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--amber);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.howto-step-name {
+  display: none;
+}
+.howto-step-text {
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--text-mid);
+  margin: 0;
+}
+
+.article-faq {
+  margin: 64px 0 56px;
+  padding: 32px 28px;
+  background: var(--cream);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+}
+.faq-heading {
+  font-family: var(--font-serif-jp);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text-dark);
+  margin: 0 0 28px;
+  letter-spacing: .02em;
+}
+.faq-item {
+  padding: 18px 0;
+  border-bottom: 1px dashed var(--border-soft);
+}
+.faq-item:last-child {
+  border-bottom: none;
+}
+.faq-q {
+  font-family: var(--font-serif-jp);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin: 0 0 10px;
+  line-height: 1.7;
+}
+.faq-a {
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--text-mid);
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .article-howto, .article-faq {
+    padding: 24px 18px;
+    margin: 48px 0 40px;
+  }
+  .howto-heading, .faq-heading {
+    font-size: 18px;
+  }
+  .howto-step {
+    padding: 12px 0 12px 36px;
+  }
+  .howto-step::before {
+    width: 24px;
+    height: 24px;
+    font-size: 16px;
+  }
+}
+
