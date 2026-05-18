@@ -2,31 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://totonoeruya.jp/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://totonoeruya.jp/web/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://totonoeruya.jp/cleaning/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://totonoeruya.jp/guitar/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://totonoeruya.jp/articles/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -393,6 +393,66 @@
   <url>
     <loc>https://totonoeruya.jp/articles/nagano-2026-5-ai-genjitsu/</loc>
     <lastmod>2026-06-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://totonoeruya.jp/articles/fax-mada-tsukatteru/</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://totonoeruya.jp/articles/tegaki-daichou-ai/</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://totonoeruya.jp/articles/denwa-uketsuke-hitori/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://totonoeruya.jp/articles/kami-mitsumori-sedai/</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://totonoeruya.jp/articles/60dai-ai-ippo/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://totonoeruya.jp/articles/seisou-nippou-kami-ai/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://totonoeruya.jp/articles/seisou-denwa-uketsuke/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://totonoeruya.jp/articles/seisou-hikitsugi-bunshou/</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://totonoeruya.jp/articles/ai-erabareru-hp-shindan/</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://totonoeruya.jp/articles/komari-soudan-ichigo/</loc>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>

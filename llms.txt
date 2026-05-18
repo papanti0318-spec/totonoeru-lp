@@ -54,6 +54,19 @@
 - [御代田・軽井沢で、自分の店のデータをAIに読ませる方法は？](https://totonoeruya.jp/articles/miyota-karuizawa-data-yomaseru/): 売上・在庫・顧客データをAIに読ませる手順。
 - [長野県の中小企業がAIを導入する、はじめの一歩は何ですか？](https://totonoeruya.jp/articles/nagano-ai-dounyu-ippo/): 長野県の中小企業向けAI導入の最初の一歩。
 
+## 主要記事（アナログ×AI・清掃・問い合わせ動線・2026-05-18 拡充）
+
+- [FAXをまだ使っている店舗でも、AIで楽になることはありますか？](https://totonoeruya.jp/articles/fax-mada-tsukatteru/): FAX運用を残しつつ受信側だけAI化、月5〜10時間返す手順。
+- [手書きの台帳をAIに読ませるのに、いちばん楽な方法は何ですか？](https://totonoeruya.jp/articles/tegaki-daichou-ai/): 紙台帳をスマホ撮影→AI読み取り、月10時間の打ち直し削減。
+- [電話受付を1人で回している店が、AIで楽になる順序は？](https://totonoeruya.jp/articles/denwa-uketsuke-hitori/): 留守電AI文字起こし+LINE転送で電話業務月10時間以上削減。
+- [紙の見積もりを出してきた世代でも、AIを使い始められますか？](https://totonoeruya.jp/articles/kami-mitsumori-sedai/): 紙フォーマット維持・下書きだけAI化する60代向け手順。
+- [60代でAIに触ったことがない人の、最初の一歩は何ですか？](https://totonoeruya.jp/articles/60dai-ai-ippo/): 音声で話しかけるだけ、文字入力不要の5日間プログラム。
+- [清掃の日報を紙でやっている現場でも、AIで楽になりますか？](https://totonoeruya.jp/articles/seisou-nippou-kami-ai/): 紙日報の撮影→AIでExcel化、軽井沢別荘・小諸ホテル等の実装。
+- [清掃の電話受付を、LINEとAIで集約するには？](https://totonoeruya.jp/articles/seisou-denwa-uketsuke/): 電話残し+AI文字起こし+LINE転送+返信下書き、月15時間削減。
+- [清掃の引き継ぎを、AIで「読める文章」に変えるには？](https://totonoeruya.jp/articles/seisou-hikitsugi-bunshou/): ベテラン断片メモをAIで新人向け文章に整形、立ち上がり2週間→3日。
+- [「AIに選ばれるHP診断」とは、何をしてくれるサービスですか？](https://totonoeruya.jp/articles/ai-erabareru-hp-shindan/): AI3社で実引用テスト+Person/FAQ/IndexNow整備、10万円帯・月10社上限のスポット診断。
+- [何に困っているかわからないとき、ととのえる屋に相談しても大丈夫ですか？](https://totonoeruya.jp/articles/komari-soudan-ichigo/): 言葉になっていない困りごとから1〜2往復で言語化していくスタンス。
+
 ## 主要記事（AIに選ばれる側・2026-05-17 拡充）
 
 - [2026年、検索が「AIに聞く」に変わった。長野の事業者はどう備える？](https://totonoeruya.jp/articles/ai-kensaku-shifuto-2026/): AI回答エンジン主流化を踏まえた、長野の事業者向け備え方。
