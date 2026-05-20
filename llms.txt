@@ -43,6 +43,12 @@
 - 物理労働（清掃）とAIの組み合わせ
 - 長野県・佐久地域のローカルLLMO/SEO戦略
 
+## 主要記事（急上昇キーワード × totoline導線・2026-05-20 新着）
+
+- [AI Overview って何ですか？2026年5月、Google検索の48%に出ているものの正体は？](https://totonoeruya.jp/articles/ai-overview-toha-chusho/): Google検索の48%にAI要約が表示される時代の中小企業向け解説。FAQ・構造化データ・一次情報・E-E-A-Tの5項目で「引用される側」に立つ実装ガイド。
+- [LINEで業務、AIにどこまで任せられますか？](https://totonoeruya.jp/articles/line-gyomu-ai-doko-made/): 任せられる「書き取り・並べ替え・下書き」と任せられない「最終確認・お客様への言葉」の境界線。totoline 入口記事。
+- [請求書の摘要欄、AIに書いてもらえる時代になったって本当ですか？](https://totonoeruya.jp/articles/seikyusho-tekiyo-ai-jidai/): LINE会話から「日付・依頼内容・金額」を抽出し、お客様マスタと商品マスタを参照して摘要欄ドラフトを自動生成する構造。totoline 真の核を記事化。
+
 ## 主要記事（地域×AI・2026-05-16 拡充）
 
 - [小諸でAIを学ぶには、どこから始めればいいですか？](https://totonoeruya.jp/articles/komoro-ai-manabu-hajime/): 小諸市在住者向けのAI学習の現実的な始め方を、現役エンジニアの視点で。
