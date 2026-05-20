@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ととのえる屋｜試作版 — Modern Launch 移植</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+JP:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --cream: #F8F5EF;
+    --paper: #F0EBE1;
+    --sand: #E6DFD0;
+    --forest: #2B4A1A;
+    --forest-deep: #1F3812;
+    --amber: #B8823A;
+    --ink: #1A1A1A;
+    --ink-mid: #4A4A4A;
+    --ink-soft: #7A7A7A;
+    --line: rgba(26,26,26,0.08);
+    --ls-eyebrow: 0.28em;
+    --ls-mid: 0.08em;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { display: block; max-width: 100%; height: auto; }
+  a { color: inherit; text-decoration: none; }
+
+  /* ===== Eyebrow（緑ドット付き極小ラベル） ===== */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 12px;
+    letter-spacing: var(--ls-eyebrow);
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 28px;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: var(--forest);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .eyebrow--light { color: rgba(255,255,255,0.7); }
+  .eyebrow--light::before { background: var(--amber); }
+
+  /* ===== セリフ体大見出し ===== */
+  .display {
+    font-family: 'Cormorant Garamond', 'Noto Serif JP', serif;
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+  .jp-display {
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 500;
+    line-height: 1.3;
+    letter-spacing: 0.02em;
+    text-wrap: balance;
+  }
+
+  /* ===== 写真額縁 ===== */
+  .frame {
+    background: #fff;
+    padding: 14px;
+    box-shadow: 0 18px 50px rgba(20,30,15,0.10), 0 2px 8px rgba(20,30,15,0.06);
+    border-radius: 2px;
+    display: block;
+  }
+  .frame img { border-radius: 1px; }
+
+  .frame--tight { padding: 10px; }
+  .frame--lg { padding: 18px; }
+
+  /* ===== セクション基礎 ===== */
+  section { padding: 120px 32px; }
+  .container { max-width: 1240px; margin: 0 auto; }
+  .container--narrow { max-width: 880px; margin: 0 auto; }
+
+  /* ===========================================
+     HERO（縦積み・写真レイヤード）
+     =========================================== */
+  .hero {
+    background: var(--cream);
+    padding: 56px 32px 80px;
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+  }
+  .hero::before {
+    /* 背景の微かな円形グラデ（奥行き演出） */
+    content: '';
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(43,74,26,0.04) 0%, transparent 70%);
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .hero-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1280px;
+    margin: 0 auto 100px;
+    font-size: 11px;
+    letter-spacing: var(--ls-eyebrow);
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    position: relative;
+    z-index: 2;
+  }
+  .hero-top .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 20px;
+    letter-spacing: 0.15em;
+    color: var(--forest);
+    text-transform: none;
+  }
+  .hero-top-right {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+  }
+  .hero-top-right span::before {
+    content: '·';
+    margin-right: 28px;
+    opacity: 0.4;
+  }
+  .hero-top-right span:first-child::before { content: none; margin-right: 0; }
+
+  .hero-headline {
+    max-width: 1280px;
+    margin: 0 auto 80px;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-headline h1 {
+    font-size: clamp(64px, 11vw, 168px);
+    margin-bottom: 24px;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+  }
+  .hero-headline h1 .jp {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 0.42em;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    display: block;
+    margin-top: 28px;
+    color: var(--ink-mid);
+    line-height: 1.4;
+  }
+
+  /* 写真ステージ（中央大写真＋左右に小写真を絶対配置） */
+  .hero-stage {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    aspect-ratio: 16/10;
+    z-index: 1;
+  }
+  .hero-stage .frame {
+    position: absolute;
+    transition: transform 0.6s cubic-bezier(.2,.7,.3,1);
+  }
+  .hero-stage .photo-main {
+    z-index: 3;
+    top: 5%;
+    left: 12%;
+    width: 76%;
+    transform: rotate(-0.8deg);
+    box-shadow: 0 48px 96px rgba(20,30,15,0.18), 0 8px 24px rgba(20,30,15,0.08);
+  }
+  .hero-stage .photo-sub-1 {
+    z-index: 2;
+    top: -8%;
+    right: 2%;
+    width: 24%;
+    transform: rotate(6deg);
+    box-shadow: 0 24px 56px rgba(20,30,15,0.16);
+    padding: 10px;
+  }
+  .hero-stage .photo-sub-2 {
+    z-index: 2;
+    bottom: -10%;
+    left: 3%;
+    width: 22%;
+    transform: rotate(-7deg);
+    box-shadow: 0 24px 56px rgba(20,30,15,0.16);
+    padding: 10px;
+  }
+  .hero-stage .photo-sub-3 {
+    z-index: 4;
+    bottom: -6%;
+    right: 8%;
+    width: 18%;
+    transform: rotate(5deg);
+    box-shadow: 0 32px 68px rgba(20,30,15,0.20);
+    padding: 8px;
+  }
+  .hero-stage:hover .photo-main { transform: rotate(0deg) translateY(-4px); }
+  .hero-stage:hover .photo-sub-1 { transform: rotate(8deg) translateY(-6px); }
+  .hero-stage:hover .photo-sub-2 { transform: rotate(-9deg) translateY(-6px); }
+  .hero-stage:hover .photo-sub-3 { transform: rotate(7deg) translateY(-6px); }
+
+  /* Hero 下部メタ情報 */
+  .hero-foot {
+    max-width: 1280px;
+    margin: 100px auto 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+    z-index: 2;
+    gap: 40px;
+  }
+  .hero-foot-meta {
+    display: flex;
+    gap: 40px;
+    font-size: 12px;
+    letter-spacing: var(--ls-eyebrow);
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .hero-foot-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .hero-foot-meta span::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    background: var(--forest);
+    border-radius: 50%;
+  }
+  .hero-foot-sub {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 14px;
+    color: var(--ink-mid);
+    line-height: 2;
+    max-width: 380px;
+    text-align: right;
+    text-wrap: balance;
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 12px;
+    letter-spacing: var(--ls-mid);
+    color: var(--ink-soft);
+    z-index: 3;
+  }
+  .scroll-indicator::after {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 36px;
+    background: var(--ink-soft);
+    margin: 12px auto 0;
+    animation: scroll-line 2s ease-in-out infinite;
+  }
+  @keyframes scroll-line {
+    0%, 100% { opacity: 0.3; transform: scaleY(0.5); }
+    50% { opacity: 1; transform: scaleY(1); }
+  }
+
+  /* ===========================================
+     WORKS（haluta実績）
+     =========================================== */
+  .works {
+    background: linear-gradient(180deg, var(--cream) 0%, var(--paper) 100%);
+    padding: 140px 32px;
+  }
+  .works-head {
+    text-align: center;
+    margin-bottom: 80px;
+  }
+  .works-head h2 {
+    font-size: clamp(36px, 5vw, 64px);
+    margin-bottom: 20px;
+  }
+  .works-head h2 .em {
+    font-style: italic;
+    color: var(--forest);
+  }
+  .works-head p {
+    font-size: 15px;
+    color: var(--ink-mid);
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .works-hero {
+    max-width: 1100px;
+    margin: 0 auto 60px;
+  }
+  .works-hero .frame--lg {
+    transform: rotate(0.6deg);
+  }
+  .works-caption {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 28px;
+    padding: 0 8px;
+    font-size: 12px;
+    letter-spacing: var(--ls-mid);
+    color: var(--ink-soft);
+    text-transform: uppercase;
+  }
+  .works-caption strong {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--forest);
+    text-transform: none;
+    letter-spacing: 0.04em;
+  }
+
+  .works-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .works-item .frame { transition: transform 0.5s ease; }
+  .works-item:hover .frame { transform: translateY(-6px); }
+  .works-item-label {
+    text-align: center;
+    margin-top: 18px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    color: var(--ink-mid);
+  }
+  .works-item-label .jp {
+    display: block;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-style: normal;
+    font-size: 12px;
+    letter-spacing: var(--ls-eyebrow);
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-top: 4px;
+  }
+
+  /* ===========================================
+     SERVICES（3つの仕事・forest背景）
+     =========================================== */
+  .services {
+    background: var(--forest);
+    color: #fff;
+    padding: 140px 32px;
+    position: relative;
+  }
+  .services-head {
+    text-align: center;
+    margin-bottom: 80px;
+  }
+  .services-head h2 {
+    font-size: clamp(36px, 5vw, 64px);
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  .services-head h2 .em {
+    font-style: italic;
+    color: var(--amber);
+  }
+  .services-head p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.7);
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 2;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+  .service-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 24px 24px 36px;
+    transition: all 0.4s ease;
+    border-radius: 3px;
+  }
+  .service-card:hover {
+    background: rgba(255,255,255,0.07);
+    border-color: rgba(184,130,58,0.4);
+    transform: translateY(-4px);
+  }
+  .service-card .photo {
+    margin: -24px -24px 28px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+  }
+  .service-card .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+    filter: saturate(0.92) brightness(0.96);
+  }
+  .service-card:hover .photo img {
+    transform: scale(1.04);
+  }
+  .service-card .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--amber);
+    letter-spacing: var(--ls-eyebrow);
+    margin-bottom: 8px;
+  }
+  .service-card h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 28px;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 16px;
+    letter-spacing: 0.04em;
+  }
+  .service-card h3 .en {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.12em;
+    margin-bottom: 6px;
+    text-transform: lowercase;
+  }
+  .service-card .body {
+    font-size: 13px;
+    color: rgba(255,255,255,0.78);
+    line-height: 2;
+    margin-bottom: 24px;
+  }
+  .service-card .items {
+    list-style: none;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 18px;
+  }
+  .service-card .items li {
+    font-size: 12px;
+    color: rgba(255,255,255,0.6);
+    padding: 5px 0;
+    letter-spacing: 0.04em;
+  }
+  .service-card .items li::before {
+    content: '— ';
+    color: var(--amber);
+  }
+
+  /* ===========================================
+     ABOUT（照井・ベージュ背景）
+     =========================================== */
+  .about {
+    background: var(--paper);
+    padding: 140px 32px;
+  }
+  .about-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .about-photo .frame {
+    transform: rotate(-1.5deg);
+    max-width: 380px;
+  }
+  .about-text h2 {
+    font-size: clamp(32px, 4vw, 52px);
+    margin-bottom: 32px;
+  }
+  .about-text h2 .em {
+    font-style: italic;
+    color: var(--forest);
+  }
+  .about-text .lead {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 17px;
+    line-height: 2.1;
+    color: var(--ink);
+    margin-bottom: 24px;
+    text-wrap: balance;
+  }
+  .about-text .body {
+    font-size: 14px;
+    line-height: 2.1;
+    color: var(--ink-mid);
+    margin-bottom: 32px;
+  }
+  .about-meta {
+    border-top: 1px solid var(--line);
+    padding-top: 24px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .about-meta dt {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 11px;
+    letter-spacing: var(--ls-eyebrow);
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 6px;
+  }
+  .about-meta dd {
+    font-size: 13px;
+    color: var(--ink);
+    line-height: 1.7;
+  }
+
+  /* ===========================================
+     CONTACT
+     =========================================== */
+  .contact {
+    background: var(--cream);
+    padding: 140px 32px;
+    text-align: center;
+  }
+  .contact h2 {
+    font-size: clamp(40px, 6vw, 80px);
+    margin-bottom: 28px;
+  }
+  .contact h2 .em {
+    font-style: italic;
+    color: var(--forest);
+  }
+  .contact-lead {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 16px;
+    color: var(--ink-mid);
+    max-width: 540px;
+    margin: 0 auto 56px;
+    line-height: 2.1;
+    text-wrap: balance;
+  }
+  .contact-line {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    background: #06C755;
+    color: #fff;
+    padding: 22px 48px;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    box-shadow: 0 12px 32px rgba(6,199,85,0.25);
+  }
+  .contact-line:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 40px rgba(6,199,85,0.35);
+  }
+  .contact-line svg { width: 22px; height: 22px; }
+  .contact-alt {
+    margin-top: 36px;
+    font-size: 13px;
+    color: var(--ink-soft);
+    letter-spacing: 0.04em;
+  }
+  .contact-alt a {
+    color: var(--forest);
+    border-bottom: 1px solid var(--forest);
+    padding-bottom: 1px;
+  }
+
+  /* ===========================================
+     FOOTER
+     =========================================== */
+  footer {
+    background: var(--forest-deep);
+    color: rgba(255,255,255,0.65);
+    padding: 56px 32px 40px;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: var(--ls-mid);
+  }
+  footer .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 22px;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 18px;
+    letter-spacing: 0.12em;
+  }
+  footer .small {
+    font-size: 10px;
+    color: rgba(255,255,255,0.4);
+    margin-top: 24px;
+    letter-spacing: var(--ls-eyebrow);
+    text-transform: uppercase;
+  }
+
+  /* ===========================================
+     アニメーション
+     =========================================== */
+  .anim { opacity: 0; transform: translateY(24px); transition: opacity 1s ease, transform 1s ease; }
+  .anim.visible { opacity: 1; transform: translateY(0); }
+  .anim-delay-1 { transition-delay: 0.15s; }
+  .anim-delay-2 { transition-delay: 0.3s; }
+  .anim-delay-3 { transition-delay: 0.45s; }
+
+  /* ===========================================
+     RESPONSIVE
+     =========================================== */
+  @media (max-width: 880px) {
+    section { padding: 80px 24px; }
+    .hero { padding: 40px 20px 60px; min-height: auto; }
+    .hero-top { margin-bottom: 48px; flex-direction: column; gap: 12px; align-items: flex-start; }
+    .hero-top-right { gap: 16px; flex-wrap: wrap; }
+    .hero-top-right span::before { margin-right: 16px; }
+    .hero-headline { margin-bottom: 48px; }
+    .hero-headline h1 { font-size: clamp(48px, 14vw, 80px); }
+    .hero-headline h1 .jp { font-size: 0.5em; margin-top: 16px; }
+    .hero-stage { aspect-ratio: 4/5; }
+    .hero-stage .photo-main { left: 8%; width: 84%; }
+    .hero-stage .photo-sub-1 { top: -4%; right: -4%; width: 32%; }
+    .hero-stage .photo-sub-2 { bottom: -6%; left: -4%; width: 30%; }
+    .hero-stage .photo-sub-3 { bottom: -4%; right: 12%; width: 22%; }
+    .hero-foot { flex-direction: column; align-items: flex-start; gap: 24px; margin-top: 60px; }
+    .hero-foot-meta { flex-wrap: wrap; gap: 20px; }
+    .hero-foot-sub { text-align: left; font-size: 13px; }
+    .scroll-indicator { display: none; }
+    .works, .services, .about, .contact { padding: 80px 24px; }
+    .works-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+    .services-grid { grid-template-columns: 1fr; gap: 24px; }
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .about-photo .frame { transform: none; max-width: 320px; margin: 0 auto; }
+    .about-meta { grid-template-columns: 1fr; gap: 16px; }
+    .contact-line { padding: 18px 36px; font-size: 14px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ========================================
+     HERO（縦積み・写真4枚レイヤード）
+     ======================================== -->
+<header class="hero">
+  <!-- 上部メタライン -->
+  <div class="hero-top">
+    <span class="logo">totonoeruya</span>
+    <div class="hero-top-right">
+      <span>A studio of one</span>
+      <span>Komoro · Nagano</span>
+      <span>est. 2026</span>
+    </div>
+  </div>
+
+  <!-- 大見出し -->
+  <div class="hero-headline">
+    <h1 class="display">
+      Browse everything.
+      <span class="jp">散らばったものを、ひとつに。</span>
+    </h1>
+  </div>
+
+  <!-- 写真ステージ（4枚レイヤード・奥行き演出） -->
+  <div class="hero-stage">
+    <!-- 左下サブ写真（背面） -->
+    <div class="frame photo-sub-2">
+      <img src="../assets/haluta-signage.jpg" alt="" loading="eager">
+    </div>
+    <!-- 右上サブ写真（背面） -->
+    <div class="frame photo-sub-1">
+      <img src="../assets/haluta-booklet.png" alt="" loading="eager">
+    </div>
+    <!-- メイン中央（前面・大） -->
+    <div class="frame frame--lg photo-main">
+      <img src="../assets/haluta-lp.jpg" alt="haluta house LP" loading="eager">
+    </div>
+    <!-- 右下手前サブ写真（最前面・小） -->
+    <div class="frame photo-sub-3">
+      <img src="../assets/haluta-reels.jpg" alt="" loading="eager">
+    </div>
+  </div>
+
+  <!-- 下部メタ -->
+  <div class="hero-foot">
+    <div class="hero-foot-meta">
+      <span>HP/LP制作</span>
+      <span>清掃</span>
+      <span>ギター教室</span>
+    </div>
+    <p class="hero-foot-sub">
+      HP・LP・冊子・サイネージ・動画。<br>
+      長野県小諸市から、ぜんぶ、同じ手で。
+    </p>
+  </div>
+
+  <div class="scroll-indicator">Scroll</div>
+</header>
+
+<!-- ========================================
+     WORKS
+     ======================================== -->
+<section class="works">
+  <div class="works-head anim">
+    <p class="eyebrow">Selected works</p>
+    <h2 class="display"><span class="em">haluta house</span> という、ひとつの仕事。</h2>
+    <p>御代田町のhaluta house（不動産・住宅事業）の公式LP・冊子・サイネージ・リール動画。媒体をまたいで、ひとつの世界観を貫きました。</p>
+  </div>
+
+  <figure class="works-hero anim anim-delay-1">
+    <div class="frame frame--lg">
+      <img src="../assets/haluta-lp.jpg" alt="haluta house 公式LP">
+    </div>
+    <figcaption class="works-caption">
+      <strong>Landing Page</strong>
+      <span>2026 · haluta.jp</span>
+    </figcaption>
+  </figure>
+
+  <div class="works-grid">
+    <div class="works-item anim">
+      <div class="frame">
+        <img src="../assets/haluta-booklet.png" alt="haluta 冊子">
+      </div>
+      <p class="works-item-label">Booklet<span class="jp">冊子・入稿まで</span></p>
+    </div>
+    <div class="works-item anim anim-delay-1">
+      <div class="frame">
+        <img src="../assets/haluta-signage.jpg" alt="haluta サイネージ">
+      </div>
+      <p class="works-item-label">Signage<span class="jp">店内サイネージ</span></p>
+    </div>
+    <div class="works-item anim anim-delay-2">
+      <div class="frame">
+        <img src="../assets/haluta-reels.jpg" alt="haluta リール動画">
+      </div>
+      <p class="works-item-label">Reels<span class="jp">SNS動画</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     SERVICES（forest背景）
+     ======================================== -->
+<section class="services">
+  <div class="services-head anim">
+    <p class="eyebrow eyebrow--light">What we do</p>
+    <h2 class="display">3つの<span class="em">仕事</span>。</h2>
+    <p>つくる・まわす・おしえる。<br>長野県小諸市から、現場の手触りごと届けます。</p>
+  </div>
+
+  <div class="services-grid">
+    <article class="service-card anim">
+      <div class="photo"><img src="../assets/business-web.jpg" alt=""></div>
+      <p class="num">01</p>
+      <h3><span class="en">to make.</span>つくる</h3>
+      <p class="body">ブランドの核を言葉にして、媒体をまたいで実装する。haluta house で証明済の通し仕事。</p>
+      <ul class="items">
+        <li>HP・LP制作</li>
+        <li>冊子（入稿まで）</li>
+        <li>サイネージ・動画</li>
+      </ul>
+    </article>
+
+    <article class="service-card anim anim-delay-1">
+      <div class="photo"><img src="../assets/business-cleaning.jpg" alt=""></div>
+      <p class="num">02</p>
+      <h3><span class="en">to keep.</span>まわす</h3>
+      <p class="body">軽井沢T-SITE等の清掃現場・別荘管理・SNS運用。日々の現場をAIで集約して回します。</p>
+      <ul class="items">
+        <li>清掃・別荘管理</li>
+        <li>SNS運用・データ整理</li>
+        <li>LINE業務集約（totoline）</li>
+      </ul>
+    </article>
+
+    <article class="service-card anim anim-delay-2">
+      <div class="photo"><img src="../assets/business-guitar.jpg" alt=""></div>
+      <p class="num">03</p>
+      <h3><span class="en">to teach.</span>おしえる</h3>
+      <p class="body">ギター教室・DX研修・噛み砕いた相談。「わからない」をそのまま持ってきてOK。</p>
+      <ul class="items">
+        <li>ギター教室</li>
+        <li>DX研修・社員勉強会</li>
+        <li>個別相談</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<!-- ========================================
+     ABOUT
+     ======================================== -->
+<section class="about">
+  <div class="about-grid">
+    <div class="about-photo anim">
+      <div class="frame frame--lg">
+        <img src="../assets/photo-terui.jpg" alt="照井航次郎">
+      </div>
+    </div>
+    <div class="about-text anim anim-delay-1">
+      <p class="eyebrow">About</p>
+      <h2 class="display">ひとりで<span class="em">貫通</span>させる。</h2>
+      <p class="lead">
+        言葉にして、形にして、現場でまわすまで。<br>
+        媒体ごとに違う人がやると、思想がほどけてしまうから、ひとりで通します。
+      </p>
+      <p class="body">
+        照井航次郎（てるい・こうじろう）。1993年生まれ、長野県小諸市在住。HP・LP制作、AI業務改善、清掃現場運営、ギター指導の4領域を一人で担う現役エンジニア。御代田町のhaluta house 公式LP・冊子・サイネージ実装を担当。</p>
+      <dl class="about-meta">
+        <div>
+          <dt>Based in</dt>
+          <dd>長野県小諸市</dd>
+        </div>
+        <div>
+          <dt>Area</dt>
+          <dd>小諸・御代田・軽井沢</dd>
+        </div>
+        <div>
+          <dt>Online</dt>
+          <dd>全国対応</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     CONTACT
+     ======================================== -->
+<section class="contact">
+  <div class="container--narrow">
+    <p class="eyebrow" style="justify-content: center;">Contact</p>
+    <h2 class="display">相談<span class="em">する</span>。</h2>
+    <p class="contact-lead">
+      何がなんだかわからなくても、<br>
+      とりあえず話したいだけでもOKです。<br>
+      HP相談・清掃・ギター — ひと言だけでも構いません。
+    </p>
+    <a href="https://line.me/R/ti/p/@903xtesg" target="_blank" rel="noopener" class="contact-line">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+      LINEで相談する
+    </a>
+    <p class="contact-alt">
+      LINEを使っていない方は <a href="mailto:totonoeru.ya@gmail.com">totonoeru.ya@gmail.com</a> へ。
+    </p>
+  </div>
+</section>
+
+<!-- ========================================
+     FOOTER
+     ======================================== -->
+<footer>
+  <p class="logo">totonoeruya</p>
+  <p>長野県小諸市 · 御代田町 · 軽井沢町 · 全国オンライン対応</p>
+  <p class="small">© 2026 ととのえる屋 · Prototype — Modern Launch</p>
+</footer>
+
+<script>
+  // フェードインアニメーション
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.anim').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
