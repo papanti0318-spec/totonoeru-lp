@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="hYRflPVBHV_SbReXwN_7v4tNCf6AT3VusKhSviD5kPU" />
+<title>小さな会社で、LINEのお客さん管理をAIに任せていいですか？｜ととのえる屋</title>
+<meta name="description" content="LINEに溜まる「誰が・いつ・何を頼んだか」を、AIが読み取って顧客台帳にととのえる時代になりました。御代田・小諸・軽井沢の小さな会社が、紙の顧客名簿のままで、裏側だけAI化する方法を、長野県小諸市の現役エンジニアが書きます。">
+<link rel="canonical" href="https://totonoeruya.jp/articles/line-kokyaku-kanri-ai/">
+
+<meta property="og:title" content="小さな会社で、LINEのお客さん管理をAIに任せていいですか？｜ととのえる屋">
+<meta property="og:description" content="LINEに溜まる「誰が・いつ・何を頼んだか」を、AIが読み取って顧客台帳にととのえる時代になりました。御代田・小諸・軽井沢の小さな会社が、紙の顧客名簿のままで、裏側だけAI化する方法を書きます。">
+<meta property="og:url" content="https://totonoeruya.jp/articles/line-kokyaku-kanri-ai/">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://totonoeruya.jp/assets/journal/line-kokyaku-kanri-ai.jpg">
+<meta property="article:published_time" content="2026-05-30T00:00:00+09:00">
+<meta property="article:author" content="照井航次郎">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="stylesheet" href="../../assets/opener.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://totonoeruya.jp/articles/line-kokyaku-kanri-ai/#article",
+      "headline": "小さな会社で、LINEのお客さん管理をAIに任せていいですか？",
+      "description": "LINEに溜まる「誰が・いつ・何を頼んだか」を、AIが読み取って顧客台帳にととのえる時代になりました。御代田・小諸・軽井沢の小さな会社が、紙の顧客名簿のままで、裏側だけAI化する方法を、長野県小諸市の現役エンジニアが書きます。",
+      "url": "https://totonoeruya.jp/articles/line-kokyaku-kanri-ai/",
+      "mainEntityOfPage": "https://totonoeruya.jp/articles/line-kokyaku-kanri-ai/",
+      "image": "https://totonoeruya.jp/assets/journal/line-kokyaku-kanri-ai.jpg",
+      "datePublished": "2026-05-30",
+      "dateModified": "2026-05-30",
+      "inLanguage": "ja",
+      "articleSection": "業務改善",
+      "author": {
+        "@id": "https://totonoeruya.jp/#terui"
+      },
+      "publisher": {
+        "@id": "https://totonoeruya.jp/#organization"
+      },
+      "isPartOf": {
+        "@id": "https://totonoeruya.jp/articles/#blog"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://totonoeruya.jp/" },
+        { "@type": "ListItem", "position": 2, "name": "ジャーナル", "item": "https://totonoeruya.jp/articles/" },
+        { "@type": "ListItem", "position": 3, "name": "小さな会社で、LINEのお客さん管理をAIに任せていいですか？", "item": "https://totonoeruya.jp/articles/line-kokyaku-kanri-ai/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://totonoeruya.jp/articles/line-kokyaku-kanri-ai/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "紙の顧客名簿は、捨てたほうがいいですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "捨てなくていいです。紙のままで残し、裏側のスプレッドシートに同じ情報がAIで自動的に積み上がる形が、いまの小さな会社には合っています。紙は、年配のスタッフや古くからのお客さんとの関係を守ります。AIは、若いスタッフが探しやすい台帳をつくります。両方あって、はじめて続きます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "お客さんの個人情報が外に漏れたりしませんか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "保管先を自社のGoogleスプレッドシートにする設計なら、外に出ません。AIが処理するときも、必要な部分だけを最小限の時間だけ使う形にできます。契約の前に、データの流れを一枚の図で見せてもらってから始めるのが安心です。「どこに何が保存されるか」が説明できないサービスは、選ばないほうがいいです。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "御代田や軽井沢の数名規模の会社でも使えますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "むしろ、数名規模のほうが効果が出ます。スタッフが少ないと「お客さんを覚えている人」が偏りやすく、その人が休むと業務が止まります。LINEの会話からAIが顧客台帳をつくっておけば、誰が見ても同じ情報にたどり着けます。御代田町や軽井沢町の数名規模の事業者でも、1グループから無理なく始められます。"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://totonoeruya.jp/articles/line-kokyaku-kanri-ai/#howto",
+      "name": "LINEのお客さん管理をAI化する、現実的な進め方は？",
+      "description": "御代田・小諸・軽井沢の小さな会社が、紙の顧客名簿を残したまま、LINEの会話からAIで顧客台帳をつくる手順。",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "手順1",
+          "text": "いま動いているLINEグループのうち、お客さんとのやりとりが一番多いものを1つ選ぶ。営業用・問い合わせ用・常連用など、業務が流れているグループから始める"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "手順2",
+          "text": "保管先のGoogleスプレッドシートを自社のアカウントに用意する。「お客さん名・最後に話した日・直近の依頼・連絡頻度」など、最低4列だけ決めれば十分"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "手順3",
+          "text": "そのLINEグループに、AI付きのBotを1つ招待する。会話の仕方は普段通り、何も変えない。お客さんにも告げず、裏で読み取りだけ進める"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "手順4",
+          "text": "2週間、スプレッドシートを観察する。誰が・いつ・何を頼んだかが、自然に積み上がっているかを確認する。間違いがあれば、人の手で1行ずつ直す"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "手順5",
+          "text": "1ヶ月続けて、現場のスタッフに「探しやすくなったか」を聞く。良ければそのまま継続。合わなければBotを外すだけで、紙の名簿は無傷で残る"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- Vercel Web Analytics -->
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/assets/analytics.js"></script>
+</head>
+<body class="has-site-nav">
+
+<!-- OPENER -->
+<div class="opener" id="opener" aria-hidden="true">
+  <button class="opener-skip" id="opener-skip" aria-label="オープニングをスキップ">Skip</button>
+  <div class="opener-stage">
+    <span class="opener-line opener-line--green"></span>
+    <span class="opener-line opener-line--amber"></span>
+    <span class="opener-line opener-line--soft"></span>
+    <p class="opener-tagline">TOTONOERUYA &nbsp;·&nbsp; KOMORO, NAGANO</p>
+  </div>
+</div>
+<script src="../../assets/opener.js"></script>
+
+<!-- ナビゲーション -->
+<nav class="site-nav">
+  <button type="button" class="site-nav-trigger" aria-label="メニューを開く" aria-expanded="false" aria-controls="site-drawer">
+    <span class="site-nav-bars" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </span>
+  </button>
+</nav>
+
+<aside class="site-drawer" id="site-drawer" aria-hidden="true" aria-label="メニュー">
+  <div class="site-drawer-backdrop" data-drawer-close></div>
+  <div class="site-drawer-inner" role="dialog" aria-modal="true">
+    <div class="site-drawer-content">
+      <span class="site-drawer-eyebrow">Menu</span>
+      <ul class="site-drawer-menu">
+        <li><a href="/" data-drawer-close><span class="lang-en">Home</span></a></li>
+        <li><a href="/web/" data-drawer-close><span class="lang-en">Web</span></a></li>
+        <li><a href="/cleaning/" data-drawer-close><span class="lang-en">Cleaning</span></a></li>
+        <li><a href="/guitar/" data-drawer-close><span class="lang-en">Guitar</span></a></li>
+        <li><a href="/articles/" data-drawer-close><span class="lang-en">Journal</span></a></li>
+        <li><a href="/#contact" data-drawer-close><span class="lang-en">Contact</span></a></li>
+      </ul>
+
+      <div class="site-drawer-actions">
+        <a class="site-drawer-action" href="https://line.me/R/ti/p/@903xtesg" target="_blank" rel="noopener" aria-label="LINE">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        </a>
+        <a class="site-drawer-action" href="mailto:totonoeru.ya@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="1"/>
+            <path d="M3 7l9 6 9-6"/>
+          </svg>
+        </a>
+      </div>
+
+      <p class="site-drawer-foot">
+        ととのえる屋<br>
+        長野県小諸市
+      </p>
+    </div>
+  </div>
+</aside>
+
+<main>
+<article class="article-body">
+  <header class="article-header">
+    <div class="article-meta">
+      <span class="journal-date">2026-05-30</span>
+      <span class="journal-category">業務改善</span>
+    </div>
+    <h1 class="article-title">小さな会社で、LINEのお客さん管理をAIに任せていいですか？</h1>
+    <p class="article-lead">
+      任せていいです。ただし「全部」ではなく「裏側だけ」が現実的です。LINEに溜まる「誰が・いつ・何を頼んだか」を、AIが読み取って顧客台帳にしておく。紙の顧客名簿は捨てない。御代田・小諸・軽井沢の小さな会社が、いまの紙のまま、裏側だけAI化していく方法を、長野県小諸市の現役エンジニアが書きます。
+    </p>
+  </header>
+
+  <div class="article-content">
+    <h2>AIが扱える「お客さん管理」の中身は、いま、何ですか？</h2>
+    <p>結論、「会話履歴の自動台帳化」「直近の依頼内容の抽出」「連絡頻度の見える化」の3つです。2026年5月時点で、Claude や ChatGPT などの最新世代AIは、LINEグループに流れる雑談まじりの会話から、業務に必要な情報だけを拾ってととのえる段階に入りました。</p>
+    <p>理由は、AIが「文脈を読む」ことができるようになったからです。「明日10時に伺います」というメッセージから、お客さんの名前と日付と訪問予定を結びつけて、自動で台帳に書ける。これまで人が頭の中だけでやっていた整理を、AIが下書きしてくれます。</p>
+    <p>具体的には、御代田町や小諸市の数名規模の会社で、お客さんとのLINEから「最終接触日・直近の依頼内容・支払い状況・連絡頻度」がスプレッドシートに自動で並ぶ仕組みが、すでに動かせます。顧客管理ソフトを新しく入れる必要はありません。いまのLINEに、AIを足すだけです。</p>
+    <h2>任せていい部分と、人がやるべき部分は、どう違いますか？</h2>
+    <p>結論、「記録」「整理」「下書き」はAIに任せていい。「最後の判断」「お客さんへの返事」は人がやるべきです。この線引きが、信頼を守る境界になります。</p>
+    <p>理由は、AIが得意なのは「目の前にある情報を機械的に並べる」ことで、苦手なのは「お客さんの気持ちを読む」ことだからです。書き取りや並べ替えは、量が多くて疲れる単純作業で、ここをAIに渡すと人の手は格段に軽くなります。一方、「ありがとうございました」「お待たせしてすみません」を機械が出すと、長年のお客さんとの関係が壊れます。</p>
+    <p>具体的に任せていいのは、会話の自動記録・顧客台帳の更新・最終接触からの経過日数の計算・お客さんごとの過去の依頼一覧・月次の連絡頻度のまとめ。任せられないのは、価格の最終確認・トラブル時の謝罪・「今回は無理です」と断る判断・初対面のお客さんへの第一声。経験上、7割AI・3割人が現実的な配分です。</p>
+    <h2>御代田・小諸の小さな会社で、最初の一歩は何ですか？</h2>
+    <p>結論、いま動いているお客さん用のLINEグループに、Botを1つ招待するだけから始めるのが現実的です。紙の顧客名簿はそのまま残し、新しいツールは入れず、お客さんにも告げず、裏側だけととのえていきます。</p>
+    <p>理由は、小さな会社の業務改善が止まるのは、ほぼ「新しいツールを覚えるコスト」のせいだからです。スタッフが嫌がる、年配の方が触らない、結局誰も開かない。これを避けるには、見た目は何も変えず、裏側だけ動かす設計が必要になります。</p>
+    <p>具体的には、御代田町や小諸市の数名規模の事業者なら、お客さんとの常連グループのうち、一番動いている1グループから始めるのが向いています。2週間観察して、顧客台帳が自然に積み上がっていれば、それが御代田・小諸でAIを使う最小の一歩です。合わなければBotを外すだけで終わるので、紙の名簿には何の影響もありません。</p>
+
+  <section class="article-howto" aria-labelledby="howto-heading">
+    <h2 id="howto-heading" class="howto-heading">LINEのお客さん管理をAI化する、現実的な進め方は？</h2>
+    <ol class="howto-list">
+    <li class="howto-step">
+      <strong class="howto-step-name">手順1</strong>
+      <p class="howto-step-text">いま動いているLINEグループのうち、お客さんとのやりとりが一番多いものを1つ選ぶ。営業用・問い合わせ用・常連用など、業務が流れているグループから始める</p>
+    </li>
+    <li class="howto-step">
+      <strong class="howto-step-name">手順2</strong>
+      <p class="howto-step-text">保管先のGoogleスプレッドシートを自社のアカウントに用意する。「お客さん名・最後に話した日・直近の依頼・連絡頻度」など、最低4列だけ決めれば十分</p>
+    </li>
+    <li class="howto-step">
+      <strong class="howto-step-name">手順3</strong>
+      <p class="howto-step-text">そのLINEグループに、AI付きのBotを1つ招待する。会話の仕方は普段通り、何も変えない。お客さんにも告げず、裏で読み取りだけ進める</p>
+    </li>
+    <li class="howto-step">
+      <strong class="howto-step-name">手順4</strong>
+      <p class="howto-step-text">2週間、スプレッドシートを観察する。誰が・いつ・何を頼んだかが、自然に積み上がっているかを確認する。間違いがあれば、人の手で1行ずつ直す</p>
+    </li>
+    <li class="howto-step">
+      <strong class="howto-step-name">手順5</strong>
+      <p class="howto-step-text">1ヶ月続けて、現場のスタッフに「探しやすくなったか」を聞く。良ければそのまま継続。合わなければBotを外すだけで、紙の名簿は無傷で残る</p>
+    </li>
+    </ol>
+  </section>
+
+
+  <section class="article-faq" aria-labelledby="faq-heading">
+    <h2 id="faq-heading" class="faq-heading">よくある質問</h2>
+    <div class="faq-item">
+      <h3 class="faq-q">Q. 紙の顧客名簿は、捨てたほうがいいですか？</h3>
+      <p class="faq-a">捨てなくていいです。紙のままで残し、裏側のスプレッドシートに同じ情報がAIで自動的に積み上がる形が、いまの小さな会社には合っています。紙は、年配のスタッフや古くからのお客さんとの関係を守ります。AIは、若いスタッフが探しやすい台帳をつくります。両方あって、はじめて続きます。</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">Q. お客さんの個人情報が外に漏れたりしませんか？</h3>
+      <p class="faq-a">保管先を自社のGoogleスプレッドシートにする設計なら、外に出ません。AIが処理するときも、必要な部分だけを最小限の時間だけ使う形にできます。契約の前に、データの流れを一枚の図で見せてもらってから始めるのが安心です。「どこに何が保存されるか」が説明できないサービスは、選ばないほうがいいです。</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">Q. 御代田や軽井沢の数名規模の会社でも使えますか？</h3>
+      <p class="faq-a">むしろ、数名規模のほうが効果が出ます。スタッフが少ないと「お客さんを覚えている人」が偏りやすく、その人が休むと業務が止まります。LINEの会話からAIが顧客台帳をつくっておけば、誰が見ても同じ情報にたどり着けます。御代田町や軽井沢町の数名規模の事業者でも、1グループから無理なく始められます。</p>
+    </div>
+  </section>
+
+  </div>
+
+  <div class="article-cta" style="margin: 80px auto 64px; padding: 40px 32px; background: var(--bg-warm); border: 1px solid var(--border-soft); border-radius: var(--radius); text-align: center; max-width: 640px;">
+    <p style="font-size: 14px; line-height: 2; color: var(--text-mid); margin-bottom: 12px; text-wrap: balance;">
+      ととのえる屋が、LINEに置くだけで会話が台帳になるBot「<strong>totoline</strong>」を出しました。お客さん管理にもそのまま使えます。Free（1グループ・¥0）から始められます。
+    </p>
+    <p style="font-size: 13px; color: var(--text-soft); line-height: 1.9; margin-bottom: 24px;">
+      「うちの場合、どうかな」のひと言から、いっしょに考えます。
+    </p>
+    <a href="/totoline/" class="btn btn--green" style="margin-right: 8px;">totoline を見る</a>
+    <a href="/#contact" class="btn btn--amber">相談する</a>
+  </div>
+
+  <div class="related-articles">
+    <h3>他の記事</h3>
+    <div class="related-list">
+      <a href="/articles/line-gyomu-ai-doko-made/" class="related-item">
+        <div class="related-item-title">LINEで業務、AIにどこまで任せられますか？</div>
+      </a>
+      <a href="/articles/seikyusho-tekiyo-ai-jidai/" class="related-item">
+        <div class="related-item-title">請求書の摘要欄、AIに書いてもらえる時代</div>
+      </a>
+      <a href="/articles/denwa-uketsuke-hitori/" class="related-item">
+        <div class="related-item-title">ひとりで電話受付している事業者へ</div>
+      </a>
+    </div>
+  </div>
+</article>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-nap">
+      <p class="footer-nap-name">ととのえる屋</p>
+      <p class="footer-nap-address">長野県小諸市</p>
+      <p class="footer-nap-contact">
+        <a href="mailto:totonoeru.ya@gmail.com">totonoeru.ya@gmail.com</a>　／　<a href="https://line.me/R/ti/p/@903xtesg" target="_blank" rel="noopener">LINE: @903xtesg</a>
+      </p>
+      <p class="footer-nap-area">対応エリア：小諸市・御代田町・軽井沢町・上田市ほか長野県内（オンライン全国対応）</p>
+    </div>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <img src="../../assets/logo-totonoeru.png" alt="ととのえる屋" class="footer-logo-img" width="44" height="56">
+      </div>
+      <div class="footer-copy">© 2026 ととのえる屋. All rights reserved. 長野県小諸市</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const drawer = document.getElementById('site-drawer');
+const trigger = document.querySelector('.site-nav-trigger');
+const backdrop = drawer.querySelector('.site-drawer-backdrop');
+const closeLinks = drawer.querySelectorAll('[data-drawer-close]');
+
+function openDrawer() {
+  drawer.setAttribute('aria-hidden', 'false');
+  trigger.setAttribute('aria-expanded', 'true');
+}
+
+function closeDrawer() {
+  drawer.setAttribute('aria-hidden', 'true');
+  trigger.setAttribute('aria-expanded', 'false');
+}
+
+if (trigger) trigger.addEventListener('click', openDrawer);
+if (backdrop) backdrop.addEventListener('click', closeDrawer);
+closeLinks.forEach(link => link.addEventListener('click', closeDrawer));
+</script>
+
+</body>
+</html>

@@ -43,6 +43,12 @@
 - 物理労働（清掃）とAIの組み合わせ
 - 長野県・佐久地域のローカルLLMO/SEO戦略
 
+## 主要記事（LINE業務×totoline導線 第2弾・2026-05-21 新着）
+
+- [小さな会社で、LINEのお客さん管理をAIに任せていいですか？](https://totonoeruya.jp/articles/line-kokyaku-kanri-ai/): 紙の顧客名簿は捨てず、LINEから「裏側だけ」AIで顧客台帳化する設計。御代田・小諸・軽井沢の数名規模事業者向け。
+- [LINEで流れていく会話は、資産にできますか？](https://totonoeruya.jp/articles/kaiwa-shisan-line/): 残すのは「決定事項・約束・金額・期日・依頼内容」の5種類だけ。流れていた会話を月末・年末に効く資産に変える考え方と実装。
+- [長野の小さな事業者が「LINE Botを入れて続かなかった」のはなぜですか？](https://totonoeruya.jp/articles/nagano-line-bot-tsuduku-shippai/): 続かなかったBotの3つの共通点「汎用・現場負担・止められない契約」と、長野で続くBotの見分け方。
+
 ## 主要記事（急上昇キーワード × totoline導線・2026-05-20 新着）
 
 - [AI Overview って何ですか？2026年5月、Google検索の48%に出ているものの正体は？](https://totonoeruya.jp/articles/ai-overview-toha-chusho/): Google検索の48%にAI要約が表示される時代の中小企業向け解説。FAQ・構造化データ・一次情報・E-E-A-Tの5項目で「引用される側」に立つ実装ガイド。
