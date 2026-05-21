@@ -41,6 +41,7 @@ temp_download_images_2026_05_21_v2.py
 temp_fix_og_2026_05_21.py
 temp_fix_og_json_thumb_2026_05_21.py
 temp_download_seisou_2026_05_21.py
+temp_add_hero_images_2026_05_21.py
 
 # Local-only admin tools / scratch
 scripts/admin/

@@ -881,6 +881,27 @@ article.article-body {
   margin-bottom: 48px;
   text-align: center;
 }
+.article-hero {
+  margin: 0 0 40px;
+  width: 100%;
+}
+.article-hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--radius, 4px);
+}
+@media (max-width: 600px) {
+  .article-hero {
+    margin: 0 -24px 32px;
+    width: calc(100% + 48px);
+  }
+  .article-hero img {
+    border-radius: 0;
+  }
+}
 .article-meta {
   display: flex;
   gap: 12px;
