@@ -45,6 +45,8 @@ temp_add_hero_images_2026_05_21.py
 generate_2026_05_22.py
 temp_insert_cards_2026_05_22.py
 temp_update_sitemap_llms_2026_05_22.py
+temp_download_images_2026_05_22.py
+temp_add_hero_2026_05_22.py
 
 # Local-only admin tools / scratch
 scripts/admin/
