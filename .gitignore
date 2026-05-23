@@ -6,6 +6,13 @@ Thumbs.db
 *.pyc
 __pycache__/
 
+# Secrets — 絶対にコミットしない
+*.json.key
+*-key.json
+secrets/
+.mcp.json
+
+
 # Internal planning docs (work-in-progress, not for public)
 PHASE-A-CHANGE-REPORT.md
 REBUILD-*.md
@@ -47,6 +54,9 @@ temp_insert_cards_2026_05_22.py
 temp_update_sitemap_llms_2026_05_22.py
 temp_download_images_2026_05_22.py
 temp_add_hero_2026_05_22.py
+generate_rewrites_2026_05_23.py
+download_rewrites_images_2026_05_23.py
+temp_update_sitemap_2026_05_23.py
 
 # Local-only admin tools / scratch
 scripts/admin/
