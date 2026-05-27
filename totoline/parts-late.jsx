@@ -189,6 +189,8 @@ function Footer() {
               <li><a href="/web/">HP・LP制作</a></li>
               <li><a href="/cleaning/">清掃</a></li>
               <li><a href="/articles/">記事</a></li>
+              <li><a href="/privacy/">プライバシーポリシー</a></li>
+              <li><a href="/commerce/">特定商取引法に基づく表記</a></li>
             </ul>
           </div>
           <div className="foot-col">
