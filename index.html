@@ -115,7 +115,7 @@
       "birthDate": "1993",
       "nationality": { "@type": "Country", "name": "日本" },
       "worksFor": { "@id": "https://totonoeruya.jp/#organization" },
-      "knowsAbout": ["ホームページ制作", "ランディングページ制作", "ブランド集約", "AI業務改善", "Apps Script", "AppSheet", "Claude", "ChatGPT", "データ分析", "LLMO", "Python", "JavaScript", "静的サイト生成", "Vercel"],
+      "knowsAbout": ["ホームページ制作", "ランディングページ制作", "ブランド集約", "AI業務改善", "Apps Script", "AppSheet", "Claude", "ChatGPT", "データ分析", "LLMO", "ローカルSEO", "Python", "JavaScript", "静的サイト生成", "Vercel", "LINE Messaging API", "LINE Bot 開発", "totoline"],
       "sameAs": [
         "https://github.com/papanti0318-spec",
         "https://x.com/totonoeruya"
@@ -144,6 +144,105 @@
       "name": "ととのえる屋",
       "publisher": { "@id": "https://totonoeruya.jp/#organization" },
       "inLanguage": "ja"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://totonoeruya.jp/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "ととのえる屋に頼めることは？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "HP・LP制作、AI業務改善、totoline（LINE業務集約）、清掃、ギター教室の5領域です。長野県内、特に小諸・御代田・軽井沢の小さな事業者の方を中心に、現場で必要なことを一人で貫通させて担当します。HP制作と並行してAI業務改善や清掃まで併走する形にもできます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "対応エリアはどこですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "小諸市・御代田町・軽井沢町・佐久市・上田市を中心に、長野県内全域。HP・LP制作とAI業務改善はオンラインで全国対応しています。清掃は軽井沢・小諸エリアの現場のみ。ギター教室は対面が小諸・御代田・軽井沢、オンラインは全国です。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "相談だけでも大丈夫ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい。「何がなんだかわからない」「うちの場合どうかな」だけでも構いません。料金が発生するのは実際に作業に入る段階からです。LINEなら一言から返信できます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "料金はどのくらいですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "単発と年契約の二系統で、内容に応じて相談の中で決めています。HP/LP制作は単発も年契約も対応可能です。totolineはFree（1グループ・0円）から月額制で、Basic以上は最初の1ヶ月を一緒に使ってみてから決められます。詳しい価格は各事業ページか、お問い合わせください。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "これまでの実績は？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "御代田町の haluta house 様の公式LP・冊子・サイネージを担当しています。長野県内の小さな事業者のAI業務改善も継続中。totoline は自社で開発・運用しているLINE業務集約プロダクトです。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "連絡手段は何がありますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "LINE（@903xtesg）が一番早く、1〜2営業日で返信します。メール（totonoeru.ya@gmail.com）でも受け付けています。LINEを使っていない方はトップページ下部のフォームからどうぞ。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "何から始めればいいですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "困っていることを言葉にできなくても構いません。LINEで一言「相談したい」と送ってもらうか、フォームから現状をひと言だけ書いてもらえれば、こちらから整理の手伝いを始めます。AIを使うか使わないかも、その後で一緒に決めます。"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://totonoeruya.jp/#popular",
+      "name": "いま、よく読まれているもの",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "url": "https://totonoeruya.jp/totoline/",
+          "name": "totoline – LINEに置くだけで、会話がタスク・議事録・請求書に"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "url": "https://totonoeruya.jp/articles/line-koushiki-totoline-chigai/",
+          "name": "LINE公式アカウントと totoline は、どう違いますか？"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "url": "https://totonoeruya.jp/articles/seisou-nippou-kami-ai/",
+          "name": "清掃の紙日報を、AIで台帳にするには？"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "url": "https://totonoeruya.jp/guitar/",
+          "name": "Guitar Lessons in Karuizawa, Komoro & Miyota"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "url": "https://totonoeruya.jp/articles/dougu-basho-shiranai/",
+          "name": "道具の場所がわからない現場で、AIで棚卸し台帳を作るには？"
+        }
+      ]
     }
   ]
 }
@@ -248,6 +347,11 @@
     HP・LP・冊子・サイネージ。<br>
     長野県小諸市から、ぜんぶ、同じ手で。
   </p>
+  <p class="hero-summary" style="font-family: 'Noto Sans JP', sans-serif; font-size: 13px; font-weight: 300; line-height: 2.2; color: var(--text-mid); letter-spacing: var(--ls-mid); margin: 28px auto 0; max-width: 580px; text-wrap: balance; padding: 0 16px;">
+    小諸・御代田・軽井沢の小さな事業者の、<br>
+    HP制作・AI業務改善・清掃・ギター教室を、ひとりの手で担当します。<br>
+    紙のまま、FAXのまま、電話のまま、楽になる方法を、現場で。
+  </p>
   <div class="hero-scroll">Scroll</div>
 </header>
 
@@ -324,7 +428,35 @@
       <p class="bloom-tagline">集約してととのえる。</p>
     </div>
 
-    <div class="anim" style="max-width: 640px; margin: 56px auto 0; text-align: center;">
+    <div class="anim anim-delay-1" style="max-width: 1020px; margin: 80px auto 0;">
+      <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 12px; letter-spacing: var(--ls-eyebrow); text-transform: uppercase; color: var(--text-soft); text-align: center; margin-bottom: 28px;">
+        <span style="display: inline-block; width: 24px; height: 1px; background: var(--text-soft); vertical-align: middle; margin-right: 10px;"></span>Each Service
+      </p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px;">
+        <a href="/web/" class="biz-card">
+          <p class="biz-card-eyebrow">01 · Web</p>
+          <h3 class="biz-card-title">HP・LP制作</h3>
+          <p class="biz-card-body">haluta house 公式LP・冊子・サイネージ実装。単発も年契約も。</p>
+        </a>
+        <a href="/cleaning/" class="biz-card">
+          <p class="biz-card-eyebrow">02 · Cleaning</p>
+          <h3 class="biz-card-title">清掃</h3>
+          <p class="biz-card-body">軽井沢T-SITE・別荘管理・民泊。現場の事務作業にAIを集約。</p>
+        </a>
+        <a href="/guitar/" class="biz-card">
+          <p class="biz-card-eyebrow">03 · Guitar</p>
+          <h3 class="biz-card-title">ギター教室</h3>
+          <p class="biz-card-body">小諸・御代田・軽井沢で。English-friendly。</p>
+        </a>
+        <a href="/totoline/" class="biz-card">
+          <p class="biz-card-eyebrow">04 · Product</p>
+          <h3 class="biz-card-title">totoline</h3>
+          <p class="biz-card-body">LINEに置くだけで、会話が台帳になる。Free〜Pro。</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="anim anim-delay-2" style="max-width: 640px; margin: 56px auto 0; text-align: center;">
       <p style="font-size: 14px; line-height: 2; color: var(--text-mid); margin-bottom: 28px;">
         単発でも、年契約でも。価格は、相談の中で決めます。
       </p>
@@ -368,8 +500,57 @@
   </div>
 </section>
 
+<!-- いま読まれている（鉱脈導線・順位上位ページへの内部リンク権威集中） -->
+<section id="popular" style="padding: 100px 24px; background: var(--bg);">
+  <div class="container" style="max-width: 1080px;">
+
+    <div class="sec-header anim" style="text-align: center; margin-bottom: 48px;">
+      <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 13px; letter-spacing: var(--ls-eyebrow); text-transform: uppercase; color: var(--text-soft); margin-bottom: 16px;">
+        <span style="display: inline-block; width: 24px; height: 1px; background: var(--text-soft); vertical-align: middle; margin-right: 10px;"></span>Currently Reading
+      </p>
+      <h2 class="sec-title">いま、よく読まれているもの。</h2>
+      <p class="sec-sub" style="margin-top: 16px;">検索・お問い合わせから、訪ねてもらえる順に。</p>
+    </div>
+
+    <div class="anim anim-delay-1" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
+
+      <a href="/totoline/" class="popular-card">
+        <p class="popular-card-eyebrow">Product · LINE × AI</p>
+        <h3 class="popular-card-title">LINEに置くだけ。会話が、タスク・議事録・請求書に。</h3>
+        <p class="popular-card-meta">totoline / 自社プロダクト</p>
+      </a>
+
+      <a href="/articles/line-koushiki-totoline-chigai/" class="popular-card">
+        <p class="popular-card-eyebrow">LINE × AI</p>
+        <h3 class="popular-card-title">LINE公式アカウントと totoline は、どう違いますか？</h3>
+        <p class="popular-card-meta">2026-05-28 / 比較</p>
+      </a>
+
+      <a href="/articles/seisou-nippou-kami-ai/" class="popular-card">
+        <p class="popular-card-eyebrow">清掃 × AI</p>
+        <h3 class="popular-card-title">清掃の紙日報を、AIで台帳にするには？</h3>
+        <p class="popular-card-meta">記事 / 軽井沢・別荘清掃</p>
+      </a>
+
+      <a href="/guitar/" class="popular-card">
+        <p class="popular-card-eyebrow">Guitar · English-friendly</p>
+        <h3 class="popular-card-title">Guitar Lessons in Karuizawa, Komoro & Miyota</h3>
+        <p class="popular-card-meta">ギター教室 / 個人レッスン</p>
+      </a>
+
+      <a href="/articles/dougu-basho-shiranai/" class="popular-card">
+        <p class="popular-card-eyebrow">業務改善</p>
+        <h3 class="popular-card-title">道具の場所がわからない現場で、AIで棚卸し台帳を作るには？</h3>
+        <p class="popular-card-meta">2026-05-24 / 倉庫管理</p>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
 <!-- 2026法改正×AI シリーズ（10記事ハブへの動線・5/22リリース10本+ハブ） -->
-<section id="houkaisei-2026" style="padding: 100px 24px; background: var(--bg);">
+<section id="houkaisei-2026" style="padding: 100px 24px; background: var(--bg-warm);">
   <div class="container" style="max-width: 1080px;">
 
     <!-- シリーズバッジ -->
@@ -463,6 +644,34 @@
 
     <div class="anim anim-delay-1" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; max-width: 1080px; margin: 0 auto;">
 
+      <a href="/articles/seisou-mitsumori-ai/" class="recent-card" style="text-decoration: none; padding: 32px 28px; background: var(--bg-warm); border: 1px solid var(--border-soft); border-radius: var(--radius); transition: all .2s; display: block;">
+        <div style="display: flex; gap: 10px; font-size: 11px; color: var(--text-soft); letter-spacing: var(--ls-eyebrow); text-transform: uppercase; margin-bottom: 16px;">
+          <span>2026-05-26</span>
+          <span aria-hidden="true">·</span>
+          <span>清掃 × AI</span>
+        </div>
+        <h3 style="font-family: 'Noto Serif JP', serif; font-size: 17px; font-weight: 600; line-height: 1.7; color: var(--text); margin-bottom: 12px; text-wrap: balance;">
+          清掃の見積もり依頼への返信を、AIで30分から5分にするには？
+        </h3>
+        <p style="font-size: 14px; color: var(--text-mid); line-height: 1.9; text-wrap: balance;">
+          面積・頻度・作業内容の聞き直しから価格組みまで、ChatGPTとClaudeでひと通りやってみた手順。
+        </p>
+      </a>
+
+      <a href="/articles/seisou-ai-nani-kara-2026/" class="recent-card" style="text-decoration: none; padding: 32px 28px; background: var(--bg-warm); border: 1px solid var(--border-soft); border-radius: var(--radius); transition: all .2s; display: block;">
+        <div style="display: flex; gap: 10px; font-size: 11px; color: var(--text-soft); letter-spacing: var(--ls-eyebrow); text-transform: uppercase; margin-bottom: 16px;">
+          <span>2026-05-25</span>
+          <span aria-hidden="true">·</span>
+          <span>清掃 × AI</span>
+        </div>
+        <h3 style="font-family: 'Noto Serif JP', serif; font-size: 17px; font-weight: 600; line-height: 1.7; color: var(--text); margin-bottom: 12px; text-wrap: balance;">
+          清掃業でAIを使うなら、何から始めればいい？長野の現場での順序
+        </h3>
+        <p style="font-size: 14px; color: var(--text-mid); line-height: 1.9; text-wrap: balance;">
+          軽井沢の別荘・小諸のホテル・御代田の事業所で、最初の30日で楽になる順番を並べたハブ記事。
+        </p>
+      </a>
+
       <a href="/articles/totonoeruya-name-riyu/" class="recent-card" style="text-decoration: none; padding: 32px 28px; background: var(--bg-warm); border: 1px solid var(--border-soft); border-radius: var(--radius); transition: all .2s; display: block;">
         <div style="display: flex; gap: 10px; font-size: 11px; color: var(--text-soft); letter-spacing: var(--ls-eyebrow); text-transform: uppercase; margin-bottom: 16px;">
           <span>2026-05-12</span>
@@ -474,34 +683,6 @@
         </h3>
         <p style="font-size: 14px; color: var(--text-mid); line-height: 1.9; text-wrap: balance;">
           1993年生まれの東京育ちが、小諸でこの屋号にたどり着いた経緯。
-        </p>
-      </a>
-
-      <a href="/articles/naniwo-totonoetai/" class="recent-card" style="text-decoration: none; padding: 32px 28px; background: var(--bg-warm); border: 1px solid var(--border-soft); border-radius: var(--radius); transition: all .2s; display: block;">
-        <div style="display: flex; gap: 10px; font-size: 11px; color: var(--text-soft); letter-spacing: var(--ls-eyebrow); text-transform: uppercase; margin-bottom: 16px;">
-          <span>2026-05-08</span>
-          <span aria-hidden="true">·</span>
-          <span>思想</span>
-        </div>
-        <h3 style="font-family: 'Noto Serif JP', serif; font-size: 17px; font-weight: 600; line-height: 1.7; color: var(--text); margin-bottom: 12px; text-wrap: balance;">
-          「AIで何ができる？」より「何を整えたい？」から始める
-        </h3>
-        <p style="font-size: 14px; color: var(--text-mid); line-height: 1.9; text-wrap: balance;">
-          ご相談で聞かれる質問が、最近すこし変わってきました。問いの立て方を変えるだけで、見える景色が変わる話。
-        </p>
-      </a>
-
-      <a href="/articles/ai-tool-yameta-3tsu/" class="recent-card" style="text-decoration: none; padding: 32px 28px; background: var(--bg-warm); border: 1px solid var(--border-soft); border-radius: var(--radius); transition: all .2s; display: block;">
-        <div style="display: flex; gap: 10px; font-size: 11px; color: var(--text-soft); letter-spacing: var(--ls-eyebrow); text-transform: uppercase; margin-bottom: 16px;">
-          <span>2026-05-04</span>
-          <span aria-hidden="true">·</span>
-          <span>AI</span>
-        </div>
-        <h3 style="font-family: 'Noto Serif JP', serif; font-size: 17px; font-weight: 600; line-height: 1.7; color: var(--text); margin-bottom: 12px; text-wrap: balance;">
-          AIをツールとして扱うために、やめた3つのこと
-        </h3>
-        <p style="font-size: 14px; color: var(--text-mid); line-height: 1.9; text-wrap: balance;">
-          AIを主役にしないために、わたしがやめた3つの習慣。長く健やかに付き合うための、ちいさな線引きの話。
         </p>
       </a>
 
@@ -518,7 +699,242 @@
   background: var(--amber-lt) !important;
   transform: translateY(-2px);
 }
+
+/* 4事業ページ動線カード（businesses 内） */
+.biz-card {
+  text-decoration: none;
+  padding: 26px 22px;
+  background: var(--bg);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  display: block;
+  transition: all .2s;
+}
+.biz-card:hover {
+  background: var(--amber-lt);
+  transform: translateY(-2px);
+  border-color: var(--amber);
+}
+.biz-card-eyebrow {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 11px;
+  color: var(--text-soft);
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  margin: 0 0 12px;
+}
+.biz-card-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 10px;
+  letter-spacing: 0.02em;
+}
+.biz-card-body {
+  font-size: 13px;
+  color: var(--text-mid);
+  line-height: 1.9;
+  margin: 0;
+}
+
+/* いま読まれているカード（popular セクション内） */
+.popular-card {
+  text-decoration: none;
+  padding: 26px 22px;
+  background: var(--bg-warm);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  display: block;
+  transition: all .2s;
+}
+.popular-card:hover {
+  background: var(--amber-lt);
+  transform: translateY(-2px);
+  border-color: var(--amber);
+}
+.popular-card-eyebrow {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 11px;
+  color: var(--text-soft);
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  margin: 0 0 12px;
+}
+.popular-card-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.7;
+  color: var(--text);
+  margin: 0 0 12px;
+  text-wrap: balance;
+}
+.popular-card-meta {
+  font-size: 12px;
+  color: var(--text-soft);
+  letter-spacing: var(--ls-mid);
+  margin: 0;
+}
+
+/* FAQ アコーディオン（faq セクション内） */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.faq-item {
+  background: var(--bg-warm);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.faq-item summary {
+  padding: 22px 26px;
+  cursor: pointer;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  transition: background .15s;
+}
+.faq-item summary:hover {
+  background: var(--amber-lt);
+}
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+.faq-item summary::after {
+  content: '+';
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  color: var(--amber);
+  flex-shrink: 0;
+  transition: transform .2s;
+}
+.faq-item[open] summary::after {
+  content: '−';
+}
+.faq-body {
+  padding: 4px 26px 22px;
+}
+.faq-body p {
+  font-size: 14px;
+  line-height: 2;
+  color: var(--text-mid);
+  margin: 0;
+  text-wrap: balance;
+}
 </style>
+
+<!-- About: 照井エンティティ（だれが・LLMO引用ソース化+E-E-A-T Trust強化） -->
+<section id="terui" style="padding: 100px 24px; background: var(--bg-warm);">
+  <div class="container" style="max-width: 760px;">
+    <div class="sec-header anim" style="text-align: center; margin-bottom: 40px;">
+      <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 13px; letter-spacing: var(--ls-eyebrow); text-transform: uppercase; color: var(--text-soft); margin-bottom: 16px;">
+        <span style="display: inline-block; width: 24px; height: 1px; background: var(--text-soft); vertical-align: middle; margin-right: 10px;"></span>About
+      </p>
+      <h2 class="sec-title">だれが、ととのえているのか。</h2>
+    </div>
+
+    <div class="anim anim-delay-1" style="text-align: center;">
+      <p style="font-family: 'Noto Serif JP', serif; font-size: 20px; font-weight: 600; color: var(--text); margin: 0 0 10px;">
+        照井 航次郎 <span style="font-size: 12px; font-weight: 300; color: var(--text-soft); letter-spacing: var(--ls-mid); margin-left: 8px;">Koji Terui</span>
+      </p>
+      <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 13px; color: var(--text-soft); letter-spacing: var(--ls-eyebrow); text-transform: uppercase; margin: 0 0 36px;">
+        Founder · Engineer &nbsp;/&nbsp; 1993- &nbsp;/&nbsp; Komoro, Nagano
+      </p>
+
+      <p style="font-size: 14px; color: var(--text-mid); line-height: 2.1; text-wrap: balance; max-width: 620px; margin: 0 auto 28px;">
+        1993年生まれ、東京育ち。現在は長野県小諸市在住の現役エンジニア。<br>
+        HP・LP制作、AI業務改善、清掃現場運営、ギター指導の4領域を一人で貫通させて担当しています。<br>
+        御代田町の <a href="https://halutahouse.com/" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline; text-underline-offset: 3px;">haluta house</a> 公式LP・冊子・サイネージの実装担当。LINE業務集約SaaS「totoline」を自社開発・運用中。
+      </p>
+
+      <p style="font-size: 13px; color: var(--text-soft); line-height: 1.9; max-width: 580px; margin: 0 auto 32px;">
+        小諸・御代田・軽井沢の小さな事業者と、紙とFAXと電話のままで楽になる方法を、現場で。
+      </p>
+
+      <div style="display: inline-flex; flex-wrap: wrap; gap: 24px; justify-content: center; margin-top: 8px;">
+        <a href="https://github.com/papanti0318-spec" target="_blank" rel="noopener" style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 13px; color: var(--text-soft); text-decoration: underline; text-underline-offset: 4px; letter-spacing: var(--ls-mid);">GitHub</a>
+        <a href="https://x.com/totonoeruya" target="_blank" rel="noopener" style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 13px; color: var(--text-soft); text-decoration: underline; text-underline-offset: 4px; letter-spacing: var(--ls-mid);">X (Twitter)</a>
+        <a href="/articles/totonoeruya-name-riyu/" style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 13px; color: var(--text-soft); text-decoration: underline; text-underline-offset: 4px; letter-spacing: var(--ls-mid);">屋号の由来</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ: よくいただく質問（LLMO引用主軸+JSON-LD FAQPage連動） -->
+<section id="faq" style="padding: 100px 24px; background: var(--bg);">
+  <div class="container" style="max-width: 860px;">
+    <div class="sec-header anim" style="text-align: center; margin-bottom: 56px;">
+      <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 13px; letter-spacing: var(--ls-eyebrow); text-transform: uppercase; color: var(--text-soft); margin-bottom: 16px;">
+        <span style="display: inline-block; width: 24px; height: 1px; background: var(--text-soft); vertical-align: middle; margin-right: 10px;"></span>FAQ
+      </p>
+      <h2 class="sec-title">よくいただく質問</h2>
+    </div>
+
+    <div class="anim anim-delay-1 faq-list">
+
+      <details class="faq-item">
+        <summary>ととのえる屋に頼めることは？</summary>
+        <div class="faq-body">
+          <p>HP・LP制作、AI業務改善、totoline（LINE業務集約）、清掃、ギター教室の5領域です。長野県内、特に小諸・御代田・軽井沢の小さな事業者の方を中心に、現場で必要なことを一人で貫通させて担当します。HP制作と並行してAI業務改善や清掃まで併走する形にもできます。</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>対応エリアはどこですか？</summary>
+        <div class="faq-body">
+          <p>小諸市・御代田町・軽井沢町・佐久市・上田市を中心に、長野県内全域。HP・LP制作とAI業務改善はオンラインで全国対応しています。清掃は軽井沢・小諸エリアの現場のみ。ギター教室は対面が小諸・御代田・軽井沢、オンラインは全国です。</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>相談だけでも大丈夫ですか？</summary>
+        <div class="faq-body">
+          <p>はい。「何がなんだかわからない」「うちの場合どうかな」だけでも構いません。料金が発生するのは実際に作業に入る段階からです。LINEなら一言から返信できます。</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>料金はどのくらいですか？</summary>
+        <div class="faq-body">
+          <p>単発と年契約の二系統で、内容に応じて相談の中で決めています。HP/LP制作は単発も年契約も対応可能です。totolineはFree（1グループ・¥0）から月額制で、Basic以上は最初の1ヶ月を一緒に使ってみてから決められます。詳しい価格は各事業ページか、お問い合わせください。</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>これまでの実績は？</summary>
+        <div class="faq-body">
+          <p>御代田町の haluta house 様の公式LP・冊子・サイネージを担当しています。長野県内の小さな事業者のAI業務改善も継続中。totoline は自社で開発・運用しているLINE業務集約プロダクトです。</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>連絡手段は何がありますか？</summary>
+        <div class="faq-body">
+          <p>LINE（@903xtesg）が一番早く、1〜2営業日で返信します。メール（totonoeru.ya@gmail.com）でも受け付けています。LINEを使っていない方はトップページ下部のフォームからどうぞ。</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>何から始めればいいですか？</summary>
+        <div class="faq-body">
+          <p>困っていることを言葉にできなくても構いません。LINEで一言「相談したい」と送ってもらうか、フォームから現状をひと言だけ書いてもらえれば、こちらから整理の手伝いを始めます。AIを使うか使わないかも、その後で一緒に決めます。</p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
 
 <!-- Contact -->
 <section id="contact">
