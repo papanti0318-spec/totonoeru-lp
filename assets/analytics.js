@@ -1,8 +1,11 @@
 // ととのえる屋 公式HP アクセス計測
 // 2026-05-14 設置
 // GA4 + Microsoft Clarity を1ファイルに統合
+// 2026-05-28 本番ドメイン以外（localhost / プレビュー）では発火させない
 
 (function () {
+  if (location.hostname !== "totonoeruya.jp") return;
+
   // ========== Google Analytics 4 ==========
   var GA4_ID = "G-NECELRXGFK";
 
