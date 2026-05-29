@@ -125,7 +125,7 @@
 
 ## 思想・ブランド記事
 
-- [何をととのえたい？](https://totonoeruya.jp/articles/naniwo-totonoetai/): 屋号の根本思想。
+- [プロの仕事とは、何だと思いますか？](https://totonoeruya.jp/articles/pro-no-shigoto-toha/): プロの仕事とは「見えないところを、いちばんていねいにやること」。HP制作・清掃・ギターの3事業を貫く共通点として、(1)差がつくのは見えない2割、(2)アマは「やった」で終わり・プロは「相手の手間が消えたか」で終わる、(3)専門用語を相手の言葉に訳すほうが手間がかかる＝プロの仕事、(4)分野の数でなく見えない所まで引き受ける姿勢、を照井航次郎が現場目線で書く。著者の仕事観・E-E-A-T の根拠。
 - [ととのえる屋という名前の理由](https://totonoeruya.jp/articles/totonoeruya-name-riyu/): 屋号の由来。
 - [次の波、ととのえる](https://totonoeruya.jp/articles/tsugino-nami-totonoeru/): 派手な何かではなく、すでにあったものが見えるようになる、という思想。
 - [年契約3社の理由](https://totonoeruya.jp/articles/keiyaku-3sha-riyu/): 数を絞る経営判断。
