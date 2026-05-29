@@ -25,20 +25,32 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Product",
+      "@type": "SoftwareApplication",
       "@id": "https://totonoeruya.jp/totoline/#product",
       "name": "totoline（トトライン）",
       "alternateName": ["トトライン", "totoline"],
       "description": "LINEグループに招待するだけで、会話をAIが整理し、タスク・決定事項・請求書ドラフトを自動で作る業務支援Bot。freee／マネーフォワード／Notion／Googleスプレッドシート／Slack／Stripe／kintone／Webhook 等と連携。長野県小諸市のととのえる屋が、現場ヒアリングから運用まで併走する。",
-      "brand": { "@type": "Brand", "name": "ととのえる屋" },
-      "category": ["LINE Bot", "業務改善", "AI業務効率化", "請求書自動化", "タスク管理"],
+      "image": "https://totonoeruya.jp/totoline/og-totoline.jpg",
+      "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "LINE Bot 業務支援",
+      "operatingSystem": "LINE, Web",
       "url": "https://totonoeruya.jp/totoline/",
-      "offers": [
-        { "@type": "Offer", "name": "Free（お試し）", "description": "1グループまで・月¥0。会話の自動保存と基本的な振り分けまで。AI処理（タスク抽出・サマリー・請求書ドラフト）はBasic以上で利用可能。", "priceSpecification": { "@type": "UnitPriceSpecification", "price": 0, "priceCurrency": "JPY", "unitText": "MON", "valueAddedTaxIncluded": false, "description": "¥0/月（1グループまで）" }, "availability": "https://schema.org/InStock" },
-        { "@type": "Offer", "name": "Basic", "description": "最大3グループ・月¥2,980（税別）。初期セットアップ¥50,000で、現場ヒアリング・スプレッドシート設計・LINE導入・1ヶ月の併走運用までを含む。最初の1ヶ月は月額が発生しない。", "priceSpecification": [{ "@type": "PriceSpecification", "price": 50000, "priceCurrency": "JPY", "valueAddedTaxIncluded": false, "description": "初期セットアップ ¥50,000（税別・一度きり）" }, { "@type": "UnitPriceSpecification", "price": 2980, "priceCurrency": "JPY", "unitText": "MON", "valueAddedTaxIncluded": false, "description": "¥2,980/月（税別・最大3グループ）" }], "availability": "https://schema.org/InStock" },
-        { "@type": "Offer", "name": "Standard", "description": "最大5グループ・月¥5,980（税別）。初期セットアップ¥50,000込み。最初の1ヶ月は月額が発生しない。", "priceSpecification": [{ "@type": "PriceSpecification", "price": 50000, "priceCurrency": "JPY", "valueAddedTaxIncluded": false, "description": "初期セットアップ ¥50,000（税別・一度きり）" }, { "@type": "UnitPriceSpecification", "price": 5980, "priceCurrency": "JPY", "unitText": "MON", "valueAddedTaxIncluded": false, "description": "¥5,980/月（税別・最大5グループ）" }], "availability": "https://schema.org/InStock" },
-        { "@type": "Offer", "name": "Pro", "description": "最大10グループ・月¥9,980（税別）。初期セットアップ¥50,000込み。最初の1ヶ月は月額が発生しない。", "priceSpecification": [{ "@type": "PriceSpecification", "price": 50000, "priceCurrency": "JPY", "valueAddedTaxIncluded": false, "description": "初期セットアップ ¥50,000（税別・一度きり）" }, { "@type": "UnitPriceSpecification", "price": 9980, "priceCurrency": "JPY", "unitText": "MON", "valueAddedTaxIncluded": false, "description": "¥9,980/月（税別・最大10グループ）" }], "availability": "https://schema.org/InStock" }
-      ]
+      "author": { "@type": "Organization", "@id": "https://totonoeruya.jp/#organization", "name": "ととのえる屋" },
+      "keywords": ["LINE Bot", "業務改善", "AI業務効率化", "請求書自動化", "タスク管理"],
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "JPY",
+        "lowPrice": 0,
+        "highPrice": 9980,
+        "offerCount": 4,
+        "availability": "https://schema.org/InStock",
+        "offers": [
+          { "@type": "Offer", "name": "Free（お試し）", "price": 0, "priceCurrency": "JPY", "description": "1グループまで・月¥0。会話の自動保存と基本的な振り分けまで。AI処理（タスク抽出・サマリー・請求書ドラフト）はBasic以上で利用可能。", "availability": "https://schema.org/InStock" },
+          { "@type": "Offer", "name": "Basic", "price": 2980, "priceCurrency": "JPY", "description": "最大3グループ・月¥2,980（税別）。初期セットアップ¥50,000（税別・一度きり）で、現場ヒアリング・スプレッドシート設計・LINE導入・1ヶ月の併走運用までを含む。最初の1ヶ月は月額が発生しない。", "availability": "https://schema.org/InStock" },
+          { "@type": "Offer", "name": "Standard", "price": 5980, "priceCurrency": "JPY", "description": "最大5グループ・月¥5,980（税別）。初期セットアップ¥50,000（税別・一度きり）込み。最初の1ヶ月は月額が発生しない。", "availability": "https://schema.org/InStock" },
+          { "@type": "Offer", "name": "Pro", "price": 9980, "priceCurrency": "JPY", "description": "最大10グループ・月¥9,980（税別）。初期セットアップ¥50,000（税別・一度きり）込み。最初の1ヶ月は月額が発生しない。", "availability": "https://schema.org/InStock" }
+        ]
+      }
     },
     {
       "@type": "Service",
