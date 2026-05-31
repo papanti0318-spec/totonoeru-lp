@@ -115,7 +115,7 @@
 </div>
 
 <nav class="toc" aria-label="もくじ">
-  <div class="toc-head"><h2>もくじ — Web表現図鑑</h2><span class="cnt">全16項目 · 100選へ拡充中</span></div>
+  <div class="toc-head"><h2>もくじ — Web表現図鑑</h2><span class="cnt">全16項目 · 少しずつ追加中</span></div>
   <div class="cols">
     <div class="col"><h3>スクロール演出</h3>
       <a href="#t1">なめらかスクロール<span class="e">01</span></a>
@@ -456,16 +456,15 @@
     var el=e.target;
     if(e.isIntersecting){
       el.classList.add("in");
+      if(el.classList.contains("mask")){el.classList.remove("play");void el.offsetWidth;el.classList.add("play");} /* 開く演出を再生（画像は常時表示） */
       if(el.classList.contains("count"))countUp(el);
       if(el.classList.contains("tw"))typewrite(el);
-    }else if(!el.classList.contains("mask")){ /* マスクは一度開いたら維持＝消えない */
-      el.classList.remove("in");
-      if(el.classList.contains("tw"))el.classList.remove("done");
+    }else{
+      if(el.classList.contains("mask")){el.classList.remove("play");}
+      else{el.classList.remove("in");if(el.classList.contains("tw"))el.classList.remove("done");}
     }
   });},{threshold:.08,rootMargin:"0px 0px -4% 0px"});
-  if(!reduce) document.querySelectorAll(".mask").forEach(function(el){el.classList.add("anim");});
   document.querySelectorAll(".rt,.mask,.count,.draw-svg,.tw").forEach(function(el){io.observe(el);});
-  setTimeout(function(){document.querySelectorAll(".mask:not(.in)").forEach(function(el){el.classList.add("in");});},2500); /* 保険：必ず表示 */
 
   /* スクロールで色反転（中央バンドで切替・何度でも） */
   var iv=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle("in",e.isIntersecting);});},{rootMargin:"-38% 0px -38% 0px"});
