@@ -456,12 +456,12 @@
     var el=e.target;
     if(e.isIntersecting){
       el.classList.add("in");
-      if(el.classList.contains("mask")){el.classList.remove("play");void el.offsetWidth;el.classList.add("play");} /* 開く演出を再生（画像は常時表示） */
+      if(el.classList.contains("mask")){el.classList.add("play");io.unobserve(el);return;} /* 1回だけ開いて終わり＝点滅しない（画像は常時表示） */
       if(el.classList.contains("count"))countUp(el);
       if(el.classList.contains("tw"))typewrite(el);
     }else{
-      if(el.classList.contains("mask")){el.classList.remove("play");}
-      else{el.classList.remove("in");if(el.classList.contains("tw"))el.classList.remove("done");}
+      el.classList.remove("in");
+      if(el.classList.contains("tw"))el.classList.remove("done");
     }
   });},{threshold:.08,rootMargin:"0px 0px -4% 0px"});
   document.querySelectorAll(".rt,.mask,.count,.draw-svg,.tw").forEach(function(el){io.observe(el);});
