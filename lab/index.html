@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="hYRflPVBHV_SbReXwN_7v4tNCf6AT3VusKhSviD5kPU" />
 <title>Web表現ずかん｜スクロールの"しかけ"を実演と用語で｜ととのえる屋</title>
-<meta name="description" content="サイトでよく見る「なんかかっこいい動き」を、実演＋やさしい言葉＋専門用語集でまるごと解説。なめらかスクロール・パララックス・マスクリビール・モーダル・タブ・コードコピーなど22種を、その場で体感できます。テンプレとの違いも。長野県小諸市のHP・LP制作 ととのえる屋。">
+<meta name="description" content="サイトでよく見る「なんかかっこいい動き」を、実演＋やさしい言葉＋専門用語集でまるごと解説。なめらかスクロール・パララックス・マスクリビール・モーダル・タブ・横スクロール・ダークモードなど27種を、その場で体感できます。テンプレとの違いも。長野県小諸市のHP・LP制作 ととのえる屋。">
 <meta name="keywords" content="Web表現, ホームページ 動き, パララックス, なめらかスクロール, SVGアニメーション, ページ遷移, Web制作 小諸, HP制作 長野, 非エンジニア Web, ととのえる屋">
 <link rel="canonical" href="https://totonoeruya.jp/lab/">
 
 <meta property="og:title" content="Web表現ずかん｜スクロールの"しかけ"を実演と用語で">
-<meta property="og:description" content="サイトの「なんかかっこいい動き」を、実演＋やさしい言葉＋用語集でまるごと。なめらかスクロール・パララックス・マスクリビール・モーダル・タブ・コードコピーなど22種を体感。">
+<meta property="og:description" content="サイトの「なんかかっこいい動き」を、実演＋やさしい言葉＋用語集でまるごと。なめらかスクロール・パララックス・モーダル・横スクロール・ダークモードなど27種を体感。">
 <meta property="og:url" content="https://totonoeruya.jp/lab/">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://totonoeruya.jp/og.jpg">
@@ -72,7 +72,10 @@
         { "@type": "DefinedTerm", "name": "タブ", "description": "見出しを押すと同じ場所で中身が切り替わるUI。スクロール量を増やさず複数の情報を見せる。" },
         { "@type": "DefinedTerm", "name": "トースト", "description": "画面のすみに数秒だけ出て自動で消える小さな通知。「送信しました」等の軽い合図に使う。" },
         { "@type": "DefinedTerm", "name": "ツールチップ", "description": "言葉やアイコンに触れると出る小さな吹き出しの補足。本文を汚さず注釈を足せる。" },
-        { "@type": "DefinedTerm", "name": "クリップボードAPI", "description": "ボタン操作で文字をコピーさせるブラウザの仕組み。コードコピー機能などに使う。" }
+        { "@type": "DefinedTerm", "name": "クリップボードAPI", "description": "ボタン操作で文字をコピーさせるブラウザの仕組み。コードコピー機能などに使う。" },
+        { "@type": "DefinedTerm", "name": "スクロールスナップ", "description": "スクロールすると1枚ずつ吸い付くように止まるCSSの仕組み（scroll-snap）。横並びカードや縦の章送りに使う。" },
+        { "@type": "DefinedTerm", "name": "ダークモード", "description": "背景を暗くし目にやさしくする配色切替。色とコントラストだけを差し替え、中身は変えない。" },
+        { "@type": "DefinedTerm", "name": "シンタックスハイライト", "description": "コードのキーワード・文字列・コメントを色分けして読みやすくする表示。" }
       ]
     },
     {
@@ -120,12 +123,15 @@
 </div>
 
 <nav class="toc" aria-label="もくじ">
-  <div class="toc-head"><h2>もくじ — Web表現図鑑</h2><span class="cnt">全22項目 · 少しずつ追加中</span></div>
+  <div class="toc-head"><h2>もくじ — Web表現図鑑</h2><span class="cnt">全27項目 · 少しずつ追加中</span></div>
   <div class="cols">
     <div class="col"><h3>スクロール演出</h3>
       <a href="#t1">なめらかスクロール<span class="e">01</span></a>
       <a href="#t8">パララックス<span class="e">08</span></a>
       <a href="#t9">ピン留め<span class="e">09</span></a>
+      <a href="#t23">横スクロール<span class="e">23</span></a>
+      <a href="#t24">スクロールスナップ<span class="e">24</span></a>
+      <a href="#t25">進捗バー<span class="e">25</span></a>
     </div>
     <div class="col"><h3>文字・数字</h3>
       <a href="#t3">テキストリビール<span class="e">03</span></a>
@@ -149,6 +155,7 @@
     <div class="col"><h3>図解・質感</h3>
       <a href="#t7">SVG線画図解<span class="e">07</span></a>
       <a href="#t15">色反転<span class="e">15</span></a>
+      <a href="#t26">ダークモード<span class="e">26</span></a>
     </div>
     <div class="col"><h3>UI部品</h3>
       <a href="#t17">モーダル<span class="e">17</span></a>
@@ -159,6 +166,7 @@
     <div class="col"><h3>コード・技術</h3>
       <a href="#t21">コードコピー<span class="e">21</span></a>
       <a href="#t22">ライブプレビュー<span class="e">22</span></a>
+      <a href="#t27">シンタックスハイライト<span class="e">27</span></a>
     </div>
   </div>
 </nav>
@@ -178,11 +186,11 @@
 <section id="t2" class="tech">
   <div class="head"><span class="num">02</span><span class="en">Hover Interaction</span></div>
   <h2 class="rt rt-big">触れると、線が引かれる。</h2>
-  <p class="one">カードにカーソルを乗せると、下線が左から伸び、矢印が動きます。</p>
+  <p class="one">カードにカーソルを乗せると、下線が左から伸び、矢印が動きます。——この3枚は、実は押すとそのまま各ページへ。</p>
   <div class="demo cards">
-    <div class="card"><h3>HP・LP制作</h3><p>言葉を集約し、核だけ残す。</p><div class="arw">→</div><span class="edge"></span></div>
-    <div class="card"><h3>清掃</h3><p>現場の事務作業まで、AIで軽く。</p><div class="arw">→</div><span class="edge"></span></div>
-    <div class="card"><h3>ギター教室</h3><p>続けたくなることを、大事に。</p><div class="arw">→</div><span class="edge"></span></div>
+    <a class="card" href="/web/"><h3>HP・LP制作</h3><p>言葉を集約し、核だけ残す。</p><div class="arw">→</div><span class="edge"></span></a>
+    <a class="card" href="/cleaning/"><h3>清掃</h3><p>現場の事務作業まで、AIで軽く。</p><div class="arw">→</div><span class="edge"></span></a>
+    <a class="card" href="/guitar/"><h3>ギター教室</h3><p>続けたくなることを、大事に。</p><div class="arw">→</div><span class="edge"></span></a>
   </div>
   <div class="meta">
     <div><div class="k">どんな時に効く</div><div class="v">「押せる/反応する」が直感的に伝わる。回遊と問い合わせの後押し。</div></div>
@@ -218,7 +226,7 @@
   <div class="head"><span class="num">05</span><span class="en">Magnetic Button</span></div>
   <h2 class="rt rt-big">ボタンが、指に吸い付く。</h2>
   <p class="one">ボタンの近くにカーソルを寄せると、少し近づいてきます。押し心地のための"気持ちよさ"。</p>
-  <div class="demo mag-wrap"><button class="mag" id="mag">相談する →</button></div>
+  <div class="demo mag-wrap"><a class="mag" id="mag" href="/web/#contact">相談する →</a></div>
   <div class="meta">
     <div><div class="k">どんな時に効く</div><div class="v">いちばん押してほしいボタン（CTA）に1つだけ。</div></div>
     <div><div class="k">重さ・SEO</div><div class="v">軽いJavaScript。影響なし。やり過ぎ注意（多用は逆効果）。</div></div>
@@ -506,11 +514,101 @@ npm run dev</code></pre>
   </div>
 </section>
 
+<div class="cat-label"><span>スクロール演出 — 第二集</span></div>
+
+<!-- 23 horizontal scroll（動線内蔵） -->
+<section id="t23" class="tech">
+  <div class="head"><span class="num">23</span><span class="en">Horizontal Scroll</span></div>
+  <h2 class="rt rt-big">横に、すーっと流れる。</h2>
+  <p class="one">指やマウスで横にドラッグ（PCはホイールでも横に動きます）。場所を取らずに、たくさんのカードを並べられます。——この5枚は、押すとそのまま各ページへ。</p>
+  <div class="demo hscroll" id="hscroll">
+    <a class="hs-card" href="/web/"><span class="hs-n">01</span><h3>HP・LP制作</h3><p>言葉を集約し、核だけ残したサイトを。</p><span class="hs-go">見る →</span></a>
+    <a class="hs-card" href="/cleaning/"><span class="hs-n">02</span><h3>清掃</h3><p>現場の事務を、写真とAIで軽く。</p><span class="hs-go">見る →</span></a>
+    <a class="hs-card" href="/guitar/"><span class="hs-n">03</span><h3>ギター教室</h3><p>続けたくなることを、大事に。</p><span class="hs-go">見る →</span></a>
+    <a class="hs-card" href="/totoline/"><span class="hs-n">04</span><h3>totoline</h3><p>LINEの会話を、AIが台帳に。</p><span class="hs-go">見る →</span></a>
+    <a class="hs-card" href="/articles/"><span class="hs-n">05</span><h3>ジャーナル</h3><p>地元×AIの記録を、すこしずつ。</p><span class="hs-go">見る →</span></a>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">実績・メニュー・事例を場所を取らず一覧に。そのまま各ページの入口になる。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">CSSのスクロールスナップ＋軽いJS。リンクは普通に辿られ、読まれる。</div></div>
+  </div>
+</section>
+
+<!-- 24 scroll snap -->
+<section id="t24" class="tech">
+  <div class="head"><span class="num">24</span><span class="en">Scroll Snap</span></div>
+  <h2 class="rt rt-big">パシッと、1枚ずつ止まる。</h2>
+  <p class="one">下の枠の中を縦にスクロールすると、1枚ずつ吸い付くように止まります。最後の1枚は、そのまま相談の入口に。</p>
+  <div class="demo snap" id="snap">
+    <div class="snap-panel"><span class="sp-n">つくる</span><p>HP・LP・冊子・サイネージ。</p></div>
+    <div class="snap-panel"><span class="sp-n">まわす</span><p>現場のAI集約・LINE業務集約。</p></div>
+    <div class="snap-panel"><span class="sp-n">おしえる</span><p>研修・ギター教室。</p></div>
+    <a class="snap-panel cta" href="/web/#contact"><span class="sp-n">ととのえる</span><p>何から始めるか分からなくても、相談から →</p></a>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">手順・ストーリーを1画面ずつ見せ、最後に行き先（CTA）へつなぐ。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">CSSの scroll-snap だけ。とても軽い。</div></div>
+  </div>
+</section>
+
+<!-- 25 reading progress -->
+<section id="t25" class="tech">
+  <div class="head"><span class="num">25</span><span class="en">Reading Progress</span></div>
+  <h2 class="rt rt-big">どこまで読んだか、上の線でわかる。</h2>
+  <p class="one">ページのいちばん上に、細い進捗バーがもう出ています。スクロールすると、読み進んだぶんだけ伸びます（このページで実際に動いています）。</p>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">長い記事・縦長LP。読者に「あと少し」を伝え、離脱を減らす。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">ごく軽いJS。中身には影響なし。</div></div>
+  </div>
+</section>
+
+<div class="cat-label"><span>図解・質感 — 第二集</span></div>
+
+<!-- 26 dark mode -->
+<section id="t26" class="tech">
+  <div class="head"><span class="num">26</span><span class="en">Dark Mode Toggle</span></div>
+  <h2 class="rt rt-big">スイッチひとつで、夜になる。</h2>
+  <p class="one">下のスイッチを押すと、見本が「明るい紙」と「夜」で切り替わります。好みや時間帯に合わせて、目にやさしく。</p>
+  <div class="demo dm" id="dm">
+    <div class="dm-bar"><span class="dm-lab">明るい / 夜</span><button class="dm-toggle" id="dmToggle" role="switch" aria-checked="false" aria-label="ダークモード切替"><span class="dm-knob"></span></button></div>
+    <div class="dm-preview">
+      <p class="dm-ey">Preview</p>
+      <h3>同じ中身が、装いを変える。</h3>
+      <p class="dm-tx">色とコントラストだけを差し替えています。文字も構造もそのまま。だから検索やAIへの読まれ方は変わりません。</p>
+      <a class="ui-btn solid" href="/web/#contact">相談する →</a>
+    </div>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">長時間読むサイト・夜に見る人が多いサービス。好みへの配慮。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">色の差し替えだけ。軽い。設定を覚えさせることもできる。</div></div>
+  </div>
+</section>
+
+<!-- 27 syntax highlight -->
+<section id="t27" class="tech">
+  <div class="head"><span class="num">27</span><span class="en">Syntax Highlight</span></div>
+  <h2 class="rt rt-big">コードに、色がつく。</h2>
+  <p class="one">キーワード・文字列・コメントを色分けすると、コードがぐっと読みやすくなります。技術記事や手引きの定番です。</p>
+  <div class="demo code-block">
+    <div class="code-top"><span class="code-lang">javascript</span><button class="code-copy" id="codeCopy2">コピー</button></div>
+<pre><code id="codeBody2"><span class="tok-com">// LINEの会話を、AIで台帳に集約する</span>
+<span class="tok-key">async function</span> <span class="tok-fn">totonoeru</span>(message) {
+  <span class="tok-key">const</span> task = <span class="tok-key">await</span> ai.<span class="tok-fn">summarize</span>(message)
+  <span class="tok-key">return</span> { <span class="tok-key">title</span>: <span class="tok-str">"今日の記録"</span>, task }
+}</code></pre>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">手順・サンプルコードを載せる記事や資料。読みやすさが信頼につながる。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">色付けは見た目だけ。コードは文字なのでそのまま読まれる。</div></div>
+  </div>
+</section>
+
+<div class="readbar" id="readbar" aria-hidden="true"></div>
 <div class="toast" id="toast" role="status" aria-live="polite"><span class="t-dot"></span>送信しました。ありがとうございます。</div>
 
 <!-- glossary -->
 <section class="glossary">
-  <div class="sec-top"><h2 style="font-weight:400;font-size:clamp(22px,3vw,36px)">専門用語、やさしい一覧。</h2><span class="note">Glossary · 23語</span></div>
+  <div class="sec-top"><h2 style="font-weight:400;font-size:clamp(22px,3vw,36px)">専門用語、やさしい一覧。</h2><span class="note">Glossary · 26語</span></div>
   <div class="g-grid">
     <dl><dt>HTML<small>HyperText Markup Language</small></dt><dd>ページの骨組み。見出し・段落・画像など「中身と構造」を書く言語。</dd></dl>
     <dl><dt>CSS<small>Cascading Style Sheets</small></dt><dd>見た目の指定。色・大きさ・配置・動きを決める。</dd></dl>
@@ -535,6 +633,9 @@ npm run dev</code></pre>
     <dl><dt>トースト<small>Toast</small></dt><dd>画面のすみに数秒だけ出て自動で消える小さな通知。送信完了などの軽い合図に。</dd></dl>
     <dl><dt>ツールチップ<small>Tooltip</small></dt><dd>言葉やアイコンに触れると出る小さな吹き出しの補足。本文を汚さず注釈を足せる。</dd></dl>
     <dl><dt>クリップボードAPI<small>Clipboard API</small></dt><dd>ボタン操作で文字をコピーさせるブラウザの仕組み。コードコピー機能などに使う。</dd></dl>
+    <dl><dt>スクロールスナップ<small>Scroll Snap</small></dt><dd>スクロールすると1枚ずつ吸い付くように止まるCSSの仕組み。横カード・縦の章送りに。</dd></dl>
+    <dl><dt>ダークモード<small>Dark Mode</small></dt><dd>背景を暗くし目にやさしくする配色切替。色とコントラストだけを差し替え、中身は変えない。</dd></dl>
+    <dl><dt>シンタックスハイライト<small>Syntax Highlight</small></dt><dd>コードのキーワード・文字列・コメントを色分けして読みやすくする表示。</dd></dl>
   </div>
 </section>
 
@@ -703,6 +804,45 @@ npm run dev</code></pre>
       lvCode.textContent=".box {\n  border-radius: "+r+"px;\n  box-shadow: 0 "+Math.round(s/2)+"px "+s+"px;\n}";
     }
     lvRad.addEventListener("input",lvUpdate);lvSh.addEventListener("input",lvUpdate);lvUpdate();
+  }
+
+  /* 23 横スクロール（ホイール横変換＋ドラッグ） */
+  var hs=document.getElementById("hscroll");
+  if(hs){
+    hs.addEventListener("wheel",function(e){ if(Math.abs(e.deltaY)>Math.abs(e.deltaX)){hs.scrollLeft+=e.deltaY;e.preventDefault();} },{passive:false});
+    var down=false,sx=0,sl=0,moved=0;
+    hs.addEventListener("pointerdown",function(e){down=true;sx=e.clientX;sl=hs.scrollLeft;moved=0;hs.classList.add("grab");});
+    hs.addEventListener("pointermove",function(e){if(!down)return;var d=e.clientX-sx;moved=Math.abs(d);hs.scrollLeft=sl-d;});
+    function hsUp(){down=false;hs.classList.remove("grab");}
+    hs.addEventListener("pointerup",hsUp);hs.addEventListener("pointerleave",hsUp);
+    hs.addEventListener("click",function(e){ if(moved>6)e.preventDefault(); },true); /* ドラッグ後の誤クリック防止 */
+  }
+
+  /* 25 読み進み進捗バー */
+  var rb=document.getElementById("readbar");
+  if(rb){
+    function rbUpd(){var h=document.documentElement;var max=h.scrollHeight-h.clientHeight;var p=max>0?(h.scrollTop||document.body.scrollTop)/max:0;rb.style.transform="scaleX("+Math.min(Math.max(p,0),1)+")";}
+    addEventListener("scroll",rbUpd,{passive:true});addEventListener("resize",rbUpd);rbUpd();
+  }
+
+  /* 26 ダークモード切替（デモ枠内） */
+  var dm=document.getElementById("dm"),dmToggle=document.getElementById("dmToggle");
+  if(dm&&dmToggle){
+    dmToggle.addEventListener("click",function(){
+      var on=dm.classList.toggle("dark");
+      dmToggle.setAttribute("aria-checked",on?"true":"false");
+    });
+  }
+
+  /* 27 もう一つのコードコピー */
+  var codeCopy2=document.getElementById("codeCopy2"),codeBody2=document.getElementById("codeBody2");
+  if(codeCopy2&&codeBody2){
+    codeCopy2.addEventListener("click",function(){
+      var txt=codeBody2.innerText;
+      var done=function(){codeCopy2.textContent="コピーしました";codeCopy2.classList.add("ok");setTimeout(function(){codeCopy2.textContent="コピー";codeCopy2.classList.remove("ok");},1600);};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done,done);}
+      else{try{var ta=document.createElement("textarea");ta.value=txt;document.body.appendChild(ta);ta.select();document.execCommand("copy");document.body.removeChild(ta);}catch(e){}done();}
+    });
   }
 })();
 </script>

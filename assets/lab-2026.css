@@ -240,3 +240,55 @@ dialog.md h3{font-size:20px;font-weight:500;margin-bottom:12px}
 .live-stage{display:flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:10px;background:var(--paper-2);padding:24px}
 .live-box{width:min(220px,80%);aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;background:var(--accent);color:var(--paper);font-family:var(--mono);font-size:12px;letter-spacing:.14em}
 @media(max-width:680px){.live{grid-template-columns:1fr}}
+
+/* ===== スクロール演出 第二集（23-25）＋ 図解質感(26)＋ コード(27) ===== */
+/* 02 hover card をリンク化したため block 指定 */
+a.card{display:block;text-decoration:none;color:inherit}
+
+/* 23 横スクロール（動線内蔵カード） */
+.hscroll{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 4px 18px;cursor:grab;scrollbar-width:thin}
+.hscroll.grab{cursor:grabbing}
+.hscroll::-webkit-scrollbar{height:6px}
+.hscroll::-webkit-scrollbar-thumb{background:var(--line);border-radius:999px}
+.hs-card{flex:0 0 248px;scroll-snap-align:start;display:flex;flex-direction:column;border:1px solid var(--line);border-radius:10px;padding:24px 22px;background:rgba(255,255,255,.28);text-decoration:none;color:inherit;transition:transform .3s,border-color .3s}
+.hs-card:hover{transform:translateY(-4px);border-color:var(--accent)}
+.hs-card .hs-n{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--accent);margin-bottom:14px}
+.hs-card h3{font-size:17px;font-weight:500;margin-bottom:8px}
+.hs-card p{font-size:13px;font-weight:300;line-height:1.8;color:var(--ink-soft);flex:1}
+.hs-card .hs-go{margin-top:18px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--accent)}
+.hs-card:hover .hs-go{padding-left:4px}
+
+/* 24 スクロールスナップ */
+.snap{height:280px;overflow-y:auto;scroll-snap-type:y mandatory;border:1px solid var(--line);border-radius:10px;scrollbar-width:thin}
+.snap::-webkit-scrollbar{width:6px}
+.snap::-webkit-scrollbar-thumb{background:var(--line);border-radius:999px}
+.snap-panel{height:280px;scroll-snap-align:start;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;padding:24px;border-bottom:1px solid var(--line-soft)}
+.snap-panel .sp-n{font-size:clamp(26px,4vw,40px);font-weight:300;color:var(--accent);letter-spacing:.04em}
+.snap-panel p{font-size:14px;font-weight:300;color:var(--ink-soft)}
+a.snap-panel.cta{text-decoration:none;color:inherit;background:var(--paper-2);transition:background .3s}
+a.snap-panel.cta:hover{background:var(--accent)}
+a.snap-panel.cta:hover .sp-n,a.snap-panel.cta:hover p{color:var(--paper)}
+
+/* 25 読み進み進捗バー */
+.readbar{position:fixed;top:0;left:0;height:3px;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:left;z-index:9994;pointer-events:none;will-change:transform}
+
+/* 26 ダークモード切替（デモ枠内） */
+.dm{border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.dm-bar{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(--line)}
+.dm-lab{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.dm-toggle{position:relative;width:52px;height:28px;border-radius:999px;border:1px solid var(--line);background:var(--paper-2);cursor:pointer;transition:background .3s,border-color .3s;padding:0}
+.dm-toggle .dm-knob{position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:var(--accent);transition:transform .3s cubic-bezier(.2,.7,.2,1)}
+.dm.dark .dm-toggle{background:#1f1d19;border-color:#3a352d}
+.dm.dark .dm-toggle .dm-knob{transform:translateX(24px)}
+.dm-preview{padding:34px 30px;background:var(--paper);color:var(--ink);transition:background .4s ease,color .4s ease}
+.dm-preview .dm-ey{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.dm-preview h3{font-size:19px;font-weight:500;margin-bottom:10px}
+.dm-preview .dm-tx{font-size:13px;font-weight:300;line-height:1.9;color:var(--ink-soft);margin-bottom:20px}
+.dm.dark .dm-preview{background:#1a1815;color:#f2ede4}
+.dm.dark .dm-preview .dm-tx{color:#b9b1a4}
+
+/* 27 シンタックスハイライト（手動トークン） */
+.code-block .tok-com{color:#8a8577}
+.code-block .tok-key{color:#d99a5b}
+.code-block .tok-str{color:#a9bd86}
+.code-block .tok-fn{color:#e6c07b}
