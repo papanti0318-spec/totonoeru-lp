@@ -358,3 +358,68 @@ dialog.lightbox img{max-width:92vw;max-height:90vh;border-radius:8px;display:blo
 .code-tabs .ct-pane.code-block{border-radius:0 8px 8px 8px}
 
 @media(prefers-reduced-motion:reduce){.flip-in,.ring-fg{transition:none}.ring.in .ring-fg{stroke-dashoffset:calc(100 - var(--val))}}
+
+/* ===== 情報を整理する表現 第四集（33-37） ===== */
+.hide{display:none!important}
+
+/* 33 タイムライン（動線内蔵） */
+.timeline{padding-left:4px}
+.tl-item{position:relative;padding:0 0 28px 30px;border-left:1px solid var(--line);opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.tl-item:last-child{padding-bottom:0}
+.tl-item.in{opacity:1;transform:none}
+.tl-item:nth-child(2){transition-delay:.08s}
+.tl-item:nth-child(3){transition-delay:.16s}
+.tl-item:nth-child(4){transition-delay:.24s}
+.tl-item:nth-child(5){transition-delay:.32s}
+.tl-dot{position:absolute;left:-5px;top:3px;width:9px;height:9px;border-radius:50%;background:var(--accent)}
+.tl-step{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--accent)}
+.tl-c h3{font-size:16px;font-weight:500;margin:4px 0 6px}
+.tl-c p{font-size:13px;font-weight:300;line-height:1.8;color:var(--ink-soft);max-width:40em}
+.tl-go{display:inline-block;margin-top:10px;font-family:var(--mono);font-size:11px;color:var(--accent);text-decoration:none}
+.tl-go:hover{padding-left:4px}
+
+/* 34 タグフィルタ（動線内蔵） */
+.tf-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.tf-tag{appearance:none;border:1px solid var(--line);background:none;border-radius:999px;padding:7px 16px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--muted);cursor:pointer;transition:.2s}
+.tf-tag:hover{border-color:var(--accent);color:var(--accent)}
+.tf-tag.is-on{background:var(--accent);color:var(--paper);border-color:var(--accent)}
+.tf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.tf-card{border:1px solid var(--line);border-radius:10px;padding:20px 18px;text-decoration:none;color:inherit;background:rgba(255,255,255,.28);transition:transform .25s,border-color .25s}
+.tf-card:hover{transform:translateY(-3px);border-color:var(--accent)}
+.tf-card h3{font-size:15px;font-weight:500;margin-bottom:6px}
+.tf-card span{font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--muted)}
+@media(max-width:680px){.tf-grid{grid-template-columns:1fr 1fr}}
+
+/* 35 比較表 列ハイライト */
+.cmp{overflow-x:auto}
+.cmp table{width:100%;border-collapse:collapse;font-size:13px;min-width:420px}
+.cmp th,.cmp td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line);font-weight:300}
+.cmp thead th{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:400}
+.cmp thead th.hl{color:var(--accent)}
+.cmp tbody th{font-weight:400;color:var(--ink)}
+.cmp td{color:var(--ink-soft)}
+.cmp td.hl{color:var(--ink)}
+.cmp [data-c]{transition:background .2s}
+.cmp .col-hl{background:var(--paper-2)}
+
+/* 36 FAQ 検索フィルタ（動線内蔵） */
+.fq-input{width:100%;border:1px solid var(--line);border-radius:8px;padding:13px 16px;font-family:var(--sans);font-size:14px;background:rgba(255,255,255,.4);color:var(--ink);margin-bottom:16px}
+.fq-input:focus{outline:none;border-color:var(--accent)}
+.fq-list{display:flex;flex-direction:column}
+.fq{border-bottom:1px solid var(--line);padding:16px 2px}
+.fq h3{font-size:14px;font-weight:500;margin-bottom:6px}
+.fq p{font-size:13px;font-weight:300;line-height:1.8;color:var(--ink-soft)}
+.fq a{color:var(--accent);text-decoration:none}
+.fq a:hover{padding-left:2px}
+.fq-empty{font-size:13px;font-weight:300;color:var(--muted);padding:16px 2px}
+
+/* 37 横バーメーター */
+.bars{display:flex;flex-direction:column;gap:18px}
+.bar-row{display:grid;grid-template-columns:140px 1fr 48px;align-items:center;gap:14px}
+.bar-l{font-size:13px;font-weight:300;color:var(--ink-soft)}
+.bar{height:8px;background:var(--line);border-radius:999px;overflow:hidden}
+.bar span{display:block;height:100%;width:0;background:var(--accent);border-radius:999px;transition:width 1.3s cubic-bezier(.2,.7,.2,1)}
+.bar.in span{width:var(--w)}
+.bar-v{font-family:var(--mono);font-size:12px;color:var(--accent);text-align:right}
+@media(max-width:680px){.bar-row{grid-template-columns:92px 1fr 40px;gap:10px}.bar-l{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.tl-item{opacity:1;transform:none}.bar span{transition:none}.bar.in span{width:var(--w)}}

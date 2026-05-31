@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="hYRflPVBHV_SbReXwN_7v4tNCf6AT3VusKhSviD5kPU" />
 <title>Web表現ずかん｜スクロールの"しかけ"を実演と用語で｜ととのえる屋</title>
-<meta name="description" content="サイトでよく見る「なんかかっこいい動き」を、実演＋やさしい言葉＋専門用語集でまるごと解説。なめらかスクロール・パララックス・マスクリビール・モーダル・タブ・横スクロール・ダークモード・ステップフォームなど32種を、その場で体感できます。テンプレとの違いも。長野県小諸市のHP・LP制作 ととのえる屋。">
+<meta name="description" content="サイトでよく見る「なんかかっこいい動き」を、実演＋やさしい言葉＋専門用語集でまるごと解説。なめらかスクロール・パララックス・マスクリビール・モーダル・タブ・横スクロール・ダークモード・タイムライン・FAQ検索など37種を、その場で体感できます。テンプレとの違いも。長野県小諸市のHP・LP制作 ととのえる屋。">
 <meta name="keywords" content="Web表現, ホームページ 動き, パララックス, なめらかスクロール, SVGアニメーション, ページ遷移, Web制作 小諸, HP制作 長野, 非エンジニア Web, ととのえる屋">
 <link rel="canonical" href="https://totonoeruya.jp/lab/">
 
 <meta property="og:title" content="Web表現ずかん｜スクロールの"しかけ"を実演と用語で">
-<meta property="og:description" content="サイトの「なんかかっこいい動き」を、実演＋やさしい言葉＋用語集でまるごと。なめらかスクロール・モーダル・横スクロール・ダークモード・ステップフォームなど32種を体感。">
+<meta property="og:description" content="サイトの「なんかかっこいい動き」を、実演＋やさしい言葉＋用語集でまるごと。なめらかスクロール・モーダル・横スクロール・ダークモード・タイムライン・FAQ検索など37種を体感。">
 <meta property="og:url" content="https://totonoeruya.jp/lab/">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://totonoeruya.jp/og.jpg">
@@ -77,7 +77,9 @@
         { "@type": "DefinedTerm", "name": "ダークモード", "description": "背景を暗くし目にやさしくする配色切替。色とコントラストだけを差し替え、中身は変えない。" },
         { "@type": "DefinedTerm", "name": "シンタックスハイライト", "description": "コードのキーワード・文字列・コメントを色分けして読みやすくする表示。" },
         { "@type": "DefinedTerm", "name": "ステップフォーム", "description": "長い入力フォームを1問ずつの段階に分け、答えやすくして途中離脱を減らすUI。" },
-        { "@type": "DefinedTerm", "name": "ライトボックス", "description": "サムネイル画像を押すと、背景を暗くして大きく開く拡大表示。実績や事例を見せるのに使う。" }
+        { "@type": "DefinedTerm", "name": "ライトボックス", "description": "サムネイル画像を押すと、背景を暗くして大きく開く拡大表示。実績や事例を見せるのに使う。" },
+        { "@type": "DefinedTerm", "name": "タイムライン", "description": "出来事や手順を時系列で縦に並べる表現。制作フローや沿革を、ひと目で見せる。" },
+        { "@type": "DefinedTerm", "name": "フィルタリング", "description": "タグやキーワードで一覧を絞り込む仕組み。記事・実績・FAQが多いときに探す手間を減らす。" }
       ]
     },
     {
@@ -125,7 +127,7 @@
 </div>
 
 <nav class="toc" aria-label="もくじ">
-  <div class="toc-head"><h2>もくじ — Web表現図鑑</h2><span class="cnt">全32項目 · 少しずつ追加中</span></div>
+  <div class="toc-head"><h2>もくじ — Web表現図鑑</h2><span class="cnt">全37項目 · 少しずつ追加中</span></div>
   <div class="cols">
     <div class="col"><h3>スクロール演出</h3>
       <a href="#t1">なめらかスクロール<span class="e">01</span></a>
@@ -155,12 +157,15 @@
     <div class="col"><h3>ナビ・遷移</h3>
       <a href="#t10">ページ遷移<span class="e">10</span></a>
       <a href="#t16">アコーディオン<span class="e">16</span></a>
+      <a href="#t34">タグフィルタ<span class="e">34</span></a>
     </div>
     <div class="col"><h3>図解・質感</h3>
       <a href="#t7">SVG線画図解<span class="e">07</span></a>
       <a href="#t15">色反転<span class="e">15</span></a>
       <a href="#t26">ダークモード<span class="e">26</span></a>
       <a href="#t31">プログレスサークル<span class="e">31</span></a>
+      <a href="#t33">タイムライン<span class="e">33</span></a>
+      <a href="#t37">横バーメーター<span class="e">37</span></a>
     </div>
     <div class="col"><h3>UI部品</h3>
       <a href="#t17">モーダル<span class="e">17</span></a>
@@ -168,6 +173,8 @@
       <a href="#t19">トースト通知<span class="e">19</span></a>
       <a href="#t20">ツールチップ<span class="e">20</span></a>
       <a href="#t28">ステップフォーム<span class="e">28</span></a>
+      <a href="#t35">比較表ハイライト<span class="e">35</span></a>
+      <a href="#t36">FAQ検索<span class="e">36</span></a>
     </div>
     <div class="col"><h3>コード・技術</h3>
       <a href="#t21">コードコピー<span class="e">21</span></a>
@@ -737,12 +744,119 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
   </div>
 </section>
 
+<div class="cat-label"><span>情報を整理する表現 — 第四集</span></div>
+
+<!-- 33 timeline（動線内蔵） -->
+<section id="t33" class="tech">
+  <div class="head"><span class="num">33</span><span class="en">Timeline</span></div>
+  <h2 class="rt rt-big">流れが、縦につながる。</h2>
+  <p class="one">出来事や手順を、時系列で縦に並べます。制作の進み方を、ひと目で。画面に入ると順に現れます。</p>
+  <div class="demo timeline">
+    <div class="tl-item"><span class="tl-dot"></span><div class="tl-c"><span class="tl-step">01</span><h3>相談</h3><p>何がなんだか分からない、でも大丈夫。まず話を聞きます。</p></div></div>
+    <div class="tl-item"><span class="tl-dot"></span><div class="tl-c"><span class="tl-step">02</span><h3>設計</h3><p>言葉と構造を集約し、核だけ残す。</p></div></div>
+    <div class="tl-item"><span class="tl-dot"></span><div class="tl-c"><span class="tl-step">03</span><h3>制作</h3><p>テンプレに頼らず、手で作り込む。</p></div></div>
+    <div class="tl-item"><span class="tl-dot"></span><div class="tl-c"><span class="tl-step">04</span><h3>公開</h3><p>計測の仕込みまで。出して終わりにしない。</p></div></div>
+    <div class="tl-item"><span class="tl-dot"></span><div class="tl-c"><span class="tl-step">05</span><h3>併走</h3><p>公開後も、更新やAI活用を一緒に。</p><a class="tl-go" href="/web/#contact">相談する →</a></div></div>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">制作フロー・沿革・手順。順を追って「進み方」を見せたいとき。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">CSSだけで作れる。軽い。中身は文字なので読まれる。</div></div>
+  </div>
+</section>
+
+<!-- 34 tag filter（動線内蔵） -->
+<section id="t34" class="tech">
+  <div class="head"><span class="num">34</span><span class="en">Tag Filter</span></div>
+  <h2 class="rt rt-big">タグで、ぱっと絞り込む。</h2>
+  <p class="one">上のタグを押すと、合うものだけが残ります（このサイトのジャーナルでも使っています）。カードを押すと、そのまま各ページへ。</p>
+  <div class="demo tagfilter" id="tagfilter">
+    <div class="tf-tags">
+      <button class="tf-tag is-on" data-f="all">すべて</button>
+      <button class="tf-tag" data-f="web">制作</button>
+      <button class="tf-tag" data-f="clean">清掃</button>
+      <button class="tf-tag" data-f="ai">AI</button>
+    </div>
+    <div class="tf-grid">
+      <a class="tf-card" data-cat="web" href="/web/"><h3>HP・LP制作</h3><span>制作</span></a>
+      <a class="tf-card" data-cat="ai" href="/totoline/"><h3>totoline</h3><span>AI</span></a>
+      <a class="tf-card" data-cat="clean ai" href="/cleaning/"><h3>清掃 × AI</h3><span>清掃 / AI</span></a>
+      <a class="tf-card" data-cat="web" href="/lab/"><h3>Web表現ずかん</h3><span>制作</span></a>
+      <a class="tf-card" data-cat="ai" href="/articles/"><h3>ジャーナル</h3><span>AI</span></a>
+      <a class="tf-card" data-cat="clean" href="/cleaning/"><h3>別荘清掃</h3><span>清掃</span></a>
+    </div>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">記事・実績・商品が多いとき。見たい切り口だけにサッと絞る。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽いJS。全カードはHTMLにあるので、隠れても読まれる。</div></div>
+  </div>
+</section>
+
+<!-- 35 comparison table -->
+<section id="t35" class="tech">
+  <div class="head"><span class="num">35</span><span class="en">Comparison Table</span></div>
+  <h2 class="rt rt-big">表は、見ている列を強調。</h2>
+  <p class="one">どの列を見ているか、ホバーでふわっと浮かせます。比較表がぐっと見やすく。（テンプレと作り込みの違い・価格は出していません）</p>
+  <div class="demo cmp" id="cmp">
+    <table>
+      <thead><tr><th></th><th data-c="1">テンプレート</th><th data-c="2" class="hl">作り込み</th></tr></thead>
+      <tbody>
+        <tr><th>スピード</th><td data-c="1">速い</td><td data-c="2" class="hl">ふつう</td></tr>
+        <tr><th>独自の表現</th><td data-c="1">出しにくい</td><td data-c="2" class="hl">自由</td></tr>
+        <tr><th>他社との差</th><td data-c="1">似やすい</td><td data-c="2" class="hl">出せる</td></tr>
+        <tr><th>ブランド適合</th><td data-c="1">既製の枠で</td><td data-c="2" class="hl">合わせて設計</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">プラン・機能・他社比較。視線を当てた列を立てて、迷いを減らす。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">表は構造として読まれやすい。強調は軽いJSだけ。</div></div>
+  </div>
+</section>
+
+<!-- 36 FAQ search（動線内蔵） -->
+<section id="t36" class="tech">
+  <div class="head"><span class="num">36</span><span class="en">FAQ Search</span></div>
+  <h2 class="rt rt-big">打つそばから、絞り込む。</h2>
+  <p class="one">入力に文字を打つと、合う質問だけが残ります。FAQが多いときに、探す手間を消せます。試しに「料金」「エリア」「相談」など。</p>
+  <div class="demo faqsearch">
+    <input type="search" id="faqInput" class="fq-input" placeholder="キーワードで探す（例：料金 / エリア / 相談）" aria-label="FAQを検索">
+    <div class="fq-list" id="fqList">
+      <div class="fq"><h3>相談だけでも大丈夫ですか？</h3><p>はい。「何がなんだか分からない」だけでも構いません。</p></div>
+      <div class="fq"><h3>対応エリアはどこですか？</h3><p>小諸・御代田・軽井沢を中心に長野県内。制作・AIは全国オンライン対応です。</p></div>
+      <div class="fq"><h3>料金はどれくらいですか？</h3><p>内容で変わります。まずは相談から。 <a href="/web/#contact">相談する →</a></p></div>
+      <div class="fq"><h3>何ができるか分からなくても頼めますか？</h3><p>大丈夫です。やりたいことを一緒に言葉にするところから始めます。</p></div>
+      <div class="fq"><h3>連絡はどうすればいい？</h3><p>メールかLINEで気軽に。<a href="https://line.me/R/ti/p/@903xtesg" target="_blank" rel="noopener">LINEで話す →</a></p></div>
+    </div>
+    <p class="fq-empty" id="fqEmpty" hidden>近い質問が見つかりませんでした。そのまま相談でも大丈夫です。</p>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">FAQ・ヘルプが多いサイト。探す手間を消し、自己解決を助ける。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽いJS。質問は全部HTMLにあるので、絞っても読まれる。</div></div>
+  </div>
+</section>
+
+<!-- 37 bar meter -->
+<section id="t37" class="tech">
+  <div class="head"><span class="num">37</span><span class="en">Bar Meter</span></div>
+  <h2 class="rt rt-big">横の棒が、すーっと伸びる。</h2>
+  <p class="one">割合を横棒で。円より、複数を並べて比べるのが得意です。画面に入ると伸びます。（数値はデモ用の例です）</p>
+  <div class="demo bars">
+    <div class="bar-row"><div class="bar-l">つくる（制作）</div><div class="bar"><span style="--w:90%"></span></div><div class="bar-v"><span class="count" data-to="90">0</span>%</div></div>
+    <div class="bar-row"><div class="bar-l">まわす（AI集約）</div><div class="bar"><span style="--w:80%"></span></div><div class="bar-v"><span class="count" data-to="80">0</span>%</div></div>
+    <div class="bar-row"><div class="bar-l">おしえる（教育）</div><div class="bar"><span style="--w:65%"></span></div><div class="bar-v"><span class="count" data-to="65">0</span>%</div></div>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">複数の割合・スキル・進捗を並べて比べる。一覧性が高い。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">CSSの幅変化＋軽い数字アニメ。とても軽い。</div></div>
+  </div>
+</section>
+
 <div class="readbar" id="readbar" aria-hidden="true"></div>
 <div class="toast" id="toast" role="status" aria-live="polite"><span class="t-dot"></span>送信しました。ありがとうございます。</div>
 
 <!-- glossary -->
 <section class="glossary">
-  <div class="sec-top"><h2 style="font-weight:400;font-size:clamp(22px,3vw,36px)">専門用語、やさしい一覧。</h2><span class="note">Glossary · 28語</span></div>
+  <div class="sec-top"><h2 style="font-weight:400;font-size:clamp(22px,3vw,36px)">専門用語、やさしい一覧。</h2><span class="note">Glossary · 30語</span></div>
   <div class="g-grid">
     <dl><dt>HTML<small>HyperText Markup Language</small></dt><dd>ページの骨組み。見出し・段落・画像など「中身と構造」を書く言語。</dd></dl>
     <dl><dt>CSS<small>Cascading Style Sheets</small></dt><dd>見た目の指定。色・大きさ・配置・動きを決める。</dd></dl>
@@ -772,6 +886,8 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
     <dl><dt>シンタックスハイライト<small>Syntax Highlight</small></dt><dd>コードのキーワード・文字列・コメントを色分けして読みやすくする表示。</dd></dl>
     <dl><dt>ステップフォーム<small>Step Form</small></dt><dd>長い入力を1問ずつの段階に分け、答えやすくして途中離脱を減らすUI。</dd></dl>
     <dl><dt>ライトボックス<small>Lightbox</small></dt><dd>サムネイルを押すと背景を暗くして大きく開く拡大表示。実績や事例を見せるのに。</dd></dl>
+    <dl><dt>タイムライン<small>Timeline</small></dt><dd>出来事や手順を時系列で縦に並べる表現。制作フローや沿革を、ひと目で。</dd></dl>
+    <dl><dt>フィルタリング<small>Filtering</small></dt><dd>タグやキーワードで一覧を絞り込む仕組み。多いときに探す手間を減らす。</dd></dl>
   </div>
 </section>
 
@@ -838,7 +954,7 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
       if(el.classList.contains("tw"))el.classList.remove("done");
     }
   });},{threshold:.08,rootMargin:"0px 0px -4% 0px"});
-  document.querySelectorAll(".rt,.mask,.count,.draw-svg,.tw").forEach(function(el){io.observe(el);});
+  document.querySelectorAll(".rt,.mask,.count,.draw-svg,.tw,.tl-item,.bar").forEach(function(el){io.observe(el);});
 
   /* スクロールで色反転（中央バンドで切替・何度でも） */
   var iv=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle("in",e.isIntersecting);});},{rootMargin:"-38% 0px -38% 0px"});
@@ -1010,6 +1126,38 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
       cbtns.forEach(function(x){x.classList.remove("is-on");});b.classList.add("is-on");
       cpanes.forEach(function(p,j){p.classList.toggle("is-on",j===i);});
     });});
+  }
+
+  /* 34 タグフィルタ */
+  var tf=document.getElementById("tagfilter");
+  if(tf){
+    var ftags=tf.querySelectorAll(".tf-tag"),fcards=tf.querySelectorAll(".tf-card");
+    ftags.forEach(function(t){t.addEventListener("click",function(){
+      var f=t.dataset.f;
+      ftags.forEach(function(x){x.classList.remove("is-on");});t.classList.add("is-on");
+      fcards.forEach(function(c){var cat=c.dataset.cat||"";var show=(f==="all"||cat.split(" ").indexOf(f)>-1);c.classList.toggle("hide",!show);});
+    });});
+  }
+
+  /* 35 比較表 列ハイライト */
+  var cmp=document.getElementById("cmp");
+  if(cmp){
+    var cells=cmp.querySelectorAll("[data-c]");
+    cells.forEach(function(cell){
+      cell.addEventListener("pointerenter",function(){var c=cell.dataset.c;cells.forEach(function(x){x.classList.toggle("col-hl",x.dataset.c===c);});});
+    });
+    cmp.addEventListener("pointerleave",function(){cells.forEach(function(x){x.classList.remove("col-hl");});});
+  }
+
+  /* 36 FAQ 検索フィルタ */
+  var faqInput=document.getElementById("faqInput"),fqList=document.getElementById("fqList"),fqEmpty=document.getElementById("fqEmpty");
+  if(faqInput&&fqList){
+    var fqs=[].slice.call(fqList.querySelectorAll(".fq"));
+    faqInput.addEventListener("input",function(){
+      var q=faqInput.value.trim().toLowerCase();var shown=0;
+      fqs.forEach(function(f){var hit=q===""||f.textContent.toLowerCase().indexOf(q)>-1;f.classList.toggle("hide",!hit);if(hit)shown++;});
+      if(fqEmpty)fqEmpty.hidden=(shown>0);
+    });
   }
 })();
 </script>
