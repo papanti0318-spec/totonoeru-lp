@@ -419,17 +419,19 @@
   });
   /* スクロールで毎回再生（入った=in / 出た=戻す） */
   var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    var el=e.target;
     if(e.isIntersecting){
-      e.target.classList.add("in");
-      if(e.target.classList.contains("count"))countUp(e.target);
-      if(e.target.classList.contains("tw"))typewrite(e.target);
-    }else{
-      e.target.classList.remove("in");
-      if(e.target.classList.contains("tw"))e.target.classList.remove("done");
+      el.classList.add("in");
+      if(el.classList.contains("count"))countUp(el);
+      if(el.classList.contains("tw"))typewrite(el);
+    }else if(!el.classList.contains("mask")){ /* マスクは一度開いたら維持＝消えない */
+      el.classList.remove("in");
+      if(el.classList.contains("tw"))el.classList.remove("done");
     }
-  });},{threshold:.25,rootMargin:"-2% 0px -2% 0px"});
+  });},{threshold:.08,rootMargin:"0px 0px -4% 0px"});
   if(!reduce) document.querySelectorAll(".mask").forEach(function(el){el.classList.add("anim");});
   document.querySelectorAll(".rt,.mask,.count,.draw-svg,.tw").forEach(function(el){io.observe(el);});
+  setTimeout(function(){document.querySelectorAll(".mask:not(.in)").forEach(function(el){el.classList.add("in");});},2500); /* 保険：必ず表示 */
 
   /* スクロールで色反転（中央バンドで切替・何度でも） */
   var iv=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle("in",e.isIntersecting);});},{rootMargin:"-38% 0px -38% 0px"});
