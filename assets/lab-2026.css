@@ -159,3 +159,19 @@
 .acc .a{padding:0 4px 20px;font-size:14px;font-weight:300;line-height:1.9;color:var(--ink-soft)}
 
 .replay-note{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--muted);text-align:center;padding:18px 0 0}
+
+/* ===== もくじ（カタログ目次） ===== */
+.toc{max-width:1280px;margin:0 auto;padding:0 44px 90px}
+.toc .toc-head{display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:30px;margin-bottom:34px}
+.toc .toc-head h2{font-weight:400;font-size:clamp(20px,2.6vw,30px)}
+.toc .toc-head .cnt{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--accent);text-transform:uppercase}
+.toc .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 40px}
+.toc .col h3{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.toc .col a{display:flex;justify-content:space-between;gap:10px;padding:7px 0;font-size:14px;font-weight:300;color:var(--ink-soft);transition:.2s;border-bottom:1px solid var(--line-soft)}
+.toc .col a:hover{color:var(--accent);padding-left:6px}
+.toc .col a .e{font-family:var(--mono);font-size:10px;color:var(--muted)}
+.cat-label{max-width:1280px;margin:0 auto;padding:60px 44px 0}
+.cat-label span{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px}
+.cat-label span::before,.cat-label span::after{content:"";height:1px;background:var(--line);flex:1}
+@media(max-width:760px){.toc{padding:0 20px 60px}.toc .cols{grid-template-columns:1fr 1fr;gap:20px}.cat-label{padding:40px 20px 0}}
+@media(max-width:520px){.toc .cols{grid-template-columns:1fr}}

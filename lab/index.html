@@ -114,8 +114,42 @@
   <p>下にスクロールすると、ひとつずつ「しかけ」が出てきます。それぞれ <strong style="font-weight:500;color:var(--ink)">名前・ひとことで何か・実演・どんな時に効くか・重さやSEOへの影響</strong> を、正直に並べました。最後に専門用語集と「テンプレとは何か」も置いています。<br><span style="color:var(--accent)">※このページのしかけは、スクロールするたび何度でも再生されます。</span></p>
 </div>
 
+<nav class="toc" aria-label="もくじ">
+  <div class="toc-head"><h2>もくじ — Web表現図鑑</h2><span class="cnt">全16項目 · 100選へ拡充中</span></div>
+  <div class="cols">
+    <div class="col"><h3>スクロール演出</h3>
+      <a href="#t1">なめらかスクロール<span class="e">01</span></a>
+      <a href="#t8">パララックス<span class="e">08</span></a>
+      <a href="#t9">ピン留め<span class="e">09</span></a>
+    </div>
+    <div class="col"><h3>文字・数字</h3>
+      <a href="#t3">テキストリビール<span class="e">03</span></a>
+      <a href="#t13">タイプライター<span class="e">13</span></a>
+      <a href="#t14">マーキー<span class="e">14</span></a>
+      <a href="#t6">カウントアップ<span class="e">06</span></a>
+    </div>
+    <div class="col"><h3>画像</h3>
+      <a href="#t4">マスクリビール<span class="e">04</span></a>
+      <a href="#t11">Before / After<span class="e">11</span></a>
+    </div>
+    <div class="col"><h3>操作感</h3>
+      <a href="#t2">ホバー反応<span class="e">02</span></a>
+      <a href="#t5">マグネティック<span class="e">05</span></a>
+      <a href="#t12">3Dチルト<span class="e">12</span></a>
+    </div>
+    <div class="col"><h3>ナビ・遷移</h3>
+      <a href="#t10">ページ遷移<span class="e">10</span></a>
+      <a href="#t16">アコーディオン<span class="e">16</span></a>
+    </div>
+    <div class="col"><h3>図解・質感</h3>
+      <a href="#t7">SVG線画図解<span class="e">07</span></a>
+      <a href="#t15">色反転<span class="e">15</span></a>
+    </div>
+  </div>
+</nav>
+
 <!-- 01 smooth -->
-<section class="tech">
+<section id="t1" class="tech">
   <div class="head"><span class="num">01 — いま体感中</span><span class="en">Smooth Scroll</span></div>
   <h2>なめらかスクロール</h2>
   <p class="one">スクロールに"慣性"をつけて、ヌルッと滑らかに動かす。実はこのページ全体に、もう効いています。マウスホイールを少し回してみてください。</p>
@@ -126,7 +160,7 @@
 </section>
 
 <!-- 02 hover -->
-<section class="tech">
+<section id="t2" class="tech">
   <div class="head"><span class="num">02</span><span class="en">Hover Interaction</span></div>
   <h2 class="rt rt-big">触れると、線が引かれる。</h2>
   <p class="one">カードにカーソルを乗せると、下線が左から伸び、矢印が動きます。</p>
@@ -142,7 +176,7 @@
 </section>
 
 <!-- 03 text reveal -->
-<section class="tech">
+<section id="t3" class="tech">
   <div class="head"><span class="num">03</span><span class="en">Text Reveal</span></div>
   <h2 class="rt rt-big">見出しが、下から<br>すっと立ち上がる。</h2>
   <p class="one">画面に入ると、覆いの下から文字が現れます（上の見出しがそれです）。</p>
@@ -153,7 +187,7 @@
 </section>
 
 <!-- 04 mask -->
-<section class="tech">
+<section id="t4" class="tech">
   <div class="head"><span class="num">04</span><span class="en">Mask Reveal + Zoom</span></div>
   <h2 class="rt rt-big">写真が、開いて現れる。</h2>
   <p class="one">マスク（覆い）が左から開いて写真が出ます。ホバーでゆっくり寄ります。</p>
@@ -165,7 +199,7 @@
 </section>
 
 <!-- 05 magnetic -->
-<section class="tech">
+<section id="t5" class="tech">
   <div class="head"><span class="num">05</span><span class="en">Magnetic Button</span></div>
   <h2 class="rt rt-big">ボタンが、指に吸い付く。</h2>
   <p class="one">ボタンの近くにカーソルを寄せると、少し近づいてきます。押し心地のための"気持ちよさ"。</p>
@@ -177,7 +211,7 @@
 </section>
 
 <!-- 06 count -->
-<section class="tech">
+<section id="t6" class="tech">
   <div class="head"><span class="num">06</span><span class="en">Count Up</span></div>
   <h2 class="rt rt-big">数字が、スルスル上がる。</h2>
   <p class="one">画面に入ると 0 から目標値まで動きます。</p>
@@ -193,7 +227,7 @@
 </section>
 
 <!-- 07 diagram -->
-<section class="tech">
+<section id="t7" class="tech">
   <div class="head"><span class="num">07</span><span class="en">Animated Diagram (SVG)</span></div>
   <h2 class="rt rt-big">3つが、1つに集まる。</h2>
   <p class="one">線が描かれて、1点に収束します。「集約してととのえる」を図で。</p>
@@ -216,7 +250,7 @@
 </section>
 
 <!-- 08 parallax -->
-<section class="tech">
+<section id="t8" class="tech">
   <div class="head"><span class="num">08</span><span class="en">Parallax</span></div>
   <h2 class="rt rt-big">2枚が、別の速さで動く。</h2>
   <p class="one">スクロールで前後の写真がずれて動き、奥行きが出ます。</p>
@@ -232,7 +266,7 @@
 </section>
 
 <!-- 09 sticky -->
-<section class="tech">
+<section id="t9" class="tech">
   <div class="head"><span class="num">09</span><span class="en">Sticky Pinning</span></div>
   <div class="pin">
     <div class="stuck"><h3 class="rt">見出しは止まったまま、<br>右側だけ進む。</h3></div>
@@ -250,7 +284,7 @@
 </section>
 
 <!-- 10 transition -->
-<section class="tech" style="text-align:center">
+<section id="t10" class="tech" style="text-align:center">
   <div class="head" style="justify-content:center"><span class="num">10</span></div>
   <h2 class="rt rt-big">押すと、フワッと切り替わる。</h2>
   <p class="one" style="margin-left:auto;margin-right:auto">リンクを押した瞬間、画面が覆われて次ページへ。静的サイトでもできる、いま一番モダンな演出です。</p>
@@ -262,7 +296,7 @@
 </section>
 
 <!-- 11 before/after -->
-<section class="tech">
+<section id="t11" class="tech">
   <div class="head"><span class="num">11</span><span class="en">Before / After Slider</span></div>
   <h2 class="rt rt-big">境目を、ドラッグで動かす。</h2>
   <p class="one">中央のつまみを左右に動かすと、ビフォー／アフターが切り替わります。清掃や制作の「前と後」を見せるのにぴったり。</p>
@@ -279,7 +313,7 @@
 </section>
 
 <!-- 12 tilt -->
-<section class="tech">
+<section id="t12" class="tech">
   <div class="head"><span class="num">12</span><span class="en">3D Tilt</span></div>
   <h2 class="rt rt-big">カードが、立体に傾く。</h2>
   <p class="one">カーソルの位置に合わせて、カードがわずかに3D回転します。</p>
@@ -291,7 +325,7 @@
 </section>
 
 <!-- 13 typewriter -->
-<section class="tech">
+<section id="t13" class="tech">
   <div class="head"><span class="num">13</span><span class="en">Typewriter</span></div>
   <h2 class="rt rt-big">文字が、打たれていく。</h2>
   <p class="one">1文字ずつ打ち込まれるように現れます（下の行・画面に入ると再生）。</p>
@@ -303,7 +337,7 @@
 </section>
 
 <!-- 14 marquee -->
-<section class="tech">
+<section id="t14" class="tech">
   <div class="head"><span class="num">14</span><span class="en">Marquee</span></div>
   <h2 class="rt rt-big">言葉が、流れ続ける。</h2>
   <p class="one">同じ言葉がゆっくり横に流れ続けます。</p>
@@ -315,7 +349,7 @@
 </section>
 
 <!-- 15 color shift -->
-<section class="tech">
+<section id="t15" class="tech">
   <div class="head"><span class="num">15</span><span class="en">Scroll Color Shift</span></div>
   <h2 class="rt rt-big">スクロールで、色が反転する。</h2>
   <p class="one">この枠が画面の中央に来ると、明るい紙から夜の墨へ。通り過ぎれば、また紙へ戻ります。</p>
@@ -327,7 +361,7 @@
 </section>
 
 <!-- 16 accordion -->
-<section class="tech">
+<section id="t16" class="tech">
   <div class="head"><span class="num">16</span><span class="en">Accordion</span></div>
   <h2 class="rt rt-big">押すと、開いて閉じる。</h2>
   <p class="one">たたんでおいて、必要な時だけ開く。場所を取らず、探しやすい（FAQの定番）。</p>
