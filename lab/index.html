@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="hYRflPVBHV_SbReXwN_7v4tNCf6AT3VusKhSviD5kPU" />
 <title>Web表現ずかん｜スクロールの"しかけ"を実演と用語で｜ととのえる屋</title>
-<meta name="description" content="サイトでよく見る「なんかかっこいい動き」を、実演＋やさしい言葉＋専門用語集でまるごと解説。なめらかスクロール・パララックス・マスクリビール・ページ遷移・SVG線画など10種を、その場で体感できます。テンプレとの違いも。長野県小諸市のHP・LP制作 ととのえる屋。">
+<meta name="description" content="サイトでよく見る「なんかかっこいい動き」を、実演＋やさしい言葉＋専門用語集でまるごと解説。なめらかスクロール・パララックス・マスクリビール・ページ遷移・SVG線画など16種を、その場で体感できます。テンプレとの違いも。長野県小諸市のHP・LP制作 ととのえる屋。">
 <meta name="keywords" content="Web表現, ホームページ 動き, パララックス, なめらかスクロール, SVGアニメーション, ページ遷移, Web制作 小諸, HP制作 長野, 非エンジニア Web, ととのえる屋">
 <link rel="canonical" href="https://totonoeruya.jp/lab/">
 
 <meta property="og:title" content="Web表現ずかん｜スクロールの"しかけ"を実演と用語で">
-<meta property="og:description" content="サイトの「なんかかっこいい動き」を、実演＋やさしい言葉＋用語集でまるごと。なめらかスクロール・パララックス・マスクリビール・ページ遷移・SVG線画など10種を体感。">
+<meta property="og:description" content="サイトの「なんかかっこいい動き」を、実演＋やさしい言葉＋用語集でまるごと。なめらかスクロール・パララックス・マスクリビール・ページ遷移・SVG線画など16種を体感。">
 <meta property="og:url" content="https://totonoeruya.jp/lab/">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://totonoeruya.jp/og.jpg">
@@ -111,7 +111,7 @@
 </section>
 
 <div class="lab-intro">
-  <p>下にスクロールすると、ひとつずつ「しかけ」が出てきます。それぞれ <strong style="font-weight:500;color:var(--ink)">名前・ひとことで何か・実演・どんな時に効くか・重さやSEOへの影響</strong> を、正直に並べました。最後に専門用語集と「テンプレとは何か」も置いています。</p>
+  <p>下にスクロールすると、ひとつずつ「しかけ」が出てきます。それぞれ <strong style="font-weight:500;color:var(--ink)">名前・ひとことで何か・実演・どんな時に効くか・重さやSEOへの影響</strong> を、正直に並べました。最後に専門用語集と「テンプレとは何か」も置いています。<br><span style="color:var(--accent)">※このページのしかけは、スクロールするたび何度でも再生されます。</span></p>
 </div>
 
 <!-- 01 smooth -->
@@ -261,6 +261,87 @@
   </div>
 </section>
 
+<!-- 11 before/after -->
+<section class="tech">
+  <div class="head"><span class="num">11</span><span class="en">Before / After Slider</span></div>
+  <h2 class="rt rt-big">境目を、ドラッグで動かす。</h2>
+  <p class="one">中央のつまみを左右に動かすと、ビフォー／アフターが切り替わります。清掃や制作の「前と後」を見せるのにぴったり。</p>
+  <div class="demo ba-slider" id="baslider">
+    <img class="before" src="../assets/works/washdeli-before.jpg" alt="Before">
+    <img class="after" src="../assets/works/washdeli-after.jpg" alt="After">
+    <span class="tag b">Before</span><span class="tag a">After</span>
+    <div class="handle" id="bahandle"><span class="knob">⟷</span></div>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">清掃の現場・制作の改善など「前と後」を1枚で見せたいとき。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">写真2枚＋軽いJS。スマホはドラッグ対応。</div></div>
+  </div>
+</section>
+
+<!-- 12 tilt -->
+<section class="tech">
+  <div class="head"><span class="num">12</span><span class="en">3D Tilt</span></div>
+  <h2 class="rt rt-big">カードが、立体に傾く。</h2>
+  <p class="one">カーソルの位置に合わせて、カードがわずかに3D回転します。</p>
+  <div class="demo tilt-wrap"><div class="tilt" id="tilt"><h3>ととのえる屋</h3><p>カーソルを乗せて動かしてみてください。奥行きが出ます。</p></div></div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">主役のカード1枚に。商品・人物・実績などを引き立てる。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽いJS。多用は禁物（1〜2枚まで）。</div></div>
+  </div>
+</section>
+
+<!-- 13 typewriter -->
+<section class="tech">
+  <div class="head"><span class="num">13</span><span class="en">Typewriter</span></div>
+  <h2 class="rt rt-big">文字が、打たれていく。</h2>
+  <p class="one">1文字ずつ打ち込まれるように現れます（下の行・画面に入ると再生）。</p>
+  <p class="demo tw" data-text="紙のまま、FAXのまま、電話のまま、楽になる。"></p>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">キャッチコピーを"語りかけ"で見せたいとき。冒頭の一言に。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽い。長文には不向き（読みにくい）。</div></div>
+  </div>
+</section>
+
+<!-- 14 marquee -->
+<section class="tech">
+  <div class="head"><span class="num">14</span><span class="en">Marquee</span></div>
+  <h2 class="rt rt-big">言葉が、流れ続ける。</h2>
+  <p class="one">同じ言葉がゆっくり横に流れ続けます。</p>
+  <div class="demo marquee2"><div class="track"><span>つくる</span><span>まわす</span><span>おしえる</span><span>ととのえる</span><span>つくる</span><span>まわす</span><span>おしえる</span><span>ととのえる</span></div></div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">ブランドの言葉・キーワード・取扱ジャンルを"帯"で見せる。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">CSSのみで軽い。にぎやかすぎ注意。</div></div>
+  </div>
+</section>
+
+<!-- 15 color shift -->
+<section class="tech">
+  <div class="head"><span class="num">15</span><span class="en">Scroll Color Shift</span></div>
+  <h2 class="rt rt-big">スクロールで、色が反転する。</h2>
+  <p class="one">この枠が画面の中央に来ると、明るい紙から夜の墨へ。通り過ぎれば、また紙へ戻ります。</p>
+  <div class="demo invert" id="invert"><p class="s">Scene change</p><h3>明るい紙から、夜の墨へ。<br>戻れば、また紙へ。</h3></div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">場面転換・章の切り替え。物語性を出したいとき。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">CSSの色変化のみ。とても軽い。</div></div>
+  </div>
+</section>
+
+<!-- 16 accordion -->
+<section class="tech">
+  <div class="head"><span class="num">16</span><span class="en">Accordion</span></div>
+  <h2 class="rt rt-big">押すと、開いて閉じる。</h2>
+  <p class="one">たたんでおいて、必要な時だけ開く。場所を取らず、探しやすい（FAQの定番）。</p>
+  <div class="demo acc">
+    <details><summary>ととのえる屋に頼めることは？</summary><div class="a">HP・LP制作、AI業務改善、totoline、清掃、ギター教室の5領域です。</div></details>
+    <details><summary>相談だけでも大丈夫ですか？</summary><div class="a">はい。「何がなんだかわからない」だけでも構いません。</div></details>
+    <details><summary>対応エリアは？</summary><div class="a">小諸・御代田・軽井沢を中心に長野県内。制作・AIは全国オンライン対応です。</div></details>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">FAQ・仕様・詳細など、量がある情報をすっきり見せる。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">HTML標準の details だけ。中身は閉じていても読まれる。</div></div>
+  </div>
+</section>
+
 <!-- glossary -->
 <section class="glossary">
   <div class="sec-top"><h2 style="font-weight:400;font-size:clamp(22px,3vw,36px)">専門用語、やさしい一覧。</h2><span class="note">Glossary · 18語</span></div>
@@ -336,15 +417,26 @@
     }).join("");
     el.querySelectorAll(".word>span").forEach(function(sp,i){sp.style.transitionDelay=(i*22)+"ms";});
   });
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){
-    e.target.classList.add("in");
-    if(e.target.classList.contains("count"))countUp(e.target);
-    io.unobserve(e.target);}});},{threshold:.18,rootMargin:"0px 0px -6% 0px"});
+  /* スクロールで毎回再生（入った=in / 出た=戻す） */
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(e.isIntersecting){
+      e.target.classList.add("in");
+      if(e.target.classList.contains("count"))countUp(e.target);
+      if(e.target.classList.contains("tw"))typewrite(e.target);
+    }else{
+      e.target.classList.remove("in");
+      if(e.target.classList.contains("tw"))e.target.classList.remove("done");
+    }
+  });},{threshold:.25,rootMargin:"-2% 0px -2% 0px"});
   if(!reduce) document.querySelectorAll(".mask").forEach(function(el){el.classList.add("anim");});
-  document.querySelectorAll(".rt,.mask,.count").forEach(function(el){io.observe(el);});
-  setTimeout(function(){document.querySelectorAll(".mask:not(.in)").forEach(function(el){el.classList.add("in");});},2200);
+  document.querySelectorAll(".rt,.mask,.count,.draw-svg,.tw").forEach(function(el){io.observe(el);});
+
+  /* スクロールで色反転（中央バンドで切替・何度でも） */
+  var iv=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle("in",e.isIntersecting);});},{rootMargin:"-38% 0px -38% 0px"});
+  document.querySelectorAll(".invert").forEach(function(el){iv.observe(el);});
 
   function countUp(el){var to=+el.dataset.to,s=null;function st(ts){if(!s)s=ts;var p=Math.min((ts-s)/1500,1);el.textContent=Math.round((1-Math.pow(1-p,3))*to);if(p<1)requestAnimationFrame(st);}requestAnimationFrame(st);}
+  function typewrite(el){var t=el.dataset.text||"";if(reduce){el.textContent=t;el.classList.add("done");return;}el.classList.remove("done");el.textContent="";var i=0;(function tick(){el.textContent=t.slice(0,i);i++;if(i<=t.length){setTimeout(tick,55);}else{el.classList.add("done");}})();}
 
   /* パララックス */
   var px=[].slice.call(document.querySelectorAll("[data-speed]"));
@@ -370,6 +462,23 @@
     (function loop(){cx+=(x-cx)*.2;cy+=(y-cy)*.2;cur.style.left=cx+"px";cur.style.top=cy+"px";requestAnimationFrame(loop);})();
     document.querySelectorAll(".mask,.px-stage").forEach(function(el){el.addEventListener("mouseenter",function(){cur.classList.add("lbl");lab.textContent="見る";});el.addEventListener("mouseleave",function(){cur.classList.remove("lbl");lab.textContent="";});});
     document.querySelectorAll("a,button,.card").forEach(function(el){el.addEventListener("mouseenter",function(){cur.classList.add("lbl");lab.textContent="押す";});el.addEventListener("mouseleave",function(){cur.classList.remove("lbl");lab.textContent="";});});
+  }
+
+  /* 3Dチルト */
+  var tilt=document.getElementById("tilt");
+  if(tilt&&matchMedia("(hover:hover)").matches){
+    tilt.addEventListener("mousemove",function(e){var r=tilt.getBoundingClientRect();var px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;tilt.style.transform="rotateY("+(px*12)+"deg) rotateX("+(-py*12)+"deg)";});
+    tilt.addEventListener("mouseleave",function(){tilt.style.transform="";});
+  }
+
+  /* Before/After スライダー */
+  var bs=document.getElementById("baslider");
+  if(bs){
+    var after=bs.querySelector(".after"),handle=document.getElementById("bahandle"),drag=false;
+    function setp(cx){var r=bs.getBoundingClientRect();var p=Math.min(Math.max((cx-r.left)/r.width,0),1);after.style.clipPath="inset(0 0 0 "+(p*100)+"%)";handle.style.left=(p*100)+"%";}
+    bs.addEventListener("pointerdown",function(e){drag=true;setp(e.clientX);});
+    addEventListener("pointermove",function(e){if(drag)setp(e.clientX);});
+    addEventListener("pointerup",function(){drag=false;});
   }
 })();
 </script>
