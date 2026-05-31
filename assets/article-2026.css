@@ -82,3 +82,11 @@
 
 /* シリーズハブ aside など amber 枠（インラインstyle互換のため最低限） */
 .article-content aside{margin:28px 0;padding:20px 22px;border-left:3px solid var(--accent);background:var(--paper-2);border-radius:4px;font-size:14px;line-height:1.9}
+
+/* legal / thanks ページのヘッダー（旧 #hero クラス互換） */
+#hero{max-width:1280px;margin:0 auto;padding:100px 44px 24px}
+#hero .hero-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px;margin-bottom:22px}
+#hero .hero-eyebrow span{width:30px;height:1px;background:currentColor;display:inline-block}
+#hero .hero-headline{font-weight:500;font-size:clamp(26px,4vw,44px);line-height:1.4;color:var(--ink);margin-bottom:14px}
+#hero .hero-sub{font-size:15px;font-weight:300;color:var(--ink-soft)}
+.container{max-width:1280px;margin:0 auto}
