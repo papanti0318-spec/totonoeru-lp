@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="hYRflPVBHV_SbReXwN_7v4tNCf6AT3VusKhSviD5kPU" />
 <title>Web表現ずかん｜スクロールの"しかけ"を実演と用語で｜ととのえる屋</title>
-<meta name="description" content="サイトでよく見る「なんかかっこいい動き」を、実演＋やさしい言葉＋専門用語集でまるごと解説。なめらかスクロール・パララックス・マスクリビール・ページ遷移・SVG線画など16種を、その場で体感できます。テンプレとの違いも。長野県小諸市のHP・LP制作 ととのえる屋。">
+<meta name="description" content="サイトでよく見る「なんかかっこいい動き」を、実演＋やさしい言葉＋専門用語集でまるごと解説。なめらかスクロール・パララックス・マスクリビール・モーダル・タブ・コードコピーなど22種を、その場で体感できます。テンプレとの違いも。長野県小諸市のHP・LP制作 ととのえる屋。">
 <meta name="keywords" content="Web表現, ホームページ 動き, パララックス, なめらかスクロール, SVGアニメーション, ページ遷移, Web制作 小諸, HP制作 長野, 非エンジニア Web, ととのえる屋">
 <link rel="canonical" href="https://totonoeruya.jp/lab/">
 
 <meta property="og:title" content="Web表現ずかん｜スクロールの"しかけ"を実演と用語で">
-<meta property="og:description" content="サイトの「なんかかっこいい動き」を、実演＋やさしい言葉＋用語集でまるごと。なめらかスクロール・パララックス・マスクリビール・ページ遷移・SVG線画など16種を体感。">
+<meta property="og:description" content="サイトの「なんかかっこいい動き」を、実演＋やさしい言葉＋用語集でまるごと。なめらかスクロール・パララックス・マスクリビール・モーダル・タブ・コードコピーなど22種を体感。">
 <meta property="og:url" content="https://totonoeruya.jp/lab/">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://totonoeruya.jp/og.jpg">
@@ -32,7 +32,7 @@
       "description": "サイトでよく見る動きの表現を、実演とやさしい言葉と専門用語集でまとめた図鑑。",
       "inLanguage": "ja",
       "datePublished": "2026-05-31",
-      "dateModified": "2026-05-31",
+      "dateModified": "2026-06-01",
       "image": "https://totonoeruya.jp/og.jpg",
       "author": { "@type": "Person", "@id": "https://totonoeruya.jp/#terui", "name": "照井航次郎" },
       "publisher": { "@type": "ProfessionalService", "@id": "https://totonoeruya.jp/#organization", "name": "ととのえる屋" },
@@ -67,7 +67,12 @@
         { "@type": "DefinedTerm", "name": "OGP", "description": "SNSでURLを貼ったとき、タイトル・画像をきれいに表示する設定。" },
         { "@type": "DefinedTerm", "name": "CDN", "description": "世界中の拠点から素早くファイルを配る仕組み。表示が速くなる。" },
         { "@type": "DefinedTerm", "name": "テンプレート", "description": "あらかじめ作られたひな型。早く安く作れるが、作り込みや独自表現には限界がある。" },
-        { "@type": "DefinedTerm", "name": "WebGL", "description": "ブラウザで3Dや派手な表現を出す技術。重く、検索・AIには中身が読まれにくい。" }
+        { "@type": "DefinedTerm", "name": "WebGL", "description": "ブラウザで3Dや派手な表現を出す技術。重く、検索・AIには中身が読まれにくい。" },
+        { "@type": "DefinedTerm", "name": "モーダル", "description": "今の画面の上に小窓を重ねて、要点だけに視線を集めるUI。HTML標準の dialog 要素で作れる。" },
+        { "@type": "DefinedTerm", "name": "タブ", "description": "見出しを押すと同じ場所で中身が切り替わるUI。スクロール量を増やさず複数の情報を見せる。" },
+        { "@type": "DefinedTerm", "name": "トースト", "description": "画面のすみに数秒だけ出て自動で消える小さな通知。「送信しました」等の軽い合図に使う。" },
+        { "@type": "DefinedTerm", "name": "ツールチップ", "description": "言葉やアイコンに触れると出る小さな吹き出しの補足。本文を汚さず注釈を足せる。" },
+        { "@type": "DefinedTerm", "name": "クリップボードAPI", "description": "ボタン操作で文字をコピーさせるブラウザの仕組み。コードコピー機能などに使う。" }
       ]
     },
     {
@@ -115,7 +120,7 @@
 </div>
 
 <nav class="toc" aria-label="もくじ">
-  <div class="toc-head"><h2>もくじ — Web表現図鑑</h2><span class="cnt">全16項目 · 少しずつ追加中</span></div>
+  <div class="toc-head"><h2>もくじ — Web表現図鑑</h2><span class="cnt">全22項目 · 少しずつ追加中</span></div>
   <div class="cols">
     <div class="col"><h3>スクロール演出</h3>
       <a href="#t1">なめらかスクロール<span class="e">01</span></a>
@@ -144,6 +149,16 @@
     <div class="col"><h3>図解・質感</h3>
       <a href="#t7">SVG線画図解<span class="e">07</span></a>
       <a href="#t15">色反転<span class="e">15</span></a>
+    </div>
+    <div class="col"><h3>UI部品</h3>
+      <a href="#t17">モーダル<span class="e">17</span></a>
+      <a href="#t18">タブ切替<span class="e">18</span></a>
+      <a href="#t19">トースト通知<span class="e">19</span></a>
+      <a href="#t20">ツールチップ<span class="e">20</span></a>
+    </div>
+    <div class="col"><h3>コード・技術</h3>
+      <a href="#t21">コードコピー<span class="e">21</span></a>
+      <a href="#t22">ライブプレビュー<span class="e">22</span></a>
     </div>
   </div>
 </nav>
@@ -376,9 +391,126 @@
   </div>
 </section>
 
+<div class="cat-label"><span>UI部品 — よく使う道具</span></div>
+
+<!-- 17 modal -->
+<section id="t17" class="tech">
+  <div class="head"><span class="num">17</span><span class="en">Modal Dialog</span></div>
+  <h2 class="rt rt-big">押すと、まん中に浮かぶ。</h2>
+  <p class="one">ボタンを押すと背景がすっと暗くなり、中央に小窓が開きます。今の画面を保ったまま、要点だけに視線を集めたいときに。</p>
+  <div class="demo md-wrap">
+    <button class="ui-btn" id="mdOpen">小窓を開く →</button>
+    <dialog class="md" id="md">
+      <p class="md-ey">Dialog</p>
+      <h3>これがモーダルです。</h3>
+      <p class="md-tx">背景が暗くなり、ここだけに視線が集まります。申込・確認・拡大表示などに。Escキーや背景クリックでも閉じられます。</p>
+      <button class="ui-btn solid" id="mdClose">閉じる</button>
+    </dialog>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">申込・確認・画像の拡大。ページを離れずに、要点だけ集中して見せる。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">HTML標準の dialog 要素。軽い。閉じていても中身は文字として読まれる。</div></div>
+  </div>
+</section>
+
+<!-- 18 tabs -->
+<section id="t18" class="tech">
+  <div class="head"><span class="num">18</span><span class="en">Tabs</span></div>
+  <h2 class="rt rt-big">1か所で、切り替える。</h2>
+  <p class="one">見出しを押すと、同じ場所で中身が入れ替わります。スクロール量を増やさずに、複数の情報を見せられます。</p>
+  <div class="demo tabs" id="tabs">
+    <div class="tab-nav" role="tablist">
+      <button class="tab-btn is-on" data-tab="0">HP・LP制作</button>
+      <button class="tab-btn" data-tab="1">清掃</button>
+      <button class="tab-btn" data-tab="2">ギター教室</button>
+    </div>
+    <div class="tab-panes">
+      <div class="tab-pane is-on">言葉を集約し、核だけ残したサイトを設計します。テンプレに頼らず、ブランドの空気ごと作ります。</div>
+      <div class="tab-pane">現場の日報・シフト・請求を、写真とAIで軽くします。掃除の手は止めずに、事務だけ減らす。</div>
+      <div class="tab-pane">続けたくなることを、いちばん大事に。初めての一本から、無理なく始められます。</div>
+    </div>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">料金プラン・事業紹介・FAQなど、並びを切り替えて見せたいとき。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽いJS。中身は全部HTMLにあるので、隠れていても読まれる。</div></div>
+  </div>
+</section>
+
+<!-- 19 toast -->
+<section id="t19" class="tech">
+  <div class="head"><span class="num">19</span><span class="en">Toast</span></div>
+  <h2 class="rt rt-big">すっと出て、すっと消える。</h2>
+  <p class="one">ボタンを押すと、画面のすみに小さな知らせが現れ、数秒で自動的に消えます。「送信しました」のような、軽い合図に。</p>
+  <div class="demo toast-demo">
+    <button class="ui-btn" id="toastBtn">知らせを出す →</button>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">送信完了・保存しましたなど、邪魔をしない小さな成功フィードバック。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽い。装飾的なので、なくても困らない。要所に1つだけ。</div></div>
+  </div>
+</section>
+
+<!-- 20 tooltip -->
+<section id="t20" class="tech">
+  <div class="head"><span class="num">20</span><span class="en">Tooltip</span></div>
+  <h2 class="rt rt-big">触れると、そっと説明が出る。</h2>
+  <p class="one">言葉の上にカーソルを乗せる（スマホは押す）と、小さな吹き出しで補足が出ます。本文を汚さずに、注釈を足せます。</p>
+  <div class="demo tip-demo">
+    <p>たとえば <span class="tip" tabindex="0">LLMO<span class="tip-bub">ChatGPTなどのAIに、正しく引用・紹介してもらうための最適化。</span></span> という言葉。むずかしい用語に、こうして説明を添えられます。<span class="tip" tabindex="0">OGP<span class="tip-bub">SNSにURLを貼ったとき、タイトルや画像をきれいに見せる設定。</span></span> も同じ要領です。</p>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">専門用語の補足、アイコンの意味。読み手を止めずに説明を添える。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">CSSだけでも作れる。軽い。中身は文字として読まれる。</div></div>
+  </div>
+</section>
+
+<div class="cat-label"><span>コード・技術 — 制作者の手元</span></div>
+
+<!-- 21 code copy -->
+<section id="t21" class="tech">
+  <div class="head"><span class="num">21</span><span class="en">Code Copy</span></div>
+  <h2 class="rt rt-big">ボタンひとつで、まるごとコピー。</h2>
+  <p class="one">コードや設定の右上のボタンを押すと、中身がそっくりコピーされます。読者が手で打ち写す手間を、まるごと消せます。</p>
+  <div class="demo code-block">
+    <div class="code-top"><span class="code-lang">bash</span><button class="code-copy" id="codeCopy">コピー</button></div>
+    <pre><code id="codeBody">npx create-totonoeru my-site
+cd my-site
+npm run dev</code></pre>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">手順・コマンド・設定値を配る技術記事や手引き。読者の作業を減らす。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽い。コードは文字なので検索・AIにそのまま読まれる。</div></div>
+  </div>
+</section>
+
+<!-- 22 live preview -->
+<section id="t22" class="tech">
+  <div class="head"><span class="num">22</span><span class="en">Live Preview</span></div>
+  <h2 class="rt rt-big">数値を動かすと、その場で変わる。</h2>
+  <p class="one">下のつまみを動かすと、コードの数字と、右の見本が同時に変わります。「コードと結果」を並べて、仕組みをそのまま体感できます。</p>
+  <div class="demo live">
+    <div class="live-controls">
+      <label class="lv-row">角の丸み <span class="lv-num" id="lvRadVal">18</span>px
+        <input type="range" id="lvRad" min="0" max="80" value="18">
+      </label>
+      <label class="lv-row">影の強さ <span class="lv-num" id="lvShVal">16</span>px
+        <input type="range" id="lvSh" min="0" max="48" value="16">
+      </label>
+      <pre class="live-code"><code id="lvCode"></code></pre>
+    </div>
+    <div class="live-stage"><div class="live-box" id="lvBox">PREVIEW</div></div>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">仕組みを「コードと結果」並べて見せる。学習・提案資料・設定画面に。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽いJS。やり過ぎず、要点を1つに絞るのがコツ。</div></div>
+  </div>
+</section>
+
+<div class="toast" id="toast" role="status" aria-live="polite"><span class="t-dot"></span>送信しました。ありがとうございます。</div>
+
 <!-- glossary -->
 <section class="glossary">
-  <div class="sec-top"><h2 style="font-weight:400;font-size:clamp(22px,3vw,36px)">専門用語、やさしい一覧。</h2><span class="note">Glossary · 18語</span></div>
+  <div class="sec-top"><h2 style="font-weight:400;font-size:clamp(22px,3vw,36px)">専門用語、やさしい一覧。</h2><span class="note">Glossary · 23語</span></div>
   <div class="g-grid">
     <dl><dt>HTML<small>HyperText Markup Language</small></dt><dd>ページの骨組み。見出し・段落・画像など「中身と構造」を書く言語。</dd></dl>
     <dl><dt>CSS<small>Cascading Style Sheets</small></dt><dd>見た目の指定。色・大きさ・配置・動きを決める。</dd></dl>
@@ -398,6 +530,11 @@
     <dl><dt>CDN<small>Content Delivery Network</small></dt><dd>世界中の拠点から素早くファイルを配る仕組み。表示が速くなる。</dd></dl>
     <dl><dt>WebGL<small>3D描画</small></dt><dd>ブラウザで3Dや派手な表現を出す技術。重く、検索・AIには中身が読まれにくい。使いどころを選ぶ。</dd></dl>
     <dl><dt>テンプレート<small>Template</small></dt><dd>あらかじめ作られたひな型。早く安く作れるが、作り込みや独自表現には限界がある。</dd></dl>
+    <dl><dt>モーダル<small>Modal / dialog</small></dt><dd>今の画面の上に小窓を重ね、要点だけに視線を集めるUI。HTML標準の dialog 要素で作れる。</dd></dl>
+    <dl><dt>タブ<small>Tabs</small></dt><dd>見出しを押すと同じ場所で中身が切り替わるUI。スクロールを増やさず複数の情報を見せる。</dd></dl>
+    <dl><dt>トースト<small>Toast</small></dt><dd>画面のすみに数秒だけ出て自動で消える小さな通知。送信完了などの軽い合図に。</dd></dl>
+    <dl><dt>ツールチップ<small>Tooltip</small></dt><dd>言葉やアイコンに触れると出る小さな吹き出しの補足。本文を汚さず注釈を足せる。</dd></dl>
+    <dl><dt>クリップボードAPI<small>Clipboard API</small></dt><dd>ボタン操作で文字をコピーさせるブラウザの仕組み。コードコピー機能などに使う。</dd></dl>
   </div>
 </section>
 
@@ -514,6 +651,58 @@
     bs.addEventListener("pointerdown",function(e){drag=true;setp(e.clientX);});
     addEventListener("pointermove",function(e){if(drag)setp(e.clientX);});
     addEventListener("pointerup",function(){drag=false;});
+  }
+
+  /* 17 モーダル（dialog 標準） */
+  var md=document.getElementById("md"),mdOpen=document.getElementById("mdOpen"),mdClose=document.getElementById("mdClose");
+  if(md&&mdOpen){
+    mdOpen.addEventListener("click",function(){ if(md.showModal)md.showModal(); else md.setAttribute("open",""); });
+    if(mdClose)mdClose.addEventListener("click",function(){ md.close?md.close():md.removeAttribute("open"); });
+    md.addEventListener("click",function(e){ if(e.target===md)md.close&&md.close(); }); /* 背景クリックで閉じる */
+  }
+
+  /* 18 タブ切替 */
+  var tabs=document.getElementById("tabs");
+  if(tabs){
+    var btns=tabs.querySelectorAll(".tab-btn"),panes=tabs.querySelectorAll(".tab-pane");
+    btns.forEach(function(b){b.addEventListener("click",function(){
+      var i=+b.dataset.tab;
+      btns.forEach(function(x){x.classList.remove("is-on");});b.classList.add("is-on");
+      panes.forEach(function(p,j){p.classList.toggle("is-on",j===i);});
+    });});
+  }
+
+  /* 19 トースト通知 */
+  var toast=document.getElementById("toast"),toastBtn=document.getElementById("toastBtn"),toastT;
+  if(toast&&toastBtn){
+    toastBtn.addEventListener("click",function(){
+      toast.classList.add("show");clearTimeout(toastT);
+      toastT=setTimeout(function(){toast.classList.remove("show");},2600);
+    });
+  }
+
+  /* 21 コードコピー */
+  var codeCopy=document.getElementById("codeCopy"),codeBody=document.getElementById("codeBody");
+  if(codeCopy&&codeBody){
+    codeCopy.addEventListener("click",function(){
+      var txt=codeBody.innerText;
+      var done=function(){codeCopy.textContent="コピーしました";codeCopy.classList.add("ok");setTimeout(function(){codeCopy.textContent="コピー";codeCopy.classList.remove("ok");},1600);};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done,done);}
+      else{try{var ta=document.createElement("textarea");ta.value=txt;document.body.appendChild(ta);ta.select();document.execCommand("copy");document.body.removeChild(ta);}catch(e){}done();}
+    });
+  }
+
+  /* 22 ライブプレビュー */
+  var lvRad=document.getElementById("lvRad"),lvSh=document.getElementById("lvSh"),lvBox=document.getElementById("lvBox"),lvCode=document.getElementById("lvCode"),lvRadVal=document.getElementById("lvRadVal"),lvShVal=document.getElementById("lvShVal");
+  if(lvRad&&lvSh&&lvBox){
+    function lvUpdate(){
+      var r=lvRad.value,s=lvSh.value;
+      lvRadVal.textContent=r;lvShVal.textContent=s;
+      lvBox.style.borderRadius=r+"px";
+      lvBox.style.boxShadow="0 "+Math.round(s/2)+"px "+s+"px rgba(180,100,40,.28)";
+      lvCode.textContent=".box {\n  border-radius: "+r+"px;\n  box-shadow: 0 "+Math.round(s/2)+"px "+s+"px;\n}";
+    }
+    lvRad.addEventListener("input",lvUpdate);lvSh.addEventListener("input",lvUpdate);lvUpdate();
   }
 })();
 </script>

@@ -176,3 +176,67 @@
 .cat-label span::before,.cat-label span::after{content:"";height:1px;background:var(--line);flex:1}
 @media(max-width:760px){.toc{padding:0 20px 60px}.toc .cols{grid-template-columns:1fr 1fr;gap:20px}.cat-label{padding:40px 20px 0}}
 @media(max-width:520px){.toc .cols{grid-template-columns:1fr}}
+
+/* ===== UI部品（17-20）＋ コード・技術（21-22） ===== */
+/* 共通ボタン */
+.ui-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border:1px solid var(--accent);color:var(--accent);border-radius:999px;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;background:none;cursor:pointer;transition:background .25s,color .25s}
+.ui-btn:hover{background:var(--accent);color:var(--paper)}
+.ui-btn.solid{background:var(--accent);color:var(--paper)}
+.ui-btn.solid:hover{opacity:.88}
+
+/* 17 モーダル */
+.md-wrap{display:flex;justify-content:center;padding:14px 0 6px}
+dialog.md{border:none;border-radius:14px;padding:38px 34px;max-width:440px;width:calc(100% - 40px);background:var(--paper);color:var(--ink);box-shadow:0 30px 80px rgba(26,24,20,.28)}
+dialog.md::backdrop{background:rgba(26,24,20,.5);backdrop-filter:blur(2px)}
+dialog.md[open]{animation:mdIn .28s cubic-bezier(.2,.7,.2,1)}
+@keyframes mdIn{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}
+.md-ey{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+dialog.md h3{font-size:20px;font-weight:500;margin-bottom:12px}
+.md-tx{font-size:13px;font-weight:300;line-height:1.9;color:var(--ink-soft);margin-bottom:22px}
+
+/* 18 タブ */
+.tabs .tab-nav{display:flex;gap:4px;border-bottom:1px solid var(--line);margin-bottom:22px;flex-wrap:wrap}
+.tab-btn{appearance:none;background:none;border:none;cursor:pointer;padding:12px 18px;font-family:var(--sans);font-size:14px;font-weight:400;color:var(--muted);position:relative;transition:color .2s}
+.tab-btn:hover{color:var(--ink)}
+.tab-btn.is-on{color:var(--accent);font-weight:500}
+.tab-btn.is-on::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--accent)}
+.tab-pane{display:none;font-size:14px;font-weight:300;line-height:2;color:var(--ink-soft);max-width:42em;animation:tabIn .35s ease}
+.tab-pane.is-on{display:block}
+@keyframes tabIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* 19 トースト */
+.toast{position:fixed;right:24px;bottom:24px;z-index:9995;display:flex;align-items:center;gap:10px;background:var(--ink);color:var(--paper);font-size:13px;font-weight:300;padding:14px 20px;border-radius:10px;box-shadow:0 14px 40px rgba(26,24,20,.3);transform:translateY(140%);opacity:0;transition:transform .45s cubic-bezier(.2,.7,.2,1),opacity .45s;pointer-events:none}
+.toast.show{transform:none;opacity:1}
+.toast .t-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex:none}
+@media(max-width:520px){.toast{left:16px;right:16px;bottom:16px}}
+
+/* 20 ツールチップ */
+.tip-demo p{font-size:15px;font-weight:300;line-height:2.1;color:var(--ink-soft);max-width:40em}
+.tip{position:relative;color:var(--accent);border-bottom:1px dashed var(--accent);cursor:help;font-weight:400;outline:none}
+.tip-bub{position:absolute;left:50%;bottom:calc(100% + 10px);transform:translateX(-50%) translateY(6px);width:max-content;max-width:240px;background:var(--ink);color:var(--paper);font-size:12px;font-weight:300;line-height:1.7;letter-spacing:0;padding:10px 13px;border-radius:8px;opacity:0;visibility:hidden;transition:opacity .22s,transform .22s;pointer-events:none;z-index:5;box-shadow:0 10px 30px rgba(26,24,20,.25)}
+.tip-bub::after{content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:var(--ink)}
+.tip:hover .tip-bub,.tip:focus .tip-bub{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+
+/* 21 コードコピー / コード面（21・22共通の暗い面） */
+.code-block{border-radius:10px;overflow:hidden;border:1px solid var(--line);background:var(--ink)}
+.code-top{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.08)}
+.code-lang{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,240,232,.5)}
+.code-copy{appearance:none;border:1px solid rgba(245,240,232,.22);background:none;color:var(--paper);font-family:var(--mono);font-size:11px;letter-spacing:.06em;padding:5px 12px;border-radius:6px;cursor:pointer;transition:.2s}
+.code-copy:hover{border-color:var(--accent);color:var(--accent)}
+.code-copy.ok{border-color:var(--accent);color:var(--accent)}
+.code-block pre{margin:0;padding:18px 16px;overflow-x:auto}
+.code-block code{font-family:var(--mono);font-size:13px;line-height:1.85;color:var(--paper);white-space:pre}
+
+/* 22 ライブプレビュー */
+.live{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch}
+.live-controls{display:flex;flex-direction:column;gap:14px;border:1px solid var(--line);border-radius:10px;padding:22px}
+.lv-row{font-size:13px;font-weight:300;color:var(--ink-soft);display:flex;flex-direction:column;gap:8px}
+.lv-num{font-family:var(--mono);color:var(--accent)}
+.live-controls input[type=range]{appearance:none;-webkit-appearance:none;width:100%;height:2px;background:var(--line);outline:none;border-radius:2px}
+.live-controls input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--accent);cursor:pointer}
+.live-controls input[type=range]::-moz-range-thumb{width:18px;height:18px;border:none;border-radius:50%;background:var(--accent);cursor:pointer}
+.live-code{margin:6px 0 0;background:var(--ink);border-radius:8px;padding:14px 14px;overflow-x:auto}
+.live-code code{font-family:var(--mono);font-size:12px;line-height:1.8;color:var(--paper);white-space:pre}
+.live-stage{display:flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:10px;background:var(--paper-2);padding:24px}
+.live-box{width:min(220px,80%);aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;background:var(--accent);color:var(--paper);font-family:var(--mono);font-size:12px;letter-spacing:.14em}
+@media(max-width:680px){.live{grid-template-columns:1fr}}
