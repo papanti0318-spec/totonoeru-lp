@@ -108,5 +108,19 @@
 <script type="text/babel" src="parts-late.jsx"></script>
 <script type="text/babel" src="app.jsx"></script>
 
+<!-- なめらかスクロール（サイト共通の世界観・Lenis 慣性 duration1.15/easeOutExpo） -->
+<script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js" defer></script>
+<script>
+(function () {
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  function init() {
+    if (typeof window.Lenis !== "function") { return setTimeout(init, 100); }
+    var lenis = new window.Lenis({ duration: 1.15, easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); }, smoothWheel: true });
+    function raf(t) { lenis.raf(t); requestAnimationFrame(raf); }
+    requestAnimationFrame(raf);
+  }
+  window.addEventListener("load", init);
+})();
+</script>
 </body>
 </html>
