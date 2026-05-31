@@ -69,5 +69,8 @@
 
     /* 5. 汎用 .fade-up */
     document.querySelectorAll(".fade-up").forEach(function (el) { io.observe(el); });
+
+    /* 6. draw-on SVG（線が描かれる集約モチーフ） */
+    document.querySelectorAll(".draw-svg").forEach(function (el) { io.observe(el); });
   });
 })();

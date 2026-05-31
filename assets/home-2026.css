@@ -171,3 +171,17 @@ html.lenis,html.lenis body{height:auto}
 .fade-up{opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.6,.2,1)}
 .fade-up.in,.fade-up.visible{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.split-line,.img-reveal img,.fade-up{opacity:1!important;transform:none!important;filter:none!important}}
+
+/* ===== draw-on SVG（集約モチーフ・線が描かれる） ===== */
+.draw-svg{display:block}
+.draw-svg svg{display:block;width:100%;height:100%;overflow:visible}
+.draw-svg line,.draw-svg path,.draw-svg polyline,.draw-svg circle{fill:none;stroke:var(--accent);stroke-width:1;vector-effect:non-scaling-stroke;stroke-linecap:round}
+.draw-svg [data-draw]{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.5s cubic-bezier(.2,.6,.2,1)}
+.draw-svg.in [data-draw]{stroke-dashoffset:0}
+.draw-svg [data-fade]{opacity:0;transition:opacity .8s ease .7s}
+.draw-svg.in [data-fade]{opacity:1;fill:var(--accent);stroke:none}
+.hero-mark{width:100px;height:56px;margin-bottom:26px}
+.divider{max-width:1280px;margin:0 auto;padding:0 44px}
+.divider svg{height:12px}
+@media(prefers-reduced-motion:reduce){.draw-svg [data-draw]{stroke-dashoffset:0}.draw-svg [data-fade]{opacity:1}}
+@media(max-width:760px){.divider{padding:0 20px}}
