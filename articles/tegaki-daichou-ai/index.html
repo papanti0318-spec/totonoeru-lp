@@ -18,10 +18,10 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="../../assets/style.css">
-<link rel="stylesheet" href="../../assets/opener.css">
+<link rel="stylesheet" href="../../assets/site-2026.css">
+<link rel="stylesheet" href="../../assets/article-2026.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -146,63 +146,19 @@
 <script defer src="/_vercel/insights/script.js"></script>
 <script src="/assets/analytics.js"></script>
 </head>
-<body class="has-site-nav">
+<body>
 
-<!-- OPENER -->
-<div class="opener" id="opener" aria-hidden="true">
-  <button class="opener-skip" id="opener-skip" aria-label="オープニングをスキップ">Skip</button>
-  <div class="opener-stage">
-    <span class="opener-line opener-line--green"></span>
-    <span class="opener-line opener-line--amber"></span>
-    <span class="opener-line opener-line--soft"></span>
-    <p class="opener-tagline">TOTONOERUYA &nbsp;·&nbsp; KOMORO, NAGANO</p>
-  </div>
-</div>
-<script src="../../assets/opener.js"></script>
-
-<!-- ナビゲーション（左サイド固定） -->
-<nav class="site-nav">
-  <button type="button" class="site-nav-trigger" aria-label="メニューを開く" aria-expanded="false" aria-controls="site-drawer">
-    <span class="site-nav-bars" aria-hidden="true">
-      <span></span><span></span><span></span>
-    </span>
-  </button>
-</nav>
-
-<!-- 左サイドドロワー -->
-<aside class="site-drawer" id="site-drawer" aria-hidden="true" aria-label="メニュー">
-  <div class="site-drawer-backdrop" data-drawer-close></div>
-  <div class="site-drawer-inner" role="dialog" aria-modal="true">
-    <div class="site-drawer-content">
-      <span class="site-drawer-eyebrow">Menu</span>
-      <ul class="site-drawer-menu">
-        <li><a href="/" data-drawer-close><span class="lang-en">Home</span></a></li>
-        <li><a href="/web/" data-drawer-close><span class="lang-en">Web</span></a></li>
-        <li><a href="/cleaning/" data-drawer-close><span class="lang-en">Cleaning</span></a></li>
-        <li><a href="/guitar/" data-drawer-close><span class="lang-en">Guitar</span></a></li>
-        <li><a href="/articles/" data-drawer-close><span class="lang-en">Journal</span></a></li>
-        <li><a href="#contact" data-drawer-close><span class="lang-en">Contact</span></a></li>
-      </ul>
-
-      <div class="site-drawer-actions">
-        <a class="site-drawer-action" href="https://line.me/R/ti/p/@903xtesg" target="_blank" rel="noopener" aria-label="LINE">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-        </a>
-        <a class="site-drawer-action" href="mailto:totonoeru.ya@gmail.com" aria-label="Email">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-            <rect x="3" y="5" width="18" height="14" rx="1"/>
-            <path d="M3 7l9 6 9-6"/>
-          </svg>
-        </a>
-      </div>
-
-      <p class="site-drawer-foot">
-        ととのえる屋<br>
-        長野県小諸市
-      </p>
-    </div>
-  </div>
-</aside>
+<header class="topbar">
+  <a href="/" class="brand"><img src="../../assets/logo-totonoeru.png" alt="">ととのえる屋</a>
+  <nav aria-label="メインメニュー">
+    <a href="/web/">Web · AI</a>
+    <a href="/cleaning/">Cleaning</a>
+    <a href="/guitar/">Guitar</a>
+    <a href="/totoline/">totoline</a>
+    <a href="/articles/" aria-current="page">Journal</a>
+  </nav>
+  <a href="/#contact" class="cta">相談する</a>
+</header>
 
 <main>
 <article class="article-body">
@@ -303,50 +259,23 @@
 </article>
 </main>
 
-<footer>
-  <div class="container">
-    <div class="footer-nap">
-      <p class="footer-nap-name">ととのえる屋</p>
-      <p class="footer-nap-address">長野県小諸市</p>
-      <p class="footer-nap-contact">
-        <a href="mailto:totonoeru.ya@gmail.com">totonoeru.ya@gmail.com</a>　／　<a href="https://line.me/R/ti/p/@903xtesg" target="_blank" rel="noopener">LINE: @903xtesg</a>
-      </p>
-      <p class="footer-nap-area">対応エリア：小諸市・御代田町・軽井沢町・上田市ほか長野県内（オンライン全国対応）</p>
+<footer class="site-footer">
+  <div class="foot">
+    <div class="b">
+      <img src="../../assets/logo-totonoeru.png" alt="ととのえる屋">
+      <p>長野県小諸市の、小さな何でも屋。HP・LP制作、AI業務改善、清掃、ギター教室。ぜんぶ、同じ手で。</p>
     </div>
-    <div class="footer-inner">
-      <div class="footer-logo">
-        <img src="../../assets/logo-totonoeru.png" alt="ととのえる屋" class="footer-logo-img" width="44" height="56">
-      </div>
-      <div class="footer-copy">© 2026 ととのえる屋. All rights reserved. 長野県小諸市</div>
-      <div class="footer-legal" style="text-align: center; margin-top: 14px; font-size: 12px;">
-        <a href="/privacy/" style="color: inherit; opacity: 0.75; text-decoration: underline; text-underline-offset: 3px;">プライバシーポリシー</a>
-        <span style="margin: 0 10px; opacity: 0.5;">·</span>
-        <a href="/commerce/" style="color: inherit; opacity: 0.75; text-decoration: underline; text-underline-offset: 3px;">特定商取引法に基づく表記</a>
-      </div>
-    </div>
+    <div><h6>Services</h6><ul><li><a href="/web/">HP・LP制作</a></li><li><a href="/cleaning/">清掃</a></li><li><a href="/guitar/">ギター教室</a></li><li><a href="/totoline/">totoline</a></li></ul></div>
+    <div><h6>Company</h6><ul><li><a href="/articles/">ジャーナル</a></li><li><a href="/articles/totonoeruya-name-riyu/">屋号の由来</a></li><li><a href="https://github.com/papanti0318-spec" target="_blank" rel="noopener">GitHub</a></li><li><a href="https://x.com/totonoeruya" target="_blank" rel="noopener">X</a></li></ul></div>
+    <div><h6>Contact</h6><ul><li><a href="mailto:totonoeru.ya@gmail.com">totonoeru.ya@gmail.com</a></li><li><a href="https://line.me/R/ti/p/@903xtesg" target="_blank" rel="noopener">LINE @903xtesg</a></li><li>長野県小諸市</li></ul></div>
+  </div>
+  <div class="foot-bot">
+    <span>© 2026 ととのえる屋. 長野県小諸市</span>
+    <span><a href="/privacy/">プライバシーポリシー</a> · <a href="/commerce/">特定商取引法に基づく表記</a></span>
   </div>
 </footer>
 
-<script>
-const drawer = document.getElementById('site-drawer');
-const trigger = document.querySelector('.site-nav-trigger');
-const backdrop = drawer.querySelector('.site-drawer-backdrop');
-const closeLinks = drawer.querySelectorAll('[data-drawer-close]');
-
-function openDrawer() {
-  drawer.setAttribute('aria-hidden', 'false');
-  trigger.setAttribute('aria-expanded', 'true');
-}
-
-function closeDrawer() {
-  drawer.setAttribute('aria-hidden', 'true');
-  trigger.setAttribute('aria-expanded', 'false');
-}
-
-if (trigger) trigger.addEventListener('click', openDrawer);
-if (backdrop) backdrop.addEventListener('click', closeDrawer);
-closeLinks.forEach(link => link.addEventListener('click', closeDrawer));
-</script>
-
+<script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js" defer></script>
+<script src="../../assets/smooth-2026.js" defer></script>
 </body>
 </html>

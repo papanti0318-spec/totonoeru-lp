@@ -46,7 +46,7 @@
 
   ready(function () {
     /* 3. 見出しの行スタガー */
-    var HEAD = ".page-hero h1, .sec h2, .sec-top h2, .quote, .about-inner h2, .toto h2, .product h2, .capacity .big";
+    var HEAD = ".page-hero h1, .sec h2, .sec-top h2, .quote, .about-inner h2, .toto h2, .product h2, .capacity .big, .article-title, .article-content h2";
     document.querySelectorAll(HEAD).forEach(function (el) {
       if (el.closest(".topbar, .site-footer")) return;
       if (el.querySelector(".split-line")) return;
@@ -59,7 +59,7 @@
 
     /* 4. 画像 reveal（親に .img-reveal） */
     var SKIP = ".topbar, .site-footer, .testi, .brand, .about-bg, .product .card";
-    document.querySelectorAll("section img, .full-img img").forEach(function (img) {
+    document.querySelectorAll("section img, .full-img img, .article-hero img").forEach(function (img) {
       if (img.closest(SKIP)) return;
       var parent = img.parentElement;
       if (!parent || parent.classList.contains("img-reveal")) return;
