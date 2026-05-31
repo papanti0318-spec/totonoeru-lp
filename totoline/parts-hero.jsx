@@ -138,6 +138,13 @@ function Hero() {
           <div>
             <img className="hero-totonoeru-logo" src="../assets/logo-totonoeru.png" alt="ととのえる屋" width="80" height="92" />
 
+            <svg className="toto-mark" viewBox="0 0 120 64" aria-hidden="true">
+              <line x1="6" y1="6" x2="60" y2="58" />
+              <line x1="60" y1="6" x2="60" y2="58" />
+              <line x1="114" y1="6" x2="60" y2="58" />
+              <circle cx="60" cy="58" r="2.6" />
+            </svg>
+
             <h1 className="serif-jp">
               LINEに<br />
               <span className="accent">置くだけ</span>で、<br />

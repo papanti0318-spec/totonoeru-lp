@@ -747,3 +747,11 @@ footer {
 /* Reveal */
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s ease, transform .8s ease; }
 .reveal.in { opacity: 1; transform: translateY(0); }
+
+/* ===== 集約線画マーク（ヒーロー・読み込みで描かれる） ===== */
+.toto-mark { width: 92px; height: auto; display: block; margin: 6px 0 22px; overflow: visible; }
+.toto-mark line { fill: none; stroke: var(--line, #C5743C); stroke-width: 1; stroke-linecap: round; stroke-dasharray: 90; stroke-dashoffset: 90; animation: totoDraw 1.5s cubic-bezier(.2,.6,.2,1) .3s forwards; }
+.toto-mark circle { fill: var(--line, #C5743C); stroke: none; opacity: 0; animation: totoFade .8s ease 1.4s forwards; }
+@keyframes totoDraw { to { stroke-dashoffset: 0; } }
+@keyframes totoFade { to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .toto-mark line { stroke-dashoffset: 0; } .toto-mark circle { opacity: 1; } }
