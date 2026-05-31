@@ -58,7 +58,7 @@
     });
 
     /* 4. 画像 reveal（親に .img-reveal） */
-    var SKIP = ".topbar, .site-footer, .testi, .brand, .about-bg, .product .card";
+    var SKIP = ".topbar, .site-footer, .testi, .brand, .about-bg, .product .card, .mask, .px-stage, .no-rv";
     document.querySelectorAll("section img, .full-img img, .article-hero img").forEach(function (img) {
       if (img.closest(SKIP)) return;
       var parent = img.parentElement;

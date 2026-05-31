@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="hYRflPVBHV_SbReXwN_7v4tNCf6AT3VusKhSviD5kPU" />
+<title>Web表現ずかん｜スクロールの"しかけ"を実演と用語で｜ととのえる屋</title>
+<meta name="description" content="サイトでよく見る「なんかかっこいい動き」を、実演＋やさしい言葉＋専門用語集でまるごと解説。なめらかスクロール・パララックス・マスクリビール・ページ遷移・SVG線画など10種を、その場で体感できます。テンプレとの違いも。長野県小諸市のHP・LP制作 ととのえる屋。">
+<meta name="keywords" content="Web表現, ホームページ 動き, パララックス, なめらかスクロール, SVGアニメーション, ページ遷移, Web制作 小諸, HP制作 長野, 非エンジニア Web, ととのえる屋">
+<link rel="canonical" href="https://totonoeruya.jp/lab/">
+
+<meta property="og:title" content="Web表現ずかん｜スクロールの"しかけ"を実演と用語で">
+<meta property="og:description" content="サイトの「なんかかっこいい動き」を、実演＋やさしい言葉＋用語集でまるごと。なめらかスクロール・パララックス・マスクリビール・ページ遷移・SVG線画など10種を体感。">
+<meta property="og:url" content="https://totonoeruya.jp/lab/">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://totonoeruya.jp/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site-2026.css">
+<link rel="stylesheet" href="../assets/lab-2026.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://totonoeruya.jp/lab/#article",
+      "headline": "Web表現ずかん｜スクロールの\"しかけ\"を実演と用語で",
+      "description": "サイトでよく見る動きの表現を、実演とやさしい言葉と専門用語集でまとめた図鑑。",
+      "inLanguage": "ja",
+      "datePublished": "2026-05-31",
+      "dateModified": "2026-05-31",
+      "image": "https://totonoeruya.jp/og.jpg",
+      "author": { "@type": "Person", "@id": "https://totonoeruya.jp/#terui", "name": "照井航次郎" },
+      "publisher": { "@type": "ProfessionalService", "@id": "https://totonoeruya.jp/#organization", "name": "ととのえる屋" },
+      "about": ["Web制作", "Webアニメーション", "UIデザイン", "ホームページ制作"]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://totonoeruya.jp/" },
+        { "@type": "ListItem", "position": 2, "name": "Web表現ずかん", "item": "https://totonoeruya.jp/lab/" }
+      ]
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://totonoeruya.jp/lab/#glossary",
+      "name": "Web表現ずかん 用語集",
+      "hasDefinedTerm": [
+        { "@type": "DefinedTerm", "name": "HTML", "description": "ページの骨組み。見出し・段落・画像などの「中身と構造」を書く言語。" },
+        { "@type": "DefinedTerm", "name": "CSS", "description": "見た目の指定。色・大きさ・配置・動きを決める。" },
+        { "@type": "DefinedTerm", "name": "JavaScript", "description": "ページに動きや反応をつけるプログラム。" },
+        { "@type": "DefinedTerm", "name": "SVG", "description": "図形を座標と式で持つ画像形式。拡大してもボケず、色や動きを後から操れる。" },
+        { "@type": "DefinedTerm", "name": "パララックス", "description": "スクロールで前後の要素を別の速さで動かし、奥行きを出す表現。" },
+        { "@type": "DefinedTerm", "name": "スムーススクロール", "description": "スクロールに慣性をつけ、ヌルッと滑らかに動かす技術（Lenis 等）。" },
+        { "@type": "DefinedTerm", "name": "マイクロインタラクション", "description": "ホバーやクリックへの小さな反応。触り心地をつくる細部。" },
+        { "@type": "DefinedTerm", "name": "clip-path", "description": "要素を好きな形に切り抜くCSS。マスクが開く演出などに使う。" },
+        { "@type": "DefinedTerm", "name": "View Transitions", "description": "ページ切り替えをなめらかにつなぐブラウザの仕組み。静的サイトでも使える。" },
+        { "@type": "DefinedTerm", "name": "レスポンシブ", "description": "PC・スマホなど画面幅に合わせてレイアウトが変わる作り。" },
+        { "@type": "DefinedTerm", "name": "ドメイン", "description": "サイトの住所（例：totonoeruya.jp）。" },
+        { "@type": "DefinedTerm", "name": "SSL / HTTPS", "description": "通信を暗号化する仕組み。鍵マークと https:// で示される。" },
+        { "@type": "DefinedTerm", "name": "SEO", "description": "検索エンジンに見つけてもらいやすくする工夫。" },
+        { "@type": "DefinedTerm", "name": "LLMO", "description": "ChatGPTなどのAIに、正しく引用・紹介してもらうための最適化。" },
+        { "@type": "DefinedTerm", "name": "OGP", "description": "SNSでURLを貼ったとき、タイトル・画像をきれいに表示する設定。" },
+        { "@type": "DefinedTerm", "name": "CDN", "description": "世界中の拠点から素早くファイルを配る仕組み。表示が速くなる。" },
+        { "@type": "DefinedTerm", "name": "テンプレート", "description": "あらかじめ作られたひな型。早く安く作れるが、作り込みや独自表現には限界がある。" },
+        { "@type": "DefinedTerm", "name": "WebGL", "description": "ブラウザで3Dや派手な表現を出す技術。重く、検索・AIには中身が読まれにくい。" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://totonoeruya.jp/lab/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "テンプレートと、こうした作り込みは何が違いますか？", "acceptedAnswer": { "@type": "Answer", "text": "テンプレートは既製のひな型で、早く安く作れます。一方、こうした表現の作り込みは、ブランドに合わせて動きや見せ方を一つずつ設計します。早さ・安さならテンプレ、独自の空気感や説得力なら作り込み、という住み分けです。" }},
+        { "@type": "Question", "name": "こういう動きを入れると、表示が重くなったりSEOに悪くないですか？", "acceptedAnswer": { "@type": "Answer", "text": "このページの表現は、すべてCSS・SVG・軽いJavaScriptで作っており、写真より軽いものがほとんどです。中身は文字として書かれているので検索やAIにも読まれます。3DのWebGLなど重い表現は、目的に合うときだけ慎重に使います。" }},
+        { "@type": "Question", "name": "自分のサイトにも入れられますか？", "acceptedAnswer": { "@type": "Answer", "text": "はい。既存サイトに後から足すこともできます。やり過ぎると散らかるので、ブランドに合う量だけを選んで入れるのがコツです。何から入れるか分からなくても、相談から一緒に決められます。" }}
+      ]
+    }
+  ]
+}
+</script>
+<!-- Vercel Web Analytics -->
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/assets/analytics.js"></script>
+</head>
+<body class="lab-cursor">
+
+<div class="grain" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg"><filter id="ln"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(#ln)"/></svg></div>
+<div class="cursor" id="cursor" aria-hidden="true"><span id="curlabel"></span></div>
+
+<header class="topbar">
+  <a href="/" class="brand"><img src="../assets/logo-totonoeru.png" alt="">ととのえる屋</a>
+  <nav aria-label="メインメニュー">
+    <a href="/web/">Web · AI</a>
+    <a href="/cleaning/">Cleaning</a>
+    <a href="/guitar/">Guitar</a>
+    <a href="/totoline/">totoline</a>
+    <a href="/articles/">Journal</a>
+  </nav>
+  <a href="/web/#contact" class="cta">相談する</a>
+</header>
+
+<section class="page-hero">
+  <div class="hero-mark draw-svg" aria-hidden="true"><svg viewBox="0 0 120 64"><line x1="6" y1="6" x2="60" y2="58" pathLength="1" data-draw/><line x1="60" y1="6" x2="60" y2="58" pathLength="1" data-draw/><line x1="114" y1="6" x2="60" y2="58" pathLength="1" data-draw/><circle cx="60" cy="58" r="2.6" data-fade/></svg></div>
+  <p class="eyebrow">Lab — Web表現ずかん</p>
+  <h1>Webの"しかけ"、ぜんぶ実演。</h1>
+  <p class="sub">サイトで見かける「なんかかっこいい動き」。その正体を、実物で触って、名前を知れるページです。むずかしい言葉は使いません。このページ自体が、ぜんぶ実演でできています。</p>
+</section>
+
+<div class="lab-intro">
+  <p>下にスクロールすると、ひとつずつ「しかけ」が出てきます。それぞれ <strong style="font-weight:500;color:var(--ink)">名前・ひとことで何か・実演・どんな時に効くか・重さやSEOへの影響</strong> を、正直に並べました。最後に専門用語集と「テンプレとは何か」も置いています。</p>
+</div>
+
+<!-- 01 smooth -->
+<section class="tech">
+  <div class="head"><span class="num">01 — いま体感中</span><span class="en">Smooth Scroll</span></div>
+  <h2>なめらかスクロール</h2>
+  <p class="one">スクロールに"慣性"をつけて、ヌルッと滑らかに動かす。実はこのページ全体に、もう効いています。マウスホイールを少し回してみてください。</p>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">サイト全体の"高級感"。第一印象を静かに底上げする土台。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">ごく軽い。中身には影響なし。動きが苦手な人には自動で切る配慮も。</div></div>
+  </div>
+</section>
+
+<!-- 02 hover -->
+<section class="tech">
+  <div class="head"><span class="num">02</span><span class="en">Hover Interaction</span></div>
+  <h2 class="rt rt-big">触れると、線が引かれる。</h2>
+  <p class="one">カードにカーソルを乗せると、下線が左から伸び、矢印が動きます。</p>
+  <div class="demo cards">
+    <div class="card"><h3>HP・LP制作</h3><p>言葉を集約し、核だけ残す。</p><div class="arw">→</div><span class="edge"></span></div>
+    <div class="card"><h3>清掃</h3><p>現場の事務作業まで、AIで軽く。</p><div class="arw">→</div><span class="edge"></span></div>
+    <div class="card"><h3>ギター教室</h3><p>続けたくなることを、大事に。</p><div class="arw">→</div><span class="edge"></span></div>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">「押せる/反応する」が直感的に伝わる。回遊と問い合わせの後押し。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">CSSだけ。ほぼ無視できるほど軽い。</div></div>
+  </div>
+</section>
+
+<!-- 03 text reveal -->
+<section class="tech">
+  <div class="head"><span class="num">03</span><span class="en">Text Reveal</span></div>
+  <h2 class="rt rt-big">見出しが、下から<br>すっと立ち上がる。</h2>
+  <p class="one">画面に入ると、覆いの下から文字が現れます（上の見出しがそれです）。</p>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">冒頭やキーメッセージを"読ませる"。間（ま）で印象づける。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">文字はそのまま書かれているので検索・AIに読まれる。軽い。</div></div>
+  </div>
+</section>
+
+<!-- 04 mask -->
+<section class="tech">
+  <div class="head"><span class="num">04</span><span class="en">Mask Reveal + Zoom</span></div>
+  <h2 class="rt rt-big">写真が、開いて現れる。</h2>
+  <p class="one">マスク（覆い）が左から開いて写真が出ます。ホバーでゆっくり寄ります。</p>
+  <div class="demo mask"><img src="../assets/haluta-lp.jpg" alt="haluta house のLP制作実績" loading="lazy"></div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">実績写真・ヒーロー画像を"作品"として見せたいとき。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">写真は通常どおり。演出はCSSのみで軽い。</div></div>
+  </div>
+</section>
+
+<!-- 05 magnetic -->
+<section class="tech">
+  <div class="head"><span class="num">05</span><span class="en">Magnetic Button</span></div>
+  <h2 class="rt rt-big">ボタンが、指に吸い付く。</h2>
+  <p class="one">ボタンの近くにカーソルを寄せると、少し近づいてきます。押し心地のための"気持ちよさ"。</p>
+  <div class="demo mag-wrap"><button class="mag" id="mag">相談する →</button></div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">いちばん押してほしいボタン（CTA）に1つだけ。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽いJavaScript。影響なし。やり過ぎ注意（多用は逆効果）。</div></div>
+  </div>
+</section>
+
+<!-- 06 count -->
+<section class="tech">
+  <div class="head"><span class="num">06</span><span class="en">Count Up</span></div>
+  <h2 class="rt rt-big">数字が、スルスル上がる。</h2>
+  <p class="one">画面に入ると 0 から目標値まで動きます。</p>
+  <div class="demo stats">
+    <div class="stat"><div class="num"><span class="count" data-to="60">0</span><small>分→0分</small></div><div class="l">washdeli 手作業削減</div></div>
+    <div class="stat"><div class="num"><span class="count" data-to="97">0</span><small>本</small></div><div class="l">ジャーナル記事</div></div>
+    <div class="stat"><div class="num"><span class="count" data-to="5">0</span><small>市町</small></div><div class="l">対応エリア</div></div>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">実績・削減効果を"動き"で印象づける。ただし本当の数字だけ。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽い。数字も文字として書かれるので読まれる。</div></div>
+  </div>
+</section>
+
+<!-- 07 diagram -->
+<section class="tech">
+  <div class="head"><span class="num">07</span><span class="en">Animated Diagram (SVG)</span></div>
+  <h2 class="rt rt-big">3つが、1つに集まる。</h2>
+  <p class="one">線が描かれて、1点に収束します。「集約してととのえる」を図で。</p>
+  <div class="demo diagram draw-svg">
+    <svg viewBox="0 0 600 300">
+      <text class="nd" x="80" y="40" text-anchor="middle">HP・LP制作</text>
+      <text class="nd" x="300" y="40" text-anchor="middle">清掃</text>
+      <text class="nd" x="520" y="40" text-anchor="middle">ギター教室</text>
+      <line x1="80" y1="52" x2="300" y2="232" pathLength="1" data-draw/>
+      <line x1="300" y1="52" x2="300" y2="232" pathLength="1" data-draw/>
+      <line x1="520" y1="52" x2="300" y2="232" pathLength="1" data-draw/>
+      <circle cx="300" cy="238" r="5" data-fade/>
+      <text x="300" y="272" text-anchor="middle" data-fade style="font-weight:500">ととのえる屋</text>
+    </svg>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">仕組み・流れ・関係性を、言葉より速く伝える。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">SVGは超軽量。中の文字も読まれる。</div></div>
+  </div>
+</section>
+
+<!-- 08 parallax -->
+<section class="tech">
+  <div class="head"><span class="num">08</span><span class="en">Parallax</span></div>
+  <h2 class="rt rt-big">2枚が、別の速さで動く。</h2>
+  <p class="one">スクロールで前後の写真がずれて動き、奥行きが出ます。</p>
+  <div class="demo px-stage">
+    <img class="px-1" data-speed="0.12" src="../assets/haluta-signage.jpg" alt="">
+    <img class="px-2" data-speed="-0.18" src="../assets/business-cleaning.jpg" alt="">
+    <span class="px-cap">スクロールで奥行きが出る</span>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">トップや事例の"作品感"。空気をつくりたいとき。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽い。ただしモバイルは控えめに（酔い対策）。</div></div>
+  </div>
+</section>
+
+<!-- 09 sticky -->
+<section class="tech">
+  <div class="head"><span class="num">09</span><span class="en">Sticky Pinning</span></div>
+  <div class="pin">
+    <div class="stuck"><h3 class="rt">見出しは止まったまま、<br>右側だけ進む。</h3></div>
+    <div class="sc-list">
+      <div class="sc"><div class="n">01</div>つくる — HP・LP・冊子・サイネージ。</div>
+      <div class="sc"><div class="n">02</div>まわす — 現場のAI集約・LINE業務集約。</div>
+      <div class="sc"><div class="n">03</div>おしえる — 研修・ギター教室。</div>
+      <div class="sc"><div class="n">04</div>集約してととのえる。</div>
+    </div>
+  </div>
+  <div class="meta" style="margin-top:40px">
+    <div><div class="k">どんな時に効く</div><div class="v">手順・ストーリーを、視線を固定して順に見せる。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">CSSの position:sticky だけ。とても軽い。</div></div>
+  </div>
+</section>
+
+<!-- 10 transition -->
+<section class="tech" style="text-align:center">
+  <div class="head" style="justify-content:center"><span class="num">10</span></div>
+  <h2 class="rt rt-big">押すと、フワッと切り替わる。</h2>
+  <p class="one" style="margin-left:auto;margin-right:auto">リンクを押した瞬間、画面が覆われて次ページへ。静的サイトでもできる、いま一番モダンな演出です。</p>
+  <button class="go-btn" id="go">体感する（デモ）</button>
+  <div class="meta" style="text-align:left">
+    <div><div class="k">どんな時に効く</div><div class="v">ページ移動の"途切れ"を消し、1つの作品のように見せる。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽い。最新ブラウザの標準機能（View Transitions）でも実現可。</div></div>
+  </div>
+</section>
+
+<!-- glossary -->
+<section class="glossary">
+  <div class="sec-top"><h2 style="font-weight:400;font-size:clamp(22px,3vw,36px)">専門用語、やさしい一覧。</h2><span class="note">Glossary · 18語</span></div>
+  <div class="g-grid">
+    <dl><dt>HTML<small>HyperText Markup Language</small></dt><dd>ページの骨組み。見出し・段落・画像など「中身と構造」を書く言語。</dd></dl>
+    <dl><dt>CSS<small>Cascading Style Sheets</small></dt><dd>見た目の指定。色・大きさ・配置・動きを決める。</dd></dl>
+    <dl><dt>JavaScript<small>JS</small></dt><dd>ページに動きや反応をつけるプログラム。</dd></dl>
+    <dl><dt>SVG<small>Scalable Vector Graphics</small></dt><dd>図形を座標と式で持つ画像。拡大してもボケず、色や動きを後から操れる。線が描かれるアニメはこれ。</dd></dl>
+    <dl><dt>パララックス<small>Parallax</small></dt><dd>スクロールで前後の要素を別々の速さで動かし、奥行きを出す表現。</dd></dl>
+    <dl><dt>スムーススクロール<small>Smooth Scroll / Lenis</small></dt><dd>スクロールに慣性をつけ、ヌルッと滑らかに動かす技術。</dd></dl>
+    <dl><dt>マイクロインタラクション<small>Micro-interaction</small></dt><dd>ホバーやクリックへの小さな反応。触り心地をつくる細部。</dd></dl>
+    <dl><dt>クリップパス<small>clip-path</small></dt><dd>要素を好きな形に切り抜くCSS。マスクが開く演出に使う。</dd></dl>
+    <dl><dt>ビュートランジション<small>View Transitions</small></dt><dd>ページ切り替えをなめらかにつなぐbrowserの仕組み。静的サイトでも使える。</dd></dl>
+    <dl><dt>レスポンシブ<small>Responsive</small></dt><dd>PC・スマホなど画面幅に合わせてレイアウトが変わる作り。</dd></dl>
+    <dl><dt>ドメイン<small>Domain</small></dt><dd>サイトの住所。例：totonoeruya.jp。</dd></dl>
+    <dl><dt>SSL / HTTPS<small>暗号化通信</small></dt><dd>通信を暗号化する仕組み。鍵マークと https:// で示される。</dd></dl>
+    <dl><dt>SEO<small>検索最適化</small></dt><dd>検索エンジンに見つけてもらいやすくする工夫。</dd></dl>
+    <dl><dt>LLMO<small>AI最適化</small></dt><dd>ChatGPTなどのAIに、正しく引用・紹介してもらうための最適化。</dd></dl>
+    <dl><dt>OGP<small>Open Graph Protocol</small></dt><dd>SNSにURLを貼ったとき、タイトル・画像をきれいに表示する設定。</dd></dl>
+    <dl><dt>CDN<small>Content Delivery Network</small></dt><dd>世界中の拠点から素早くファイルを配る仕組み。表示が速くなる。</dd></dl>
+    <dl><dt>WebGL<small>3D描画</small></dt><dd>ブラウザで3Dや派手な表現を出す技術。重く、検索・AIには中身が読まれにくい。使いどころを選ぶ。</dd></dl>
+    <dl><dt>テンプレート<small>Template</small></dt><dd>あらかじめ作られたひな型。早く安く作れるが、作り込みや独自表現には限界がある。</dd></dl>
+  </div>
+</section>
+
+<!-- template -->
+<section class="tmpl">
+  <h2 class="rt">テンプレートと、作り込み。</h2>
+  <p>「テンプレート」は、あらかじめ用意されたひな型です。色や文字を差し替えるだけで、早く・安くサイトが作れます。一方、このページのような表現の作り込みは、ブランドに合わせて動きや見せ方を一つずつ設計します。</p>
+  <p>どちらが正しい、ではありません。<strong style="font-weight:500;color:var(--ink)">早さ・安さならテンプレ。独自の空気感や説得力なら作り込み。</strong>——目的で選ぶものです。</p>
+  <div class="two">
+    <div class="box"><div class="t">Template</div><h4>テンプレート</h4><ul><li>早い・安い</li><li>仕様が決まっていて迷いにくい</li><li>独自の動き・表現は出しにくい</li><li>他社と似た見た目になりやすい</li></ul></div>
+    <div class="box"><div class="t">Custom</div><h4>作り込み</h4><ul><li>ブランドに合わせて設計できる</li><li>動き・速さ・構造まで調整できる</li><li>時間と手間はかかる</li><li>"ここにしかない"印象が出せる</li></ul></div>
+  </div>
+  <p>ととのえる屋は、テンプレを否定しません。必要なら使います。ただ、ここに並べた表現を「やり過ぎず、ブランドに合う量だけ」入れるのが、ちょうどいいと考えています。</p>
+</section>
+
+<!-- CTA -->
+<section class="sec ct" style="text-align:center">
+  <div class="sec-top" style="justify-content:center"><h2 style="font-size:clamp(26px,5vw,48px)">こういう表現も、作れます。</h2></div>
+  <p class="barrier">「何ができるか分からないけれど、なんかかっこよくしたい」だけでもOKです。<br>今のサイトに後から足すこともできます。一緒に、ちょうどいい量を選びましょう。</p>
+  <div style="margin-top:8px"><a href="/web/" class="btn solid">HP・LP制作を見る →</a></div>
+</section>
+
+<footer class="site-footer">
+  <div class="foot">
+    <div class="b">
+      <img src="../assets/logo-totonoeru.png" alt="ととのえる屋">
+      <p>長野県小諸市の、小さな何でも屋。HP・LP制作、AI業務改善、清掃、ギター教室。ぜんぶ、同じ手で。</p>
+    </div>
+    <div><h6>Services</h6><ul><li><a href="/web/">HP・LP制作</a></li><li><a href="/cleaning/">清掃</a></li><li><a href="/guitar/">ギター教室</a></li><li><a href="/totoline/">totoline</a></li></ul></div>
+    <div><h6>Company</h6><ul><li><a href="/articles/">ジャーナル</a></li><li><a href="/lab/">Web表現ずかん</a></li><li><a href="https://github.com/papanti0318-spec" target="_blank" rel="noopener">GitHub</a></li><li><a href="https://x.com/totonoeruya" target="_blank" rel="noopener">X</a></li></ul></div>
+    <div><h6>Contact</h6><ul><li><a href="mailto:totonoeru.ya@gmail.com">totonoeru.ya@gmail.com</a></li><li><a href="https://line.me/R/ti/p/@903xtesg" target="_blank" rel="noopener">LINE @903xtesg</a></li><li>長野県小諸市</li></ul></div>
+  </div>
+  <div class="foot-bot">
+    <span>© 2026 ととのえる屋. 長野県小諸市</span>
+    <span><a href="/privacy/">プライバシーポリシー</a> · <a href="/commerce/">特定商取引法に基づく表記</a></span>
+  </div>
+</footer>
+
+<div class="wipe" id="wipe">— TOTONOERUYA —</div>
+
+<script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js" defer></script>
+<script src="../assets/smooth-2026.js" defer></script>
+<script>
+(function(){
+  var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  /* テキストリビール（.rt を文字spanに） */
+  document.querySelectorAll(".rt").forEach(function(el){
+    var segs=el.innerHTML.split(/(<br\s*\/?>)/i);
+    el.innerHTML=segs.map(function(s){ if(/<br/i.test(s))return s;
+      return s.split("").map(function(ch){return ch===" "?" ":'<span class="word"><span>'+ch+"</span></span>";}).join("");
+    }).join("");
+    el.querySelectorAll(".word>span").forEach(function(sp,i){sp.style.transitionDelay=(i*22)+"ms";});
+  });
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){
+    e.target.classList.add("in");
+    if(e.target.classList.contains("count"))countUp(e.target);
+    io.unobserve(e.target);}});},{threshold:.18,rootMargin:"0px 0px -6% 0px"});
+  if(!reduce) document.querySelectorAll(".mask").forEach(function(el){el.classList.add("anim");});
+  document.querySelectorAll(".rt,.mask,.count").forEach(function(el){io.observe(el);});
+  setTimeout(function(){document.querySelectorAll(".mask:not(.in)").forEach(function(el){el.classList.add("in");});},2200);
+
+  function countUp(el){var to=+el.dataset.to,s=null;function st(ts){if(!s)s=ts;var p=Math.min((ts-s)/1500,1);el.textContent=Math.round((1-Math.pow(1-p,3))*to);if(p<1)requestAnimationFrame(st);}requestAnimationFrame(st);}
+
+  /* パララックス */
+  var px=[].slice.call(document.querySelectorAll("[data-speed]"));
+  function par(){var vh=innerHeight;px.forEach(function(el){var r=el.getBoundingClientRect();var off=(r.top+r.height/2)-vh/2;el.style.transform="translateY("+(off*+el.dataset.speed)+"px)";});}
+  addEventListener("scroll",par,{passive:true});par();
+
+  /* マグネティック */
+  var mag=document.getElementById("mag");
+  if(mag&&matchMedia("(hover:hover)").matches){
+    mag.addEventListener("mousemove",function(e){var r=mag.getBoundingClientRect();mag.style.transform="translate("+(e.clientX-(r.left+r.width/2))*.4+"px,"+(e.clientY-(r.top+r.height/2))*.4+"px)";});
+    mag.addEventListener("mouseleave",function(){mag.style.transform="";});
+  }
+
+  /* ページ遷移ワイプ（デモ） */
+  var wipe=document.getElementById("wipe"),go=document.getElementById("go");
+  if(go)go.addEventListener("click",function(){wipe.style.transition="transform .55s cubic-bezier(.7,0,.2,1),opacity .1s";wipe.style.opacity="1";wipe.style.transformOrigin="bottom";wipe.style.transform="scaleY(1)";setTimeout(function(){wipe.style.transformOrigin="top";wipe.style.transform="scaleY(0)";setTimeout(function(){wipe.style.opacity="0";},550);},700);});
+
+  /* カーソル */
+  if(matchMedia("(hover:hover)").matches){
+    var cur=document.getElementById("cursor"),lab=document.getElementById("curlabel");
+    var x=innerWidth/2,y=innerHeight/2,cx=x,cy=y;
+    addEventListener("mousemove",function(e){x=e.clientX;y=e.clientY;});
+    (function loop(){cx+=(x-cx)*.2;cy+=(y-cy)*.2;cur.style.left=cx+"px";cur.style.top=cy+"px";requestAnimationFrame(loop);})();
+    document.querySelectorAll(".mask,.px-stage").forEach(function(el){el.addEventListener("mouseenter",function(){cur.classList.add("lbl");lab.textContent="見る";});el.addEventListener("mouseleave",function(){cur.classList.remove("lbl");lab.textContent="";});});
+    document.querySelectorAll("a,button,.card").forEach(function(el){el.addEventListener("mouseenter",function(){cur.classList.add("lbl");lab.textContent="押す";});el.addEventListener("mouseleave",function(){cur.classList.remove("lbl");lab.textContent="";});});
+  }
+})();
+</script>
+</body>
+</html>
