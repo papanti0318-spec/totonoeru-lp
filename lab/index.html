@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="hYRflPVBHV_SbReXwN_7v4tNCf6AT3VusKhSviD5kPU" />
 <title>Web表現ずかん｜スクロールの"しかけ"を実演と用語で｜ととのえる屋</title>
-<meta name="description" content="サイトでよく見る「なんかかっこいい動き」を、実演＋やさしい言葉＋専門用語集でまるごと解説。なめらかスクロール・パララックス・マスクリビール・モーダル・タブ・横スクロール・ダークモードなど27種を、その場で体感できます。テンプレとの違いも。長野県小諸市のHP・LP制作 ととのえる屋。">
+<meta name="description" content="サイトでよく見る「なんかかっこいい動き」を、実演＋やさしい言葉＋専門用語集でまるごと解説。なめらかスクロール・パララックス・マスクリビール・モーダル・タブ・横スクロール・ダークモード・ステップフォームなど32種を、その場で体感できます。テンプレとの違いも。長野県小諸市のHP・LP制作 ととのえる屋。">
 <meta name="keywords" content="Web表現, ホームページ 動き, パララックス, なめらかスクロール, SVGアニメーション, ページ遷移, Web制作 小諸, HP制作 長野, 非エンジニア Web, ととのえる屋">
 <link rel="canonical" href="https://totonoeruya.jp/lab/">
 
 <meta property="og:title" content="Web表現ずかん｜スクロールの"しかけ"を実演と用語で">
-<meta property="og:description" content="サイトの「なんかかっこいい動き」を、実演＋やさしい言葉＋用語集でまるごと。なめらかスクロール・パララックス・モーダル・横スクロール・ダークモードなど27種を体感。">
+<meta property="og:description" content="サイトの「なんかかっこいい動き」を、実演＋やさしい言葉＋用語集でまるごと。なめらかスクロール・モーダル・横スクロール・ダークモード・ステップフォームなど32種を体感。">
 <meta property="og:url" content="https://totonoeruya.jp/lab/">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://totonoeruya.jp/og.jpg">
@@ -75,7 +75,9 @@
         { "@type": "DefinedTerm", "name": "クリップボードAPI", "description": "ボタン操作で文字をコピーさせるブラウザの仕組み。コードコピー機能などに使う。" },
         { "@type": "DefinedTerm", "name": "スクロールスナップ", "description": "スクロールすると1枚ずつ吸い付くように止まるCSSの仕組み（scroll-snap）。横並びカードや縦の章送りに使う。" },
         { "@type": "DefinedTerm", "name": "ダークモード", "description": "背景を暗くし目にやさしくする配色切替。色とコントラストだけを差し替え、中身は変えない。" },
-        { "@type": "DefinedTerm", "name": "シンタックスハイライト", "description": "コードのキーワード・文字列・コメントを色分けして読みやすくする表示。" }
+        { "@type": "DefinedTerm", "name": "シンタックスハイライト", "description": "コードのキーワード・文字列・コメントを色分けして読みやすくする表示。" },
+        { "@type": "DefinedTerm", "name": "ステップフォーム", "description": "長い入力フォームを1問ずつの段階に分け、答えやすくして途中離脱を減らすUI。" },
+        { "@type": "DefinedTerm", "name": "ライトボックス", "description": "サムネイル画像を押すと、背景を暗くして大きく開く拡大表示。実績や事例を見せるのに使う。" }
       ]
     },
     {
@@ -123,7 +125,7 @@
 </div>
 
 <nav class="toc" aria-label="もくじ">
-  <div class="toc-head"><h2>もくじ — Web表現図鑑</h2><span class="cnt">全27項目 · 少しずつ追加中</span></div>
+  <div class="toc-head"><h2>もくじ — Web表現図鑑</h2><span class="cnt">全32項目 · 少しずつ追加中</span></div>
   <div class="cols">
     <div class="col"><h3>スクロール演出</h3>
       <a href="#t1">なめらかスクロール<span class="e">01</span></a>
@@ -142,11 +144,13 @@
     <div class="col"><h3>画像</h3>
       <a href="#t4">マスクリビール<span class="e">04</span></a>
       <a href="#t11">Before / After<span class="e">11</span></a>
+      <a href="#t30">ギャラリー＋拡大<span class="e">30</span></a>
     </div>
     <div class="col"><h3>操作感</h3>
       <a href="#t2">ホバー反応<span class="e">02</span></a>
       <a href="#t5">マグネティック<span class="e">05</span></a>
       <a href="#t12">3Dチルト<span class="e">12</span></a>
+      <a href="#t29">カードフリップ<span class="e">29</span></a>
     </div>
     <div class="col"><h3>ナビ・遷移</h3>
       <a href="#t10">ページ遷移<span class="e">10</span></a>
@@ -156,17 +160,20 @@
       <a href="#t7">SVG線画図解<span class="e">07</span></a>
       <a href="#t15">色反転<span class="e">15</span></a>
       <a href="#t26">ダークモード<span class="e">26</span></a>
+      <a href="#t31">プログレスサークル<span class="e">31</span></a>
     </div>
     <div class="col"><h3>UI部品</h3>
       <a href="#t17">モーダル<span class="e">17</span></a>
       <a href="#t18">タブ切替<span class="e">18</span></a>
       <a href="#t19">トースト通知<span class="e">19</span></a>
       <a href="#t20">ツールチップ<span class="e">20</span></a>
+      <a href="#t28">ステップフォーム<span class="e">28</span></a>
     </div>
     <div class="col"><h3>コード・技術</h3>
       <a href="#t21">コードコピー<span class="e">21</span></a>
       <a href="#t22">ライブプレビュー<span class="e">22</span></a>
       <a href="#t27">シンタックスハイライト<span class="e">27</span></a>
+      <a href="#t32">コードのタブ切替<span class="e">32</span></a>
     </div>
   </div>
 </nav>
@@ -603,12 +610,139 @@ npm run dev</code></pre>
   </div>
 </section>
 
+<div class="cat-label"><span>実務でよく使う表現 — 第三集</span></div>
+
+<!-- 28 step form（動線内蔵） -->
+<section id="t28" class="tech">
+  <div class="head"><span class="num">28</span><span class="en">Step Form</span></div>
+  <h2 class="rt rt-big">質問を、1つずつ。</h2>
+  <p class="one">長い入力フォームも、1問ずつに分けると答えやすくなります。下のミニ相談で体感してみてください。最後は、そのまま本物の相談につながります。</p>
+  <div class="demo stepform" id="stepform">
+    <div class="sf-bar"><span class="sf-dot is-on"></span><span class="sf-dot"></span><span class="sf-dot"></span></div>
+    <div class="sf-step is-on">
+      <p class="sf-q">Q1. 何について相談したいですか？</p>
+      <div class="sf-opts">
+        <button class="sf-opt" data-next>ホームページ・LP</button>
+        <button class="sf-opt" data-next>清掃の現場をAIで楽に</button>
+        <button class="sf-opt" data-next>ギターを習いたい</button>
+        <button class="sf-opt" data-next>まだ、決まっていない</button>
+      </div>
+    </div>
+    <div class="sf-step">
+      <p class="sf-q">Q2. いま、いちばん気になっていることは？</p>
+      <div class="sf-opts">
+        <button class="sf-opt" data-next>何から始めればいいか分からない</button>
+        <button class="sf-opt" data-next>手作業が多くて時間が足りない</button>
+        <button class="sf-opt" data-next>今のやり方を見直したい</button>
+      </div>
+      <button class="sf-back" data-back>← もどる</button>
+    </div>
+    <div class="sf-step sf-end">
+      <p class="sf-q">ありがとうございます。</p>
+      <p class="sf-msg">この続きは、メールかLINEで気軽にどうぞ。「何がなんだか分からない」だけでも大丈夫です。</p>
+      <div class="sf-cta"><a class="ui-btn solid" href="/web/#contact">相談する →</a><a class="ui-btn" href="https://line.me/R/ti/p/@903xtesg" target="_blank" rel="noopener">LINEで話す</a></div>
+      <button class="sf-back" data-back>← もどる</button>
+    </div>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">入力項目が多い問い合わせ・申込。1問ずつにして、途中離脱を減らす。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽いJS。最後をそのまま相談・予約の入口にできる。</div></div>
+  </div>
+</section>
+
+<!-- 29 card flip（動線内蔵） -->
+<section id="t29" class="tech">
+  <div class="head"><span class="num">29</span><span class="en">Card Flip</span></div>
+  <h2 class="rt rt-big">カードが、くるっと裏返る。</h2>
+  <p class="one">カーソルを乗せると裏面が現れます（スマホでは押すと各ページへ）。表に名前、裏に中身と入口を。</p>
+  <div class="demo flips">
+    <a class="flip" href="/web/"><div class="flip-in"><div class="flip-f"><span class="flip-tag">Front</span><h3>HP・LP制作</h3></div><div class="flip-b"><p>言葉を集約し、核だけ残す。</p><span class="flip-go">見る →</span></div></div></a>
+    <a class="flip" href="/cleaning/"><div class="flip-in"><div class="flip-f"><span class="flip-tag">Front</span><h3>清掃</h3></div><div class="flip-b"><p>現場の事務を、写真とAIで軽く。</p><span class="flip-go">見る →</span></div></div></a>
+    <a class="flip" href="/guitar/"><div class="flip-in"><div class="flip-f"><span class="flip-tag">Front</span><h3>ギター教室</h3></div><div class="flip-b"><p>続けたくなることを、大事に。</p><span class="flip-go">見る →</span></div></div></a>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">メニュー・人物・実績の「表と裏」。限られた場所に2面ぶんの情報を。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">CSSだけで作れる。軽い。両面とも文字なので読まれる。</div></div>
+  </div>
+</section>
+
+<!-- 30 gallery + lightbox（動線内蔵） -->
+<section id="t30" class="tech">
+  <div class="head"><span class="num">30</span><span class="en">Gallery + Lightbox</span></div>
+  <h2 class="rt rt-big">並べて見せて、押すと開く。</h2>
+  <p class="one">写真をきれいに並べ、押すと大きく開きます（ライトボックス）。実績や事例を、作品のように見せるのに。</p>
+  <div class="demo gallery" id="gallery">
+    <button class="ga-item" data-src="../assets/works/washdeli-after.jpg"><img src="../assets/works/washdeli-after.jpg" alt="実績写真 1" loading="lazy"></button>
+    <button class="ga-item" data-src="../assets/works/washdeli-before.jpg"><img src="../assets/works/washdeli-before.jpg" alt="実績写真 2" loading="lazy"></button>
+    <button class="ga-item" data-src="../assets/lab/lab-still-1.jpg"><img src="../assets/lab/lab-still-1.jpg" alt="実績写真 3" loading="lazy"></button>
+    <button class="ga-item" data-src="../assets/lab/lab-tex-2.jpg"><img src="../assets/lab/lab-tex-2.jpg" alt="実績写真 4" loading="lazy"></button>
+    <button class="ga-item" data-src="../assets/lab/lab-still-3.jpg"><img src="../assets/lab/lab-still-3.jpg" alt="実績写真 5" loading="lazy"></button>
+  </div>
+  <p class="ga-foot"><a href="/web/" class="ga-link">制作実績をもっと見る →</a></p>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">実績・事例・商品の一覧。押して拡大で、じっくり見せたいとき。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">写真は遅延読み込みで軽く。拡大はHTML標準の dialog で実現。</div></div>
+  </div>
+  <dialog class="lightbox" id="lightbox"><button class="lb-close" id="lbClose" aria-label="閉じる">×</button><img id="lbImg" src="" alt="拡大画像"></dialog>
+</section>
+
+<!-- 31 progress ring -->
+<section id="t31" class="tech">
+  <div class="head"><span class="num">31</span><span class="en">Progress Ring</span></div>
+  <h2 class="rt rt-big">円が、ぐるりと満ちる。</h2>
+  <p class="one">画面に入ると、円がゼロから描かれます。割合や進み具合を、ひと目で。（左は実際の進み具合、右は実例です）</p>
+  <div class="demo rings">
+    <div class="ring draw-svg" data-val="27">
+      <svg viewBox="0 0 120 120"><circle class="ring-bg" cx="60" cy="60" r="52"/><circle class="ring-fg" cx="60" cy="60" r="52" pathLength="100" style="--val:27"/></svg>
+      <div class="ring-num"><span class="count" data-to="27">0</span>%</div>
+      <div class="ring-l">Web表現図鑑（100選めざして）</div>
+    </div>
+    <div class="ring draw-svg" data-val="100">
+      <svg viewBox="0 0 120 120"><circle class="ring-bg" cx="60" cy="60" r="52"/><circle class="ring-fg" cx="60" cy="60" r="52" pathLength="100" style="--val:100"/></svg>
+      <div class="ring-num"><span class="count" data-to="100">0</span>%</div>
+      <div class="ring-l">washdeli 手作業の削減（60分→0分）</div>
+    </div>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">達成度・割合・スキル。数字に動きをつけて印象づける（本当の数字だけ）。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">SVGは超軽量。数字も文字として書かれるので読まれる。</div></div>
+  </div>
+</section>
+
+<!-- 32 code tabs -->
+<section id="t32" class="tech">
+  <div class="head"><span class="num">32</span><span class="en">Code Tabs</span></div>
+  <h2 class="rt rt-big">コードを、タブで切り替える。</h2>
+  <p class="one">HTML・CSS・JS など、複数のファイルを1か所でタブ切り替え。手順や作例を、すっきり見せられます。</p>
+  <div class="demo code-tabs" id="codeTabs">
+    <div class="ct-nav"><button class="ct-btn is-on" data-ct="0">HTML</button><button class="ct-btn" data-ct="1">CSS</button><button class="ct-btn" data-ct="2">JS</button></div>
+    <div class="code-block ct-pane is-on"><pre><code><span class="tok-com">&lt;!-- ヒーロー --&gt;</span>
+<span class="tok-key">&lt;section</span> class=<span class="tok-str">"hero"</span><span class="tok-key">&gt;</span>
+  <span class="tok-key">&lt;h1&gt;</span>ととのえる屋<span class="tok-key">&lt;/h1&gt;</span>
+  <span class="tok-key">&lt;a</span> href=<span class="tok-str">"/web/"</span><span class="tok-key">&gt;</span>相談する<span class="tok-key">&lt;/a&gt;</span>
+<span class="tok-key">&lt;/section&gt;</span></code></pre></div>
+    <div class="code-block ct-pane"><pre><code><span class="tok-fn">.hero</span> {
+  <span class="tok-key">padding</span>: <span class="tok-str">96px 44px</span>;
+  <span class="tok-key">text-align</span>: <span class="tok-str">center</span>;
+}</code></pre></div>
+    <div class="code-block ct-pane"><pre><code><span class="tok-com">// 相談ボタンの計測</span>
+document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero a"</span>)
+  .<span class="tok-fn">addEventListener</span>(<span class="tok-str">"click"</span>, () =&gt; {
+    track(<span class="tok-str">"soudan"</span>)
+  })</code></pre></div>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">複数ファイルの作例・手順を、場所を取らず1か所に。技術記事の定番。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽いJS。コードは全部HTMLにあるので、隠れていても読まれる。</div></div>
+  </div>
+</section>
+
 <div class="readbar" id="readbar" aria-hidden="true"></div>
 <div class="toast" id="toast" role="status" aria-live="polite"><span class="t-dot"></span>送信しました。ありがとうございます。</div>
 
 <!-- glossary -->
 <section class="glossary">
-  <div class="sec-top"><h2 style="font-weight:400;font-size:clamp(22px,3vw,36px)">専門用語、やさしい一覧。</h2><span class="note">Glossary · 26語</span></div>
+  <div class="sec-top"><h2 style="font-weight:400;font-size:clamp(22px,3vw,36px)">専門用語、やさしい一覧。</h2><span class="note">Glossary · 28語</span></div>
   <div class="g-grid">
     <dl><dt>HTML<small>HyperText Markup Language</small></dt><dd>ページの骨組み。見出し・段落・画像など「中身と構造」を書く言語。</dd></dl>
     <dl><dt>CSS<small>Cascading Style Sheets</small></dt><dd>見た目の指定。色・大きさ・配置・動きを決める。</dd></dl>
@@ -636,6 +770,8 @@ npm run dev</code></pre>
     <dl><dt>スクロールスナップ<small>Scroll Snap</small></dt><dd>スクロールすると1枚ずつ吸い付くように止まるCSSの仕組み。横カード・縦の章送りに。</dd></dl>
     <dl><dt>ダークモード<small>Dark Mode</small></dt><dd>背景を暗くし目にやさしくする配色切替。色とコントラストだけを差し替え、中身は変えない。</dd></dl>
     <dl><dt>シンタックスハイライト<small>Syntax Highlight</small></dt><dd>コードのキーワード・文字列・コメントを色分けして読みやすくする表示。</dd></dl>
+    <dl><dt>ステップフォーム<small>Step Form</small></dt><dd>長い入力を1問ずつの段階に分け、答えやすくして途中離脱を減らすUI。</dd></dl>
+    <dl><dt>ライトボックス<small>Lightbox</small></dt><dd>サムネイルを押すと背景を暗くして大きく開く拡大表示。実績や事例を見せるのに。</dd></dl>
   </div>
 </section>
 
@@ -843,6 +979,37 @@ npm run dev</code></pre>
       if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done,done);}
       else{try{var ta=document.createElement("textarea");ta.value=txt;document.body.appendChild(ta);ta.select();document.execCommand("copy");document.body.removeChild(ta);}catch(e){}done();}
     });
+  }
+
+  /* 28 ステップフォーム */
+  var sf=document.getElementById("stepform");
+  if(sf){
+    var steps=[].slice.call(sf.querySelectorAll(".sf-step")),dots=sf.querySelectorAll(".sf-dot"),cur=0;
+    function sfGo(n){cur=Math.max(0,Math.min(steps.length-1,n));steps.forEach(function(s,i){s.classList.toggle("is-on",i===cur);});dots.forEach(function(d,i){d.classList.toggle("is-on",i<=cur);});}
+    sf.querySelectorAll("[data-next]").forEach(function(b){b.addEventListener("click",function(){sfGo(cur+1);});});
+    sf.querySelectorAll("[data-back]").forEach(function(b){b.addEventListener("click",function(){sfGo(cur-1);});});
+  }
+
+  /* 30 ギャラリー＋ライトボックス */
+  var gallery=document.getElementById("gallery"),lb=document.getElementById("lightbox"),lbImg=document.getElementById("lbImg"),lbClose=document.getElementById("lbClose");
+  if(gallery&&lb){
+    gallery.querySelectorAll(".ga-item").forEach(function(b){b.addEventListener("click",function(){lbImg.src=b.dataset.src;lb.showModal?lb.showModal():lb.setAttribute("open","");});});
+    if(lbClose)lbClose.addEventListener("click",function(){lb.close&&lb.close();});
+    lb.addEventListener("click",function(e){ if(e.target===lb)lb.close&&lb.close(); });
+  }
+
+  /* 31 プログレスサークル（.in でリング充填・数字は既存 countUp） */
+  /* CSS が .ring.draw-svg.in .ring-fg を満たすので JS 追加処理は不要 */
+
+  /* 32 コードのタブ切替 */
+  var ct=document.getElementById("codeTabs");
+  if(ct){
+    var cbtns=ct.querySelectorAll(".ct-btn"),cpanes=ct.querySelectorAll(".ct-pane");
+    cbtns.forEach(function(b){b.addEventListener("click",function(){
+      var i=+b.dataset.ct;
+      cbtns.forEach(function(x){x.classList.remove("is-on");});b.classList.add("is-on");
+      cpanes.forEach(function(p,j){p.classList.toggle("is-on",j===i);});
+    });});
   }
 })();
 </script>

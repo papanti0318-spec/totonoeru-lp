@@ -292,3 +292,69 @@ a.snap-panel.cta:hover .sp-n,a.snap-panel.cta:hover p{color:var(--paper)}
 .code-block .tok-key{color:#d99a5b}
 .code-block .tok-str{color:#a9bd86}
 .code-block .tok-fn{color:#e6c07b}
+
+/* ===== 実務でよく使う表現 第三集（28-32） ===== */
+/* 28 ステップフォーム（動線内蔵） */
+.stepform{border:1px solid var(--line);border-radius:12px;padding:28px 26px}
+.sf-bar{display:flex;gap:8px;margin-bottom:22px}
+.sf-dot{width:30px;height:4px;border-radius:999px;background:var(--line);transition:background .3s}
+.sf-dot.is-on{background:var(--accent)}
+.sf-step{display:none;animation:tabIn .35s ease}
+.sf-step.is-on{display:block}
+.sf-q{font-size:16px;font-weight:500;margin-bottom:18px}
+.sf-opts{display:flex;flex-direction:column;gap:10px}
+.sf-opt{text-align:left;appearance:none;border:1px solid var(--line);background:rgba(255,255,255,.3);border-radius:8px;padding:14px 16px;font-family:var(--sans);font-size:14px;font-weight:300;color:var(--ink);cursor:pointer;transition:border-color .2s,background .2s,padding-left .2s}
+.sf-opt:hover{border-color:var(--accent);background:var(--paper-2);padding-left:20px}
+.sf-back{margin-top:16px;background:none;border:none;color:var(--muted);font-family:var(--mono);font-size:11px;cursor:pointer}
+.sf-back:hover{color:var(--accent)}
+.sf-msg{font-size:13px;font-weight:300;line-height:1.9;color:var(--ink-soft);margin:10px 0 22px;max-width:36em}
+.sf-cta{display:flex;gap:12px;flex-wrap:wrap}
+
+/* 29 カードフリップ（動線内蔵） */
+.flips{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.flip{display:block;perspective:1000px;text-decoration:none;color:inherit;height:176px}
+.flip-in{position:relative;width:100%;height:100%;transition:transform .6s cubic-bezier(.2,.7,.2,1);transform-style:preserve-3d}
+.flip:hover .flip-in,.flip:focus-visible .flip-in{transform:rotateY(180deg)}
+.flip-f,.flip-b{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:10px;padding:24px;display:flex;flex-direction:column;justify-content:center}
+.flip-f{background:rgba(255,255,255,.3);border:1px solid var(--line)}
+.flip-tag{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.flip-f h3{font-size:18px;font-weight:500}
+.flip-b{background:var(--accent);color:var(--paper);transform:rotateY(180deg)}
+.flip-b p{font-size:14px;font-weight:300;line-height:1.7}
+.flip-go{margin-top:14px;font-family:var(--mono);font-size:11px;letter-spacing:.06em}
+@media(max-width:680px){.flips{grid-template-columns:1fr}.flip{height:150px}}
+
+/* 30 ギャラリー＋ライトボックス（動線内蔵） */
+.gallery{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.ga-item{padding:0;border:none;background:none;cursor:pointer;border-radius:6px;overflow:hidden;aspect-ratio:1/1}
+.ga-item img{width:100%;height:100%;object-fit:cover;filter:saturate(.9);transition:transform .5s,filter .3s}
+.ga-item:hover img{transform:scale(1.07);filter:saturate(1)}
+.ga-foot{margin:14px 0 26px;text-align:right}
+.ga-link{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--accent);text-decoration:none}
+.ga-link:hover{padding-right:4px}
+@media(max-width:680px){.gallery{grid-template-columns:repeat(3,1fr)}}
+dialog.lightbox{border:none;background:none;padding:0;max-width:92vw;max-height:90vh;overflow:visible}
+dialog.lightbox::backdrop{background:rgba(26,24,20,.82);backdrop-filter:blur(3px)}
+dialog.lightbox img{max-width:92vw;max-height:90vh;border-radius:8px;display:block}
+.lb-close{position:absolute;top:-16px;right:-16px;width:40px;height:40px;border-radius:50%;border:none;background:var(--paper);color:var(--ink);font-size:22px;line-height:1;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.3)}
+@media(max-width:680px){.lb-close{top:6px;right:6px}}
+
+/* 31 プログレスサークル */
+.rings{display:flex;justify-content:center;gap:48px;flex-wrap:wrap}
+.ring{position:relative;width:160px;text-align:center}
+.ring svg{width:160px;height:160px;transform:rotate(-90deg)}
+.ring-bg{fill:none;stroke:var(--line);stroke-width:8}
+.ring-fg{fill:none;stroke:var(--accent);stroke-width:8;stroke-linecap:round;stroke-dasharray:100;stroke-dashoffset:100;transition:stroke-dashoffset 1.4s cubic-bezier(.2,.7,.2,1)}
+.ring.in .ring-fg{stroke-dashoffset:calc(100 - var(--val))}
+.ring-num{position:absolute;top:62px;left:0;right:0;font-size:30px;font-weight:300;color:var(--accent);line-height:1}
+.ring-l{font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:var(--muted);margin-top:10px;line-height:1.7}
+
+/* 32 コードのタブ切替 */
+.code-tabs .ct-nav{display:flex;gap:4px}
+.ct-btn{appearance:none;border:1px solid var(--line);border-bottom:none;background:rgba(255,255,255,.2);cursor:pointer;padding:9px 16px;font-family:var(--mono);font-size:12px;color:var(--muted);border-radius:8px 8px 0 0;transition:.2s}
+.ct-btn.is-on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.ct-pane{display:none}
+.ct-pane.is-on{display:block}
+.code-tabs .ct-pane.code-block{border-radius:0 8px 8px 8px}
+
+@media(prefers-reduced-motion:reduce){.flip-in,.ring-fg{transition:none}.ring.in .ring-fg{stroke-dashoffset:calc(100 - var(--val))}}
