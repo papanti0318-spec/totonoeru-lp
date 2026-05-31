@@ -22,11 +22,9 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="../assets/style.css">
-<link rel="stylesheet" href="../assets/opener.css">
-<link rel="stylesheet" href="../assets/guitar.css">
+<link rel="stylesheet" href="../assets/site-2026.css">
 
 <script type="application/ld+json">
 {
@@ -105,472 +103,190 @@
 <script defer src="/_vercel/insights/script.js"></script>
 <script src="/assets/analytics.js"></script>
 </head>
-<body class="has-site-nav">
+<body>
 
-<!-- OPENER -->
-<div class="opener" id="opener" aria-hidden="true">
-  <button class="opener-skip" id="opener-skip" aria-label="オープニングをスキップ">Skip</button>
-  <div class="opener-stage">
-    <span class="opener-line opener-line--green"></span>
-    <span class="opener-line opener-line--amber"></span>
-    <span class="opener-line opener-line--soft"></span>
-    <p class="opener-tagline">TOTONOERUYA &nbsp;·&nbsp; KOMORO, NAGANO</p>
-  </div>
-</div>
-<script src="../assets/opener.js"></script>
-
-<!-- 新ナビゲーション（左サイド固定・ハンバーガー） -->
-<nav class="site-nav">
-  <button type="button" class="site-nav-trigger" aria-label="メニューを開く" aria-expanded="false" aria-controls="site-drawer">
-    <span class="site-nav-bars" aria-hidden="true">
-      <span></span><span></span><span></span>
-    </span>
-  </button>
-</nav>
-
-<!-- 左サイドドロワー -->
-<aside class="site-drawer" id="site-drawer" aria-hidden="true" aria-label="メニュー">
-  <div class="site-drawer-backdrop" data-drawer-close></div>
-  <div class="site-drawer-inner" role="dialog" aria-modal="true">
-    <div class="site-drawer-content">
-      <span class="site-drawer-eyebrow">Menu</span>
-      <ul class="site-drawer-menu">
-        <li><a href="/" data-drawer-close><span class="lang-en">Home</span></a></li>
-        <li><a href="/web/" data-drawer-close><span class="lang-en">Web</span></a></li>
-        <li><a href="/cleaning/" data-drawer-close><span class="lang-en">Cleaning</span></a></li>
-        <li><a href="/guitar/" data-drawer-close><span class="lang-en">Guitar</span></a></li>
-        <li><a href="/articles/" data-drawer-close><span class="lang-en">Journal</span></a></li>
-        <li><a href="#contact" data-drawer-close><span class="lang-en">Contact</span></a></li>
-      </ul>
-
-      <div class="site-drawer-actions">
-        <a class="site-drawer-action" href="https://line.me/R/ti/p/@903xtesg" target="_blank" rel="noopener" aria-label="LINE">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-        </a>
-        <a class="site-drawer-action" href="mailto:totonoeru.ya@gmail.com" aria-label="Email">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-            <rect x="3" y="5" width="18" height="14" rx="1"/>
-            <path d="M3 7l9 6 9-6"/>
-          </svg>
-        </a>
-      </div>
-      <p class="site-drawer-foot">ととのえる屋<br>長野県小諸市</p>
-    </div>
-  </div>
-</aside>
-
-<main>
-<!-- HERO -->
-<header id="hero">
-  <div class="hero-eyebrow">
-    <span></span>GUITAR LESSON
-  </div>
-  <h1 class="hero-headline">
-    聴く耳と弾く指の距離を、<br><em>ととのえる</em>。
-  </h1>
-  <p class="hero-sub">
-    楽譜が読めなくても、リズム感がなくても、大丈夫。あなたの「弾きたい」から、ゆっくり始めます。
-  </p>
-  <div class="hero-scroll">Scroll</div>
+<!-- ===== TOPBAR ===== -->
+<header class="topbar">
+  <a href="/" class="brand"><img src="../assets/logo-totonoeru.png" alt="">ととのえる屋</a>
+  <nav aria-label="メインメニュー">
+    <a href="/web/">Web · AI</a>
+    <a href="/cleaning/">Cleaning</a>
+    <a href="/guitar/" aria-current="page">Guitar</a>
+    <a href="/totoline/">totoline</a>
+    <a href="/articles/">Journal</a>
+  </nav>
+  <a href="#contact" class="cta">相談する</a>
 </header>
 
-<!-- HERO FEATURE IMAGE -->
-<div class="hero-feature" style="aspect-ratio: 21/9; overflow: hidden; max-width: 1280px; margin: 0 auto 100px;">
-  <img src="../assets/business-guitar.jpg" alt="長野県小諸市のギター教室（自然光のスタジオ）" loading="lazy" decoding="async" width="1600" height="685" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+<!-- ===== HERO ===== -->
+<section class="page-hero">
+  <p class="eyebrow">Guitar — Service 03</p>
+  <h1>聴く耳と弾く指の距離を、ととのえる。</h1>
+  <p class="sub">楽譜が読めなくても、リズム感がなくても、大丈夫。あなたの「弾きたい」から、ゆっくり始めます。小諸・御代田・軽井沢で、対面とオンライン。</p>
+  <p class="en">Guitar lessons in Karuizawa, Komoro &amp; Miyota — English-speaking students welcome.</p>
+</section>
+<div class="full-img cover"><img src="../assets/business-guitar.jpg" alt="長野県小諸市のギター教室（自然光のスタジオ）" width="1600" height="685" loading="lazy"></div>
+
+<!-- ===== 思想 ===== -->
+<section class="sec narrow">
+  <p class="quote">
+    教えるというより、隣で一緒にととのえていく時間です。
+    <span class="cite">— ととのえる屋のギター教室</span>
+  </p>
+</section>
+
+<!-- ===== 講師について ===== -->
+<section class="sec narrow">
+  <div class="profile">
+    <div class="ph"><img src="../assets/photo-terui.jpg" alt="照井航次郎" loading="lazy"></div>
+    <h3>照井 航次郎</h3>
+    <p class="meta">Guitar Instructor / Komoro, Nagano</p>
+    <p>14歳でギターを手にして、18歳でオリジナルバンドを結成。以来ずっと、ギターと一緒に生きています。</p>
+    <p>都内を拠点に、新宿・下北沢・吉祥寺・横浜・池袋・大山・八王子など多拠点でライブを重ねてきました。場所が変わればお客さんも音の響きも違う。その一つひとつで音の出し方と続け方を肌で学んだ時間が、いまの血肉になっています。</p>
+    <p>いまは長野県小諸市を拠点に、音楽を続けながら、ギターを始めたい人・もう一度向き合いたい人の伴走をしています。「なんで弾けないんだろう？」を一緒に分解して、「これならいける」というところまで。急かさずに、止まっている指をゆっくり動かしていきましょう。</p>
+  </div>
+</section>
+
+<!-- ===== ギターが続かない理由 ===== -->
+<section class="sec narrow">
+  <div class="sec-top"><h2>ギターが続かない、3つの理由</h2><span class="note">Why</span></div>
+  <ul class="numbered">
+    <li><span class="nn">01</span><div><strong>最初の壁で止まる</strong><span class="d">コードが押さえられない → 指が痛い → なんとなく遠ざかる。</span></div></li>
+    <li><span class="nn">02</span><div><strong>次の一歩が見えない</strong><span class="d">何を練習していいか分からない。動画を見ても、自分にとっての次が見えない。</span></div></li>
+    <li><span class="nn">03</span><div><strong>上達の実感がない</strong><span class="d">続けてはいるけれど、気がつくと同じところをぐるぐるしている。</span></div></li>
+  </ul>
+</section>
+
+<!-- ===== レッスンの進め方 ===== -->
+<section class="sec narrow">
+  <div class="sec-top"><h2>レッスンの進め方</h2><span class="note">Flow</span></div>
+  <ul class="numbered">
+    <li><span class="nn">01</span><div><strong>「弾きたい曲」から始める</strong><span class="d">教則本ではなく、あなたが本当に弾きたい一曲を起点に。動機の強さが、続けるいちばんの力になります。</span></div></li>
+    <li><span class="nn">02</span><div><strong>分解して、順番を作る</strong><span class="d">難しい曲も、要素ごとに分ければ手が届く。いまのレベルに合わせた最短ルートを一緒に組み立てます。</span></div></li>
+    <li><span class="nn">03</span><div><strong>1週間分の練習を渡す</strong><span class="d">何をやるかが決まっていれば迷いません。次回に一緒に確認して、また少しだけ前へ。</span></div></li>
+    <li><span class="nn">04</span><div><strong>対面でも、オンラインでも</strong><span class="d">小諸・御代田・軽井沢は対面、遠方の方はオンラインで。初心者も、再開組も。</span></div></li>
+  </ul>
+</section>
+
+<!-- ===== 学習ロードマップ ===== -->
+<section class="sec narrow">
+  <div class="capacity">
+    <p class="big">レッスンと並走する、<strong style="color:var(--accent);font-weight:500">学習アプリ</strong>。9章まで走りきれば、自分で学んでいける土台がととのいます。</p>
+    <p class="d" style="margin-top:22px">Chapter 1〜3 はだれでも試せます。それ以降はLINEで「続きを見たい」と一言どうぞ。</p>
+    <p class="center" style="margin-top:28px"><a href="https://guitar-lesson.vercel.app/" target="_blank" rel="noopener" class="btn">学習アプリを開く →</a></p>
+  </div>
+</section>
+
+<!-- ===== For English speakers ===== -->
+<section class="sec narrow" id="english" lang="en">
+  <div class="sec-top"><h2>Guitar Lessons in Karuizawa, Komoro &amp; Miyota</h2><span class="note">For English speakers</span></div>
+  <div class="prose">
+    <p>Totonoeruya offers private guitar lessons in <strong style="font-weight:500">Karuizawa, Komoro and Miyota</strong>. All three towns sit within a 15-minute drive of each other, on the foothills of Mount Asama.</p>
+    <p>Lessons are primarily in Japanese, but the instructor can communicate basic guitar terms, chord names and practice instructions in English. Beginners are very welcome — most students start with no prior experience and cannot read music.</p>
+    <p>We begin from a song you actually want to play, break it into small steps, and tune the pace to your hands and your week. Acoustic and electric, both fine.</p>
+    <p style="margin-top:30px"><strong style="font-weight:500">If you would like to try a lesson:</strong> send a short message in English via LINE (<a href="https://line.me/R/ti/p/@903xtesg" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px">@903xtesg</a>) or email (<a href="mailto:totonoeru.ya@gmail.com" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px">totonoeru.ya@gmail.com</a>). Please mention English in your first message and we will adjust the lesson format.</p>
+  </div>
+
+  <div class="faq" style="margin-top:48px">
+    <details>
+      <summary>Where are the lessons held?</summary>
+      <div class="a">In and around Komoro city, with home-visit options for Karuizawa and Miyota residents within a short drive.</div>
+    </details>
+    <details>
+      <summary>What if I am only here for a few weeks?</summary>
+      <div class="a">Short-term lesson packages are possible. Please tell us your stay period in the first message.</div>
+    </details>
+    <details>
+      <summary>Do I need to bring my own guitar?</summary>
+      <div class="a">If you have one, please bring it. If not, we can arrange a loaner for the first lesson.</div>
+    </details>
+  </div>
+</section>
+
+<!-- ===== Quick FAQ ===== -->
+<section class="sec narrow">
+  <div class="sec-top"><h2>よくある質問</h2><span class="note">FAQ</span></div>
+  <div class="faq">
+    <details>
+      <summary>楽譜が読めなくても大丈夫ですか？</summary>
+      <div class="a">大丈夫です。多くの方が、まったくの初心者から始めています。楽譜は読めなくてもOK。あなたが弾きたい一曲から始めて、手が追える小さなステップに分けていきます。</div>
+    </details>
+    <details>
+      <summary>軽井沢の近くでレッスンは受けられますか？</summary>
+      <div class="a">はい。小諸・御代田・軽井沢は車で15分圏内です。対面は小諸市内が中心で、軽井沢・御代田の方には出張レッスンの相談もできます。遠方の方はオンラインも。</div>
+    </details>
+    <details>
+      <summary>昔やっていて、また始めたいのですが。</summary>
+      <div class="a">再開組も大歓迎です。止まっているところを一緒に分解して、「これならいける」というところまでととのえます。急かしません。</div>
+    </details>
+    <details>
+      <summary>ギターを持っていません。</summary>
+      <div class="a">最初のレッスンは貸し出しの相談ができます。続けられそうなら、あなたに合う一本を一緒に選びましょう。</div>
+    </details>
+  </div>
+</section>
+
+<!-- ===== totoline ===== -->
+<div class="product">
+  <section class="sec">
+    <a href="/totoline/" class="card">
+      <span class="lbl">Own Product · LINE × AI</span>
+      <h2>LINEに置くだけ。会話がタスク・議事録・請求書に。</h2>
+      <p>ギター教室と並行して、自社で開発・運用しているプロダクトが totoline。LINEグループに招待するだけで、毎日の会話からタスク・決定事項・請求書ドラフトをAIが作るBot。1グループからFreeで試せます。</p>
+      <span class="more">totoline を見る →</span>
+    </a>
+  </section>
 </div>
 
-<!-- 講師について -->
-<section>
-  <div class="container">
-    <div class="sec-header anim">
-      <h2 class="sec-title">講師について</h2>
-      <p class="sec-sub">教えるというより、隣で一緒にととのえていく時間です。</p>
+<!-- ===== CONTACT ===== -->
+<section class="sec ct" id="contact">
+  <div class="sec-top" style="justify-content:center"><h2 style="font-size:clamp(28px,5vw,52px)">相談する</h2></div>
+  <p class="barrier">何がなんだかわからなくても、とりあえず話したいだけでもOKです。<br>「ちょっと弾いてみたい」から、いっしょに始めます。</p>
+  <div class="methods">
+    <div class="m">
+      <div class="lbl">LINE</div>
+      <div class="v">@903xtesg</div>
+      <div class="nn">「ギター教室について聞きたい」と一言。体験レッスンから始められます。返信が早いのはLINEです。1〜2営業日でお返しします。</div>
+      <a href="https://line.me/R/ti/p/@903xtesg" class="btn solid full" target="_blank" rel="noopener">LINEで相談する</a>
     </div>
-
-    <div class="profile-block" style="max-width: 820px;">
-      <div class="profile-block-header anim">
-        <div class="profile-block-eyebrow">Guitar Instructor</div>
-        <h3 class="profile-block-name" style="font-size: var(--fs-h3);">照井 航次郎</h3>
-        <p class="profile-block-place">長野県小諸市・1993年生まれ</p>
-      </div>
-
-      <div class="profile-block-photo-wrapper anim anim-delay-1">
-        <div class="profile-block-photo">
-          <img src="../assets/photo-terui.jpg" alt="照井航次郎">
-        </div>
-      </div>
-
-      <div class="profile-block-content anim anim-delay-2">
-        <p>14歳でギターを手にして、18歳でオリジナルバンドを結成。以来ずっと、ギターと一緒に生きています。</p>
-        <p>その後は都内を拠点に、新宿・下北沢・吉祥寺・横浜・池袋・大山・八王子など多拠点でライブを続けてきました。場所が変わればお客さんも音の響きも違う。その一つひとつで、音の出し方と続け方を肌で学んできた時間が、いまの自分の血肉になっています。</p>
-        <p>いまは長野県小諸市を拠点に、音楽を続けながら、ギターを始めたい人・もう一度向き合いたい人の伴走をしています。</p>
-        <p>「なんで弾けないんだろう？」を一緒に分解して、「これならいける」というところまでととのえる。それが私のレッスンスタイルです。急かさずに、できないところで止まっている指を、ゆっくり動かしていきましょう。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ギターが続かない、3つの理由 -->
-<section style="background: var(--bg-warm);">
-  <div class="container">
-    <div class="sec-header anim">
-      <h2 class="sec-title">ギターが続かない、3つの理由</h2>
-      <p class="sec-sub">あなたのせいじゃないかもしれません。</p>
-    </div>
-
-    <div class="guitar-problem-list">
-      <div class="guitar-problem-item anim anim-delay-1">
-        <div class="guitar-problem-num">01</div>
-        <p>コードが押さえられない → 指が痛い → なんとなく遠ざかる。最初の壁で止まってしまう。</p>
-      </div>
-      <div class="guitar-problem-item anim anim-delay-2">
-        <div class="guitar-problem-num">02</div>
-        <p>何を練習していいか分からない。動画を見ても、自分にとっての「次の一歩」が見えない。</p>
-      </div>
-      <div class="guitar-problem-item anim anim-delay-3">
-        <div class="guitar-problem-num">03</div>
-        <p>続けてはいるけれど、上達している実感がない。気がつくと同じところをぐるぐるしている。</p>
-      </div>
+    <div class="m">
+      <div class="lbl">フォーム</div>
+      <div class="nn" style="margin-bottom:14px">LINEを使っていない方はこちらから。メールアドレス宛にお返しします。</div>
+      <form action="https://formspree.io/f/mvzllrqg" method="POST">
+        <label for="guitar-name">お名前（任意）</label>
+        <input type="text" id="guitar-name" name="name" autocomplete="name" placeholder="ご記入なしでも構いません">
+        <label for="guitar-email">メールアドレス（必須）</label>
+        <input type="email" id="guitar-email" name="email" autocomplete="email" required placeholder="返信先">
+        <label for="guitar-message">ご相談内容</label>
+        <textarea id="guitar-message" name="message" required placeholder="体験レッスンの申し込み・経験の有無・聞きたいことなど、ひと言だけでも構いません。"></textarea>
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="_subject" value="totonoeruya.jp お問い合わせ（ギター教室）">
+        <input type="hidden" name="_next" value="https://totonoeruya.jp/thanks/">
+        <button type="submit" class="btn solid full">送信する</button>
+      </form>
     </div>
   </div>
+  <div class="ct-foot">長野県・小諸市 / 御代田・軽井沢は対面、遠方はオンライン — まずは「体験レッスン」から。</div>
 </section>
 
-<!-- レッスンの進め方 -->
-<section>
-  <div class="container">
-    <div class="sec-header anim">
-      <h2 class="sec-title">レッスンの進め方</h2>
-      <p class="sec-sub">押し付けません。あなたのペースでととのえていきます。</p>
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="foot">
+    <div class="b">
+      <img src="../assets/logo-totonoeru.png" alt="ととのえる屋">
+      <p>長野県小諸市の、小さな何でも屋。HP・LP制作、AI業務改善、清掃、ギター教室。ぜんぶ、同じ手で。</p>
     </div>
-
-    <div class="guitar-how-list">
-      <div class="guitar-how-step anim anim-delay-1">
-        <div class="guitar-how-num">1</div>
-        <div>
-          <h3>あなたの「弾きたい曲」から始める</h3>
-          <p>教則本ではなく、あなたが本当に弾きたい一曲を起点にします。動機の強さが、続けるいちばんの力になります。</p>
-        </div>
-      </div>
-      <div class="guitar-how-step anim anim-delay-2">
-        <div class="guitar-how-num">2</div>
-        <div>
-          <h3>その曲を分解して、いまのレベルに合わせた順番を作る</h3>
-          <p>難しい曲も、要素ごとに分けてしまえば手が届きます。あなたの今に合わせた、最短ルートを一緒に組み立てます。</p>
-        </div>
-      </div>
-      <div class="guitar-how-step anim anim-delay-3">
-        <div class="guitar-how-num">3</div>
-        <div>
-          <h3>1週間分の練習メニューを渡して、次回までにととのえる</h3>
-          <p>「何をやるか」が決まっていると、迷いません。次のレッスンで一緒に確認して、また少しだけ前に進みます。</p>
-        </div>
-      </div>
-    </div>
+    <div><h6>Services</h6><ul><li><a href="/web/">HP・LP制作</a></li><li><a href="/cleaning/">清掃</a></li><li><a href="/guitar/">ギター教室</a></li><li><a href="/totoline/">totoline</a></li></ul></div>
+    <div><h6>Company</h6><ul><li><a href="/articles/">ジャーナル</a></li><li><a href="/articles/totonoeruya-name-riyu/">屋号の由来</a></li><li><a href="https://github.com/papanti0318-spec" target="_blank" rel="noopener">GitHub</a></li><li><a href="https://x.com/totonoeruya" target="_blank" rel="noopener">X</a></li></ul></div>
+    <div><h6>Contact</h6><ul><li><a href="mailto:totonoeru.ya@gmail.com">totonoeru.ya@gmail.com</a></li><li><a href="https://line.me/R/ti/p/@903xtesg" target="_blank" rel="noopener">LINE @903xtesg</a></li><li>長野県小諸市</li></ul></div>
   </div>
-</section>
-
-<!-- 学習ロードマップ：9章の道のり -->
-<section id="roadmap" style="background: var(--bg-warm);">
-  <div class="container">
-    <div class="sec-header anim">
-      <span class="tag tag--amber">Learning Roadmap</span>
-      <h2 class="sec-title">独学できるようになるまで、9章の道のり</h2>
-      <p class="sec-sub">レッスンと並走する無料の学習アプリ。9章まで走りきれば、自分で学んでいける土台がととのいます。それまでは、一緒に分解しながら進みます。</p>
-    </div>
-
-    <div class="guitar-roadmap-goal anim anim-delay-1">
-      <div class="guitar-roadmap-goal-label">Goal</div>
-      <p>
-        9章までたどり着いた時、「次は自分で何を調べればいいか」が分かるようになっています。そこから先は、あなた自身のペースで。<strong>教わらなくても進める状態</strong>が、このロードマップの終点です。
-      </p>
-    </div>
-
-    <div class="guitar-roadmap-stages">
-      <div class="guitar-roadmap-stage anim anim-delay-2">
-        <span class="free-badge">FREE</span>
-        <div class="guitar-roadmap-stage-content">
-          <div class="guitar-roadmap-stage-label">Chapter 1</div>
-          <h3>練習問題ウォーミングアップ</h3>
-        </div>
-      </div>
-
-      <div class="guitar-roadmap-stage anim anim-delay-2">
-        <span class="free-badge">FREE</span>
-        <div class="guitar-roadmap-stage-content">
-          <div class="guitar-roadmap-stage-label">Chapter 2</div>
-          <h3>基礎編：音の仕組み</h3>
-        </div>
-      </div>
-
-      <div class="guitar-roadmap-stage anim anim-delay-2">
-        <span class="free-badge">FREE</span>
-        <div class="guitar-roadmap-stage-content">
-          <div class="guitar-roadmap-stage-label">Chapter 3</div>
-          <h3>初級：コードと音階</h3>
-        </div>
-      </div>
-
-      <div class="guitar-roadmap-stage locked anim anim-delay-3">
-        <div class="guitar-roadmap-stage-content">
-          <div class="guitar-roadmap-stage-label">Chapter 4</div>
-          <h3>中級：ハーモニーと機能</h3>
-        </div>
-      </div>
-
-      <div class="guitar-roadmap-stage locked anim anim-delay-3">
-        <div class="guitar-roadmap-stage-content">
-          <div class="guitar-roadmap-stage-label">Chapter 5</div>
-          <h3>上級：作曲技法・ジャズ理論</h3>
-        </div>
-      </div>
-    </div>
-
-    <div class="guitar-gated-cta anim anim-delay-4">
-      <div class="guitar-gated-cta-label">Chapter 4 以降はLINE登録で</div>
-      <h3>続きを見るには、LINEで一言どうぞ</h3>
-      <p>
-        中級（ハーモニー）以降は、LINE登録いただいた方に限定公開しています。「ギター教室の続きを見たいです」と送ってください。すぐに案内します。
-      </p>
-      <a href="https://line.me/R/ti/p/@903xtesg" target="_blank" rel="noopener" class="btn--line">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-        LINEで続きを受け取る
-      </a>
-      <div class="id-note">LINE ID: @903xtesg（ととのえる屋 公式）</div>
-    </div>
-
-    <div class="guitar-roadmap-cta anim anim-delay-5">
-      <p>まずは無料の Chapter 1〜3 を試してみる。クイズ付きで、自分のペースで進められます。</p>
-      <a href="https://guitar-lesson.vercel.app/" target="_blank" rel="noopener" class="btn btn--green">無料で学習アプリを開く →</a>
-    </div>
-  </div>
-</section>
-
-<!-- For English-speaking residents and visitors -->
-<section id="english" style="background: var(--bg-warm);">
-  <div class="container">
-    <div class="sec-header anim">
-      <span class="tag tag--amber">For English speakers</span>
-      <h2 class="sec-title">Guitar Lessons in Karuizawa, Komoro &amp; Miyota</h2>
-      <p class="sec-sub">English-speaking residents and long-stay visitors near Karuizawa are welcome.</p>
-    </div>
-
-    <div style="max-width: 720px; margin: 0 auto; line-height: 1.9; color: var(--text-mid); font-size: 16px;">
-      <p class="anim">
-        Totonoeruya offers private guitar lessons in <strong>Karuizawa, Komoro and Miyota</strong>. All three towns sit within a 15-minute drive of each other, on the foothills of Mount Asama.
-      </p>
-      <p class="anim anim-delay-1">
-        Lessons are primarily in Japanese, but the instructor can communicate basic guitar terms, chord names and practice instructions in English. Beginners are very welcome — most students start with no prior experience and cannot read music.
-      </p>
-      <p class="anim anim-delay-2">
-        We begin from a song you actually want to play, break it into small steps, and tune the pace to your hands and your week. Acoustic and electric, both fine.
-      </p>
-
-      <div class="anim anim-delay-3" style="margin-top: 40px; padding: 24px 28px; background: var(--bg-cream); border-left: 2px solid var(--amber);">
-        <p style="margin: 0 0 12px 0; font-weight: 500; color: var(--text-dark);">If you would like to try a lesson</p>
-        <p style="margin: 0; font-size: 15px;">
-          Send a short message in English via LINE (<a href="https://line.me/R/ti/p/@903xtesg" target="_blank" rel="noopener" style="color: var(--amber); text-decoration: underline;">@903xtesg</a>) or email (<a href="mailto:totonoeru.ya@gmail.com" style="color: var(--amber); text-decoration: underline;">totonoeru.ya@gmail.com</a>). Please mention English in your first message and we will adjust the lesson format.
-        </p>
-      </div>
-
-      <details class="anim anim-delay-4" style="margin-top: 32px; padding: 18px 22px; background: var(--bg-cream); border: 1px solid var(--rule);">
-        <summary style="cursor: pointer; font-weight: 500; color: var(--text-dark);">Quick FAQ for English speakers</summary>
-        <div style="padding-top: 16px; font-size: 15px; line-height: 1.85;">
-          <p style="margin: 0 0 12px 0;"><strong>Q. Where are the lessons held?</strong><br>
-          A. In and around Komoro city, with home-visit options for Karuizawa and Miyota residents within a short drive.</p>
-          <p style="margin: 0 0 12px 0;"><strong>Q. What if I am only here for a few weeks?</strong><br>
-          A. Short-term lesson packages are possible. Please tell us your stay period in the first message.</p>
-          <p style="margin: 0;"><strong>Q. Do I need to bring my own guitar?</strong><br>
-          A. If you have one, please bring it. If not, we can arrange a loaner for the first lesson.</p>
-        </div>
-      </details>
-    </div>
-  </div>
-</section>
-
-<!-- 料金 -->
-<section>
-  <div class="container">
-    <div class="sec-header anim">
-      <h2 class="sec-title">料金</h2>
-      <p class="sec-sub">まずは一度、話してみてください。あなたに合う形を一緒に決めます。</p>
-    </div>
-
-    <div class="guitar-pricing-grid">
-      <div class="guitar-price-card anim anim-delay-1">
-        <div class="guitar-price-name">Trial</div>
-        <div class="guitar-price-amount">要相談</div>
-        <p class="guitar-price-desc">はじめての方向け<br>まず一度、ギターを触ってみる時間</p>
-      </div>
-      <div class="guitar-price-card featured anim anim-delay-2">
-        <div class="guitar-price-name">Standard</div>
-        <div class="guitar-price-amount">要相談</div>
-        <p class="guitar-price-desc">継続レッスン<br>あなたの曲を、ととのえていく</p>
-      </div>
-      <div class="guitar-price-card anim anim-delay-3">
-        <div class="guitar-price-name">Partner</div>
-        <div class="guitar-price-amount">要相談</div>
-        <p class="guitar-price-desc">伴走プラン<br>できるまで、隣にいます</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Contact -->
-<section id="contact">
-  <div class="container">
-    <div class="sec-header anim">
-      <h2 class="sec-title">お問い合わせ</h2>
-      <p class="sec-sub">問い合わせ → 体験レッスン → 入会。<br>まずは気軽に。</p>
-    </div>
-
-    <div class="contact-inner">
-      <div class="contact-barrier-lowering anim anim-delay-1">
-        何がなんだかわからなくても、とりあえず相談したいだけでもOKです。
-      </div>
-
-      <!-- LINE + フォーム の2カラム（全ページ統一構造） -->
-      <div class="contact-methods anim anim-delay-2">
-        <div class="contact-method">
-          <div class="contact-label">LINE</div>
-          <div class="contact-value">
-            <a href="https://line.me/R/ti/p/@903xtesg" target="_blank" rel="noopener">@903xtesg</a>
-          </div>
-          <div class="contact-note">
-            「ギター教室について聞きたい」と一言。<br>
-            体験レッスンから始められます。
-          </div>
-          <div style="margin-top: 20px;">
-            <a href="https://line.me/R/ti/p/@903xtesg" class="btn btn--line btn--block" target="_blank" rel="noopener">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-              LINEで相談する
-            </a>
-          </div>
-        </div>
-
-        <div class="contact-method">
-          <div class="contact-label">フォーム</div>
-          <div class="contact-value" style="font-size: 14px; color: var(--text-mid); font-family: inherit; font-weight: 400; margin-bottom: 8px;">
-            メールアドレス宛にお返しします。
-          </div>
-          <div class="contact-note">
-            LINEを使っていない方はこちらから。<br>
-            だいたい1〜2営業日で返します。
-          </div>
-
-          <form action="https://formspree.io/f/mvzllrqg" method="POST" class="contact-form" style="margin-top: 24px;">
-            <div class="form-row">
-              <label for="guitar-name">お名前<span class="form-optional">（任意）</span></label>
-              <input type="text" id="guitar-name" name="name" autocomplete="name" placeholder="ご記入なしでも構いません">
-            </div>
-            <div class="form-row">
-              <label for="guitar-email">メールアドレス</label>
-              <input type="email" id="guitar-email" name="email" autocomplete="email" required placeholder="返信先（必須）">
-            </div>
-            <div class="form-row">
-              <label for="guitar-message">ご相談内容</label>
-              <textarea id="guitar-message" name="message" required placeholder="体験レッスンのお申し込み・経験の有無・聞きたいことなど、ひと言だけでも構いません。"></textarea>
-            </div>
-            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-            <input type="hidden" name="_subject" value="totonoeruya.jp お問い合わせ（ギター教室）">
-            <input type="hidden" name="_next" value="https://totonoeruya.jp/thanks/">
-            <button type="submit" class="btn btn--amber btn--block">送信する</button>
-            <p class="contact-form-note">送信後、確認ページに移動します。</p>
-          </form>
-        </div>
-      </div>
-
-      <div class="contact-footer anim anim-delay-4">
-        長野県・小諸市<br>
-        まずは「体験レッスン」から始めましょう。
-      </div>
-    </div>
-  </div>
-</section>
-</main>
-
-<footer>
-  <div class="container">
-    <div class="footer-nap">
-      <p class="footer-nap-name">ととのえる屋</p>
-      <p class="footer-nap-address">長野県小諸市</p>
-      <p class="footer-nap-contact">
-        <a href="mailto:totonoeru.ya@gmail.com">totonoeru.ya@gmail.com</a>　／　<a href="https://line.me/R/ti/p/@903xtesg" target="_blank" rel="noopener">LINE: @903xtesg</a>
-      </p>
-      <p class="footer-nap-area">教室対応エリア：小諸市・御代田町・軽井沢町・上田市</p>
-    </div>
-    <div class="footer-inner">
-      <div class="footer-logo">
-        <img src="../assets/logo-totonoeru.png" alt="ととのえる屋" class="footer-logo-img" width="44" height="56">
-      </div>
-      <div class="footer-copy">© 2026 ととのえる屋. All rights reserved. 長野県小諸市</div>
-      <div class="footer-legal" style="text-align: center; margin-top: 14px; font-size: 12px;">
-        <a href="/privacy/" style="color: inherit; opacity: 0.75; text-decoration: underline; text-underline-offset: 3px;">プライバシーポリシー</a>
-        <span style="margin: 0 10px; opacity: 0.5;">·</span>
-        <a href="/commerce/" style="color: inherit; opacity: 0.75; text-decoration: underline; text-underline-offset: 3px;">特定商取引法に基づく表記</a>
-      </div>
-    </div>
+  <div class="foot-bot">
+    <span>© 2026 ととのえる屋. 長野県小諸市</span>
+    <span><a href="/privacy/">プライバシーポリシー</a> · <a href="/commerce/">特定商取引法に基づく表記</a></span>
   </div>
 </footer>
 
-<script>
-// アニメーション制御
-document.querySelectorAll('.anim').forEach(el => {
-  el.classList.add('will-animate');
-});
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.remove('will-animate');
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
-
-document.querySelectorAll('.anim').forEach(el => observer.observe(el));
-
-// モバイルナビゲーション
-const navToggle = document.querySelector('.nav-toggle');
-const navMenu = document.querySelector('.nav-menu');
-if (navToggle && navMenu) {
-  navToggle.addEventListener('click', () => {
-    const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
-    navToggle.setAttribute('aria-expanded', String(!isOpen));
-    navMenu.setAttribute('aria-hidden', String(isOpen));
-  });
-}
-</script>
-
-<script>
-// site-drawer（左ドロワー：ハンバーガー＋ロゴで開閉）
-(function() {
-  const trigger = document.querySelector('.site-nav-trigger');
-  const drawer = document.getElementById('site-drawer');
-  if (!trigger || !drawer) return;
-  function openDrawer() {
-    drawer.classList.add('is-open');
-    drawer.setAttribute('aria-hidden', 'false');
-    trigger.setAttribute('aria-expanded', 'true');
-  }
-  function closeDrawer() {
-    drawer.classList.remove('is-open');
-    drawer.setAttribute('aria-hidden', 'true');
-    trigger.setAttribute('aria-expanded', 'false');
-  }
-  function toggleDrawer() {
-    if (drawer.classList.contains('is-open')) closeDrawer();
-    else openDrawer();
-  }
-  trigger.addEventListener('click', toggleDrawer);
-  drawer.querySelectorAll('[data-drawer-close]').forEach(el => {
-    el.addEventListener('click', () => setTimeout(closeDrawer, 80));
-  });
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && drawer.classList.contains('is-open')) closeDrawer();
-  });
-})();
-</script>
-
+<script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js" defer></script>
+<script src="../assets/smooth-2026.js" defer></script>
 </body>
 </html>

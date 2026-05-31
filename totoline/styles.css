@@ -1,23 +1,23 @@
 /* ============ Tokens ============ */
 :root {
-  --paper: #F8F5EF;          /* ととのえる屋 cream */
-  --paper-2: #F0EBE1;        /* ととのえる屋 paper-warm */
-  --ink: #1C1A17;            /* ととのえる屋 text */
-  --ink-2: #5A5349;          /* ととのえる屋 text-mid */
-  --line: #00B900;           /* LINE official green */
-  --line-deep: #008F00;
-  --line-soft: #E6F4E6;
-  --mute: #8C8278;           /* ととのえる屋 text-soft */
-  --rule: rgba(44,37,28,0.12);
-  --rule-soft: rgba(44,37,28,0.06);
-  --forest: #2B4A1A;         /* ととのえる屋 forest */
-  --forest-mid: #3D6626;
-  --amber: #B8823A;          /* ととのえる屋 amber */
-  --amber-lt: #F5EDD9;
-  --accent-warm: #E26F3E;
-  --accent-red: #C8362A;     /* 差し色 朱赤 */
-  --accent-red-deep: #9A2A20;
-  --accent-red-soft: #F6E3DF;
+  --paper: #E7E4DD;          /* 新世界観 paper / cream */
+  --paper-2: #DEDAD1;        /* 新世界観 paper-warm */
+  --ink: #1A1814;            /* 新世界観 text */
+  --ink-2: #3A3730;          /* 新世界観 text-mid */
+  --line: #C5743C;           /* 差し色 くすんだオレンジ（旧LINE green トークン → アクセント統一） */
+  --line-deep: #A95F2C;
+  --line-soft: #F0E2D5;
+  --mute: #8A8579;           /* 新世界観 text-soft */
+  --rule: rgba(26,24,20,0.14);
+  --rule-soft: rgba(26,24,20,0.07);
+  --forest: #1A1814;         /* 旧 forest → ink へ寄せる（明朝・緑は使わない） */
+  --forest-mid: #3A3730;
+  --amber: #C5743C;          /* 旧 amber → アクセント統一 */
+  --amber-lt: #F0E2D5;
+  --accent-warm: #C5743C;
+  --accent-red: #C5743C;     /* 差し色 くすんだオレンジに統一 */
+  --accent-red-deep: #A95F2C;
+  --accent-red-soft: #F0E2D5;
   --radius: 4px;             /* ととのえる屋 4px に統一 */
   --radius-lg: 12px;
   --maxw: 1080px;            /* ととのえる屋 container--wide */
@@ -25,20 +25,20 @@
 }
 
 [data-theme="dark"] {
-  --paper: #0B0E0C;
-  --paper-2: #14181A;
+  --paper: #14120E;
+  --paper-2: #1E1B16;
   --ink: #F1EDE3;
   --ink-2: #DAD4C2;
-  --rule: #2A2F2C;
-  --mute: #8B8B7E;
-  --line-soft: #0E2A18;
+  --rule: rgba(241,237,227,0.14);
+  --mute: #8B867A;
+  --line-soft: #3A2A1A;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { background: var(--paper); color: var(--ink); }
 body {
-  font-family: "Noto Sans JP", system-ui, sans-serif;
-  font-weight: 300;
+  font-family: "Zen Kaku Gothic New", system-ui, sans-serif;
+  font-weight: 400;
   font-feature-settings: "palt";
   line-height: 1.8;
   -webkit-font-smoothing: antialiased;
@@ -53,16 +53,16 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 img, svg { display: block; max-width: 100%; }
 
 /* ============ Typography（ととのえる屋HPに合わせる）============ */
-.serif-jp { font-family: "Noto Serif JP", serif; font-weight: 500; letter-spacing: 0.02em; }
-.serif-en { font-family: "Inter Tight", "Noto Sans JP", sans-serif; font-weight: 500; font-style: normal; letter-spacing: 0; }
-.mono { font-family: "Inter Tight", "Noto Sans JP", sans-serif; font-weight: 500; font-size: .82rem; letter-spacing: 0.14em; text-transform: uppercase; }
+.serif-jp { font-family: "Zen Kaku Gothic New", sans-serif; font-weight: 700; letter-spacing: 0.02em; }
+.serif-en { font-family: "JetBrains Mono", ui-monospace, monospace; font-weight: 500; font-style: normal; letter-spacing: 0; }
+.mono { font-family: "JetBrains Mono", ui-monospace, monospace; font-weight: 500; font-size: .82rem; letter-spacing: 0.14em; text-transform: uppercase; }
 
-h1, h2, h3, h4 { font-family: "Noto Serif JP", serif; font-weight: 600; line-height: 1.4; letter-spacing: 0.02em; }
+h1, h2, h3, h4 { font-family: "Zen Kaku Gothic New", sans-serif; font-weight: 700; line-height: 1.4; letter-spacing: 0.02em; }
 
 .eyebrow {
   display: inline-flex; align-items: center; gap: 10px;
-  font-family: "Cormorant Garamond", serif;
-  font-style: italic;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-style: normal;
   font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--mute);
 }
@@ -100,7 +100,7 @@ section { padding: clamp(80px, 12vw, 160px) 0; position: relative; }
 }
 .nav-brand {
   display: flex; align-items: center; gap: 10px;
-  font-family: "Noto Serif JP", serif; font-size: 1.05rem; font-weight: 600; letter-spacing: 0.02em;
+  font-family: "Zen Kaku Gothic New", sans-serif; font-size: 1.05rem; font-weight: 700; letter-spacing: 0.02em;
 }
 .brand-logo {
   width: 28px; height: auto; display: block;
@@ -109,7 +109,7 @@ section { padding: clamp(80px, 12vw, 160px) 0; position: relative; }
   width: 26px; height: 26px; border-radius: 8px;
   background: var(--forest); color: #fff;
   display: grid; place-items: center; font-size: 14px; font-weight: 700;
-  font-family: "Cormorant Garamond", serif; font-style: italic;
+  font-family: "JetBrains Mono", ui-monospace, monospace; font-style: normal;
   position: relative;
 }
 .brand-dot::after {
@@ -168,7 +168,7 @@ section { padding: clamp(80px, 12vw, 160px) 0; position: relative; }
 .hero-meta {
   display: flex; justify-content: space-between; align-items: center;
   margin-bottom: clamp(40px, 6vw, 80px);
-  font-family: "Inter Tight", "Noto Sans JP", sans-serif; font-size: .72rem;
+  font-family: "JetBrains Mono", ui-monospace, monospace; font-size: .72rem;
   text-transform: uppercase; letter-spacing: 0.16em; color: var(--mute);
 }
 .hero-meta .pill {
@@ -195,16 +195,16 @@ section { padding: clamp(80px, 12vw, 160px) 0; position: relative; }
 }
 .hero h1 .accent {
   color: var(--accent-red);
-  font-style: italic;
-  font-family: "Cormorant Garamond", "Noto Serif JP", serif;
-  font-weight: 500;
+  font-style: normal;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-weight: 700;
   letter-spacing: 0;
 }
 .hero h1 .small {
   display: block;
   font-size: 13px;
-  font-family: "Noto Sans JP", sans-serif;
-  font-weight: 300;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-weight: 400;
   letter-spacing: 0.04em;
   color: var(--ink-2);
   margin-top: 24px;
@@ -260,12 +260,12 @@ section { padding: clamp(80px, 12vw, 160px) 0; position: relative; }
   width: 36px; height: 36px; border-radius: 50%;
   background: var(--line); color: #fff;
   display: grid; place-items: center; font-weight: 700; font-size: .82rem;
-  font-family: "Inter Tight", sans-serif;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
 }
 .chat-head .name { font-size: .92rem; font-weight: 600; }
 .chat-head .name small { display: block; color: var(--mute); font-size: .7rem; font-weight: 400; }
 .chat-head .badge {
-  font-family: "Inter Tight", "Noto Sans JP", sans-serif; font-size: .65rem;
+  font-family: "JetBrains Mono", ui-monospace, monospace; font-size: .65rem;
   background: var(--line-soft); color: var(--line-deep);
   padding: 4px 8px; border-radius: 999px;
   letter-spacing: 0.05em;
@@ -319,7 +319,7 @@ section { padding: clamp(80px, 12vw, 160px) 0; position: relative; }
 .marquee {
   border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
   padding: 22px 0; overflow: hidden;
-  font-family: "Noto Sans JP", sans-serif; font-weight: 400; font-size: 14px;
+  font-family: "Zen Kaku Gothic New", sans-serif; font-weight: 400; font-size: 14px;
   color: var(--ink-2); letter-spacing: 0.06em;
 }
 .marquee-track {
@@ -363,7 +363,7 @@ section { padding: clamp(80px, 12vw, 160px) 0; position: relative; }
   position: relative; transition: background .25s;
 }
 .cap:hover { background: var(--paper-2); }
-.cap .num { font-family: "Inter Tight", "Noto Sans JP", sans-serif; font-size: .75rem; color: var(--mute); }
+.cap .num { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: .75rem; color: var(--mute); }
 .cap h3 { font-size: 1.5rem; }
 .cap p { color: var(--mute); font-size: .95rem; }
 .cap .icon {
@@ -408,7 +408,7 @@ section { padding: clamp(80px, 12vw, 160px) 0; position: relative; }
 .phone-status {
   display: flex; justify-content: space-between; align-items: center;
   padding: 14px 22px 6px; font-size: .72rem; font-weight: 600;
-  font-family: "Inter Tight", sans-serif;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
 }
 .phone-status .right { display: inline-flex; gap: 5px; align-items: center; }
 .phone-header {
@@ -525,8 +525,8 @@ section { padding: clamp(80px, 12vw, 160px) 0; position: relative; }
   letter-spacing: 0.02em;
 }
 .integ-role {
-  font-family: "Cormorant Garamond", serif;
-  font-style: italic;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-style: normal;
   font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -564,9 +564,9 @@ section { padding: clamp(80px, 12vw, 160px) 0; position: relative; }
   .uc-item:last-child { border-bottom: none; }
 }
 .uc-item .head { display: flex; justify-content: space-between; align-items: baseline; }
-.uc-item .label { font-family: "Inter Tight", "Noto Sans JP", sans-serif; font-size: .72rem; color: var(--mute); letter-spacing: 0.1em; }
+.uc-item .label { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: .72rem; color: var(--mute); letter-spacing: 0.1em; }
 .uc-item .industry {
-  font-size: 1rem; font-family: "Shippori Mincho B1", serif; color: var(--line-deep); font-weight: 500;
+  font-size: 1rem; font-family: "Zen Kaku Gothic New", sans-serif; color: var(--line-deep); font-weight: 700;
 }
 .uc-item h3 { font-size: clamp(1.2rem, 2.4vw, 1.45rem); line-height: 1.6; letter-spacing: 0.02em; }
 .uc-item p { color: var(--ink-2); font-size: 14px; line-height: 1.95; letter-spacing: 0.02em; }
@@ -614,14 +614,14 @@ section { padding: clamp(80px, 12vw, 160px) 0; position: relative; }
   .proc-step:last-child { border-bottom: none; }
 }
 .proc-step .n {
-  font-family: "Instrument Serif", serif; font-style: italic;
-  font-size: 3rem; color: var(--line); line-height: 1;
+  font-family: "JetBrains Mono", ui-monospace, monospace; font-style: normal;
+  font-size: 2.4rem; color: var(--line); line-height: 1; font-weight: 500;
 }
 .proc-step h4 { font-size: 1.2rem; color: var(--paper); }
 .proc-step p { font-size: .88rem; color: color-mix(in oklab, var(--paper) 70%, transparent); }
 .proc-step .when {
   margin-top: auto;
-  font-family: "Inter Tight", "Noto Sans JP", sans-serif; font-size: .68rem;
+  font-family: "JetBrains Mono", ui-monospace, monospace; font-size: .68rem;
   color: var(--line); letter-spacing: 0.12em;
   padding-top: 16px;
 }
@@ -646,15 +646,15 @@ section { padding: clamp(80px, 12vw, 160px) 0; position: relative; }
 .plan.featured .badge {
   position: absolute; top: 24px; right: 24px;
   background: var(--line); color: #fff;
-  padding: 5px 10px; border-radius: 999px; font-family: "Inter Tight", "Noto Sans JP", sans-serif;
+  padding: 5px 10px; border-radius: 999px; font-family: "JetBrains Mono", ui-monospace, monospace;
   font-size: .65rem; letter-spacing: 0.1em;
 }
 .plan.featured .btn-primary { background: var(--line); color: #fff; }
 .plan.featured .btn-primary:hover { background: var(--line-deep); }
-.plan .tier { font-family: "Inter Tight", "Noto Sans JP", sans-serif; font-size: .72rem; color: var(--mute); letter-spacing: 0.12em; }
+.plan .tier { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: .72rem; color: var(--mute); letter-spacing: 0.12em; }
 .plan h3 { font-size: 1.8rem; }
-.plan .price { font-family: "Shippori Mincho B1", serif; font-size: 2.8rem; font-weight: 500; line-height: 1; display: flex; align-items: baseline; gap: 6px; }
-.plan .price small { font-size: .35em; color: var(--mute); font-family: "Inter Tight", sans-serif; }
+.plan .price { font-family: "Zen Kaku Gothic New", sans-serif; font-size: 2.8rem; font-weight: 700; line-height: 1; display: flex; align-items: baseline; gap: 6px; }
+.plan .price small { font-size: .35em; color: var(--mute); font-family: "JetBrains Mono", ui-monospace, monospace; }
 .plan .price-note { font-size: .82rem; color: var(--mute); margin-top: -8px; }
 .plan .feats { display: flex; flex-direction: column; gap: 0; margin: 8px 0 18px; }
 .plan .feat {
@@ -671,7 +671,7 @@ section { padding: clamp(80px, 12vw, 160px) 0; position: relative; }
 .faq-q {
   width: 100%; text-align: left;
   padding: 28px 0; display: flex; justify-content: space-between; align-items: center; gap: 24px;
-  font-family: "Shippori Mincho B1", serif; font-size: 1.2rem; font-weight: 500;
+  font-family: "Zen Kaku Gothic New", sans-serif; font-size: 1.2rem; font-weight: 700;
   color: var(--ink);
   transition: color .2s;
 }
@@ -679,7 +679,7 @@ section { padding: clamp(80px, 12vw, 160px) 0; position: relative; }
 .faq-q .toggle {
   flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%;
   border: 1px solid var(--rule); display: grid; place-items: center;
-  font-family: "Inter Tight", sans-serif; transition: transform .3s, background .3s, color .3s;
+  font-family: "JetBrains Mono", ui-monospace, monospace; transition: transform .3s, background .3s, color .3s;
   font-size: 1.2rem; line-height: 1;
 }
 .faq-item.open .faq-q .toggle { background: var(--ink); color: var(--paper); border-color: var(--ink); transform: rotate(45deg); }
@@ -712,7 +712,7 @@ section { padding: clamp(80px, 12vw, 160px) 0; position: relative; }
   position: relative; z-index: 1;
 }
 .cta-final h2 em {
-  font-family: "Instrument Serif", serif; font-style: italic; color: var(--line-deep);
+  font-family: "Zen Kaku Gothic New", sans-serif; font-style: normal; font-weight: 700; color: var(--line-deep);
 }
 .cta-final p { color: var(--mute); max-width: 480px; margin: 0 auto 32px; position: relative; z-index: 1; }
 .cta-final .hero-actions { justify-content: center; position: relative; z-index: 1; }
@@ -725,19 +725,19 @@ footer {
 }
 .foot-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 60px; }
 @media (max-width: 760px) { .foot-top { grid-template-columns: 1fr 1fr; } }
-.foot-col h5 { font-family: "Inter Tight", "Noto Sans JP", sans-serif; font-size: .7rem; letter-spacing: 0.14em; color: var(--ink); margin-bottom: 16px; text-transform: uppercase; font-weight: 500; }
+.foot-col h5 { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: .7rem; letter-spacing: 0.14em; color: var(--ink); margin-bottom: 16px; text-transform: uppercase; font-weight: 500; }
 .foot-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
 .foot-col a:hover { color: var(--line-deep); }
 .foot-brand p { margin-top: 14px; max-width: 280px; line-height: 1.6; }
 .foot-bot {
   display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px;
   padding-top: 30px; border-top: 1px solid var(--rule);
-  font-family: "Inter Tight", "Noto Sans JP", sans-serif; font-size: .72rem; letter-spacing: 0.08em;
+  font-family: "JetBrains Mono", ui-monospace, monospace; font-size: .72rem; letter-spacing: 0.08em;
 }
 
 /* ============ Big number motif ============ */
 .big-num {
-  font-family: "Instrument Serif", serif; font-style: italic;
+  font-family: "JetBrains Mono", ui-monospace, monospace; font-style: normal; font-weight: 500;
   color: var(--rule); font-size: clamp(6rem, 16vw, 14rem);
   line-height: 0.85; letter-spacing: -0.04em;
   position: absolute; right: var(--pad); top: -20px;

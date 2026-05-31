@@ -17,10 +17,9 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="../assets/style.css">
-<link rel="stylesheet" href="../assets/opener.css">
+<link rel="stylesheet" href="../assets/site-2026.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -48,1585 +47,679 @@
 <script defer src="/_vercel/insights/script.js"></script>
 <script src="/assets/analytics.js"></script>
 </head>
-<body class="has-site-nav">
+<body>
 
-<!-- OPENER -->
-<div class="opener" id="opener" aria-hidden="true">
-  <button class="opener-skip" id="opener-skip" aria-label="オープニングをスキップ">Skip</button>
-  <div class="opener-stage">
-    <span class="opener-line opener-line--green"></span>
-    <span class="opener-line opener-line--amber"></span>
-    <span class="opener-line opener-line--soft"></span>
-    <p class="opener-tagline">TOTONOERUYA &nbsp;·&nbsp; KOMORO, NAGANO</p>
-  </div>
-</div>
-<script src="../assets/opener.js"></script>
-
-<!-- 新ナビゲーション（左サイド固定・ハンバーガー） -->
-<nav class="site-nav">
-  <button type="button" class="site-nav-trigger" aria-label="メニューを開く" aria-expanded="false" aria-controls="site-drawer">
-    <span class="site-nav-bars" aria-hidden="true">
-      <span></span><span></span><span></span>
-    </span>
-  </button>
-</nav>
-
-<!-- 左サイドドロワー -->
-<aside class="site-drawer" id="site-drawer" aria-hidden="true" aria-label="メニュー">
-  <div class="site-drawer-backdrop" data-drawer-close></div>
-  <div class="site-drawer-inner" role="dialog" aria-modal="true">
-    <div class="site-drawer-content">
-      <span class="site-drawer-eyebrow">Menu</span>
-      <ul class="site-drawer-menu">
-        <li><a href="/" data-drawer-close><span class="lang-en">Home</span></a></li>
-        <li><a href="/web/" data-drawer-close><span class="lang-en">Web</span></a></li>
-        <li><a href="/cleaning/" data-drawer-close><span class="lang-en">Cleaning</span></a></li>
-        <li><a href="/guitar/" data-drawer-close><span class="lang-en">Guitar</span></a></li>
-        <li><a href="/articles/" data-drawer-close><span class="lang-en">Journal</span></a></li>
-        <li><a href="/#contact" data-drawer-close><span class="lang-en">Contact</span></a></li>
-      </ul>
-
-      <div class="site-drawer-actions">
-        <a class="site-drawer-action" href="https://line.me/R/ti/p/@903xtesg" target="_blank" rel="noopener" aria-label="LINE">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-        </a>
-        <a class="site-drawer-action" href="mailto:totonoeru.ya@gmail.com" aria-label="Email">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-            <rect x="3" y="5" width="18" height="14" rx="1"/>
-            <path d="M3 7l9 6 9-6"/>
-          </svg>
-        </a>
-      </div>
-      <p class="site-drawer-foot">ととのえる屋<br>長野県小諸市</p>
-    </div>
-  </div>
-</aside>
-
-<main>
-<!-- HERO -->
-<header id="hero" style="min-height: 50svh;">
-  <div class="hero-eyebrow">
-    <span></span>JOURNAL
-  </div>
-  <h1 class="hero-headline">日々の取り組みを記録する。</h1>
-  <p class="hero-sub">
-    制作、清掃、ギター、AI。
-  </p>
+<!-- ===== TOPBAR ===== -->
+<header class="topbar">
+  <a href="/" class="brand"><img src="../assets/logo-totonoeru.png" alt="">ととのえる屋</a>
+  <nav aria-label="メインメニュー">
+    <a href="/web/">Web · AI</a>
+    <a href="/cleaning/">Cleaning</a>
+    <a href="/guitar/">Guitar</a>
+    <a href="/totoline/">totoline</a>
+    <a href="/articles/" aria-current="page">Journal</a>
+  </nav>
+  <a href="/#contact" class="cta">相談する</a>
 </header>
 
-<!-- ピックアップ：自社プロダクト totoline -->
-<section aria-labelledby="pickup-totoline" style="padding: 32px 24px 8px;">
-  <div class="container" style="max-width: 880px;">
-    <a href="/totoline/" style="display: block; padding: 24px 28px; border: 1px solid var(--line-soft, #e6dfd0); border-left: 3px solid var(--amber, #B8823A); background: var(--bg-warm); text-decoration: none; color: inherit; transition: background .2s;">
-      <span style="display: inline-block; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.78rem; letter-spacing: 0.14em; color: var(--amber, #B8823A); margin-bottom: 8px;">PICKUP &nbsp;·&nbsp; PRODUCT</span>
-      <h2 id="pickup-totoline" style="font-family: 'Noto Serif JP', serif; font-weight: 500; font-size: 1.25rem; line-height: 1.5; margin: 0 0 6px; color: var(--forest, #2B4A1A);">LINEに置くだけ。その会話、AIがタスク・議事録・請求書に。</h2>
-      <p style="font-size: 0.92rem; line-height: 1.75; margin: 0; color: var(--text-soft, #5a5448);">totoline は、LINEグループに招待するだけで、毎日の会話からタスク・決定事項・請求書ドラフトをAIが作るBot。1グループからFreeで試せます。 →</p>
-    </a>
-  </div>
+<!-- ===== HERO ===== -->
+<section class="page-hero">
+  <p class="eyebrow">Journal</p>
+  <h1>日々の取り組みを記録する。</h1>
+  <p class="sub">制作、清掃、ギター、AI。長野県小諸・御代田・軽井沢の現場の記録と気づきを、すこしずつ。</p>
 </section>
 
-<!-- カテゴリフィルタ -->
-<section style="padding: 48px 0;">
-  <div class="container">
-    <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
-      <button class="tag is-active" data-cat="all" style="cursor: pointer; transition: all .2s;">すべて</button>
-      <button class="tag" data-cat="思想" style="cursor: pointer; transition: all .2s;">思想</button>
-      <button class="tag" data-cat="AI" style="cursor: pointer; transition: all .2s;">AI</button>
-      <button class="tag" data-cat="制作" style="cursor: pointer; transition: all .2s;">制作</button>
-      <button class="tag" data-cat="業務改善" style="cursor: pointer; transition: all .2s;">業務改善</button>
-      <button class="tag" data-cat="経営" style="cursor: pointer; transition: all .2s;">経営</button>
-      <button class="tag" data-cat="清掃" style="cursor: pointer; transition: all .2s;">清掃</button>
-      <button class="tag" data-cat="ギター" style="cursor: pointer; transition: all .2s;">ギター</button>
-      <button class="tag" data-cat="地元" style="cursor: pointer; transition: all .2s;">地元</button>
-    </div>
+<!-- ===== 記事一覧 + カテゴリフィルタ ===== -->
+<section class="sec">
+  <div class="sec-top">
+    <h2>ジャーナル</h2>
+    <span class="note">All Posts</span>
   </div>
+
+  <div class="jr-filter" role="group" aria-label="カテゴリで絞り込む">
+      <button class="chip is-active" data-cat="all">すべて</button>
+      <button class="chip" data-cat="思想">思想</button>
+      <button class="chip" data-cat="AI">AI</button>
+      <button class="chip" data-cat="制作">制作</button>
+      <button class="chip" data-cat="業務改善">業務改善</button>
+      <button class="chip" data-cat="経営">経営</button>
+      <button class="chip" data-cat="清掃">清掃</button>
+      <button class="chip" data-cat="ギター">ギター</button>
+      <button class="chip" data-cat="地元">地元</button>
+  </div>
+
+  <div class="jr">
+      <a class="jr-row" href="/articles/pro-no-shigoto-toha/" data-cat="思想">
+        <span class="date">2026-07-06</span>
+        <span class="cat">思想</span>
+        <span class="ti">プロの仕事とは、何だと思いますか？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/seisou-shiagari-check-ai/" data-cat="清掃">
+        <span class="date">2026-07-05</span>
+        <span class="cat">清掃</span>
+        <span class="ti">清掃の仕上がりチェックを、写真とAIでチェックリストにするには？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/line-koushiki-totoline-chigai/" data-cat="業務改善">
+        <span class="date">2026-07-04</span>
+        <span class="cat">業務改善</span>
+        <span class="ti">LINE公式アカウントと totoline は、どう違いますか？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/seisou-mitsumori-ai/" data-cat="清掃">
+        <span class="date">2026-07-01</span>
+        <span class="cat">清掃</span>
+        <span class="ti">清掃の見積もり依頼への返信を、AIで30分から5分にするには？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/seisou-shift-ai/" data-cat="清掃">
+        <span class="date">2026-06-30</span>
+        <span class="cat">清掃</span>
+        <span class="ti">複数現場の清掃シフトを、AIで一気に組むには？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/seisou-kyujin-ai/" data-cat="清掃">
+        <span class="date">2026-06-29</span>
+        <span class="cat">清掃</span>
+        <span class="ti">清掃スタッフの求人原稿を、AIで応募が来る言葉に書き直すには？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/seisou-ai-nani-kara-2026/" data-cat="清掃">
+        <span class="date">2026-06-28</span>
+        <span class="cat">清掃</span>
+        <span class="ti">2026年版・清掃業でAIを使うなら、何から始めればいい？　長野の現場での順序</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/kagi-kanri-seisou-ai/" data-cat="清掃">
+        <span class="date">2026-06-25</span>
+        <span class="cat">清掃</span>
+        <span class="ti">軽井沢の別荘清掃で、鍵管理をAIとスマートロックで楽にするには？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/bessou-seisou-tagengo-ai/" data-cat="清掃">
+        <span class="date">2026-06-22</span>
+        <span class="cat">清掃</span>
+        <span class="ti">軽井沢の別荘清掃で、英語・中国語のオーナー対応をAIで進めるには？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/2026-houkaisei-marugoto/" data-cat="経営">
+        <span class="date">2026-06-19</span>
+        <span class="cat">経営</span>
+        <span class="ti">2026年に効いてくる法改正を、長野の小さな事業者向けにまるごとまとめると？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/timestamp-iru-iranai-2026/" data-cat="業務改善">
+        <span class="date">2026-06-16</span>
+        <span class="cat">業務改善</span>
+        <span class="ti">電子帳簿保存法のタイムスタンプ、2026年に小さな事業者は要りますか？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/kojin-jouhou-2026-ai/" data-cat="経営">
+        <span class="date">2026-06-13</span>
+        <span class="cat">経営</span>
+        <span class="ti">改正個人情報保護法、AIを使うときに小さな事業者が押さえることは何ですか？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/kanri-bangou-tekikaku-ai/" data-cat="業務改善">
+        <span class="date">2026-06-10</span>
+        <span class="cat">業務改善</span>
+        <span class="ti">取引先のインボイス番号、AIで確認する流れを作れますか？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/ryoshusho-ai-denchoho/" data-cat="業務改善">
+        <span class="date">2026-06-07</span>
+        <span class="cat">業務改善</span>
+        <span class="ti">紙の領収書、スマホで撮ってAIに任せて電帳法対応で大丈夫ですか？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/freelance-shinpou-2026-genba/" data-cat="経営">
+        <span class="date">2026-06-04</span>
+        <span class="cat">経営</span>
+        <span class="ti">フリーランス保護新法、2026年の発注側と受注側で気をつけることは何ですか？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/denshi-keiyaku-2026-hajime/" data-cat="業務改善">
+        <span class="date">2026-06-01</span>
+        <span class="cat">業務改善</span>
+        <span class="ti">電子契約、2026年に長野の小さな会社が始めるなら何からですか？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/digital-hojokin-2026-shien-jigyosha/" data-cat="経営">
+        <span class="date">2026-05-28</span>
+        <span class="cat">経営</span>
+        <span class="ti">デジタル化・AI導入補助金2026の支援事業者は、どう選べばいいですか？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/invoice-2026-10-keikasochi/" data-cat="経営">
+        <span class="date">2026-05-25</span>
+        <span class="cat">経営</span>
+        <span class="ti">インボイスの経過措置、2026年10月から80%控除が50%控除になるって本当ですか？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/denchoho-2026-nagano-hajime/" data-cat="業務改善">
+        <span class="date">2026-05-22</span>
+        <span class="cat">業務改善</span>
+        <span class="ti">電子帳簿保存法、2026年に長野の小さな事業者は何から手をつければいいですか？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/hojokin-2026-komoro-tsukaeru/" data-cat="経営">
+        <span class="date">2026-05-21</span>
+        <span class="cat">経営</span>
+        <span class="ti">デジタル化・AI導入補助金2026、小諸の小さな事業者でも使えますか？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/nagano-line-bot-tsuduku-shippai/" data-cat="AI">
+        <span class="date">2026-06-05</span>
+        <span class="cat">AI</span>
+        <span class="ti">長野の小さな事業者が「LINE Botを入れて続かなかった」のはなぜですか？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/kaiwa-shisan-line/" data-cat="業務改善">
+        <span class="date">2026-06-02</span>
+        <span class="cat">業務改善</span>
+        <span class="ti">LINEで流れていく会話は、資産にできますか？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/line-kokyaku-kanri-ai/" data-cat="業務改善">
+        <span class="date">2026-05-30</span>
+        <span class="cat">業務改善</span>
+        <span class="ti">小さな会社で、LINEのお客さん管理をAIに任せていいですか？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/seikyusho-tekiyo-ai-jidai/" data-cat="業務改善">
+        <span class="date">2026-05-27</span>
+        <span class="cat">業務改善</span>
+        <span class="ti">請求書の摘要欄、AIに書いてもらえる時代になったって本当ですか？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/line-gyomu-ai-doko-made/" data-cat="業務改善">
+        <span class="date">2026-05-24</span>
+        <span class="cat">業務改善</span>
+        <span class="ti">LINEで業務、AIにどこまで任せられますか？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/ai-overview-toha-chusho/" data-cat="AI">
+        <span class="date">2026-05-21</span>
+        <span class="cat">AI</span>
+        <span class="ti">AI Overview って何ですか？2026年5月、Google検索の48%に出ているものの正体は？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/komari-soudan-ichigo/" data-cat="思想">
+        <span class="date">2026-05-19</span>
+        <span class="cat">思想</span>
+        <span class="ti">何に困っているかわからないとき、ととのえる屋に相談しても大丈夫ですか？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/ai-erabareru-hp-shindan/" data-cat="業務改善">
+        <span class="date">2026-05-16</span>
+        <span class="cat">業務改善</span>
+        <span class="ti">「AIに選ばれるHP診断」とは、何をしてくれるサービスですか？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/seisou-hikitsugi-bunshou/" data-cat="清掃">
+        <span class="date">2026-05-15</span>
+        <span class="cat">清掃</span>
+        <span class="ti">清掃の引き継ぎを、AIで「読める文章」に変えるには？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/seisou-denwa-uketsuke/" data-cat="清掃">
+        <span class="date">2026-05-12</span>
+        <span class="cat">清掃</span>
+        <span class="ti">清掃の電話受付を、LINEとAIで集約するには？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/seisou-nippou-kami-ai/" data-cat="清掃">
+        <span class="date">2026-05-08</span>
+        <span class="cat">清掃</span>
+        <span class="ti">清掃の日報を紙でやっている現場でも、AIで楽になりますか？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/60dai-ai-ippo/" data-cat="AI">
+        <span class="date">2026-05-05</span>
+        <span class="cat">AI</span>
+        <span class="ti">60代でAIに触ったことがない人の、最初の一歩は何ですか？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/kami-mitsumori-sedai/" data-cat="AI">
+        <span class="date">2026-05-02</span>
+        <span class="cat">AI</span>
+        <span class="ti">紙の見積もりを出してきた世代でも、AIを使い始められますか？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/denwa-uketsuke-hitori/" data-cat="業務改善">
+        <span class="date">2026-04-28</span>
+        <span class="cat">業務改善</span>
+        <span class="ti">電話受付を1人で回している店が、AIで楽になる順序は？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/tegaki-daichou-ai/" data-cat="業務改善">
+        <span class="date">2026-04-23</span>
+        <span class="cat">業務改善</span>
+        <span class="ti">手書きの台帳をAIに読ませるのに、いちばん楽な方法は何ですか？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/fax-mada-tsukatteru/" data-cat="業務改善">
+        <span class="date">2026-05-18</span>
+        <span class="cat">業務改善</span>
+        <span class="ti">FAXをまだ使っている店舗でも、AIで楽になることはありますか？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/nagano-2026-5-ai-genjitsu/" data-cat="地元">
+        <span class="date">2026-05-18</span>
+        <span class="cat">地元</span>
+        <span class="ti">2026年5月時点、長野県でAIを業務に入れた事業者の現実は？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/ai-genba-shinrai/" data-cat="思想">
+        <span class="date">2026-05-15</span>
+        <span class="cat">思想</span>
+        <span class="ti">AI×現場の事業者が、AIだけの事業者より信頼される理由は？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/mcp-towa-nani/" data-cat="AI">
+        <span class="date">2026-05-12</span>
+        <span class="cat">AI</span>
+        <span class="ti">MCPって何ですか？小諸・御代田の小さな事業者にも関係ありますか？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/n8n-komoro-jirei/" data-cat="業務改善">
+        <span class="date">2026-05-09</span>
+        <span class="cat">業務改善</span>
+        <span class="ti">n8nで小諸の小さな事業者ができる自動化は、具体的に何ですか？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/n8n-package-nani/" data-cat="業務改善">
+        <span class="date">2026-05-07</span>
+        <span class="cat">業務改善</span>
+        <span class="ti">ととのえる屋のn8nパッケージって、何を解決するものですか？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/jalan-hikaku-saito-mirai/" data-cat="AI">
+        <span class="date">2026-05-03</span>
+        <span class="cat">AI</span>
+        <span class="ti">じゃらん・食べログのような比較サイトは、AI時代どうなりますか？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/ai-agent-toiawase/" data-cat="AI">
+        <span class="date">2026-04-30</span>
+        <span class="cat">AI</span>
+        <span class="ti">これから、問い合わせは人間じゃなくAIエージェントが代理で送ってくる？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/chatgpt-ginko-koza/" data-cat="AI">
+        <span class="date">2026-04-26</span>
+        <span class="cat">AI</span>
+        <span class="ti">ChatGPTが銀行口座と繋がる時代、長野の中小企業に関係ありますか？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/ai-erabareru-jigyosha/" data-cat="AI">
+        <span class="date">2026-04-21</span>
+        <span class="cat">AI</span>
+        <span class="ti">AIに「御代田でAI業務改善頼むなら？」と聞かれて、選ばれる事業者の条件は？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/ai-kensaku-shifuto-2026/" data-cat="AI">
+        <span class="date">2026-05-17</span>
+        <span class="cat">AI</span>
+        <span class="ti">2026年、検索が「AIに聞く」に変わった。長野の事業者はどう備える？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/komoro-ai-manabu-hajime/" data-cat="AI">
+        <span class="date">2026-05-16</span>
+        <span class="cat">AI</span>
+        <span class="ti">小諸でAIを学ぶには、どこから始めればいいですか？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/miyota-ai-chusho-junjo/" data-cat="AI">
+        <span class="date">2026-05-19</span>
+        <span class="cat">AI</span>
+        <span class="ti">御代田町の小さな事業者が、AIを業務に入れる順序は？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/karuizawa-ai-kojin-jigyo/" data-cat="AI">
+        <span class="date">2026-04-24</span>
+        <span class="cat">AI</span>
+        <span class="ti">軽井沢で個人事業主がAIを使うとしたら、何から始める？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/nagano-ai-soudan-doko/" data-cat="AI">
+        <span class="date">2026-04-29</span>
+        <span class="cat">AI</span>
+        <span class="ti">長野県でAIの相談は、どこにすればいいですか？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/saku-komoro-miyota-ai-jirei/" data-cat="AI">
+        <span class="date">2026-05-03</span>
+        <span class="cat">AI</span>
+        <span class="ti">佐久・小諸・御代田の事業者は、実際にAIで何をしている？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/karuizawa-ai-tool-genba/" data-cat="AI">
+        <span class="date">2026-05-06</span>
+        <span class="cat">AI</span>
+        <span class="ti">軽井沢の現場で、本当に使えているAIツールは何ですか？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/nagano-gas-appsheet-ai/" data-cat="AI">
+        <span class="date">2026-05-09</span>
+        <span class="cat">AI</span>
+        <span class="ti">長野でGASとAppSheetをAIと組み合わせるには？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/komoro-ai-saisho-shigoto/" data-cat="AI">
+        <span class="date">2026-05-11</span>
+        <span class="cat">AI</span>
+        <span class="ti">小諸の中小企業がAIに最初に任せると楽になる仕事は？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/miyota-karuizawa-data-yomaseru/" data-cat="AI">
+        <span class="date">2026-05-14</span>
+        <span class="cat">AI</span>
+        <span class="ti">御代田・軽井沢で、自分の店のデータをAIに読ませる方法は？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/nagano-ai-dounyu-ippo/" data-cat="AI">
+        <span class="date">2026-05-17</span>
+        <span class="cat">AI</span>
+        <span class="ti">長野県の中小企業がAIを導入する、はじめの一歩は何ですか？</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/mado-souji-dandori/" data-cat="清掃">
+        <span class="date">2026-05-15</span>
+        <span class="cat">清掃</span>
+        <span class="ti">窓清掃の段取りが、毎回ばらばらだった話</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/shinjin-manual-3gyo/" data-cat="清掃">
+        <span class="date">2026-05-15</span>
+        <span class="cat">清掃</span>
+        <span class="ti">新人さんに渡す清掃マニュアル、結局3行にした</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/ame-shift-saki/" data-cat="清掃">
+        <span class="date">2026-05-15</span>
+        <span class="cat">清掃</span>
+        <span class="ti">雨の日のシフト調整、いちばん時間がかかっていた</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/houkokusho-yondenai/" data-cat="清掃">
+        <span class="date">2026-05-15</span>
+        <span class="cat">清掃</span>
+        <span class="ti">月一の清掃報告書、誰も読まないことに気づいた</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/mitsumori-3pun/" data-cat="清掃">
+        <span class="date">2026-05-15</span>
+        <span class="cat">清掃</span>
+        <span class="ti">見積もりに半日かかっていた頃の話</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/futsuu-fukuyone-problem/" data-cat="清掃">
+        <span class="date">2026-05-15</span>
+        <span class="cat">清掃</span>
+        <span class="ti">「ここ、ふつう拭くよね？」が通じない問題</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/dougu-basho-shiranai/" data-cat="清掃">
+        <span class="date">2026-05-15</span>
+        <span class="cat">清掃</span>
+        <span class="ti">清掃道具の場所を全員が知らなかった話</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/yarinokori-deru-genba/" data-cat="清掃">
+        <span class="date">2026-05-15</span>
+        <span class="cat">清掃</span>
+        <span class="ti">やり残しが出る現場と、出ない現場の差</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/hikitsugi-nukeyasui/" data-cat="清掃">
+        <span class="date">2026-05-15</span>
+        <span class="cat">清掃</span>
+        <span class="ti">清掃の引き継ぎで、いちばん抜けやすいこと</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/dougu-fuyashisugi/" data-cat="清掃">
+        <span class="date">2026-05-15</span>
+        <span class="cat">清掃</span>
+        <span class="ti">道具を増やしすぎて、逆にやりにくくなった話</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/nendogata-keiyaku-itimaime/" data-cat="経営">
+        <span class="date">2026-05-18</span>
+        <span class="cat">経営</span>
+        <span class="ti">年契約の1社目に、何を約束したか</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/ai-houkokusho-yamete/" data-cat="AI">
+        <span class="date">2026-05-13</span>
+        <span class="cat">AI</span>
+        <span class="ti">AIに「報告書」を書かせるのを、やめた</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/miyota-shigoto/" data-cat="地元">
+        <span class="date">2026-05-10</span>
+        <span class="cat">地元</span>
+        <span class="ti">御代田の仕事と、隣町の距離感</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/guitar-tsuduku-riyu/" data-cat="ギター">
+        <span class="date">2026-05-06</span>
+        <span class="cat">ギター</span>
+        <span class="ti">ギター教室を続けている、本当の理由</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/mensetsu-ai-tsukaikata/" data-cat="業務改善">
+        <span class="date">2026-05-04</span>
+        <span class="cat">業務改善</span>
+        <span class="ti">面倒な打ち合わせ準備を、AIに渡した話</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/lp-kotoba-kezuru/" data-cat="制作">
+        <span class="date">2026-05-01</span>
+        <span class="cat">制作</span>
+        <span class="ti">LPの言葉を、3分の1まで削る話</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/shinrai-kotowarinai/" data-cat="経営">
+        <span class="date">2026-04-30</span>
+        <span class="cat">経営</span>
+        <span class="ti">信頼の通貨を、いちばん減らすのは「断らない」ことだった</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/claude-main-riyu/" data-cat="AI">
+        <span class="date">2026-04-27</span>
+        <span class="cat">AI</span>
+        <span class="ti">ChatGPTじゃなくClaudeをメインに据えた、地味な理由</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/3machi-kuukikan/" data-cat="地元">
+        <span class="date">2026-04-25</span>
+        <span class="cat">地元</span>
+        <span class="ti">御代田・小諸・軽井沢、3つの空気感の違い</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/hitori-engineer-yatowanai/" data-cat="経営">
+        <span class="date">2026-04-24</span>
+        <span class="cat">経営</span>
+        <span class="ti">1人で全部やるのに、エンジニアを雇わない理由</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/100kai-taiwa-kizuki/" data-cat="AI">
+        <span class="date">2026-04-22</span>
+        <span class="cat">AI</span>
+        <span class="ti">100回AIと対話して気づいた、いちばん地味で大事なこと</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/4sou-3banme-tsumaru/" data-cat="経営">
+        <span class="date">2026-04-20</span>
+        <span class="cat">経営</span>
+        <span class="ti">4層戦略の3番目で、ほとんどの人が詰まる</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/asa-routine-4moji/" data-cat="経営">
+        <span class="date">2026-05-19</span>
+        <span class="cat">経営</span>
+        <span class="ti">朝のやることを「朝ルーティン」の4文字に集約した話</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/line-soudan-ichiban-ooi/" data-cat="AI">
+        <span class="date">2026-05-18</span>
+        <span class="cat">AI</span>
+        <span class="ti">LINE無料相談で「いちばん多い質問」と、その答え方</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/kakaku-3man-riyu/" data-cat="経営">
+        <span class="date">2026-05-17</span>
+        <span class="cat">経営</span>
+        <span class="ti">5,000円から3万円まで、価格を上げたいちばん大きな理由</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/komon-vs-roadmap/" data-cat="経営">
+        <span class="date">2026-05-16</span>
+        <span class="cat">経営</span>
+        <span class="ti">月額顧問3万円とAIロードマップ1.5万円、中身を分解してみる</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/hp-1nin-genkai/" data-cat="制作">
+        <span class="date">2026-04-27</span>
+        <span class="cat">制作</span>
+        <span class="ti">1人で制作する強みと、ちゃんとある限界</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/karuizawa-seisou-ai/" data-cat="清掃">
+        <span class="date">2026-04-21</span>
+        <span class="cat">清掃</span>
+        <span class="ti">軽井沢T-SITEの現場で、AIに任せたこと</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/komoro-ai-genba/" data-cat="地元">
+        <span class="date">2026-05-17</span>
+        <span class="cat">地元</span>
+        <span class="ti">小諸でAIを話す、ということ</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/keiyaku-3sha-riyu/" data-cat="経営">
+        <span class="date">2026-05-15</span>
+        <span class="cat">経営</span>
+        <span class="ti">年契約は3社まで、と決めた理由</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/totonoeruya-name-riyu/" data-cat="思想">
+        <span class="date">2026-05-12</span>
+        <span class="cat">思想</span>
+        <span class="ti">ととのえる屋という名前にした理由</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/naniwo-totonoetai/" data-cat="思想">
+        <span class="date">2026-05-08</span>
+        <span class="cat">思想</span>
+        <span class="ti">「AIで何ができる？」より「何を整えたい？」から始める</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/ai-tool-yameta-3tsu/" data-cat="AI">
+        <span class="date">2026-05-04</span>
+        <span class="cat">AI</span>
+        <span class="ti">AIをツールとして扱うために、やめた3つのこと</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/hp-seisaku-umakuitta/" data-cat="制作">
+        <span class="date">2026-05-01</span>
+        <span class="cat">制作</span>
+        <span class="ti">なぜHP制作の仕事は、思ったよりうまくいったのか</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/seikyusho-ai-15jikan/" data-cat="業務改善">
+        <span class="date">2026-04-28</span>
+        <span class="cat">業務改善</span>
+        <span class="ti">請求書をAIに任せたら、月に15時間返ってきた話</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/hojokin-ai-mae-ni/" data-cat="経営">
+        <span class="date">2026-04-25</span>
+        <span class="cat">経営</span>
+        <span class="ti">補助金、AIで探す前にやっておきたいこと</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/tsugino-nami-totonoeru/" data-cat="思想">
+        <span class="date">2026-04-22</span>
+        <span class="cat">思想</span>
+        <span class="ti">次に来る波は「作る」じゃなく「整える」かもしれない</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/design-ai-kakinaoshita/" data-cat="制作">
+        <span class="date">2026-04-18</span>
+        <span class="cat">制作</span>
+        <span class="ti">デザインをAIに任せて、自分で書き直した話</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/ai-tayori-sugite-wakaranai/" data-cat="AI">
+        <span class="date">2026-04-15</span>
+        <span class="cat">AI</span>
+        <span class="ti">AIに頼りすぎて、わからなくなった日のこと</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/ai-tsukaihajime-komatta/" data-cat="AI">
+        <span class="date">2026-04-12</span>
+        <span class="cat">AI</span>
+        <span class="ti">AIを使い始めて、いちばん困ったこと</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+      <a class="jr-row" href="/articles/sample-article/" data-cat="制作">
+        <span class="date">2026-04-30</span>
+        <span class="cat">制作</span>
+        <span class="ti">haluta house LP が公開されました</span>
+        <span class="ar" aria-hidden="true">→</span>
+      </a>
+  </div>
+
+  <p class="jr-empty" id="jr-empty">該当する記事はまだありません。準備中です。</p>
 </section>
 
-<!-- 記事リスト -->
-<section style="background: var(--bg-warm); padding: 80px 0;">
-  <div class="container">
-    <div class="journal-list">
-      <a href="/articles/pro-no-shigoto-toha/" class="journal-item anim" data-category="思想">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/pro-no-shigoto-toha-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-07-06</span>
-          <span class="journal-category">思想</span>
-        </div>
-        <h3 class="journal-title">プロの仕事とは、何だと思いますか？</h3>
-        <p class="journal-lead">
-          結論、プロの仕事とは「見えないところを、いちばんていねいにやること」だと思っています。HP制作も清掃もギターも、表に出る部分より見えない下ごしらえで仕上がりが決まる。長野県小諸市で3つの仕事を一人で担う中で、毎回そこに戻ってくる考えを書きます。
-        </p>
-      </a>
-
-      <a href="/articles/seisou-shiagari-check-ai/" class="journal-item anim" data-category="清掃">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/seisou-shiagari-check-ai-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-07-05</span>
-          <span class="journal-category">清掃</span>
-        </div>
-        <h3 class="journal-title">清掃の仕上がりチェックを、写真とAIでチェックリストにするには？</h3>
-        <p class="journal-lead">
-          清掃の仕上がりチェック(検収)は、人によって合格ラインがバラつき、報告にも時間がかかります。終わった部屋をスマホで撮ってAIに渡すと、チェックリストと照らして「できている所・まだの所」を整理し、オーナー向け報告の下書きまで作れます。長野県内の別荘・事業所清掃で動いている手順を伝えます。
-        </p>
-      </a>
-
-      <a href="/articles/line-koushiki-totoline-chigai/" class="journal-item anim" data-category="業務改善">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/line-koushiki-totoline-chigai-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-07-04</span>
-          <span class="journal-category">業務改善</span>
-        </div>
-        <h3 class="journal-title">LINE公式アカウントと totoline は、どう違いますか？</h3>
-        <p class="journal-lead">
-          結論、LINE公式アカウントは「お客さんへの一斉配信」、totoline は「日々のLINEから業務記録をつくる」道具です。役割が違うので、両方使うのが現実的です。御代田・小諸・軽井沢の小さな会社が、どちらから入れるべきかを5つの問いで判定する流れを書きます。
-        </p>
-      </a>
-
-      <a href="/articles/seisou-mitsumori-ai/" class="journal-item anim" data-category="清掃">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/seisou-mitsumori-ai-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-07-01</span>
-          <span class="journal-category">清掃</span>
-        </div>
-        <h3 class="journal-title">清掃の見積もり依頼への返信を、AIで30分から5分にするには？</h3>
-        <p class="journal-lead">
-          清掃業の見積もり返信は1件20〜40分かかります。面積・頻度・作業内容を聞き直して、過去案件と照らして、価格を組んで、文章にする。この一連を、ChatGPTやClaudeに任せると5分台に縮みます。長野県内で動いている手順を伝えます。
-        </p>
-      </a>
-
-      <a href="/articles/seisou-shift-ai/" class="journal-item anim" data-category="清掃">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/seisou-shift-ai-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-06-30</span>
-          <span class="journal-category">清掃</span>
-        </div>
-        <h3 class="journal-title">複数現場の清掃シフトを、AIで一気に組むには？</h3>
-        <p class="journal-lead">
-          別荘5棟・店舗3軒・ホテル2棟を4〜10名で回す清掃事業者で、毎週2〜3時間かかるシフト作成が10分に。スタッフの希望休・移動時間・繁忙期(軽井沢の夏)を全部AIに渡してたたき台を出させ、人は最終調整30分だけ残します。
-        </p>
-      </a>
-
-      <a href="/articles/seisou-kyujin-ai/" class="journal-item anim" data-category="清掃">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/seisou-kyujin-ai-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-06-29</span>
-          <span class="journal-category">清掃</span>
-        </div>
-        <h3 class="journal-title">清掃スタッフの求人原稿を、AIで応募が来る言葉に書き直すには？</h3>
-        <p class="journal-lead">
-          「未経験OK・週2日から・主婦活躍中」のテンプレでは応募が来なくなりました。現場のリアル(建物・1日の流れ・続いたスタッフの共通点)をAIに渡して、煽らず誇張せず事実描写だけで書き直す手順を伝えます。
-        </p>
-      </a>
-
-      <a href="/articles/seisou-ai-nani-kara-2026/" class="journal-item anim" data-category="清掃">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/seisou-ai-nani-kara-2026-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-06-28</span>
-          <span class="journal-category">清掃</span>
-        </div>
-        <h3 class="journal-title">2026年版・清掃業でAIを使うなら、何から始めればいい？　長野の現場での順序</h3>
-        <p class="journal-lead">
-          清掃業のAIというと自動掃除機を想像する方が多いですが、最初に効くのは机の上の事務作業のほうです。紙の日報・鍵管理・外国人オーナー対応の3つから順に始める手順を伝えます。
-        </p>
-      </a>
-
-      <a href="/articles/kagi-kanri-seisou-ai/" class="journal-item anim" data-category="清掃">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/kagi-kanri-seisou-ai-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-06-25</span>
-          <span class="journal-category">清掃</span>
-        </div>
-        <h3 class="journal-title">軽井沢の別荘清掃で、鍵管理をAIとスマートロックで楽にするには？</h3>
-        <p class="journal-lead">
-          鍵の往復配送に毎週1〜2時間かかっていた現場で、スマートロックとAIによる入退室記録の自動報告に切り替えたら、清掃以外の時間が消えました。冬の積雪対策まで伝えます。
-        </p>
-      </a>
-
-      <a href="/articles/bessou-seisou-tagengo-ai/" class="journal-item anim" data-category="清掃">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/bessou-seisou-tagengo-ai-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-06-22</span>
-          <span class="journal-category">清掃</span>
-        </div>
-        <h3 class="journal-title">軽井沢の別荘清掃で、英語・中国語のオーナー対応をAIで進めるには？</h3>
-        <p class="journal-lead">
-          シンガポール・香港・台湾・オーストラリアの別荘オーナーが増えています。AI翻訳とLINE/WhatsAppだけで、通訳を雇わずに鍵の受け渡し・清掃完了報告・トラブル時の連絡まで回せます。
-        </p>
-      </a>
-
-      <a href="/articles/2026-houkaisei-marugoto/" class="journal-item anim" data-category="経営">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/2026-houkaisei-marugoto-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-06-19</span>
-          <span class="journal-category">経営</span>
-        </div>
-        <h3 class="journal-title">2026年に効いてくる法改正を、長野の小さな事業者向けにまるごとまとめると？</h3>
-        <p class="journal-lead">
-          電帳法・インボイス経過措置縮小（10月から80%→50%）・フリーランス保護新法・補助金2026・個人情報保護法・電子契約。優先順位は「経理電子化／電子契約／フリーランス契約見直し」の3つです。
-        </p>
-      </a>
-
-      <a href="/articles/timestamp-iru-iranai-2026/" class="journal-item anim" data-category="業務改善">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/timestamp-iru-iranai-2026-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-06-16</span>
-          <span class="journal-category">業務改善</span>
-        </div>
-        <h3 class="journal-title">電子帳簿保存法のタイムスタンプ、2026年に小さな事業者は要りますか？</h3>
-        <p class="journal-lead">
-          結論、必須ではありません。クラウド会計・クラウドストレージ・電子契約サービスに保存していれば、訂正履歴が標準で残るためタイムスタンプは不要。例外と判断基準を伝えます。
-        </p>
-      </a>
-
-      <a href="/articles/kojin-jouhou-2026-ai/" class="journal-item anim" data-category="経営">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/kojin-jouhou-2026-ai-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-06-13</span>
-          <span class="journal-category">経営</span>
-        </div>
-        <h3 class="journal-title">改正個人情報保護法、AIを使うときに小さな事業者が押さえることは何ですか？</h3>
-        <p class="journal-lead">
-          やることは2つ。学習に使われない設定の有料プラン（ChatGPT Plus等）を契約する。「氏名・住所・電話・口座・マイナンバー・健康情報は無料AIに投げない」ルールをA4 1枚で社内に貼る。
-        </p>
-      </a>
-
-      <a href="/articles/kanri-bangou-tekikaku-ai/" class="journal-item anim" data-category="業務改善">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/kanri-bangou-tekikaku-ai-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-06-10</span>
-          <span class="journal-category">業務改善</span>
-        </div>
-        <h3 class="journal-title">取引先のインボイス番号、AIで確認する流れを作れますか？</h3>
-        <p class="journal-lead">
-          作れます。請求書PDFをまとめてAIに投げると、番号・取引先・金額の表が数分で完成。国税庁公表サイトでの真偽確認だけ人がする分業で、月末の経理時間が半分以下に。
-        </p>
-      </a>
-
-      <a href="/articles/ryoshusho-ai-denchoho/" class="journal-item anim" data-category="業務改善">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/ryoshusho-ai-denchoho-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-06-07</span>
-          <span class="journal-category">業務改善</span>
-        </div>
-        <h3 class="journal-title">紙の領収書、スマホで撮ってAIに任せて電帳法対応で大丈夫ですか？</h3>
-        <p class="journal-lead">
-          大丈夫です。月3,000円以下のクラウド会計連動アプリでスマホ撮影→AI抽出→自動保存まで一気通貫。電子帳簿保存法のスキャナ保存制度の要件を満たします。
-        </p>
-      </a>
-
-      <a href="/articles/freelance-shinpou-2026-genba/" class="journal-item anim" data-category="経営">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/freelance-shinpou-2026-genba-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-06-04</span>
-          <span class="journal-category">経営</span>
-        </div>
-        <h3 class="journal-title">フリーランス保護新法、2026年の発注側と受注側で気をつけることは何ですか？</h3>
-        <p class="journal-lead">
-          発注側は「書面交付」「60日以内支払い」「中途解約30日前通知」の3点セット。受注側は「契約条件を確認する権利」を覚えておく。AIを使った契約書チェックの手順まで。
-        </p>
-      </a>
-
-      <a href="/articles/denshi-keiyaku-2026-hajime/" class="journal-item anim" data-category="業務改善">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/denshi-keiyaku-2026-hajime-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-06-01</span>
-          <span class="journal-category">業務改善</span>
-        </div>
-        <h3 class="journal-title">電子契約、2026年に長野の小さな会社が始めるなら何からですか？</h3>
-        <p class="journal-lead">
-          いきなり全契約を電子化しなくていい、まず「新規顧客との業務委託契約」だけ。月3,000円〜のクラウドサイン・freeeサイン・GMOサインで、印紙税ゼロ・郵送ゼロ・電帳法対応まで一気通貫。
-        </p>
-      </a>
-
-      <a href="/articles/digital-hojokin-2026-shien-jigyosha/" class="journal-item anim" data-category="経営">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/digital-hojokin-2026-shien-jigyosha-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-28</span>
-          <span class="journal-category">経営</span>
-        </div>
-        <h3 class="journal-title">デジタル化・AI導入補助金2026の支援事業者は、どう選べばいいですか？</h3>
-        <p class="journal-lead">
-          見るのは「実装まで一緒にやってくれるか」「補助金が終わった後も伴走してくれるか」の2つ。書類だけ手伝う支援事業者を避ける現実的な確認手順を伝えます。
-        </p>
-      </a>
-
-      <a href="/articles/invoice-2026-10-keikasochi/" class="journal-item anim" data-category="経営">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/invoice-2026-10-keikasochi-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-25</span>
-          <span class="journal-category">経営</span>
-        </div>
-        <h3 class="journal-title">インボイスの経過措置、2026年10月から80%控除が50%控除になるって本当ですか？</h3>
-        <p class="journal-lead">
-          本当です。免税事業者からの仕入の控除率が80%→50%に下がります。長野県内の建設・運送・士業まわり・サロン・農業に影響大。AIを使った取引先洗い出しの手順まで。
-        </p>
-      </a>
-
-      <a href="/articles/denchoho-2026-nagano-hajime/" class="journal-item anim" data-category="業務改善">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/denchoho-2026-nagano-hajime-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-22</span>
-          <span class="journal-category">業務改善</span>
-        </div>
-        <h3 class="journal-title">電子帳簿保存法、2026年に長野の小さな事業者は何から手をつければいいですか？</h3>
-        <p class="journal-lead">
-          メール添付の請求書・領収書は電子保存が義務です。やることは2つ。「電子取引_2026」フォルダを1つ作る・ファイル名を「日付_取引先_金額」に統一する。AIに半分任せられます。
-        </p>
-      </a>
-
-      <a href="/articles/hojokin-2026-komoro-tsukaeru/" class="journal-item anim" data-category="経営">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/hojokin-2026-komoro-tsukaeru-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-21</span>
-          <span class="journal-category">経営</span>
-        </div>
-        <h3 class="journal-title">デジタル化・AI導入補助金2026、小諸の小さな事業者でも使えますか？</h3>
-        <p class="journal-lead">
-          使えます。むしろ数名規模の事業者向けに枠が広がりました。旧IT導入補助金の後継として2026年4月から始まり、AI導入が正式対象に。上限額も450万円まで広がっています。
-        </p>
-      </a>
-
-      <a href="/articles/nagano-line-bot-tsuduku-shippai/" class="journal-item anim" data-category="AI">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/nagano-line-bot-tsuduku-shippai-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-06-05</span>
-          <span class="journal-category">AI</span>
-        </div>
-        <h3 class="journal-title">長野の小さな事業者が「LINE Botを入れて続かなかった」のはなぜですか？</h3>
-        <p class="journal-lead">
-          続かなかったBotには「汎用」「現場負担」「止められない契約」の3つの共通点があります。続くBotと続かないBotの分かれ目を、長野県内の現場で見てきた範囲で書きました。
-        </p>
-      </a>
-
-      <a href="/articles/kaiwa-shisan-line/" class="journal-item anim" data-category="業務改善">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/kaiwa-shisan-line-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-06-02</span>
-          <span class="journal-category">業務改善</span>
-        </div>
-        <h3 class="journal-title">LINEで流れていく会話は、資産にできますか？</h3>
-        <p class="journal-lead">
-          できます。残すのは「決定事項・約束・金額・期日・依頼内容」の5種類だけ。AIで自動的に拾って台帳に積み上げれば、流れていた会話が月末・年末に効いてくる資産に変わります。
-        </p>
-      </a>
-
-      <a href="/articles/line-kokyaku-kanri-ai/" class="journal-item anim" data-category="業務改善">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/line-kokyaku-kanri-ai-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-30</span>
-          <span class="journal-category">業務改善</span>
-        </div>
-        <h3 class="journal-title">小さな会社で、LINEのお客さん管理をAIに任せていいですか？</h3>
-        <p class="journal-lead">
-          任せていいです。ただし「全部」ではなく「裏側だけ」が現実的。紙の顧客名簿は残したまま、LINEから自動で顧客台帳が積み上がる形を、御代田・小諸・軽井沢の小さな会社向けに書きました。
-        </p>
-      </a>
-
-      <a href="/articles/seikyusho-tekiyo-ai-jidai/" class="journal-item anim" data-category="業務改善">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/seikyusho-tekiyo-ai-jidai-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-27</span>
-          <span class="journal-category">業務改善</span>
-        </div>
-        <h3 class="journal-title">請求書の摘要欄、AIに書いてもらえる時代になったって本当ですか？</h3>
-        <p class="journal-lead">
-          本当です。1ヶ月のLINE会話から、AIが「いつ・何を・いくらで」を読み取って、請求書の摘要欄と金額の下書きを作ります。月末の請求業務が、思い出すところから始まらなくなりました。
-        </p>
-      </a>
-
-      <a href="/articles/line-gyomu-ai-doko-made/" class="journal-item anim" data-category="業務改善">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/line-gyomu-ai-doko-made-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-24</span>
-          <span class="journal-category">業務改善</span>
-        </div>
-        <h3 class="journal-title">LINEで業務、AIにどこまで任せられますか？</h3>
-        <p class="journal-lead">
-          LINEグループの会話は、いま、AIが読み取って整理できるようになりました。タスク抽出・日次サマリー・請求書ドラフトまで、人が触らずに形になります。任せられる線引きを、実装現場から書きました。
-        </p>
-      </a>
-
-      <a href="/articles/ai-overview-toha-chusho/" class="journal-item anim" data-category="AI">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/ai-overview-toha-chusho-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-21</span>
-          <span class="journal-category">AI</span>
-        </div>
-        <h3 class="journal-title">AI Overview って何ですか？2026年5月、Google検索の48%に出ているものの正体は？</h3>
-        <p class="journal-lead">
-          Google検索の48%にAIの要約が表示される時代になりました。引用されないHPは流入が30〜60%減ります。中小企業がいまから何をすべきか、5ステップで書きました。
-        </p>
-      </a>
-
-      <a href="/articles/komari-soudan-ichigo/" class="journal-item anim" data-category="思想">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/komari-soudan-ichigo-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-19</span>
-          <span class="journal-category">思想</span>
-        </div>
-        <h3 class="journal-title">何に困っているかわからないとき、ととのえる屋に相談しても大丈夫ですか？</h3>
-        <p class="journal-lead">
-          それで大丈夫です。困りごとを言語化するところから一緒にやります。整理する側がこちら、というスタンスを保っています。長野県内の事業者・個人の方に向けて。
-        </p>
-      </a>
-
-      <a href="/articles/ai-erabareru-hp-shindan/" class="journal-item anim" data-category="業務改善">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/ai-erabareru-hp-shindan-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-16</span>
-          <span class="journal-category">業務改善</span>
-        </div>
-        <h3 class="journal-title">「AIに選ばれるHP診断」とは、何をしてくれるサービスですか？</h3>
-        <p class="journal-lead">
-          ChatGPT・Claude・Perplexityで御社のHPがAIに引用されるかを実際に検証し、引用される状態にととのえる単発スポット診断。1日1社・月10社の上限で運用しています。
-        </p>
-      </a>
-
-      <a href="/articles/seisou-hikitsugi-bunshou/" class="journal-item anim" data-category="清掃">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/seisou-hikitsugi-bunshou-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-15</span>
-          <span class="journal-category">清掃</span>
-        </div>
-        <h3 class="journal-title">清掃の引き継ぎを、AIで「読める文章」に変えるには？</h3>
-        <p class="journal-lead">
-          断片メモを話し言葉で残し、AIに「読める文章」に直させる流れで、新人の立ち上がりが2週間から3日に縮みます。軽井沢・小諸の現場視点で伝えます。
-        </p>
-      </a>
-
-      <a href="/articles/seisou-denwa-uketsuke/" class="journal-item anim" data-category="清掃">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/seisou-denwa-uketsuke-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-12</span>
-          <span class="journal-category">清掃</span>
-        </div>
-        <h3 class="journal-title">清掃の電話受付を、LINEとAIで集約するには？</h3>
-        <p class="journal-lead">
-          電話を残しつつLINEに流す、それだけで月15時間返ってきます。社長が現場に出ながら電話を取る状況を、軽井沢・小諸・御代田の現場で実際に変えた事例。
-        </p>
-      </a>
-
-      <a href="/articles/seisou-nippou-kami-ai/" class="journal-item anim" data-category="清掃">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/seisou-nippou-kami-ai-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-08</span>
-          <span class="journal-category">清掃</span>
-        </div>
-        <h3 class="journal-title">清掃の日報を紙でやっている現場でも、AIで楽になりますか？</h3>
-        <p class="journal-lead">
-          紙のままで撮るだけ、書き写しはしなくていいです。軽井沢の別荘清掃・小諸のホテル清掃・御代田の事業所清掃で、月10時間以上返ってきています。
-        </p>
-      </a>
-
-      <a href="/articles/60dai-ai-ippo/" class="journal-item anim" data-category="AI">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/60dai-ai-ippo-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-05</span>
-          <span class="journal-category">AI</span>
-        </div>
-        <h3 class="journal-title">60代でAIに触ったことがない人の、最初の一歩は何ですか？</h3>
-        <p class="journal-lead">
-          最初の一歩は「音声でAIに話しかける」だけです。文字入力もアカウント登録も要りません。家族のスマホでChatGPTアプリを1回開けば、その日のうちに使えます。
-        </p>
-      </a>
-
-      <a href="/articles/kami-mitsumori-sedai/" class="journal-item anim" data-category="AI">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/kami-mitsumori-sedai-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-02</span>
-          <span class="journal-category">AI</span>
-        </div>
-        <h3 class="journal-title">紙の見積もりを出してきた世代でも、AIを使い始められますか？</h3>
-        <p class="journal-lead">
-          紙の見積もりはそのままでよい、下書きだけAIに任せる流れで月10時間返ってきます。60代以降の事業主向けに、現役エンジニアが手順を伝えます。
-        </p>
-      </a>
-
-      <a href="/articles/denwa-uketsuke-hitori/" class="journal-item anim" data-category="業務改善">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/denwa-uketsuke-hitori-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-04-28</span>
-          <span class="journal-category">業務改善</span>
-        </div>
-        <h3 class="journal-title">電話受付を1人で回している店が、AIで楽になる順序は？</h3>
-        <p class="journal-lead">
-          電話を捨てなくていい、留守電→AI文字起こし→LINE転送、この1本を組むだけで月10時間以上返ってきます。小諸・御代田・軽井沢の事例を含め伝えます。
-        </p>
-      </a>
-
-      <a href="/articles/tegaki-daichou-ai/" class="journal-item anim" data-category="業務改善">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/tegaki-daichou-ai-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-04-23</span>
-          <span class="journal-category">業務改善</span>
-        </div>
-        <h3 class="journal-title">手書きの台帳をAIに読ませるのに、いちばん楽な方法は何ですか？</h3>
-        <p class="journal-lead">
-          紙の台帳を打ち直さなくていい、スマホで撮ってAIに送るだけです。2026年5月時点のAI画像認識精度なら、月10時間返ってきます。長野県の事例を含め伝えます。
-        </p>
-      </a>
-
-      <a href="/articles/fax-mada-tsukatteru/" class="journal-item anim" data-category="業務改善">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/fax-mada-tsukatteru-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-18</span>
-          <span class="journal-category">業務改善</span>
-        </div>
-        <h3 class="journal-title">FAXをまだ使っている店舗でも、AIで楽になることはありますか？</h3>
-        <p class="journal-lead">
-          FAXを捨てる必要はありません。受信したFAXをスマホに転送してAIに読ませる、それだけで月5〜10時間返ってきます。小諸市・御代田町・軽井沢町の事例を伝えます。
-        </p>
-      </a>
-
-      <a href="/articles/nagano-2026-5-ai-genjitsu/" class="journal-item anim" data-category="地元">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/nagano-2026-5-ai-genjitsu-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-18</span>
-          <span class="journal-category">地元</span>
-        </div>
-        <h3 class="journal-title">2026年5月時点、長野県でAIを業務に入れた事業者の現実は？</h3>
-        <p class="journal-lead">
-          長野県内でAIを業務に入れているのは1割、触ったが続いていない2割、何もしていない7割。1割が何をしているか、続かなかった2割が何を間違えたか、ととのえる屋が見てきた範囲で書きます。
-        </p>
-      </a>
-
-      <a href="/articles/ai-genba-shinrai/" class="journal-item anim" data-category="思想">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/ai-genba-shinrai-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-15</span>
-          <span class="journal-category">思想</span>
-        </div>
-        <h3 class="journal-title">AI×現場の事業者が、AIだけの事業者より信頼される理由は？</h3>
-        <p class="journal-lead">
-          結論、現場を知っているから。物理労働の現場で何が動いて何が動かないかを体で知る事業者は、AIをどこで止めるかの判断が違います。haluta house・washdeli・清掃の現場から書きます。
-        </p>
-      </a>
-
-      <a href="/articles/mcp-towa-nani/" class="journal-item anim" data-category="AI">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/mcp-towa-nani-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-12</span>
-          <span class="journal-category">AI</span>
-        </div>
-        <h3 class="journal-title">MCPって何ですか？小諸・御代田の小さな事業者にも関係ありますか？</h3>
-        <p class="journal-lead">
-          MCP（Model Context Protocol）はAIに外の道具を使わせる共通規格。Anthropicが2024年に公開、Claude・ChatGPT・Geminiが対応。小諸・御代田の事業者にも関係があります。
-        </p>
-      </a>
-
-      <a href="/articles/n8n-komoro-jirei/" class="journal-item anim" data-category="業務改善">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/n8n-komoro-jirei-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-09</span>
-          <span class="journal-category">業務改善</span>
-        </div>
-        <h3 class="journal-title">n8nで小諸の小さな事業者ができる自動化は、具体的に何ですか？</h3>
-        <p class="journal-lead">
-          小諸の小さな事業者がn8nで取り組める自動化は6種類。問い合わせ振り分け・見積/請求下書き・LINE予約応対・現場日報・競合監視・領収書OCR。月5〜20時間返ってくる範囲です。
-        </p>
-      </a>
-
-      <a href="/articles/n8n-package-nani/" class="journal-item anim" data-category="業務改善">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/n8n-package-nani-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-07</span>
-          <span class="journal-category">業務改善</span>
-        </div>
-        <h3 class="journal-title">ととのえる屋のn8nパッケージって、何を解決するものですか？</h3>
-        <p class="journal-lead">
-          長野の小さな事業者の「複数ツールに散らばった業務を1本に集約する」ためのパッケージ。問い合わせ・LINE・スプレッドシート・会計の間を、AIを挟んで自動で流す形に置き換えます。
-        </p>
-      </a>
-
-      <a href="/articles/jalan-hikaku-saito-mirai/" class="journal-item anim" data-category="AI">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/jalan-hikaku-saito-mirai-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-03</span>
-          <span class="journal-category">AI</span>
-        </div>
-        <h3 class="journal-title">じゃらん・食べログのような比較サイトは、AI時代どうなりますか？</h3>
-        <p class="journal-lead">
-          結論、比較サイトはAIに代替されていきます。2026年、米国Yelp・Tripadvisorのトラフィックは下落傾向、日本でも同じ流れに。自社情報をAIに引用される形に整える局面です。
-        </p>
-      </a>
-
-      <a href="/articles/ai-agent-toiawase/" class="journal-item anim" data-category="AI">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/ai-agent-toiawase-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-04-30</span>
-          <span class="journal-category">AI</span>
-        </div>
-        <h3 class="journal-title">これから、問い合わせは人間じゃなくAIエージェントが代理で送ってくる？</h3>
-        <p class="journal-lead">
-          AIエージェントが本人に代わって複数HPを比較して見積依頼を送るサービスが米国で実用化。日本でも半年〜1年で同じことが起きます。軽井沢・小諸・御代田の対策を伝えます。
-        </p>
-      </a>
-
-      <a href="/articles/chatgpt-ginko-koza/" class="journal-item anim" data-category="AI">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/chatgpt-ginko-koza-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-04-26</span>
-          <span class="journal-category">AI</span>
-        </div>
-        <h3 class="journal-title">ChatGPTが銀行口座と繋がる時代、長野の中小企業に関係ありますか？</h3>
-        <p class="journal-lead">
-          OpenAI Operator・Anthropic Computer UseなどAIが代行操作する仕組みが現実化。長野の中小企業で経理・支払・台帳の自動化に月10時間以上返ってくる現場が出始めました。
-        </p>
-      </a>
-
-      <a href="/articles/ai-erabareru-jigyosha/" class="journal-item anim" data-category="AI">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/ai-erabareru-jigyosha-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-04-21</span>
-          <span class="journal-category">AI</span>
-        </div>
-        <h3 class="journal-title">AIに「御代田でAI業務改善頼むなら？」と聞かれて、選ばれる事業者の条件は？</h3>
-        <p class="journal-lead">
-          AIが事業者を選ぶ基準は3つ。本人エンティティが公開されていること、地名×業種×固有名詞が具体的に書かれていること、過去の実装事例がそのまま読める形で残っていること。
-        </p>
-      </a>
-
-      <a href="/articles/ai-kensaku-shifuto-2026/" class="journal-item anim" data-category="AI">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/ai-kensaku-shifuto-2026-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-17</span>
-          <span class="journal-category">AI</span>
-        </div>
-        <h3 class="journal-title">2026年、検索が「AIに聞く」に変わった。長野の事業者はどう備える？</h3>
-        <p class="journal-lead">
-          2026年、検索の主役はGoogleからChatGPT・Claude・Perplexity・Google AI Overviewに移りつつあります。長野の事業者が「引用される側」に立つ具体策を、現役エンジニアが伝えます。
-        </p>
-      </a>
-
-      <a href="/articles/komoro-ai-manabu-hajime/" class="journal-item anim" data-category="AI">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/komoro-ai-manabu-hajime-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-16</span>
-          <span class="journal-category">AI</span>
-        </div>
-        <h3 class="journal-title">小諸でAIを学ぶには、どこから始めればいいですか？</h3>
-        <p class="journal-lead">
-          小諸でAIを学ぶなら、まずChatGPTかClaudeを1日10分触ることから始めるのが現実的です。小諸市の事業者・個人向けに、現役エンジニアが学習の順序を伝えます。
-        </p>
-      </a>
-
-      <a href="/articles/miyota-ai-chusho-junjo/" class="journal-item anim anim-delay-1" data-category="AI">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/miyota-ai-chusho-junjo-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-19</span>
-          <span class="journal-category">AI</span>
-        </div>
-        <h3 class="journal-title">御代田町の小さな事業者が、AIを業務に入れる順序は？</h3>
-        <p class="journal-lead">
-          御代田町の小さな事業者がAIを業務に入れるなら、見積・請求・メール返信の順で渡すのが最短です。haluta house現場の現役エンジニアが、御代田町に効く順序を説明します。
-        </p>
-      </a>
-
-      <a href="/articles/karuizawa-ai-kojin-jigyo/" class="journal-item anim anim-delay-2" data-category="AI">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/karuizawa-ai-kojin-jigyo-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-04-24</span>
-          <span class="journal-category">AI</span>
-        </div>
-        <h3 class="journal-title">軽井沢で個人事業主がAIを使うとしたら、何から始める？</h3>
-        <p class="journal-lead">
-          軽井沢で個人事業主がAIを使うなら、まず「顧客対応メール」と「予約対応文面」から始めるのが現実的です。軽井沢町・御代田町の個人事業主向けに、具体的な始め方を伝えます。
-        </p>
-      </a>
-
-      <a href="/articles/nagano-ai-soudan-doko/" class="journal-item anim anim-delay-3" data-category="AI">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/nagano-ai-soudan-doko-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-04-29</span>
-          <span class="journal-category">AI</span>
-        </div>
-        <h3 class="journal-title">長野県でAIの相談は、どこにすればいいですか？</h3>
-        <p class="journal-lead">
-          長野県でAI導入の相談をするなら、東京の業者より地元の現役エンジニアに直接相談するのが現実的です。小諸・御代田・軽井沢を含む長野県の事業者向けに、相談先の選び方を伝えます。
-        </p>
-      </a>
-
-      <a href="/articles/saku-komoro-miyota-ai-jirei/" class="journal-item anim anim-delay-4" data-category="AI">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/saku-komoro-miyota-ai-jirei-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-03</span>
-          <span class="journal-category">AI</span>
-        </div>
-        <h3 class="journal-title">佐久・小諸・御代田の事業者は、実際にAIで何をしている？</h3>
-        <p class="journal-lead">
-          佐久・小諸・御代田の事業者がAIで実際に取り組んでいるのは、見積作成・請求処理・顧客対応の自動化です。佐久市・小諸市・御代田町の実装事例を業種別に紹介します。
-        </p>
-      </a>
-
-      <a href="/articles/karuizawa-ai-tool-genba/" class="journal-item anim" data-category="AI">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/karuizawa-ai-tool-genba-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-06</span>
-          <span class="journal-category">AI</span>
-        </div>
-        <h3 class="journal-title">軽井沢の現場で、本当に使えているAIツールは何ですか？</h3>
-        <p class="journal-lead">
-          軽井沢の現場で本当に使えているAIツールは、ChatGPT・Claude・Geminiの3つに絞られます。軽井沢町・御代田町・小諸市の事業者が現場で使い続けているツールを正直に紹介します。
-        </p>
-      </a>
-
-      <a href="/articles/nagano-gas-appsheet-ai/" class="journal-item anim anim-delay-1" data-category="AI">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/nagano-gas-appsheet-ai-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-09</span>
-          <span class="journal-category">AI</span>
-        </div>
-        <h3 class="journal-title">長野でGASとAppSheetをAIと組み合わせるには？</h3>
-        <p class="journal-lead">
-          長野県でGASとAppSheetをAIと組み合わせるなら、Googleスプレッドシートを中心に据えて、AIにコードを書かせる方法が現実的です。長野県の中小事業者向けに業務自動化の手順を説明します。
-        </p>
-      </a>
-
-      <a href="/articles/komoro-ai-saisho-shigoto/" class="journal-item anim anim-delay-2" data-category="AI">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/komoro-ai-saisho-shigoto-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-11</span>
-          <span class="journal-category">AI</span>
-        </div>
-        <h3 class="journal-title">小諸の中小企業がAIに最初に任せると楽になる仕事は？</h3>
-        <p class="journal-lead">
-          小諸の中小企業がAIに最初に任せて楽になるのは、議事録作成・メール返信・見積たたき台の3つです。小諸市・佐久市の中小企業向けに、最短ルートを伝えます。
-        </p>
-      </a>
-
-      <a href="/articles/miyota-karuizawa-data-yomaseru/" class="journal-item anim anim-delay-3" data-category="AI">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/miyota-karuizawa-data-yomaseru-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-14</span>
-          <span class="journal-category">AI</span>
-        </div>
-        <h3 class="journal-title">御代田・軽井沢で、自分の店のデータをAIに読ませる方法は？</h3>
-        <p class="journal-lead">
-          御代田・軽井沢で自分の店の売上データをAIに読ませるなら、Googleスプレッドシートにまとめてから ClaudeかChatGPT に渡すのが現実的です。データ分析の入口を業種別に伝えます。
-        </p>
-      </a>
-
-      <a href="/articles/nagano-ai-dounyu-ippo/" class="journal-item anim anim-delay-4" data-category="AI">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/nagano-ai-dounyu-ippo-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-17</span>
-          <span class="journal-category">AI</span>
-        </div>
-        <h3 class="journal-title">長野県の中小企業がAIを導入する、はじめの一歩は何ですか？</h3>
-        <p class="journal-lead">
-          長野県の中小企業がAIを導入するはじめの一歩は、社長または現場リーダーが1人でAIを2週間触ってみることです。長野県・小諸市・御代田町・軽井沢町の中小企業向けに、最短ルートを伝えます。
-        </p>
-      </a>
-
-      <a href="/articles/mado-souji-dandori/" class="journal-item anim" data-category="清掃">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/mado-souji-dandori-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-15</span>
-          <span class="journal-category">清掃</span>
-        </div>
-        <h3 class="journal-title">窓清掃の段取りが、毎回ばらばらだった話</h3>
-        <p class="journal-lead">
-          3人で入る窓清掃の現場で、毎回スタートが噛み合わなかった。前日にAIへ手順を整理させるようにしたら、現場が静かになった話を書きます。
-        </p>
-      </a>
-
-      <a href="/articles/shinjin-manual-3gyo/" class="journal-item anim anim-delay-1" data-category="清掃">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/shinjin-manual-3gyo-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-15</span>
-          <span class="journal-category">清掃</span>
-        </div>
-        <h3 class="journal-title">新人さんに渡す清掃マニュアル、結局3行にした</h3>
-        <p class="journal-lead">
-          20ページの清掃マニュアルを誰も読んでいなかった。AIに削らせて3行にしたら、初日の新人さんが自分で動けるようになった話を書きます。
-        </p>
-      </a>
-
-      <a href="/articles/ame-shift-saki/" class="journal-item anim anim-delay-2" data-category="清掃">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/ame-shift-saki-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-15</span>
-          <span class="journal-category">清掃</span>
-        </div>
-        <h3 class="journal-title">雨の日のシフト調整、いちばん時間がかかっていた</h3>
-        <p class="journal-lead">
-          雨が降ると窓清掃と定期清掃の予定がずれる。朝5時にLINEと電話が鳴る生活を、AIによる前日21時の予報要約で抜け出した話を書きます。
-        </p>
-      </a>
-
-      <a href="/articles/houkokusho-yondenai/" class="journal-item anim anim-delay-3" data-category="清掃">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/houkokusho-yondenai-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-15</span>
-          <span class="journal-category">清掃</span>
-        </div>
-        <h3 class="journal-title">月一の清掃報告書、誰も読まないことに気づいた</h3>
-        <p class="journal-lead">
-          毎月、清掃の報告書を時間をかけて書いていたが、1年さかのぼっても読み返した記録がゼロだった。写真3枚とAI要約3行に変えたら関係が深まった話を書きます。
-        </p>
-      </a>
-
-      <a href="/articles/mitsumori-3pun/" class="journal-item anim anim-delay-4" data-category="清掃">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/mitsumori-3pun-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-15</span>
-          <span class="journal-category">清掃</span>
-        </div>
-        <h3 class="journal-title">見積もりに半日かかっていた頃の話</h3>
-        <p class="journal-lead">
-          清掃の見積もりは、現地調査・採寸・Excel入力・印刷・修正で半日かかっていた。iPhone写真とAIで3分に短縮した手順を書きます。
-        </p>
-      </a>
-
-      <a href="/articles/futsuu-fukuyone-problem/" class="journal-item anim" data-category="清掃">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/futsuu-fukuyone-problem-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-15</span>
-          <span class="journal-category">清掃</span>
-        </div>
-        <h3 class="journal-title">「ここ、ふつう拭くよね？」が通じない問題</h3>
-        <p class="journal-lead">
-          清掃の現場で「ふつう」は人によって違う。箇所別チェック表をAIに現場ごとに自動生成させたら、ばらつきがなくなった話を書きます。
-        </p>
-      </a>
-
-      <a href="/articles/dougu-basho-shiranai/" class="journal-item anim anim-delay-1" data-category="清掃">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/dougu-basho-shiranai-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-15</span>
-          <span class="journal-category">清掃</span>
-        </div>
-        <h3 class="journal-title">清掃道具の場所を全員が知らなかった話</h3>
-        <p class="journal-lead">
-          清掃道具の収納場所を、誰も全部は把握していなかった。AIに棚卸し台帳を作らせて、写真とセットで共有したら現場が動きやすくなった話を書きます。
-        </p>
-      </a>
-
-      <a href="/articles/yarinokori-deru-genba/" class="journal-item anim anim-delay-2" data-category="清掃">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/yarinokori-deru-genba-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-15</span>
-          <span class="journal-category">清掃</span>
-        </div>
-        <h3 class="journal-title">やり残しが出る現場と、出ない現場の差</h3>
-        <p class="journal-lead">
-          同じスタッフが入っても、現場によってやり残しの出方が違う。AIに音声入力で「終わる前のチェック」を任せたら、ばらつきが減った話を書きます。
-        </p>
-      </a>
-
-      <a href="/articles/hikitsugi-nukeyasui/" class="journal-item anim anim-delay-3" data-category="清掃">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/hikitsugi-nukeyasui-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-15</span>
-          <span class="journal-category">清掃</span>
-        </div>
-        <h3 class="journal-title">清掃の引き継ぎで、いちばん抜けやすいこと</h3>
-        <p class="journal-lead">
-          3年やっている現場のクセが、新人さんに伝わらない。AIに「現場のクセ集」を蓄積させたら、引き継ぎが3分の1になった話を書きます。
-        </p>
-      </a>
-
-      <a href="/articles/dougu-fuyashisugi/" class="journal-item anim anim-delay-4" data-category="清掃">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/dougu-fuyashisugi-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-15</span>
-          <span class="journal-category">清掃</span>
-        </div>
-        <h3 class="journal-title">道具を増やしすぎて、逆にやりにくくなった話</h3>
-        <p class="journal-lead">
-          良い道具を見つけるたびに買い足していたら、洗剤が7種類になっていた。AIで使用頻度を集計してから5種類を捨てた話を書きます。
-        </p>
-      </a>
-
-      <a href="/articles/nendogata-keiyaku-itimaime/" class="journal-item anim" data-category="経営">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/nendogata-keiyaku-itimaime-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-18</span>
-          <span class="journal-category">経営</span>
-        </div>
-        <h3 class="journal-title">年契約の1社目に、何を約束したか</h3>
-        <p class="journal-lead">
-          年契約のお客さま1社目に、契約のときに何を約束したのか。中身を、ちゃんと書いておきたいと思います。
-        </p>
-      </a>
-
-      <a href="/articles/ai-houkokusho-yamete/" class="journal-item anim anim-delay-1" data-category="AI">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/ai-houkokusho-yamete-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-13</span>
-          <span class="journal-category">AI</span>
-        </div>
-        <h3 class="journal-title">AIに「報告書」を書かせるのを、やめた</h3>
-        <p class="journal-lead">
-          一時期、お客さま向けの報告書をぜんぶAIに書かせていました。半年やってみて、やめました。その理由を書いてみます。
-        </p>
-      </a>
-
-      <a href="/articles/miyota-shigoto/" class="journal-item anim anim-delay-2" data-category="地元">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/miyota-shigoto-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-10</span>
-          <span class="journal-category">地元</span>
-        </div>
-        <h3 class="journal-title">御代田の仕事と、隣町の距離感</h3>
-        <p class="journal-lead">
-          御代田町でhaluta houseのLPをつくってから、隣町同士の距離感の意味が、すこしわかってきました。地方で仕事をするということを書いてみます。
-        </p>
-      </a>
-
-      <a href="/articles/guitar-tsuduku-riyu/" class="journal-item anim anim-delay-3" data-category="ギター">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/guitar-tsuduku-riyu-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-06</span>
-          <span class="journal-category">ギター</span>
-        </div>
-        <h3 class="journal-title">ギター教室を続けている、本当の理由</h3>
-        <p class="journal-lead">
-          制作と清掃のほかに、ギター教室もやっています。儲かるからじゃない、続けている本当の理由について書いてみます。
-        </p>
-      </a>
-
-      <a href="/articles/mensetsu-ai-tsukaikata/" class="journal-item anim anim-delay-4" data-category="業務改善">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/mensetsu-ai-tsukaikata-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-04</span>
-          <span class="journal-category">業務改善</span>
-        </div>
-        <h3 class="journal-title">面倒な打ち合わせ準備を、AIに渡した話</h3>
-        <p class="journal-lead">
-          月に20件ほどあった打ち合わせ準備を、AIに少しずつ渡してみた話。準備時間が、半分以下になりました。
-        </p>
-      </a>
-
-      <a href="/articles/lp-kotoba-kezuru/" class="journal-item anim" data-category="制作">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/lp-kotoba-kezuru-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-01</span>
-          <span class="journal-category">制作</span>
-        </div>
-        <h3 class="journal-title">LPの言葉を、3分の1まで削る話</h3>
-        <p class="journal-lead">
-          LPを作るとき、最初に書いた文章を、たいてい3分の1まで削ります。なぜそんなに削るのか、その作業の手触りを書いてみます。
-        </p>
-      </a>
-
-      <a href="/articles/shinrai-kotowarinai/" class="journal-item anim" data-category="経営">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/shinrai-kotowarinai-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-04-30</span>
-          <span class="journal-category">経営</span>
-        </div>
-        <h3 class="journal-title">信頼の通貨を、いちばん減らすのは「断らない」ことだった</h3>
-        <p class="journal-lead">
-          お金は信頼の通貨です。その通貨をいちばん早く減らすのは、何でも引き受けて、断らないことなんです。
-        </p>
-      </a>
-
-      <a href="/articles/claude-main-riyu/" class="journal-item anim anim-delay-1" data-category="AI">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/claude-main-riyu-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-04-27</span>
-          <span class="journal-category">AI</span>
-        </div>
-        <h3 class="journal-title">ChatGPTじゃなくClaudeをメインに据えた、地味な理由</h3>
-        <p class="journal-lead">
-          お客さまにはまずChatGPTをお勧めします。でも、わたし自身のメインはClaudeです。地味だけど、決定的な違いがありました。
-        </p>
-      </a>
-
-      <a href="/articles/3machi-kuukikan/" class="journal-item anim anim-delay-2" data-category="地元">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/3machi-kuukikan-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-04-25</span>
-          <span class="journal-category">地元</span>
-        </div>
-        <h3 class="journal-title">御代田・小諸・軽井沢、3つの空気感の違い</h3>
-        <p class="journal-lead">
-          御代田・小諸・軽井沢は、車で15分の距離にあるのに、空気感がまったく違います。仕事の組み立て方も、町ごとに変えています。
-        </p>
-      </a>
-
-      <a href="/articles/hitori-engineer-yatowanai/" class="journal-item anim anim-delay-3" data-category="経営">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/hitori-engineer-yatowanai-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-04-24</span>
-          <span class="journal-category">経営</span>
-        </div>
-        <h3 class="journal-title">1人で全部やるのに、エンジニアを雇わない理由</h3>
-        <p class="journal-lead">
-          案件が増えても、エンジニアやデザイナーは雇いません。1人でやり続けることに、ちゃんとした理由があります。
-        </p>
-      </a>
-
-      <a href="/articles/100kai-taiwa-kizuki/" class="journal-item anim anim-delay-4" data-category="AI">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/100kai-taiwa-kizuki-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-04-22</span>
-          <span class="journal-category">AI</span>
-        </div>
-        <h3 class="journal-title">100回AIと対話して気づいた、いちばん地味で大事なこと</h3>
-        <p class="journal-lead">
-          AIと100回以上対話してみて、最後に残った気づきが、いちばん地味なものでした。これが見えると、AIの使い方がぜんぶ変わります。
-        </p>
-      </a>
-
-      <a href="/articles/4sou-3banme-tsumaru/" class="journal-item anim" data-category="経営">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/4sou-3banme-tsumaru-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-04-20</span>
-          <span class="journal-category">経営</span>
-        </div>
-        <h3 class="journal-title">4層戦略の3番目で、ほとんどの人が詰まる</h3>
-        <p class="journal-lead">
-          AI対話・毎日のツイート・月の記事・年末のまとめ。この4層で発信を続けると、3番目でほぼみんなが詰まります。理由を書いてみます。
-        </p>
-      </a>
-
-      <a href="/articles/asa-routine-4moji/" class="journal-item anim anim-delay-1" data-category="経営">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/asa-routine-4moji-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-19</span>
-          <span class="journal-category">経営</span>
-        </div>
-        <h3 class="journal-title">朝のやることを「朝ルーティン」の4文字に集約した話</h3>
-        <p class="journal-lead">
-          朝にやることを、ぜんぶ「朝ルーティン」という4文字に集約しました。タスクリストを書かない方が、なぜか続くようになった話です。
-        </p>
-      </a>
-
-      <a href="/articles/line-soudan-ichiban-ooi/" class="journal-item anim anim-delay-2" data-category="AI">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/line-soudan-ichiban-ooi-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-18</span>
-          <span class="journal-category">AI</span>
-        </div>
-        <h3 class="journal-title">LINE無料相談で「いちばん多い質問」と、その答え方</h3>
-        <p class="journal-lead">
-          LINE無料相談で、3割以上の方から同じ質問が来ます。「AIで何ができますか？」。これに、わたしがどう答えているか書いてみます。
-        </p>
-      </a>
-
-      <a href="/articles/kakaku-3man-riyu/" class="journal-item anim anim-delay-3" data-category="経営">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/kakaku-3man-riyu-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-17</span>
-          <span class="journal-category">経営</span>
-        </div>
-        <h3 class="journal-title">5,000円から3万円まで、価格を上げたいちばん大きな理由</h3>
-        <p class="journal-lead">
-          月額顧問を5,000円から3万円まで上げました。値上げの本当の理由は、売上ではなくて「お客さまの本気度」の問題だったんです。
-        </p>
-      </a>
-
-      <a href="/articles/komon-vs-roadmap/" class="journal-item anim anim-delay-4" data-category="経営">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/komon-vs-roadmap-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-16</span>
-          <span class="journal-category">経営</span>
-        </div>
-        <h3 class="journal-title">月額顧問3万円とAIロードマップ1.5万円、中身を分解してみる</h3>
-        <p class="journal-lead">
-          月額顧問3万円とAIロードマップ1.5万円、何がどう違うのか。料金表に書ききれない中身を、いちど分解してみます。
-        </p>
-      </a>
-
-      <a href="/articles/hp-1nin-genkai/" class="journal-item anim anim-delay-1" data-category="制作">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/hp-1nin-genkai-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-04-27</span>
-          <span class="journal-category">制作</span>
-        </div>
-        <h3 class="journal-title">1人で制作する強みと、ちゃんとある限界</h3>
-        <p class="journal-lead">
-          HP・LP制作を基本ひとりでやっています。1人だからこその強みと、ちゃんとある限界を、正直に書いてみます。
-        </p>
-      </a>
-
-      <a href="/articles/karuizawa-seisou-ai/" class="journal-item anim anim-delay-2" data-category="清掃">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/karuizawa-seisou-ai-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-04-21</span>
-          <span class="journal-category">清掃</span>
-        </div>
-        <h3 class="journal-title">軽井沢T-SITEの現場で、AIに任せたこと</h3>
-        <p class="journal-lead">
-          軽井沢T-SITEの清掃現場で、AIに任せたこと、任せなかったこと。物理労働の現場でのAIの居場所について、書いてみます。
-        </p>
-      </a>
-
-      <a href="/articles/komoro-ai-genba/" class="journal-item anim anim-delay-3" data-category="地元">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/komoro-ai-genba-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-17</span>
-          <span class="journal-category">地元</span>
-        </div>
-        <h3 class="journal-title">小諸でAIを話す、ということ</h3>
-        <p class="journal-lead">
-          人口4万人の長野県小諸市でAIの話をしている人間は、たぶんわたし以外にあんまりいません。地方でAIをやっている、ということについて。
-        </p>
-      </a>
-
-      <a href="/articles/keiyaku-3sha-riyu/" class="journal-item anim anim-delay-4" data-category="経営">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/keiyaku-3sha-riyu-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-15</span>
-          <span class="journal-category">経営</span>
-        </div>
-        <h3 class="journal-title">年契約は3社まで、と決めた理由</h3>
-        <p class="journal-lead">
-          年契約は3社までしか受けないと決めています。少ない数にこだわっている理由を、現場の手触りごと書いてみます。
-        </p>
-      </a>
-
-      <a href="/articles/totonoeruya-name-riyu/" class="journal-item anim" data-category="思想">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/totonoeruya-name-riyu-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-12</span>
-          <span class="journal-category">思想</span>
-        </div>
-        <h3 class="journal-title">ととのえる屋という名前にした理由</h3>
-        <p class="journal-lead">
-          なぜ「ととのえる屋」という名前にしたのか。1993年生まれの東京育ちが、小諸でこの屋号にたどり着いた経緯。
-        </p>
-      </a>
-
-      <a href="/articles/naniwo-totonoetai/" class="journal-item anim anim-delay-1" data-category="思想">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/naniwo-totonoetai-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-08</span>
-          <span class="journal-category">思想</span>
-        </div>
-        <h3 class="journal-title">「AIで何ができる？」より「何を整えたい？」から始める</h3>
-        <p class="journal-lead">
-          ご相談で聞かれる質問が、最近すこし変わってきました。問いの立て方を変えるだけで、見える景色が変わるという話。
-        </p>
-      </a>
-
-      <a href="/articles/ai-tool-yameta-3tsu/" class="journal-item anim anim-delay-2" data-category="AI">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/ai-tool-yameta-3tsu-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-04</span>
-          <span class="journal-category">AI</span>
-        </div>
-        <h3 class="journal-title">AIをツールとして扱うために、やめた3つのこと</h3>
-        <p class="journal-lead">
-          AIを主役にしないために、わたしがやめた3つの習慣。長く健やかに付き合うための、ちいさな線引きの話。
-        </p>
-      </a>
-
-      <a href="/articles/hp-seisaku-umakuitta/" class="journal-item anim anim-delay-3" data-category="制作">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/hp-seisaku-umakuitta-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-05-01</span>
-          <span class="journal-category">制作</span>
-        </div>
-        <h3 class="journal-title">なぜHP制作の仕事は、思ったよりうまくいったのか</h3>
-        <p class="journal-lead">
-          御代田町でhaluta houseのLPを作ってから、HP制作の依頼がぽつぽつ増えてきた。地方でこの仕事が成り立った理由を考えてみます。
-        </p>
-      </a>
-
-      <a href="/articles/seikyusho-ai-15jikan/" class="journal-item anim anim-delay-4" data-category="業務改善">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/seikyusho-ai-15jikan-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-04-28</span>
-          <span class="journal-category">業務改善</span>
-        </div>
-        <h3 class="journal-title">請求書をAIに任せたら、月に15時間返ってきた話</h3>
-        <p class="journal-lead">
-          ロビンソン株式会社（washdeli）の現場で取り組んだ事務作業の自動化。月にだいたい15時間が、自分の手元に返ってきた話。
-        </p>
-      </a>
-
-      <a href="/articles/hojokin-ai-mae-ni/" class="journal-item anim" data-category="経営">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/hojokin-ai-mae-ni-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-04-25</span>
-          <span class="journal-category">経営</span>
-        </div>
-        <h3 class="journal-title">補助金、AIで探す前にやっておきたいこと</h3>
-        <p class="journal-lead">
-          IT導入補助金などをAIで探す前に、まず自分の現状をひとつ整理してほしい。失敗しがちな順番についての話。
-        </p>
-      </a>
-
-      <a href="/articles/tsugino-nami-totonoeru/" class="journal-item anim anim-delay-1" data-category="思想">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/tsugino-nami-totonoeru-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-04-22</span>
-          <span class="journal-category">思想</span>
-        </div>
-        <h3 class="journal-title">次に来る波は「作る」じゃなく「整える」かもしれない</h3>
-        <p class="journal-lead">
-          AIで「作る」ことが安くなった時代、次に価値が出るのは「整える」ことなんじゃないか。地方で見ている小さな波の話。
-        </p>
-      </a>
-
-      <a href="/articles/design-ai-kakinaoshita/" class="journal-item anim anim-delay-2" data-category="制作">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/design-ai-kakinaoshita-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-04-18</span>
-          <span class="journal-category">制作</span>
-        </div>
-        <h3 class="journal-title">デザインをAIに任せて、自分で書き直した話</h3>
-        <p class="journal-lead">
-          haluta houseのLP制作で、AIに任せた部分を最終的に自分で書き直した話。機械の手が届かない場所のこと。
-        </p>
-      </a>
-
-      <a href="/articles/ai-tayori-sugite-wakaranai/" class="journal-item anim anim-delay-3" data-category="AI">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/ai-tayori-sugite-wakaranai-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-04-15</span>
-          <span class="journal-category">AI</span>
-        </div>
-        <h3 class="journal-title">AIに頼りすぎて、わからなくなった日のこと</h3>
-        <p class="journal-lead">
-          全部AIに聞いていたある日、ふと「自分が何を考えていたか」が思い出せなくなった。便利な相棒との距離感を見直した話。
-        </p>
-      </a>
-
-      <a href="/articles/ai-tsukaihajime-komatta/" class="journal-item anim anim-delay-4" data-category="AI">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/ai-tsukaihajime-komatta-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-04-12</span>
-          <span class="journal-category">AI</span>
-        </div>
-        <h3 class="journal-title">AIを使い始めて、いちばん困ったこと</h3>
-        <p class="journal-lead">
-          AIを使い始めた頃、最初にぶつかったのは「便利すぎてつらい」だった。小諸の片隅で、機械の手と付き合い始めた最初の3ヶ月の話。
-        </p>
-      </a>
-
-      <a href="/articles/sample-article/" class="journal-item anim" data-category="制作">
-        <div class="journal-item-thumb">
-          <img src="/assets/journal/sample-article-thumb.jpg" alt="" loading="lazy" width="480" height="270">
-        </div>
-        <div class="journal-meta">
-          <span class="journal-date">2026-04-30</span>
-          <span class="journal-category">制作</span>
-        </div>
-        <h3 class="journal-title">haluta house LP が公開されました</h3>
-        <p class="journal-lead">
-          御代田町のhaluta houseのLPを制作しました。ブランドの核を言語化し、4媒体で展開しています。デザイン・コピー・コーディング・デプロイまで一人で担当。
-        </p>
-      </a>
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="foot">
+    <div class="b">
+      <img src="../assets/logo-totonoeru.png" alt="ととのえる屋">
+      <p>長野県小諸市の、小さな何でも屋。HP・LP制作、AI業務改善、清掃、ギター教室。ぜんぶ、同じ手で。</p>
     </div>
-
-    <!-- ページネーション（今後実装） -->
-    <div style="text-align: center; margin-top: 64px;">
-      <p style="font-size: 14px; color: var(--text-soft);">記事は随時追加されます</p>
-    </div>
+    <div><h6>Services</h6><ul><li><a href="/web/">HP・LP制作</a></li><li><a href="/cleaning/">清掃</a></li><li><a href="/guitar/">ギター教室</a></li><li><a href="/totoline/">totoline</a></li></ul></div>
+    <div><h6>Company</h6><ul><li><a href="/articles/">ジャーナル</a></li><li><a href="/articles/totonoeruya-name-riyu/">屋号の由来</a></li><li><a href="https://github.com/papanti0318-spec" target="_blank" rel="noopener">GitHub</a></li><li><a href="https://x.com/totonoeruya" target="_blank" rel="noopener">X</a></li></ul></div>
+    <div><h6>Contact</h6><ul><li><a href="mailto:totonoeru.ya@gmail.com">totonoeru.ya@gmail.com</a></li><li><a href="https://line.me/R/ti/p/@903xtesg" target="_blank" rel="noopener">LINE @903xtesg</a></li><li>長野県小諸市</li></ul></div>
   </div>
-</section>
-</main>
-
-<footer>
-  <div class="container">
-    <div class="footer-nap">
-      <p class="footer-nap-name">ととのえる屋</p>
-      <p class="footer-nap-address">長野県小諸市</p>
-      <p class="footer-nap-contact">
-        <a href="mailto:totonoeru.ya@gmail.com">totonoeru.ya@gmail.com</a>　／　<a href="https://line.me/R/ti/p/@903xtesg" target="_blank" rel="noopener">LINE: @903xtesg</a>
-      </p>
-      <p class="footer-nap-area">対応エリア：小諸市・御代田町・軽井沢町・上田市ほか長野県内（オンライン全国対応）</p>
-    </div>
-    <div class="footer-inner">
-      <div class="footer-logo">
-        <img src="../assets/logo-totonoeru.png" alt="ととのえる屋" class="footer-logo-img" width="44" height="56">
-      </div>
-      <div class="footer-copy">© 2026 ととのえる屋. All rights reserved. 長野県小諸市</div>
-      <div class="footer-legal" style="text-align: center; margin-top: 14px; font-size: 12px;">
-        <a href="/privacy/" style="color: inherit; opacity: 0.75; text-decoration: underline; text-underline-offset: 3px;">プライバシーポリシー</a>
-        <span style="margin: 0 10px; opacity: 0.5;">·</span>
-        <a href="/commerce/" style="color: inherit; opacity: 0.75; text-decoration: underline; text-underline-offset: 3px;">特定商取引法に基づく表記</a>
-      </div>
-    </div>
+  <div class="foot-bot">
+    <span>© 2026 ととのえる屋. 長野県小諸市</span>
+    <span><a href="/privacy/">プライバシーポリシー</a> · <a href="/commerce/">特定商取引法に基づく表記</a></span>
   </div>
 </footer>
 
 <script>
-document.querySelectorAll('.anim').forEach(el => {
-  el.classList.add('will-animate');
-});
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.remove('will-animate');
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
-
-document.querySelectorAll('.anim').forEach(el => observer.observe(el));
-
-// モバイルナビゲーション
-const navToggle = document.querySelector('.nav-toggle');
-const navMenu = document.querySelector('.nav-menu');
-if (navToggle && navMenu) {
-  navToggle.addEventListener('click', () => {
-    const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
-    navToggle.setAttribute('aria-expanded', String(!isOpen));
-    navMenu.setAttribute('aria-hidden', String(isOpen));
-  });
-}
-
-// カテゴリフィルタ（動作版・data-category マッチング）
+// カテゴリフィルタ（data-cat 一致のみ表示）
 (function() {
-  const items = document.querySelectorAll('.journal-item');
-  const emptyMsg = document.createElement('p');
-  emptyMsg.id = 'journal-empty';
-  emptyMsg.style.cssText = 'text-align: center; padding: 48px 24px; font-size: 14px; color: var(--text-soft); display: none;';
-  emptyMsg.textContent = '該当する記事はまだありません。準備中です。';
-  const journalList = document.querySelector('.journal-list');
-  if (journalList && journalList.parentNode) {
-    journalList.parentNode.insertBefore(emptyMsg, journalList.nextSibling);
-  }
-
-  document.querySelectorAll('button.tag').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('button.tag').forEach(b => b.classList.remove('is-active'));
+  var rows = document.querySelectorAll('.jr .jr-row');
+  var empty = document.getElementById('jr-empty');
+  var chips = document.querySelectorAll('.jr-filter .chip');
+  chips.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      chips.forEach(function(b) { b.classList.remove('is-active'); });
       btn.classList.add('is-active');
-
-      const cat = btn.dataset.cat;
-      let visibleCount = 0;
-      items.forEach(item => {
-        if (cat === 'all' || item.dataset.category === cat) {
-          item.style.display = '';
-          visibleCount++;
+      var cat = btn.getAttribute('data-cat');
+      var shown = 0;
+      rows.forEach(function(row) {
+        if (cat === 'all' || row.getAttribute('data-cat') === cat) {
+          row.style.display = '';
+          shown++;
         } else {
-          item.style.display = 'none';
+          row.style.display = 'none';
         }
       });
-      emptyMsg.style.display = visibleCount === 0 ? 'block' : 'none';
+      if (empty) empty.style.display = shown === 0 ? 'block' : 'none';
     });
   });
 })();
 </script>
 
-<script>
-// site-drawer（左ドロワー：ハンバーガー＋ロゴで開閉）
-(function() {
-  const trigger = document.querySelector('.site-nav-trigger');
-  const drawer = document.getElementById('site-drawer');
-  if (!trigger || !drawer) return;
-  function openDrawer() {
-    drawer.classList.add('is-open');
-    drawer.setAttribute('aria-hidden', 'false');
-    trigger.setAttribute('aria-expanded', 'true');
-  }
-  function closeDrawer() {
-    drawer.classList.remove('is-open');
-    drawer.setAttribute('aria-hidden', 'true');
-    trigger.setAttribute('aria-expanded', 'false');
-  }
-  function toggleDrawer() {
-    if (drawer.classList.contains('is-open')) closeDrawer();
-    else openDrawer();
-  }
-  trigger.addEventListener('click', toggleDrawer);
-  drawer.querySelectorAll('[data-drawer-close]').forEach(el => {
-    el.addEventListener('click', () => setTimeout(closeDrawer, 80));
-  });
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && drawer.classList.contains('is-open')) closeDrawer();
-  });
-})();
-</script>
-
+<script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js" defer></script>
+<script src="../assets/smooth-2026.js" defer></script>
 </body>
 </html>
