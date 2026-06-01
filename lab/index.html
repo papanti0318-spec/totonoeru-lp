@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="hYRflPVBHV_SbReXwN_7v4tNCf6AT3VusKhSviD5kPU" />
 <title>Web表現ずかん｜スクロールの"しかけ"を実演と用語で｜ととのえる屋</title>
-<meta name="description" content="サイトでよく見る「なんかかっこいい動き」を、実演＋やさしい言葉＋専門用語集でまるごと解説。なめらかスクロール・パララックス・マスクリビール・モーダル・タブ・横スクロール・ダークモード・タイムライン・FAQ検索など37種を、その場で体感できます。テンプレとの違いも。長野県小諸市のHP・LP制作 ととのえる屋。">
+<meta name="description" content="サイトでよく見る「なんかかっこいい動き」を、実演＋やさしい言葉＋専門用語集でまるごと解説。なめらかスクロール・パララックス・マスクリビール・モーダル・タブ・横スクロール・ダークモード・カルーセル・折れ線グラフなど42種を、その場で体感できます。テンプレとの違いも。長野県小諸市のHP・LP制作 ととのえる屋。">
 <meta name="keywords" content="Web表現, ホームページ 動き, パララックス, なめらかスクロール, SVGアニメーション, ページ遷移, Web制作 小諸, HP制作 長野, 非エンジニア Web, ととのえる屋">
 <link rel="canonical" href="https://totonoeruya.jp/lab/">
 
 <meta property="og:title" content="Web表現ずかん｜スクロールの"しかけ"を実演と用語で">
-<meta property="og:description" content="サイトの「なんかかっこいい動き」を、実演＋やさしい言葉＋用語集でまるごと。なめらかスクロール・モーダル・横スクロール・ダークモード・タイムライン・FAQ検索など37種を体感。">
+<meta property="og:description" content="サイトの「なんかかっこいい動き」を、実演＋やさしい言葉＋用語集でまるごと。なめらかスクロール・モーダル・横スクロール・ダークモード・カルーセル・折れ線グラフなど42種を体感。">
 <meta property="og:url" content="https://totonoeruya.jp/lab/">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://totonoeruya.jp/og.jpg">
@@ -79,7 +79,10 @@
         { "@type": "DefinedTerm", "name": "ステップフォーム", "description": "長い入力フォームを1問ずつの段階に分け、答えやすくして途中離脱を減らすUI。" },
         { "@type": "DefinedTerm", "name": "ライトボックス", "description": "サムネイル画像を押すと、背景を暗くして大きく開く拡大表示。実績や事例を見せるのに使う。" },
         { "@type": "DefinedTerm", "name": "タイムライン", "description": "出来事や手順を時系列で縦に並べる表現。制作フローや沿革を、ひと目で見せる。" },
-        { "@type": "DefinedTerm", "name": "フィルタリング", "description": "タグやキーワードで一覧を絞り込む仕組み。記事・実績・FAQが多いときに探す手間を減らす。" }
+        { "@type": "DefinedTerm", "name": "フィルタリング", "description": "タグやキーワードで一覧を絞り込む仕組み。記事・実績・FAQが多いときに探す手間を減らす。" },
+        { "@type": "DefinedTerm", "name": "カルーセル", "description": "複数のスライドを順に切り替えて見せるUI。自動送りや手動送りで、実績やお知らせを省スペースに。" },
+        { "@type": "DefinedTerm", "name": "トグルスイッチ", "description": "オン・オフを切り替えるスイッチ型のUI。今どの状態かをひと目で示す。" },
+        { "@type": "DefinedTerm", "name": "ツリー構造", "description": "親子の階層を枝分かれで表す表現。サイトマップやカテゴリ分類に使う。" }
       ]
     },
     {
@@ -127,7 +130,7 @@
 </div>
 
 <nav class="toc" aria-label="もくじ">
-  <div class="toc-head"><h2>もくじ — Web表現図鑑</h2><span class="cnt">全37項目 · 少しずつ追加中</span></div>
+  <div class="toc-head"><h2>もくじ — Web表現図鑑</h2><span class="cnt">全42項目 · 少しずつ追加中</span></div>
   <div class="cols">
     <div class="col"><h3>スクロール演出</h3>
       <a href="#t1">なめらかスクロール<span class="e">01</span></a>
@@ -147,6 +150,7 @@
       <a href="#t4">マスクリビール<span class="e">04</span></a>
       <a href="#t11">Before / After<span class="e">11</span></a>
       <a href="#t30">ギャラリー＋拡大<span class="e">30</span></a>
+      <a href="#t38">カルーセル<span class="e">38</span></a>
     </div>
     <div class="col"><h3>操作感</h3>
       <a href="#t2">ホバー反応<span class="e">02</span></a>
@@ -158,6 +162,7 @@
       <a href="#t10">ページ遷移<span class="e">10</span></a>
       <a href="#t16">アコーディオン<span class="e">16</span></a>
       <a href="#t34">タグフィルタ<span class="e">34</span></a>
+      <a href="#t42">ツリー（サイトマップ）<span class="e">42</span></a>
     </div>
     <div class="col"><h3>図解・質感</h3>
       <a href="#t7">SVG線画図解<span class="e">07</span></a>
@@ -166,6 +171,7 @@
       <a href="#t31">プログレスサークル<span class="e">31</span></a>
       <a href="#t33">タイムライン<span class="e">33</span></a>
       <a href="#t37">横バーメーター<span class="e">37</span></a>
+      <a href="#t39">折れ線グラフ<span class="e">39</span></a>
     </div>
     <div class="col"><h3>UI部品</h3>
       <a href="#t17">モーダル<span class="e">17</span></a>
@@ -175,6 +181,8 @@
       <a href="#t28">ステップフォーム<span class="e">28</span></a>
       <a href="#t35">比較表ハイライト<span class="e">35</span></a>
       <a href="#t36">FAQ検索<span class="e">36</span></a>
+      <a href="#t40">トグルスイッチ<span class="e">40</span></a>
+      <a href="#t41">数値スピナー<span class="e">41</span></a>
     </div>
     <div class="col"><h3>コード・技術</h3>
       <a href="#t21">コードコピー<span class="e">21</span></a>
@@ -851,12 +859,113 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
   </div>
 </section>
 
+<div class="cat-label"><span>動き・データ・構造 — 第五集</span></div>
+
+<!-- 38 auto carousel（動線内蔵） -->
+<section id="t38" class="tech">
+  <div class="head"><span class="num">38</span><span class="en">Auto Carousel</span></div>
+  <h2 class="rt rt-big">ひとりでに、流れていく。</h2>
+  <p class="one">放っておくと、スライドが自動で切り替わります（カーソルを乗せると一時停止・ドットで移動）。実績やお知らせを順に見せるのに。押すと各ページへ。</p>
+  <div class="demo carousel" id="carousel">
+    <div class="cr-win"><div class="cr-track">
+      <a class="cr-slide" href="/web/"><span class="cr-tag">Works</span><h3>haluta house のLP・冊子・サイネージ</h3><p>言葉と世界観を、媒体をまたいで集約。</p><span class="cr-go">制作を見る →</span></a>
+      <a class="cr-slide" href="/cleaning/"><span class="cr-tag">Cleaning</span><h3>現場の事務を、写真とAIで軽く</h3><p>掃除の手は止めず、事務だけ減らす。</p><span class="cr-go">清掃を見る →</span></a>
+      <a class="cr-slide" href="/totoline/"><span class="cr-tag">Product</span><h3>totoline — LINEの会話を台帳に</h3><p>毎日の会話から、タスク・議事録・請求書。</p><span class="cr-go">見る →</span></a>
+    </div></div>
+    <div class="cr-dots" id="crDots"></div>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">実績・お知らせ・レビューを、省スペースで順に。自動で目を引く。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽いJS。全スライドHTMLにあり読まれる。自動再生は控えめに。</div></div>
+  </div>
+</section>
+
+<!-- 39 line chart -->
+<section id="t39" class="tech">
+  <div class="head"><span class="num">39</span><span class="en">Line Chart (SVG)</span></div>
+  <h2 class="rt rt-big">線が、描かれていく。</h2>
+  <p class="one">画面に入ると、折れ線がすーっと引かれます。推移や変化を見せるのに。（数値はデモ用の例です）</p>
+  <div class="demo chart draw-svg">
+    <svg viewBox="0 0 600 240">
+      <line class="ch-axis" x1="40" y1="210" x2="580" y2="210"/>
+      <line class="ch-grid" x1="40" y1="150" x2="580" y2="150"/>
+      <line class="ch-grid" x1="40" y1="90" x2="580" y2="90"/>
+      <path class="ch-line" d="M50 200 L150 168 L250 178 L350 120 L450 86 L560 48" pathLength="1"/>
+      <circle class="ch-dot" cx="50" cy="200" r="4"/><circle class="ch-dot" cx="150" cy="168" r="4"/><circle class="ch-dot" cx="250" cy="178" r="4"/><circle class="ch-dot" cx="350" cy="120" r="4"/><circle class="ch-dot" cx="450" cy="86" r="4"/><circle class="ch-dot" cx="560" cy="48" r="4"/>
+    </svg>
+    <div class="ch-x"><span>1月</span><span>2月</span><span>3月</span><span>4月</span><span>5月</span><span>6月</span></div>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">推移・成長・前後比較。数字の「動き」をひと目で伝える。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">SVGは超軽量。線も座標で持つので拡大してもボケない。</div></div>
+  </div>
+</section>
+
+<!-- 40 toggle switches -->
+<section id="t40" class="tech">
+  <div class="head"><span class="num">40</span><span class="en">Toggle Switches</span></div>
+  <h2 class="rt rt-big">カチッと、切り替える。</h2>
+  <p class="one">設定のオン・オフを、スイッチで。状態がひと目で分かり、押し心地も軽やか。</p>
+  <div class="demo toggles">
+    <div class="tg-row"><span>なめらかスクロール</span><button class="tg on" role="switch" aria-checked="true" aria-label="なめらかスクロール"><span class="tg-k"></span></button></div>
+    <div class="tg-row"><span>画像のフェード表示</span><button class="tg on" role="switch" aria-checked="true" aria-label="画像のフェード表示"><span class="tg-k"></span></button></div>
+    <div class="tg-row"><span>動きを減らす（省モーション）</span><button class="tg" role="switch" aria-checked="false" aria-label="省モーション"><span class="tg-k"></span></button></div>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">設定画面・機能のオンオフ。今どの状態かを、はっきり見せる。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽いJS。状態を覚えさせることもできる。</div></div>
+  </div>
+</section>
+
+<!-- 41 number stepper -->
+<section id="t41" class="tech">
+  <div class="head"><span class="num">41</span><span class="en">Number Stepper</span></div>
+  <h2 class="rt rt-big">プラスマイナスで、増減。</h2>
+  <p class="one">＋とーで、数を増やしたり減らしたり。人数や個数の入力に。打ち込むより速く、間違えにくい。</p>
+  <div class="demo stepper">
+    <div class="st-row"><span class="st-l">相談したい人数</span><div class="st-ctl"><button class="st-btn" id="stMinus" aria-label="減らす">−</button><span class="st-num" id="stNum">1</span><button class="st-btn" id="stPlus" aria-label="増やす">＋</button></div></div>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">人数・個数・数量の入力。フォームの「数」の項目に。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽いJS。スマホでも押しやすい。</div></div>
+  </div>
+</section>
+
+<!-- 42 tree view（サイトマップ＝内部リンク動線） -->
+<section id="t42" class="tech">
+  <div class="head"><span class="num">42</span><span class="en">Tree View</span></div>
+  <h2 class="rt rt-big">押すと、枝が開く。</h2>
+  <p class="one">階層を、折りたたんで見せます。サイトの地図にもなります——下はこのサイトの実際の構成です。葉を押すと、そのページへ。</p>
+  <div class="demo tree">
+    <details open><summary>ととのえる屋</summary>
+      <ul>
+        <li><details open><summary>事業</summary><ul>
+          <li><a href="/web/">HP・LP制作</a></li>
+          <li><a href="/cleaning/">清掃</a></li>
+          <li><a href="/guitar/">ギター教室</a></li>
+          <li><a href="/totoline/">totoline（LINE×AI）</a></li>
+        </ul></details></li>
+        <li><a href="/articles/">ジャーナル（記事一覧）</a></li>
+        <li><a href="/lab/">Web表現ずかん</a></li>
+        <li><details><summary>その他</summary><ul>
+          <li><a href="/privacy/">プライバシーポリシー</a></li>
+          <li><a href="/commerce/">特定商取引法に基づく表記</a></li>
+        </ul></details></li>
+      </ul>
+    </details>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">サイトマップ・階層メニュー・カテゴリ分類。全体像を一覧に。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">HTML標準の details。リンクは内部リンクとして辿られ、回遊を助ける。</div></div>
+  </div>
+</section>
+
 <div class="readbar" id="readbar" aria-hidden="true"></div>
 <div class="toast" id="toast" role="status" aria-live="polite"><span class="t-dot"></span>送信しました。ありがとうございます。</div>
 
 <!-- glossary -->
 <section class="glossary">
-  <div class="sec-top"><h2 style="font-weight:400;font-size:clamp(22px,3vw,36px)">専門用語、やさしい一覧。</h2><span class="note">Glossary · 30語</span></div>
+  <div class="sec-top"><h2 style="font-weight:400;font-size:clamp(22px,3vw,36px)">専門用語、やさしい一覧。</h2><span class="note">Glossary · 33語</span></div>
   <div class="g-grid">
     <dl><dt>HTML<small>HyperText Markup Language</small></dt><dd>ページの骨組み。見出し・段落・画像など「中身と構造」を書く言語。</dd></dl>
     <dl><dt>CSS<small>Cascading Style Sheets</small></dt><dd>見た目の指定。色・大きさ・配置・動きを決める。</dd></dl>
@@ -888,6 +997,9 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
     <dl><dt>ライトボックス<small>Lightbox</small></dt><dd>サムネイルを押すと背景を暗くして大きく開く拡大表示。実績や事例を見せるのに。</dd></dl>
     <dl><dt>タイムライン<small>Timeline</small></dt><dd>出来事や手順を時系列で縦に並べる表現。制作フローや沿革を、ひと目で。</dd></dl>
     <dl><dt>フィルタリング<small>Filtering</small></dt><dd>タグやキーワードで一覧を絞り込む仕組み。多いときに探す手間を減らす。</dd></dl>
+    <dl><dt>カルーセル<small>Carousel</small></dt><dd>複数のスライドを順に切り替えて見せるUI。実績やお知らせを省スペースに。</dd></dl>
+    <dl><dt>トグルスイッチ<small>Toggle</small></dt><dd>オン・オフを切り替えるスイッチ型UI。今どの状態かをひと目で示す。</dd></dl>
+    <dl><dt>ツリー構造<small>Tree</small></dt><dd>親子の階層を枝分かれで表す表現。サイトマップやカテゴリ分類に。</dd></dl>
   </div>
 </section>
 
@@ -1158,6 +1270,39 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
       fqs.forEach(function(f){var hit=q===""||f.textContent.toLowerCase().indexOf(q)>-1;f.classList.toggle("hide",!hit);if(hit)shown++;});
       if(fqEmpty)fqEmpty.hidden=(shown>0);
     });
+  }
+
+  /* 38 自動カルーセル */
+  var carousel=document.getElementById("carousel");
+  if(carousel){
+    var track=carousel.querySelector(".cr-track"),slides=carousel.querySelectorAll(".cr-slide"),dotWrap=document.getElementById("crDots"),ci=0,timer,paused=false,dragged=0;
+    for(var s=0;s<slides.length;s++){(function(idx){var d=document.createElement("button");d.className="cr-dot";d.setAttribute("aria-label",(idx+1)+"枚目へ");d.addEventListener("click",function(){crGo(idx);});dotWrap.appendChild(d);})(s);}
+    var dots=dotWrap.querySelectorAll(".cr-dot");
+    function crGo(n){ci=(n+slides.length)%slides.length;track.style.transform="translateX("+(-ci*100)+"%)";dots.forEach(function(d,i){d.classList.toggle("is-on",i===ci);});}
+    function crNext(){crGo(ci+1);}
+    function crStart(){clearInterval(timer);timer=setInterval(function(){if(!paused)crNext();},3600);}
+    carousel.addEventListener("mouseenter",function(){paused=true;});
+    carousel.addEventListener("mouseleave",function(){paused=false;});
+    /* ドラッグでも送る＋誤クリック防止 */
+    var dn=false,dsx=0;
+    carousel.addEventListener("pointerdown",function(e){dn=true;dsx=e.clientX;dragged=0;});
+    addEventListener("pointermove",function(e){if(dn)dragged=e.clientX-dsx;});
+    addEventListener("pointerup",function(){if(dn&&Math.abs(dragged)>50){crGo(ci+(dragged<0?1:-1));}dn=false;});
+    carousel.addEventListener("click",function(e){if(Math.abs(dragged)>6)e.preventDefault();},true);
+    crGo(0);crStart();
+  }
+
+  /* 40 トグルスイッチ群 */
+  document.querySelectorAll(".tg").forEach(function(t){t.addEventListener("click",function(){
+    var on=t.classList.toggle("on");t.setAttribute("aria-checked",on?"true":"false");
+  });});
+
+  /* 41 数値スピナー */
+  var stNum=document.getElementById("stNum"),stPlus=document.getElementById("stPlus"),stMinus=document.getElementById("stMinus");
+  if(stNum&&stPlus&&stMinus){
+    function stSet(d){var v=Math.min(99,Math.max(1,(+stNum.textContent||1)+d));stNum.textContent=v;}
+    stPlus.addEventListener("click",function(){stSet(1);});
+    stMinus.addEventListener("click",function(){stSet(-1);});
   }
 })();
 </script>

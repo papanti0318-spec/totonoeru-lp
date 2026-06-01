@@ -423,3 +423,61 @@ dialog.lightbox img{max-width:92vw;max-height:90vh;border-radius:8px;display:blo
 .bar-v{font-family:var(--mono);font-size:12px;color:var(--accent);text-align:right}
 @media(max-width:680px){.bar-row{grid-template-columns:92px 1fr 40px;gap:10px}.bar-l{font-size:12px}}
 @media(prefers-reduced-motion:reduce){.tl-item{opacity:1;transform:none}.bar span{transition:none}.bar.in span{width:var(--w)}}
+
+/* ===== 動き・データ・構造 第五集（38-42） ===== */
+/* 38 自動カルーセル（動線内蔵） */
+.carousel{position:relative}
+.cr-win{overflow:hidden;border-radius:10px}
+.cr-track{display:flex;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.cr-slide{flex:0 0 100%;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;min-height:182px;padding:34px 32px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.28);text-decoration:none;color:inherit}
+.cr-tag{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.cr-slide h3{font-size:18px;font-weight:500;margin-bottom:8px}
+.cr-slide p{font-size:13px;font-weight:300;color:var(--ink-soft)}
+.cr-go{margin-top:16px;font-family:var(--mono);font-size:11px;color:var(--accent)}
+.cr-dots{display:flex;gap:8px;justify-content:center;margin-top:16px}
+.cr-dot{width:8px;height:8px;border-radius:50%;border:none;background:var(--line);cursor:pointer;padding:0;transition:.25s}
+.cr-dot.is-on{background:var(--accent);transform:scale(1.3)}
+
+/* 39 折れ線グラフ */
+.chart{position:relative;border:1px solid var(--line);border-radius:10px;padding:24px 22px 14px;background:rgba(255,255,255,.2)}
+.chart svg{width:100%;height:auto;display:block;overflow:visible}
+.ch-axis{stroke:var(--line);stroke-width:1}
+.ch-grid{stroke:var(--line-soft);stroke-width:1;stroke-dasharray:3 4}
+.ch-line{fill:none;stroke:var(--accent);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.6s cubic-bezier(.3,.6,.2,1)}
+.chart.in .ch-line{stroke-dashoffset:0}
+.ch-dot{fill:var(--accent);opacity:0;transition:opacity .4s ease .9s}
+.chart.in .ch-dot{opacity:1}
+.ch-x{display:flex;justify-content:space-between;margin-top:8px;font-family:var(--mono);font-size:10px;color:var(--muted);padding:0 6px}
+
+/* 40 トグルスイッチ群 */
+.toggles{display:flex;flex-direction:column}
+.tg-row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 2px;border-bottom:1px solid var(--line);font-size:14px;font-weight:300;color:var(--ink)}
+.tg-row:last-child{border-bottom:none}
+.tg{position:relative;width:50px;height:28px;border-radius:999px;border:1px solid var(--line);background:var(--paper-2);cursor:pointer;padding:0;flex:none;transition:background .3s,border-color .3s}
+.tg .tg-k{position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:var(--muted);transition:transform .3s cubic-bezier(.2,.7,.2,1),background .3s}
+.tg.on{background:var(--accent);border-color:var(--accent)}
+.tg.on .tg-k{transform:translateX(22px);background:var(--paper)}
+
+/* 41 数値スピナー */
+.stepper{display:flex;justify-content:center}
+.st-row{display:flex;align-items:center;gap:24px;border:1px solid var(--line);border-radius:10px;padding:20px 26px;background:rgba(255,255,255,.25)}
+.st-l{font-size:14px;font-weight:300;color:var(--ink-soft)}
+.st-ctl{display:flex;align-items:center;gap:18px}
+.st-btn{width:40px;height:40px;border-radius:50%;border:1px solid var(--accent);background:none;color:var(--accent);font-size:20px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,color .2s}
+.st-btn:hover{background:var(--accent);color:var(--paper)}
+.st-num{font-size:26px;font-weight:300;color:var(--ink);min-width:40px;text-align:center;font-variant-numeric:tabular-nums}
+@media(max-width:520px){.st-row{flex-direction:column;gap:14px}}
+
+/* 42 ツリー（サイトマップ＝内部リンク動線） */
+.tree{font-size:14px}
+.tree details{margin:2px 0}
+.tree summary{cursor:pointer;padding:7px 0;font-weight:500;list-style:none;display:flex;align-items:center;gap:8px}
+.tree summary::-webkit-details-marker{display:none}
+.tree summary::before{content:"▸";color:var(--accent);font-size:11px;transition:transform .2s}
+.tree details[open]>summary::before{transform:rotate(90deg)}
+.tree>details>summary{font-size:15px}
+.tree ul{list-style:none;margin:0 0 4px;padding-left:18px;border-left:1px solid var(--line)}
+.tree li{padding:5px 0}
+.tree a{color:var(--ink-soft);text-decoration:none;border-bottom:1px solid transparent;transition:.2s}
+.tree a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+@media(prefers-reduced-motion:reduce){.cr-track,.ch-line{transition:none}.chart.in .ch-line{stroke-dashoffset:0}}
