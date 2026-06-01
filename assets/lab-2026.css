@@ -949,6 +949,78 @@ dialog.cmdp-dialog::backdrop{background:rgba(26,24,20,.5);backdrop-filter:blur(2
 .pg-b{width:36px;height:36px;border:1px solid var(--line);border-radius:8px;background:none;cursor:pointer;font-family:var(--mono);font-size:13px;color:var(--ink-soft);transition:.2s}
 .pg-b:hover{border-color:var(--accent);color:var(--accent)}
 .pg-b.is-on{background:var(--accent);color:var(--paper);border-color:var(--accent)}
+
+/* ===== 仕上げの表現とフィナーレ 第十六集（91-100・100選達成） ===== */
+/* 91 スライド下線タブ */
+.ul-nav{position:relative;display:inline-flex;border-bottom:1px solid var(--line);margin-bottom:18px}
+.ul-b{position:relative;border:none;background:none;cursor:pointer;padding:12px 22px;font-family:var(--sans);font-size:14px;color:var(--muted);transition:color .2s}
+.ul-b.is-on{color:var(--accent);font-weight:500}
+.ul-ind{position:absolute;bottom:-1px;left:0;height:2px;width:0;background:var(--accent);transition:left .3s cubic-bezier(.2,.7,.2,1),width .3s cubic-bezier(.2,.7,.2,1)}
+.ul-out{font-size:14px;font-weight:300;color:var(--ink-soft)}
+
+/* 92 カウントダウン */
+.countdown{display:flex;align-items:center;gap:10px}
+.cd-box{display:flex;flex-direction:column;align-items:center;border:1px solid var(--line);border-radius:10px;padding:14px 16px;background:rgba(255,255,255,.25);min-width:64px}
+.cd-box span{font-family:var(--mono);font-size:28px;color:var(--accent);font-variant-numeric:tabular-nums;line-height:1}
+.cd-box small{font-size:10px;color:var(--muted);margin-top:4px}
+.cd-sep{font-size:24px;color:var(--muted)}
+.cd-note{margin-top:10px;font-size:11px;color:var(--muted)}
+
+/* 93 セクションドットナビ */
+.dotnav{position:relative;display:flex;gap:16px}
+.dn-body{flex:1;height:220px;overflow-y:auto;border:1px solid var(--line);border-radius:10px;scroll-snap-type:y mandatory}
+.dn-body section{height:220px;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;padding:24px;gap:8px}
+.dn-body h3{font-size:18px;font-weight:500;color:var(--accent)}
+.dn-body p{font-size:14px;font-weight:300;color:var(--ink-soft)}
+.dn-dots{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;justify-content:center}
+.dn-dots button{width:11px;height:11px;border-radius:50%;border:1px solid var(--line);background:none;cursor:pointer;padding:0;transition:.2s}
+.dn-dots button.is-on{background:var(--accent);border-color:var(--accent);transform:scale(1.25)}
+
+/* 94 グラデーションメッシュ背景 */
+.mesh{position:relative;height:200px;border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center;border:1px solid var(--line)}
+.mesh-bg{position:absolute;inset:-40%;background:radial-gradient(circle at 30% 30%,rgba(197,116,60,.55),transparent 45%),radial-gradient(circle at 70% 60%,rgba(111,148,87,.45),transparent 45%),radial-gradient(circle at 50% 80%,rgba(217,154,91,.5),transparent 50%);filter:blur(20px);animation:meshMove 12s ease-in-out infinite alternate}
+@keyframes meshMove{0%{transform:translate(0,0) scale(1)}100%{transform:translate(6%,4%) scale(1.15)}}
+.mesh-l{position:relative;z-index:2;font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--paper);background:rgba(26,24,20,.35);padding:6px 14px;border-radius:999px}
+
+/* 95 テキストグラデーション */
+.tgrad{display:flex;justify-content:center;padding:8px 0}
+.tg-text{font-size:clamp(26px,4vw,44px);font-weight:500;background:linear-gradient(90deg,var(--accent),#6f9457,#d99a5b,var(--accent));background-size:300% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:tgShift 6s linear infinite}
+@keyframes tgShift{to{background-position:300% 0}}
+
+/* 96 リップル */
+.ripplewrap{display:flex;justify-content:center;padding:8px 0}
+.ripple{position:relative;overflow:hidden;border:1px solid var(--accent);background:none;color:var(--accent);border-radius:999px;padding:15px 32px;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
+.ripple .rp{position:absolute;border-radius:50%;background:rgba(197,116,60,.35);transform:scale(0);animation:rpExpand .65s ease-out;pointer-events:none}
+@keyframes rpExpand{to{transform:scale(2.4);opacity:0}}
+
+/* 97 スポットライトカーソル */
+.spotlight{position:relative;height:200px;border-radius:12px;background:#1a1815;display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:none}
+.spotlight span{position:relative;z-index:2;color:rgba(242,237,228,.45);font-size:14px;font-weight:300}
+.spotlight::before{content:"";position:absolute;inset:0;background:radial-gradient(circle 110px at var(--mx,50%) var(--my,50%),rgba(197,116,60,.35),transparent 70%);opacity:0;transition:opacity .3s}
+.spotlight.lit::before{opacity:1}
+@media(hover:none){.spotlight{cursor:default}.spotlight::before{opacity:.4}}
+
+/* 98 キーボードショートカット表 */
+.kbdlist{display:flex;flex-direction:column;max-width:420px;border-top:1px solid var(--line)}
+.kb-row{display:flex;justify-content:space-between;align-items:center;padding:14px 2px;border-bottom:1px solid var(--line);font-size:14px;font-weight:300;color:var(--ink-soft)}
+.kb-keys{display:flex;gap:5px}
+.kbdlist kbd{font-family:var(--mono);font-size:11px;border:1px solid var(--line);border-bottom-width:2px;border-radius:6px;padding:3px 9px;color:var(--ink);background:var(--paper)}
+
+/* 99 フリップカウンター */
+.flipcount{display:flex;align-items:center;gap:18px;justify-content:center;flex-wrap:wrap}
+.fc-card{min-width:84px;padding:18px 20px;border-radius:12px;background:var(--ink);color:var(--paper);font-family:var(--mono);font-size:38px;text-align:center;perspective:300px}
+.fc-card.flip{animation:fcFlip .35s ease}
+@keyframes fcFlip{0%{transform:rotateX(0)}50%{transform:rotateX(-90deg)}100%{transform:rotateX(0)}}
+
+/* 100 フィナーレ */
+.finale{text-align:center;background:rgba(197,116,60,.05)}
+.finale .one{max-width:46em}
+.finale-stats{display:flex;justify-content:center;gap:36px;flex-wrap:wrap;margin:32px 0}
+.fs-n{font-size:clamp(36px,6vw,56px);font-weight:300;color:var(--accent);line-height:1;letter-spacing:-.02em}
+.fs-n small{font-size:14px;color:var(--muted);margin-left:4px}
+.finale-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:24px}
+.finale .barrier{max-width:40em;margin:0 auto;font-size:14px;font-weight:300;line-height:2;color:var(--ink-soft)}
+@media(prefers-reduced-motion:reduce){.mesh-bg,.tg-text,.fc-card.flip{animation:none}}
 @media(prefers-reduced-motion:reduce){
   .rt .word{display:inline;overflow:visible}
   .rt .word>span{display:inline}
