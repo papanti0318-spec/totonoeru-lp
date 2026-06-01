@@ -260,7 +260,7 @@
 <section id="t5" class="tech">
   <div class="head"><span class="num">05</span><span class="en">Magnetic Button</span></div>
   <h2 class="rt rt-big">ボタンが、指に吸い付く。</h2>
-  <p class="one">ボタンの近くにカーソルを寄せると、少し近づいてきます。押し心地のための"気持ちよさ"。</p>
+  <p class="one">ボタンの近くにカーソルを寄せると、少し近づいてきます。押し心地のための"気持ちよさ"。<span class="pc-rec">PC推奨</span></p>
   <div class="demo mag-wrap"><a class="mag" id="mag" href="/web/#contact">相談する →</a></div>
   <div class="meta">
     <div><div class="k">どんな時に効く</div><div class="v">いちばん押してほしいボタン（CTA）に1つだけ。</div></div>
@@ -374,7 +374,7 @@
 <section id="t12" class="tech">
   <div class="head"><span class="num">12</span><span class="en">3D Tilt</span></div>
   <h2 class="rt rt-big">カードが、立体に傾く。</h2>
-  <p class="one">カーソルの位置に合わせて、カードがわずかに3D回転します。</p>
+  <p class="one">カーソルの位置に合わせて、カードがわずかに3D回転します。<span class="pc-rec">PC推奨</span></p>
   <div class="demo tilt-wrap"><div class="tilt" id="tilt"><h3>ととのえる屋</h3><p>カーソルを乗せて動かしてみてください。奥行きが出ます。</p></div></div>
   <div class="meta">
     <div><div class="k">どんな時に効く</div><div class="v">主役のカード1枚に。商品・人物・実績などを引き立てる。</div></div>
@@ -682,7 +682,7 @@ npm run dev</code></pre>
 <section id="t29" class="tech">
   <div class="head"><span class="num">29</span><span class="en">Card Flip</span></div>
   <h2 class="rt rt-big">カードが、くるっと裏返る。</h2>
-  <p class="one">カーソルを乗せると裏面が現れます（スマホでは押すと各ページへ）。表に名前、裏に中身と入口を。</p>
+  <p class="one">カーソルを乗せると裏面が現れます（スマホでは押すと各ページへ）。表に名前、裏に中身と入口を。<span class="pc-rec">裏返しはPC推奨</span></p>
   <div class="demo flips">
     <a class="flip" href="/web/"><div class="flip-in"><div class="flip-f"><span class="flip-tag">Front</span><h3>HP・LP制作</h3></div><div class="flip-b"><p>言葉を集約し、核だけ残す。</p><span class="flip-go">見る →</span></div></div></a>
     <a class="flip" href="/cleaning/"><div class="flip-in"><div class="flip-f"><span class="flip-tag">Front</span><h3>清掃</h3></div><div class="flip-b"><p>現場の事務を、写真とAIで軽く。</p><span class="flip-go">見る →</span></div></div></a>
@@ -983,9 +983,9 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
   <div class="demo donut draw-svg">
     <svg viewBox="0 0 42 42">
       <circle class="dn-base" cx="21" cy="21" r="15.9"/>
-      <circle class="dn-seg s1" cx="21" cy="21" r="15.9" pathLength="100" style="--p:45;--o:0"/>
-      <circle class="dn-seg s2" cx="21" cy="21" r="15.9" pathLength="100" style="--p:30;--o:-45"/>
-      <circle class="dn-seg s3" cx="21" cy="21" r="15.9" pathLength="100" style="--p:25;--o:-75"/>
+      <circle class="dn-seg s1" cx="21" cy="21" r="15.9" pathLength="100" stroke-dashoffset="0" data-p="45"/>
+      <circle class="dn-seg s2" cx="21" cy="21" r="15.9" pathLength="100" stroke-dashoffset="-45" data-p="30"/>
+      <circle class="dn-seg s3" cx="21" cy="21" r="15.9" pathLength="100" stroke-dashoffset="-75" data-p="25"/>
     </svg>
     <ul class="dn-legend">
       <li><span class="dn-c s1"></span>つくる（制作）<b>45%</b></li>
@@ -1251,9 +1251,11 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
       if(el.classList.contains("mask")){el.classList.add("play");io.unobserve(el);return;} /* 1回だけ開いて終わり＝点滅しない（画像は常時表示） */
       if(el.classList.contains("count"))countUp(el);
       if(el.classList.contains("tw"))typewrite(el);
+      if(el.classList.contains("donut"))el.querySelectorAll(".dn-seg").forEach(function(s){s.style.strokeDasharray=s.dataset.p+" 100";});
     }else{
       el.classList.remove("in");
       if(el.classList.contains("tw"))el.classList.remove("done");
+      if(el.classList.contains("donut"))el.querySelectorAll(".dn-seg").forEach(function(s){s.style.strokeDasharray="0 100";});
     }
   });},{threshold:.08,rootMargin:"0px 0px -4% 0px"});
   document.querySelectorAll(".rt,.mask,.count,.draw-svg,.tw,.tl-item,.bar").forEach(function(el){io.observe(el);});
