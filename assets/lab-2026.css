@@ -865,6 +865,46 @@ dialog.cmdp-dialog::backdrop{background:rgba(26,24,20,.5);backdrop-filter:blur(2
 .sw-content{position:relative;z-index:2;flex:1;padding:16px;background:var(--paper);border:1px solid var(--line);border-radius:10px;font-size:14px;font-weight:300;color:var(--ink);touch-action:pan-y;cursor:grab;user-select:none}
 .sw-del{position:absolute;right:18px;z-index:1;color:#fff;font-family:var(--mono);font-size:12px;letter-spacing:.12em}
 @media(prefers-reduced-motion:reduce){.hud-spin{animation:none}}
+
+/* ===== タッチ・案内・可視化 第十四集（81-85） ===== */
+/* 81 プルトゥリフレッシュ */
+.pulltoref{max-width:420px;height:220px;overflow-y:auto;border:1px solid var(--line);border-radius:12px;position:relative;background:rgba(255,255,255,.2)}
+.ptr-ind{position:sticky;top:0;text-align:center;padding:10px;font-family:var(--mono);font-size:11px;color:var(--muted);background:var(--paper-2)}
+.ptr-list{transition:transform .3s;padding:8px}
+.ptr-item{padding:16px;border:1px solid var(--line);border-radius:8px;background:var(--paper);margin-bottom:8px;font-size:14px;font-weight:300;color:var(--ink)}
+
+/* 82 オンボーディングツアー（動線内蔵） */
+.tour{display:flex;flex-direction:column;gap:16px;max-width:480px}
+.tour-stage{display:flex;gap:10px;flex-wrap:wrap}
+.tour-item{flex:1;min-width:90px;text-align:center;padding:18px 12px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.3);font-size:13px;color:var(--ink-soft);transition:.25s}
+.tour-item.on{border-color:var(--accent);color:var(--accent);box-shadow:0 0 0 3px rgba(197,116,60,.16);transform:translateY(-3px)}
+.tour-pop{border:1px solid var(--line);border-radius:10px;padding:18px;background:var(--paper)}
+.tour-pop p{font-size:14px;font-weight:300;color:var(--ink-soft);margin-bottom:14px}
+.tour-ctl{display:flex;gap:10px;flex-wrap:wrap}
+.tour-ctl .ui-btn[disabled]{opacity:.4;pointer-events:none}
+
+/* 83 レーダーチャート */
+.radar{display:flex;justify-content:center}
+.radar svg{width:min(280px,80%);height:auto;overflow:visible}
+.rd-grid{fill:none;stroke:var(--line);stroke-width:1}
+.rd-ax{stroke:var(--line);stroke-width:1}
+.rd-area{fill:rgba(197,116,60,.22);stroke:var(--accent);stroke-width:2;opacity:0;transform:scale(.6);transform-origin:center;transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.radar.in .rd-area{opacity:1;transform:scale(1)}
+.rd-l{font-family:var(--mono);font-size:9px;fill:var(--muted)}
+
+/* 84 トースト積み重ね */
+.toast-stack{position:fixed;right:24px;bottom:24px;z-index:9995;display:flex;flex-direction:column;gap:8px;align-items:flex-end;pointer-events:none}
+.ts-item{background:var(--ink);color:var(--paper);font-size:13px;font-weight:300;padding:12px 18px;border-radius:10px;box-shadow:0 10px 30px rgba(26,24,20,.28);border-left:3px solid var(--accent);transform:translateX(140%);opacity:0;transition:transform .4s cubic-bezier(.2,.7,.2,1),opacity .4s}
+.ts-item.show{transform:none;opacity:1}
+@media(max-width:520px){.toast-stack{left:16px;right:16px;align-items:stretch}}
+
+/* 85 ファイルドロップゾーン */
+.dropzone{border:2px dashed var(--line);border-radius:12px;padding:28px 20px;text-align:center;cursor:pointer;transition:border-color .2s,background .2s;background:rgba(255,255,255,.2)}
+.dropzone.over{border-color:var(--accent);background:rgba(197,116,60,.08)}
+.dz-ico{font-size:28px;color:var(--accent)}
+.dz-inner p{font-size:13px;font-weight:300;color:var(--ink-soft);margin-top:8px;line-height:1.7}
+.dz-files{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-direction:column;gap:6px;text-align:left}
+.dz-files li{font-size:13px;color:var(--ink);background:var(--paper-2);border-radius:6px;padding:8px 12px}
 @media(prefers-reduced-motion:reduce){
   .rt .word{display:inline;overflow:visible}
   .rt .word>span{display:inline}

@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="hYRflPVBHV_SbReXwN_7v4tNCf6AT3VusKhSviD5kPU" />
 <title>Web表現ずかん｜スクロールの"しかけ"を実演と用語で｜ととのえる屋</title>
-<meta name="description" content="サイトでよく見る「なんかかっこいい動き」を、実演＋やさしい言葉＋専門用語集でまるごと解説。なめらかスクロール・パララックス・マスクリビール・モーダル・タブ・横スクロール・ダークモード・グラフ・ホバープレビュー・各種グラフ・かんばん・ターミナル・世界時計など80種を、その場で体感できます。テンプレとの違いも。長野県小諸市のHP・LP制作 ととのえる屋。">
+<meta name="description" content="サイトでよく見る「なんかかっこいい動き」を、実演＋やさしい言葉＋専門用語集でまるごと解説。なめらかスクロール・パララックス・マスクリビール・モーダル・タブ・横スクロール・ダークモード・グラフ・各種グラフ・かんばん・ターミナル・世界時計・オンボーディング案内など85種を、その場で体感できます。テンプレとの違いも。長野県小諸市のHP・LP制作 ととのえる屋。">
 <meta name="keywords" content="Web表現, ホームページ 動き, パララックス, なめらかスクロール, SVGアニメーション, ページ遷移, Web制作 小諸, HP制作 長野, 非エンジニア Web, ととのえる屋">
 <link rel="canonical" href="https://totonoeruya.jp/lab/">
 
 <meta property="og:title" content="Web表現ずかん｜スクロールの"しかけ"を実演と用語で">
-<meta property="og:description" content="サイトの「なんかかっこいい動き」を、実演＋やさしい言葉＋用語集でまるごと。なめらかスクロール・モーダル・各種グラフ・ヒートマップ・かんばん・ターミナルなど80種を体感。">
+<meta property="og:description" content="サイトの「なんかかっこいい動き」を、実演＋やさしい言葉＋用語集でまるごと。なめらかスクロール・各種グラフ・ヒートマップ・かんばん・ターミナル・レーダーチャートなど85種を体感。">
 <meta property="og:url" content="https://totonoeruya.jp/lab/">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://totonoeruya.jp/og.jpg">
@@ -106,7 +106,10 @@
         { "@type": "DefinedTerm", "name": "セグメントコントロール", "description": "つながったボタンで一つを選ぶUI。期間や表示方法の択一切り替えに使う。" },
         { "@type": "DefinedTerm", "name": "ターミナル", "description": "コマンドを打ち込む黒い画面風の表現。手順紹介や技術的な世界観の演出に。" },
         { "@type": "DefinedTerm", "name": "コードdiff", "description": "追加行を緑、削除行を赤で示し、変更点を一目で分かるようにする表示。" },
-        { "@type": "DefinedTerm", "name": "スワイプ削除", "description": "項目を横に払って消すタッチ操作。スマホアプリの一覧でおなじみ。" }
+        { "@type": "DefinedTerm", "name": "スワイプ削除", "description": "項目を横に払って消すタッチ操作。スマホアプリの一覧でおなじみ。" },
+        { "@type": "DefinedTerm", "name": "プルトゥリフレッシュ", "description": "一覧の一番上で下に引っぱると最新に更新するタッチ操作。" },
+        { "@type": "DefinedTerm", "name": "オンボーディング", "description": "初めての人に使い方や見どころを順に案内する仕組み。迷わせず行動につなぐ。" },
+        { "@type": "DefinedTerm", "name": "レーダーチャート", "description": "複数項目のバランスを五角形などの面で示すグラフ。強み弱みを一目で。" }
       ]
     },
     {
@@ -154,7 +157,7 @@
 </div>
 
 <nav class="toc" aria-label="もくじ">
-  <div class="toc-head"><h2>もくじ — Web表現図鑑</h2><span class="cnt">全80項目 · 100選めざして</span></div>
+  <div class="toc-head"><h2>もくじ — Web表現図鑑</h2><span class="cnt">全85項目 · 100選めざして</span></div>
   <div class="cols">
     <div class="col"><h3>スクロール演出</h3>
       <a href="#t1">なめらかスクロール<span class="e">01</span></a>
@@ -164,6 +167,7 @@
       <a href="#t24">スクロールスナップ<span class="e">24</span></a>
       <a href="#t25">進捗バー<span class="e">25</span></a>
       <a href="#t64">無限スクロール<span class="e">64</span></a>
+      <a href="#t81">プルリフレッシュ<span class="e">81</span></a>
     </div>
     <div class="col"><h3>文字・数字</h3>
       <a href="#t3">テキストリビール<span class="e">03</span></a>
@@ -219,6 +223,7 @@
       <a href="#t71">エリアチャート<span class="e">71</span></a>
       <a href="#t73">星分布バー<span class="e">73</span></a>
       <a href="#t78">世界時計<span class="e">78</span></a>
+      <a href="#t83">レーダーチャート<span class="e">83</span></a>
     </div>
     <div class="col"><h3>UI部品</h3>
       <a href="#t17">モーダル<span class="e">17</span></a>
@@ -243,6 +248,9 @@
       <a href="#t74">セグメント切替<span class="e">74</span></a>
       <a href="#t75">日付レンジ<span class="e">75</span></a>
       <a href="#t79">プログレスHUD<span class="e">79</span></a>
+      <a href="#t82">オンボーディング<span class="e">82</span></a>
+      <a href="#t84">トースト積み重ね<span class="e">84</span></a>
+      <a href="#t85">ファイルドロップ<span class="e">85</span></a>
     </div>
     <div class="col"><h3>コード・技術</h3>
       <a href="#t21">コードコピー<span class="e">21</span></a>
@@ -1696,14 +1704,106 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
   </div>
 </section>
 
+<div class="cat-label"><span>タッチ・案内・可視化 — 第十四集</span></div>
+
+<!-- 81 pull to refresh -->
+<section id="t81" class="tech">
+  <div class="head"><span class="num">81</span><span class="en">Pull to Refresh</span></div>
+  <h2 class="rt rt-big">引っぱって、更新。</h2>
+  <p class="one">一番上で下に引っぱると、最新に更新されます。スマホアプリでおなじみの操作。</p>
+  <div class="demo pulltoref" id="pulltoref">
+    <div class="ptr-ind" id="ptrInd">↓ 引っぱって更新</div>
+    <div class="ptr-list" id="ptrList"><div class="ptr-item">記録 A</div><div class="ptr-item">記録 B</div><div class="ptr-item">記録 C</div></div>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">一覧・タイムライン。最新を取りに行く動作を、自然な手つきで。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽いJS。タッチに最適。</div></div>
+  </div>
+</section>
+
+<!-- 82 onboarding tour（動線内蔵） -->
+<section id="t82" class="tech">
+  <div class="head"><span class="num">82</span><span class="en">Onboarding Tour</span></div>
+  <h2 class="rt rt-big">はじめてを、案内する。</h2>
+  <p class="one">初めての人に、要点を順に光らせて教えます。最後は相談へ。「次へ」で進みます。</p>
+  <div class="demo tour" id="tour">
+    <div class="tour-stage">
+      <div class="tour-item" data-step="0">① 事業を見る</div>
+      <div class="tour-item" data-step="1">② 記事を読む</div>
+      <div class="tour-item" data-step="2">③ 相談する</div>
+    </div>
+    <div class="tour-pop">
+      <p id="tourText">まずは3つの事業から。気になるものを選べます。</p>
+      <div class="tour-ctl"><button class="ui-btn" id="tourPrev">← 前</button><button class="ui-btn solid" id="tourNext">次へ →</button><a class="ui-btn solid tour-cta" id="tourCta" href="/web/#contact" hidden>相談する →</a></div>
+    </div>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">初回の人に使い方や見どころを案内。迷わせず、行動につなぐ。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽いJS。多用は禁物、要点だけに絞る。</div></div>
+  </div>
+</section>
+
+<!-- 83 radar chart -->
+<section id="t83" class="tech">
+  <div class="head"><span class="num">83</span><span class="en">Radar Chart (SVG)</span></div>
+  <h2 class="rt rt-big">五角形で、バランスを。</h2>
+  <p class="one">複数の項目のバランスを、面の形で見せます。強み・弱みをひと目で。（数値はデモ用の例です）</p>
+  <div class="demo radar draw-svg">
+    <svg viewBox="0 0 200 200">
+      <polygon class="rd-grid" points="100,20 176,75.3 147,166 53,166 24,75.3"/>
+      <polygon class="rd-grid" points="100,60 138,97.6 123.5,133 76.5,133 62,97.6"/>
+      <line class="rd-ax" x1="100" y1="100" x2="100" y2="20"/><line class="rd-ax" x1="100" y1="100" x2="176" y2="75.3"/><line class="rd-ax" x1="100" y1="100" x2="147" y2="166"/><line class="rd-ax" x1="100" y1="100" x2="53" y2="166"/><line class="rd-ax" x1="100" y1="100" x2="24" y2="75.3"/>
+      <polygon class="rd-area" points="100,28 160.9,80.2 128.2,138.8 67.1,145.3 35.3,79"/>
+      <text class="rd-l" x="100" y="14" text-anchor="middle">制作</text>
+      <text class="rd-l" x="184" y="74" text-anchor="start">AI</text>
+      <text class="rd-l" x="150" y="180" text-anchor="middle">清掃</text>
+      <text class="rd-l" x="50" y="180" text-anchor="middle">教育</text>
+      <text class="rd-l" x="16" y="74" text-anchor="end">地元</text>
+    </svg>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">スキル・性能・強みのバランス。多項目を一つの形で比べる。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">SVGは超軽量。項目名も文字として読まれる。</div></div>
+  </div>
+</section>
+
+<!-- 84 toast stack -->
+<section id="t84" class="tech">
+  <div class="head"><span class="num">84</span><span class="en">Toast Stack</span></div>
+  <h2 class="rt rt-big">通知が、積み上がる。</h2>
+  <p class="one">複数のお知らせを、下から順に積み重ねます。続けて押してみてください。</p>
+  <div class="demo toast-stack-demo"><button class="ui-btn" id="stackBtn">通知を足す</button></div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">短時間に複数の通知。重ねて見せ、順に自動で消す。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽いJS。出しすぎ注意、大事な通知だけに。</div></div>
+  </div>
+</section>
+
+<!-- 85 file dropzone -->
+<section id="t85" class="tech">
+  <div class="head"><span class="num">85</span><span class="en">File Dropzone</span></div>
+  <h2 class="rt rt-big">ファイルを、ほうり込む。</h2>
+  <p class="one">枠にファイルをドラッグ＆ドロップ、または押して選びます。アップロードの入口に（ここでは名前を並べるだけです）。</p>
+  <div class="demo dropzone" id="dropzone">
+    <div class="dz-inner"><span class="dz-ico">⬆</span><p>ここにファイルをドロップ<br>または押して選択</p></div>
+    <ul class="dz-files" id="dzFiles"></ul>
+    <input type="file" id="dzInput" multiple hidden>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">写真・書類のアップロード。ドラッグ＆ドロップで手早く。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽いJS。スマホでは「押して選択」が主役。</div></div>
+  </div>
+</section>
+
 <div class="readbar" id="readbar" aria-hidden="true"></div>
 <div class="toast" id="toast" role="status" aria-live="polite"><span class="t-dot"></span>送信しました。ありがとうございます。</div>
 <div class="toast tk" id="toastK" role="status" aria-live="polite"></div>
+<div class="toast-stack" id="toastStack" aria-hidden="true"></div>
 <div class="confetti" id="confetti" aria-hidden="true"></div>
 
 <!-- glossary -->
 <section class="glossary">
-  <div class="sec-top"><h2 style="font-weight:400;font-size:clamp(22px,3vw,36px)">専門用語、やさしい一覧。</h2><span class="note">Glossary · 57語</span></div>
+  <div class="sec-top"><h2 style="font-weight:400;font-size:clamp(22px,3vw,36px)">専門用語、やさしい一覧。</h2><span class="note">Glossary · 60語</span></div>
   <div class="g-grid">
     <dl><dt>HTML<small>HyperText Markup Language</small></dt><dd>ページの骨組み。見出し・段落・画像など「中身と構造」を書く言語。</dd></dl>
     <dl><dt>CSS<small>Cascading Style Sheets</small></dt><dd>見た目の指定。色・大きさ・配置・動きを決める。</dd></dl>
@@ -1762,6 +1862,9 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
     <dl><dt>ターミナル<small>Terminal / CLI</small></dt><dd>コマンドを打ち込む黒い画面風の表現。手順紹介や技術的な世界観に。</dd></dl>
     <dl><dt>コードdiff<small>Diff</small></dt><dd>追加行を緑、削除行を赤で示し、変更点を一目で分かるようにする表示。</dd></dl>
     <dl><dt>スワイプ削除<small>Swipe to Delete</small></dt><dd>項目を横に払って消すタッチ操作。スマホアプリの一覧でおなじみ。</dd></dl>
+    <dl><dt>プルトゥリフレッシュ<small>Pull to Refresh</small></dt><dd>一覧の一番上で下に引っぱると最新に更新するタッチ操作。</dd></dl>
+    <dl><dt>オンボーディング<small>Onboarding</small></dt><dd>初めての人に使い方や見どころを順に案内する仕組み。行動につなぐ。</dd></dl>
+    <dl><dt>レーダーチャート<small>Radar Chart</small></dt><dd>複数項目のバランスを五角形などの面で示すグラフ。強み弱みを一目で。</dd></dl>
   </div>
 </section>
 
@@ -2300,6 +2403,56 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
       if(e.isIntersecting){var i=+e.target.dataset.ft;ftBtns.forEach(function(x,j){x.classList.toggle("is-on",j===i);});}
     });},{root:ftBody,threshold:.5});
     ftSecs.forEach(function(s){ftIo.observe(s);});
+  }
+
+  /* 81 プルトゥリフレッシュ */
+  var ptr=document.getElementById("pulltoref");
+  if(ptr){
+    var ptrInd=document.getElementById("ptrInd"),ptrList=document.getElementById("ptrList"),ptrDown=false,ptrSy=0,ptrPull=0,ptrCnt=3;
+    ptr.addEventListener("pointerdown",function(e){if(ptr.scrollTop<=0){ptrDown=true;ptrSy=e.clientY;ptrPull=0;}});
+    addEventListener("pointermove",function(e){if(!ptrDown)return;ptrPull=Math.max(0,Math.min(80,e.clientY-ptrSy));ptrList.style.transform="translateY("+ptrPull+"px)";ptrInd.textContent=ptrPull>60?"↑ はなして更新":"↓ 引っぱって更新";});
+    addEventListener("pointerup",function(){if(!ptrDown)return;ptrDown=false;
+      if(ptrPull>60){ptrInd.textContent="更新中…";setTimeout(function(){ptrCnt++;var d=document.createElement("div");d.className="ptr-item";d.textContent="記録 "+String.fromCharCode(64+ptrCnt)+"（新着）";ptrList.insertBefore(d,ptrList.firstChild);ptrInd.textContent="↓ 引っぱって更新";ptrList.style.transform="";},800);}
+      else ptrList.style.transform="";});
+  }
+
+  /* 82 オンボーディングツアー */
+  var tour=document.getElementById("tour");
+  if(tour){
+    var tourItems=tour.querySelectorAll(".tour-item"),tourText=document.getElementById("tourText"),tourPrev=document.getElementById("tourPrev"),tourNext=document.getElementById("tourNext"),tourCta=document.getElementById("tourCta"),ti=0;
+    var TTX=["まずは3つの事業から。気になるものを選べます。","記事で、地元×AIの取り組みを読めます。","あとは相談するだけ。何からでも大丈夫です。"];
+    function tourRender(){
+      tourItems.forEach(function(x,i){x.classList.toggle("on",i===ti);});
+      tourText.textContent=TTX[ti];tourPrev.disabled=(ti===0);
+      var last=(ti===tourItems.length-1);tourNext.hidden=last;tourCta.hidden=!last;
+    }
+    tourPrev.addEventListener("click",function(){if(ti>0){ti--;tourRender();}});
+    tourNext.addEventListener("click",function(){if(ti<tourItems.length-1){ti++;tourRender();}});
+    tourItems.forEach(function(x,i){x.addEventListener("click",function(){ti=i;tourRender();});});
+    tourRender();
+  }
+
+  /* 84 トースト積み重ね */
+  var stackBtn=document.getElementById("stackBtn"),toastStack=document.getElementById("toastStack");
+  if(stackBtn&&toastStack){
+    var stackN=0;
+    stackBtn.addEventListener("click",function(){
+      stackN++;var t=document.createElement("div");t.className="ts-item";t.textContent="お知らせ #"+stackN+" が届きました";
+      toastStack.appendChild(t);void t.offsetWidth;t.classList.add("show");
+      setTimeout(function(){t.classList.remove("show");setTimeout(function(){t.remove();},300);},3000);
+    });
+  }
+
+  /* 85 ファイルドロップゾーン */
+  var dropzone=document.getElementById("dropzone");
+  if(dropzone){
+    var dzInput=document.getElementById("dzInput"),dzFiles=document.getElementById("dzFiles");
+    function dzShow(files){if(!files||!files.length)return;for(var i=0;i<files.length;i++){var li=document.createElement("li");li.textContent="📄 "+files[i].name;dzFiles.appendChild(li);}}
+    dropzone.addEventListener("click",function(e){if(e.target.closest(".dz-files"))return;dzInput.click();});
+    dzInput.addEventListener("change",function(){dzShow(dzInput.files);});
+    ["dragenter","dragover"].forEach(function(ev){dropzone.addEventListener(ev,function(e){e.preventDefault();dropzone.classList.add("over");});});
+    ["dragleave","drop"].forEach(function(ev){dropzone.addEventListener(ev,function(e){e.preventDefault();dropzone.classList.remove("over");});});
+    dropzone.addEventListener("drop",function(e){dzShow(e.dataTransfer&&e.dataTransfer.files);});
   }
 
   /* 76 ターミナル（タイピング・画面内で再生） */
