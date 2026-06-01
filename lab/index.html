@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="hYRflPVBHV_SbReXwN_7v4tNCf6AT3VusKhSviD5kPU" />
 <title>Web表現ずかん｜スクロールの"しかけ"を実演と用語で｜ととのえる屋</title>
-<meta name="description" content="サイトでよく見る「なんかかっこいい動き」を、実演＋やさしい言葉＋専門用語集でまるごと解説。なめらかスクロール・パララックス・マスクリビール・モーダル・タブ・横スクロール・ダークモード・グラフ・大手サイト風のホバープレビュー・ヒートマップ・検索サジェストなど60種を、その場で体感できます。テンプレとの違いも。長野県小諸市のHP・LP制作 ととのえる屋。">
+<meta name="description" content="サイトでよく見る「なんかかっこいい動き」を、実演＋やさしい言葉＋専門用語集でまるごと解説。なめらかスクロール・パララックス・マスクリビール・モーダル・タブ・横スクロール・ダークモード・グラフ・大手サイト風のホバープレビュー・ヒートマップ・タグ入力・縦書きなど65種を、その場で体感できます。テンプレとの違いも。長野県小諸市のHP・LP制作 ととのえる屋。">
 <meta name="keywords" content="Web表現, ホームページ 動き, パララックス, なめらかスクロール, SVGアニメーション, ページ遷移, Web制作 小諸, HP制作 長野, 非エンジニア Web, ととのえる屋">
 <link rel="canonical" href="https://totonoeruya.jp/lab/">
 
 <meta property="og:title" content="Web表現ずかん｜スクロールの"しかけ"を実演と用語で">
-<meta property="og:description" content="サイトの「なんかかっこいい動き」を、実演＋やさしい言葉＋用語集でまるごと。なめらかスクロール・モーダル・横スクロール・ダークモード・グラフ・ホバープレビュー・ヒートマップなど60種を体感。">
+<meta property="og:description" content="サイトの「なんかかっこいい動き」を、実演＋やさしい言葉＋用語集でまるごと。なめらかスクロール・モーダル・横スクロール・ダークモード・グラフ・ヒートマップ・タグ入力など65種を体感。">
 <meta property="og:url" content="https://totonoeruya.jp/lab/">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://totonoeruya.jp/og.jpg">
@@ -94,7 +94,10 @@
         { "@type": "DefinedTerm", "name": "レコメンド", "description": "今見ているものに関連したページや商品をおすすめする表現。回遊と離脱防止に効く。" },
         { "@type": "DefinedTerm", "name": "ヒートマップ", "description": "マス目の色の濃淡で量の大小を表す可視化。混雑や頻度の偏りをひと目で示す。" },
         { "@type": "DefinedTerm", "name": "オートコンプリート", "description": "入力に応じて候補を提示する検索補助。打つそばから目的地を絞り込む。" },
-        { "@type": "DefinedTerm", "name": "QRコード", "description": "スマホのカメラで読み取れる二次元コード。紙やサイネージからWebやLINEへつなぐ。" }
+        { "@type": "DefinedTerm", "name": "QRコード", "description": "スマホのカメラで読み取れる二次元コード。紙やサイネージからWebやLINEへつなぐ。" },
+        { "@type": "DefinedTerm", "name": "タグ入力", "description": "入力した語をチップ（札）として追加・削除できるUI。キーワードや宛先の複数入力に。" },
+        { "@type": "DefinedTerm", "name": "無限スクロール", "description": "末尾までスクロールすると次が自動で読み込まれる表現。ページ送りなしで読み進める。" },
+        { "@type": "DefinedTerm", "name": "縦書き", "description": "文字を縦方向に組む日本語の表現。CSSの writing-mode で実現する。" }
       ]
     },
     {
@@ -142,7 +145,7 @@
 </div>
 
 <nav class="toc" aria-label="もくじ">
-  <div class="toc-head"><h2>もくじ — Web表現図鑑</h2><span class="cnt">全60項目 · 100選めざして</span></div>
+  <div class="toc-head"><h2>もくじ — Web表現図鑑</h2><span class="cnt">全65項目 · 100選めざして</span></div>
   <div class="cols">
     <div class="col"><h3>スクロール演出</h3>
       <a href="#t1">なめらかスクロール<span class="e">01</span></a>
@@ -151,12 +154,14 @@
       <a href="#t23">横スクロール<span class="e">23</span></a>
       <a href="#t24">スクロールスナップ<span class="e">24</span></a>
       <a href="#t25">進捗バー<span class="e">25</span></a>
+      <a href="#t64">無限スクロール<span class="e">64</span></a>
     </div>
     <div class="col"><h3>文字・数字</h3>
       <a href="#t3">テキストリビール<span class="e">03</span></a>
       <a href="#t13">タイプライター<span class="e">13</span></a>
       <a href="#t14">マーキー<span class="e">14</span></a>
       <a href="#t6">カウントアップ<span class="e">06</span></a>
+      <a href="#t65">縦書き<span class="e">65</span></a>
     </div>
     <div class="col"><h3>画像</h3>
       <a href="#t4">マスクリビール<span class="e">04</span></a>
@@ -213,6 +218,9 @@
       <a href="#t54">スケルトン<span class="e">54</span></a>
       <a href="#t58">検索サジェスト<span class="e">58</span></a>
       <a href="#t60">QRコード<span class="e">60</span></a>
+      <a href="#t61">通知バッジ<span class="e">61</span></a>
+      <a href="#t62">タグ入力<span class="e">62</span></a>
+      <a href="#t63">トースト種類別<span class="e">63</span></a>
     </div>
     <div class="col"><h3>コード・技術</h3>
       <a href="#t21">コードコピー<span class="e">21</span></a>
@@ -1332,12 +1340,87 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
   </div>
 </section>
 
+<div class="cat-label"><span>入力・通知・一覧 — 第十集</span></div>
+
+<!-- 61 notification badge -->
+<section id="t61" class="tech">
+  <div class="head"><span class="num">61</span><span class="en">Notification Badge</span></div>
+  <h2 class="rt rt-big">数が、ぴょこっと出る。</h2>
+  <p class="one">アイコンの右上に、未読の数を。お知らせ・カート・通知の件数に。下のボタンで増やせます。</p>
+  <div class="demo badges">
+    <button class="bdg-btn" aria-label="通知"><span class="bdg-ico">🔔</span><span class="bdg" id="bdgN">3</span></button>
+    <div class="bdg-ctl"><button class="ui-btn" id="bdgPlus">＋ 増やす</button><button class="ui-btn" id="bdgClear">クリア</button></div>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">未読・カート・通知の件数。気づいてほしい数を、小さく強く。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽い。装飾的なので、本当に伝えたい数だけに。</div></div>
+  </div>
+</section>
+
+<!-- 62 tag input -->
+<section id="t62" class="tech">
+  <div class="head"><span class="num">62</span><span class="en">Tag Input</span></div>
+  <h2 class="rt rt-big">打って、チップにする。</h2>
+  <p class="one">入力して Enter で、タグ（チップ）が追加されます。×で削除。キーワードや宛先の入力に。</p>
+  <div class="demo taginput" id="taginput">
+    <div class="ti-box"><span class="ti-chips" id="tiChips"></span><input class="ti-field" id="tiField" placeholder="入力して Enter" aria-label="タグを追加"></div>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">キーワード・宛先・カテゴリの複数入力。視覚的に管理できる。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽いJS。入力値はそのまま送信に使える。</div></div>
+  </div>
+</section>
+
+<!-- 63 toast kinds -->
+<section id="t63" class="tech">
+  <div class="head"><span class="num">63</span><span class="en">Toast Variants</span></div>
+  <h2 class="rt rt-big">知らせ方を、色で分ける。</h2>
+  <p class="one">成功・注意・お知らせを、色としるしで区別します。押すと右下に出ます。</p>
+  <div class="demo toast-kinds">
+    <button class="ui-btn" data-kind="ok">成功</button>
+    <button class="ui-btn" data-kind="warn">注意</button>
+    <button class="ui-btn" data-kind="info">お知らせ</button>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">結果の種類を素早く伝える。成功・警告・情報を取り違えさせない。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽い。色だけに頼らず、しるしや言葉も添えると親切。</div></div>
+  </div>
+</section>
+
+<!-- 64 infinite scroll（動線内蔵） -->
+<section id="t64" class="tech">
+  <div class="head"><span class="num">64</span><span class="en">Infinite Scroll</span></div>
+  <h2 class="rt rt-big">下まで行くと、続きが出る。</h2>
+  <p class="one">枠の中を下までスクロールすると、自動で次が読み込まれます（デモは数回で止まります）。一覧を切れ目なく。</p>
+  <div class="demo infscroll" id="infscroll">
+    <div class="inf-list" id="infList"></div>
+    <div class="inf-end" id="infEnd" hidden>これで終わりです。続きはジャーナルで →</div>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">記事・商品・投稿の長い一覧。ページ送りなしで読み進めさせる。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽いJS。ただし全件をAIに読ませたいページでは使い方に注意。</div></div>
+  </div>
+</section>
+
+<!-- 65 vertical writing -->
+<section id="t65" class="tech">
+  <div class="head"><span class="num">65</span><span class="en">Vertical Writing</span></div>
+  <h2 class="rt rt-big">縦に、読ませる。</h2>
+  <p class="one">日本語ならではの縦書き。引用や見出し、和の世界観に。（対応ブラウザで縦組みになります）</p>
+  <div class="demo vwrite"><div class="vw-text">集約して、ととのえる。<br>つくる。まわす。おしえる。</div></div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">和の表現・引用・縦組みの読み物。日本語の美しさを活かす。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">CSSだけ。軽い。文字はそのまま読まれる。</div></div>
+  </div>
+</section>
+
 <div class="readbar" id="readbar" aria-hidden="true"></div>
 <div class="toast" id="toast" role="status" aria-live="polite"><span class="t-dot"></span>送信しました。ありがとうございます。</div>
+<div class="toast tk" id="toastK" role="status" aria-live="polite"></div>
 
 <!-- glossary -->
 <section class="glossary">
-  <div class="sec-top"><h2 style="font-weight:400;font-size:clamp(22px,3vw,36px)">専門用語、やさしい一覧。</h2><span class="note">Glossary · 45語</span></div>
+  <div class="sec-top"><h2 style="font-weight:400;font-size:clamp(22px,3vw,36px)">専門用語、やさしい一覧。</h2><span class="note">Glossary · 48語</span></div>
   <div class="g-grid">
     <dl><dt>HTML<small>HyperText Markup Language</small></dt><dd>ページの骨組み。見出し・段落・画像など「中身と構造」を書く言語。</dd></dl>
     <dl><dt>CSS<small>Cascading Style Sheets</small></dt><dd>見た目の指定。色・大きさ・配置・動きを決める。</dd></dl>
@@ -1384,6 +1467,9 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
     <dl><dt>ヒートマップ<small>Heatmap</small></dt><dd>マス目の色の濃淡で量の大小を表す可視化。混雑や頻度の偏りをひと目で。</dd></dl>
     <dl><dt>オートコンプリート<small>Autocomplete</small></dt><dd>入力に応じて候補を出す検索補助。打つそばから目的地を絞り込む。</dd></dl>
     <dl><dt>QRコード<small>QR Code</small></dt><dd>スマホで読み取れる二次元コード。紙やサイネージからWebやLINEへつなぐ。</dd></dl>
+    <dl><dt>タグ入力<small>Tag Input</small></dt><dd>入力した語をチップとして追加・削除できるUI。複数キーワードの入力に。</dd></dl>
+    <dl><dt>無限スクロール<small>Infinite Scroll</small></dt><dd>末尾まで進むと次が自動で読み込まれる表現。ページ送りなしで読み進める。</dd></dl>
+    <dl><dt>縦書き<small>Vertical Writing</small></dt><dd>文字を縦方向に組む日本語の表現。CSSの writing-mode で実現。</dd></dl>
   </div>
 </section>
 
@@ -1852,6 +1938,54 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
     }
     sgInput.addEventListener("input",function(){sgRender(sgInput.value);});
     sgInput.addEventListener("focus",function(){if(sgInput.value)sgRender(sgInput.value);});
+  }
+
+  /* 61 通知バッジ */
+  var bdgN=document.getElementById("bdgN"),bdgPlus=document.getElementById("bdgPlus"),bdgClear=document.getElementById("bdgClear");
+  if(bdgN&&bdgPlus){
+    function bdgRender(v){bdgN.textContent=v;bdgN.style.display=v>0?"":"none";}
+    bdgPlus.addEventListener("click",function(){bdgRender((+bdgN.textContent||0)+1);});
+    bdgClear.addEventListener("click",function(){bdgRender(0);});
+    bdgRender(3);
+  }
+
+  /* 62 タグ入力チップ */
+  var taginput=document.getElementById("taginput");
+  if(taginput){
+    var tiChips=document.getElementById("tiChips"),tiField=document.getElementById("tiField");
+    function tiAdd(txt){txt=(txt||"").trim();if(!txt)return;var c=document.createElement("span");c.className="ti-chip";var s=document.createElement("span");s.textContent=txt;var b=document.createElement("button");b.setAttribute("aria-label","削除");b.textContent="×";c.appendChild(s);c.appendChild(b);tiChips.appendChild(c);}
+    ["AI","小諸"].forEach(tiAdd);
+    tiField.addEventListener("keydown",function(e){
+      if(e.key==="Enter"){e.preventDefault();tiAdd(tiField.value);tiField.value="";}
+      else if(e.key==="Backspace"&&!tiField.value&&tiChips.lastElementChild){tiChips.removeChild(tiChips.lastElementChild);}
+    });
+    tiChips.addEventListener("click",function(e){if(e.target.tagName==="BUTTON")e.target.parentNode.remove();});
+  }
+
+  /* 63 トースト種類別 */
+  var tkBtns=document.querySelectorAll(".toast-kinds [data-kind]"),toastK=document.getElementById("toastK"),tkT;
+  if(tkBtns.length&&toastK){
+    var KMAP={ok:"✓ 保存しました",warn:"⚠ 入力を確認してください",info:"ℹ 新しいお知らせがあります"};
+    tkBtns.forEach(function(b){b.addEventListener("click",function(){
+      var k=b.dataset.kind;toastK.className="toast tk "+k;toastK.textContent=KMAP[k];
+      void toastK.offsetWidth;toastK.classList.add("show");
+      clearTimeout(tkT);tkT=setTimeout(function(){toastK.classList.remove("show");},2600);
+    });});
+  }
+
+  /* 64 無限スクロール */
+  var inf=document.getElementById("infscroll");
+  if(inf){
+    var infList=document.getElementById("infList"),infEnd=document.getElementById("infEnd"),infLoaded=0,INF_MAX=4;
+    function infAdd(){
+      for(var i=0;i<4;i++){var n=infList.children.length+1;var a=document.createElement("a");a.className="inf-item";a.href="/articles/";a.textContent="記録 #"+n+" — ジャーナルを開く";infList.appendChild(a);}
+      infLoaded++;if(infLoaded>=INF_MAX)infEnd.hidden=false;
+    }
+    infAdd();infAdd();
+    inf.addEventListener("scroll",function(){
+      if(infLoaded>=INF_MAX)return;
+      if(inf.scrollTop+inf.clientHeight>=inf.scrollHeight-40)infAdd();
+    });
   }
 
   /* 60 QRコード（装飾・イメージ） */
