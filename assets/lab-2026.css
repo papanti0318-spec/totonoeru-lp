@@ -481,3 +481,40 @@ dialog.lightbox img{max-width:92vw;max-height:90vh;border-radius:8px;display:blo
 .tree a{color:var(--ink-soft);text-decoration:none;border-bottom:1px solid transparent;transition:.2s}
 .tree a:hover{color:var(--accent);border-bottom-color:var(--accent)}
 @media(prefers-reduced-motion:reduce){.cr-track,.ch-line{transition:none}.chart.in .ch-line{stroke-dashoffset:0}}
+
+/* ===== モバイル最適化（スマホ閲覧者が多い前提・見出しの句読点改行と文字サイズ） ===== */
+/* テキストリビールは1文字ずつ別要素にするため、日本語の禁則（句読点のぶら下げ）が壊れ
+   「。」が行頭に来たり単独で改行される。モバイルと省モーションでは通常テキストに戻して回避。 */
+@media(max-width:600px){
+  .rt .word{display:inline;overflow:visible}
+  .rt .word>span{display:inline;transform:none;transition:none}
+  .rt-big{font-size:clamp(20px,5.6vw,26px);line-height:1.5}
+  .tech{padding:52px 20px}
+  .tech h2{font-size:clamp(20px,5.4vw,26px);line-height:1.5}
+  .tech .one{font-size:13.5px;margin-bottom:28px}
+  .page-hero h1{font-size:clamp(24px,7.2vw,33px);line-height:1.35}
+  .lab-intro{padding-bottom:56px}
+  /* 大見出し（CTA・テンプレ・用語）の縮小。CTAはインラインstyleのため !important で上書き */
+  .sec.ct h2,.ct h2{font-size:clamp(22px,6.6vw,30px)!important;line-height:1.4}
+  .tmpl h2{font-size:clamp(20px,5.4vw,26px)}
+  .glossary .sec-top h2{font-size:clamp(19px,5vw,24px)!important}
+  /* 数字が大きすぎる箇所を抑える */
+  .stat .num{font-size:clamp(32px,9vw,44px)}
+  .ring-num{font-size:26px;top:58px}
+  /* もくじの大見出し */
+  .toc .toc-head h2{font-size:clamp(18px,5vw,24px)}
+  /* リングは2つ横並びだと窮屈なので縮小＋間隔詰め */
+  .rings{gap:24px}
+  .ring{width:132px}
+  .ring svg{width:132px;height:132px}
+  .ring-num{top:50px}
+  /* カルーセル・ステップフォームの内側余白を詰める */
+  .cr-slide{padding:26px 22px;min-height:168px}
+  .stepform{padding:22px 18px}
+  .cat-label{padding:40px 20px 0}
+  .cat-label span{font-size:10px;letter-spacing:.12em}
+}
+@media(prefers-reduced-motion:reduce){
+  .rt .word{display:inline;overflow:visible}
+  .rt .word>span{display:inline}
+}
