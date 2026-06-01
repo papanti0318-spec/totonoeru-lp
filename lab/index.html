@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="hYRflPVBHV_SbReXwN_7v4tNCf6AT3VusKhSviD5kPU" />
 <title>Web表現ずかん｜スクロールの"しかけ"を実演と用語で｜ととのえる屋</title>
-<meta name="description" content="サイトでよく見る「なんかかっこいい動き」を、実演＋やさしい言葉＋専門用語集でまるごと解説。なめらかスクロール・パララックス・マスクリビール・モーダル・タブ・横スクロール・ダークモード・グラフ・コマンドパレットなど50種を、その場で体感できます。テンプレとの違いも。長野県小諸市のHP・LP制作 ととのえる屋。">
+<meta name="description" content="サイトでよく見る「なんかかっこいい動き」を、実演＋やさしい言葉＋専門用語集でまるごと解説。なめらかスクロール・パララックス・マスクリビール・モーダル・タブ・横スクロール・ダークモード・グラフ・大手サイト風のホバープレビューや画像ズームなど55種を、その場で体感できます。テンプレとの違いも。長野県小諸市のHP・LP制作 ととのえる屋。">
 <meta name="keywords" content="Web表現, ホームページ 動き, パララックス, なめらかスクロール, SVGアニメーション, ページ遷移, Web制作 小諸, HP制作 長野, 非エンジニア Web, ととのえる屋">
 <link rel="canonical" href="https://totonoeruya.jp/lab/">
 
 <meta property="og:title" content="Web表現ずかん｜スクロールの"しかけ"を実演と用語で">
-<meta property="og:description" content="サイトの「なんかかっこいい動き」を、実演＋やさしい言葉＋用語集でまるごと。なめらかスクロール・モーダル・横スクロール・ダークモード・グラフ・コマンドパレットなど50種を体感。">
+<meta property="og:description" content="サイトの「なんかかっこいい動き」を、実演＋やさしい言葉＋用語集でまるごと。なめらかスクロール・モーダル・横スクロール・ダークモード・グラフ・ホバープレビュー・画像ズームなど55種を体感。">
 <meta property="og:url" content="https://totonoeruya.jp/lab/">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://totonoeruya.jp/og.jpg">
@@ -87,7 +87,11 @@
         { "@type": "DefinedTerm", "name": "レンジスライダー", "description": "2つのつまみで範囲（下限〜上限）を選ぶUI。価格帯や期間の絞り込みに使う。" },
         { "@type": "DefinedTerm", "name": "星評価", "description": "星の数で満足度やレビューを示すUI。気持ちを手早く受け取る。" },
         { "@type": "DefinedTerm", "name": "ドラッグ＆ドロップ", "description": "要素をつかんで動かし、順番や配置を変える操作。並べ替えや整理に使う。" },
-        { "@type": "DefinedTerm", "name": "カラーパレット", "description": "ブランドで使う色をまとめた一覧。色の一貫性がサイトの“らしさ”をつくる。" }
+        { "@type": "DefinedTerm", "name": "カラーパレット", "description": "ブランドで使う色をまとめた一覧。色の一貫性がサイトの“らしさ”をつくる。" },
+        { "@type": "DefinedTerm", "name": "ホバープレビュー", "description": "カードにカーソルを乗せると拡大して情報が出る表現。動画配信サイトでよく使われる。" },
+        { "@type": "DefinedTerm", "name": "画像ズーム", "description": "カーソルを乗せた部分を拡大表示する表現。通販サイトの商品画像でよく使われる。" },
+        { "@type": "DefinedTerm", "name": "スケルトンスクリーン", "description": "中身が読み込まれるまで、骨組みのプレースホルダーを見せる手法。体感速度を上げる。" },
+        { "@type": "DefinedTerm", "name": "レコメンド", "description": "今見ているものに関連したページや商品をおすすめする表現。回遊と離脱防止に効く。" }
       ]
     },
     {
@@ -135,7 +139,7 @@
 </div>
 
 <nav class="toc" aria-label="もくじ">
-  <div class="toc-head"><h2>もくじ — Web表現図鑑</h2><span class="cnt">全50項目 · 100選の折り返し</span></div>
+  <div class="toc-head"><h2>もくじ — Web表現図鑑</h2><span class="cnt">全55項目 · 100選めざして</span></div>
   <div class="cols">
     <div class="col"><h3>スクロール演出</h3>
       <a href="#t1">なめらかスクロール<span class="e">01</span></a>
@@ -156,6 +160,9 @@
       <a href="#t11">Before / After<span class="e">11</span></a>
       <a href="#t30">ギャラリー＋拡大<span class="e">30</span></a>
       <a href="#t38">カルーセル<span class="e">38</span></a>
+      <a href="#t51">ホバープレビュー<span class="e">51</span></a>
+      <a href="#t52">画像ズーム<span class="e">52</span></a>
+      <a href="#t53">サムネ切替<span class="e">53</span></a>
     </div>
     <div class="col"><h3>操作感</h3>
       <a href="#t2">ホバー反応<span class="e">02</span></a>
@@ -171,6 +178,7 @@
       <a href="#t34">タグフィルタ<span class="e">34</span></a>
       <a href="#t42">ツリー（サイトマップ）<span class="e">42</span></a>
       <a href="#t44">ステップ進行<span class="e">44</span></a>
+      <a href="#t55">レコメンド帯<span class="e">55</span></a>
     </div>
     <div class="col"><h3>図解・質感</h3>
       <a href="#t7">SVG線画図解<span class="e">07</span></a>
@@ -196,6 +204,7 @@
       <a href="#t45">コマンドパレット<span class="e">45</span></a>
       <a href="#t46">カレンダー<span class="e">46</span></a>
       <a href="#t47">レンジスライダー<span class="e">47</span></a>
+      <a href="#t54">スケルトン<span class="e">54</span></a>
     </div>
     <div class="col"><h3>コード・技術</h3>
       <a href="#t21">コードコピー<span class="e">21</span></a>
@@ -1145,12 +1154,108 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
   </div>
 </section>
 
+<div class="cat-label"><span>大手サイトの定番表現 — 第八集（Netflix / Amazon 系）</span></div>
+
+<!-- 51 hover preview（Netflix風・動線内蔵） -->
+<section id="t51" class="tech">
+  <div class="head"><span class="num">51</span><span class="en">Hover Preview · Netflix風</span></div>
+  <h2 class="rt rt-big">そっと、ふくらむ。</h2>
+  <p class="one">動画配信サイトでおなじみ。カードにカーソルを乗せると、ふわっと拡大します。横スクロールで一覧、押すと各ページへ。<span class="pc-rec">拡大はPC推奨</span></p>
+  <div class="demo nfrow" id="nfrow">
+    <a class="nf-card" href="/web/"><div class="nf-thumb" style="background-image:url(../assets/lab/lab-still-1.jpg)"></div><div class="nf-info"><h3>HP・LP制作</h3><p>言葉を集約し、核だけ残す。</p></div></a>
+    <a class="nf-card" href="/cleaning/"><div class="nf-thumb" style="background-image:url(../assets/works/washdeli-after.jpg)"></div><div class="nf-info"><h3>清掃</h3><p>現場の事務を、写真とAIで軽く。</p></div></a>
+    <a class="nf-card" href="/totoline/"><div class="nf-thumb" style="background-image:url(../assets/lab/lab-tex-2.jpg)"></div><div class="nf-info"><h3>totoline</h3><p>LINEの会話を、AIが台帳に。</p></div></a>
+    <a class="nf-card" href="/guitar/"><div class="nf-thumb" style="background-image:url(../assets/lab/lab-still-3.jpg)"></div><div class="nf-info"><h3>ギター教室</h3><p>続けたくなることを、大事に。</p></div></a>
+    <a class="nf-card" href="/articles/"><div class="nf-thumb" style="background-image:url(../assets/works/washdeli-before.jpg)"></div><div class="nf-info"><h3>ジャーナル</h3><p>地元×AIの記録を、すこしずつ。</p></div></a>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">作品・商品・実績を一覧で見せ、気になったものを大きく。回遊を促す。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">CSSのみで軽い。全カードはリンクとして辿られる。</div></div>
+  </div>
+</section>
+
+<!-- 52 image zoom（Amazon風） -->
+<section id="t52" class="tech">
+  <div class="head"><span class="num">52</span><span class="en">Image Zoom · Amazon風</span></div>
+  <h2 class="rt rt-big">細部まで、寄って見る。</h2>
+  <p class="one">通販サイトの商品画像のように、カーソルを乗せた部分が拡大されます。質感や細部を見せたいときに。<span class="pc-rec">PC推奨</span></p>
+  <div class="demo zoomwrap">
+    <div class="zoom" id="zoom"><img src="../assets/lab/lab-tex-2.jpg" alt="ズーム対象の素材画像"></div>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">商品・素材・実績の質感。細かいところまで安心して見せたいとき。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">写真1枚＋軽いJS。スマホでは等倍表示でそのまま見られる。</div></div>
+  </div>
+</section>
+
+<!-- 53 thumbnail gallery（Amazon風・動線内蔵） -->
+<section id="t53" class="tech">
+  <div class="head"><span class="num">53</span><span class="en">Thumbnail Gallery · Amazon風</span></div>
+  <h2 class="rt rt-big">サムネで、切り替える。</h2>
+  <p class="one">サムネを押すと、メイン画像が切り替わります。実績や商品の複数カットを見せるのに。</p>
+  <div class="demo tgal" id="tgal">
+    <div class="tg-main"><img id="tgMain" src="../assets/works/washdeli-after.jpg" alt="メイン画像"></div>
+    <div class="tg-thumbs">
+      <button class="tg-th is-on" data-src="../assets/works/washdeli-after.jpg"><img src="../assets/works/washdeli-after.jpg" alt="カット1" loading="lazy"></button>
+      <button class="tg-th" data-src="../assets/works/washdeli-before.jpg"><img src="../assets/works/washdeli-before.jpg" alt="カット2" loading="lazy"></button>
+      <button class="tg-th" data-src="../assets/lab/lab-still-1.jpg"><img src="../assets/lab/lab-still-1.jpg" alt="カット3" loading="lazy"></button>
+      <button class="tg-th" data-src="../assets/lab/lab-tex-2.jpg"><img src="../assets/lab/lab-tex-2.jpg" alt="カット4" loading="lazy"></button>
+      <button class="tg-th" data-src="../assets/lab/lab-still-3.jpg"><img src="../assets/lab/lab-still-3.jpg" alt="カット5" loading="lazy"></button>
+    </div>
+  </div>
+  <p class="ga-foot"><a href="/web/" class="ga-link">制作実績を見る →</a></p>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">1つの実績・商品を、複数カットで見せたいとき。詳細ページの定番。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">サムネは遅延読み込みで軽い。全カットHTMLにあり読まれる。</div></div>
+  </div>
+</section>
+
+<!-- 54 skeleton loading -->
+<section id="t54" class="tech">
+  <div class="head"><span class="num">54</span><span class="en">Skeleton Loading</span></div>
+  <h2 class="rt rt-big">読み込み中も、退屈させない。</h2>
+  <p class="one">中身が来るまで、ぼんやりした"骨組み"を見せます。真っ白で待たせるより、速く感じます。下のボタンで再現します。</p>
+  <div class="demo skel">
+    <div class="sk-card" id="skCard">
+      <div class="sk-skel">
+        <div class="sk-img sk"></div>
+        <div class="sk-lines"><span class="sk-line sk w80"></span><span class="sk-line sk w95"></span><span class="sk-line sk w60"></span></div>
+      </div>
+      <div class="sk-real" hidden>
+        <div class="sk-photo" style="background-image:url(../assets/lab/lab-still-1.jpg)"></div>
+        <div class="sk-lines"><h3>読み込み完了</h3><p>骨組みから、本物の中身に置き換わりました。体感の速さが変わります。</p></div>
+      </div>
+    </div>
+    <button class="ui-btn" id="skBtn">読み込みを再現</button>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">データの読み込みに時間がかかる画面。待ち時間の不安を減らす。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">CSSの点滅だけ。軽い。中身が来てから本文が読まれる。</div></div>
+  </div>
+</section>
+
+<!-- 55 recommendations（動線内蔵） -->
+<section id="t55" class="tech">
+  <div class="head"><span class="num">55</span><span class="en">Recommendations · あわせて見る</span></div>
+  <h2 class="rt rt-big">あわせて、これも。</h2>
+  <p class="one">通販や配信でおなじみの「関連のおすすめ」。今見ているものに近いページへ、自然に誘います。押すと各ページへ。</p>
+  <div class="demo rec">
+    <a class="rec-item" href="/totoline/"><span class="rec-k">Product</span><h3>totoline</h3><p>LINEの会話を、AIが台帳に。</p></a>
+    <a class="rec-item" href="/cleaning/"><span class="rec-k">Cleaning</span><h3>清掃 × AI</h3><p>現場の事務を、写真とAIで軽く。</p></a>
+    <a class="rec-item" href="/articles/"><span class="rec-k">Journal</span><h3>ジャーナル</h3><p>地元×AIの記録を、すこしずつ。</p></a>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">回遊・離脱防止。今の関心に近いページを、さりげなく差し出す。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽い。関連ページへの内部リンクとして、回遊もSEOも助ける。</div></div>
+  </div>
+</section>
+
 <div class="readbar" id="readbar" aria-hidden="true"></div>
 <div class="toast" id="toast" role="status" aria-live="polite"><span class="t-dot"></span>送信しました。ありがとうございます。</div>
 
 <!-- glossary -->
 <section class="glossary">
-  <div class="sec-top"><h2 style="font-weight:400;font-size:clamp(22px,3vw,36px)">専門用語、やさしい一覧。</h2><span class="note">Glossary · 38語</span></div>
+  <div class="sec-top"><h2 style="font-weight:400;font-size:clamp(22px,3vw,36px)">専門用語、やさしい一覧。</h2><span class="note">Glossary · 42語</span></div>
   <div class="g-grid">
     <dl><dt>HTML<small>HyperText Markup Language</small></dt><dd>ページの骨組み。見出し・段落・画像など「中身と構造」を書く言語。</dd></dl>
     <dl><dt>CSS<small>Cascading Style Sheets</small></dt><dd>見た目の指定。色・大きさ・配置・動きを決める。</dd></dl>
@@ -1190,6 +1295,10 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
     <dl><dt>星評価<small>Star Rating</small></dt><dd>星の数で満足度やレビューを示すUI。気持ちを手早く受け取る。</dd></dl>
     <dl><dt>ドラッグ＆ドロップ<small>Drag &amp; Drop</small></dt><dd>要素をつかんで動かし、順番や配置を変える操作。並べ替え・整理に。</dd></dl>
     <dl><dt>カラーパレット<small>Color Palette</small></dt><dd>ブランドで使う色をまとめた一覧。色の一貫性がサイトの“らしさ”をつくる。</dd></dl>
+    <dl><dt>ホバープレビュー<small>Hover Preview</small></dt><dd>カードに乗せると拡大して情報が出る表現。動画配信サイトでおなじみ。</dd></dl>
+    <dl><dt>画像ズーム<small>Image Zoom</small></dt><dd>乗せた部分を拡大表示する表現。通販サイトの商品画像で定番。</dd></dl>
+    <dl><dt>スケルトンスクリーン<small>Skeleton</small></dt><dd>読み込み中に骨組みのプレースホルダーを見せ、体感速度を上げる手法。</dd></dl>
+    <dl><dt>レコメンド<small>Recommendation</small></dt><dd>関連するページや商品をおすすめする表現。回遊と離脱防止に効く。</dd></dl>
   </div>
 </section>
 
@@ -1587,6 +1696,35 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
       var done=function(){code.textContent="コピー済";setTimeout(function(){code.textContent=orig;},1200);};
       if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(hex).then(done,done);}else{done();}
     });});
+  }
+
+  /* 52 画像ズーム（Amazon風・hover追従） */
+  var zoom=document.getElementById("zoom");
+  if(zoom&&matchMedia("(hover:hover)").matches){
+    var zImg=zoom.querySelector("img");
+    zoom.style.backgroundImage="url("+zImg.getAttribute("src")+")";
+    zoom.addEventListener("mouseenter",function(){zoom.classList.add("zooming");});
+    zoom.addEventListener("mouseleave",function(){zoom.classList.remove("zooming");});
+    zoom.addEventListener("mousemove",function(e){var r=zoom.getBoundingClientRect();var x=(e.clientX-r.left)/r.width*100,y=(e.clientY-r.top)/r.height*100;zoom.style.backgroundPosition=x+"% "+y+"%";});
+  }
+
+  /* 53 サムネ切替ギャラリー */
+  var tgal=document.getElementById("tgal");
+  if(tgal){
+    var tgMain=document.getElementById("tgMain"),ths=tgal.querySelectorAll(".tg-th");
+    ths.forEach(function(t){t.addEventListener("click",function(){
+      tgMain.src=t.dataset.src;
+      ths.forEach(function(x){x.classList.remove("is-on");});t.classList.add("is-on");
+    });});
+  }
+
+  /* 54 スケルトンスクリーン */
+  var skCard=document.getElementById("skCard"),skBtn=document.getElementById("skBtn");
+  if(skCard&&skBtn){
+    var skSkel=skCard.querySelector(".sk-skel"),skReal=skCard.querySelector(".sk-real"),skT;
+    function skRun(){clearTimeout(skT);skSkel.hidden=false;skReal.hidden=true;skT=setTimeout(function(){skSkel.hidden=true;skReal.hidden=false;},1500);}
+    skBtn.addEventListener("click",skRun);
+    skRun();
   }
 })();
 </script>

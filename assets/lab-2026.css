@@ -606,6 +606,57 @@ dialog.cmdp-dialog::backdrop{background:rgba(26,24,20,.5);backdrop-filter:blur(2
 .sw.light{color:var(--ink)}
 .pal-note{margin-top:14px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--muted)}
 @media(max-width:600px){.palette{grid-template-columns:repeat(3,1fr)}.starbar{font-size:30px}}
+
+/* ===== 大手サイトの定番表現 第八集（51-55・Netflix/Amazon系） ===== */
+/* 51 ホバープレビュー（Netflix風・動線内蔵） */
+.nfrow{display:flex;gap:12px;overflow-x:auto;padding:8px 4px 22px;scroll-snap-type:x mandatory}
+.nfrow::-webkit-scrollbar{height:6px}.nfrow::-webkit-scrollbar-thumb{background:var(--line);border-radius:999px}
+.nf-card{flex:0 0 220px;scroll-snap-align:start;text-decoration:none;color:inherit;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:rgba(255,255,255,.28);transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s;transform-origin:center}
+@media(hover:hover){.nf-card:hover{transform:scale(1.07);box-shadow:0 14px 40px rgba(26,24,20,.2);position:relative;z-index:2}}
+.nf-thumb{aspect-ratio:16/10;background-size:cover;background-position:center;filter:saturate(.92)}
+.nf-info{padding:14px 16px}
+.nf-info h3{font-size:15px;font-weight:500;margin-bottom:4px}
+.nf-info p{font-size:12px;font-weight:300;color:var(--ink-soft);line-height:1.6}
+
+/* 52 画像ズーム（Amazon風） */
+.zoomwrap{display:flex;justify-content:center}
+.zoom{position:relative;width:min(440px,100%);aspect-ratio:4/3;border-radius:10px;overflow:hidden;border:1px solid var(--line);background-size:200%;background-repeat:no-repeat;cursor:zoom-in}
+.zoom img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .2s}
+.zoom.zooming img{opacity:0}
+
+/* 53 サムネ切替ギャラリー（Amazon風・動線内蔵） */
+.tgal{display:flex;flex-direction:column;gap:12px;max-width:520px;margin:0 auto}
+.tg-main{border-radius:10px;overflow:hidden;border:1px solid var(--line);aspect-ratio:16/10}
+.tg-main img{width:100%;height:100%;object-fit:cover;display:block}
+.tg-thumbs{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px}
+.tg-th{flex:0 0 72px;aspect-ratio:1;padding:0;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:none;cursor:pointer;opacity:.55;transition:opacity .2s,border-color .2s}
+.tg-th img{width:100%;height:100%;object-fit:cover;display:block}
+.tg-th:hover{opacity:1}
+.tg-th.is-on{opacity:1;border-color:var(--accent)}
+
+/* 54 スケルトンスクリーン */
+.skel{display:flex;flex-direction:column;gap:18px;align-items:flex-start;max-width:520px}
+.sk-card{width:100%;box-sizing:border-box;border:1px solid var(--line);border-radius:12px;padding:18px;background:rgba(255,255,255,.25)}
+.sk-skel,.sk-real{display:flex;gap:16px;align-items:flex-start}
+.sk-img,.sk-photo{flex:0 0 96px;aspect-ratio:1;border-radius:8px}
+.sk-photo{background-size:cover;background-position:center}
+.sk-lines{flex:1;display:flex;flex-direction:column;gap:10px;min-width:0}
+.sk-real h3{font-size:16px;font-weight:500;margin-bottom:6px}
+.sk-real p{font-size:13px;font-weight:300;color:var(--ink-soft);line-height:1.8}
+.sk-line{height:12px;border-radius:6px}
+.w50{width:50%}.w60{width:60%}.w70{width:70%}.w80{width:80%}.w90{width:90%}.w95{width:95%}
+.sk{background:linear-gradient(90deg,var(--paper-2) 25%,rgba(197,116,60,.12) 37%,var(--paper-2) 63%);background-size:400% 100%;animation:shimmer 1.4s ease infinite}
+@keyframes shimmer{0%{background-position:100% 0}100%{background-position:0 0}}
+
+/* 55 レコメンド帯（動線内蔵） */
+.rec{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.rec-item{border:1px solid var(--line);border-radius:10px;padding:20px 18px;text-decoration:none;color:inherit;background:rgba(255,255,255,.28);transition:transform .25s,border-color .25s}
+.rec-item:hover{transform:translateY(-4px);border-color:var(--accent)}
+.rec-k{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.rec-item h3{font-size:16px;font-weight:500;margin:8px 0 6px}
+.rec-item p{font-size:12px;font-weight:300;color:var(--ink-soft);line-height:1.6}
+@media(max-width:680px){.rec{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.sk{animation:none}}
 @media(prefers-reduced-motion:reduce){
   .rt .word{display:inline;overflow:visible}
   .rt .word>span{display:inline}
