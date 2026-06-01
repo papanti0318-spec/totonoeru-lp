@@ -786,6 +786,49 @@ dialog.cmdp-dialog::backdrop{background:rgba(26,24,20,.5);backdrop-filter:blur(2
 .confetti{position:fixed;inset:0;pointer-events:none;z-index:9996;overflow:hidden}
 .confetti i{position:absolute;top:-20px;border-radius:2px;animation-name:confFall;animation-timing-function:cubic-bezier(.3,.6,.5,1);animation-fill-mode:forwards}
 @keyframes confFall{0%{top:-20px;opacity:1}100%{top:104vh;opacity:.9}}
+
+/* ===== グラフと選択 第十二集（71-75） ===== */
+/* 71 エリアチャート */
+.areachart .ar-fill{fill:rgba(197,116,60,.16);opacity:0;transition:opacity 1.2s ease .3s}
+.areachart.in .ar-fill{opacity:1}
+.areachart .ar-line{fill:none;stroke:var(--accent);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.6s cubic-bezier(.3,.6,.2,1)}
+.areachart.in .ar-line{stroke-dashoffset:0}
+
+/* 72 かんばんボード */
+.kanban{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.kb-col{border:1px solid var(--line);border-radius:10px;padding:14px;background:rgba(255,255,255,.2);min-height:140px}
+.kb-col h4{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.kb-cards{display:flex;flex-direction:column;gap:8px}
+.kb-card{display:block;width:100%;text-align:left;border:1px solid var(--line);border-radius:8px;padding:12px;background:var(--paper);font-family:var(--sans);font-size:13px;color:var(--ink);cursor:pointer;transition:transform .2s,border-color .2s}
+.kb-card:hover{transform:translateX(3px);border-color:var(--accent)}
+@media(max-width:600px){.kanban{gap:8px}.kb-col{padding:10px}.kb-card{padding:10px;font-size:12px}}
+
+/* 73 星分布バー */
+.stardist{display:flex;flex-direction:column;gap:10px;max-width:480px}
+.sd-row{display:grid;grid-template-columns:32px 1fr 44px;align-items:center;gap:12px}
+.sd-k{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.sd-bar{height:10px;background:var(--paper-2);border-radius:999px;overflow:hidden}
+.sd-bar i{display:block;height:100%;background:var(--accent);border-radius:999px}
+.sd-v{font-family:var(--mono);font-size:11px;color:var(--ink-soft);text-align:right}
+
+/* 74 セグメントコントロール */
+.segwrap{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.seg{position:relative;display:inline-flex;border:1px solid var(--line);border-radius:999px;background:var(--paper-2);padding:3px}
+.seg-b{position:relative;z-index:2;border:none;background:none;cursor:pointer;padding:9px 22px;font-family:var(--sans);font-size:13px;color:var(--ink-soft);transition:color .25s}
+.seg-b.is-on{color:var(--paper)}
+.seg-ind{position:absolute;z-index:1;top:3px;left:3px;width:calc((100% - 6px)/3);height:calc(100% - 6px);background:var(--accent);border-radius:999px;transition:transform .3s cubic-bezier(.2,.7,.2,1)}
+.seg-out{font-size:13px;font-weight:300;color:var(--ink-soft)}
+
+/* 75 日付レンジピッカー */
+.daterange{max-width:420px;margin:0 auto;border:1px solid var(--line);border-radius:12px;padding:20px;background:rgba(255,255,255,.2)}
+.dr-head{text-align:center;font-size:15px;font-weight:500;margin-bottom:14px}
+.dr-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.dr-x{aspect-ratio:1}
+.dr-d{aspect-ratio:1;border:none;background:none;border-radius:8px;cursor:pointer;font-size:13px;color:var(--ink-soft);display:flex;align-items:center;justify-content:center;transition:background .15s,color .15s}
+.dr-d:hover{background:var(--paper-2);color:var(--ink)}
+.dr-d.inrange{background:rgba(197,116,60,.16);color:var(--ink);border-radius:0}
+.dr-d.sel{background:var(--accent);color:var(--paper)}
+.dr-out{text-align:center;margin-top:14px;font-size:13px;font-weight:300;color:var(--ink-soft)}
 @media(prefers-reduced-motion:reduce){
   .rt .word{display:inline;overflow:visible}
   .rt .word>span{display:inline}

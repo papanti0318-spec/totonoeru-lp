@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="hYRflPVBHV_SbReXwN_7v4tNCf6AT3VusKhSviD5kPU" />
 <title>Web表現ずかん｜スクロールの"しかけ"を実演と用語で｜ととのえる屋</title>
-<meta name="description" content="サイトでよく見る「なんかかっこいい動き」を、実演＋やさしい言葉＋専門用語集でまるごと解説。なめらかスクロール・パララックス・マスクリビール・モーダル・タブ・横スクロール・ダークモード・グラフ・大手サイト風のホバープレビュー・ヒートマップ・タグ入力・パンくずなど70種を、その場で体感できます。テンプレとの違いも。長野県小諸市のHP・LP制作 ととのえる屋。">
+<meta name="description" content="サイトでよく見る「なんかかっこいい動き」を、実演＋やさしい言葉＋専門用語集でまるごと解説。なめらかスクロール・パララックス・マスクリビール・モーダル・タブ・横スクロール・ダークモード・グラフ・ホバープレビュー・ヒートマップ・各種グラフ・かんばん・日付レンジなど75種を、その場で体感できます。テンプレとの違いも。長野県小諸市のHP・LP制作 ととのえる屋。">
 <meta name="keywords" content="Web表現, ホームページ 動き, パララックス, なめらかスクロール, SVGアニメーション, ページ遷移, Web制作 小諸, HP制作 長野, 非エンジニア Web, ととのえる屋">
 <link rel="canonical" href="https://totonoeruya.jp/lab/">
 
 <meta property="og:title" content="Web表現ずかん｜スクロールの"しかけ"を実演と用語で">
-<meta property="og:description" content="サイトの「なんかかっこいい動き」を、実演＋やさしい言葉＋用語集でまるごと。なめらかスクロール・モーダル・横スクロール・ダークモード・グラフ・ヒートマップ・パンくずなど70種を体感。">
+<meta property="og:description" content="サイトの「なんかかっこいい動き」を、実演＋やさしい言葉＋用語集でまるごと。なめらかスクロール・モーダル・ダークモード・各種グラフ・ヒートマップ・かんばんなど75種を体感。">
 <meta property="og:url" content="https://totonoeruya.jp/lab/">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://totonoeruya.jp/og.jpg">
@@ -100,7 +100,10 @@
         { "@type": "DefinedTerm", "name": "縦書き", "description": "文字を縦方向に組む日本語の表現。CSSの writing-mode で実現する。" },
         { "@type": "DefinedTerm", "name": "ハンバーガーメニュー", "description": "三本線のボタンを押すと開くメニュー。狭い画面で項目をしまうスマホの定番。" },
         { "@type": "DefinedTerm", "name": "パンくずリスト", "description": "「ホーム ＞ 事業 ＞ ページ」のように現在地と階層を示すナビ。戻り道の道しるべ。" },
-        { "@type": "DefinedTerm", "name": "アバタースタック", "description": "人物アイコンを少し重ねて並べる表現。参加者や規模感を、顔の重なりで示す。" }
+        { "@type": "DefinedTerm", "name": "アバタースタック", "description": "人物アイコンを少し重ねて並べる表現。参加者や規模感を、顔の重なりで示す。" },
+        { "@type": "DefinedTerm", "name": "エリアチャート", "description": "折れ線の下を塗って量の積み上がりを示すグラフ。累計や推移の強調に使う。" },
+        { "@type": "DefinedTerm", "name": "かんばんボード", "description": "「やること→進行中→完了」と列でタスクの流れを見える化するUI。" },
+        { "@type": "DefinedTerm", "name": "セグメントコントロール", "description": "つながったボタンで一つを選ぶUI。期間や表示方法の択一切り替えに使う。" }
       ]
     },
     {
@@ -148,7 +151,7 @@
 </div>
 
 <nav class="toc" aria-label="もくじ">
-  <div class="toc-head"><h2>もくじ — Web表現図鑑</h2><span class="cnt">全70項目 · 100選めざして</span></div>
+  <div class="toc-head"><h2>もくじ — Web表現図鑑</h2><span class="cnt">全75項目 · 100選めざして</span></div>
   <div class="cols">
     <div class="col"><h3>スクロール演出</h3>
       <a href="#t1">なめらかスクロール<span class="e">01</span></a>
@@ -209,6 +212,8 @@
       <a href="#t59">マップピン<span class="e">59</span></a>
       <a href="#t66">アバタースタック<span class="e">66</span></a>
       <a href="#t70">紙吹雪<span class="e">70</span></a>
+      <a href="#t71">エリアチャート<span class="e">71</span></a>
+      <a href="#t73">星分布バー<span class="e">73</span></a>
     </div>
     <div class="col"><h3>UI部品</h3>
       <a href="#t17">モーダル<span class="e">17</span></a>
@@ -229,6 +234,9 @@
       <a href="#t61">通知バッジ<span class="e">61</span></a>
       <a href="#t62">タグ入力<span class="e">62</span></a>
       <a href="#t63">トースト種類別<span class="e">63</span></a>
+      <a href="#t72">かんばん<span class="e">72</span></a>
+      <a href="#t74">セグメント切替<span class="e">74</span></a>
+      <a href="#t75">日付レンジ<span class="e">75</span></a>
     </div>
     <div class="col"><h3>コード・技術</h3>
       <a href="#t21">コードコピー<span class="e">21</span></a>
@@ -1509,6 +1517,95 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
   </div>
 </section>
 
+<div class="cat-label"><span>グラフと選択 — 第十二集</span></div>
+
+<!-- 71 area chart -->
+<section id="t71" class="tech">
+  <div class="head"><span class="num">71</span><span class="en">Area Chart (SVG)</span></div>
+  <h2 class="rt rt-big">線の下を、塗る。</h2>
+  <p class="one">折れ線の下を塗ると、量の積み上がりが伝わります。画面に入ると描かれます。（数値はデモ用の例です）</p>
+  <div class="demo chart areachart draw-svg">
+    <svg viewBox="0 0 600 240">
+      <line class="ch-axis" x1="40" y1="210" x2="580" y2="210"/>
+      <line class="ch-grid" x1="40" y1="150" x2="580" y2="150"/>
+      <line class="ch-grid" x1="40" y1="90" x2="580" y2="90"/>
+      <path class="ar-fill" d="M50 200 L150 168 L250 178 L350 120 L450 86 L560 48 L560 210 L50 210 Z"/>
+      <path class="ar-line" d="M50 200 L150 168 L250 178 L350 120 L450 86 L560 48" pathLength="1"/>
+    </svg>
+    <div class="ch-x"><span>1月</span><span>2月</span><span>3月</span><span>4月</span><span>5月</span><span>6月</span></div>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">積み上がり・累計・推移。折れ線より「量」を強調したいとき。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">SVGは超軽量。数値も座標で持てる。</div></div>
+  </div>
+</section>
+
+<!-- 72 kanban -->
+<section id="t72" class="tech">
+  <div class="head"><span class="num">72</span><span class="en">Kanban Board</span></div>
+  <h2 class="rt rt-big">付箋を、横へ動かす。</h2>
+  <p class="one">「やること → 進行中 → 完了」と、カードを押すと次の列へ進みます。仕事の流れを見える化。</p>
+  <div class="demo kanban" id="kanban">
+    <div class="kb-col"><h4>やること</h4><div class="kb-cards"><button class="kb-card">ヒアリング</button><button class="kb-card">構成案</button></div></div>
+    <div class="kb-col"><h4>進行中</h4><div class="kb-cards"><button class="kb-card">デザイン</button></div></div>
+    <div class="kb-col"><h4>完了</h4><div class="kb-cards"><button class="kb-card">お見積り</button></div></div>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">タスク管理・進捗共有。今どの段階かを、列の位置で示す。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽いJS。カードは文字なので読まれる。</div></div>
+  </div>
+</section>
+
+<!-- 73 star distribution -->
+<section id="t73" class="tech">
+  <div class="head"><span class="num">73</span><span class="en">Rating Distribution</span></div>
+  <h2 class="rt rt-big">評価の、ばらつきを。</h2>
+  <p class="one">★5〜1がそれぞれ何割かを、横棒で。レビュー全体の傾向がひと目で分かります。（数値はデモ用の例です）</p>
+  <div class="demo stardist">
+    <div class="sd-row"><span class="sd-k">★5</span><div class="sd-bar"><i style="width:68%"></i></div><span class="sd-v">68%</span></div>
+    <div class="sd-row"><span class="sd-k">★4</span><div class="sd-bar"><i style="width:20%"></i></div><span class="sd-v">20%</span></div>
+    <div class="sd-row"><span class="sd-k">★3</span><div class="sd-bar"><i style="width:8%"></i></div><span class="sd-v">8%</span></div>
+    <div class="sd-row"><span class="sd-k">★2</span><div class="sd-bar"><i style="width:3%"></i></div><span class="sd-v">3%</span></div>
+    <div class="sd-row"><span class="sd-k">★1</span><div class="sd-bar"><i style="width:1%"></i></div><span class="sd-v">1%</span></div>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">レビュー・アンケートの全体傾向。偏りを正直に見せたいとき。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">CSSのみで軽い。割合は文字としても読まれる。</div></div>
+  </div>
+</section>
+
+<!-- 74 segmented control -->
+<section id="t74" class="tech">
+  <div class="head"><span class="num">74</span><span class="en">Segmented Control</span></div>
+  <h2 class="rt rt-big">ひと並びで、選ぶ。</h2>
+  <p class="one">つながったボタンで、ひとつを選びます。期間の切り替え（日／週／月）などに。選ぶと印が滑ります。</p>
+  <div class="demo segwrap">
+    <div class="seg" id="segment"><button class="seg-b is-on" data-i="0">日</button><button class="seg-b" data-i="1">週</button><button class="seg-b" data-i="2">月</button><span class="seg-ind" id="segInd"></span></div>
+    <p class="seg-out" id="segOut">「日」を選択中</p>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">少数の択一切り替え。期間・並び順・表示方法の選択に。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽いJS。選択肢は文字なので読まれる。</div></div>
+  </div>
+</section>
+
+<!-- 75 date range picker -->
+<section id="t75" class="tech">
+  <div class="head"><span class="num">75</span><span class="en">Date Range Picker</span></div>
+  <h2 class="rt rt-big">期間を、はさんで選ぶ。</h2>
+  <p class="one">開始日と終了日を押すと、あいだが選ばれます。予約や集計の「期間」に（2026年6月のイメージです）。</p>
+  <div class="demo daterange" id="daterange">
+    <div class="dr-head">2026年 6月</div>
+    <div class="cal-week"><span>日</span><span>月</span><span>火</span><span>水</span><span>木</span><span>金</span><span>土</span></div>
+    <div class="dr-grid" id="drGrid"></div>
+    <p class="dr-out" id="drOut">開始日を押してください</p>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">予約・集計・絞り込みの「いつからいつまで」。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽いJS。日付は機械にも読み取りやすい。</div></div>
+  </div>
+</section>
+
 <div class="readbar" id="readbar" aria-hidden="true"></div>
 <div class="toast" id="toast" role="status" aria-live="polite"><span class="t-dot"></span>送信しました。ありがとうございます。</div>
 <div class="toast tk" id="toastK" role="status" aria-live="polite"></div>
@@ -1516,7 +1613,7 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
 
 <!-- glossary -->
 <section class="glossary">
-  <div class="sec-top"><h2 style="font-weight:400;font-size:clamp(22px,3vw,36px)">専門用語、やさしい一覧。</h2><span class="note">Glossary · 51語</span></div>
+  <div class="sec-top"><h2 style="font-weight:400;font-size:clamp(22px,3vw,36px)">専門用語、やさしい一覧。</h2><span class="note">Glossary · 54語</span></div>
   <div class="g-grid">
     <dl><dt>HTML<small>HyperText Markup Language</small></dt><dd>ページの骨組み。見出し・段落・画像など「中身と構造」を書く言語。</dd></dl>
     <dl><dt>CSS<small>Cascading Style Sheets</small></dt><dd>見た目の指定。色・大きさ・配置・動きを決める。</dd></dl>
@@ -1569,6 +1666,9 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
     <dl><dt>ハンバーガーメニュー<small>Hamburger</small></dt><dd>三本線を押すと開くメニュー。狭い画面で項目をしまうスマホの定番。</dd></dl>
     <dl><dt>パンくずリスト<small>Breadcrumbs</small></dt><dd>現在地と階層を示すナビ。戻り道の道しるべ。検索にも好まれる。</dd></dl>
     <dl><dt>アバタースタック<small>Avatar Stack</small></dt><dd>人物アイコンを少し重ねて並べる表現。参加者や規模感を顔の重なりで。</dd></dl>
+    <dl><dt>エリアチャート<small>Area Chart</small></dt><dd>折れ線の下を塗って量の積み上がりを示すグラフ。累計や推移の強調に。</dd></dl>
+    <dl><dt>かんばんボード<small>Kanban</small></dt><dd>列でタスクの流れ（やること→進行中→完了）を見える化するUI。</dd></dl>
+    <dl><dt>セグメントコントロール<small>Segmented</small></dt><dd>つながったボタンで一つを選ぶUI。期間や表示方法の択一切り替えに。</dd></dl>
   </div>
 </section>
 
@@ -2107,6 +2207,54 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
       if(e.isIntersecting){var i=+e.target.dataset.ft;ftBtns.forEach(function(x,j){x.classList.toggle("is-on",j===i);});}
     });},{root:ftBody,threshold:.5});
     ftSecs.forEach(function(s){ftIo.observe(s);});
+  }
+
+  /* 72 かんばんボード */
+  var kanban=document.getElementById("kanban");
+  if(kanban){
+    var kbCols=kanban.querySelectorAll(".kb-col .kb-cards");
+    kanban.addEventListener("click",function(e){
+      var card=e.target.closest(".kb-card");if(!card)return;
+      var cur=card.closest(".kb-cards"),idx=-1;
+      kbCols.forEach(function(c,i){if(c===cur)idx=i;});
+      if(idx<kbCols.length-1)kbCols[idx+1].appendChild(card);
+      else kbCols[0].appendChild(card);
+    });
+  }
+
+  /* 74 セグメントコントロール */
+  var segment=document.getElementById("segment");
+  if(segment){
+    var segBtns=segment.querySelectorAll(".seg-b"),segInd=document.getElementById("segInd"),segOut=document.getElementById("segOut");
+    function segMove(i){segInd.style.transform="translateX("+(i*100)+"%)";}
+    segBtns.forEach(function(b,i){b.addEventListener("click",function(){
+      segBtns.forEach(function(x){x.classList.remove("is-on");});b.classList.add("is-on");
+      segMove(i);segOut.textContent="「"+b.textContent+"」を選択中";
+    });});
+    segMove(0);
+  }
+
+  /* 75 日付レンジピッカー（2026年6月） */
+  var drGrid=document.getElementById("drGrid");
+  if(drGrid){
+    var drOut=document.getElementById("drOut"),drStart=null,drEnd=null;
+    var drFirst=new Date(2026,5,1).getDay();
+    for(var db=0;db<drFirst;db++)drGrid.insertAdjacentHTML("beforeend","<span class=\"dr-x\"></span>");
+    for(var dn=1;dn<=30;dn++)drGrid.insertAdjacentHTML("beforeend","<button class=\"dr-d\" data-d=\""+dn+"\">"+dn+"</button>");
+    function drPaint(){
+      drGrid.querySelectorAll(".dr-d").forEach(function(b){
+        var d=+b.dataset.d;b.classList.remove("sel","inrange");
+        if(d===drStart||d===drEnd)b.classList.add("sel");
+        else if(drStart&&drEnd&&d>drStart&&d<drEnd)b.classList.add("inrange");
+      });
+    }
+    drGrid.addEventListener("click",function(e){
+      var b=e.target.closest(".dr-d");if(!b)return;var d=+b.dataset.d;
+      if(drStart===null||drEnd!==null){drStart=d;drEnd=null;drOut.textContent="終了日を押してください";}
+      else if(d<drStart){drStart=d;drOut.textContent="終了日を押してください";}
+      else{drEnd=d;drOut.textContent="6/"+drStart+" 〜 6/"+drEnd+"（"+(drEnd-drStart+1)+"日間）";}
+      drPaint();
+    });
   }
 
   /* 70 紙吹雪（節目） */
