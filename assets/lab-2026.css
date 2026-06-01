@@ -579,6 +579,33 @@ dialog.cmdp-dialog::backdrop{background:rgba(26,24,20,.5);backdrop-filter:blur(2
 
 @media(prefers-reduced-motion:reduce){.dn-seg,.stp-bar i{transition:none}.donut.in .dn-seg{stroke-dasharray:var(--p) 100}}
 @media(max-width:600px){.donut svg{width:150px;height:150px}.stp{font-size:11px}.stp-n{width:30px;height:30px;font-size:12px}}
+
+/* ===== 操作と表現 第七集（48-50・50到達） ===== */
+/* 48 星評価（動線内蔵） */
+.starbar{display:flex;gap:6px;font-size:34px;line-height:1}
+.star{background:none;border:none;cursor:pointer;color:var(--line);padding:0;transition:color .15s,transform .15s}
+.star:hover{transform:scale(1.12)}
+.star.on{color:var(--accent)}
+.star-thanks{margin-top:18px;font-size:14px;font-weight:300;color:var(--ink-soft)}
+.star-thanks a{color:var(--accent);text-decoration:none}
+.star-thanks a:hover{padding-left:2px}
+
+/* 49 ドラッグ並べ替え */
+.reorder{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;max-width:480px}
+.ro-item{display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:10px;padding:14px 16px;background:rgba(255,255,255,.4);font-size:14px;font-weight:300;color:var(--ink);user-select:none;transition:border-color .2s,box-shadow .2s}
+.ro-item.grab{border-color:var(--accent);box-shadow:0 8px 24px rgba(26,24,20,.14)}
+.ro-h{cursor:grab;touch-action:none;color:var(--muted);font-size:17px;line-height:1;letter-spacing:-2px}
+.ro-item.grab .ro-h{cursor:grabbing;color:var(--accent)}
+
+/* 50 カラーパレット */
+.palette{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.sw{display:flex;flex-direction:column;justify-content:flex-end;aspect-ratio:3/4;border:1px solid var(--line);border-radius:10px;padding:12px;cursor:pointer;color:var(--paper);text-align:left;transition:transform .2s,box-shadow .2s}
+.sw:hover{transform:translateY(-4px);box-shadow:0 10px 26px rgba(26,24,20,.16)}
+.sw span{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;opacity:.9}
+.sw code{font-family:var(--mono);font-size:11px;margin-top:3px}
+.sw.light{color:var(--ink)}
+.pal-note{margin-top:14px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--muted)}
+@media(max-width:600px){.palette{grid-template-columns:repeat(3,1fr)}.starbar{font-size:30px}}
 @media(prefers-reduced-motion:reduce){
   .rt .word{display:inline;overflow:visible}
   .rt .word>span{display:inline}
