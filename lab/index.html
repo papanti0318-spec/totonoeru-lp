@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="hYRflPVBHV_SbReXwN_7v4tNCf6AT3VusKhSviD5kPU" />
 <title>Web表現ずかん｜スクロールの"しかけ"を実演と用語で｜ととのえる屋</title>
-<meta name="description" content="サイトでよく見る「なんかかっこいい動き」を、実演＋やさしい言葉＋専門用語集でまるごと解説。なめらかスクロール・パララックス・マスクリビール・モーダル・タブ・横スクロール・ダークモード・グラフ・大手サイト風のホバープレビュー・ヒートマップ・タグ入力・縦書きなど65種を、その場で体感できます。テンプレとの違いも。長野県小諸市のHP・LP制作 ととのえる屋。">
+<meta name="description" content="サイトでよく見る「なんかかっこいい動き」を、実演＋やさしい言葉＋専門用語集でまるごと解説。なめらかスクロール・パララックス・マスクリビール・モーダル・タブ・横スクロール・ダークモード・グラフ・大手サイト風のホバープレビュー・ヒートマップ・タグ入力・パンくずなど70種を、その場で体感できます。テンプレとの違いも。長野県小諸市のHP・LP制作 ととのえる屋。">
 <meta name="keywords" content="Web表現, ホームページ 動き, パララックス, なめらかスクロール, SVGアニメーション, ページ遷移, Web制作 小諸, HP制作 長野, 非エンジニア Web, ととのえる屋">
 <link rel="canonical" href="https://totonoeruya.jp/lab/">
 
 <meta property="og:title" content="Web表現ずかん｜スクロールの"しかけ"を実演と用語で">
-<meta property="og:description" content="サイトの「なんかかっこいい動き」を、実演＋やさしい言葉＋用語集でまるごと。なめらかスクロール・モーダル・横スクロール・ダークモード・グラフ・ヒートマップ・タグ入力など65種を体感。">
+<meta property="og:description" content="サイトの「なんかかっこいい動き」を、実演＋やさしい言葉＋用語集でまるごと。なめらかスクロール・モーダル・横スクロール・ダークモード・グラフ・ヒートマップ・パンくずなど70種を体感。">
 <meta property="og:url" content="https://totonoeruya.jp/lab/">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://totonoeruya.jp/og.jpg">
@@ -97,7 +97,10 @@
         { "@type": "DefinedTerm", "name": "QRコード", "description": "スマホのカメラで読み取れる二次元コード。紙やサイネージからWebやLINEへつなぐ。" },
         { "@type": "DefinedTerm", "name": "タグ入力", "description": "入力した語をチップ（札）として追加・削除できるUI。キーワードや宛先の複数入力に。" },
         { "@type": "DefinedTerm", "name": "無限スクロール", "description": "末尾までスクロールすると次が自動で読み込まれる表現。ページ送りなしで読み進める。" },
-        { "@type": "DefinedTerm", "name": "縦書き", "description": "文字を縦方向に組む日本語の表現。CSSの writing-mode で実現する。" }
+        { "@type": "DefinedTerm", "name": "縦書き", "description": "文字を縦方向に組む日本語の表現。CSSの writing-mode で実現する。" },
+        { "@type": "DefinedTerm", "name": "ハンバーガーメニュー", "description": "三本線のボタンを押すと開くメニュー。狭い画面で項目をしまうスマホの定番。" },
+        { "@type": "DefinedTerm", "name": "パンくずリスト", "description": "「ホーム ＞ 事業 ＞ ページ」のように現在地と階層を示すナビ。戻り道の道しるべ。" },
+        { "@type": "DefinedTerm", "name": "アバタースタック", "description": "人物アイコンを少し重ねて並べる表現。参加者や規模感を、顔の重なりで示す。" }
       ]
     },
     {
@@ -145,7 +148,7 @@
 </div>
 
 <nav class="toc" aria-label="もくじ">
-  <div class="toc-head"><h2>もくじ — Web表現図鑑</h2><span class="cnt">全65項目 · 100選めざして</span></div>
+  <div class="toc-head"><h2>もくじ — Web表現図鑑</h2><span class="cnt">全70項目 · 100選めざして</span></div>
   <div class="cols">
     <div class="col"><h3>スクロール演出</h3>
       <a href="#t1">なめらかスクロール<span class="e">01</span></a>
@@ -188,6 +191,9 @@
       <a href="#t42">ツリー（サイトマップ）<span class="e">42</span></a>
       <a href="#t44">ステップ進行<span class="e">44</span></a>
       <a href="#t55">レコメンド帯<span class="e">55</span></a>
+      <a href="#t67">ハンバーガー<span class="e">67</span></a>
+      <a href="#t68">パンくず<span class="e">68</span></a>
+      <a href="#t69">フローティング目次<span class="e">69</span></a>
     </div>
     <div class="col"><h3>図解・質感</h3>
       <a href="#t7">SVG線画図解<span class="e">07</span></a>
@@ -201,6 +207,8 @@
       <a href="#t50">カラーパレット<span class="e">50</span></a>
       <a href="#t56">ヒートマップ<span class="e">56</span></a>
       <a href="#t59">マップピン<span class="e">59</span></a>
+      <a href="#t66">アバタースタック<span class="e">66</span></a>
+      <a href="#t70">紙吹雪<span class="e">70</span></a>
     </div>
     <div class="col"><h3>UI部品</h3>
       <a href="#t17">モーダル<span class="e">17</span></a>
@@ -1414,13 +1422,101 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
   </div>
 </section>
 
+<div class="cat-label"><span>ナビ・案内・お祝い — 第十一集・70到達</span></div>
+
+<!-- 66 avatar stack -->
+<section id="t66" class="tech">
+  <div class="head"><span class="num">66</span><span class="en">Avatar Stack</span></div>
+  <h2 class="rt rt-big">顔を、重ねて見せる。</h2>
+  <p class="one">参加者やメンバーを、少し重ねて並べます。多いときは「+5」のように省きます。</p>
+  <div class="demo avatars">
+    <span class="av">と</span><span class="av">あ</span><span class="av">き</span><span class="av">の</span><span class="av more">+5</span>
+    <span class="av-l">小諸の仲間たち</span>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">参加者・チーム・利用者。にぎわいや規模感を、顔の重なりで。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">CSSのみで軽い。名前は文字として読まれる。</div></div>
+  </div>
+</section>
+
+<!-- 67 hamburger menu（動線内蔵・モバイル定番） -->
+<section id="t67" class="tech">
+  <div class="head"><span class="num">67</span><span class="en">Hamburger Menu</span></div>
+  <h2 class="rt rt-big">三本線で、しまっておく。</h2>
+  <p class="one">スマホでおなじみ。三本線を押すとメニューが開きます。小さい画面で項目をしまうのに。押すと各ページへ。</p>
+  <div class="demo hamburger" id="hamburger">
+    <button class="hb-btn" id="hbBtn" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="hb-menu" id="hbMenu" aria-label="デモメニュー">
+      <a href="/web/">HP・LP制作</a>
+      <a href="/cleaning/">清掃</a>
+      <a href="/guitar/">ギター教室</a>
+      <a href="/totoline/">totoline</a>
+      <a href="/articles/">ジャーナル</a>
+    </nav>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">スマホのナビ。画面が狭いときに、項目をすっきりしまう。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽いJS。中のリンクは閉じていても読まれ、内部リンクになる。</div></div>
+  </div>
+</section>
+
+<!-- 68 breadcrumbs（動線内蔵） -->
+<section id="t68" class="tech">
+  <div class="head"><span class="num">68</span><span class="en">Breadcrumbs</span></div>
+  <h2 class="rt rt-big">来た道を、たどれる。</h2>
+  <p class="one">「ホーム ＞ 清掃 ＞ 日報をAIで」のように現在地を示し、ひとつ上へ戻れます。深い階層の道しるべに。押すと各ページへ。</p>
+  <nav class="demo crumbs" aria-label="パンくず">
+    <a href="/">ホーム</a><span class="cr-sep">›</span><a href="/cleaning/">清掃</a><span class="cr-sep">›</span><span class="cr-cur">日報をAIで</span>
+  </nav>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">階層の深いサイト。今どこにいて、どこへ戻れるかを示す。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽い。検索結果にも出やすく、内部リンクとしても効く。</div></div>
+  </div>
+</section>
+
+<!-- 69 floating toc（動線内蔵） -->
+<section id="t69" class="tech">
+  <div class="head"><span class="num">69</span><span class="en">Floating TOC</span></div>
+  <h2 class="rt rt-big">読みながら、現在地。</h2>
+  <p class="one">長い記事の脇に小さな目次を出し、今読んでいる見出しを光らせます。押すとその場所へ。</p>
+  <div class="demo floattoc">
+    <div class="ft-body" id="ftBody">
+      <section data-ft="0"><h3>はじめに</h3><p>図鑑づくりの背景を、すこしだけ。サイトの「なんかいい動き」には、ぜんぶ名前と理由があります。</p></section>
+      <section data-ft="1"><h3>やり方</h3><p>むずかしい言葉を避け、実演とやさしい解説と用語集で並べました。テンプレとの違いも正直に。</p></section>
+      <section data-ft="2"><h3>まとめ</h3><p>やり過ぎず、ブランドに合う量だけ。何から入れるか分からなくても、相談から一緒に決められます。</p></section>
+    </div>
+    <ul class="ft-nav" id="ftNav">
+      <li><button data-go="0" class="is-on">はじめに</button></li>
+      <li><button data-go="1">やり方</button></li>
+      <li><button data-go="2">まとめ</button></li>
+    </ul>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">長い記事・マニュアル。現在地を示し、目的の見出しへ飛ばす。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽いJS。見出し構造はそのまま、検索にも好まれる。</div></div>
+  </div>
+</section>
+
+<!-- 70 confetti（節目・お祝い） -->
+<section id="t70" class="tech">
+  <div class="head"><span class="num">70 — 節目</span><span class="en">Confetti</span></div>
+  <h2 class="rt rt-big">ぱっと、お祝い。</h2>
+  <p class="one">達成や完了の瞬間に、紙吹雪を。70個目の節目に、ひとつ。押すと舞います。</p>
+  <div class="demo confetti-demo"><button class="ui-btn solid" id="confBtn">🎉 70達成を祝う</button></div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">申込完了・達成・記念。うれしい瞬間を、ほんの少しにぎやかに。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽いJS。多用は禁物。ここぞの1回だけが効く。</div></div>
+  </div>
+</section>
+
 <div class="readbar" id="readbar" aria-hidden="true"></div>
 <div class="toast" id="toast" role="status" aria-live="polite"><span class="t-dot"></span>送信しました。ありがとうございます。</div>
 <div class="toast tk" id="toastK" role="status" aria-live="polite"></div>
+<div class="confetti" id="confetti" aria-hidden="true"></div>
 
 <!-- glossary -->
 <section class="glossary">
-  <div class="sec-top"><h2 style="font-weight:400;font-size:clamp(22px,3vw,36px)">専門用語、やさしい一覧。</h2><span class="note">Glossary · 48語</span></div>
+  <div class="sec-top"><h2 style="font-weight:400;font-size:clamp(22px,3vw,36px)">専門用語、やさしい一覧。</h2><span class="note">Glossary · 51語</span></div>
   <div class="g-grid">
     <dl><dt>HTML<small>HyperText Markup Language</small></dt><dd>ページの骨組み。見出し・段落・画像など「中身と構造」を書く言語。</dd></dl>
     <dl><dt>CSS<small>Cascading Style Sheets</small></dt><dd>見た目の指定。色・大きさ・配置・動きを決める。</dd></dl>
@@ -1470,6 +1566,9 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
     <dl><dt>タグ入力<small>Tag Input</small></dt><dd>入力した語をチップとして追加・削除できるUI。複数キーワードの入力に。</dd></dl>
     <dl><dt>無限スクロール<small>Infinite Scroll</small></dt><dd>末尾まで進むと次が自動で読み込まれる表現。ページ送りなしで読み進める。</dd></dl>
     <dl><dt>縦書き<small>Vertical Writing</small></dt><dd>文字を縦方向に組む日本語の表現。CSSの writing-mode で実現。</dd></dl>
+    <dl><dt>ハンバーガーメニュー<small>Hamburger</small></dt><dd>三本線を押すと開くメニュー。狭い画面で項目をしまうスマホの定番。</dd></dl>
+    <dl><dt>パンくずリスト<small>Breadcrumbs</small></dt><dd>現在地と階層を示すナビ。戻り道の道しるべ。検索にも好まれる。</dd></dl>
+    <dl><dt>アバタースタック<small>Avatar Stack</small></dt><dd>人物アイコンを少し重ねて並べる表現。参加者や規模感を顔の重なりで。</dd></dl>
   </div>
 </section>
 
@@ -1985,6 +2084,43 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
     inf.addEventListener("scroll",function(){
       if(infLoaded>=INF_MAX)return;
       if(inf.scrollTop+inf.clientHeight>=inf.scrollHeight-40)infAdd();
+    });
+  }
+
+  /* 67 ハンバーガーメニュー */
+  var hbBtn=document.getElementById("hbBtn"),hbMenu=document.getElementById("hbMenu");
+  if(hbBtn&&hbMenu){
+    hbBtn.addEventListener("click",function(){
+      var open=hbBtn.classList.toggle("open");hbMenu.classList.toggle("open",open);
+      hbBtn.setAttribute("aria-expanded",open?"true":"false");
+    });
+  }
+
+  /* 69 フローティング目次 */
+  var ftBody=document.getElementById("ftBody"),ftNav=document.getElementById("ftNav");
+  if(ftBody&&ftNav){
+    var ftSecs=ftBody.querySelectorAll("[data-ft]"),ftBtns=ftNav.querySelectorAll("[data-go]");
+    ftBtns.forEach(function(b){b.addEventListener("click",function(){
+      var t=ftSecs[+b.dataset.go];ftBody.scrollTo({top:t.offsetTop-ftBody.offsetTop,behavior:"smooth"});
+    });});
+    var ftIo=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){var i=+e.target.dataset.ft;ftBtns.forEach(function(x,j){x.classList.toggle("is-on",j===i);});}
+    });},{root:ftBody,threshold:.5});
+    ftSecs.forEach(function(s){ftIo.observe(s);});
+  }
+
+  /* 70 紙吹雪（節目） */
+  var confBtn=document.getElementById("confBtn"),confetti=document.getElementById("confetti");
+  if(confBtn&&confetti&&!matchMedia("(prefers-reduced-motion: reduce)").matches){
+    var COLORS=["#C5743C","#d99a5b","#9b8c79","#6f9457","#1A1814"];
+    confBtn.addEventListener("click",function(){
+      for(var i=0;i<40;i++){(function(i){
+        var p=document.createElement("i");
+        var x=Math.random()*100,dur=1.6+Math.random()*1.4,delay=Math.random()*.3,rot=Math.random()*360,size=6+Math.random()*7;
+        p.style.cssText="left:"+x+"vw;background:"+COLORS[i%COLORS.length]+";width:"+size+"px;height:"+(size*.5)+"px;animation-duration:"+dur+"s;animation-delay:"+delay+"s;transform:rotate("+rot+"deg)";
+        confetti.appendChild(p);
+        setTimeout(function(){p.remove();},(dur+delay)*1000+200);
+      })(i);}
     });
   }
 

@@ -739,6 +739,53 @@ dialog.cmdp-dialog::backdrop{background:rgba(26,24,20,.5);backdrop-filter:blur(2
 /* 65 縦書き */
 .vwrite{display:flex;justify-content:center;padding:10px 0}
 .vw-text{writing-mode:vertical-rl;text-orientation:upright;font-size:clamp(18px,2.4vw,24px);font-weight:400;line-height:2.2;letter-spacing:.12em;height:240px;color:var(--ink)}
+
+/* ===== ナビ・案内・お祝い 第十一集（66-70・70到達） ===== */
+/* 66 アバタースタック */
+.avatars{display:flex;align-items:center}
+.av{width:44px;height:44px;border-radius:50%;background:var(--accent);color:var(--paper);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:500;border:2px solid var(--paper);margin-left:-12px;box-shadow:0 2px 6px rgba(26,24,20,.15)}
+.av:first-child{margin-left:0}
+.av:nth-child(2){background:#d99a5b}.av:nth-child(3){background:#9b8c79}.av:nth-child(4){background:#6f9457}
+.av.more{background:var(--paper-2);color:var(--ink-soft);font-family:var(--mono);font-size:12px}
+.av-l{margin-left:16px;font-size:13px;font-weight:300;color:var(--ink-soft)}
+
+/* 67 ハンバーガーメニュー（動線内蔵） */
+.hamburger{max-width:320px}
+.hb-btn{width:48px;height:48px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.3);cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+.hb-btn span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;transition:transform .3s,opacity .2s}
+.hb-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hb-btn.open span:nth-child(2){opacity:0}
+.hb-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.hb-menu{display:grid;grid-template-rows:0fr;overflow:hidden;transition:grid-template-rows .35s cubic-bezier(.2,.7,.2,1);margin-top:10px;border-radius:10px}
+.hb-menu.open{grid-template-rows:1fr;border:1px solid var(--line)}
+.hb-menu>*{min-height:0}
+.hb-menu a{display:block;padding:14px 16px;text-decoration:none;color:var(--ink);font-size:14px;border-bottom:1px solid var(--line-soft)}
+.hb-menu a:last-child{border-bottom:none}
+.hb-menu a:hover{background:var(--paper-2);color:var(--accent)}
+
+/* 68 パンくず（動線内蔵） */
+.crumbs{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:13px}
+.crumbs a{color:var(--ink-soft);text-decoration:none;border-bottom:1px solid transparent;transition:.2s}
+.crumbs a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+.cr-sep{color:var(--muted)}
+.cr-cur{color:var(--ink);font-weight:500}
+
+/* 69 フローティング目次（動線内蔵） */
+.floattoc{display:grid;grid-template-columns:1fr 160px;gap:18px;align-items:start}
+.ft-body{height:240px;overflow-y:auto;border:1px solid var(--line);border-radius:10px;padding:18px}
+.ft-body section{padding:8px 0 40px}
+.ft-body h3{font-size:16px;font-weight:500;margin-bottom:8px;color:var(--accent)}
+.ft-body p{font-size:13px;font-weight:300;line-height:1.9;color:var(--ink-soft)}
+.ft-nav{list-style:none;margin:0;padding:0;position:sticky;top:0;display:flex;flex-direction:column;gap:4px}
+.ft-nav button{width:100%;text-align:left;background:none;border:none;border-left:2px solid var(--line);padding:8px 12px;font-family:var(--sans);font-size:13px;color:var(--muted);cursor:pointer;transition:.2s}
+.ft-nav button.is-on{border-left-color:var(--accent);color:var(--accent);font-weight:500}
+@media(max-width:600px){.floattoc{grid-template-columns:1fr}.ft-nav{flex-direction:row;flex-wrap:wrap;position:static}.ft-nav button{border-left:none;border-bottom:2px solid var(--line)}.ft-nav button.is-on{border-bottom-color:var(--accent);border-left:none}}
+
+/* 70 紙吹雪（節目） */
+.confetti-demo{display:flex;justify-content:center;padding:8px 0}
+.confetti{position:fixed;inset:0;pointer-events:none;z-index:9996;overflow:hidden}
+.confetti i{position:absolute;top:-20px;border-radius:2px;animation-name:confFall;animation-timing-function:cubic-bezier(.3,.6,.5,1);animation-fill-mode:forwards}
+@keyframes confFall{0%{top:-20px;opacity:1}100%{top:104vh;opacity:.9}}
 @media(prefers-reduced-motion:reduce){
   .rt .word{display:inline;overflow:visible}
   .rt .word>span{display:inline}
