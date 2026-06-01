@@ -905,6 +905,50 @@ dialog.cmdp-dialog::backdrop{background:rgba(26,24,20,.5);backdrop-filter:blur(2
 .dz-inner p{font-size:13px;font-weight:300;color:var(--ink-soft);margin-top:8px;line-height:1.7}
 .dz-files{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-direction:column;gap:6px;text-align:left}
 .dz-files li{font-size:13px;color:var(--ink);background:var(--paper-2);border-radius:6px;padding:8px 12px}
+
+/* ===== 反応・共有・一覧操作 第十五集（86-90） ===== */
+/* 86 いいねボタン */
+.likewrap{display:flex;justify-content:center;padding:8px 0}
+.like{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.3);padding:12px 22px;cursor:pointer;font-family:var(--mono);font-size:15px;color:var(--ink-soft);transition:border-color .2s,color .2s}
+.like .like-h{font-size:18px;color:var(--muted);transition:color .2s}
+.like.on{border-color:var(--accent);color:var(--accent)}
+.like.on .like-h{color:var(--accent)}
+.like.pop .like-h{animation:likePop .4s ease}
+@keyframes likePop{0%{transform:scale(1)}40%{transform:scale(1.4)}100%{transform:scale(1)}}
+
+/* 87 シェアボタン群（動線内蔵） */
+.share{display:flex;gap:10px;flex-wrap:wrap}
+.sh-b{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:8px;padding:11px 18px;font-size:13px;text-decoration:none;color:var(--ink);background:rgba(255,255,255,.3);cursor:pointer;font-family:var(--sans);transition:border-color .2s,color .2s}
+.sh-b:hover{border-color:var(--accent);color:var(--accent)}
+
+/* 88 リサイズパネル */
+.resizer{display:grid;grid-template-columns:50% 8px 50%;height:140px;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.rz-a,.rz-b{display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:300;color:var(--ink-soft);background:rgba(255,255,255,.25)}
+.rz-b{background:var(--paper-2)}
+.rz-handle{background:var(--line);cursor:col-resize;touch-action:none;position:relative}
+.rz-handle::after{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:2px;height:28px;background:var(--accent);border-radius:2px}
+@media(max-width:600px){.resizer{grid-template-columns:1fr!important;grid-template-rows:1fr 8px 1fr;height:200px}.rz-handle{cursor:row-resize}}
+
+/* 89 ソート可能テーブル */
+.sortwrap{overflow-x:auto}
+.sorttable{width:100%;border-collapse:collapse;font-size:13px;min-width:360px}
+.sorttable th,.sorttable td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line)}
+.sorttable th{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--muted);user-select:none;position:relative}
+.sorttable th:hover{color:var(--accent)}
+.sorttable th.num,.sorttable td.num{text-align:right;font-variant-numeric:tabular-nums}
+.sorttable th.sort-asc::after{content:" ▲";font-size:8px;color:var(--accent)}
+.sorttable th.sort-desc::after{content:" ▼";font-size:8px;color:var(--accent)}
+.sorttable td{color:var(--ink-soft)}
+
+/* 90 ページネーション（動線内蔵） */
+.pager{max-width:480px}
+.pg-view{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
+.pg-item{display:block;padding:14px 16px;border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.35);text-decoration:none;color:var(--ink);font-size:14px;font-weight:300;transition:border-color .2s,color .2s}
+.pg-item:hover{border-color:var(--accent);color:var(--accent)}
+.pg-nav{display:flex;gap:6px;flex-wrap:wrap}
+.pg-b{width:36px;height:36px;border:1px solid var(--line);border-radius:8px;background:none;cursor:pointer;font-family:var(--mono);font-size:13px;color:var(--ink-soft);transition:.2s}
+.pg-b:hover{border-color:var(--accent);color:var(--accent)}
+.pg-b.is-on{background:var(--accent);color:var(--paper);border-color:var(--accent)}
 @media(prefers-reduced-motion:reduce){
   .rt .word{display:inline;overflow:visible}
   .rt .word>span{display:inline}

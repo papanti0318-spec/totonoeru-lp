@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="hYRflPVBHV_SbReXwN_7v4tNCf6AT3VusKhSviD5kPU" />
 <title>Web表現ずかん｜スクロールの"しかけ"を実演と用語で｜ととのえる屋</title>
-<meta name="description" content="サイトでよく見る「なんかかっこいい動き」を、実演＋やさしい言葉＋専門用語集でまるごと解説。なめらかスクロール・パララックス・マスクリビール・モーダル・タブ・横スクロール・ダークモード・グラフ・各種グラフ・かんばん・ターミナル・世界時計・オンボーディング案内など85種を、その場で体感できます。テンプレとの違いも。長野県小諸市のHP・LP制作 ととのえる屋。">
+<meta name="description" content="サイトでよく見る「なんかかっこいい動き」を、実演＋やさしい言葉＋専門用語集でまるごと解説。なめらかスクロール・パララックス・マスクリビール・モーダル・タブ・横スクロール・ダークモード・グラフ・各種グラフ・かんばん・ターミナル・ソート表・ページネーションなど90種を、その場で体感できます。テンプレとの違いも。長野県小諸市のHP・LP制作 ととのえる屋。">
 <meta name="keywords" content="Web表現, ホームページ 動き, パララックス, なめらかスクロール, SVGアニメーション, ページ遷移, Web制作 小諸, HP制作 長野, 非エンジニア Web, ととのえる屋">
 <link rel="canonical" href="https://totonoeruya.jp/lab/">
 
 <meta property="og:title" content="Web表現ずかん｜スクロールの"しかけ"を実演と用語で">
-<meta property="og:description" content="サイトの「なんかかっこいい動き」を、実演＋やさしい言葉＋用語集でまるごと。なめらかスクロール・各種グラフ・ヒートマップ・かんばん・ターミナル・レーダーチャートなど85種を体感。">
+<meta property="og:description" content="サイトの「なんかかっこいい動き」を、実演＋やさしい言葉＋用語集でまるごと。各種グラフ・ヒートマップ・かんばん・ターミナル・レーダーチャート・ソート表など90種を体感。">
 <meta property="og:url" content="https://totonoeruya.jp/lab/">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://totonoeruya.jp/og.jpg">
@@ -109,7 +109,10 @@
         { "@type": "DefinedTerm", "name": "スワイプ削除", "description": "項目を横に払って消すタッチ操作。スマホアプリの一覧でおなじみ。" },
         { "@type": "DefinedTerm", "name": "プルトゥリフレッシュ", "description": "一覧の一番上で下に引っぱると最新に更新するタッチ操作。" },
         { "@type": "DefinedTerm", "name": "オンボーディング", "description": "初めての人に使い方や見どころを順に案内する仕組み。迷わせず行動につなぐ。" },
-        { "@type": "DefinedTerm", "name": "レーダーチャート", "description": "複数項目のバランスを五角形などの面で示すグラフ。強み弱みを一目で。" }
+        { "@type": "DefinedTerm", "name": "レーダーチャート", "description": "複数項目のバランスを五角形などの面で示すグラフ。強み弱みを一目で。" },
+        { "@type": "DefinedTerm", "name": "いいねボタン", "description": "押すと色がつき数がふえる共感ボタン。気軽な反応を集める入口。" },
+        { "@type": "DefinedTerm", "name": "シェアボタン", "description": "今のページをSNSで共有したりリンクをコピーするボタン。拡散の入口。" },
+        { "@type": "DefinedTerm", "name": "ページネーション", "description": "長い一覧を数ページに分け、番号で行き来するナビ。1ページの量を抑える。" }
       ]
     },
     {
@@ -157,7 +160,7 @@
 </div>
 
 <nav class="toc" aria-label="もくじ">
-  <div class="toc-head"><h2>もくじ — Web表現図鑑</h2><span class="cnt">全85項目 · 100選めざして</span></div>
+  <div class="toc-head"><h2>もくじ — Web表現図鑑</h2><span class="cnt">全90項目 · 100選めざして</span></div>
   <div class="cols">
     <div class="col"><h3>スクロール演出</h3>
       <a href="#t1">なめらかスクロール<span class="e">01</span></a>
@@ -194,6 +197,8 @@
       <a href="#t49">ドラッグ並べ替え<span class="e">49</span></a>
       <a href="#t57">音量ノブ<span class="e">57</span></a>
       <a href="#t80">スワイプ削除<span class="e">80</span></a>
+      <a href="#t86">いいねボタン<span class="e">86</span></a>
+      <a href="#t88">リサイズパネル<span class="e">88</span></a>
     </div>
     <div class="col"><h3>ナビ・遷移</h3>
       <a href="#t10">ページ遷移<span class="e">10</span></a>
@@ -205,6 +210,7 @@
       <a href="#t67">ハンバーガー<span class="e">67</span></a>
       <a href="#t68">パンくず<span class="e">68</span></a>
       <a href="#t69">フローティング目次<span class="e">69</span></a>
+      <a href="#t90">ページネーション<span class="e">90</span></a>
     </div>
     <div class="col"><h3>図解・質感</h3>
       <a href="#t7">SVG線画図解<span class="e">07</span></a>
@@ -251,6 +257,8 @@
       <a href="#t82">オンボーディング<span class="e">82</span></a>
       <a href="#t84">トースト積み重ね<span class="e">84</span></a>
       <a href="#t85">ファイルドロップ<span class="e">85</span></a>
+      <a href="#t87">シェアボタン<span class="e">87</span></a>
+      <a href="#t89">ソートテーブル<span class="e">89</span></a>
     </div>
     <div class="col"><h3>コード・技術</h3>
       <a href="#t21">コードコピー<span class="e">21</span></a>
@@ -1795,6 +1803,88 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
   </div>
 </section>
 
+<div class="cat-label"><span>反応・共有・一覧操作 — 第十五集</span></div>
+
+<!-- 86 like button -->
+<section id="t86" class="tech">
+  <div class="head"><span class="num">86</span><span class="en">Like Button</span></div>
+  <h2 class="rt rt-big">ぽちっと、ハート。</h2>
+  <p class="one">押すと色がつき、数がふえます。共感や保存を、軽い手ざわりで。</p>
+  <div class="demo likewrap"><button class="like" id="likeBtn" aria-pressed="false"><span class="like-h">♥</span><span class="like-n" id="likeN">128</span></button></div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">共感・保存・お気に入り。気軽な反応を集めたいとき。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽いJS。小さな手ざわりが、関わりのきっかけに。</div></div>
+  </div>
+</section>
+
+<!-- 87 share buttons（動線内蔵） -->
+<section id="t87" class="tech">
+  <div class="head"><span class="num">87</span><span class="en">Share Buttons</span></div>
+  <h2 class="rt rt-big">この一枚を、わたす。</h2>
+  <p class="one">今のページを、X や LINE で共有したり、リンクをコピーできます。広めてもらう入口に。</p>
+  <div class="demo share">
+    <a class="sh-b x" href="https://twitter.com/intent/tweet?url=https://totonoeruya.jp/lab/&text=Web表現ずかん" target="_blank" rel="noopener">Xで共有</a>
+    <a class="sh-b line" href="https://social-plugins.line.me/lineit/share?url=https://totonoeruya.jp/lab/" target="_blank" rel="noopener">LINEで共有</a>
+    <button class="sh-b copy" id="shCopy">リンクをコピー</button>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">記事・商品・実績を広めてほしいとき。共有の手間をなくす。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽い。共有が増えれば、認知も被リンクも広がる。</div></div>
+  </div>
+</section>
+
+<!-- 88 resizable panels -->
+<section id="t88" class="tech">
+  <div class="head"><span class="num">88</span><span class="en">Resizable Panels</span></div>
+  <h2 class="rt rt-big">仕切りを、動かす。</h2>
+  <p class="one">真ん中の仕切りをドラッグすると、左右の幅が変わります。エディタや管理画面でおなじみ。<span class="pc-rec">PC推奨</span></p>
+  <div class="demo resizer" id="resizer">
+    <div class="rz-a">左パネル</div>
+    <div class="rz-handle" id="rzHandle" aria-hidden="true"></div>
+    <div class="rz-b">右パネル</div>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">エディタ・管理画面・比較表示。見たい方を広げて使う。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽いJS。スマホでは縦並びにするのが定番。</div></div>
+  </div>
+</section>
+
+<!-- 89 sortable table -->
+<section id="t89" class="tech">
+  <div class="head"><span class="num">89</span><span class="en">Sortable Table</span></div>
+  <h2 class="rt rt-big">見出しで、並べ替える。</h2>
+  <p class="one">列の見出しを押すと、その列で並べ替わります（もう一度で逆順）。表を見やすく。</p>
+  <div class="demo sortwrap"><table class="sorttable" id="sorttable">
+    <thead><tr><th data-k="name" data-type="str">事業</th><th data-k="num" data-type="num" class="num">記事数</th><th data-k="rank" data-type="num" class="num">人気順</th></tr></thead>
+    <tbody>
+      <tr><td>清掃 × AI</td><td class="num">14</td><td class="num">1</td></tr>
+      <tr><td>HP・LP制作</td><td class="num">9</td><td class="num">3</td></tr>
+      <tr><td>totoline</td><td class="num">6</td><td class="num">2</td></tr>
+      <tr><td>ギター教室</td><td class="num">4</td><td class="num">5</td></tr>
+      <tr><td>思想・エッセイ</td><td class="num">7</td><td class="num">4</td></tr>
+    </tbody>
+  </table></div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">一覧表・ランキング・在庫。見たい順で並べ替えさせる。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽いJS。表の中身はそのまま読まれる。</div></div>
+  </div>
+</section>
+
+<!-- 90 pagination（動線内蔵） -->
+<section id="t90" class="tech">
+  <div class="head"><span class="num">90</span><span class="en">Pagination</span></div>
+  <h2 class="rt rt-big">ページを、めくる。</h2>
+  <p class="one">一覧を数ページに分け、番号で行き来します。各項目を押すとジャーナルへ。</p>
+  <div class="demo pager" id="pager">
+    <div class="pg-view" id="pgView"></div>
+    <div class="pg-nav" id="pgNav"></div>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">記事・商品の長い一覧。1ページの量を抑え、現在地を示す。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽いJS。各ページURLを分ける作りなら検索にも好まれる。</div></div>
+  </div>
+</section>
+
 <div class="readbar" id="readbar" aria-hidden="true"></div>
 <div class="toast" id="toast" role="status" aria-live="polite"><span class="t-dot"></span>送信しました。ありがとうございます。</div>
 <div class="toast tk" id="toastK" role="status" aria-live="polite"></div>
@@ -1803,7 +1893,7 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
 
 <!-- glossary -->
 <section class="glossary">
-  <div class="sec-top"><h2 style="font-weight:400;font-size:clamp(22px,3vw,36px)">専門用語、やさしい一覧。</h2><span class="note">Glossary · 60語</span></div>
+  <div class="sec-top"><h2 style="font-weight:400;font-size:clamp(22px,3vw,36px)">専門用語、やさしい一覧。</h2><span class="note">Glossary · 63語</span></div>
   <div class="g-grid">
     <dl><dt>HTML<small>HyperText Markup Language</small></dt><dd>ページの骨組み。見出し・段落・画像など「中身と構造」を書く言語。</dd></dl>
     <dl><dt>CSS<small>Cascading Style Sheets</small></dt><dd>見た目の指定。色・大きさ・配置・動きを決める。</dd></dl>
@@ -1865,6 +1955,9 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
     <dl><dt>プルトゥリフレッシュ<small>Pull to Refresh</small></dt><dd>一覧の一番上で下に引っぱると最新に更新するタッチ操作。</dd></dl>
     <dl><dt>オンボーディング<small>Onboarding</small></dt><dd>初めての人に使い方や見どころを順に案内する仕組み。行動につなぐ。</dd></dl>
     <dl><dt>レーダーチャート<small>Radar Chart</small></dt><dd>複数項目のバランスを五角形などの面で示すグラフ。強み弱みを一目で。</dd></dl>
+    <dl><dt>いいねボタン<small>Like</small></dt><dd>押すと色がつき数がふえる共感ボタン。気軽な反応を集める入口。</dd></dl>
+    <dl><dt>シェアボタン<small>Share</small></dt><dd>今のページをSNSで共有・リンクをコピーするボタン。拡散の入口。</dd></dl>
+    <dl><dt>ページネーション<small>Pagination</small></dt><dd>長い一覧を数ページに分け、番号で行き来するナビ。1ページの量を抑える。</dd></dl>
   </div>
 </section>
 
@@ -2403,6 +2496,62 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
       if(e.isIntersecting){var i=+e.target.dataset.ft;ftBtns.forEach(function(x,j){x.classList.toggle("is-on",j===i);});}
     });},{root:ftBody,threshold:.5});
     ftSecs.forEach(function(s){ftIo.observe(s);});
+  }
+
+  /* 86 いいねボタン */
+  var likeBtn=document.getElementById("likeBtn");
+  if(likeBtn){
+    var likeN=document.getElementById("likeN"),liked=false,base=128;
+    likeBtn.addEventListener("click",function(){
+      liked=!liked;likeBtn.classList.toggle("on",liked);likeBtn.setAttribute("aria-pressed",liked?"true":"false");
+      likeN.textContent=base+(liked?1:0);
+      likeBtn.classList.remove("pop");void likeBtn.offsetWidth;if(liked)likeBtn.classList.add("pop");
+    });
+  }
+
+  /* 87 シェア：リンクコピー */
+  var shCopy=document.getElementById("shCopy");
+  if(shCopy){
+    shCopy.addEventListener("click",function(){
+      var url="https://totonoeruya.jp/lab/";
+      var done=function(){var o=shCopy.textContent;shCopy.textContent="コピーしました";setTimeout(function(){shCopy.textContent=o;},1400);};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(done,done);}else done();
+    });
+  }
+
+  /* 88 リサイズパネル */
+  var resizer=document.getElementById("resizer"),rzHandle=document.getElementById("rzHandle");
+  if(resizer&&rzHandle){
+    var rzDown=false;
+    rzHandle.addEventListener("pointerdown",function(e){e.preventDefault();rzDown=true;});
+    addEventListener("pointermove",function(e){if(!rzDown)return;var r=resizer.getBoundingClientRect();var p=(e.clientX-r.left)/r.width*100;p=Math.min(80,Math.max(20,p));resizer.style.gridTemplateColumns=p+"% 8px "+(100-p)+"%";});
+    addEventListener("pointerup",function(){rzDown=false;});
+  }
+
+  /* 89 ソート可能テーブル */
+  var sorttable=document.getElementById("sorttable");
+  if(sorttable){
+    var stBody=sorttable.querySelector("tbody"),stHeads=sorttable.querySelectorAll("th[data-k]"),stDir={};
+    stHeads.forEach(function(th,ci){th.style.cursor="pointer";th.addEventListener("click",function(){
+      var type=th.dataset.type,asc=!stDir[ci];stDir={};stDir[ci]=asc;
+      stHeads.forEach(function(x){x.classList.remove("sort-asc","sort-desc");});th.classList.add(asc?"sort-asc":"sort-desc");
+      var rows=[].slice.call(stBody.querySelectorAll("tr"));
+      rows.sort(function(a,b){var x=a.children[ci].textContent.trim(),y=b.children[ci].textContent.trim();var r=type==="num"?(parseFloat(x)-parseFloat(y)):x.localeCompare(y,"ja");return asc?r:-r;});
+      rows.forEach(function(r){stBody.appendChild(r);});
+    });});
+  }
+
+  /* 90 ページネーション */
+  var pager=document.getElementById("pager");
+  if(pager){
+    var pgView=document.getElementById("pgView"),pgNav=document.getElementById("pgNav"),PER=4,TOTAL=11,PAGES=Math.ceil(TOTAL/PER),pgCur=0;
+    function pgRender(){
+      pgView.innerHTML="";
+      for(var i=pgCur*PER;i<Math.min(TOTAL,(pgCur+1)*PER);i++){var a=document.createElement("a");a.className="pg-item";a.href="/articles/";a.textContent="記録 #"+(i+1)+" — ジャーナルを開く";pgView.appendChild(a);}
+      pgNav.innerHTML="";
+      for(var p=0;p<PAGES;p++){(function(p){var b=document.createElement("button");b.className="pg-b"+(p===pgCur?" is-on":"");b.textContent=p+1;b.addEventListener("click",function(){pgCur=p;pgRender();});pgNav.appendChild(b);})(p);}
+    }
+    pgRender();
   }
 
   /* 81 プルトゥリフレッシュ */
