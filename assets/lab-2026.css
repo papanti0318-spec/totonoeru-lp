@@ -514,6 +514,71 @@ dialog.lightbox img{max-width:92vw;max-height:90vh;border-radius:8px;display:blo
   .cat-label{padding:40px 20px 0}
   .cat-label span{font-size:10px;letter-spacing:.12em}
 }
+
+/* ===== データと操作 第六集（43-47） ===== */
+/* 43 ドーナツグラフ */
+.donut{display:flex;align-items:center;gap:32px;flex-wrap:wrap;justify-content:center}
+.donut svg{width:172px;height:172px;transform:rotate(-90deg);flex:none}
+.dn-base{fill:none;stroke:var(--line);stroke-width:4}
+.dn-seg{fill:none;stroke-width:4;stroke-dasharray:0 100;stroke-dashoffset:var(--o);transition:stroke-dasharray 1.1s cubic-bezier(.2,.7,.2,1)}
+.donut.in .dn-seg{stroke-dasharray:var(--p) 100}
+.dn-seg.s1{stroke:var(--accent)}.dn-seg.s2{stroke:#d99a5b}.dn-seg.s3{stroke:#9b8c79}
+.dn-legend{list-style:none;display:flex;flex-direction:column;gap:12px;font-size:13px;font-weight:300;color:var(--ink-soft)}
+.dn-legend li{display:flex;align-items:center;gap:10px}
+.dn-legend b{font-weight:500;color:var(--ink);margin-left:4px}
+.dn-c{width:12px;height:12px;border-radius:3px;flex:none}
+.dn-c.s1{background:var(--accent)}.dn-c.s2{background:#d99a5b}.dn-c.s3{background:#9b8c79}
+
+/* 44 ステップ進行（動線内蔵） */
+.steps{max-width:560px;margin:0 auto}
+.stp-bar{height:3px;background:var(--line);border-radius:999px;margin:6px 0 22px;overflow:hidden}
+.stp-bar i{display:block;height:100%;width:0;background:var(--accent);transition:width .5s cubic-bezier(.2,.7,.2,1)}
+.stp-list{list-style:none;display:flex;justify-content:space-between;margin:0 0 24px;padding:0}
+.stp{display:flex;flex-direction:column;align-items:center;gap:8px;flex:1;font-size:12px;font-weight:300;color:var(--muted);transition:color .3s}
+.stp-n{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:13px;color:var(--muted);background:var(--paper);transition:.3s}
+.stp.is-on{color:var(--ink)}
+.stp.is-on .stp-n{border-color:var(--accent);color:var(--accent)}
+.stp.cur .stp-n{background:var(--accent);color:var(--paper);border-color:var(--accent)}
+.stp-ctl{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.stp-ctl .ui-btn[disabled]{opacity:.4;pointer-events:none}
+
+/* 45 コマンドパレット（動線内蔵） */
+.cmdp-open{width:100%;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid var(--line);border-radius:10px;padding:15px 18px;background:rgba(255,255,255,.3);color:var(--muted);font-family:var(--sans);font-size:14px;cursor:pointer;transition:border-color .2s}
+.cmdp-open:hover{border-color:var(--accent)}
+.cmdp-open kbd{font-family:var(--mono);font-size:11px;border:1px solid var(--line);border-radius:6px;padding:3px 8px;color:var(--ink-soft);background:var(--paper)}
+dialog.cmdp-dialog{border:none;border-radius:14px;padding:0;width:min(520px,92vw);background:var(--paper);box-shadow:0 30px 80px rgba(26,24,20,.3);position:fixed;top:12vh;left:50%;transform:translateX(-50%);margin:0}
+dialog.cmdp-dialog::backdrop{background:rgba(26,24,20,.5);backdrop-filter:blur(2px)}
+.cmdp-input{width:100%;box-sizing:border-box;border:none;border-bottom:1px solid var(--line);padding:18px 20px;font-family:var(--sans);font-size:15px;background:none;color:var(--ink);outline:none}
+.cmdp-list{list-style:none;margin:0;padding:8px;max-height:300px;overflow-y:auto}
+.cmdp-list a{display:block;padding:12px 14px;border-radius:8px;text-decoration:none;color:var(--ink);font-size:14px;transition:background .15s,color .15s}
+.cmdp-list a:hover{background:var(--paper-2);color:var(--accent)}
+.cmdp-empty{padding:18px 20px;font-size:13px;color:var(--muted)}
+
+/* 46 カレンダー */
+.cal{max-width:420px;margin:0 auto;border:1px solid var(--line);border-radius:12px;padding:20px;background:rgba(255,255,255,.2)}
+.cal-head{text-align:center;font-size:15px;font-weight:500;margin-bottom:16px}
+.cal-week{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:6px}
+.cal-week span{text-align:center;font-family:var(--mono);font-size:10px;color:var(--muted);padding:4px 0}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.cal-x{aspect-ratio:1}
+.cal-d{aspect-ratio:1;border:none;background:none;border-radius:8px;cursor:pointer;font-size:13px;color:var(--ink-soft);font-family:var(--sans);display:flex;align-items:center;justify-content:center;transition:background .15s,color .15s}
+.cal-d:hover{background:var(--paper-2);color:var(--ink)}
+.cal-d.sel{background:var(--accent);color:var(--paper)}
+
+/* 47 レンジスライダー（2つまみ） */
+.rng{max-width:480px;margin:0 auto}
+.rng-val{text-align:center;font-family:var(--mono);font-size:15px;color:var(--accent);margin-bottom:22px}
+.rng-track{position:relative;height:28px}
+.rng-track::before{content:"";position:absolute;top:13px;left:0;right:0;height:3px;background:var(--line);border-radius:999px}
+.rng-fill{position:absolute;top:13px;height:3px;background:var(--accent);border-radius:999px}
+.rng-track input[type=range]{position:absolute;top:0;left:0;width:100%;height:28px;margin:0;background:none;-webkit-appearance:none;appearance:none;pointer-events:none}
+.rng-track input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;pointer-events:auto;width:22px;height:22px;border-radius:50%;background:var(--accent);border:2px solid var(--paper);box-shadow:0 2px 8px rgba(0,0,0,.2);cursor:pointer}
+.rng-track input[type=range]::-moz-range-thumb{pointer-events:auto;width:22px;height:22px;border:2px solid var(--paper);border-radius:50%;background:var(--accent);cursor:pointer}
+.rng-track input[type=range]::-webkit-slider-runnable-track{background:none}
+.rng-track input[type=range]::-moz-range-track{background:none}
+
+@media(prefers-reduced-motion:reduce){.dn-seg,.stp-bar i{transition:none}.donut.in .dn-seg{stroke-dasharray:var(--p) 100}}
+@media(max-width:600px){.donut svg{width:150px;height:150px}.stp{font-size:11px}.stp-n{width:30px;height:30px;font-size:12px}}
 @media(prefers-reduced-motion:reduce){
   .rt .word{display:inline;overflow:visible}
   .rt .word>span{display:inline}

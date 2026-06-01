@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="hYRflPVBHV_SbReXwN_7v4tNCf6AT3VusKhSviD5kPU" />
 <title>Web表現ずかん｜スクロールの"しかけ"を実演と用語で｜ととのえる屋</title>
-<meta name="description" content="サイトでよく見る「なんかかっこいい動き」を、実演＋やさしい言葉＋専門用語集でまるごと解説。なめらかスクロール・パララックス・マスクリビール・モーダル・タブ・横スクロール・ダークモード・カルーセル・折れ線グラフなど42種を、その場で体感できます。テンプレとの違いも。長野県小諸市のHP・LP制作 ととのえる屋。">
+<meta name="description" content="サイトでよく見る「なんかかっこいい動き」を、実演＋やさしい言葉＋専門用語集でまるごと解説。なめらかスクロール・パララックス・マスクリビール・モーダル・タブ・横スクロール・ダークモード・グラフ・コマンドパレットなど47種を、その場で体感できます。テンプレとの違いも。長野県小諸市のHP・LP制作 ととのえる屋。">
 <meta name="keywords" content="Web表現, ホームページ 動き, パララックス, なめらかスクロール, SVGアニメーション, ページ遷移, Web制作 小諸, HP制作 長野, 非エンジニア Web, ととのえる屋">
 <link rel="canonical" href="https://totonoeruya.jp/lab/">
 
 <meta property="og:title" content="Web表現ずかん｜スクロールの"しかけ"を実演と用語で">
-<meta property="og:description" content="サイトの「なんかかっこいい動き」を、実演＋やさしい言葉＋用語集でまるごと。なめらかスクロール・モーダル・横スクロール・ダークモード・カルーセル・折れ線グラフなど42種を体感。">
+<meta property="og:description" content="サイトの「なんかかっこいい動き」を、実演＋やさしい言葉＋用語集でまるごと。なめらかスクロール・モーダル・横スクロール・ダークモード・グラフ・コマンドパレットなど47種を体感。">
 <meta property="og:url" content="https://totonoeruya.jp/lab/">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://totonoeruya.jp/og.jpg">
@@ -82,7 +82,9 @@
         { "@type": "DefinedTerm", "name": "フィルタリング", "description": "タグやキーワードで一覧を絞り込む仕組み。記事・実績・FAQが多いときに探す手間を減らす。" },
         { "@type": "DefinedTerm", "name": "カルーセル", "description": "複数のスライドを順に切り替えて見せるUI。自動送りや手動送りで、実績やお知らせを省スペースに。" },
         { "@type": "DefinedTerm", "name": "トグルスイッチ", "description": "オン・オフを切り替えるスイッチ型のUI。今どの状態かをひと目で示す。" },
-        { "@type": "DefinedTerm", "name": "ツリー構造", "description": "親子の階層を枝分かれで表す表現。サイトマップやカテゴリ分類に使う。" }
+        { "@type": "DefinedTerm", "name": "ツリー構造", "description": "親子の階層を枝分かれで表す表現。サイトマップやカテゴリ分類に使う。" },
+        { "@type": "DefinedTerm", "name": "コマンドパレット", "description": "⌘Kなどで開く検索ジャンプUI。打ち込んで候補を絞り、選んで素早く移動する。" },
+        { "@type": "DefinedTerm", "name": "レンジスライダー", "description": "2つのつまみで範囲（下限〜上限）を選ぶUI。価格帯や期間の絞り込みに使う。" }
       ]
     },
     {
@@ -130,7 +132,7 @@
 </div>
 
 <nav class="toc" aria-label="もくじ">
-  <div class="toc-head"><h2>もくじ — Web表現図鑑</h2><span class="cnt">全42項目 · 少しずつ追加中</span></div>
+  <div class="toc-head"><h2>もくじ — Web表現図鑑</h2><span class="cnt">全47項目 · 少しずつ追加中</span></div>
   <div class="cols">
     <div class="col"><h3>スクロール演出</h3>
       <a href="#t1">なめらかスクロール<span class="e">01</span></a>
@@ -163,6 +165,7 @@
       <a href="#t16">アコーディオン<span class="e">16</span></a>
       <a href="#t34">タグフィルタ<span class="e">34</span></a>
       <a href="#t42">ツリー（サイトマップ）<span class="e">42</span></a>
+      <a href="#t44">ステップ進行<span class="e">44</span></a>
     </div>
     <div class="col"><h3>図解・質感</h3>
       <a href="#t7">SVG線画図解<span class="e">07</span></a>
@@ -172,6 +175,7 @@
       <a href="#t33">タイムライン<span class="e">33</span></a>
       <a href="#t37">横バーメーター<span class="e">37</span></a>
       <a href="#t39">折れ線グラフ<span class="e">39</span></a>
+      <a href="#t43">ドーナツグラフ<span class="e">43</span></a>
     </div>
     <div class="col"><h3>UI部品</h3>
       <a href="#t17">モーダル<span class="e">17</span></a>
@@ -183,6 +187,9 @@
       <a href="#t36">FAQ検索<span class="e">36</span></a>
       <a href="#t40">トグルスイッチ<span class="e">40</span></a>
       <a href="#t41">数値スピナー<span class="e">41</span></a>
+      <a href="#t45">コマンドパレット<span class="e">45</span></a>
+      <a href="#t46">カレンダー<span class="e">46</span></a>
+      <a href="#t47">レンジスライダー<span class="e">47</span></a>
     </div>
     <div class="col"><h3>コード・技術</h3>
       <a href="#t21">コードコピー<span class="e">21</span></a>
@@ -960,12 +967,125 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
   </div>
 </section>
 
+<div class="cat-label"><span>データと操作 — 第六集</span></div>
+
+<!-- 43 donut chart -->
+<section id="t43" class="tech">
+  <div class="head"><span class="num">43</span><span class="en">Donut Chart (SVG)</span></div>
+  <h2 class="rt rt-big">輪を、色で分ける。</h2>
+  <p class="one">全体に対する割合を、輪の色分けで。画面に入ると伸びます。（数値はデモ用の例です）</p>
+  <div class="demo donut draw-svg">
+    <svg viewBox="0 0 42 42">
+      <circle class="dn-base" cx="21" cy="21" r="15.9"/>
+      <circle class="dn-seg s1" cx="21" cy="21" r="15.9" pathLength="100" style="--p:45;--o:0"/>
+      <circle class="dn-seg s2" cx="21" cy="21" r="15.9" pathLength="100" style="--p:30;--o:-45"/>
+      <circle class="dn-seg s3" cx="21" cy="21" r="15.9" pathLength="100" style="--p:25;--o:-75"/>
+    </svg>
+    <ul class="dn-legend">
+      <li><span class="dn-c s1"></span>つくる（制作）<b>45%</b></li>
+      <li><span class="dn-c s2"></span>まわす（AI集約）<b>30%</b></li>
+      <li><span class="dn-c s3"></span>おしえる（教育）<b>25%</b></li>
+    </ul>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">構成比・内訳・シェア。全体の中の割合を、ひと目で。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">SVGは超軽量。凡例の数字も文字なので読まれる。</div></div>
+  </div>
+</section>
+
+<!-- 44 step progress（動線内蔵） -->
+<section id="t44" class="tech">
+  <div class="head"><span class="num">44</span><span class="en">Step Progress</span></div>
+  <h2 class="rt rt-big">いま、どこにいるか。</h2>
+  <p class="one">手続きの「現在地」を、番号で示します。「次へ」で進み、最後は相談へつながります。</p>
+  <div class="demo steps" id="steps">
+    <div class="stp-bar"><i id="stpFill"></i></div>
+    <ol class="stp-list">
+      <li class="stp is-on"><span class="stp-n">1</span><span class="stp-t">相談</span></li>
+      <li class="stp"><span class="stp-n">2</span><span class="stp-t">見積</span></li>
+      <li class="stp"><span class="stp-n">3</span><span class="stp-t">制作</span></li>
+      <li class="stp"><span class="stp-n">4</span><span class="stp-t">公開</span></li>
+    </ol>
+    <div class="stp-ctl">
+      <button class="ui-btn" id="stpPrev">← もどる</button>
+      <button class="ui-btn solid" id="stpNext">次へ →</button>
+      <a class="ui-btn solid stp-cta" id="stpCta" href="/web/#contact" hidden>この流れで相談する →</a>
+    </div>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">申込・予約・設定など、複数段の手続きの「現在地」を示す。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽いJS。各ステップは文字なので読まれる。</div></div>
+  </div>
+</section>
+
+<!-- 45 command palette（動線内蔵） -->
+<section id="t45" class="tech">
+  <div class="head"><span class="num">45</span><span class="en">Command Palette</span></div>
+  <h2 class="rt rt-big">どこへでも、ひとっとび。</h2>
+  <p class="one">「⌘K」でおなじみの検索ジャンプ。打ち込むと候補が絞られ、選ぶとそのページへ。ページが多いサイトを素早く行き来できます。</p>
+  <div class="demo cmdp">
+    <button class="cmdp-open" id="cmdpOpen"><span>ページを検索…</span><kbd>⌘K</kbd></button>
+    <dialog class="cmdp-dialog" id="cmdpDialog">
+      <input type="search" id="cmdpInput" class="cmdp-input" placeholder="ページ名で検索（例：清掃 / 記事 / totoline）" aria-label="ページ検索">
+      <ul class="cmdp-list" id="cmdpList">
+        <li><a href="/web/" data-k="制作 hp lp web ホームページ">HP・LP制作</a></li>
+        <li><a href="/cleaning/" data-k="清掃 そうじ cleaning">清掃</a></li>
+        <li><a href="/guitar/" data-k="ギター guitar 教室">ギター教室</a></li>
+        <li><a href="/totoline/" data-k="totoline line ライン ai">totoline</a></li>
+        <li><a href="/articles/" data-k="記事 ジャーナル journal ブログ">ジャーナル</a></li>
+        <li><a href="/lab/" data-k="web表現 ずかん lab 図鑑">Web表現ずかん</a></li>
+        <li><a href="/web/#contact" data-k="相談 問い合わせ contact れんらく">相談する</a></li>
+      </ul>
+      <p class="cmdp-empty" id="cmdpEmpty" hidden>見つかりませんでした。</p>
+    </dialog>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">ページ数の多いサイト・管理画面。キーボードだけで素早く移動。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽いJS。候補は全部リンクなので内部リンクとして辿られる。</div></div>
+  </div>
+</section>
+
+<!-- 46 calendar -->
+<section id="t46" class="tech">
+  <div class="head"><span class="num">46</span><span class="en">Calendar</span></div>
+  <h2 class="rt rt-big">日付を、選んでもらう。</h2>
+  <p class="one">予約や空き状況に。日を押すと選択されます（下は2026年6月のイメージです）。</p>
+  <div class="demo cal" id="cal">
+    <div class="cal-head"><span>2026年 6月</span></div>
+    <div class="cal-week"><span>日</span><span>月</span><span>火</span><span>水</span><span>木</span><span>金</span><span>土</span></div>
+    <div class="cal-grid" id="calGrid"></div>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">予約・空き状況・営業日。日付を直感的に選ばせたいとき。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽いJS。日付は機械にも読み取りやすい。</div></div>
+  </div>
+</section>
+
+<!-- 47 range slider -->
+<section id="t47" class="tech">
+  <div class="head"><span class="num">47</span><span class="en">Range Slider</span></div>
+  <h2 class="rt rt-big">範囲を、つまんで決める。</h2>
+  <p class="one">2つのつまみで「ここからここまで」を選びます。絞り込みや並べ替えに（数値はデモ用です）。</p>
+  <div class="demo rng" id="rng">
+    <div class="rng-val"><span id="rngLo">20</span> 〜 <span id="rngHi">70</span></div>
+    <div class="rng-track">
+      <div class="rng-fill" id="rngFill"></div>
+      <input type="range" id="rngA" min="0" max="100" value="20" aria-label="下限">
+      <input type="range" id="rngB" min="0" max="100" value="70" aria-label="上限">
+    </div>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">価格帯・期間・距離などの「範囲」での絞り込み。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽いJS。指でもつまみやすいよう、つまみを大きめに。</div></div>
+  </div>
+</section>
+
 <div class="readbar" id="readbar" aria-hidden="true"></div>
 <div class="toast" id="toast" role="status" aria-live="polite"><span class="t-dot"></span>送信しました。ありがとうございます。</div>
 
 <!-- glossary -->
 <section class="glossary">
-  <div class="sec-top"><h2 style="font-weight:400;font-size:clamp(22px,3vw,36px)">専門用語、やさしい一覧。</h2><span class="note">Glossary · 33語</span></div>
+  <div class="sec-top"><h2 style="font-weight:400;font-size:clamp(22px,3vw,36px)">専門用語、やさしい一覧。</h2><span class="note">Glossary · 35語</span></div>
   <div class="g-grid">
     <dl><dt>HTML<small>HyperText Markup Language</small></dt><dd>ページの骨組み。見出し・段落・画像など「中身と構造」を書く言語。</dd></dl>
     <dl><dt>CSS<small>Cascading Style Sheets</small></dt><dd>見た目の指定。色・大きさ・配置・動きを決める。</dd></dl>
@@ -1000,6 +1120,8 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
     <dl><dt>カルーセル<small>Carousel</small></dt><dd>複数のスライドを順に切り替えて見せるUI。実績やお知らせを省スペースに。</dd></dl>
     <dl><dt>トグルスイッチ<small>Toggle</small></dt><dd>オン・オフを切り替えるスイッチ型UI。今どの状態かをひと目で示す。</dd></dl>
     <dl><dt>ツリー構造<small>Tree</small></dt><dd>親子の階層を枝分かれで表す表現。サイトマップやカテゴリ分類に。</dd></dl>
+    <dl><dt>コマンドパレット<small>Command Palette</small></dt><dd>⌘Kなどで開く検索ジャンプUI。打ち込んで候補を絞り、選んで素早く移動。</dd></dl>
+    <dl><dt>レンジスライダー<small>Range Slider</small></dt><dd>2つのつまみで範囲（下限〜上限）を選ぶUI。価格帯や期間の絞り込みに。</dd></dl>
   </div>
 </section>
 
@@ -1303,6 +1425,59 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
     function stSet(d){var v=Math.min(99,Math.max(1,(+stNum.textContent||1)+d));stNum.textContent=v;}
     stPlus.addEventListener("click",function(){stSet(1);});
     stMinus.addEventListener("click",function(){stSet(-1);});
+  }
+
+  /* 44 ステップ進行 */
+  var steps=document.getElementById("steps");
+  if(steps){
+    var stps=steps.querySelectorAll(".stp"),stpFill=document.getElementById("stpFill"),stpPrev=document.getElementById("stpPrev"),stpNext=document.getElementById("stpNext"),stpCta=document.getElementById("stpCta"),si=0;
+    function spRender(){
+      stps.forEach(function(s,i){s.classList.toggle("is-on",i<=si);s.classList.toggle("cur",i===si);});
+      stpFill.style.width=(si/(stps.length-1)*100)+"%";
+      stpPrev.disabled=(si===0);
+      var last=(si===stps.length-1);
+      stpNext.hidden=last;stpCta.hidden=!last;
+    }
+    stpPrev.addEventListener("click",function(){if(si>0){si--;spRender();}});
+    stpNext.addEventListener("click",function(){if(si<stps.length-1){si++;spRender();}});
+    spRender();
+  }
+
+  /* 45 コマンドパレット */
+  var cmdpOpen=document.getElementById("cmdpOpen"),cmdpDialog=document.getElementById("cmdpDialog"),cmdpInput=document.getElementById("cmdpInput"),cmdpList=document.getElementById("cmdpList"),cmdpEmpty=document.getElementById("cmdpEmpty");
+  if(cmdpOpen&&cmdpDialog){
+    var cmItems=cmdpList.querySelectorAll("li");
+    function cmOpen(){cmdpDialog.showModal?cmdpDialog.showModal():cmdpDialog.setAttribute("open","");setTimeout(function(){cmdpInput.focus();},60);}
+    cmdpOpen.addEventListener("click",cmOpen);
+    addEventListener("keydown",function(e){if((e.metaKey||e.ctrlKey)&&(e.key==="k"||e.key==="K")){e.preventDefault();cmOpen();}});
+    cmdpDialog.addEventListener("click",function(e){if(e.target===cmdpDialog)cmdpDialog.close&&cmdpDialog.close();});
+    cmdpInput.addEventListener("input",function(){
+      var q=cmdpInput.value.trim().toLowerCase(),shown=0;
+      cmItems.forEach(function(li){var a=li.querySelector("a");var hay=(a.textContent+" "+(a.dataset.k||"")).toLowerCase();var hit=q===""||hay.indexOf(q)>-1;li.style.display=hit?"":"none";if(hit)shown++;});
+      cmdpEmpty.hidden=(shown>0);
+    });
+  }
+
+  /* 46 カレンダー（2026年6月） */
+  var calGrid=document.getElementById("calGrid");
+  if(calGrid){
+    var first=new Date(2026,5,1).getDay();
+    for(var bb=0;bb<first;bb++)calGrid.insertAdjacentHTML("beforeend","<span class=\"cal-x\"></span>");
+    for(var dd=1;dd<=30;dd++)calGrid.insertAdjacentHTML("beforeend","<button class=\"cal-d\">"+dd+"</button>");
+    var firstBtn=calGrid.querySelector(".cal-d");if(firstBtn)firstBtn.classList.add("sel");
+    calGrid.addEventListener("click",function(e){var t=e.target.closest(".cal-d");if(!t)return;calGrid.querySelectorAll(".cal-d.sel").forEach(function(x){x.classList.remove("sel");});t.classList.add("sel");});
+  }
+
+  /* 47 レンジスライダー（2つまみ） */
+  var rng=document.getElementById("rng");
+  if(rng){
+    var ra=document.getElementById("rngA"),rb=document.getElementById("rngB"),rfill=document.getElementById("rngFill"),rlo=document.getElementById("rngLo"),rhi=document.getElementById("rngHi");
+    function rngUpd(){
+      var va=+ra.value,vb=+rb.value;if(va>vb){var t=va;va=vb;vb=t;}
+      rlo.textContent=va;rhi.textContent=vb;
+      rfill.style.left=va+"%";rfill.style.width=(vb-va)+"%";
+    }
+    ra.addEventListener("input",rngUpd);rb.addEventListener("input",rngUpd);rngUpd();
   }
 })();
 </script>
