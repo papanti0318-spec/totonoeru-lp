@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="hYRflPVBHV_SbReXwN_7v4tNCf6AT3VusKhSviD5kPU" />
 <title>Web表現ずかん｜スクロールの"しかけ"を実演と用語で｜ととのえる屋</title>
-<meta name="description" content="サイトでよく見る「なんかかっこいい動き」を、実演＋やさしい言葉＋専門用語集でまるごと解説。なめらかスクロール・パララックス・マスクリビール・モーダル・タブ・横スクロール・ダークモード・グラフ・大手サイト風のホバープレビューや画像ズームなど55種を、その場で体感できます。テンプレとの違いも。長野県小諸市のHP・LP制作 ととのえる屋。">
+<meta name="description" content="サイトでよく見る「なんかかっこいい動き」を、実演＋やさしい言葉＋専門用語集でまるごと解説。なめらかスクロール・パララックス・マスクリビール・モーダル・タブ・横スクロール・ダークモード・グラフ・大手サイト風のホバープレビュー・ヒートマップ・検索サジェストなど60種を、その場で体感できます。テンプレとの違いも。長野県小諸市のHP・LP制作 ととのえる屋。">
 <meta name="keywords" content="Web表現, ホームページ 動き, パララックス, なめらかスクロール, SVGアニメーション, ページ遷移, Web制作 小諸, HP制作 長野, 非エンジニア Web, ととのえる屋">
 <link rel="canonical" href="https://totonoeruya.jp/lab/">
 
 <meta property="og:title" content="Web表現ずかん｜スクロールの"しかけ"を実演と用語で">
-<meta property="og:description" content="サイトの「なんかかっこいい動き」を、実演＋やさしい言葉＋用語集でまるごと。なめらかスクロール・モーダル・横スクロール・ダークモード・グラフ・ホバープレビュー・画像ズームなど55種を体感。">
+<meta property="og:description" content="サイトの「なんかかっこいい動き」を、実演＋やさしい言葉＋用語集でまるごと。なめらかスクロール・モーダル・横スクロール・ダークモード・グラフ・ホバープレビュー・ヒートマップなど60種を体感。">
 <meta property="og:url" content="https://totonoeruya.jp/lab/">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://totonoeruya.jp/og.jpg">
@@ -91,7 +91,10 @@
         { "@type": "DefinedTerm", "name": "ホバープレビュー", "description": "カードにカーソルを乗せると拡大して情報が出る表現。動画配信サイトでよく使われる。" },
         { "@type": "DefinedTerm", "name": "画像ズーム", "description": "カーソルを乗せた部分を拡大表示する表現。通販サイトの商品画像でよく使われる。" },
         { "@type": "DefinedTerm", "name": "スケルトンスクリーン", "description": "中身が読み込まれるまで、骨組みのプレースホルダーを見せる手法。体感速度を上げる。" },
-        { "@type": "DefinedTerm", "name": "レコメンド", "description": "今見ているものに関連したページや商品をおすすめする表現。回遊と離脱防止に効く。" }
+        { "@type": "DefinedTerm", "name": "レコメンド", "description": "今見ているものに関連したページや商品をおすすめする表現。回遊と離脱防止に効く。" },
+        { "@type": "DefinedTerm", "name": "ヒートマップ", "description": "マス目の色の濃淡で量の大小を表す可視化。混雑や頻度の偏りをひと目で示す。" },
+        { "@type": "DefinedTerm", "name": "オートコンプリート", "description": "入力に応じて候補を提示する検索補助。打つそばから目的地を絞り込む。" },
+        { "@type": "DefinedTerm", "name": "QRコード", "description": "スマホのカメラで読み取れる二次元コード。紙やサイネージからWebやLINEへつなぐ。" }
       ]
     },
     {
@@ -139,7 +142,7 @@
 </div>
 
 <nav class="toc" aria-label="もくじ">
-  <div class="toc-head"><h2>もくじ — Web表現図鑑</h2><span class="cnt">全55項目 · 100選めざして</span></div>
+  <div class="toc-head"><h2>もくじ — Web表現図鑑</h2><span class="cnt">全60項目 · 100選めざして</span></div>
   <div class="cols">
     <div class="col"><h3>スクロール演出</h3>
       <a href="#t1">なめらかスクロール<span class="e">01</span></a>
@@ -171,6 +174,7 @@
       <a href="#t29">カードフリップ<span class="e">29</span></a>
       <a href="#t48">星評価<span class="e">48</span></a>
       <a href="#t49">ドラッグ並べ替え<span class="e">49</span></a>
+      <a href="#t57">音量ノブ<span class="e">57</span></a>
     </div>
     <div class="col"><h3>ナビ・遷移</h3>
       <a href="#t10">ページ遷移<span class="e">10</span></a>
@@ -190,6 +194,8 @@
       <a href="#t39">折れ線グラフ<span class="e">39</span></a>
       <a href="#t43">ドーナツグラフ<span class="e">43</span></a>
       <a href="#t50">カラーパレット<span class="e">50</span></a>
+      <a href="#t56">ヒートマップ<span class="e">56</span></a>
+      <a href="#t59">マップピン<span class="e">59</span></a>
     </div>
     <div class="col"><h3>UI部品</h3>
       <a href="#t17">モーダル<span class="e">17</span></a>
@@ -205,6 +211,8 @@
       <a href="#t46">カレンダー<span class="e">46</span></a>
       <a href="#t47">レンジスライダー<span class="e">47</span></a>
       <a href="#t54">スケルトン<span class="e">54</span></a>
+      <a href="#t58">検索サジェスト<span class="e">58</span></a>
+      <a href="#t60">QRコード<span class="e">60</span></a>
     </div>
     <div class="col"><h3>コード・技術</h3>
       <a href="#t21">コードコピー<span class="e">21</span></a>
@@ -1250,12 +1258,86 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
   </div>
 </section>
 
+<div class="cat-label"><span>地図・入力・可視化 — 第九集</span></div>
+
+<!-- 56 heatmap -->
+<section id="t56" class="tech">
+  <div class="head"><span class="num">56</span><span class="en">Heatmap</span></div>
+  <h2 class="rt rt-big">濃さで、多い少ないを。</h2>
+  <p class="one">マス目の色の濃さで、量の大小をひと目で。曜日×時間帯のにぎわいなどに。（数値はデモ用の例です）</p>
+  <div class="demo heatmap" id="heatmap"></div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">混雑・頻度・アクセス時間帯。数の偏りを、色の濃淡で直感的に。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">小さなマスの集まりだけ。軽い。数値はデータとして持てる。</div></div>
+  </div>
+</section>
+
+<!-- 57 volume knob -->
+<section id="t57" class="tech">
+  <div class="head"><span class="num">57</span><span class="en">Volume Knob</span></div>
+  <h2 class="rt rt-big">まわして、調整する。</h2>
+  <p class="one">つまみをドラッグで回すと、値が変わります。音量や濃度などの調整に。<span class="pc-rec">PC推奨</span></p>
+  <div class="demo knobwrap"><div class="knob" id="knob"><div class="knob-dial"><span class="knob-mark"></span></div><div class="knob-val"><span id="knobVal">50</span></div></div></div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">音量・明るさ・濃さなど、感覚的な強弱の調整。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽いJS。装飾的なので、使いどころを選ぶ。</div></div>
+  </div>
+</section>
+
+<!-- 58 search suggest（動線内蔵） -->
+<section id="t58" class="tech">
+  <div class="head"><span class="num">58</span><span class="en">Search Suggest</span></div>
+  <h2 class="rt rt-big">打つと、候補が出る。</h2>
+  <p class="one">検索窓に打つと、合う候補がその場に並びます。選ぶとそのページへ。試しに「清掃」「line」「記事」など。</p>
+  <div class="demo suggest" id="suggest">
+    <input class="sg-input" id="sgInput" type="search" placeholder="探す（例：清掃 / line / 記事）" aria-label="ページを検索" autocomplete="off">
+    <ul class="sg-list" id="sgList"></ul>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">商品・記事・ページが多いサイト。打つそばから目的地を提案。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽いJS。候補はリンクとして辿られる。</div></div>
+  </div>
+</section>
+
+<!-- 59 map pins（動線内蔵） -->
+<section id="t59" class="tech">
+  <div class="head"><span class="num">59</span><span class="en">Map Pins</span></div>
+  <h2 class="rt rt-big">地図に、ピンを立てる。</h2>
+  <p class="one">拠点や対応エリアを、地図に印で。押すと詳しいページへ（下は配置のイメージです）。</p>
+  <div class="demo mapwrap">
+    <div class="map">
+      <a class="pin" style="left:32%;top:54%" href="/cleaning/"><i></i><span class="pin-l">小諸</span></a>
+      <a class="pin" style="left:52%;top:44%" href="/cleaning/"><i></i><span class="pin-l">御代田</span></a>
+      <a class="pin" style="left:70%;top:34%" href="/cleaning/"><i></i><span class="pin-l">軽井沢</span></a>
+    </div>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">店舗・拠点・対応エリア。場所を視覚的に示し、ページへつなぐ。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽い。ピンはリンクとして辿られ、地域ページへ回遊。</div></div>
+  </div>
+</section>
+
+<!-- 60 QR code（動線内蔵） -->
+<section id="t60" class="tech">
+  <div class="head"><span class="num">60</span><span class="en">QR Code</span></div>
+  <h2 class="rt rt-big">紙から、スマホへ。</h2>
+  <p class="one">QRコードを置くと、チラシやサイネージからスマホへつなげます。下は見た目のイメージです（実際はLINEのQRを置けます）。</p>
+  <div class="demo qrwrap">
+    <div class="qr" id="qr" aria-hidden="true"></div>
+    <a class="ui-btn solid" href="https://line.me/R/ti/p/@903xtesg" target="_blank" rel="noopener">LINEを開く →</a>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">名刺・チラシ・店頭・サイネージから、サイトやLINEへ橋渡し。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">画像かSVGを置くだけ。軽い。印刷物とWebをつなぐ。</div></div>
+  </div>
+</section>
+
 <div class="readbar" id="readbar" aria-hidden="true"></div>
 <div class="toast" id="toast" role="status" aria-live="polite"><span class="t-dot"></span>送信しました。ありがとうございます。</div>
 
 <!-- glossary -->
 <section class="glossary">
-  <div class="sec-top"><h2 style="font-weight:400;font-size:clamp(22px,3vw,36px)">専門用語、やさしい一覧。</h2><span class="note">Glossary · 42語</span></div>
+  <div class="sec-top"><h2 style="font-weight:400;font-size:clamp(22px,3vw,36px)">専門用語、やさしい一覧。</h2><span class="note">Glossary · 45語</span></div>
   <div class="g-grid">
     <dl><dt>HTML<small>HyperText Markup Language</small></dt><dd>ページの骨組み。見出し・段落・画像など「中身と構造」を書く言語。</dd></dl>
     <dl><dt>CSS<small>Cascading Style Sheets</small></dt><dd>見た目の指定。色・大きさ・配置・動きを決める。</dd></dl>
@@ -1299,6 +1381,9 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
     <dl><dt>画像ズーム<small>Image Zoom</small></dt><dd>乗せた部分を拡大表示する表現。通販サイトの商品画像で定番。</dd></dl>
     <dl><dt>スケルトンスクリーン<small>Skeleton</small></dt><dd>読み込み中に骨組みのプレースホルダーを見せ、体感速度を上げる手法。</dd></dl>
     <dl><dt>レコメンド<small>Recommendation</small></dt><dd>関連するページや商品をおすすめする表現。回遊と離脱防止に効く。</dd></dl>
+    <dl><dt>ヒートマップ<small>Heatmap</small></dt><dd>マス目の色の濃淡で量の大小を表す可視化。混雑や頻度の偏りをひと目で。</dd></dl>
+    <dl><dt>オートコンプリート<small>Autocomplete</small></dt><dd>入力に応じて候補を出す検索補助。打つそばから目的地を絞り込む。</dd></dl>
+    <dl><dt>QRコード<small>QR Code</small></dt><dd>スマホで読み取れる二次元コード。紙やサイネージからWebやLINEへつなぐ。</dd></dl>
   </div>
 </section>
 
@@ -1725,6 +1810,67 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
     function skRun(){clearTimeout(skT);skSkel.hidden=false;skReal.hidden=true;skT=setTimeout(function(){skSkel.hidden=true;skReal.hidden=false;},1500);}
     skBtn.addEventListener("click",skRun);
     skRun();
+  }
+
+  /* 56 ヒートマップ */
+  var heatmap=document.getElementById("heatmap");
+  if(heatmap){
+    var hmDays=["月","火","水","木","金","土","日"],hmTimes=["9","11","13","15","17","19"];
+    var hmVals=[[1,2,2,3,4,1,0],[2,3,4,4,3,2,1],[3,4,5,5,4,3,1],[2,3,4,5,5,4,2],[1,2,3,4,5,3,2],[0,1,2,3,4,2,1]];
+    var hmHtml="<div class=\"hm-corner\"></div>";
+    hmDays.forEach(function(d){hmHtml+="<div class=\"hm-col\">"+d+"</div>";});
+    hmVals.forEach(function(row,i){
+      hmHtml+="<div class=\"hm-row\">"+hmTimes[i]+"時</div>";
+      row.forEach(function(v,j){hmHtml+="<div class=\"hm-cell\" data-l=\""+v+"\" title=\""+hmDays[j]+" "+hmTimes[i]+"時\"></div>";});
+    });
+    heatmap.innerHTML=hmHtml;
+  }
+
+  /* 57 音量ノブ */
+  var knob=document.getElementById("knob");
+  if(knob){
+    var kDial=knob.querySelector(".knob-dial"),kVal=document.getElementById("knobVal"),kv=50,kDrag=false;
+    function kSet(){var deg=-135+(kv/100*270);kDial.style.transform="rotate("+deg+"deg)";kVal.textContent=Math.round(kv);}
+    function kFrom(e){var r=knob.getBoundingClientRect();var cx=r.left+r.width/2,cy=r.top+r.height/2;var ang=Math.atan2(e.clientY-cy,e.clientX-cx)*180/Math.PI+90;if(ang>180)ang-=360;if(ang<-135)ang=-135;if(ang>135)ang=135;kv=(ang+135)/270*100;kSet();}
+    kSet();
+    knob.addEventListener("pointerdown",function(e){e.preventDefault();kDrag=true;kFrom(e);});
+    addEventListener("pointermove",function(e){if(kDrag)kFrom(e);});
+    addEventListener("pointerup",function(){kDrag=false;});
+  }
+
+  /* 58 検索サジェスト */
+  var suggest=document.getElementById("suggest");
+  if(suggest){
+    var sgInput=document.getElementById("sgInput"),sgList=document.getElementById("sgList");
+    var SGP=[{t:"HP・LP制作",u:"/web/",k:"制作 hp lp web ホームページ"},{t:"清掃",u:"/cleaning/",k:"清掃 そうじ cleaning"},{t:"ギター教室",u:"/guitar/",k:"ギター guitar 教室"},{t:"totoline",u:"/totoline/",k:"totoline line ライン ai"},{t:"ジャーナル",u:"/articles/",k:"記事 journal ブログ"},{t:"Web表現ずかん",u:"/lab/",k:"ずかん lab 図鑑"},{t:"相談する",u:"/web/#contact",k:"相談 contact 問い合わせ"}];
+    function sgRender(q){
+      q=(q||"").trim().toLowerCase();
+      if(!q){sgList.innerHTML="";sgList.classList.remove("show");return;}
+      var hits=SGP.filter(function(p){return (p.t+" "+p.k).toLowerCase().indexOf(q)>-1;});
+      sgList.innerHTML=hits.length?hits.map(function(p){return "<li><a href=\""+p.u+"\">"+p.t+"</a></li>";}).join(""):"<li class=\"sg-empty\">候補が見つかりません</li>";
+      sgList.classList.add("show");
+    }
+    sgInput.addEventListener("input",function(){sgRender(sgInput.value);});
+    sgInput.addEventListener("focus",function(){if(sgInput.value)sgRender(sgInput.value);});
+  }
+
+  /* 60 QRコード（装飾・イメージ） */
+  var qr=document.getElementById("qr");
+  if(qr){
+    var N=13,qh="";
+    function fnd(r,c){return (r<3&&c<3)||(r<3&&c>=N-3)||(r>=N-3&&c<3);}
+    for(var r=0;r<N;r++)for(var c=0;c<N;c++){
+      var on;
+      if(fnd(r,c)){
+        /* ファインダー風：3x3角ブロックを「枠＋中心」に（rr,cc=角内の相対座標0..2） */
+        var rr=(r<3?r:N-1-r),cc=(c<3?c:N-1-c);
+        on=(rr===0||rr===2||cc===0||cc===2)||(rr===1&&cc===1);
+      } else {
+        on=(((r*7+c*13+r*c)%5)<2);
+      }
+      qh+="<i class=\""+(on?"on":"")+"\"></i>";
+    }
+    qr.innerHTML=qh;
   }
 })();
 </script>

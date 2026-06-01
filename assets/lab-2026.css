@@ -657,6 +657,53 @@ dialog.cmdp-dialog::backdrop{background:rgba(26,24,20,.5);backdrop-filter:blur(2
 .rec-item p{font-size:12px;font-weight:300;color:var(--ink-soft);line-height:1.6}
 @media(max-width:680px){.rec{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.sk{animation:none}}
+
+/* ===== 地図・入力・可視化 第九集（56-60） ===== */
+/* 56 ヒートマップ */
+.heatmap{display:grid;grid-template-columns:auto repeat(7,1fr);gap:4px;max-width:520px}
+.hm-corner,.hm-col,.hm-row{font-family:var(--mono);font-size:10px;color:var(--muted);display:flex;align-items:center;justify-content:center}
+.hm-row{justify-content:flex-end;padding-right:6px}
+.hm-cell{aspect-ratio:1;border-radius:4px;background:var(--paper-2)}
+.hm-cell[data-l="1"]{background:rgba(197,116,60,.18)}
+.hm-cell[data-l="2"]{background:rgba(197,116,60,.34)}
+.hm-cell[data-l="3"]{background:rgba(197,116,60,.52)}
+.hm-cell[data-l="4"]{background:rgba(197,116,60,.72)}
+.hm-cell[data-l="5"]{background:rgba(197,116,60,.92)}
+
+/* 57 音量ノブ */
+.knobwrap{display:flex;justify-content:center;padding:8px 0}
+.knob{position:relative;width:120px;height:120px;border-radius:50%;background:var(--paper-2);border:1px solid var(--line);cursor:grab;touch-action:none;display:flex;align-items:center;justify-content:center}
+.knob:active{cursor:grabbing}
+.knob-dial{position:absolute;inset:8px;border-radius:50%;border:2px solid var(--accent);transition:transform .05s linear}
+.knob-mark{position:absolute;top:6px;left:50%;width:4px;height:16px;margin-left:-2px;border-radius:2px;background:var(--accent)}
+.knob-val{font-family:var(--mono);font-size:22px;color:var(--ink)}
+
+/* 58 検索サジェスト（動線内蔵） */
+.suggest{position:relative;max-width:440px}
+.sg-input{width:100%;box-sizing:border-box;border:1px solid var(--line);border-radius:10px;padding:14px 16px;font-family:var(--sans);font-size:14px;background:rgba(255,255,255,.4);color:var(--ink)}
+.sg-input:focus{outline:none;border-color:var(--accent)}
+.sg-list{list-style:none;margin:6px 0 0;padding:0;border:1px solid var(--line);border-radius:10px;background:var(--paper);overflow:hidden;display:none;box-shadow:0 12px 30px rgba(26,24,20,.12)}
+.sg-list.show{display:block}
+.sg-list li{border-bottom:1px solid var(--line-soft)}
+.sg-list li:last-child{border-bottom:none}
+.sg-list a{display:block;padding:12px 16px;text-decoration:none;color:var(--ink);font-size:14px;transition:background .15s,color .15s}
+.sg-list a:hover{background:var(--paper-2);color:var(--accent)}
+.sg-empty{padding:12px 16px;font-size:13px;color:var(--muted)}
+
+/* 59 マップピン（動線内蔵） */
+.mapwrap{display:flex;justify-content:center}
+.map{position:relative;width:min(560px,100%);aspect-ratio:16/9;border-radius:12px;border:1px solid var(--line);background:repeating-linear-gradient(0deg,transparent,transparent 28px,rgba(26,24,20,.04) 28px,rgba(26,24,20,.04) 29px),repeating-linear-gradient(90deg,transparent,transparent 28px,rgba(26,24,20,.04) 28px,rgba(26,24,20,.04) 29px),var(--paper-2)}
+.pin{position:absolute;transform:translate(-50%,-100%);text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:2px}
+.pin i{width:14px;height:14px;border-radius:50% 50% 50% 0;background:var(--accent);transform:rotate(-45deg);box-shadow:0 2px 6px rgba(26,24,20,.3);transition:transform .2s}
+.pin:hover i{transform:rotate(-45deg) scale(1.25)}
+.pin-l{font-family:var(--mono);font-size:10px;color:var(--ink);background:var(--paper);padding:2px 6px;border-radius:4px;border:1px solid var(--line);white-space:nowrap;transform:translateY(6px)}
+
+/* 60 QRコード（動線内蔵） */
+.qrwrap{display:flex;flex-direction:column;align-items:center;gap:18px}
+.qr{display:grid;grid-template-columns:repeat(13,1fr);width:168px;aspect-ratio:1;border:10px solid #fff;background:#fff;border-radius:6px}
+.qr i{background:#fff}
+.qr i.on{background:var(--ink)}
+@media(max-width:600px){.heatmap .hm-corner,.heatmap .hm-col,.heatmap .hm-row{font-size:9px}}
 @media(prefers-reduced-motion:reduce){
   .rt .word{display:inline;overflow:visible}
   .rt .word>span{display:inline}
