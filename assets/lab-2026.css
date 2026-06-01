@@ -829,6 +829,42 @@ dialog.cmdp-dialog::backdrop{background:rgba(26,24,20,.5);backdrop-filter:blur(2
 .dr-d.inrange{background:rgba(197,116,60,.16);color:var(--ink);border-radius:0}
 .dr-d.sel{background:var(--accent);color:var(--paper)}
 .dr-out{text-align:center;margin-top:14px;font-size:13px;font-weight:300;color:var(--ink-soft)}
+
+/* ===== 技術・時間・操作 第十三集（76-80） ===== */
+/* 76 ターミナル */
+.terminal{border-radius:10px;overflow:hidden;border:1px solid var(--line);background:#16140f;max-width:560px}
+.tm-bar{display:flex;gap:7px;padding:11px 14px;background:rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.08)}
+.tm-bar i{width:11px;height:11px;border-radius:50%;background:rgba(255,255,255,.22)}
+.tm-bar i:first-child{background:#d98a72}
+.tm-body{margin:0;padding:18px;font-family:var(--mono);font-size:13px;line-height:1.9;color:#cfc8ba;white-space:pre-wrap;min-height:150px}
+
+/* 77 コードdiff */
+.diffblock pre{margin:0;padding:14px 0}
+.diffblock code{display:block;font-family:var(--mono);font-size:13px;line-height:1.95}
+.d-ctx{display:block;color:var(--paper);padding:1px 16px}
+.d-del{display:block;background:rgba(200,80,70,.22);color:#f0cac5;padding:1px 16px}
+.d-add{display:block;background:rgba(111,148,87,.24);color:#d2e4c2;padding:1px 16px}
+
+/* 78 世界時計 */
+.clocks{display:flex;gap:14px;flex-wrap:wrap}
+.clk{flex:1;min-width:120px;border:1px solid var(--line);border-radius:10px;padding:18px;text-align:center;background:rgba(255,255,255,.2)}
+.clk-c{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.clk-t{font-family:var(--mono);font-size:23px;color:var(--accent);font-variant-numeric:tabular-nums}
+
+/* 79 プログレスHUD */
+.hud{position:relative;min-height:120px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.2)}
+.hud-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(231,228,221,.72);backdrop-filter:blur(2px);border-radius:12px}
+.hud-box{display:flex;flex-direction:column;align-items:center;gap:12px}
+.hud-box p{font-family:var(--mono);font-size:12px;color:var(--ink-soft)}
+.hud-spin{width:34px;height:34px;border-radius:50%;border:3px solid var(--line);border-top-color:var(--accent);animation:hudSpin .8s linear infinite}
+@keyframes hudSpin{to{transform:rotate(360deg)}}
+
+/* 80 スワイプ削除 */
+.swipelist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;max-width:480px}
+.sw-item{position:relative;border-radius:10px;overflow:hidden;background:#c0584f;display:flex;align-items:center;transition:max-height .3s,opacity .3s;max-height:80px}
+.sw-content{position:relative;z-index:2;flex:1;padding:16px;background:var(--paper);border:1px solid var(--line);border-radius:10px;font-size:14px;font-weight:300;color:var(--ink);touch-action:pan-y;cursor:grab;user-select:none}
+.sw-del{position:absolute;right:18px;z-index:1;color:#fff;font-family:var(--mono);font-size:12px;letter-spacing:.12em}
+@media(prefers-reduced-motion:reduce){.hud-spin{animation:none}}
 @media(prefers-reduced-motion:reduce){
   .rt .word{display:inline;overflow:visible}
   .rt .word>span{display:inline}

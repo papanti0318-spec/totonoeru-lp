@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="hYRflPVBHV_SbReXwN_7v4tNCf6AT3VusKhSviD5kPU" />
 <title>Web表現ずかん｜スクロールの"しかけ"を実演と用語で｜ととのえる屋</title>
-<meta name="description" content="サイトでよく見る「なんかかっこいい動き」を、実演＋やさしい言葉＋専門用語集でまるごと解説。なめらかスクロール・パララックス・マスクリビール・モーダル・タブ・横スクロール・ダークモード・グラフ・ホバープレビュー・ヒートマップ・各種グラフ・かんばん・日付レンジなど75種を、その場で体感できます。テンプレとの違いも。長野県小諸市のHP・LP制作 ととのえる屋。">
+<meta name="description" content="サイトでよく見る「なんかかっこいい動き」を、実演＋やさしい言葉＋専門用語集でまるごと解説。なめらかスクロール・パララックス・マスクリビール・モーダル・タブ・横スクロール・ダークモード・グラフ・ホバープレビュー・各種グラフ・かんばん・ターミナル・世界時計など80種を、その場で体感できます。テンプレとの違いも。長野県小諸市のHP・LP制作 ととのえる屋。">
 <meta name="keywords" content="Web表現, ホームページ 動き, パララックス, なめらかスクロール, SVGアニメーション, ページ遷移, Web制作 小諸, HP制作 長野, 非エンジニア Web, ととのえる屋">
 <link rel="canonical" href="https://totonoeruya.jp/lab/">
 
 <meta property="og:title" content="Web表現ずかん｜スクロールの"しかけ"を実演と用語で">
-<meta property="og:description" content="サイトの「なんかかっこいい動き」を、実演＋やさしい言葉＋用語集でまるごと。なめらかスクロール・モーダル・ダークモード・各種グラフ・ヒートマップ・かんばんなど75種を体感。">
+<meta property="og:description" content="サイトの「なんかかっこいい動き」を、実演＋やさしい言葉＋用語集でまるごと。なめらかスクロール・モーダル・各種グラフ・ヒートマップ・かんばん・ターミナルなど80種を体感。">
 <meta property="og:url" content="https://totonoeruya.jp/lab/">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://totonoeruya.jp/og.jpg">
@@ -103,7 +103,10 @@
         { "@type": "DefinedTerm", "name": "アバタースタック", "description": "人物アイコンを少し重ねて並べる表現。参加者や規模感を、顔の重なりで示す。" },
         { "@type": "DefinedTerm", "name": "エリアチャート", "description": "折れ線の下を塗って量の積み上がりを示すグラフ。累計や推移の強調に使う。" },
         { "@type": "DefinedTerm", "name": "かんばんボード", "description": "「やること→進行中→完了」と列でタスクの流れを見える化するUI。" },
-        { "@type": "DefinedTerm", "name": "セグメントコントロール", "description": "つながったボタンで一つを選ぶUI。期間や表示方法の択一切り替えに使う。" }
+        { "@type": "DefinedTerm", "name": "セグメントコントロール", "description": "つながったボタンで一つを選ぶUI。期間や表示方法の択一切り替えに使う。" },
+        { "@type": "DefinedTerm", "name": "ターミナル", "description": "コマンドを打ち込む黒い画面風の表現。手順紹介や技術的な世界観の演出に。" },
+        { "@type": "DefinedTerm", "name": "コードdiff", "description": "追加行を緑、削除行を赤で示し、変更点を一目で分かるようにする表示。" },
+        { "@type": "DefinedTerm", "name": "スワイプ削除", "description": "項目を横に払って消すタッチ操作。スマホアプリの一覧でおなじみ。" }
       ]
     },
     {
@@ -151,7 +154,7 @@
 </div>
 
 <nav class="toc" aria-label="もくじ">
-  <div class="toc-head"><h2>もくじ — Web表現図鑑</h2><span class="cnt">全75項目 · 100選めざして</span></div>
+  <div class="toc-head"><h2>もくじ — Web表現図鑑</h2><span class="cnt">全80項目 · 100選めざして</span></div>
   <div class="cols">
     <div class="col"><h3>スクロール演出</h3>
       <a href="#t1">なめらかスクロール<span class="e">01</span></a>
@@ -186,6 +189,7 @@
       <a href="#t48">星評価<span class="e">48</span></a>
       <a href="#t49">ドラッグ並べ替え<span class="e">49</span></a>
       <a href="#t57">音量ノブ<span class="e">57</span></a>
+      <a href="#t80">スワイプ削除<span class="e">80</span></a>
     </div>
     <div class="col"><h3>ナビ・遷移</h3>
       <a href="#t10">ページ遷移<span class="e">10</span></a>
@@ -214,6 +218,7 @@
       <a href="#t70">紙吹雪<span class="e">70</span></a>
       <a href="#t71">エリアチャート<span class="e">71</span></a>
       <a href="#t73">星分布バー<span class="e">73</span></a>
+      <a href="#t78">世界時計<span class="e">78</span></a>
     </div>
     <div class="col"><h3>UI部品</h3>
       <a href="#t17">モーダル<span class="e">17</span></a>
@@ -237,12 +242,15 @@
       <a href="#t72">かんばん<span class="e">72</span></a>
       <a href="#t74">セグメント切替<span class="e">74</span></a>
       <a href="#t75">日付レンジ<span class="e">75</span></a>
+      <a href="#t79">プログレスHUD<span class="e">79</span></a>
     </div>
     <div class="col"><h3>コード・技術</h3>
       <a href="#t21">コードコピー<span class="e">21</span></a>
       <a href="#t22">ライブプレビュー<span class="e">22</span></a>
       <a href="#t27">シンタックスハイライト<span class="e">27</span></a>
       <a href="#t32">コードのタブ切替<span class="e">32</span></a>
+      <a href="#t76">ターミナル<span class="e">76</span></a>
+      <a href="#t77">コードdiff<span class="e">77</span></a>
     </div>
   </div>
 </nav>
@@ -1606,6 +1614,88 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
   </div>
 </section>
 
+<div class="cat-label"><span>技術・時間・操作 — 第十三集</span></div>
+
+<!-- 76 terminal -->
+<section id="t76" class="tech">
+  <div class="head"><span class="num">76</span><span class="en">Terminal</span></div>
+  <h2 class="rt rt-big">打ち込まれて、いく。</h2>
+  <p class="one">黒い画面に、コマンドが打たれて結果が出ます。手順の説明や、技術っぽい世界観の演出に。</p>
+  <div class="demo terminal" id="terminal">
+    <div class="tm-bar"><i></i><i></i><i></i></div>
+    <pre class="tm-body" id="tmBody"></pre>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">手順・コマンドの紹介。技術への信頼感や世界観を出したいとき。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽いJS。文字なので読まれる。</div></div>
+  </div>
+</section>
+
+<!-- 77 code diff -->
+<section id="t77" class="tech">
+  <div class="head"><span class="num">77</span><span class="en">Code Diff</span></div>
+  <h2 class="rt rt-big">変えた所を、色で。</h2>
+  <p class="one">追加した行は緑、消した行は赤で示します。どこをどう直したかが、ひと目で分かります。</p>
+  <div class="demo code-block diffblock">
+    <div class="code-top"><span class="code-lang">diff</span></div>
+<pre><code><span class="d-ctx"> function totonoeru() {</span>
+<span class="d-del">-  return template      // 既製のひな型</span>
+<span class="d-add">+  return craft()       // 手で作り込む</span>
+<span class="d-ctx"> }</span></code></pre>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">変更点の共有・レビュー・改善の記録。前後の差を明確に。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">色付けは見た目だけ。コードは文字として読まれる。</div></div>
+  </div>
+</section>
+
+<!-- 78 world clocks -->
+<section id="t78" class="tech">
+  <div class="head"><span class="num">78</span><span class="en">World Clocks</span></div>
+  <h2 class="rt rt-big">いま、世界の時刻。</h2>
+  <p class="one">複数の都市の「今」をリアルタイムで。海外とのやりとりや、グローバルな見せ方に。</p>
+  <div class="demo clocks" id="clocks">
+    <div class="clk" data-tz="9"><div class="clk-c">東京</div><div class="clk-t">--:--:--</div></div>
+    <div class="clk" data-tz="1"><div class="clk-c">パリ</div><div class="clk-t">--:--:--</div></div>
+    <div class="clk" data-tz="-5"><div class="clk-c">ニューヨーク</div><div class="clk-t">--:--:--</div></div>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">海外連携・国際的なサービス。「今」をリアルタイムで見せる。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽いJS。1秒ごとの更新でも負担は小さい。</div></div>
+  </div>
+</section>
+
+<!-- 79 progress HUD -->
+<section id="t79" class="tech">
+  <div class="head"><span class="num">79</span><span class="en">Progress Overlay</span></div>
+  <h2 class="rt rt-big">処理中を、伝える。</h2>
+  <p class="one">時間のかかる処理の間、画面に「処理中…」を重ねます。固まったと誤解させないために。</p>
+  <div class="demo hud" id="hud">
+    <button class="ui-btn solid" id="hudBtn">処理を実行</button>
+    <div class="hud-overlay" id="hudOverlay" hidden><div class="hud-box"><span class="hud-spin"></span><p>処理中…</p></div></div>
+  </div>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">送信・保存・生成など、待ちが発生する操作。状態を伝え安心させる。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽い。長く待たせないことが第一、表示は補助。</div></div>
+  </div>
+</section>
+
+<!-- 80 swipe to delete -->
+<section id="t80" class="tech">
+  <div class="head"><span class="num">80</span><span class="en">Swipe to Delete</span></div>
+  <h2 class="rt rt-big">横に払って、消す。</h2>
+  <p class="one">項目を左へドラッグ（スマホはスワイプ）すると削除されます。スマホアプリでおなじみの操作。</p>
+  <ul class="demo swipelist" id="swipelist">
+    <li class="sw-item"><span class="sw-content">通知 ①　← 左へ払うと消える</span><span class="sw-del">削除</span></li>
+    <li class="sw-item"><span class="sw-content">通知 ②　← 左へ払うと消える</span><span class="sw-del">削除</span></li>
+    <li class="sw-item"><span class="sw-content">通知 ③　← 左へ払うと消える</span><span class="sw-del">削除</span></li>
+  </ul>
+  <div class="meta">
+    <div><div class="k">どんな時に効く</div><div class="v">通知・メール・タスクの一覧。素早く片付けたいとき。</div></div>
+    <div><div class="k">重さ・SEO</div><div class="v">軽いJS。タッチ操作に最適。誤操作には取り消しも添えると親切。</div></div>
+  </div>
+</section>
+
 <div class="readbar" id="readbar" aria-hidden="true"></div>
 <div class="toast" id="toast" role="status" aria-live="polite"><span class="t-dot"></span>送信しました。ありがとうございます。</div>
 <div class="toast tk" id="toastK" role="status" aria-live="polite"></div>
@@ -1613,7 +1703,7 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
 
 <!-- glossary -->
 <section class="glossary">
-  <div class="sec-top"><h2 style="font-weight:400;font-size:clamp(22px,3vw,36px)">専門用語、やさしい一覧。</h2><span class="note">Glossary · 54語</span></div>
+  <div class="sec-top"><h2 style="font-weight:400;font-size:clamp(22px,3vw,36px)">専門用語、やさしい一覧。</h2><span class="note">Glossary · 57語</span></div>
   <div class="g-grid">
     <dl><dt>HTML<small>HyperText Markup Language</small></dt><dd>ページの骨組み。見出し・段落・画像など「中身と構造」を書く言語。</dd></dl>
     <dl><dt>CSS<small>Cascading Style Sheets</small></dt><dd>見た目の指定。色・大きさ・配置・動きを決める。</dd></dl>
@@ -1669,6 +1759,9 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
     <dl><dt>エリアチャート<small>Area Chart</small></dt><dd>折れ線の下を塗って量の積み上がりを示すグラフ。累計や推移の強調に。</dd></dl>
     <dl><dt>かんばんボード<small>Kanban</small></dt><dd>列でタスクの流れ（やること→進行中→完了）を見える化するUI。</dd></dl>
     <dl><dt>セグメントコントロール<small>Segmented</small></dt><dd>つながったボタンで一つを選ぶUI。期間や表示方法の択一切り替えに。</dd></dl>
+    <dl><dt>ターミナル<small>Terminal / CLI</small></dt><dd>コマンドを打ち込む黒い画面風の表現。手順紹介や技術的な世界観に。</dd></dl>
+    <dl><dt>コードdiff<small>Diff</small></dt><dd>追加行を緑、削除行を赤で示し、変更点を一目で分かるようにする表示。</dd></dl>
+    <dl><dt>スワイプ削除<small>Swipe to Delete</small></dt><dd>項目を横に払って消すタッチ操作。スマホアプリの一覧でおなじみ。</dd></dl>
   </div>
 </section>
 
@@ -2207,6 +2300,61 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
       if(e.isIntersecting){var i=+e.target.dataset.ft;ftBtns.forEach(function(x,j){x.classList.toggle("is-on",j===i);});}
     });},{root:ftBody,threshold:.5});
     ftSecs.forEach(function(s){ftIo.observe(s);});
+  }
+
+  /* 76 ターミナル（タイピング・画面内で再生） */
+  var terminal=document.getElementById("terminal");
+  if(terminal){
+    var tmBody=document.getElementById("tmBody");
+    var TLINES=["$ npx ととのえる init","✓ プロジェクトを作成しました","$ npm run build","✓ 41KB / とても軽い","✓ AIに読まれる構造で出力"];
+    var tmPlaying=false;
+    function tmType(){
+      if(tmPlaying)return;tmPlaying=true;tmBody.textContent="";
+      var li=0,ci=0;
+      (function step(){
+        if(li>=TLINES.length){tmPlaying=false;return;}
+        var line=TLINES[li];
+        tmBody.textContent=tmBody.textContent+line.charAt(ci);ci++;
+        if(ci>line.length){tmBody.textContent+="\n";li++;ci=0;setTimeout(step,260);}
+        else setTimeout(step,reduce?0:34);
+      })();
+    }
+    var tmIo=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)tmType();else{tmPlaying=false;}});},{threshold:.3});
+    tmIo.observe(terminal);
+  }
+
+  /* 78 世界時計 */
+  var clocks=document.getElementById("clocks");
+  if(clocks){
+    var clkEls=clocks.querySelectorAll(".clk");
+    function pad(n){return (n<10?"0":"")+n;}
+    function tick(){
+      var now=new Date();var utc=now.getTime()+now.getTimezoneOffset()*60000;
+      clkEls.forEach(function(el){
+        var tz=+el.dataset.tz;var d=new Date(utc+tz*3600000);
+        el.querySelector(".clk-t").textContent=pad(d.getHours())+":"+pad(d.getMinutes())+":"+pad(d.getSeconds());
+      });
+    }
+    tick();setInterval(tick,1000);
+  }
+
+  /* 79 プログレスHUD */
+  var hudBtn=document.getElementById("hudBtn"),hudOverlay=document.getElementById("hudOverlay");
+  if(hudBtn&&hudOverlay){
+    hudBtn.addEventListener("click",function(){hudOverlay.hidden=false;setTimeout(function(){hudOverlay.hidden=true;},1800);});
+  }
+
+  /* 80 スワイプ削除（pointer・タッチ対応） */
+  var swipelist=document.getElementById("swipelist");
+  if(swipelist){
+    swipelist.querySelectorAll(".sw-item").forEach(function(it){
+      var content=it.querySelector(".sw-content"),down=false,sx=0,dx=0;
+      content.addEventListener("pointerdown",function(e){down=true;sx=e.clientX;dx=0;content.style.transition="none";});
+      addEventListener("pointermove",function(e){if(!down)return;dx=Math.min(0,e.clientX-sx);content.style.transform="translateX("+dx+"px)";});
+      addEventListener("pointerup",function(){if(!down)return;down=false;content.style.transition="transform .3s";
+        if(dx<-110){content.style.transform="translateX(-110%)";it.style.maxHeight="0";it.style.opacity="0";setTimeout(function(){it.remove();},320);}
+        else content.style.transform="";});
+    });
   }
 
   /* 72 かんばんボード */
