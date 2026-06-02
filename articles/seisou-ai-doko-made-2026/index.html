@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="hYRflPVBHV_SbReXwN_7v4tNCf6AT3VusKhSviD5kPU" />
+<title>清掃業でAIが本当に担えるのは、どこまで？｜ととのえる屋</title>
+<meta name="description" content="2026年6月時点、清掃業でAIが担えるのは日報・見積・シフトなどの事務作業だけです。掃除そのものは、まだ人の手です。海外では「無料清掃」の形で掃除ロボットの学習データ集めが始まっていますが、日本の現場に来るのは数年先。その理由と、いま清掃業がやるべき事務のAI化の手順を、現役エンジニアが正直に伝えます。">
+<meta name="keywords" content="清掃業 ai, 清掃 ロボット, フィジカルai 清掃, 清掃 自動化, 清掃 dx, 軽井沢 清掃, 小諸 清掃, 御代田 清掃, 現場ai, ととのえる屋">
+<link rel="canonical" href="https://totonoeruya.jp/articles/seisou-ai-doko-made-2026/">
+
+<meta property="og:title" content="清掃業でAIが本当に担えるのは、どこまで？｜ととのえる屋">
+<meta property="og:description" content="2026年6月時点、清掃業でAIが担えるのは日報・見積・シフトなどの事務作業だけです。掃除そのものは、まだ人の手です。海外では「無料清掃」の形で掃除ロボットの学習データ集めが始まっていますが、日本の現場に来るのは数年先。その理由と、いま清掃業がやるべき事務のAI化の手順を伝えます。">
+<meta property="og:url" content="https://totonoeruya.jp/articles/seisou-ai-doko-made-2026/">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://totonoeruya.jp/assets/journal/seisou-ai-doko-made-2026.jpg">
+<meta property="article:published_time" content="2026-06-03T00:00:00+09:00">
+<meta property="article:modified_time" content="2026-06-03T00:00:00+09:00">
+<meta property="article:author" content="照井航次郎">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../../assets/site-2026.css">
+<link rel="stylesheet" href="../../assets/article-2026.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://totonoeruya.jp/articles/seisou-ai-doko-made-2026/#article",
+      "headline": "清掃業でAIが本当に担えるのは、どこまで？",
+      "description": "2026年6月時点、清掃業でAIが担えるのは日報・見積・シフトなどの事務作業だけです。掃除そのものは、まだ人の手です。海外では「無料清掃」の形で掃除ロボットの学習データ集めが始まっていますが、日本の現場に来るのは数年先。その理由と、いま清掃業がやるべき事務のAI化の手順を、現役エンジニアが正直に伝えます。",
+      "url": "https://totonoeruya.jp/articles/seisou-ai-doko-made-2026/",
+      "mainEntityOfPage": "https://totonoeruya.jp/articles/seisou-ai-doko-made-2026/",
+      "image": "https://totonoeruya.jp/assets/journal/seisou-ai-doko-made-2026.jpg",
+      "datePublished": "2026-06-03",
+      "dateModified": "2026-06-03",
+      "inLanguage": "ja",
+      "articleSection": "清掃",
+      "keywords": "清掃業 ai, 清掃 ロボット, フィジカルai 清掃, 清掃 自動化, 清掃 dx, 軽井沢 清掃, 小諸 清掃, 御代田 清掃, 現場ai",
+      "author": {
+        "@id": "https://totonoeruya.jp/#terui"
+      },
+      "publisher": {
+        "@id": "https://totonoeruya.jp/#organization"
+      },
+      "isPartOf": {
+        "@id": "https://totonoeruya.jp/articles/#blog"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "ホーム",
+          "item": "https://totonoeruya.jp/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "ジャーナル",
+          "item": "https://totonoeruya.jp/articles/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "清掃業でAIが本当に担えるのは、どこまで？",
+          "item": "https://totonoeruya.jp/articles/seisou-ai-doko-made-2026/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://totonoeruya.jp/articles/seisou-ai-doko-made-2026/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "清掃ロボットを、今から買ったほうがいいですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "急がなくて大丈夫です。2026年6月時点、現場で使える清掃ロボットはまだ高価で、向いている用途も限られています。先に事務のAI化で時間とデータをそろえておくほうが、確実に元が取れます。ロボットは、現場の足場ができてからで間に合います。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "「無料で掃除します」という海外のサービスは、日本にも来ますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "いずれ似た形は来るかもしれません。ただ、無料の裏には「あなたの家やお店の映像を集めて、掃除ロボットに学ばせる」という目的があります。タダかどうかより、自分が何を渡しているのかを見たほうがいいです。仕組みを知っておくだけで、落ち着いて判断できます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "AIに詳しくないのですが、事務のAI化は自分にもできますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "できます。最初の一歩は、紙やメモをスマホで撮ってAIに送るだけです。難しい設定はいりません。何から手をつけるか分からなければ、現場の事情を聞いた上で一緒に決めます。とりあえず相談したいだけでも大丈夫です。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Slackやチャットツールを入れたのに、現場で使われませんでした。なぜですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "多くの場合、原因は現場ではなく「新しいアプリを開くこと自体が一手間だから」です。掃除で手がふさがっている人に、もう1つアプリを覚えてもらうのは続きません。すでに全員が毎日使っているLINEの中で完結させるほうが、定着します。ととのえる屋では、LINEに送るだけで会話が台帳になる「totoline」という仕組みを用意しています。"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://totonoeruya.jp/articles/seisou-ai-doko-made-2026/#howto",
+      "name": "いま始める、清掃業の事務のAI化の手順は？",
+      "description": "清掃業でAIが今すぐ役に立つのは事務作業です。いちばん時間を取られている事務を1つ選び、スマホとAIだけで小さく始める手順を、現役エンジニアが伝えます。",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "手順1",
+          "text": "いちばん時間を取られている事務を1つだけ選ぶ（多くの現場では日報の転記）"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "手順2",
+          "text": "紙やメモをスマホで撮って、ChatGPT・Claude・Geminiのどれかに「Excelの形にして」と頼んでみる"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "手順3",
+          "text": "1週間そのまま続けて、浮いた時間をざっくり測る"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "手順4",
+          "text": "うまくいったら、見積・シフト・問い合わせ対応へ少しずつ広げる"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "手順5",
+          "text": "途中で迷ったら、現場を知っている人に一度相談して、順番を決める"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- Vercel Web Analytics -->
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/assets/analytics.js"></script>
+</head>
+<body>
+
+<header class="topbar">
+  <a href="/" class="brand"><img src="../../assets/logo-totonoeru.png" alt="">ととのえる屋</a>
+  <nav aria-label="メインメニュー">
+    <a href="/web/">Web · AI</a>
+    <a href="/cleaning/">Cleaning</a>
+    <a href="/guitar/">Guitar</a>
+    <a href="/totoline/">totoline</a>
+    <a href="/articles/" aria-current="page">Journal</a>
+  </nav>
+  <a href="/#contact" class="cta">相談する</a>
+</header>
+
+<main>
+<article class="article-body">
+  <!-- Article Header -->
+  <header class="article-header">
+    <figure class="article-hero">
+      <img src="/assets/journal/seisou-ai-doko-made-2026.jpg" alt="清掃業でAIが本当に担えるのは、どこまで？" width="1200" height="675" loading="eager">
+    </figure>
+    <div class="article-meta">
+      <span class="journal-date">2026-06-03</span>
+      <span class="journal-category">清掃</span>
+    </div>
+    <h1 class="article-title">清掃業でAIが本当に担えるのは、どこまで？</h1>
+    <p class="article-lead">
+      結論から書きます。2026年6月時点、清掃業でAIが肩代わりできるのは「事務作業」だけです。日報、見積、シフト、問い合わせ。このあたりは、もうAIが楽にしてくれます。でも、床を拭く、シーツを替える、ゴミを集める。体を動かす掃除そのものは、まだ人の手です。ロボットは動き始めていますが、日本の現場に来るのは数年先。その理由は、最後に書きます。だからこそ今やるべきは、事務のAI化です。
+    </p>
+  </header>
+
+  <!-- Article Content -->
+  <div class="article-content">
+    <h2>いまのAIは、掃除そのものをできますか？</h2>
+    <p>結論、できません。</p>
+    <p>理由は、AIは「考える」のは得意でも、「体を動かす」のがまだ苦手だからです。</p>
+    <p>文章を読む、表を作る、メールを書く。これは画面の中の仕事で、AIの本領です。</p>
+    <p>でも、散らかった部屋でどの順に片づけるか決めて、布をつかんで、棚を拭く。これは体の仕事です。AIにとっては、まだ別世界です。</p>
+    <p>だから、清掃業でいま効くのは「画面の中の事務」をAIに渡すこと。掃除そのものは、いまもあなたの手がいちばん速いです。</p>
+    <p>具体的には、<a href="/articles/seisou-nippou-kami-ai/">日報の転記</a>、<a href="/articles/seisou-mitsumori-ai/">見積もり</a>、<a href="/articles/seisou-shift-ai/">シフト調整</a>、<a href="/articles/bessou-seisou-tagengo-ai/">外国語のオーナー対応</a>。この4つは、今日からでも軽くなります。</p>
+
+    <h2>では「無料で家を掃除します」という海外サービスは、何ですか？</h2>
+    <p>最近、海外で「無料で家を掃除します」というサービスが話題になりました。</p>
+    <p>ドイツの会社が、アメリカのニューヨークで始めた「Shift」というアプリです。</p>
+    <p>タダで掃除してくれます。ただし、条件があります。清掃員がカメラをつけて、作業の様子を録画します。</p>
+    <p>その映像が、目的です。</p>
+    <p>布をどうつかむか。椅子をどう動かすか。散らかった部屋で、どこから手をつけるか。この「人の動き」の映像を集めて、掃除ロボットに学ばせるための会社です。</p>
+    <p>2026年の最初の3か月で、15か国・1万人以上に、500万ドル以上を払ったと言っています。世界中で、お金をかけて「ロボットに掃除を教えるためのデータ」を集めている段階です。</p>
+    <p>便利な話に見えますが、影もあります。自分の家の映像がどこへ行くのか、消してもらえるのか。プライバシーの議論が起きていて、国際機関の事例集にも載りました。タダの裏で何を渡しているのか。そこは、知っておいて損はありません。</p>
+
+    <h2>日本の清掃現場にロボットが来るのは、いつですか？</h2>
+    <p>これが本題です。</p>
+    <p>日本でも、動きはあります。ソフトバンクのグループが2026年3月に、お店向けの清掃ロボットを発表しました。国も、ロボットに動きを覚えさせるためのデータ基盤づくりを、2026年度から始めます。</p>
+    <p>でも、あなたの現場。軽井沢の別荘、小諸のホテル、御代田の事業所。ここにロボットが入るのは、まだ数年先です。</p>
+    <p>理由は、たぶん技術ではありません。</p>
+    <p>まだ、AIを「事務」で使えている人が、ほとんどいないからです。</p>
+    <p>日報の転記すら、紙とExcelの二度手間で止まっている現場が多い。その段階に、いきなり清掃ロボットは届きません。</p>
+    <p>順番があります。事務をAIに渡す。現場のデータが整う。その上にロボットが乗る。一段目を飛ばして、三段目だけが来ることはありません。</p>
+
+    <h2>では、いま清掃業がやるべきことは何ですか？</h2>
+    <p>答えは、事務のAI化を、今のうちに済ませておくことです。</p>
+    <p>理由は2つあります。</p>
+    <p>1つ、今すぐ時間が返ってきます。日報・見積・シフトをAIに渡せば、月に何時間も浮きます。</p>
+    <p>2つ、その積み重ねが、ロボット時代の足場になります。事務がきちんとデータになっている現場ほど、次の波に乗りやすい。</p>
+    <p>慌てる必要はありません。でも、立ち止まる必要もありません。今できる一歩から始めれば足ります。</p>
+
+    <h2>現場に新しいアプリを入れても、続かないのはなぜですか？</h2>
+    <p>結論、新しいアプリを開くこと自体が、現場では一手間だからです。</p>
+    <p>SlackやChatworkのようなツールを入れた現場の話を、よく聞きます。最初の数日は使う。でも、だんだん開かなくなって、気づけば元の口頭と紙に戻っている。</p>
+    <p>悪いのは現場ではありません。掃除で手がふさがっている人に「もう1つアプリを開いて」と頼むのが、そもそも無理があるのです。</p>
+    <p>では、どうするか。答えは、新しい場所を作らないことです。</p>
+    <p>清掃の現場で、ほぼ全員がすでに毎日開いているアプリがあります。LINEです。</p>
+    <p>新しいツールを覚えてもらうより、いつものLINEの中で完結させるほうが、ずっと続きます。日報も、連絡も、申し送りも、送り先はいつものトークでいい。</p>
+    <p>ととのえる屋では、その考えで「<a href="/totoline/">totoline（トトライン）</a>」という仕組みを作っています。LINEにいつも通りメッセージを送るだけで、その会話が自動で台帳になる。新しいアプリも、ログインも、覚え直しもいりません。LINE公式アカウントとの違いは<a href="/articles/line-koushiki-totoline-chigai/">こちらの記事</a>で書いています。</p>
+    <p>合うかどうかは現場によります。まずは「今のやり方のどこが重いか」から、一緒に見れば足ります。</p>
+
+  <section class="article-howto" aria-labelledby="howto-heading">
+    <h2 id="howto-heading" class="howto-heading">いま始める、清掃業の事務のAI化の手順は？</h2>
+    <ol class="howto-list">
+    <li class="howto-step">
+      <strong class="howto-step-name">手順1</strong>
+      <p class="howto-step-text">いちばん時間を取られている事務を1つだけ選ぶ（多くの現場では日報の転記）</p>
+    </li>
+    <li class="howto-step">
+      <strong class="howto-step-name">手順2</strong>
+      <p class="howto-step-text">紙やメモをスマホで撮って、ChatGPT・Claude・Geminiのどれかに「Excelの形にして」と頼んでみる</p>
+    </li>
+    <li class="howto-step">
+      <strong class="howto-step-name">手順3</strong>
+      <p class="howto-step-text">1週間そのまま続けて、浮いた時間をざっくり測る</p>
+    </li>
+    <li class="howto-step">
+      <strong class="howto-step-name">手順4</strong>
+      <p class="howto-step-text">うまくいったら、見積・シフト・問い合わせ対応へ少しずつ広げる</p>
+    </li>
+    <li class="howto-step">
+      <strong class="howto-step-name">手順5</strong>
+      <p class="howto-step-text">途中で迷ったら、現場を知っている人に一度相談して、順番を決める</p>
+    </li>
+    </ol>
+  </section>
+
+  <p style="margin-top: 40px;">すごい時代になっています。掃除という、昔から変わらない仕事にも、ロボットの足音が近づいています。その日が来たとき、いちばん早く乗れるのは、今のうちに事務をAIに渡しておいた現場です。取り残されないように、できる一歩から、一緒に始めましょう。</p>
+
+  <section class="article-faq" aria-labelledby="faq-heading">
+    <h2 id="faq-heading" class="faq-heading">よくある質問</h2>
+    <div class="faq-item">
+      <h3 class="faq-q">Q. 清掃ロボットを、今から買ったほうがいいですか？</h3>
+      <p class="faq-a">急がなくて大丈夫です。2026年6月時点、現場で使える清掃ロボットはまだ高価で、向いている用途も限られています。先に事務のAI化で時間とデータをそろえておくほうが、確実に元が取れます。ロボットは、現場の足場ができてからで間に合います。</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">Q. 「無料で掃除します」という海外のサービスは、日本にも来ますか？</h3>
+      <p class="faq-a">いずれ似た形は来るかもしれません。ただ、無料の裏には「あなたの家やお店の映像を集めて、掃除ロボットに学ばせる」という目的があります。タダかどうかより、自分が何を渡しているのかを見たほうがいいです。仕組みを知っておくだけで、落ち着いて判断できます。</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">Q. AIに詳しくないのですが、事務のAI化は自分にもできますか？</h3>
+      <p class="faq-a">できます。最初の一歩は、紙やメモをスマホで撮ってAIに送るだけです。難しい設定はいりません。何から手をつけるか分からなければ、現場の事情を聞いた上で一緒に決めます。とりあえず相談したいだけでも大丈夫です。</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">Q. Slackやチャットツールを入れたのに、現場で使われませんでした。なぜですか？</h3>
+      <p class="faq-a">多くの場合、原因は現場ではなく「新しいアプリを開くこと自体が一手間だから」です。掃除で手がふさがっている人に、もう1つアプリを覚えてもらうのは続きません。すでに全員が毎日使っているLINEの中で完結させるほうが、定着します。ととのえる屋では、LINEに送るだけで会話が台帳になる<a href="/totoline/">totoline</a>という仕組みを用意しています。</p>
+    </div>
+  </section>
+
+  </div>
+
+  <!-- シリーズハブ -->
+  <aside style="margin: 64px auto 32px; padding: 28px 32px; max-width: 640px; background: var(--bg-warm); border-left: 3px solid var(--amber); border-radius: 4px;">
+    <p style="margin: 0 0 12px; font-size: 13px; line-height: 1.8; color: var(--text-mid);">
+      この記事は「清掃 × AI」シリーズの1本です。長野県内の清掃事業者（別荘・ホテル・事業所）向けに、現場の事務作業をAIで楽にする手順を集めています。
+    </p>
+    <p style="margin: 0;">
+      <a href="/cleaning/" style="font-size: 14px; color: var(--forest); text-decoration: underline;">清掃事業を見る →</a>
+    </p>
+  </aside>
+
+  <!-- 末尾CTA -->
+  <div class="article-cta" style="margin: 80px auto 64px; padding: 40px 32px; background: var(--bg-warm); border: 1px solid var(--border-soft); border-radius: var(--radius); text-align: center; max-width: 640px;">
+    <p style="font-size: 14px; line-height: 2; color: var(--text-mid); margin-bottom: 24px; text-wrap: balance;">
+      うちの事務、AIで楽になるか試したい、と一言だけ送ってください。何から手をつければいいか分からなくても、とりあえず相談したいだけでも大丈夫です。1日ぶん撮って送ってもらう範囲は、無料でやります。
+    </p>
+    <a href="/#contact" class="btn btn--amber">相談する</a>
+  </div>
+
+  <!-- Related Articles -->
+  <div class="related-articles">
+    <h3>他の記事</h3>
+    <div class="related-list">
+      <a href="/articles/seisou-ai-nani-kara-2026/" class="related-item">
+        <div class="related-item-title">2026年版・清掃業でAIを使うなら、何から始めればいい？</div>
+      </a>
+      <a href="/articles/seisou-nippou-kami-ai/" class="related-item">
+        <div class="related-item-title">清掃の日報を紙でやっている現場でも、AIで楽になりますか？</div>
+      </a>
+      <a href="/articles/seisou-mitsumori-ai/" class="related-item">
+        <div class="related-item-title">清掃の見積もり依頼への返信を、AIで30分から5分にするには？</div>
+      </a>
+      <a href="/articles/line-koushiki-totoline-chigai/" class="related-item">
+        <div class="related-item-title">LINE公式アカウントと totoline は、どう違いますか？</div>
+      </a>
+    </div>
+  </div>
+</article>
+</main>
+
+<footer class="site-footer">
+  <div class="foot">
+    <div class="b">
+      <img src="../../assets/logo-totonoeru.png" alt="ととのえる屋">
+      <p>長野県小諸市の、小さな何でも屋。HP・LP制作、AI業務改善、清掃、ギター教室。ぜんぶ、同じ手で。</p>
+    </div>
+    <div><h6>Services</h6><ul><li><a href="/web/">HP・LP制作</a></li><li><a href="/cleaning/">清掃</a></li><li><a href="/guitar/">ギター教室</a></li><li><a href="/totoline/">totoline</a></li></ul></div>
+    <div><h6>Company</h6><ul><li><a href="/articles/">ジャーナル</a></li><li><a href="/articles/totonoeruya-name-riyu/">屋号の由来</a></li><li><a href="https://github.com/papanti0318-spec" target="_blank" rel="noopener">GitHub</a></li><li><a href="https://x.com/totonoeruya" target="_blank" rel="noopener">X</a></li></ul></div>
+    <div><h6>Contact</h6><ul><li><a href="mailto:totonoeru.ya@gmail.com">totonoeru.ya@gmail.com</a></li><li><a href="https://line.me/R/ti/p/@903xtesg" target="_blank" rel="noopener">LINE @903xtesg</a></li><li>長野県小諸市</li></ul></div>
+  </div>
+  <div class="foot-bot">
+    <span>© 2026 ととのえる屋. 長野県小諸市</span>
+    <span><a href="/privacy/">プライバシーポリシー</a> · <a href="/commerce/">特定商取引法に基づく表記</a></span>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js" defer></script>
+<script src="../../assets/smooth-2026.js" defer></script>
+</body>
+</html>
