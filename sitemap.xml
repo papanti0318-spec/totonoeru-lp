@@ -2,25 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://totonoeruya.jp/</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-06-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://totonoeruya.jp/web/</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-06-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://totonoeruya.jp/totoline/</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-06-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://totonoeruya.jp/cleaning/</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-06-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -45,6 +45,12 @@
   <url>
     <loc>https://totonoeruya.jp/articles/seisou-shiagari-check-ai/</loc>
     <lastmod>2026-05-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://totonoeruya.jp/articles/seisou-nippou-kakikata-ai/</loc>
+    <lastmod>2026-06-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -92,7 +98,7 @@
   </url>
   <url>
     <loc>https://totonoeruya.jp/articles/</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-06-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -638,7 +644,7 @@
   </url>
   <url>
     <loc>https://totonoeruya.jp/lab/</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
