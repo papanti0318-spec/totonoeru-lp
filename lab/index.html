@@ -318,7 +318,7 @@
   <h2 class="rt rt-big">見出しが、下から<br>すっと立ち上がる。</h2>
   <p class="one">画面に入ると、覆いの下から文字が現れます（上の見出しがそれです）。</p>
   <div class="meta">
-    <div><div class="k">どんな時に効く</div><div class="v">冒頭やキーメッセージを"読ませる"。間（ま）で印象づける。</div></div>
+    <div><div class="k">どんな時に効く</div><div class="v">冒頭やキーメッセージを"読ませる"。現れ方で印象づける。</div></div>
     <div><div class="k">重さ・SEO</div><div class="v">文字はそのまま書かれているので検索・AIに読まれる。軽い。</div></div>
   </div>
 </section>
@@ -1134,11 +1134,12 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
 <section id="t46" class="tech">
   <div class="head"><span class="num">46</span><span class="en">Calendar</span></div>
   <h2 class="rt rt-big">日付を、選んでもらう。</h2>
-  <p class="one">予約や空き状況に。日を押すと選択されます（下は2026年6月のイメージです）。</p>
+  <p class="one">予約や空き状況に。点のついた日は予定あり、薄い日は満席のイメージです。日を押すと選べます（下は2026年6月の例）。</p>
   <div class="demo cal" id="cal">
     <div class="cal-head"><span>2026年 6月</span></div>
     <div class="cal-week"><span>日</span><span>月</span><span>火</span><span>水</span><span>木</span><span>金</span><span>土</span></div>
     <div class="cal-grid" id="calGrid"></div>
+    <div class="cal-legend"><span><i class="lg-today"></i>今日</span><span><i class="lg-ev"></i>予定あり</span><span><i class="lg-busy"></i>満席</span></div>
   </div>
   <div class="meta">
     <div><div class="k">どんな時に効く</div><div class="v">予約・空き状況・営業日。日付を直感的に選ばせたいとき。</div></div>
@@ -1636,7 +1637,7 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
     <div class="dr-head">2026年 6月</div>
     <div class="cal-week"><span>日</span><span>月</span><span>火</span><span>水</span><span>木</span><span>金</span><span>土</span></div>
     <div class="dr-grid" id="drGrid"></div>
-    <p class="dr-out" id="drOut">開始日を押してください</p>
+    <p class="dr-out" id="drOut">6/9 〜 6/14（6日間）</p>
   </div>
   <div class="meta">
     <div><div class="k">どんな時に効く</div><div class="v">予約・集計・絞り込みの「いつからいつまで」。</div></div>
@@ -2172,7 +2173,37 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
     }).join("");
     el.querySelectorAll(".word>span").forEach(function(sp,i){sp.style.transitionDelay=(i*22)+"ms";});
   });
-  /* スクロールで毎回再生（入った=in / 出た=戻す） */
+  /* スクロールで毎回再生（入った=in / 出た=戻す）
+     ★図形系（リング/折れ線/エリア/レーダー/ドーナツ）は CSS変数+transition だけに頼ると
+       モバイルやIO発火タイミングで描画されないことがあるため、IO発火時に JS で stroke/dashoffset/opacity/fill を直接セットする。 */
+  function paintFigure(el,on){
+    /* 37 横バーメーター：CSS変数(--w)依存で初期幅0のままになるのを防ぎ、IO発火時に幅を直接セット */
+    if(el.classList.contains("bar")){
+      el.querySelectorAll("span[style*='--w']").forEach(function(sp){
+        var m=(sp.getAttribute("style")||"").match(/--w:\s*([0-9.]+%)/);
+        sp.style.width=on?(m?m[1]:"100%"):"0";
+      });
+    }
+    /* 31 プログレスサークル：リングを直接充填 */
+    if(el.classList.contains("ring")){
+      var rval=+(el.dataset.val||0);
+      el.querySelectorAll(".ring-fg").forEach(function(c){ c.style.strokeDashoffset=on?String(100-rval):"100"; });
+    }
+    /* 39 折れ線・71 エリア：線を引く＋点/塗りを出す */
+    if(el.classList.contains("chart")){
+      el.querySelectorAll(".ch-line,.ar-line").forEach(function(p){ p.style.strokeDashoffset=on?"0":"1"; });
+      el.querySelectorAll(".ch-dot").forEach(function(d){ d.style.opacity=on?"1":"0"; });
+      el.querySelectorAll(".ar-fill").forEach(function(f){ f.style.opacity=on?"1":"0"; });
+    }
+    /* 83 レーダー：面の塗りを出す */
+    if(el.classList.contains("radar")){
+      el.querySelectorAll(".rd-area").forEach(function(a){ a.style.opacity=on?"1":"0"; a.style.transform=on?"scale(1)":"scale(.6)"; });
+    }
+    /* 43 ドーナツ：各セグメントの円弧を直接セット */
+    if(el.classList.contains("donut")){
+      el.querySelectorAll(".dn-seg").forEach(function(s){ s.style.strokeDasharray=on?(s.dataset.p+" 100"):"0 100"; });
+    }
+  }
   var io=new IntersectionObserver(function(es){es.forEach(function(e){
     var el=e.target;
     if(e.isIntersecting){
@@ -2180,11 +2211,11 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
       if(el.classList.contains("mask")){el.classList.add("play");io.unobserve(el);return;} /* 1回だけ開いて終わり＝点滅しない（画像は常時表示） */
       if(el.classList.contains("count"))countUp(el);
       if(el.classList.contains("tw"))typewrite(el);
-      if(el.classList.contains("donut"))el.querySelectorAll(".dn-seg").forEach(function(s){s.style.strokeDasharray=s.dataset.p+" 100";});
+      paintFigure(el,true);
     }else{
       el.classList.remove("in");
       if(el.classList.contains("tw"))el.classList.remove("done");
-      if(el.classList.contains("donut"))el.querySelectorAll(".dn-seg").forEach(function(s){s.style.strokeDasharray="0 100";});
+      paintFigure(el,false);
     }
   });},{threshold:.08,rootMargin:"0px 0px -4% 0px"});
   document.querySelectorAll(".rt,.mask,.count,.draw-svg,.tw,.tl-item,.bar").forEach(function(el){io.observe(el);});
@@ -2349,8 +2380,7 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
     lb.addEventListener("click",function(e){ if(e.target===lb)lb.close&&lb.close(); });
   }
 
-  /* 31 プログレスサークル（.in でリング充填・数字は既存 countUp） */
-  /* CSS が .ring.draw-svg.in .ring-fg を満たすので JS 追加処理は不要 */
+  /* 31 プログレスサークル：リング充填は上の paintFigure() が IO 発火時に直接セット。数字は既存 countUp */
 
   /* 32 コードのタブ切替 */
   var ct=document.getElementById("codeTabs");
@@ -2459,13 +2489,21 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
     });
   }
 
-  /* 46 カレンダー（2026年6月） */
+  /* 46 カレンダー（2026年6月・予定/満席/今日の見本つき） */
   var calGrid=document.getElementById("calGrid");
   if(calGrid){
-    var first=new Date(2026,5,1).getDay();
-    for(var bb=0;bb<first;bb++)calGrid.insertAdjacentHTML("beforeend","<span class=\"cal-x\"></span>");
-    for(var dd=1;dd<=30;dd++)calGrid.insertAdjacentHTML("beforeend","<button class=\"cal-d\">"+dd+"</button>");
-    var firstBtn=calGrid.querySelector(".cal-d");if(firstBtn)firstBtn.classList.add("sel");
+    var calFirst=new Date(2026,5,1).getDay();
+    var CAL_TODAY=12,CAL_SEL=18;                 /* 今日＝12日・初期選択＝18日 */
+    var CAL_EV=[5,12,18,23,27],CAL_BUSY=[7,14,21,28]; /* 予定あり / 満席 のイメージ */
+    for(var bb=0;bb<calFirst;bb++)calGrid.insertAdjacentHTML("beforeend","<span class=\"cal-x\"></span>");
+    for(var dd=1;dd<=30;dd++){
+      var calCls="cal-d";
+      if(CAL_EV.indexOf(dd)>-1)calCls+=" has-ev";
+      if(CAL_BUSY.indexOf(dd)>-1)calCls+=" busy";
+      if(dd===CAL_TODAY)calCls+=" today";
+      if(dd===CAL_SEL)calCls+=" sel";
+      calGrid.insertAdjacentHTML("beforeend","<button class=\""+calCls+"\">"+dd+"</button>");
+    }
     calGrid.addEventListener("click",function(e){var t=e.target.closest(".cal-d");if(!t)return;calGrid.querySelectorAll(".cal-d.sel").forEach(function(x){x.classList.remove("sel");});t.classList.add("sel");});
   }
 
@@ -2847,10 +2885,10 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
     segMove(0);
   }
 
-  /* 75 日付レンジピッカー（2026年6月） */
+  /* 75 日付レンジピッカー（2026年6月・初期で期間を選択済みにして「期間選択」が一目で伝わるように） */
   var drGrid=document.getElementById("drGrid");
   if(drGrid){
-    var drOut=document.getElementById("drOut"),drStart=null,drEnd=null;
+    var drOut=document.getElementById("drOut"),drStart=9,drEnd=14;  /* 初期：6/9〜6/14 を選択済み */
     var drFirst=new Date(2026,5,1).getDay();
     for(var db=0;db<drFirst;db++)drGrid.insertAdjacentHTML("beforeend","<span class=\"dr-x\"></span>");
     for(var drd=1;drd<=30;drd++)drGrid.insertAdjacentHTML("beforeend","<button class=\"dr-d\" data-d=\""+drd+"\">"+drd+"</button>");
@@ -2868,6 +2906,8 @@ document.<span class="tok-fn">querySelector</span>(<span class="tok-str">".hero 
       else{drEnd=d;drOut.textContent="6/"+drStart+" 〜 6/"+drEnd+"（"+(drEnd-drStart+1)+"日間）";}
       drPaint();
     });
+    drOut.textContent="6/"+drStart+" 〜 6/"+drEnd+"（"+(drEnd-drStart+1)+"日間）"; /* 初期表示 */
+    drPaint();
   }
 
   /* 70 / 100 紙吹雪（共通関数） */
