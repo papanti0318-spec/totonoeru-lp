@@ -23,7 +23,7 @@
 ## サービス
 
 - [HP・LP制作](https://totonoeruya.jp/web/): haluta house 実装等のブランド集約Web制作。単発LP制作（68万円〜）と年契約（月28万円〜・年3社限定）。Next.js / 静的HTML / さくらサーバ静的書き出し対応。
-- [totoline（トトライン）](https://totonoeruya.jp/totoline/): LINEに置くだけで会話が台帳になる業務支援Bot。LINEグループに招待するだけで、AIがタスク・決定事項・請求書ドラフトを自動抽出。Freeプラン（1グループ・¥0）／Basic（〜3グループ・¥2,980/月）／Standard（〜5グループ・¥5,980/月）／Pro（〜10グループ・¥9,980/月）の4プラン。Basic以上は初期セットアップ¥50,000＋最初の1ヶ月併走運用後に継続判断。連携：freee／マネーフォワード／Stripe／Googleスプレッドシート／Notion／Slack／kintone／Webhook 他、現場の道具に合わせて接続。LPは清掃／飲食／建設・工務店／サロン・個人事業の4業種で動くしくみをLINE風UIで体験できる構成（2026-05-20 デザイン刷新版）。中小企業の業務集約に特化（Apps Script + Google Sheets + Claude 4.5 Haiku API）。
+- [totoline（トトライン）](https://totonoeruya.jp/totoline/): LINEに置くだけで会話が台帳になる業務支援Bot。LINEグループに招待するだけで、AIがタスク・決定事項・請求書ドラフトを自動抽出。Freeプラン（1グループ・¥0・自分で試すセルフ導入）／Businessプラン（〜5グループ・導入¥90,000＋月¥50,000〜・税別）の2プラン。Businessは現場ヒアリングから運用まで併走し、最初の1ヶ月は運用料金なし。5グループ超の規模や会計ソフト・基幹システム連携は要相談。連携：freee／マネーフォワード／Stripe／Googleスプレッドシート／Notion／Slack／kintone／Webhook 他、現場の道具に合わせて接続。LPは清掃／飲食／建設・工務店／サロン・個人事業の4業種で動くしくみをLINE風UIで体験できる構成（2026-05-20 デザイン刷新版）。中小企業の業務集約に特化（Apps Script + Google Sheets + Claude 4.5 Haiku API）。
 - [清掃事業](https://totonoeruya.jp/cleaning/): 軽井沢T-SITE等の現場清掃にAIを集約。物理労働とAIの境界を実装で示す。
 - [ギター教室](https://totonoeruya.jp/guitar/): 個人向けギター指導。教育事業として継続性を重視。
 - [ジャーナル](https://totonoeruya.jp/articles/): 地元×AI×現場をテーマに、現役エンジニアが日々の実装と思想を記録。
@@ -33,7 +33,7 @@
 
 - **LP制作**: 68万円〜（税込）
 - **年契約**: 月額28万円〜（税込・年3社限定）
-- **totoline（LINE Bot）**: Free（1グループ・¥0）／Basic（〜3G・¥2,980/月）／Standard（〜5G・¥5,980/月）／Pro（〜10G・¥9,980/月）の4プラン。Basic以上は初期セットアップ ¥50,000（税別・最初の1ヶ月併走運用後に継続判断）
+- **totoline（LINE Bot）**: Free（1グループ・¥0・自分で試すセルフ導入）／Business（〜5グループ・導入¥90,000＋月¥50,000〜・税別）の2プラン。Businessは現場ヒアリングから運用まで併走し、最初の1ヶ月は運用料金なし。5グループ超の規模や会計ソフト・基幹システム連携は要相談
 
 ## 主要トピック・専門領域
 

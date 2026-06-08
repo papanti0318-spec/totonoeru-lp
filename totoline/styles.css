@@ -630,6 +630,7 @@ section { padding: clamp(80px, 12vw, 160px) 0; position: relative; }
 .pricing-grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
 }
+.pricing-grid.duo { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 760px; margin-inline: auto; }
 @media (max-width: 900px) { .pricing-grid { grid-template-columns: 1fr; } }
 .plan {
   background: var(--paper-2); border: 1px solid var(--rule);

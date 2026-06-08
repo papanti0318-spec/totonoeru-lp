@@ -41,14 +41,12 @@
         "@type": "AggregateOffer",
         "priceCurrency": "JPY",
         "lowPrice": 0,
-        "highPrice": 9980,
-        "offerCount": 4,
+        "highPrice": 50000,
+        "offerCount": 2,
         "availability": "https://schema.org/InStock",
         "offers": [
-          { "@type": "Offer", "name": "Free（お試し）", "price": 0, "priceCurrency": "JPY", "description": "1グループまで・月¥0。会話の自動保存と基本的な振り分けまで。AI処理（タスク抽出・サマリー・請求書ドラフト）はBasic以上で利用可能。", "availability": "https://schema.org/InStock" },
-          { "@type": "Offer", "name": "Basic", "price": 2980, "priceCurrency": "JPY", "description": "最大3グループ・月¥2,980（税別）。初期セットアップ¥50,000（税別・一度きり）で、現場ヒアリング・スプレッドシート設計・LINE導入・1ヶ月の併走運用までを含む。最初の1ヶ月は月額が発生しない。", "availability": "https://schema.org/InStock" },
-          { "@type": "Offer", "name": "Standard", "price": 5980, "priceCurrency": "JPY", "description": "最大5グループ・月¥5,980（税別）。初期セットアップ¥50,000（税別・一度きり）込み。最初の1ヶ月は月額が発生しない。", "availability": "https://schema.org/InStock" },
-          { "@type": "Offer", "name": "Pro", "price": 9980, "priceCurrency": "JPY", "description": "最大10グループ・月¥9,980（税別）。初期セットアップ¥50,000（税別・一度きり）込み。最初の1ヶ月は月額が発生しない。", "availability": "https://schema.org/InStock" }
+          { "@type": "Offer", "name": "Free（お試し）", "price": 0, "priceCurrency": "JPY", "description": "1グループまで・月¥0。会話の自動保存と基本的な振り分けまで。自分で置いて試すセルフ導入。AI処理（タスク抽出・サマリー・請求書ドラフト）はBusinessプランで利用可能。", "availability": "https://schema.org/InStock" },
+          { "@type": "Offer", "name": "Business", "price": 50000, "priceCurrency": "JPY", "description": "〜5グループ・月¥50,000〜（税別）。導入費¥90,000（税別・一度きり）で、現場ヒアリング・スプレッドシート設計・LINE導入・1ヶ月の併走運用までを含む。タスク抽出・日次サマリー・請求書ドラフト無制限・月次まとめ・改善の相談まで対応。最初の1ヶ月は運用料金が発生しない。5グループ以上の規模や会計ソフト・基幹システム連携は要相談。", "availability": "https://schema.org/InStock" }
         ]
       }
     },
@@ -74,9 +72,9 @@
       "mainEntity": [
         { "@type": "Question", "name": "totoline は、何ができるBotですか？", "acceptedAnswer": { "@type": "Answer", "text": "LINEグループに招待するだけで、会話をAIが読み取り、タスク・決定事項・請求書の摘要欄ドラフトを自動でまとめます。朝には前日のサマリーが届き、完了報告でタスクは自動的に消えます。" }},
         { "@type": "Question", "name": "同じようなサービスは、ほかにありますか？", "acceptedAnswer": { "@type": "Answer", "text": "LINEに置くタスク管理Botや、業務向けAIアシスタントは少しずつ出てきています。ただ、「会話を保存する／内容で自動に振り分ける／請求書のドラフトまで作る」を1本にまとめたサービスは、調べた範囲ではほかに見つかりませんでした。長野県小諸市の現場で、ヒアリングから運用まで、ととのえる屋が一人で併走するのもtotolineの特徴です。" }},
-        { "@type": "Question", "name": "セットアップは、自分でやらないといけませんか？", "acceptedAnswer": { "@type": "Answer", "text": "Basic以上のプランでは、初期セットアップ ¥50,000 に、現場ヒアリング・スプレッドシート設計・LINE導入・1ヶ月の併走運用までが含まれます。お客様側の作業は最小限です。Freeプランはセルフ導入（マニュアル提供）になります。" }},
-        { "@type": "Question", "name": "Freeプランは、何ができますか？", "acceptedAnswer": { "@type": "Answer", "text": "Freeプラン（1グループ・月¥0）では、LINEグループの会話をスプレッドシートに自動保存し、基本的な振り分けを行います。タスク自動抽出・日次サマリー・請求書ドラフト生成などのAI機能は、Basic以上のプランでご利用いただけます。「とりあえず置いてみたい」方向けです。" }},
-        { "@type": "Question", "name": "プランは、どう選べばいいですか？", "acceptedAnswer": { "@type": "Answer", "text": "まず、グループ数で選びます。営業用・現場用・経理用など、用途ごとに分けた数を数えてください。1グループだけならFree、3グループまでならBasic（月¥2,980）、5グループまでならStandard（月¥5,980）、10グループまでならPro（月¥9,980）です。途中でプラン変更もできます。" }},
+        { "@type": "Question", "name": "セットアップは、自分でやらないといけませんか？", "acceptedAnswer": { "@type": "Answer", "text": "Businessプランでは、導入費 ¥90,000 に、現場ヒアリング・スプレッドシート設計・LINE導入・1ヶ月の併走運用までが含まれます。お客様側の作業は最小限です。Freeプランはセルフ導入（マニュアル提供）になります。" }},
+        { "@type": "Question", "name": "Freeプランは、何ができますか？", "acceptedAnswer": { "@type": "Answer", "text": "Freeプラン（1グループ・月¥0）では、LINEグループの会話をスプレッドシートに自動保存し、基本的な振り分けを行います。タスク自動抽出・日次サマリー・請求書ドラフト生成などのAI機能は、Businessプランでご利用いただけます。「とりあえず置いてみたい」方向けです。" }},
+        { "@type": "Question", "name": "プランは、どう選べばいいですか？", "acceptedAnswer": { "@type": "Answer", "text": "プランは2つです。まず自分で置いて試したいだけならFree（1グループ・¥0）。タスク抽出や請求書ドラフトまでAIに任せ、現場ごと併走してほしいならBusiness（導入¥90,000・月¥50,000〜・〜5グループ）です。5グループより大きい規模や、会計ソフトとの連携が必要な場合は、相談しながら見積もります。" }},
         { "@type": "Question", "name": "データは、安全ですか？", "acceptedAnswer": { "@type": "Answer", "text": "会話の保管先は、お客様自身のGoogleスプレッドシートです。ととのえる屋が一括で持つことはありません。解約時にBotを外せば、データはお客様の手元にだけ残ります。" }},
         { "@type": "Question", "name": "相談だけでもいいですか？", "acceptedAnswer": { "@type": "Answer", "text": "もちろんです。「何をしたいかわからないけれど、とりあえず話したい」だけでも大歓迎です。totolineで解けない話だったら、別の手をお伝えします。" }}
       ]
