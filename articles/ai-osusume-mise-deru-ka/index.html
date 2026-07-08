@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="hYRflPVBHV_SbReXwN_7v4tNCf6AT3VusKhSviD5kPU" />
+<title>お客さんがAIに「おすすめのお店は？」と聞いたとき、あなたのお店は出てきますか？｜ととのえる屋</title>
+<meta name="description" content="お客さんはもう、店に来る前にスマホでAIに「このへんでおすすめの◯◯は？」と聞いています。その答えにあなたのお店の名前が出てこないと、営業していても、そのお客さんからは閉まっているのと同じです。長野県小諸市の現役エンジニアが、自分の店が出るか確かめる方法と、載るために何をすればいいかを、専門用語なしで書きます。">
+<link rel="canonical" href="https://totonoeruya.jp/articles/ai-osusume-mise-deru-ka/">
+
+<meta property="og:title" content="お客さんがAIに「おすすめのお店は？」と聞いたとき、あなたのお店は出てきますか？｜ととのえる屋">
+<meta property="og:description" content="お客さんは来店前にAIに「このへんでおすすめの◯◯は？」と聞いています。その答えにお店の名前が出ないと、営業していても閉まっているのと同じ。確かめる方法と、載るための手順を専門用語なしで書きます。">
+<meta property="og:url" content="https://totonoeruya.jp/articles/ai-osusume-mise-deru-ka/">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://totonoeruya.jp/assets/journal/ai-osusume-mise-deru-ka.png">
+<meta property="article:published_time" content="2026-07-09T00:00:00+09:00">
+<meta property="article:author" content="照井航次郎">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../../assets/site-2026.css">
+<link rel="stylesheet" href="../../assets/article-2026.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://totonoeruya.jp/articles/ai-osusume-mise-deru-ka/#article",
+      "headline": "お客さんがAIに「おすすめのお店は？」と聞いたとき、あなたのお店は出てきますか？",
+      "description": "お客さんはもう、店に来る前にスマホでAIに「このへんでおすすめの◯◯は？」と聞いています。その答えにあなたのお店の名前が出てこないと、営業していても、そのお客さんからは閉まっているのと同じです。長野県小諸市の現役エンジニアが、自分の店が出るか確かめる方法と、載るために何をすればいいかを、専門用語なしで書きます。",
+      "url": "https://totonoeruya.jp/articles/ai-osusume-mise-deru-ka/",
+      "mainEntityOfPage": "https://totonoeruya.jp/articles/ai-osusume-mise-deru-ka/",
+      "image": "https://totonoeruya.jp/assets/journal/ai-osusume-mise-deru-ka.png",
+      "datePublished": "2026-07-09",
+      "dateModified": "2026-07-09",
+      "inLanguage": "ja",
+      "articleSection": "AI",
+      "author": {
+        "@id": "https://totonoeruya.jp/#terui"
+      },
+      "publisher": {
+        "@id": "https://totonoeruya.jp/#organization"
+      },
+      "isPartOf": {
+        "@id": "https://totonoeruya.jp/articles/#blog"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://totonoeruya.jp/" },
+        { "@type": "ListItem", "position": 2, "name": "ジャーナル", "item": "https://totonoeruya.jp/articles/" },
+        { "@type": "ListItem", "position": 3, "name": "お客さんがAIに「おすすめのお店は？」と聞いたとき、あなたのお店は出てきますか？", "item": "https://totonoeruya.jp/articles/ai-osusume-mise-deru-ka/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://totonoeruya.jp/articles/ai-osusume-mise-deru-ka/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "AIに自分の店が出ているか、どうやって確かめればいいですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "むずかしいことはいりません。スマホでChatGPTやPerplexityなどのAIを開いて、お客さんが使いそうな言葉で「このあたりでおすすめの（あなたの業種）は？」と、地名を入れて聞いてみてください。その答えに自分の店の名前が出てくるか、出てこないかを見るだけです。三十秒で、自分が今どちらの側にいるかが分かります。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "AIの答えに出る店と、出ない店は、何が違うのですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "広告費の多さではありません。AIは、情報が整理されていて、他の人にも触れられていて、答えに使いやすい形で書かれている店を選びます。逆に、営業していても、その店の情報がどこにも整った形で無いと、AIは答えに入れようがありません。お金でねじ込むのではなく、情報を整えると載る——だから、小さなお店でも棚に入れます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "うちは小さな個人店です。それでもAIの答えに載れますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい。むしろ地方の小さな店ほど、今はまだ確かめていない競合が多く、棚が空いています。今のうちに、店の名前・場所・何が得意か・お客さんの声を、AIが読みやすい形で整えておくと、先に棚を取れます。何から整えればいいか分からなくても、まず自分でAIに聞いて現状を見るところから、長野県内でもお手伝いできます。"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://totonoeruya.jp/articles/ai-osusume-mise-deru-ka/#howto",
+      "name": "AIの答えに、自分のお店が載る確率を上げる手順",
+      "description": "広告費を足すのではなく、AIが答えに使いやすいように店の情報を整える、中小企業でもできる現実的な手順。",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "手順1",
+          "text": "まず自分でAIに聞く。お客さんが使う言葉で「（地名）でおすすめの（業種）は？」と聞き、自分の店が出るか現状を見る"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "手順2",
+          "text": "店の基本情報を一か所に整える。店名・場所・何が得意か・営業時間を、あいまいさなく言い切る"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "手順3",
+          "text": "お客さんが実際に使う言葉で書く。「本格イタリアン」より「軽井沢 子連れでも入りやすいイタリアン」のように、聞かれ方に合わせる"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "手順4",
+          "text": "第三者の言葉を足す。お客さんの声や、地域の紹介など、自分以外が触れている情報があるとAIは拾いやすい"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "手順5",
+          "text": "もう一度AIに聞いて確かめる。整えた前と後で、答えに出てくるかどうかが変わったかを、自分の目で見る"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- Vercel Web Analytics -->
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/assets/analytics.js"></script>
+</head>
+<body>
+
+<header class="topbar">
+  <a href="/" class="brand"><img src="../../assets/logo-totonoeru.png" alt="">ととのえる屋</a>
+  <nav aria-label="メインメニュー">
+    <a href="/web/">Web · AI</a>
+    <a href="/cleaning/">Cleaning</a>
+    <a href="/guitar/">Guitar</a>
+    <a href="/totoline/">totoline</a>
+    <a href="/articles/" aria-current="page">Journal</a>
+  </nav>
+  <a href="/#contact" class="cta">相談する</a>
+</header>
+
+<main>
+<article class="article-body">
+  <header class="article-header">
+    <figure class="article-hero">
+      <img src="/assets/journal/ai-osusume-mise-deru-ka.png" alt="お客さんがAIに「おすすめのお店は？」と聞いたとき、あなたのお店は出てきますか？" width="1200" height="675" loading="eager">
+    </figure>
+    <div class="article-meta">
+      <span class="journal-date">2026-07-09</span>
+      <span class="journal-category">AI</span>
+    </div>
+    <h1 class="article-title">お客さんがAIに「おすすめのお店は？」と聞いたとき、あなたのお店は出てきますか？</h1>
+    <p class="article-lead">
+      集客というと、つい「もっと広告を」「もっと発信を」と、足すことばかり考えてしまいます。でも、その前に一度だけ確かめてほしいことがあります。あなたのお客さんは今、お店に来る前に、スマホでAIに「このへんでおすすめの◯◯は？」と聞いているかもしれません。そして、その答えにあなたのお店の名前が出てこなければ——どれだけ良いお店でも、そのお客さんからは、閉まっているのと同じなのです。長野県小諸市の現役エンジニアが、自分の店が出るか確かめる方法と、載るために何をすればいいかを、専門用語なしで書きます。
+    </p>
+  </header>
+
+  <div class="article-content">
+    <h2>お客さんがAIに「おすすめのお店は？」と聞いたとき、あなたのお店は出てきますか？</h2>
+    <p>結論、いま集客でいちばん先に確かめるべきは、広告でも発信でもなく、「AIの答えに、自分の店の名前が出てくるか」です。ここが抜けていると、他をどれだけ足しても、水がこぼれ続けます。</p>
+    <p>理由は、お客さんが店を選ぶ順番が変わったからです。少し前まで、お客さんはお店に「来てから」選んでいました。今は、来る「前」にスマホでAI——ChatGPTやPerplexity、検索結果の上に出るAIの要約——に「このあたりでおすすめの◯◯は？」と聞いて、行く店をいくつかに絞ってから動きます。つまり、選ばれるかどうかの勝負は、お店の前ではなく、その前の「AIの答えの中」で、先に終わっているのです。</p>
+    <p>具体的には、まず自分の目で見てください。下のとおり、三十秒で確かめられます。良いか悪いかを判断する前に、まず「今どちら側にいるか」を知るのが先です。</p>
+
+    <figure class="rain-log-peek" style="margin: 28px auto; padding: 22px 24px; background: var(--bg-warm); border: 1px solid var(--border-soft); border-radius: var(--radius); max-width: 640px; overflow-x: auto;">
+      <figcaption style="font-size: 13px; color: var(--text-mid); line-height: 1.9; margin-bottom: 14px; font-weight: 500;">🔎 自分の店が出るか、30秒で確かめる</figcaption>
+      <pre style="font-family: 'JetBrains Mono', monospace; font-size: 12px; line-height: 2.1; color: var(--text-mid); margin: 0; white-space: pre-wrap;">1. スマホでAI（ChatGPT・Perplexity など）を開く
+2. お客さんの言葉で、地名を入れて聞く
+   例：「軽井沢でおすすめのカフェは？」
+       「小諸で清掃を頼めるところは？」
+3. 答えに自分の店の名前が出てくるか、見るだけ
+
+  出てきた  → 棚に入れている。次はどう書かれているかを確かめる
+  出てこない → 見えない棚から外れている。ここが集客の穴</pre>
+      <figcaption style="font-size: 12px; color: var(--text-soft); line-height: 1.9; margin-top: 14px;">出てこないことに、店主本人はふだん気づけません。見えない棚から外されているからです。だからまず、自分で聞いて、自分の目で確かめる。それが最初の一歩です。</figcaption>
+    </figure>
+
+    <h2>なぜ、出てくる店と出てこない店に分かれるのですか？</h2>
+    <p>結論、分かれ目は広告費の多さではありません。「AIが答えに使いやすい形で、情報が整っているか」です。お金でねじ込むのではなく、整えると載る。だから、小さなお店にもちゃんと出番があります。</p>
+    <p>理由は、AIの選び方にあります。AIは、あちこちに散らばった情報の中から、はっきりしていて、他の人にも触れられていて、答えに引用しやすいものを選んで、お客さんに差し出します。逆に、どれだけ良いお店でも、その情報がどこにも整った形で置かれていなければ、AIは答えに入れようがありません。営業していることと、AIから見えていることは、別なのです。</p>
+    <p>具体的には、出てくる店には、だいたい三つの共通点があります。<strong>ひとつ、情報がはっきりしている</strong>——店名・場所・何が得意か・営業時間が、あいまいでなく言い切られている。<strong>ふたつ、お客さんの言葉で書かれている</strong>——「本格イタリアン」だけでなく、「子連れでも入りやすい」のような、実際に聞かれる言葉が入っている。<strong>みっつ、自分以外も触れている</strong>——お客さんの声や地域の紹介など、第三者の言葉があると、AIは安心して拾います。この三つは、広告費ゼロでも整えられます。</p>
+
+    <h2>では、AIの答えに載るには、何をすればいいのですか？</h2>
+    <p>結論、足すのではなく、整えるのが先です。新しい広告を出す前に、今ある店の情報を、AIが読みやすい形に置きなおす。それだけで、載る確率は上がります。</p>
+    <p>理由は、さっきの三つの共通点が、そのまま「やること」になるからです。むずかしい技術の話ではありません。店主なら誰でも知っている「うちの店のこと」を、あいまいさなく、お客さんの言葉で、第三者の声も添えて、一か所に整えるだけです。派手に増やすのではなく、正しく置きなおす——ととのえる、という言葉のとおりです。</p>
+    <p>具体的には、下の順番でやってみてください。最後にもう一度AIに聞いて、整える前と後で答えが変わったかを、自分の目で確かめるところまでが一区切りです。</p>
+
+  <section class="article-howto" aria-labelledby="howto-heading">
+    <h2 id="howto-heading" class="howto-heading">AIの答えに、自分のお店が載る確率を上げる手順</h2>
+    <ol class="howto-list">
+    <li class="howto-step">
+      <strong class="howto-step-name">手順1</strong>
+      <p class="howto-step-text">まず自分でAIに聞く。お客さんが使う言葉で「（地名）でおすすめの（業種）は？」と聞き、自分の店が出るか現状を見る</p>
+    </li>
+    <li class="howto-step">
+      <strong class="howto-step-name">手順2</strong>
+      <p class="howto-step-text">店の基本情報を一か所に整える。店名・場所・何が得意か・営業時間を、あいまいさなく言い切る</p>
+    </li>
+    <li class="howto-step">
+      <strong class="howto-step-name">手順3</strong>
+      <p class="howto-step-text">お客さんが実際に使う言葉で書く。「本格イタリアン」より「軽井沢 子連れでも入りやすいイタリアン」のように、聞かれ方に合わせる</p>
+    </li>
+    <li class="howto-step">
+      <strong class="howto-step-name">手順4</strong>
+      <p class="howto-step-text">第三者の言葉を足す。お客さんの声や、地域の紹介など、自分以外が触れている情報があるとAIは拾いやすい</p>
+    </li>
+    <li class="howto-step">
+      <strong class="howto-step-name">手順5</strong>
+      <p class="howto-step-text">もう一度AIに聞いて確かめる。整えた前と後で、答えに出てくるかどうかが変わったかを、自分の目で見る</p>
+    </li>
+    </ol>
+  </section>
+
+
+  <section class="article-faq" aria-labelledby="faq-heading">
+    <h2 id="faq-heading" class="faq-heading">よくある質問</h2>
+    <div class="faq-item">
+      <h3 class="faq-q">Q. AIに自分の店が出ているか、どうやって確かめればいいですか？</h3>
+      <p class="faq-a">むずかしいことはいりません。スマホでChatGPTやPerplexityなどのAIを開いて、お客さんが使いそうな言葉で「このあたりでおすすめの（あなたの業種）は？」と、地名を入れて聞いてみてください。その答えに自分の店の名前が出てくるか、出てこないかを見るだけです。三十秒で、自分が今どちらの側にいるかが分かります。</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">Q. AIの答えに出る店と、出ない店は、何が違うのですか？</h3>
+      <p class="faq-a">広告費の多さではありません。AIは、情報が整理されていて、他の人にも触れられていて、答えに使いやすい形で書かれている店を選びます。逆に、営業していても、その店の情報がどこにも整った形で無いと、AIは答えに入れようがありません。お金でねじ込むのではなく、情報を整えると載る——だから、小さなお店でも棚に入れます。</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">Q. うちは小さな個人店です。それでもAIの答えに載れますか？</h3>
+      <p class="faq-a">はい。むしろ地方の小さな店ほど、今はまだ確かめていない競合が多く、棚が空いています。今のうちに、店の名前・場所・何が得意か・お客さんの声を、AIが読みやすい形で整えておくと、先に棚を取れます。何から整えればいいか分からなくても、まず自分でAIに聞いて現状を見るところから、長野県内でもお手伝いできます。</p>
+    </div>
+  </section>
+
+  </div>
+
+  <div class="article-cta" style="margin: 80px auto 64px; padding: 40px 32px; background: var(--bg-warm); border: 1px solid var(--border-soft); border-radius: var(--radius); text-align: center; max-width: 640px;">
+    <p style="font-size: 14px; line-height: 2; color: var(--text-mid); margin-bottom: 12px; text-wrap: balance;">
+      ととのえる屋では、「お客さんがAIに聞いたとき、あなたのお店が出てくるか」を実際に確かめて、出ていなければ、AIが拾いやすい形に情報を整えるお手伝いをしています。
+    </p>
+    <p style="font-size: 13px; color: var(--text-soft); line-height: 1.9; margin-bottom: 24px;">
+      まだ何も準備できていなくても、「うちの店、AIに聞いたら出てくるのかな？」のひと言だけでも大丈夫です。
+    </p>
+    <a href="/web/" class="btn btn--green" style="margin-right: 8px;">Web · AI を見る</a>
+    <a href="/#contact" class="btn btn--amber">相談する</a>
+  </div>
+
+  <div class="related-articles">
+    <h3>他の記事</h3>
+    <div class="related-list">
+      <a href="/articles/ai-tsumori-tsumiagaranai/" class="related-item">
+        <div class="related-item-title">AIを毎日使ってる“つもり”なのに、成果が積み上がらないのはなぜですか？</div>
+      </a>
+      <a href="/articles/seikyusho-tekiyo-ai-jidai/" class="related-item">
+        <div class="related-item-title">請求書の摘要欄、AIに書いてもらえる時代になったって本当ですか？</div>
+      </a>
+      <a href="/articles/line-kokyaku-kanri-ai/" class="related-item">
+        <div class="related-item-title">小さな会社で、LINEのお客さん管理をAIに任せていいですか？</div>
+      </a>
+      <a href="/articles/ai-dekiru-hodo-tega-tomaru/" class="related-item">
+        <div class="related-item-title">AIでいろいろできる、と聞くほど手が止まっていませんか？</div>
+      </a>
+    </div>
+  </div>
+</article>
+</main>
+
+<footer class="site-footer">
+  <div class="foot">
+    <div class="b">
+      <img src="../../assets/logo-totonoeru.png" alt="ととのえる屋">
+      <p>長野県小諸市の、小さな何でも屋。HP・LP制作、AI業務改善、清掃、ギター教室。ぜんぶ、同じ手で。</p>
+    </div>
+    <div><h6>Services</h6><ul><li><a href="/web/">HP・LP制作</a></li><li><a href="/cleaning/">清掃</a></li><li><a href="/guitar/">ギター教室</a></li><li><a href="/totoline/">totoline</a></li></ul></div>
+    <div><h6>Company</h6><ul><li><a href="/articles/">ジャーナル</a></li><li><a href="/articles/totonoeruya-name-riyu/">屋号の由来</a></li><li><a href="https://github.com/papanti0318-spec" target="_blank" rel="noopener">GitHub</a></li><li><a href="https://x.com/totonoeruya" target="_blank" rel="noopener">X</a></li></ul></div>
+    <div><h6>Contact</h6><ul><li><a href="mailto:totonoeru.ya@gmail.com">totonoeru.ya@gmail.com</a></li><li><a href="https://line.me/R/ti/p/@903xtesg" target="_blank" rel="noopener">LINE @903xtesg</a></li><li>長野県小諸市</li></ul></div>
+  </div>
+  <div class="foot-bot">
+    <span>© 2026 ととのえる屋. 長野県小諸市</span>
+    <span><a href="/privacy/">プライバシーポリシー</a> · <a href="/commerce/">特定商取引法に基づく表記</a></span>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js" defer></script>
+<script src="../../assets/smooth-2026.js" defer></script>
+</body>
+</html>
