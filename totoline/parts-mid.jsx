@@ -10,7 +10,7 @@ function Capabilities() {
     {
       n: "01",
       title: "会話を、台帳に",
-      desc: "LINEに流れる会話を、自動でテキスト化・分類して保存。「あの件、いつ話したっけ」が消えます。Claude 4.5 Haikuで動かしています。",
+      desc: "LINEに流れる会話を、自動でテキスト化・分類して保存。「あの件、いつ話したっけ」が消えます。",
       icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 6 H20 V16 H13 L8 20 V16 H4 Z" stroke="currentColor" strokeWidth="1.6"/><circle cx="9" cy="11" r="1" fill="currentColor"/><circle cx="12" cy="11" r="1" fill="currentColor"/><circle cx="15" cy="11" r="1" fill="currentColor"/></svg>)
     },
     {
@@ -51,7 +51,7 @@ function Capabilities() {
         <div className="section-head reveal">
           <span className="eyebrow">01 — Capabilities</span>
           <h2>会話を、<br/>そのまま<em className="serif-en">ledger</em>へ。</h2>
-          <p>LINE公式アカウントでは手が届かないところ──「会話の整理」と「請求書ドラフト」を、Claude 4.5 Haiku で動かします。業務に、もう一つの手を増やすしくみです。</p>
+          <p>LINE公式アカウントでは手が届かない「会話の整理」と「請求書の下書き」まで。あなたは話すだけ、totolineが記録係として、業務のうしろで手を動かします。</p>
         </div>
 
         <div className="cap-grid reveal">
@@ -166,7 +166,7 @@ function Demo() {
       <div className="wrap">
         <div className="section-head reveal">
           <span className="eyebrow">02 — Live Demo</span>
-          <h2>動くしくみを<em className="serif-en">touch</em>して確かめる。</h2>
+          <h2>実際の<em className="serif-en">LINE</em>画面で、流れを見る。</h2>
           <p>4つの業種で、totolineがどう動くかを見てください。「うちの場合、こうなるな」が、なんとなく見えてくるはずです。</p>
         </div>
 

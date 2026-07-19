@@ -146,12 +146,13 @@ function Hero() {
             </svg>
 
             <h1 className="serif-jp">
-              LINEに<br />
-              <span className="accent">置くだけ</span>で、<br />
-              会話が、台帳になる。
+              いつもどおり<br />
+              LINEで<span className="accent">話すだけ</span>。<br />
+              月末、請求書の下書きができている。
               <span className="small">
-                現場で生まれる会話を、自動で整理。<br />
-                請求書のドラフトまで、LINEで届く。
+                totolineは、LINEグループに増える「記録係」。<br />
+                招待すると会話をAIが読んで記録し、請求書の下書きまで用意します。<br />
+                確認して送るのは、あなたの手で。
               </span>
             </h1>
 
