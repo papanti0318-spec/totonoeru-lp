@@ -35,8 +35,9 @@ img{display:block;max-width:100%}
 .touch .vt{writing-mode:vertical-rl;font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase}
 .touch .circle{width:34px;height:34px;border:1px solid var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:14px;transition:.25s}
 .touch .circle:hover{background:var(--accent);color:var(--paper)}
-.statement{position:absolute;left:44px;bottom:118px;max-width:80%}
-.statement .sub{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--muted);max-width:44em;line-height:1.95}
+.kanban{max-width:920px;margin:clamp(40px,7vh,86px) auto 0;text-align:center;padding:0 4px}
+.kanban h1{font-weight:400;font-size:clamp(26px,4.4vw,52px);line-height:1.45;letter-spacing:.005em}
+.kanban .lede{margin:26px auto 0;max-width:34em;font-size:clamp(14px,1.35vw,16px);font-weight:300;line-height:2.1;color:var(--ink-soft);text-align:left}
 .meta{position:absolute;left:44px;right:44px;bottom:74px;display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
 .meta .c{color:var(--muted)}
 
@@ -59,7 +60,16 @@ img{display:block;max-width:100%}
 .sec-top .note{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
 
 /* services index list */
-.svc-list{border-top:1px solid var(--line)}
+.svc-lead{border-top:2px solid var(--accent);border-bottom:1px solid var(--line);padding:34px 4px 38px;margin-bottom:0}
+.svc-lead .n{font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:.1em}
+.svc-lead h3{font-weight:500;font-size:clamp(20px,2.4vw,28px);line-height:1.4;margin:10px 0 18px}
+.svc-lead p{font-size:14px;font-weight:300;line-height:2;color:var(--ink-soft);max-width:38em}
+.svc-lead .barrier-line{margin-top:14px;color:var(--ink);font-weight:400}
+.svc-lead-act{margin-top:28px;display:flex;gap:14px;flex-wrap:wrap}
+.svc-lead-sub{margin-top:24px;display:flex;gap:26px;flex-wrap:wrap}
+.svc-lead-sub a{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--accent);border-bottom:1px solid transparent;transition:.2s}
+.svc-lead-sub a:hover{border-color:var(--accent)}
+.svc-list{border-top:none}
 .svc-row{display:grid;grid-template-columns:52px 1fr 2fr 30px;gap:24px;align-items:center;padding:26px 4px;border-bottom:1px solid var(--line);transition:padding .3s,background .3s}
 .svc-row:hover{padding-left:16px;background:rgba(197,116,60,.05)}
 .svc-row .n{font-family:var(--mono);font-size:12px;color:var(--accent)}
@@ -73,7 +83,7 @@ img{display:block;max-width:100%}
 .cando{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
 .cando .col{padding:30px 26px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
 .cando .col .n{font-family:var(--mono);font-size:11px;color:var(--accent);margin-bottom:10px;letter-spacing:.12em}
-.cando .col h4{font-size:18px;font-weight:500;margin-bottom:16px}
+.cando .col h3{font-size:18px;font-weight:500;margin-bottom:16px}
 .cando .col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
 .cando .col li{font-size:13px;font-weight:300;color:var(--ink-soft);padding-left:14px;position:relative}
 .cando .col li::before{content:"·";position:absolute;left:2px;color:var(--accent)}
@@ -142,10 +152,10 @@ img{display:block;max-width:100%}
 
 /* footer */
 .site-footer{background:var(--ink);color:var(--paper);padding:70px 44px 30px}
-.foot{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px}
+.foot{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.8fr repeat(4,1fr);gap:40px}
 .foot .b img{height:54px;width:auto;filter:brightness(0) invert(1);margin-bottom:16px}
 .foot .b p{font-size:13px;font-weight:300;line-height:1.9;color:rgba(231,228,221,.6);max-width:320px}
-.foot h6{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(231,228,221,.5);margin-bottom:16px}
+.foot h3{font-family:var(--mono);font-size:10px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:rgba(231,228,221,.5);margin-bottom:16px}
 .foot ul{list-style:none;display:flex;flex-direction:column;gap:10px}
 .foot a{font-size:13px;font-weight:300;color:rgba(231,228,221,.85)}
 .foot a:hover{color:var(--accent)}
@@ -154,10 +164,15 @@ img{display:block;max-width:100%}
 @media(max-width:720px){.foot{grid-template-columns:1fr 1fr;gap:30px}}
 
 @media(max-width:820px){
-  .frame{padding:24px 20px 0}
+  .frame{min-height:100svh;padding:24px 20px 200px}
   .nav{top:auto;left:20px;bottom:150px;flex-direction:row;flex-wrap:wrap;gap:6px 14px;max-width:64%}
   .touch{top:24px;right:20px}
-  .statement{left:20px;right:20px;bottom:150px;max-width:none}
+  /* ロゴ下の英字タグラインが右上の Get in touch に潜り込むのを防ぐ */
+  .wordmark{padding:0 54px}
+  .wordmark .tm{letter-spacing:.16em}
+  .kanban{margin-top:34px}
+  .kanban h1{text-wrap:balance}
+  .kanban .lede{line-height:1.95}
   .meta{left:20px;right:20px;bottom:74px;flex-direction:column;gap:5px}
   .meta .c{display:none}
   .about,.sec,.site-footer{padding-left:20px;padding-right:20px}
