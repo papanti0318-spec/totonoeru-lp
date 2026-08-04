@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="hYRflPVBHV_SbReXwN_7v4tNCf6AT3VusKhSviD5kPU" />
+<title>AppSheetの使い方、初心者は何から始めればいいですか？｜ととのえる屋</title>
+<meta name="description" content="AppSheetの使い方を調べると英語の画面ばかりで、最初の一歩で止まってしまう。プログラミングを書けない人が業務アプリを作るまでに、実際つまずくのはどこか。作る画面が英語のままな理由と、その越え方、スマホでの動き方まで、実際に現場のアプリを組んできた立場から書きます。">
+<link rel="canonical" href="https://totonoeruya.jp/articles/appsheet-tsukaikata-shoshinsha/">
+
+<meta property="og:title" content="AppSheetの使い方、初心者は何から始めればいいですか？｜ととのえる屋">
+<meta property="og:description" content="プログラミングを書けない人が業務アプリを作るまでに、実際つまずくのはどこか。作る画面が英語のままな理由と、その越え方まで。">
+<meta property="og:url" content="https://totonoeruya.jp/articles/appsheet-tsukaikata-shoshinsha/">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://totonoeruya.jp/og.jpg">
+<meta property="article:published_time" content="2026-08-04T00:00:00+09:00">
+<meta property="article:author" content="照井航次郎">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../../assets/site-2026.css">
+<link rel="stylesheet" href="../../assets/article-2026.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://totonoeruya.jp/articles/appsheet-tsukaikata-shoshinsha/#article",
+      "headline": "AppSheetの使い方、初心者は何から始めればいいですか？",
+      "description": "プログラミングを書けない人が業務アプリを作るまでに、実際つまずくのはどこか。作る画面が英語のままな理由と、その越え方、スマホでの動き方まで、実際に現場のアプリを組んできた立場から書きます。",
+      "url": "https://totonoeruya.jp/articles/appsheet-tsukaikata-shoshinsha/",
+      "mainEntityOfPage": "https://totonoeruya.jp/articles/appsheet-tsukaikata-shoshinsha/",
+      "image": "https://totonoeruya.jp/og.jpg",
+      "datePublished": "2026-08-04",
+      "dateModified": "2026-08-04",
+      "inLanguage": "ja",
+      "articleSection": "業務改善",
+      "author": { "@id": "https://totonoeruya.jp/#terui" },
+      "publisher": { "@id": "https://totonoeruya.jp/#organization" },
+      "isPartOf": { "@id": "https://totonoeruya.jp/articles/#blog" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://totonoeruya.jp/" },
+        { "@type": "ListItem", "position": 2, "name": "ジャーナル", "item": "https://totonoeruya.jp/articles/" },
+        { "@type": "ListItem", "position": 3, "name": "AppSheetの使い方、初心者は何から始めればいいですか？", "item": "https://totonoeruya.jp/articles/appsheet-tsukaikata-shoshinsha/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://totonoeruya.jp/articles/appsheet-tsukaikata-shoshinsha/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "プログラミングができなくても、AppSheetで業務アプリは作れますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "作れます。AppSheetは、スプレッドシートの表を読み込んで、その表を出し入れするための画面を自動で組み立ててくれる道具です。書くのはコードではなく、条件の式です。ただし「何も学ばずに作れる」わけではありません。表の作り方（1行が何を表すか、列に何を持たせるか）が整っていないと、そのあとで必ず詰まります。覚える量が減るだけで、考える量は減りません。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "AppSheetの使い方を日本語で知りたいのですが、画面は日本語になりますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "作る側の画面（エディタ）は英語のままです。設定の名前も、式の書き方も英語です。ここが初心者の最初の壁になります。いっぽう、できあがったアプリを使う人が見る画面は、Localization（表示名の設定）で日本語にできます。つまり「作る人は英語を見る、使う人は日本語を見る」という形になります。英語が苦手でも進めますが、最初の数時間は用語をひとつずつ調べる時間だと思っておくと、心が折れにくいです。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "スマホでも使えますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "使えます。むしろスマホで使うことを前提にした道具です。現場で写真を撮って報告する、外から在庫を確認する、といった使い方が本領です。ただし、作る作業のほうはパソコンで行うほうが確実です。スマホは「できあがったものを、現場で使う側」と考えてください。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "スプレッドシートをアプリにする、というのはどういうことですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "表をそのまま画面にする、ということです。いま使っているスプレッドシートの1行が、アプリでは1件の記録になります。列は入力欄になります。だから、表がきれいに整っているほど、アプリもきれいになります。逆に、1つのセルに複数の情報が混ざっていたり、行の意味がバラバラだったりすると、アプリにした瞬間に使いにくくなります。作りはじめる前に表を整えるのが、いちばん効く準備です。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "本やYouTubeだけで身につきますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "基本の操作は身につきます。ただ、そこで作れるのは見本のアプリで、自分の現場のアプリではありません。差が出るのは、自分の仕事をどう表の形に置き換えるかという部分で、そこは本には書かれていません。おすすめは、教材で一度作ったあと、すぐに自分の現場の小さな1つ（日報だけ、点検だけ）を作り直してみることです。うまくいかない場所が、そのまま学ぶべき場所になります。"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://totonoeruya.jp/articles/appsheet-tsukaikata-shoshinsha/#howto",
+      "name": "AppSheetを初心者が最初に触るときの順番",
+      "description": "作る画面が英語でも止まらずに、自分の現場のアプリまでたどりつくための手順。",
+      "step": [
+        { "@type": "HowToStep", "position": 1, "name": "手順1", "text": "いま使っているスプレッドシートを1枚選ぶ。新しく作らず、実際に使っているものにする" },
+        { "@type": "HowToStep", "position": 2, "name": "手順2", "text": "その表を整える。1行が1件になっているか、1つのセルに情報を詰め込んでいないかを見る" },
+        { "@type": "HowToStep", "position": 3, "name": "手順3", "text": "その表からアプリを作らせる。最初は自動でできあがった形のまま、何も直さずに触ってみる" },
+        { "@type": "HowToStep", "position": 4, "name": "手順4", "text": "使う人が見る画面の名前だけ日本語にする（Localization）。作る画面は英語のままでよい" },
+        { "@type": "HowToStep", "position": 5, "name": "手順5", "text": "自分ひとりで1週間使ってみる。使いにくかったところだけを直す。人に配るのはその後" }
+      ]
+    }
+  ]
+}
+</script>
+<!-- Vercel Web Analytics -->
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/assets/analytics.js"></script>
+</head>
+<body>
+
+<header class="topbar">
+  <a href="/" class="brand"><img src="../../assets/logo-totonoeru.png" alt="">ととのえる屋</a>
+  <nav aria-label="メインメニュー">
+    <a href="/#about">About</a>
+    <a href="/#services">相談</a>
+    <a href="/articles/ai-erabareru-hp-shindan/">HP診断</a>
+    <a href="/totoline/">totoline</a>
+    <a href="/shift/">シフト</a>
+    <a href="/cleaning/">清掃</a>
+    <a href="/lab/">ずかん</a>
+    <a href="/articles/" aria-current="page">Journal</a>
+  </nav>
+  <a href="/#contact" class="cta">相談する</a>
+</header>
+
+<main>
+<article class="article-body">
+  <header class="article-header">
+    <div class="article-meta">
+      <span class="journal-date">2026-08-04</span>
+      <span class="journal-category">業務改善</span>
+    </div>
+    <h1 class="article-title">AppSheetの使い方、初心者は何から始めればいいですか？</h1>
+    <p class="article-lead">
+      AppSheet の使い方を調べると、出てくるのは英語の画面ばかり。日本語の解説を探しても、エンジニア向けの言葉で書かれていて、最初の一歩で止まってしまう——そういう方に向けて書きます。私はプログラミングの学校を出ていません。それでも現場で使う業務アプリを組んで、実際に人に使ってもらっています。だから、書ける人には見えないつまずきの場所を知っています。何ができて、どこで詰まって、どう越えるかを、順番に書きます。
+    </p>
+  </header>
+
+  <div class="article-content">
+    <h2>AppSheetの使い方、初心者は何から始めればいいですか？</h2>
+    <p>結論、<strong>新しく何かを作るのではなく、いま使っているスプレッドシートを1枚選ぶ</strong>ところからです。</p>
+    <p>理由は、AppSheet が「表を画面にする」道具だからです。ゼロから設計する道具ではありません。すでにある表——日報でも、点検の記録でも、在庫の一覧でもいい——を読み込ませると、その表を見たり書き足したりするための画面を、自動で組み立ててくれます。だから、出発点は白紙ではなく、いま実際に使っている表です。</p>
+    <p>具体的には、最初にやることは操作の勉強ではなく、<strong>表の掃除</strong>です。1行が1件になっているか。1つのセルに「8/4 山田 2名 追加あり」のように複数の情報を詰め込んでいないか。この2つを直すだけで、あとの作業がまるで変わります。逆にここを飛ばすと、どれだけ操作を覚えても、できあがったアプリが使いにくくなります。<strong>表がきれいなほど、アプリはきれいになります。</strong></p>
+
+    <h2>プログラミングができなくても、業務アプリは作れますか？</h2>
+    <p>結論、<strong>作れます。</strong>ただし「何も学ばずに作れる」わけではありません。</p>
+    <p>理由は、書くものがコードから式に変わるだけだからです。AppSheet で書くのは、表計算ソフトの関数に近い形の式です。「この条件のときだけ表示する」「この人にだけ編集させる」といった指示を、短い式で書きます。プログラミングのように、動く順番を最初から最後まで組み立てる必要はありません。<strong>覚える量は確かに減ります。ただ、考える量は減りません。</strong></p>
+    <p>具体的には、詰まる場所は文法ではなく設計です。「日報を1件ずつ記録する」と決めたはずが、途中で「現場ごとにまとめて見たい」となり、表の形が合わなくなる。ここは書ける人でも詰まるところで、プログラミングができるかどうかとは関係がありません。だから、<strong>プログラミングを書けないことは、思っているほど不利ではありません。</strong>不利になるのは、自分の仕事の流れを言葉にできていないときです。</p>
+
+    <h2>作る画面は、日本語になりますか？</h2>
+    <p>結論、<strong>作る側の画面は英語のままです。</strong>これが初心者の最初の壁で、正直に言っておくべきところだと思っています。</p>
+    <p>理由は、AppSheet の作る画面（エディタ）が英語だけで提供されているからです。設定の名前も、式の書き方も英語です。日本語の解説を探しても、画面の項目名は英語で出てくるので、記事と自分の画面が一致しない。「appsheet 使い方 日本語」と検索する人が多いのは、ここで止まっているからです。</p>
+    <p>具体的には、こう考えると越えられます。<strong>「作る人は英語を見る、使う人は日本語を見る」。</strong>できあがったアプリのほうは、表示名の設定（Localization）で日本語にできます。だから現場に配るアプリは日本語で問題ありません。英語なのは、自分が触っている間だけです。最初の数時間は、用語をひとつずつ調べる時間だと思っておいてください。10個か20個の言葉を覚えれば、あとは同じ言葉のくり返しです。<br>※ 作る画面を日本語で表示するための外部の拡張機能もありますが、公式のものではないので、業務で使う前に会社の決まりを確認してください。</p>
+
+    <h2>スマホでも使えますか？</h2>
+    <p>結論、<strong>使えます。というより、スマホで使うことを前提にした道具です。</strong></p>
+    <p>理由は、AppSheet が想定しているのが現場だからです。現場で写真を撮ってそのまま報告する、外出先から在庫を確かめる、その場で数字を入れる。パソコンの前に戻らないと記録できない、という状態を消すための道具です。だから、紙に書いて後でパソコンに打ち直している仕事とは相性がいいです。</p>
+    <p>具体的には、作る作業のほうはパソコンでやるほうが確実です。<strong>スマホは「できあがったものを、現場で使う側」</strong>と考えてください。この分け方をしておくと、「スマホで作れないじゃないか」という詰まり方をしなくて済みます。</p>
+
+    <h2>スプレッドシートをアプリにする、というのはどういうことですか？</h2>
+    <p>結論、<strong>表の1行が、アプリでは1件の記録になる</strong>ということです。</p>
+    <p>理由は、AppSheet が表をそのまま裏側のデータとして使うからです。列は入力欄になります。日付の列は日付を選ぶ欄に、写真の列は写真を撮る欄に、担当者の列は名前を選ぶ欄に。つまり、<strong>表の形がそのままアプリの形になります。</strong>新しくデータを作り直す必要はありません。</p>
+    <p>具体的には、いま使っている表がそのまま使えるかどうかは、1つの問いで分かります。<strong>「この表の1行を、口で説明できますか？」</strong>——「1行が、1回の点検です」と言えるなら、そのまま進めます。「うーん、上のほうは集計で、下は明細で…」となるなら、先に表を分けたほうがいいです。ここは<a href="/articles/seikyusho-jidou-sakusei/">請求書の自動作成</a>や<a href="/shift/">シフトを組む仕事</a>でも、まったく同じ形で出てきます。道具の前に、表の形です。</p>
+
+    <h2>本やYouTubeだけで身につきますか？</h2>
+    <p>結論、<strong>基本の操作は身につきます。でも、そこで作れるのは見本のアプリです。</strong></p>
+    <p>理由は、教材が「誰にでも当てはまる例」で作られているからです。在庫管理、来客記録、といった見本は、きれいに整った表から始まります。ところが自分の現場の表は、そんなにきれいではありません。列が足りなかったり、例外があったり、担当者ごとに書き方が違ったりします。<strong>その差を埋める部分が、いちばん時間のかかるところで、そこは教材に書かれていません。</strong></p>
+    <p>具体的には、こう進めるのがおすすめです。教材で一度、見本どおりに作る。そのあとすぐ、<strong>自分の現場の小さな1つ</strong>を作り直す。日報だけ、点検だけ、鍵の受け渡しだけ。小さいほどいいです。そこでうまくいかない場所が、そのまま自分が学ぶべき場所になります。うまくいかないことは失敗ではなく、地図です。</p>
+
+    <h2>まとめ</h2>
+    <p>AppSheet は、書けない人が業務アプリを作れる道具です。ただし、覚えることが減るぶん、<strong>「自分の仕事をどう表の形にするか」を考える部分は、そのまま残ります。</strong>そしてそこは、道具の使い方を教える記事には書かれていません。</p>
+    <p>作る画面が英語なのも、教材が見本で止まるのも、越えられます。私も書ける人ではないところから始めて、いまは現場で使われるアプリを組んでいます。<strong>だから「これは自分にもできるかもしれない」の側から説明できます。</strong></p>
+    <p>途中で止まってしまった、どこから手をつければいいか分からない、という段階からで大丈夫です。いま使っているスプレッドシートを1枚見せていただければ、それがアプリにできる形かどうかを、いっしょに見るところから始められます。</p>
+  </div>
+</article>
+
+<section class="sec ct" id="contact" style="margin-top:64px">
+  <div class="sec-top" style="justify-content:center"><h2 style="font-size:clamp(28px,5vw,52px)">相談する</h2></div>
+  <p class="barrier">「この表、アプリにできるのかな」から、いっしょに見ます。<br>長野県内は対面、オンラインは全国対応です。</p>
+  <div class="methods">
+    <div class="m">
+      <div class="lbl">LINE</div>
+      <div class="v">@903xtesg</div>
+      <div class="nn">「相談したい」と一言送ってください。返信が早いのはLINEです。1〜2営業日でお返しします。</div>
+      <a href="https://line.me/R/ti/p/@903xtesg" class="btn solid full" target="_blank" rel="noopener">LINEで相談する</a>
+    </div>
+    <div class="m">
+      <div class="lbl">フォーム</div>
+      <div class="nn" style="margin-bottom:14px">LINEを使っていない方はこちらから。メールアドレス宛にお返しします。</div>
+      <form action="https://formspree.io/f/mvzllrqg" method="POST">
+        <label for="contact-name">お名前（任意）</label>
+        <input type="text" id="contact-name" name="name" autocomplete="name" placeholder="ご記入なしでも構いません">
+        <label for="contact-email">メールアドレス（必須）</label>
+        <input type="email" id="contact-email" name="email" autocomplete="email" required placeholder="返信先">
+        <label for="contact-message">ご相談内容</label>
+        <textarea id="contact-message" name="message" required placeholder="いまどんな表を使っているか、どこで止まっているか。ひと言だけでも構いません。"></textarea>
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="_subject" value="totonoeruya.jp お問い合わせ（AppSheetの使い方）">
+        <input type="hidden" name="_next" value="https://totonoeruya.jp/thanks/">
+        <button type="submit" class="btn solid full">送信する</button>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="foot">
+    <div class="b">
+      <img src="../../assets/logo-totonoeru.png" alt="ととのえる屋">
+      <p>長野県小諸市の、小さな何でも屋。HP・LP制作、AI業務改善、清掃、ギター教室。ぜんぶ、同じ手で。</p>
+    </div>
+    <div><h6>Services</h6><ul><li><a href="/web/">HP・LP制作</a></li><li><a href="/shift/">シフト</a></li><li><a href="/cleaning/">清掃</a></li><li><a href="/guitar/">ギター教室</a></li><li><a href="/totoline/">totoline</a></li></ul></div>
+    <div><h6>Company</h6><ul><li><a href="/articles/">ジャーナル</a></li><li><a href="/articles/totonoeruya-name-riyu/">屋号の由来</a></li><li><a href="https://github.com/papanti0318-spec" target="_blank" rel="noopener">GitHub</a></li><li><a href="https://x.com/totonoeruya" target="_blank" rel="noopener">X</a></li></ul></div>
+    <div><h6>Contact</h6><ul><li><a href="mailto:totonoeru.ya@gmail.com">totonoeru.ya@gmail.com</a></li><li><a href="https://line.me/R/ti/p/@903xtesg" target="_blank" rel="noopener">LINE @903xtesg</a></li><li>長野県小諸市</li></ul></div>
+  </div>
+  <div class="foot-bot">
+    <span>© 2026 ととのえる屋. 長野県小諸市</span>
+    <span><a href="/privacy/">プライバシーポリシー</a> · <a href="/commerce/">特定商取引法に基づく表記</a></span>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js" defer></script>
+<script src="../../assets/smooth-2026.js" defer></script>
+</body>
+</html>
