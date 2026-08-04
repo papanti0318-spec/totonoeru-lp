@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="hYRflPVBHV_SbReXwN_7v4tNCf6AT3VusKhSviD5kPU" />
+<title>スプレッドシートの在庫管理、どこまでできますか？｜ととのえる屋</title>
+<meta name="description" content="スプレッドシートの在庫管理は、数を数えるだけならそのままで十分です。壊れるのは「2人が同時に触ったとき」と「現物と数が合わなくなったとき」の2つ。テンプレートの選び方、3枚に分ける作り方、フォーム入力が効く理由、使う関数、QRコードの読み取りまでを順に書きます。">
+<link rel="canonical" href="https://totonoeruya.jp/articles/zaiko-kanri-spreadsheet/">
+
+<meta property="og:title" content="スプレッドシートの在庫管理、どこまでできますか？｜ととのえる屋">
+<meta property="og:description" content="壊れるのは「同時に触ったとき」と「現物と合わなくなったとき」。3枚に分ける作り方と、フォーム入力が効く理由。">
+<meta property="og:url" content="https://totonoeruya.jp/articles/zaiko-kanri-spreadsheet/">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://totonoeruya.jp/og.jpg">
+<meta property="article:published_time" content="2026-08-04T00:00:00+09:00">
+<meta property="article:author" content="照井航次郎">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../../assets/site-2026.css">
+<link rel="stylesheet" href="../../assets/article-2026.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://totonoeruya.jp/articles/zaiko-kanri-spreadsheet/#article",
+      "headline": "スプレッドシートの在庫管理、どこまでできますか？",
+      "description": "壊れるのは「2人が同時に触ったとき」と「現物と数が合わなくなったとき」の2つ。テンプレートの選び方、3枚に分ける作り方、フォーム入力が効く理由、使う関数、QRコードの読み取りまで。",
+      "url": "https://totonoeruya.jp/articles/zaiko-kanri-spreadsheet/",
+      "mainEntityOfPage": "https://totonoeruya.jp/articles/zaiko-kanri-spreadsheet/",
+      "image": "https://totonoeruya.jp/og.jpg",
+      "datePublished": "2026-08-04",
+      "dateModified": "2026-08-04",
+      "inLanguage": "ja",
+      "articleSection": "業務改善",
+      "author": { "@id": "https://totonoeruya.jp/#terui" },
+      "publisher": { "@id": "https://totonoeruya.jp/#organization" },
+      "isPartOf": { "@id": "https://totonoeruya.jp/articles/#blog" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://totonoeruya.jp/" },
+        { "@type": "ListItem", "position": 2, "name": "ジャーナル", "item": "https://totonoeruya.jp/articles/" },
+        { "@type": "ListItem", "position": 3, "name": "スプレッドシートの在庫管理、どこまでできますか？", "item": "https://totonoeruya.jp/articles/zaiko-kanri-spreadsheet/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://totonoeruya.jp/articles/zaiko-kanri-spreadsheet/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "スプレッドシートの在庫管理は、どこまでできますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "数を数えて、足りなくなったら知らせる、というところまでは十分にできます。専用のシステムを入れなくても回ります。壊れるのは2つの場面だけです。ひとつは2人以上が同時に同じ数字を触ったとき、もうひとつは棚の現物と表の数が合わなくなったときです。この2つが起きない規模、つまり数人で、1日に何度も出し入れしない現場なら、スプレッドシートのままで長く使えます。逆にこの2つが起きはじめたら、道具ではなく表の作り方を先に疑ってください。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "在庫管理のテンプレートは、そのまま使えますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "使えるものと、最初から壊れているものがあります。見分け方はひとつで、残りの数を同じセルに上書きしていく形か、出し入れを1行ずつ足していく形かです。上書き型は、書いた瞬間に前の数が消えるので、間違いが起きても誰がいつ何をしたのか分かりません。追記型は行が増えていくだけなので、あとから必ず追いかけられます。テンプレートを開いたら、列の名前より先にこの点を見てください。ここが違うと、あとからの直しがとても重くなります。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "在庫管理の表は、どう作ればいいですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "3枚に分けてください。1枚目が商品の一覧（品名、置き場所、注文の目安）。2枚目が出し入れの記録（日付、品名、増えたか減ったか、数、担当者）。3枚目が集計で、ここは自分で数字を打たず計算式だけを置きます。1枚で全部やろうとすると、記録と集計が同じ場所に混ざり、必ず壊れます。人が書き込むのは2枚目だけ、という状態を作れたら、その表は長持ちします。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Googleフォームから入力するのは、有効ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "とても有効です。理由は、フォームからの入力は必ず新しい1行として下に足されるからです。既にある数字を書き換えることが、仕組みとして起こりません。上書き事故がなくなるのが最大の利点です。おまけに、スマホの画面が入力に向いた形になるので、棚の前で立ったまま入力できます。表を直接いじらせないこと、これが複数人で在庫を回すときのいちばん簡単で強い守り方です。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "QRコードやバーコードで読み取れますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "読み取れます。ただし表そのものにカメラは無いので、読み取るための入力画面が別に要ります。スマホのカメラでコードを読み、品名の欄に自動で入る形にすると、打ち間違いがなくなり、棚の前での作業がとても速くなります。コードは市販のラベルでなくても、自分でシールを作って貼るだけで十分です。効くのは品目数が多い現場で、品目が20や30なら、選ぶ一覧から選んだほうが速いこともあります。"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://totonoeruya.jp/articles/zaiko-kanri-spreadsheet/#howto",
+      "name": "スプレッドシートで在庫管理を組む手順",
+      "description": "壊れない形で作るための、3枚に分ける組み方。",
+      "step": [
+        { "@type": "HowToStep", "position": 1, "name": "手順1", "text": "1枚目に商品の一覧を作る（品名・置き場所・注文の目安）。数はここに書かない" },
+        { "@type": "HowToStep", "position": 2, "name": "手順2", "text": "2枚目に出し入れの記録を作る（日付・品名・増減・数・担当者）。ここだけが人の書き込む場所" },
+        { "@type": "HowToStep", "position": 3, "name": "手順3", "text": "3枚目に集計を作り、SUMIF で品名ごとに増減を足す。人は数字を打たない" },
+        { "@type": "HowToStep", "position": 4, "name": "手順4", "text": "2枚目への入力を Google フォームからに切り替える。表を直接いじらせない" },
+        { "@type": "HowToStep", "position": 5, "name": "手順5", "text": "月に1度、棚の現物を数えて突き合わせる。ずれた分は消さず、調整として1行足す" }
+      ]
+    }
+  ]
+}
+</script>
+<!-- Vercel Web Analytics -->
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/assets/analytics.js"></script>
+</head>
+<body>
+
+<header class="topbar">
+  <a href="/" class="brand"><img src="../../assets/logo-totonoeru.png" alt="">ととのえる屋</a>
+  <nav aria-label="メインメニュー">
+    <a href="/#about">About</a>
+    <a href="/#services">相談</a>
+    <a href="/articles/ai-erabareru-hp-shindan/">HP診断</a>
+    <a href="/totoline/">totoline</a>
+    <a href="/shift/">シフト</a>
+    <a href="/cleaning/">清掃</a>
+    <a href="/lab/">ずかん</a>
+    <a href="/articles/" aria-current="page">Journal</a>
+  </nav>
+  <a href="/#contact" class="cta">相談する</a>
+</header>
+
+<main>
+<article class="article-body">
+  <header class="article-header">
+    <div class="article-meta">
+      <span class="journal-date">2026-08-04</span>
+      <span class="journal-category">業務改善</span>
+    </div>
+    <h1 class="article-title">スプレッドシートの在庫管理、どこまでできますか？</h1>
+    <p class="article-lead">
+      在庫管理のために専用のシステムを入れるべきか、スプレッドシートのままでいいのか。結論から言うと、<strong>多くの小さな現場では、スプレッドシートのままで十分に回ります。</strong>ただし壊れ方が決まっていて、そこを避ける作り方があります。私は現場で自分の道具の在庫を管理する側にいて、実際に一度壊しました。ここでは、その壊れ方と避け方を順に書きます。
+    </p>
+  </header>
+
+  <div class="article-content">
+    <h2>スプレッドシートの在庫管理は、どこまでできますか？</h2>
+    <p>結論、<strong>数を数えて、足りなくなったら分かる、というところまでは十分にできます。</strong></p>
+    <p>理由は、在庫管理の本体が「足し算と引き算」だからです。入ってきたら足す、使ったら引く、いまいくつか分かる。専用のシステムが持っている機能の多くは、その周りにある管理のためのもので、数を合わせる仕事そのものではありません。<strong>だから、数人で回している現場なら、表計算ソフトで足ります。</strong></p>
+    <p>具体的には、スプレッドシートの在庫管理が壊れる場面は、経験上2つしかありません。<strong>ひとつは、2人以上が同時に同じ数字を触ったとき。もうひとつは、棚の現物と表の数が合わなくなったとき。</strong>この2つが起きない規模——数人で、1日に何度も出し入れしない現場——なら、長く使えます。逆にこの2つが起きはじめたら、道具を買い替える前に、<strong>まず表の作り方を疑ってください。</strong>ほとんどの場合、原因はそちらです。</p>
+
+    <h2>テンプレートを探しているのですが、そのまま使えますか？</h2>
+    <p>結論、<strong>使えるものと、最初から壊れているものがあります。</strong>見分け方はひとつだけです。</p>
+    <p>理由は、在庫管理の表に2つの型があるからです。<strong>ひとつは「残りの数」を同じセルに上書きしていく型。もうひとつは「出し入れ」を1行ずつ下に足していく型。</strong>この2つは見た目が似ていますが、性質がまったく違います。</p>
+    <p>具体的には、上書き型はこう壊れます。棚から3つ持ち出した人が、在庫の欄を12から9に書き換えます。ところが同じころ、別の人も2つ持ち出して12から10に書き換えていた。<strong>先に書いたほうの記録は、跡形もなく消えます。</strong>あとから見ても、誰がいつ何をしたのか分かりません。追記型なら、行が増えていくだけなので、必ず追いかけられます。<strong>テンプレートを開いたら、列の名前より先に「上書きか、追記か」を見てください。</strong>ここを間違えると、あとからの直しがとても重くなります。</p>
+
+    <h2>在庫管理の表は、どう作ればいいですか？</h2>
+    <p>結論、<strong>3枚に分けてください。1枚でやろうとすると、必ず壊れます。</strong></p>
+    <p>理由は、記録と集計を同じ場所に置くと、人が計算結果の上に手で書き込んでしまうからです。1度それをやると、以降その表の数字は信用できなくなります。</p>
+    <p>具体的には、こう分けます。</p>
+    <p><strong>1枚目：商品の一覧。</strong>品名、置き場所、注文する目安の数。<strong>ここに「いまいくつあるか」は書きません。</strong><br>
+    <strong>2枚目：出し入れの記録。</strong>日付、品名、増えたか減ったか、数、担当者。<strong>人が書き込むのは、ここだけです。</strong><br>
+    <strong>3枚目：集計。</strong>いまいくつあるかを表示します。ここには計算式しか置きません。人は絶対に数字を打ちません。</p>
+    <p>この形にすると、「いまの数」は必ず記録から計算された結果になります。<strong>合わないときは記録をさかのぼれば、必ず原因の行にたどりつきます。</strong>置き場所を1枚目に持たせておくと、在庫の管理がそのまま「どこにあるか」の共有になります。清掃の道具でこれをやった話は<a href="/articles/dougu-basho-shiranai/">別に書きました</a>が、探す時間のほうが、実は数を数える時間より長かったです。</p>
+
+    <h2>Googleフォームから入力するのは、有効ですか？</h2>
+    <p>結論、<strong>とても有効です。複数人で回すなら、いちばん簡単で強い守り方です。</strong></p>
+    <p>理由は、フォームからの入力が<strong>必ず新しい1行として下に足される</strong>からです。既にある数字を書き換えることが、仕組みとして起こりません。上の章で書いた「上書き事故」が、構造として発生しなくなります。気をつけて運用するのではなく、<strong>気をつけなくても起きない形にする。</strong>これが効きます。</p>
+    <p>具体的には、おまけの利点も大きいです。フォームはスマホの画面に合った形で出るので、<strong>棚の前で立ったまま入力できます。</strong>表を直接開かせると、細い列を横にずらしながら小さなセルを狙うことになり、現場では必ず「あとでまとめて入力する」に戻ります。あとでまとめて、が始まった時点で在庫の数は合わなくなります。<strong>表を人に直接いじらせない。</strong>これだけで、多くの現場が持ち直します。</p>
+
+    <h2>どの関数を使えばいいですか？</h2>
+    <p>結論、<strong>SUMIF がひとつあれば足ります。</strong></p>
+    <p>理由は、やりたいことが「品名ごとに、増減を全部足す」だけだからです。※SUMIFとは: 決めた条件に当てはまる行だけを選んで、その数字を足し算してくれる仕組みのこと。「この品名の行だけ、数を足して」と指示できます。</p>
+    <p>具体的には、集計の枚に置くのはこの形です。</p>
+    <p><code>=SUMIF(記録!B:B, A2, 記録!D:D)</code></p>
+    <p>「記録の枚のB列（品名）を見て、この行の品名（A2）と同じ行だけ、D列（数）を足す」という意味です。増えたときは正の数、減ったときは負の数で記録しておけば、この1つの式で現在数が出ます。<strong>条件を2つ以上にしたいとき（品名と置き場所の両方で絞るなど）は SUMIFS を使います。</strong>覚える関数はこの2つで、しばらく足ります。<br>最初から複雑な式を組まないでください。<strong>あとで読めなくなった式は、無いのと同じです。</strong>数ヶ月後の自分は、他人だと思っておくくらいでちょうどいいです。</p>
+
+    <h2>QRコードやバーコードで、読み取れますか？</h2>
+    <p>結論、<strong>読み取れます。ただし表そのものにカメラは無いので、読み取るための画面が別に要ります。</strong></p>
+    <p>理由は、スプレッドシートが数字を置いておく場所であって、入力する道具ではないからです。カメラでコードを読んで品名の欄へ自動で入れる、という動きは、表の上に乗せる入力用の画面（アプリ）の仕事になります。<a href="/articles/spreadsheet-appka-nani-tsukau/">表をそのまま入力画面にする方法</a>は別の記事に書きました。</p>
+    <p>具体的には、効くかどうかは<strong>品目の数</strong>で決まります。品目が100を超えるような現場では、コードを読むほうが圧倒的に速く、打ち間違いも消えます。逆に品目が20や30なら、<strong>一覧から選ぶほうが速いことが多いです。</strong>コードを貼る手間と、剥がれたときに直す手間があるからです。市販のラベルでなくても、自分でシールを作って貼るだけで十分に動きます。ここは「新しいからやる」ではなく、<strong>品目の数で決めてください。</strong></p>
+
+    <h2>まとめ</h2>
+    <p>スプレッドシートの在庫管理は、数人の現場なら十分に実用になります。長持ちさせる条件は4つだけです。<strong>①上書きせず、出し入れを1行ずつ足す ②商品の一覧・記録・集計の3枚に分ける ③人が書き込むのは記録の枚だけ、入力はフォームから ④現在数は SUMIF で計算させ、手で打たない。</strong></p>
+    <p>そして月に1度だけ、棚の現物を数えて突き合わせてください。<strong>ずれていたときは、数字を書き直さないでください。</strong>「調整」として1行足すのが正しいやり方です。書き直すと、ずれた理由が永久に分からなくなります。ずれの理由が分かる表だけが、2年目も使われます。</p>
+    <p>私は専用の在庫システムを売っていません。だから<strong>「これは今のままで十分です」と言えます。</strong>実際、多くの現場で足りていないのはシステムではなく、上の4つのうちのどれか1つでした。</p>
+    <p>いま使っている在庫の表を1枚見せていただければ、どこが壊れる形になっているかを、いっしょに見るところから始められます。</p>
+  </div>
+</article>
+
+<section class="sec ct" id="contact" style="margin-top:64px">
+  <div class="sec-top" style="justify-content:center"><h2 style="font-size:clamp(28px,5vw,52px)">相談する</h2></div>
+  <p class="barrier">「この在庫表、いつも数が合わないんだよね」から、いっしょに見ます。<br>長野県内は対面、オンラインは全国対応です。</p>
+  <div class="methods">
+    <div class="m">
+      <div class="lbl">LINE</div>
+      <div class="v">@903xtesg</div>
+      <div class="nn">「相談したい」と一言送ってください。返信が早いのはLINEです。1〜2営業日でお返しします。</div>
+      <a href="https://line.me/R/ti/p/@903xtesg" class="btn solid full" target="_blank" rel="noopener">LINEで相談する</a>
+    </div>
+    <div class="m">
+      <div class="lbl">フォーム</div>
+      <div class="nn" style="margin-bottom:14px">LINEを使っていない方はこちらから。メールアドレス宛にお返しします。</div>
+      <form action="https://formspree.io/f/mvzllrqg" method="POST">
+        <label for="contact-name">お名前（任意）</label>
+        <input type="text" id="contact-name" name="name" autocomplete="name" placeholder="ご記入なしでも構いません">
+        <label for="contact-email">メールアドレス（必須）</label>
+        <input type="email" id="contact-email" name="email" autocomplete="email" required placeholder="返信先">
+        <label for="contact-message">ご相談内容</label>
+        <textarea id="contact-message" name="message" required placeholder="いま何品くらい管理しているか、何人で触っているか。ひと言だけでも構いません。"></textarea>
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="_subject" value="totonoeruya.jp お問い合わせ（在庫管理）">
+        <input type="hidden" name="_next" value="https://totonoeruya.jp/thanks/">
+        <button type="submit" class="btn solid full">送信する</button>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="foot">
+    <div class="b">
+      <img src="../../assets/logo-totonoeru.png" alt="ととのえる屋">
+      <p>長野県小諸市の、小さな何でも屋。HP・LP制作、AI業務改善、清掃、ギター教室。ぜんぶ、同じ手で。</p>
+    </div>
+    <div><h6>Services</h6><ul><li><a href="/web/">HP・LP制作</a></li><li><a href="/shift/">シフト</a></li><li><a href="/cleaning/">清掃</a></li><li><a href="/guitar/">ギター教室</a></li><li><a href="/totoline/">totoline</a></li></ul></div>
+    <div><h6>Company</h6><ul><li><a href="/articles/">ジャーナル</a></li><li><a href="/articles/totonoeruya-name-riyu/">屋号の由来</a></li><li><a href="https://github.com/papanti0318-spec" target="_blank" rel="noopener">GitHub</a></li><li><a href="https://x.com/totonoeruya" target="_blank" rel="noopener">X</a></li></ul></div>
+    <div><h6>Contact</h6><ul><li><a href="mailto:totonoeru.ya@gmail.com">totonoeru.ya@gmail.com</a></li><li><a href="https://line.me/R/ti/p/@903xtesg" target="_blank" rel="noopener">LINE @903xtesg</a></li><li>長野県小諸市</li></ul></div>
+  </div>
+  <div class="foot-bot">
+    <span>© 2026 ととのえる屋. 長野県小諸市</span>
+    <span><a href="/privacy/">プライバシーポリシー</a> · <a href="/commerce/">特定商取引法に基づく表記</a></span>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js" defer></script>
+<script src="../../assets/smooth-2026.js" defer></script>
+</body>
+</html>
