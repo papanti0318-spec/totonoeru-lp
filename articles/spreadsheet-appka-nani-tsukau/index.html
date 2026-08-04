@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="hYRflPVBHV_SbReXwN_7v4tNCf6AT3VusKhSviD5kPU" />
+<title>スプレッドシートのアプリ化、何を使えばいいですか？｜ととのえる屋</title>
+<meta name="description" content="スプレッドシートのアプリ化を調べると、AppSheet・GAS・Geminiと名前が並んで、どれを選べばいいのか分からなくなる。無料でどこまでできるのか、Geminiに言えば本当にアプリができるのか、そしてアプリにしないほうがいい表はどれか。道具を売る側ではない立場から、選び方だけを書きます。">
+<link rel="canonical" href="https://totonoeruya.jp/articles/spreadsheet-appka-nani-tsukau/">
+
+<meta property="og:title" content="スプレッドシートのアプリ化、何を使えばいいですか？｜ととのえる屋">
+<meta property="og:description" content="AppSheet・GAS・Gemini、どれを選ぶか。無料の範囲と、Geminiで作れるものの正体。道具を売る側ではない立場から書きます。">
+<meta property="og:url" content="https://totonoeruya.jp/articles/spreadsheet-appka-nani-tsukau/">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://totonoeruya.jp/og.jpg">
+<meta property="article:published_time" content="2026-08-04T00:00:00+09:00">
+<meta property="article:author" content="照井航次郎">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../../assets/site-2026.css">
+<link rel="stylesheet" href="../../assets/article-2026.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://totonoeruya.jp/articles/spreadsheet-appka-nani-tsukau/#article",
+      "headline": "スプレッドシートのアプリ化、何を使えばいいですか？",
+      "description": "AppSheet・GAS・Geminiのどれを選ぶか。無料でどこまでできるか。Geminiで作れるものの正体と、アプリにしないほうがいい表の見分け方まで、道具を売る側ではない立場から書きます。",
+      "url": "https://totonoeruya.jp/articles/spreadsheet-appka-nani-tsukau/",
+      "mainEntityOfPage": "https://totonoeruya.jp/articles/spreadsheet-appka-nani-tsukau/",
+      "image": "https://totonoeruya.jp/og.jpg",
+      "datePublished": "2026-08-04",
+      "dateModified": "2026-08-04",
+      "inLanguage": "ja",
+      "articleSection": "業務改善",
+      "author": { "@id": "https://totonoeruya.jp/#terui" },
+      "publisher": { "@id": "https://totonoeruya.jp/#organization" },
+      "isPartOf": { "@id": "https://totonoeruya.jp/articles/#blog" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://totonoeruya.jp/" },
+        { "@type": "ListItem", "position": 2, "name": "ジャーナル", "item": "https://totonoeruya.jp/articles/" },
+        { "@type": "ListItem", "position": 3, "name": "スプレッドシートのアプリ化、何を使えばいいですか？", "item": "https://totonoeruya.jp/articles/spreadsheet-appka-nani-tsukau/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://totonoeruya.jp/articles/spreadsheet-appka-nani-tsukau/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "スプレッドシートのアプリ化には、何を使えばいいですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "やりたいことが「表を、入力しやすい画面にしたい」なら AppSheet です。表を読み込ませると、その表を見たり書き足したりする画面を自動で組み立ててくれます。いっぽう「画面は今のままでいいが、決まった作業を自動でやってほしい」なら GAS（Google Apps Script）です。この2つは同じ棚に並んでいますが、目的が違います。画面が欲しいのか、自動化が欲しいのか。ここを先に決めると、道具は自然に決まります。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "スプレッドシートのアプリ化は、無料でどこまでできますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "作って、自分たちで試すところまでは無料でできます。AppSheet の無料の範囲は、試す人が10人までで、期限はありません。ただしこれは「試すための無料」であって「使い続けるための無料」ではありません。作ったものを実際に現場の人へ配る段階から、人数ぶんの有料プランが必要になります。だから最初にやるべきなのは、契約ではなく、無料の範囲で1つ作ってみて、それが本当に使われるかを確かめることです。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Geminiに言えば、スプレッドシートをアプリにしてくれますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "半分は本当ですが、期待とはずれている場合が多いです。AppSheet には、やりたいことを日本語で書くとアプリの骨組みを作ってくれる機能があります。ただし2つ条件があります。ひとつは、この機能は有料アカウント向けで、無料の範囲では使えないこと。もうひとつが大事で、そこで作られるのは AppSheet 側に新しく用意された表であって、いま使っているスプレッドシートではありません。つまり「今の表がそのままアプリになる」のではなく「似た形の表が新しく作られる」のが実際の動きです。今の表を使いたいなら、その表を自分で読み込ませる従来のやり方になります。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "アプリにしないほうがいい表はありますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "あります。ひとつは、1行の意味を口で説明できない表です。上のほうが集計で下が明細、というような表は、アプリにすると必ず使いにくくなります。もうひとつは、使う人が1人しかいない表です。アプリにする値打ちは「離れた場所にいる複数の人が、同じ表に書き込める」ところにあるので、1人で完結している作業なら、表のままのほうが速いことが多いです。道具を入れる前に、この2つだけ見てください。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "アプリ化すると、何が変わりますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "変わるのは「打ち直しが消える」ところです。現場で紙に書いて、事務所に戻ってからスプレッドシートに打ち直している。この2回目がなくなります。写真もその場で残ります。逆に、もともと全員がパソコンの前で入力している職場では、変化は小さいです。効くのは、記録する場所と入力する場所が離れている仕事です。"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://totonoeruya.jp/articles/spreadsheet-appka-nani-tsukau/#howto",
+      "name": "スプレッドシートのアプリ化で、道具を選ぶ順番",
+      "description": "AppSheet・GAS・Gemini のどれを使うかを、契約する前に決めるための手順。",
+      "step": [
+        { "@type": "HowToStep", "position": 1, "name": "手順1", "text": "欲しいのは画面か、自動化かを決める。画面なら AppSheet、自動化なら GAS" },
+        { "@type": "HowToStep", "position": 2, "name": "手順2", "text": "対象の表を1枚だけ選ぶ。1行の意味を口で説明できる表かどうかを確かめる" },
+        { "@type": "HowToStep", "position": 3, "name": "手順3", "text": "使う人が2人以上いるかを確かめる。1人だけなら、アプリにせず表のまま整える" },
+        { "@type": "HowToStep", "position": 4, "name": "手順4", "text": "無料の範囲で作り、自分たちだけで1〜2週間使ってみる。ここは契約しない" },
+        { "@type": "HowToStep", "position": 5, "name": "手順5", "text": "実際に使われたら、そのとき初めて人数ぶんの有料プランを検討する" }
+      ]
+    }
+  ]
+}
+</script>
+<!-- Vercel Web Analytics -->
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/assets/analytics.js"></script>
+</head>
+<body>
+
+<header class="topbar">
+  <a href="/" class="brand"><img src="../../assets/logo-totonoeru.png" alt="">ととのえる屋</a>
+  <nav aria-label="メインメニュー">
+    <a href="/#about">About</a>
+    <a href="/#services">相談</a>
+    <a href="/articles/ai-erabareru-hp-shindan/">HP診断</a>
+    <a href="/totoline/">totoline</a>
+    <a href="/shift/">シフト</a>
+    <a href="/cleaning/">清掃</a>
+    <a href="/lab/">ずかん</a>
+    <a href="/articles/" aria-current="page">Journal</a>
+  </nav>
+  <a href="/#contact" class="cta">相談する</a>
+</header>
+
+<main>
+<article class="article-body">
+  <header class="article-header">
+    <div class="article-meta">
+      <span class="journal-date">2026-08-04</span>
+      <span class="journal-category">業務改善</span>
+    </div>
+    <h1 class="article-title">スプレッドシートのアプリ化、何を使えばいいですか？</h1>
+    <p class="article-lead">
+      スプレッドシートのアプリ化を調べると、AppSheet、GAS、Gemini と名前が並びます。どれも「できます」と書いてあって、どれを選べばいいのかが分からない。しかも出てくる記事の多くは、その道具を売っている側が書いたものです。私はどれの代理店でもありません。自分の現場で使うために組んで、実際に人に使ってもらっている側です。だから「これはやめておいたほうがいい」も書けます。ここでは作り方ではなく、<strong>選び方だけ</strong>を書きます。
+    </p>
+  </header>
+
+  <div class="article-content">
+    <h2>スプレッドシートのアプリ化、何を使えばいいですか？</h2>
+    <p>結論、<strong>欲しいのが「画面」なのか「自動化」なのかで、道具は決まります。</strong></p>
+    <p>理由は、名前が並んでいる道具が、実は同じ仕事をしていないからです。<strong>AppSheet は、表を画面にする道具</strong>です。表を読み込ませると、その表を見たり書き足したりするための入力画面を自動で組み立ててくれます。いっぽう <strong>GAS（Google Apps Script）は、表の中で決まった作業を代わりにやってくれる道具</strong>です。※GASとは: スプレッドシートに小さな手順書を仕込んで、毎朝集計する・自動でメールを出す、といった作業を任せる仕組みのこと。画面は今のままです。</p>
+    <p>具体的には、こう分かれます。「現場の人がスマホから入力できるようにしたい」なら AppSheet。「入力は今のままでいいから、集計と転記を勝手にやってほしい」なら GAS。<strong>画面が欲しいのか、手間を消したいのか。</strong>ここを先に決めてしまえば、比較記事を何本読んでも決まらなかったことが、10秒で決まります。</p>
+
+    <h2>無料でどこまでできますか？</h2>
+    <p>結論、<strong>作って、自分たちで試すところまでは無料です。人に配る段階から有料になります。</strong></p>
+    <p>理由は、無料の範囲が「試すための無料」として設計されているからです。AppSheet の場合、無料で使える範囲は<strong>試す人が10人まで</strong>で、<strong>期限はありません</strong>。作る画面も、機能も、ひととおり触れます。ただし、できあがったものを現場の人へ本番として配る段階になると、使う人数ぶんの有料プランが必要になります。金額は変わることがあるので、ここでは書きません。公式の料金ページで、そのときの数字を見てください。</p>
+    <p>具体的には、この順番が損をしません。<strong>無料の範囲で1つ作る → 自分たちだけで1〜2週間使う → 実際に使われたら、そのとき初めて契約を考える。</strong>逆にやりがちなのが、先に人数ぶんの契約をしてから作りはじめることです。多くの場合、最初に作ったものは作り直しになります。<strong>作り直しは失敗ではなく、普通の工程です。</strong>だから、作り直しても痛くない状態で試すのが正しい順番です。</p>
+
+    <h2>Geminiに言えば、アプリを作ってくれますか？</h2>
+    <p>結論、<strong>作ってくれます。ただし、多くの人が期待しているものとは違うものができます。</strong>ここが、スプレッドシートのアプリ化でいちばん誤解されているところだと思っています。</p>
+    <p>理由は2つあります。ひとつは、日本語で書けばアプリの骨組みを作ってくれる機能が、<strong>有料アカウント向けだ</strong>ということ。無料の範囲では使えません。もうひとつがもっと大事で、<strong>そこで作られるのは、AppSheet 側に新しく用意された表です。</strong>いま手元で使っているスプレッドシートではありません。</p>
+    <p>具体的には、こういうことが起きます。「清掃の日報を管理するアプリを作って」と書くと、日付・担当者・現場名・写真、といった列を持つ<strong>新しい表</strong>が作られ、その上にアプリができます。中には見本の数字まで入っていて、これは消してから使うことになっています。つまり<strong>「今の表がアプリになった」のではなく「似た形の表が、隣に新しく建った」</strong>という状態です。3年ぶんの記録が入っている今の表を活かしたいなら、その表を自分で読み込ませる従来のやり方になります。<br>これは欠陥ではありません。<strong>ゼロから始める人には速い道で、すでに表がある人には遠回りの道</strong>、というだけです。自分がどちらなのかを先に知っておくと、途中で「思っていたのと違う」とならずに済みます。</p>
+
+    <h2>アプリにしないほうがいい表は、ありますか？</h2>
+    <p>結論、<strong>あります。2つあって、どちらも作りはじめる前に見分けられます。</strong></p>
+    <p>ひとつめは、<strong>1行の意味を口で説明できない表</strong>です。「この表の1行は何ですか？」と聞かれて、「1行が、1回の点検です」と即答できるなら大丈夫です。「うーん、上のほうは月ごとの集計で、下は明細で、右のほうにメモがあって…」となる表は、アプリにした瞬間に使いにくくなります。理由は、アプリが<strong>1行＝1件</strong>として画面を組み立てるからです。表の形がそのままアプリの形になります。<a href="/articles/appsheet-tsukaikata-shoshinsha/">道具の始め方はこちらの記事</a>に書きましたが、そこでも最初の作業は操作の勉強ではなく表の掃除でした。</p>
+    <p>ふたつめは、<strong>使う人が1人しかいない表</strong>です。アプリにする値打ちは「離れた場所にいる複数の人が、同じ1つの表に書き込める」ところにあります。1人で完結している作業なら、多くの場合、表のまま使うほうが速いです。<strong>道具を入れると仕事が減る、とは限りません。</strong>減るのは、人と人のあいだで起きていた受け渡しの手間です。そこが無い仕事に入れると、覚えることだけが増えます。</p>
+
+    <h2>アプリ化すると、実際に何が変わりますか？</h2>
+    <p>結論、<strong>「打ち直し」が消えます。</strong></p>
+    <p>理由は、記録する場所と入力する場所が、ひとつになるからです。現場で紙に書いて、事務所に戻ってからスプレッドシートに打ち直す。この2回目が無くなります。写真もその場で残せます。<a href="/articles/seikyusho-jidou-sakusei/">請求書の下書き</a>や<a href="/shift/">シフトを組む仕事</a>でも、結局いちばん時間を食っているのは、判断ではなく<strong>この打ち直しの往復</strong>です。</p>
+    <p>具体的には、効く職場と効かない職場がはっきり分かれます。効くのは、<strong>記録する場所と入力する場所が離れている仕事</strong>——清掃、点検、配送、現場の日報。効きにくいのは、もともと全員がパソコンの前で入力している職場です。そこでは変化が小さいので、無理に入れなくていいと思います。</p>
+
+    <h2>まとめ</h2>
+    <p>スプレッドシートのアプリ化で迷うのは、道具が難しいからではなく、<strong>並んでいる道具が別々の仕事をしているのに、同じ棚に置かれているから</strong>です。画面が欲しいなら AppSheet、自動化なら GAS。無料で試して、使われたら契約する。Gemini が作るのは新しい表の上のアプリ。アプリにしないほうがいい表が2つある。決めるのに必要なのは、この4つだけです。</p>
+    <p>私はどの道具の代理店でもありません。だから「入れないほうがいいです」と言えます。それは、自分の現場で使うために作って、使われずに終わったものも見てきたからです。<strong>使われなかった理由は、いつも道具ではなく、表の形と、受け渡しの有無でした。</strong></p>
+    <p>いま使っているスプレッドシートを1枚見せていただければ、それがアプリにできる形か、それともまだ表のままのほうがいいかを、いっしょに見るところから始められます。何を作りたいかが決まっていなくても大丈夫です。</p>
+  </div>
+</article>
+
+<section class="sec ct" id="contact" style="margin-top:64px">
+  <div class="sec-top" style="justify-content:center"><h2 style="font-size:clamp(28px,5vw,52px)">相談する</h2></div>
+  <p class="barrier">「この表、アプリにしたほうがいいのかな」から、いっしょに見ます。<br>長野県内は対面、オンラインは全国対応です。</p>
+  <div class="methods">
+    <div class="m">
+      <div class="lbl">LINE</div>
+      <div class="v">@903xtesg</div>
+      <div class="nn">「相談したい」と一言送ってください。返信が早いのはLINEです。1〜2営業日でお返しします。</div>
+      <a href="https://line.me/R/ti/p/@903xtesg" class="btn solid full" target="_blank" rel="noopener">LINEで相談する</a>
+    </div>
+    <div class="m">
+      <div class="lbl">フォーム</div>
+      <div class="nn" style="margin-bottom:14px">LINEを使っていない方はこちらから。メールアドレス宛にお返しします。</div>
+      <form action="https://formspree.io/f/mvzllrqg" method="POST">
+        <label for="contact-name">お名前（任意）</label>
+        <input type="text" id="contact-name" name="name" autocomplete="name" placeholder="ご記入なしでも構いません">
+        <label for="contact-email">メールアドレス（必須）</label>
+        <input type="email" id="contact-email" name="email" autocomplete="email" required placeholder="返信先">
+        <label for="contact-message">ご相談内容</label>
+        <textarea id="contact-message" name="message" required placeholder="いまどんな表を使っているか、何人で使っているか。ひと言だけでも構いません。"></textarea>
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="_subject" value="totonoeruya.jp お問い合わせ（スプレッドシートのアプリ化）">
+        <input type="hidden" name="_next" value="https://totonoeruya.jp/thanks/">
+        <button type="submit" class="btn solid full">送信する</button>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="foot">
+    <div class="b">
+      <img src="../../assets/logo-totonoeru.png" alt="ととのえる屋">
+      <p>長野県小諸市の、小さな何でも屋。HP・LP制作、AI業務改善、清掃、ギター教室。ぜんぶ、同じ手で。</p>
+    </div>
+    <div><h6>Services</h6><ul><li><a href="/web/">HP・LP制作</a></li><li><a href="/shift/">シフト</a></li><li><a href="/cleaning/">清掃</a></li><li><a href="/guitar/">ギター教室</a></li><li><a href="/totoline/">totoline</a></li></ul></div>
+    <div><h6>Company</h6><ul><li><a href="/articles/">ジャーナル</a></li><li><a href="/articles/totonoeruya-name-riyu/">屋号の由来</a></li><li><a href="https://github.com/papanti0318-spec" target="_blank" rel="noopener">GitHub</a></li><li><a href="https://x.com/totonoeruya" target="_blank" rel="noopener">X</a></li></ul></div>
+    <div><h6>Contact</h6><ul><li><a href="mailto:totonoeru.ya@gmail.com">totonoeru.ya@gmail.com</a></li><li><a href="https://line.me/R/ti/p/@903xtesg" target="_blank" rel="noopener">LINE @903xtesg</a></li><li>長野県小諸市</li></ul></div>
+  </div>
+  <div class="foot-bot">
+    <span>© 2026 ととのえる屋. 長野県小諸市</span>
+    <span><a href="/privacy/">プライバシーポリシー</a> · <a href="/commerce/">特定商取引法に基づく表記</a></span>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js" defer></script>
+<script src="../../assets/smooth-2026.js" defer></script>
+</body>
+</html>
