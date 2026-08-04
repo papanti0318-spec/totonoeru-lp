@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="hYRflPVBHV_SbReXwN_7v4tNCf6AT3VusKhSviD5kPU" />
+<title>請求書の自動作成、エクセルとAIで何が違いますか？｜ととのえる屋</title>
+<meta name="description" content="請求書の自動作成を調べると、エクセルのテンプレート、マクロ、スプレッドシート、AI、クラウド会計と、いろいろ出てきて決められない。どれが何をしてくれて、どこで止まるのかを、長野県小諸市の現役エンジニアが専門用語なしで書きます。手書きの請求書がダメなのかにも、正直に答えます。">
+<link rel="canonical" href="https://totonoeruya.jp/articles/seikyusho-jidou-sakusei/">
+
+<meta property="og:title" content="請求書の自動作成、エクセルとAIで何が違いますか？｜ととのえる屋">
+<meta property="og:description" content="エクセル・マクロ・スプレッドシート・AI・クラウド会計。それぞれが何をしてくれて、どこで止まるのか。手書きの請求書はダメなのかにも正直に答えます。">
+<meta property="og:url" content="https://totonoeruya.jp/articles/seikyusho-jidou-sakusei/">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://totonoeruya.jp/og.jpg">
+<meta property="article:published_time" content="2026-08-04T00:00:00+09:00">
+<meta property="article:author" content="照井航次郎">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../../assets/site-2026.css">
+<link rel="stylesheet" href="../../assets/article-2026.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://totonoeruya.jp/articles/seikyusho-jidou-sakusei/#article",
+      "headline": "請求書の自動作成、エクセルとAIで何が違いますか？",
+      "description": "請求書の自動作成を調べると、エクセルのテンプレート、マクロ、スプレッドシート、AI、クラウド会計と、いろいろ出てきて決められない。どれが何をしてくれて、どこで止まるのかを、専門用語なしで書きます。",
+      "url": "https://totonoeruya.jp/articles/seikyusho-jidou-sakusei/",
+      "mainEntityOfPage": "https://totonoeruya.jp/articles/seikyusho-jidou-sakusei/",
+      "image": "https://totonoeruya.jp/og.jpg",
+      "datePublished": "2026-08-04",
+      "dateModified": "2026-08-04",
+      "inLanguage": "ja",
+      "articleSection": "業務改善",
+      "author": { "@id": "https://totonoeruya.jp/#terui" },
+      "publisher": { "@id": "https://totonoeruya.jp/#organization" },
+      "isPartOf": { "@id": "https://totonoeruya.jp/articles/#blog" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://totonoeruya.jp/" },
+        { "@type": "ListItem", "position": 2, "name": "ジャーナル", "item": "https://totonoeruya.jp/articles/" },
+        { "@type": "ListItem", "position": 3, "name": "請求書の自動作成、エクセルとAIで何が違いますか？", "item": "https://totonoeruya.jp/articles/seikyusho-jidou-sakusei/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://totonoeruya.jp/articles/seikyusho-jidou-sakusei/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "手書きの請求書は、もうダメなのですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ダメではありません。請求書は、必要な項目（発行者の名前と登録番号、取引の年月日、取引の中身、税率ごとに分けた金額と消費税額、受け取る相手の名前）が書いてあれば、手書きでも正式な請求書です。手書きをやめる理由は、法律ではなく、書き写す回数が多いことのほうです。同じ数字を紙から会計ソフトへ、もう一度打ち直しているなら、そこだけが減らせます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "エクセルの自動作成と、AIの自動作成は何が違いますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "エクセルが得意なのは計算と差し込みです。単価と数量を入れれば金額と消費税が出て、取引先名を選べば宛名が入る。ここは決まった手順なので、エクセルのほうが速くて確実です。AIが得意なのは、その前の段階です。LINEや現場のメモのように、決まった形になっていない文章から、日付・品名・数量を読み取って表の形に直す。つまりエクセルは「表を作る」、AIは「表に入れる材料を、バラバラの文章から取り出す」役です。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "無料でできる範囲は、どこまでですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "請求書の形を作って印刷するところまでは、無料でできます。表計算ソフトのテンプレートで十分です。お金がかかりはじめるのは、電子で保存する義務に合わせるところ、取引先ごとの入金の消し込みを管理するところ、そして毎月それが自分の手を離れて回るようにするところからです。無料で足りるかどうかは、月に何件出しているかで決まります。数件なら無料の範囲で困りません。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "freeeのようなクラウド会計につなぐと、何が変わりますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "請求書を作る作業が、帳簿と一本の線でつながります。請求書を作った時点で売上として記録され、入金があれば消し込みまで進むので、月末に紙を見ながら会計ソフトへ打ち直す時間がなくなります。変わるのは作る速さより、作ったあとの流れです。実際に通してみると、いちばん時間を取られていたのは請求書を作ることではなく、そのあとの転記だったと分かることが多いです。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "うちは何から始めればいいですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "同じ数字を二回以上打っている場所を、一つだけ見つけてください。紙の控えから会計ソフトへ、LINEのやり取りからエクセルへ、といった書き写しです。そこが一番先に消せます。全部をいっぺんに変えると、決まりごとの棚卸しが追いつかず、たいてい元に戻ります。一つ消して、それが一か月回ってから次へ進むのが結局は早いです。"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://totonoeruya.jp/articles/seikyusho-jidou-sakusei/#howto",
+      "name": "請求書の自動作成を、小さな会社で始める順番",
+      "description": "エクセル・AI・クラウド会計のどれから手をつけるかを、書き写しの回数を基準に決めるための手順。",
+      "step": [
+        { "@type": "HowToStep", "position": 1, "name": "手順1", "text": "先月出した請求書を1枚選び、その数字がどこからどこへ移ったかを紙に書き出す" },
+        { "@type": "HowToStep", "position": 2, "name": "手順2", "text": "同じ数字を二回以上打っている場所に丸をつける。ここが消せる場所" },
+        { "@type": "HowToStep", "position": 3, "name": "手順3", "text": "決まった形から作っているなら表計算ソフトのテンプレート、バラバラの文章から起こしているならAIに読み取らせる、と役を分ける" },
+        { "@type": "HowToStep", "position": 4, "name": "手順4", "text": "作ったあとの転記が残っているなら、クラウド会計へつないで、そこも一本にする" },
+        { "@type": "HowToStep", "position": 5, "name": "手順5", "text": "一か月そのまま回して、戻らないことを確かめてから次の一つへ進む" }
+      ]
+    }
+  ]
+}
+</script>
+<!-- Vercel Web Analytics -->
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/assets/analytics.js"></script>
+</head>
+<body>
+
+<header class="topbar">
+  <a href="/" class="brand"><img src="../../assets/logo-totonoeru.png" alt="">ととのえる屋</a>
+  <nav aria-label="メインメニュー">
+    <a href="/#about">About</a>
+    <a href="/#services">相談</a>
+    <a href="/articles/ai-erabareru-hp-shindan/">HP診断</a>
+    <a href="/totoline/">totoline</a>
+    <a href="/shift/">シフト</a>
+    <a href="/cleaning/">清掃</a>
+    <a href="/lab/">ずかん</a>
+    <a href="/articles/" aria-current="page">Journal</a>
+  </nav>
+  <a href="/#contact" class="cta">相談する</a>
+</header>
+
+<main>
+<article class="article-body">
+  <header class="article-header">
+    <div class="article-meta">
+      <span class="journal-date">2026-08-04</span>
+      <span class="journal-category">業務改善</span>
+    </div>
+    <h1 class="article-title">請求書の自動作成、エクセルとAIで何が違いますか？</h1>
+    <p class="article-lead">
+      「請求書 自動作成」で調べると、エクセルのテンプレート、マクロ、スプレッドシート、AI、クラウド会計と、いろいろ出てきます。どれも良さそうに見えて、結局どれが自分のところに要るのか分からないまま、また今月も同じやり方で作った——そういう方に向けて書きます。長野県小諸市の現役エンジニアが、それぞれが何をしてくれて、どこで止まるのかを、専門用語なしで並べます。手書きの請求書はもうダメなのか、にも正直に答えます。
+    </p>
+  </header>
+
+  <div class="article-content">
+    <h2>請求書の自動作成、エクセルとAIで何が違いますか？</h2>
+    <p>結論、<strong>エクセルは「表を作る」役、AIは「表に入れる材料を、バラバラの文章から取り出す」役</strong>です。競合ではなく、担当している場所が違います。</p>
+    <p>理由は、二つが得意にしている作業がまるで別物だからです。エクセルが得意なのは、決まった手順のくり返しです。単価と数量を入れれば金額と消費税が出る、取引先を選べば宛名が入る。ここは答えが一つに決まるので、機械のほうが速くて間違えません。いっぽうAIが得意なのは、決まった形になっていないものを読むことです。「昨日の現場、2名で4時間、備品は先方持ち」というLINEの一文から、日付・人数・時間を拾って表の形に直す。ここは答えが一つに決まらないので、計算式では書けません。</p>
+    <p>具体的には、請求書ができるまでを二段に分けて考えると、迷わなくなります。前半が「材料を集めて表に入れる」、後半が「表から請求書の形にする」。後半だけなら、エクセルのテンプレートで十分です。困っているのが前半——現場からの報告がLINEや手書きのメモで届いていて、それを見ながら打ち込んでいる——なら、そこはエクセルでは減りません。AIの出番はそちらです。</p>
+
+    <h2>手書きの請求書は、もうダメなんですか？</h2>
+    <p>結論、<strong>ダメではありません。</strong>手書きでも、必要な項目が書いてあれば正式な請求書です。</p>
+    <p>理由は、請求書に求められているのが「書式」ではなく「項目」だからです。発行した人の名前と登録番号、取引をした年月日、何を売ったか、税率ごとに分けた合計金額と消費税額、受け取る相手の名前。この五つが入っていれば、手書きでもパソコンでも同じ扱いになります。「手書きはダメ」と言われがちなのは、法律の話ではなく、読み間違いや書き写しが起きやすいという実務の話です。</p>
+    <p>具体的には、手書きをやめる理由になるのは一つだけです。<strong>同じ数字を、二回以上打っているとき。</strong>紙に書いた金額を、あとで会計ソフトにもう一度入れているなら、その二回目が消せます。逆に、月に数枚しか出さず、控えをそのまま保管しているだけなら、無理にやめる理由はありません。まず「うちは何回打ち直しているか」を数えるほうが先です。</p>
+
+    <h2>エクセルやスプレッドシートの自動作成は、どこまでできますか？</h2>
+    <p>結論、<strong>数字を計算して、決まった位置に流し込むところまで</strong>です。そこから先は伸びません。</p>
+    <p>理由は、表計算ソフトが「決めた手順どおりに動く」道具だからです。マクロ（＝あらかじめ記録しておいた操作を、ボタン一つでまとめて実行する仕掛け）を組めば、取引先ごとの請求書をまとめて出すところまでできます。ただし、その手順は人が先に決めておく必要があります。だから「今月だけ単価が違う」「この現場は追加分がある」といった例外が混ざるたびに、人が手で直すことになります。</p>
+    <p>具体的には、月に出す請求書がだいたい同じ顔ぶれ・同じ形なら、表計算ソフトで足ります。逆に、毎月中身が変わる、現場ごとに条件が違う、という状態で表計算ソフトを作り込むと、例外を足すたびに複雑になって、最後は作った本人しか触れなくなります。そうなると、書き写しの手間は減っても、<strong>「これができるのは自分だけ」という別の詰まりが生まれます。</strong>ここは<a href="/shift/">シフトを組む仕事</a>とまったく同じ形です。</p>
+
+    <h2>無料でできる範囲は、どこまでですか？</h2>
+    <p>結論、<strong>請求書の形を作って、印刷して渡すところまで</strong>です。ここは表計算ソフトのテンプレートで足ります。</p>
+    <p>理由は、お金がかかるのが「作る」ところではなく、「作ったあと」だからです。電子で受け取った請求書を決まった形で保存しておく、取引先ごとに入金があったかどうかを消し込む、その記録を帳簿とつなぐ。この三つは、続けて回そうとすると道具が要ります。作って印刷するだけなら、道具は要りません。</p>
+    <p>具体的には、月に出す請求書が数枚なら、無料の範囲で困りません。判断が変わるのは、<strong>月末に「どこまで入金されたか」を紙とにらめっこして確かめている</strong>とき。そこに時間が溶けているなら、そこから先はお金を払う価値が出てきます。電子で保存する義務のほうは<a href="/articles/ryoshusho-ai-denchoho/">紙の領収書をスマホで撮って保存する話</a>に、税率の経過措置は<a href="/articles/invoice-2026-10-keikasochi/">インボイスの経過措置の話</a>に分けて書いてあります。</p>
+
+    <h2>freeeのようなクラウド会計につなぐと、何が変わりますか？</h2>
+    <p>結論、<strong>変わるのは作る速さではなく、作ったあとの流れ</strong>です。請求書と帳簿が、一本の線でつながります。</p>
+    <p>理由は、請求書を作った時点でそれが売上として記録され、入金があれば消し込みまで進むからです。クラウド会計（＝インターネット上に帳簿を置いて、銀行やカードの記録を自動で取り込む会計ソフト）につないでおくと、月末に紙を見ながら数字を打ち直す工程そのものが無くなります。実際に通してみると、いちばん時間を取られていたのは請求書を作ることではなく、<strong>そのあとの転記だった</strong>と分かることが多いです。</p>
+    <p>具体的には、つなぐ前に決めておくことが二つあります。ひとつは、どの単位で1枚にするか（現場ごとか、月まとめか）。もうひとつは、誰が作って誰が確認するか。この二つを決めずにつなぐと、記録は自動で増えるのに、合っているかどうかを誰も見ていない、という状態になります。道具を入れる前に、いまの決まりごとを一度外に出しておくほうが、結局は早く回りはじめます。</p>
+
+    <h2>うちは、何から始めればいいですか？</h2>
+    <p>結論、<strong>同じ数字を二回以上打っている場所を、一つだけ見つける</strong>ところからです。</p>
+    <p>理由は、そこが確実に消せて、しかも効果がすぐ分かる場所だからです。紙の控えから会計ソフトへ。LINEのやり取りからエクセルへ。この書き写しは、誰の役にも立っていません。中身を判断しているわけではなく、ただ移しているだけだからです。<strong>判断していない作業だけが、安全に減らせます。</strong></p>
+    <p>具体的には、先月出した請求書を1枚だけ選んで、その数字がどこからどこへ移ったかを紙に書き出してみてください。だいたい二回か三回、同じ数字が出てきます。丸をつけたところが、最初の一手です。全部をいっぺんに変えると、決まりごとの棚卸しが追いつかず、たいてい元のやり方に戻ります。一つ消して、一か月そのまま回して、戻らないことを確かめてから次へ。急がないほうが、結局は早いです。</p>
+
+    <h2>まとめ</h2>
+    <p>「請求書の自動作成」と一口に言っても、消せる場所は人によって違います。決まった形から作っているなら表計算ソフト、バラバラの文章から起こしているならAI、作ったあとの転記が残っているならクラウド会計。<strong>どれを選ぶかではなく、自分がどこで二回打っているかで決まります。</strong></p>
+    <p>どこで二回打っているか自体が分からない、という状態からで大丈夫です。先月の請求書を1枚持ってきていただければ、いっしょに書き出すところから始められます。何をしたいか決まっていなくても、話したいだけでも構いません。</p>
+  </div>
+</article>
+
+<section class="sec ct" id="contact" style="margin-top:64px">
+  <div class="sec-top" style="justify-content:center"><h2 style="font-size:clamp(28px,5vw,52px)">相談する</h2></div>
+  <p class="barrier">「うちの場合、どこが二回打ちなんだろう」から、いっしょに見ます。<br>長野県内は対面、オンラインは全国対応です。</p>
+  <div class="methods">
+    <div class="m">
+      <div class="lbl">LINE</div>
+      <div class="v">@903xtesg</div>
+      <div class="nn">「相談したい」と一言送ってください。返信が早いのはLINEです。1〜2営業日でお返しします。</div>
+      <a href="https://line.me/R/ti/p/@903xtesg" class="btn solid full" target="_blank" rel="noopener">LINEで相談する</a>
+    </div>
+    <div class="m">
+      <div class="lbl">フォーム</div>
+      <div class="nn" style="margin-bottom:14px">LINEを使っていない方はこちらから。メールアドレス宛にお返しします。</div>
+      <form action="https://formspree.io/f/mvzllrqg" method="POST">
+        <label for="contact-name">お名前（任意）</label>
+        <input type="text" id="contact-name" name="name" autocomplete="name" placeholder="ご記入なしでも構いません">
+        <label for="contact-email">メールアドレス（必須）</label>
+        <input type="email" id="contact-email" name="email" autocomplete="email" required placeholder="返信先">
+        <label for="contact-message">ご相談内容</label>
+        <textarea id="contact-message" name="message" required placeholder="いま月に何枚くらい請求書を出しているか。ひと言だけでも構いません。"></textarea>
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="_subject" value="totonoeruya.jp お問い合わせ（請求書の自動作成）">
+        <input type="hidden" name="_next" value="https://totonoeruya.jp/thanks/">
+        <button type="submit" class="btn solid full">送信する</button>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="foot">
+    <div class="b">
+      <img src="../../assets/logo-totonoeru.png" alt="ととのえる屋">
+      <p>長野県小諸市の、小さな何でも屋。HP・LP制作、AI業務改善、清掃、ギター教室。ぜんぶ、同じ手で。</p>
+    </div>
+    <div><h6>Services</h6><ul><li><a href="/web/">HP・LP制作</a></li><li><a href="/shift/">シフト</a></li><li><a href="/cleaning/">清掃</a></li><li><a href="/guitar/">ギター教室</a></li><li><a href="/totoline/">totoline</a></li></ul></div>
+    <div><h6>Company</h6><ul><li><a href="/articles/">ジャーナル</a></li><li><a href="/articles/totonoeruya-name-riyu/">屋号の由来</a></li><li><a href="https://github.com/papanti0318-spec" target="_blank" rel="noopener">GitHub</a></li><li><a href="https://x.com/totonoeruya" target="_blank" rel="noopener">X</a></li></ul></div>
+    <div><h6>Contact</h6><ul><li><a href="mailto:totonoeru.ya@gmail.com">totonoeru.ya@gmail.com</a></li><li><a href="https://line.me/R/ti/p/@903xtesg" target="_blank" rel="noopener">LINE @903xtesg</a></li><li>長野県小諸市</li></ul></div>
+  </div>
+  <div class="foot-bot">
+    <span>© 2026 ととのえる屋. 長野県小諸市</span>
+    <span><a href="/privacy/">プライバシーポリシー</a> · <a href="/commerce/">特定商取引法に基づく表記</a></span>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js" defer></script>
+<script src="../../assets/smooth-2026.js" defer></script>
+</body>
+</html>
