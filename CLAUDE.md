@@ -52,10 +52,13 @@
 ## サイト構成（マルチページ静的HTML）
 
 ```
-/                  トップ（ハブ：3事業 + 最新記事3件 + Proof + 照井 + 連絡）
+/                  トップ（ハブ：看板1つ＝AI・ホームページの相談 → HP診断 → totoline → 清掃 ／ ギターはフッターの個人の活動）
 /web/              HP・LP制作（既存集大成LP・haluta実績主軸）
-/cleaning/         清掃（軽井沢T-SITE等・現場AI化）
-/guitar/           ギター教室（教育事業）
+/cleaning/         清掃（軽井沢・北軽井沢の別荘清掃・退去清掃）
+                   ⚠️ 2026-07-30 訂正：ここは長く「軽井沢T-SITE等・現場AI化」と書かれていたが、両方とも事実でない。
+                   T-SITE は終了済み。そして清掃現場でAIは使っていない（あるのは現場感だけ）。
+                   この行を根拠に「清掃×AI」を書くと、公開HPに嘘が載る（実際に載って 7/25 と 7/29 の2回直した）。
+/guitar/           ギター教室（個人の活動・事業として並べない）
 /articles/         記事一覧
 /articles/[slug]/  個別記事（静的HTML・AI生成→ディレクトリに追加運用）
 ```
@@ -99,6 +102,7 @@
 - `/articles/[yyyy-mm-dd-slug]/index.html` 形式で個別記事を追加
 - 記事テンプレHTMLをClaude Codeで生成→ディレクトリに置く運用
 - 記事追加時は `sitemap.xml` も更新
+- 記事追加時は、既にクロールされている面（トップ `https://totonoeruya.jp/` ／ ずかん `https://totonoeruya.jp/lab/` ／ Web `https://totonoeruya.jp/web/` のどれか）から**必ず1リンク**貼る。`sitemap.xml` 更新と同格の必須工程。記事一覧ページだけでは Google に届かない（2026-08-06 実証：8/04公開の7本が `URL is unknown to Google`／同日公開でも nav から貼ってある `/shift/` は当日インデックス済み）
 
 ## 関連プロジェクト
 
